@@ -1,0 +1,26 @@
+defmodule AdventOfCode.Y2015.Day3 do
+  @start [0, 0]
+
+  defp next_location("^", [x, y]), do: [x, y + 1]
+  defp next_location("v", [x, y]), do: [x, y - 1]
+  defp next_location(">", [x, y]), do: [x + 1, y]
+  defp next_location("<", [x, y]), do: [x - 1, y]
+
+  def deliver_present(<<direction::bytes-size(1)>> <> rest) do
+    next = next_location(direction, @start)
+    deliver_present(rest, next, MapSet.new([[0, 0], next]))
+  end
+
+  def deliver_present("", _, db), do: db
+
+  def deliver_present(<<direction::bytes-size(1)>> <> rest, current, db) do
+    next = next_location(direction, current)
+    deliver_present(rest, next, MapSet.put(db, next))
+  end
+
+  defp input!(), do: AdventOfCode.Data.InputReader.read!(2015, 3)
+
+  def run do
+    input!() |> deliver_present() |> MapSet.size()
+  end
+end
