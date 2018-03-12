@@ -1,4 +1,5 @@
 defmodule AdventOfCode.Y2015.Day3 do
+  use AdventOfCode.Data.InputReader, year: 2015, day: 3
   @start [0, 0]
 
   defp next_location("^", [x, y]), do: [x, y + 1]
@@ -17,8 +18,6 @@ defmodule AdventOfCode.Y2015.Day3 do
     next = next_location(direction, current)
     deliver_present(rest, next, MapSet.put(db, next))
   end
-
-  defp input!(), do: AdventOfCode.Data.InputReader.read!(2015, 3)
 
   def run do
     input!() |> deliver_present() |> MapSet.size()

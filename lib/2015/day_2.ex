@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2015.Day2 do
+  use AdventOfCode.Data.InputReader, year: 2015, day: 2
+
   def surface_area(sides) do
     sides
     |> area_per_dim()
@@ -17,8 +19,6 @@ defmodule AdventOfCode.Y2015.Day2 do
   def required_paper([_, _, _] = sides) do
     (sides |> surface_area()) + (sides |> area_per_dim() |> minimum())
   end
-
-  defp input!(), do: AdventOfCode.Data.InputReader.read!(2015, 2)
 
   defp parse_input(lines) do
     lines

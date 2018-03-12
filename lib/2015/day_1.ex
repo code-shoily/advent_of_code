@@ -1,9 +1,9 @@
 defmodule AdventOfCode.Y2015.Day1 do
+  use AdventOfCode.Data.InputReader, year: 2015, day: 1
+
   def floor(""), do: 0
   def floor("(" <> rest), do: 1 + floor(rest)
   def floor(")" <> rest), do: -1 + floor(rest)
-
-  defp input!(), do: AdventOfCode.Data.InputReader.read!(2015, 1)
 
   def run do
     input!() |> floor()
