@@ -1,29 +1,43 @@
 defmodule AdventOfCode.Y2018.Day1 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2018/day/1
+  """
   use AdventOfCode.Data.InputReader, year: 2018, day: 1
 
-  def process() do
-    input!()
+  @spec to_number_list(String.t()) :: [String.t()]
+  def to_number_list(raw_input) do
+    raw_input
     |> String.split("\n")
     |> Enum.map(&String.to_integer/1)
   end
 
-  def run_1() do
-    Agent.start(fn -> MapSet.new() end, name: __MODULE__)
+  @spec run_1() :: integer()
+  def run_1(), do: input!() |> to_number_list() |> Enum.reduce(0, &Kernel.+/2)
 
-    result =
-      process()
-      |> Enum.reduce_while(0, fn acc, x ->
-        new_freq = acc + x
+  @spec run_2() :: non_neg_integer()
+  def run_2() do
+    input!()
+    |> to_number_list()
+    |> Stream.cycle()
+    |> Enum.reduce_while({%MapSet{}, 0}, fn cur, {history, prev} ->
+      new_frequency = prev + cur
 
-        if Agent.get(__MODULE__, fn items -> new_freq in items end) do
-          {:halt, new_freq}
-        else
-          Agent.update(__MODULE__, &MapSet.put(&1, new_freq))
-        end
+      if MapSet.member?(history, new_frequency) do
+        {:halt, new_frequency}
+      else
+        {:cont, {MapSet.put(history, new_frequency), new_frequency}}
+      end
+    end)
+  end
 
-        {:cont, new_freq}
-      end)
-
-    result
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end
