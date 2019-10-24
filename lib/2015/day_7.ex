@@ -20,8 +20,8 @@ defmodule AdventOfCode.Y2015.Day7 do
     |> String.split("->")
     |> Enum.map(&String.trim/1)
     |> (fn [lhs, rhs] ->
-      {tokenize(String.split(lhs)), rhs}
-    end).()
+          {tokenize(String.split(lhs)), rhs}
+        end).()
   end
 
   def parse(instructions) do
@@ -36,4 +36,3 @@ defmodule AdventOfCode.Y2015.Day7 do
     |> parse()
   end
 end
-
