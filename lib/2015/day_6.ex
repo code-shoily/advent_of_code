@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day6 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2015/day/6
+  """
   use AdventOfCode.Data.InputReader, year: 2015, day: 6
 
   def init(size) do

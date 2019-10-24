@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day5 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2015/day/5
+  """
   use AdventOfCode.Data.InputReader, year: 2015, day: 5
 
   defp vowel?(s), do: s in ~w/a e i o u/

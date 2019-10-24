@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day4 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2015/day/4
+  """
   defp h(s, number),
     do:
       :crypto.hash(:md5, s <> Integer.to_string(number))

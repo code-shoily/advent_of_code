@@ -12,10 +12,10 @@ defmodule AdventOfCode.Y2018.Day1 do
   end
 
   @spec run_1() :: integer()
-  def run_1(), do: input!() |> to_number_list() |> Enum.reduce(0, &Kernel.+/2)
+  def run_1, do: input!() |> to_number_list() |> Enum.reduce(0, &Kernel.+/2)
 
   @spec run_2() :: non_neg_integer()
-  def run_2() do
+  def run_2 do
     input!()
     |> to_number_list()
     |> Stream.cycle()

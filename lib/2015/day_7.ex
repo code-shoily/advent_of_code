@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day7 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2015/day/7
+  """
   use AdventOfCode.Data.InputReader, year: 2015, day: 7
 
   defp empty?(message) do
@@ -29,7 +32,7 @@ defmodule AdventOfCode.Y2015.Day7 do
     |> Enum.map(&parse_line/1)
   end
 
-  def run() do
+  def run do
     input!()
     |> String.split("\n")
     |> Enum.reject(&empty?/1)

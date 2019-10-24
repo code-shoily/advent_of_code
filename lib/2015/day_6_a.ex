@@ -1,9 +1,12 @@
 defmodule AdventOfCode.Y2015.Day6a do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2015/day/6
+  """
   use AdventOfCode.Data.InputReader, year: 2015, day: 6
 
   @size 1000
 
-  def start(), do: Agent.start(fn -> 0..(@size * @size - 1) |> Enum.to_list() end)
+  def start, do: Agent.start(fn -> 0..(@size * @size - 1) |> Enum.to_list() end)
 
   def find_range(s), do: s |> String.trim()
 

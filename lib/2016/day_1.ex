@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2016.Day1 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2016/day/1
+  """
   use AdventOfCode.Data.InputReader, year: 2016, day: 1
 
   def process(input) do
@@ -60,7 +63,7 @@ defmodule AdventOfCode.Y2016.Day1 do
     abs(x) + abs(y)
   end
 
-  def run() do
+  def run do
     input!()
     |> process()
     |> move()

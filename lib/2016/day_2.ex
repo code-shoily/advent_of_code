@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2016.Day2 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2016/day/2
+  """
   use AdventOfCode.Data.InputReader, year: 2016, day: 2
 
   @initial_position 5
@@ -20,9 +23,10 @@ defmodule AdventOfCode.Y2016.Day2 do
   defp find([h | t], cur) do
     next_key = next(cur, h)
 
-    cond do
-      valid?(next_key) -> find(t, cur)
-      true -> find(t, next_key)
+    if valid?(next_key) do
+      find(t, cur)
+    else
+      find(t, next_key)
     end
   end
 
