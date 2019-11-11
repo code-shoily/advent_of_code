@@ -27,10 +27,25 @@ defmodule AdventOfCode.Y2015.Day12 do
     |> Enum.sum()
   end
 
-  def run do
+  def run_1 do
     input!()
     |> String.graphemes()
     |> parse([])
     |> compute()
+  end
+
+  def run_2 do
+    0
+  end
+
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end

@@ -22,7 +22,22 @@ defmodule AdventOfCode.Y2015.Day3 do
     deliver_present(rest, next, MapSet.put(db, next))
   end
 
-  def run do
+  def run_1 do
     input!() |> deliver_present() |> MapSet.size()
+  end
+
+  def run_2 do
+    0
+  end
+
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end

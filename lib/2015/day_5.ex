@@ -20,10 +20,25 @@ defmodule AdventOfCode.Y2015.Day5 do
     end
   end
 
-  def run do
+  def run_1 do
     input!()
     |> String.split("\n")
     |> Enum.filter(&nice?/1)
     |> length()
+  end
+
+  def run_2 do
+    0
+  end
+
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end

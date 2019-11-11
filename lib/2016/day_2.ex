@@ -30,12 +30,35 @@ defmodule AdventOfCode.Y2016.Day2 do
     end
   end
 
-  def run do
+  defp to_int(value) do
+    case Integer.parse(value) do
+      {res, ""} -> res
+      _ -> :error
+    end
+  end
+
+  def run_1 do
     input!()
     |> String.split("\n")
     |> Enum.map(&String.graphemes/1)
     |> parse([])
     |> Enum.reverse()
     |> Enum.join()
+    |> to_int()
+  end
+
+  def run_2 do
+    0
+  end
+
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end

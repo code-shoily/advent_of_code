@@ -29,11 +29,26 @@ defmodule AdventOfCode.Y2015.Day2 do
     |> Enum.map(&String.split(&1, "x"))
   end
 
-  def run do
+  def run_1 do
     input!()
     |> parse_input()
     |> Enum.map(fn n -> n |> Enum.map(&String.to_integer/1) end)
     |> Enum.map(&required_paper/1)
     |> Enum.sum()
+  end
+
+  def run_2 do
+    0
+  end
+
+  @spec run :: %{
+          problem_1: integer(),
+          problem_2: integer()
+        }
+  def run do
+    %{
+      problem_1: run_1(),
+      problem_2: run_2()
+    }
   end
 end
