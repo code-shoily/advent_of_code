@@ -34,7 +34,6 @@ defmodule AdventOfCode.Y2019.Day1 do
 
   defp process(data) do
     data
-    |> String.trim()
     |> String.split("\n")
     |> Enum.map(&String.to_integer/1)
   end
