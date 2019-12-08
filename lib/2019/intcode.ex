@@ -5,9 +5,7 @@ defmodule AdventOfCode.Y2019.IntCode do
   @bins [3, 4, 104]
   @halt "00099"
 
-  def start_link(opts) do
-    GenServer.start_link(__MODULE__, opts)
-  end
+  def start_link(opts), do: GenServer.start_link(__MODULE__, opts)
 
   def get_state(pid), do: GenServer.call(pid, :state)
 
@@ -18,21 +16,13 @@ defmodule AdventOfCode.Y2019.IntCode do
 
       %{next: next} ->
         GenServer.call(pid, {:cmd, next})
-
         run(pid)
     end
   end
 
   @impl true
   def init(data) do
-    {:ok,
-     %{
-       data: data,
-       next: extract(data),
-       iptr: 0,
-       output: [],
-       start_val: 1
-     }}
+    {:ok, %{data: data, next: extract(data), iptr: 0, output: [], start_val: 1}}
   end
 
   @impl true
@@ -40,10 +30,7 @@ defmodule AdventOfCode.Y2019.IntCode do
 
   @impl true
   def handle_call({:cmd, [@halt | _]}, _from, state) do
-    new_state =
-      state
-      |> Map.put(:iptr, :halt)
-
+    new_state = Map.put(state, :iptr, :halt)
     {:reply, new_state, new_state}
   end
 
@@ -78,78 +65,47 @@ defmodule AdventOfCode.Y2019.IntCode do
   end
 
   defp pad_zeroes(number), do: number |> to_string() |> String.pad_leading(5, "0")
-
   defp extract([99 | _]), do: [pad_zeroes(99)]
   defp extract([x, a | _]) when x in @bins, do: [pad_zeroes(x), a]
   defp extract([x, a, b, c | _]), do: [pad_zeroes(x), a, b, c]
   defp extract(_), do: raise("Invalid opcode")
 
-  defp execute(["00001", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         Enum.at(state, a) + Enum.at(state, b)
-       ), output}
+  defp execute(["00001", a, b, x], state, output) do
+    {List.replace_at(state, x, Enum.at(state, a) + Enum.at(state, b)), output}
+  end
 
-  defp execute(["00101", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         a + Enum.at(state, b)
-       ), output}
+  defp execute(["00101", a, b, x], state, output) do
+    {List.replace_at(state, x, a + Enum.at(state, b)), output}
+  end
 
-  defp execute(["01001", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         Enum.at(state, a) + b
-       ), output}
+  defp execute(["01001", a, b, x], state, output) do
+    {List.replace_at(state, x, Enum.at(state, a) + b), output}
+  end
 
-  defp execute(["01101", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         a + b
-       ), output}
+  defp execute(["01101", a, b, x], state, output) do
+    {List.replace_at(state, x, a + b), output}
+  end
 
-  defp execute(["00002", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         Enum.at(state, a) * Enum.at(state, b)
-       ), output}
+  defp execute(["00002", a, b, x], state, output) do
+    {List.replace_at(state, x, Enum.at(state, a) * Enum.at(state, b)), output}
+  end
 
-  defp execute(["00102", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         a * Enum.at(state, b)
-       ), output}
+  defp execute(["00102", a, b, x], state, output) do
+    {List.replace_at(state, x, a * Enum.at(state, b)), output}
+  end
 
-  defp execute(["01002", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         Enum.at(state, a) * b
-       ), output}
+  defp execute(["01002", a, b, x], state, output) do
+    {List.replace_at(
+       state,
+       x,
+       Enum.at(state, a) * b
+     ), output}
+  end
 
-  defp execute(["01102", a, b, x], state, output),
-    do:
-      {List.replace_at(
-         state,
-         x,
-         a * b
-       ), output}
+  defp execute(["01102", a, b, x], state, output) do
+    {List.replace_at(state, x, a * b), output}
+  end
 
-  defp execute(["00004", x], state, output),
-    do: {state, [Enum.at(state, x) | output]}
-
+  defp execute(["00004", x], state, output), do: {state, [Enum.at(state, x) | output]}
   defp execute(["00104", x], state, output), do: {state, [x | output]}
 end
