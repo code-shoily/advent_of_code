@@ -33,11 +33,16 @@ defmodule AdventOfCode.Y2019.Day10 do
     end)
   end
 
-  defp visible_asteroids_from(world, source) do
+  defp asteroids_around(world, source) do
     world
     |> Enum.filter(fn {position, object} -> object == @asteroid and position != source end)
     |> Enum.group_by(fn {position, _} -> radian_of(position, source) end, &elem(&1, 0))
-    |> Enum.map(fn {_, asteroids} -> Enum.at(asteroids, 0) end)
+  end
+
+  defp visible_asteroids_from(world, source) do
+    world
+    |> asteroids_around(source)
+    |> Enum.map(fn {_, asteroids} -> hd(asteroids) end)
   end
 
   defp radian_of({x1, y1}, {x2, y2}), do: :math.atan2(y1 - y2, x1 - x2)
