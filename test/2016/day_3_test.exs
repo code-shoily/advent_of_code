@@ -9,6 +9,6 @@ defmodule AdventOfCode.Y2016.Day3Test do
   end
 
   test "Year 2016, Day 3, Part 2" do
-    assert Solution.run_2() == :not_implemented
+    assert Solution.run_2() == 1849
   end
 end
