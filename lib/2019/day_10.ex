@@ -48,7 +48,71 @@ defmodule AdventOfCode.Y2019.Day10 do
   defp radian_of({x1, y1}, {x2, y2}), do: :math.atan2(y1 - y2, x1 - x2)
 
   def run_2 do
-    1
+    process()
+    |> the_200th_asteroid()
+    |> result()
+  end
+
+  defp result({x, y}), do: x * 100 + y
+
+  defp locations_with_visible_asteroids(world) do
+    world
+    |> Enum.filter(fn {_, type} -> type == @asteroid end)
+    |> Enum.map(fn {position, _} ->
+      {position, visible_asteroids(world, position)}
+    end)
+  end
+
+  defp visible_asteroids(world, source) do
+    world
+    |> asteroids_around(source)
+    |> Enum.map(fn {_, asteroids} ->
+      Enum.min_by(asteroids, &distance(&1, source))
+    end)
+  end
+
+  def the_200th_asteroid(world) do
+    position =
+      world
+      |> locations_with_visible_asteroids()
+      |> Enum.max_by(fn {_, asteroids} -> length(asteroids) end)
+      |> elem(0)
+
+    nth_android(world, position, 200)
+  end
+
+  def nth_android(world, position, n) do
+    nth_android(world, position, n, [])
+  end
+
+  defp nth_android(world, position, n, [] = _) do
+    next =
+      world
+      |> visible_asteroids(position)
+      |> radial_sort(position)
+
+    nth_android(world, position, n, next)
+  end
+
+  defp nth_android(_, _, 1, [target | _]), do: target
+
+  defp nth_android(world, position, n, [target | rest]) do
+    world
+    |> Map.put(target, ".")
+    |> nth_android(position, n - 1, rest)
+  end
+
+  defp distance({x1, y1}, {x2, y2}),
+    do: :math.sqrt(:math.pow(x1 - x2, 2) + :math.pow(y1 - y2, 2))
+
+  defp radial_sort(objects, {xi, yi}) do
+    objects
+    |> Enum.sort_by(fn {x, y} ->
+      case :math.atan2(x - xi, yi - y) * 180 / :math.pi() do
+        θ when θ < 0 -> 360 + θ
+        θ -> θ
+      end
+    end)
   end
 
   def run do
