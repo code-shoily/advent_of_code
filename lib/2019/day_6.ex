@@ -4,9 +4,7 @@ defmodule AdventOfCode.Y2019.Day6 do
   """
   use AdventOfCode.Data.InputReader, year: 2019, day: 6
 
-  def run do
-    %{problem_1: run_1(), problem_2: run_2()}
-  end
+  def run, do: {run_1(), run_2()}
 
   def run_1 do
     process()

@@ -4,16 +4,7 @@ defmodule AdventOfCode.Y2019.Day1 do
   """
   use AdventOfCode.Data.InputReader, year: 2019, day: 1
 
-  @spec run :: %{
-          problem_1: non_neg_integer(),
-          problem_2: non_neg_integer()
-        }
-  def run do
-    %{
-      problem_1: run_1(),
-      problem_2: run_2()
-    }
-  end
+  def run, do: {run_1(), run_2()}
 
   @spec run_1 :: non_neg_integer()
   def run_1 do

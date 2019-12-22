@@ -23,9 +23,7 @@ defmodule AdventOfCode.Y2019.Day8 do
     |> print_image()
   end
 
-  def run do
-    %{problem_1: run_1(), problem_2: run_2()}
-  end
+  def run, do: {run_1(), run_2()}
 
   def process() do
     input!()

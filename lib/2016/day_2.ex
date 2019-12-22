@@ -59,21 +59,5 @@ defmodule AdventOfCode.Y2016.Day2 do
     |> length
   end
 
-  defp translate(10), do: "A"
-  defp translate(11), do: "B"
-  defp translate(12), do: "C"
-  defp translate(13), do: "D"
-  defp translate(n) when is_integer(n), do: to_string(n)
-  defp translate(n), do: n
-
-  @spec run :: %{
-          problem_1: integer(),
-          problem_2: integer()
-        }
-  def run do
-    %{
-      problem_1: run_1(),
-      problem_2: run_2()
-    }
-  end
+  def run, do: {run_1(), run_2()}
 end

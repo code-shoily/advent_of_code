@@ -21,8 +21,8 @@ defmodule AdventOfCode.Y2019.Day5 do
   end
 
   def run_2 do
-    :not_implemented
+    {:not_implemented, 2}
   end
 
-  def run, do: %{problem_1: run_1(), problem_2: run_2()}
+  def run, do: {run_1(), run_2()}
 end

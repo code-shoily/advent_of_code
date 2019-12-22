@@ -4,12 +4,7 @@ defmodule AdventOfCode.Y2019.Day4 do
   """
   @range 245_182..790_572
 
-  def run do
-    %{
-      problem_1: run_1(),
-      problem_2: run_2()
-    }
-  end
+  def run, do: {run_1(), run_2()}
 
   def run_1 do
     Enum.count(for n <- @range, n |> adjacent() and n |> increasing(), do: n)
