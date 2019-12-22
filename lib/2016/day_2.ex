@@ -30,7 +30,6 @@ defmodule AdventOfCode.Y2016.Day2 do
     end
   end
 
-  @spec run_1 :: :error | integer
   def run_1 do
     process_input()
     |> parse([])
@@ -45,18 +44,58 @@ defmodule AdventOfCode.Y2016.Day2 do
     |> Enum.map(&String.graphemes/1)
   end
 
-  # @matrix [
-  #   [nil, nil, "1", nil, nil],
-  #   [nil, "2", "3", "4", nil],
-  #   ["5", "6", "7", "8", "9"],
-  #   [nil, "10", "11", "12", nil],
-  #   [nil, nil, "13", nil, nil]
-  # ]
-  @spec run_2 :: non_neg_integer
+  @matrix [
+    [nil, nil, "1", nil, nil],
+    [nil, "2", "3", "4", nil],
+    ["5", "6", "7", "8", "9"],
+    [nil, "A", "B", "C", nil],
+    [nil, nil, "D", nil, nil]
+  ]
+
+  def to_matrix_map(data \\ @matrix) do
+    data
+    |> Enum.with_index()
+    |> Enum.map(fn {val, idx} ->
+      case val do
+        val when is_list(val) -> {idx, to_matrix_map(val)}
+        _ -> {idx, val}
+      end
+    end)
+    |> Enum.into(%{})
+  end
+
+  def run_cmds(data, [], x, y) do
+    {data[x][y], x, y}
+  end
+
+  def run_cmds(data, ["D" | rest], x, y) do
+    (data[x + 1][y] == nil && run_cmds(data, rest, x, y)) || run_cmds(data, rest, x + 1, y)
+  end
+
+  def run_cmds(data, ["U" | rest], x, y) do
+    (data[x - 1][y] == nil && run_cmds(data, rest, x, y)) || run_cmds(data, rest, x - 1, y)
+  end
+
+  def run_cmds(data, ["L" | rest], x, y) do
+    (data[x][y - 1] == nil && run_cmds(data, rest, x, y)) || run_cmds(data, rest, x, y - 1)
+  end
+
+  def run_cmds(data, ["R" | rest], x, y) do
+    (data[x][y + 1] == nil && run_cmds(data, rest, x, y)) || run_cmds(data, rest, x, y + 1)
+  end
+
+  @initial_position [{"5", 2, 0}]
   def run_2 do
-    input!()
-    |> String.split("\n")
-    |> length
+    data = to_matrix_map()
+
+    process_input()
+    |> Enum.reduce(@initial_position, fn cmd, [{_, x, y} | _] = acc ->
+      [run_cmds(data, cmd, x, y) | acc]
+    end)
+    |> Enum.map_join(fn {v, _, _} -> v end)
+    |> String.split_at(-1)
+    |> elem(0)
+    |> String.reverse()
   end
 
   def run, do: {run_1(), run_2()}
