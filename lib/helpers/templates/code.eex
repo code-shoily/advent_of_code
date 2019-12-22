@@ -1,0 +1,22 @@
+defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/<%= year %>/day/<%= day %>
+  """
+  use AdventOfCode.Data.InputReader, year: <%= year %>, day: <%= day %>
+
+  def process do
+    input!()
+  end
+
+  def run_1 do
+    {:not_implemented, 1}
+  end
+
+  def run_2 do
+    {:not_implemented, 2}
+  end
+
+  def run do
+    %{problem_1: run_1(), problem_2: run_2()}
+  end
+end
