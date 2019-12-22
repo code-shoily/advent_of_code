@@ -16,7 +16,7 @@ defmodule AdventOfCode.Y2015.Day5 do
     |> length()
   end
 
-  def run, do: %{problem_1: run_1(), problem_2: run_2()}
+  def run, do: {run_1(), run_2()}
 
   defp process(), do: String.split(input!(), "\n")
 

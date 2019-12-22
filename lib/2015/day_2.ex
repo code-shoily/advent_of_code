@@ -64,14 +64,5 @@ defmodule AdventOfCode.Y2015.Day2 do
     volume + smallest_perimeter
   end
 
-  @spec run :: %{
-          problem_1: non_neg_integer(),
-          problem_2: non_neg_integer()
-        }
-  def run do
-    %{
-      problem_1: run_1(),
-      problem_2: run_2()
-    }
-  end
+  def run, do: {run_1(), run_2()}
 end
