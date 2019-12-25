@@ -27,15 +27,36 @@ defmodule AdventOfCode.Y2015.Day12 do
     |> Enum.sum()
   end
 
-  def run_1 do
+  def process do
     input!()
     |> String.graphemes()
+  end
+
+  def run_1 do
+    process()
     |> parse([])
     |> compute()
   end
 
+  def total(obj) when is_map(obj) do
+    nodes = Map.values(obj)
+    ("red" in nodes && 0) || total(nodes)
+  end
+
+  def total(obj) when is_list(obj) do
+    obj
+    |> Enum.map(fn
+      value when is_map(value) or is_list(value) -> total(value)
+      value when is_integer(value) -> value
+      _ -> 0
+    end)
+    |> Enum.sum()
+  end
+
   def run_2 do
-    0
+    process()
+    |> Jason.decode!()
+    |> total()
   end
 
   def run, do: {run_1(), run_2()}
