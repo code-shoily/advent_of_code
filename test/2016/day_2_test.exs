@@ -16,7 +16,6 @@ defmodule AdventOfCode.Y2016.Day2Test do
     assert Solution.run_cmds(matrix, ["U", "U", "U", "U", "D"], 3, 2) == {"3", 1, 2}
   end
 
-  @tag :current
   test "Year 2016, Day 2, Part 2" do
     assert Solution.run_2() == "A7AC3"
   end
