@@ -9,6 +9,6 @@ defmodule AdventOfCode.Y2015.Day4Test do
   end
 
   test "Year 2015, Day 4, Part 2" do
-    assert Solution.run_2() == "bgvyzdsv"
+    assert Solution.run_2() == 1_038_736
   end
 end
