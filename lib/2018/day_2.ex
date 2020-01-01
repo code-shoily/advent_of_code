@@ -1,10 +1,7 @@
 defmodule AdventOfCode.Y2018.Day2 do
   use AdventOfCode.Data.InputReader, year: 2018, day: 2
 
-  def process() do
-    input!()
-    |> String.split("\n", trim: true)
-  end
+  def process(), do: String.split(input!(), "\n")
 
   def letter_count(word) do
     word
@@ -14,26 +11,19 @@ defmodule AdventOfCode.Y2018.Day2 do
     |> Enum.into(%{})
   end
 
-  @init %{two: 0, three: 0}
   def two_or_three_count(frequency) do
     frequency
-    |> Enum.reduce(@init, fn {_, frequency}, acc ->
-      case frequency do
-        2 -> %{acc | two: 1}
-        3 -> %{acc | three: 1}
-        _ -> acc
-      end
+    |> Enum.reduce({0, 0}, fn
+      {_, 2}, {_, b} -> {1, b}
+      {_, 3}, {a, _} -> {a, 1}
+      _, acc -> acc
     end)
   end
 
   def checksum(two_or_threes) do
     two_or_threes
-    |> Enum.reduce(%{two: 0, three: 0}, fn %{two: two, three: three}, acc ->
-      acc
-      |> Map.update(:two, 1, &(&1 + two))
-      |> Map.update(:three, 1, &(&1 + three))
-    end)
-    |> (&(&1[:two] * &1[:three])).()
+    |> Enum.reduce({0, 0}, fn {a, b}, {x, y} -> {a + x, b + y} end)
+    |> (fn {a, b} -> a * b end).()
   end
 
   def run_1 do
@@ -50,24 +40,16 @@ defmodule AdventOfCode.Y2018.Day2 do
   end
 
   def words_without_a_char(s) do
-    0..(String.length(s) - 1)
-    |> Enum.map(&remove_at(s, &1))
+    Enum.map(0..(String.length(s) - 1), &remove_at(s, &1))
   end
 
   def run_2 do
     process()
     |> Enum.flat_map(&words_without_a_char/1)
-    |> Enum.reduce(%{}, fn x, acc ->
-      Map.update(acc, x, 1, &(&1 + 1))
-    end)
-    |> Enum.to_list()
-    |> Enum.map(fn
-      {word, 2} -> word
-      _ -> false
-    end)
-    |> Enum.reject(&(&1 == false))
-    |> hd()
-    |> String.replace("?", "")
+    |> Enum.group_by(& &1)
+    |> Enum.map(fn {box, boxes} -> {box, length(boxes)} end)
+    |> Enum.reject(fn {_, freq} -> freq != 2 end)
+    |> (fn [{box, _}] -> String.replace(box, "?", "") end).()
   end
 
   def run, do: {run_1(), run_2()}

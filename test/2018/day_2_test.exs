@@ -11,23 +11,19 @@ defmodule AdventOfCode.Y2018.Day2Test do
   end
 
   test "Two or Threes" do
-    assert Solution.two_or_three_count(%{"c" => 3, "d" => 2}) == %{two: 1, three: 1}
-    assert Solution.two_or_three_count(%{"b" => 1, "d" => 2}) == %{two: 1, three: 0}
-    assert Solution.two_or_three_count(%{"b" => 4, "d" => 3}) == %{two: 0, three: 1}
-    assert Solution.two_or_three_count(%{"b" => 0, "d" => 0}) == %{two: 0, three: 0}
-    assert Solution.two_or_three_count(%{}) == %{two: 0, three: 0}
+    assert Solution.two_or_three_count(%{"c" => 3, "d" => 2}) == {1, 1}
+    assert Solution.two_or_three_count(%{"b" => 1, "d" => 2}) == {1, 0}
+    assert Solution.two_or_three_count(%{"b" => 4, "d" => 3}) == {0, 1}
+    assert Solution.two_or_three_count(%{"b" => 0, "d" => 0}) == {0, 0}
+    assert Solution.two_or_three_count(%{}) == {0, 0}
   end
 
+  @tag :current
   test "Checksum 1" do
-    data = [
-      %{two: 1, three: 1},
-      %{two: 0, three: 0},
-      %{two: 0, three: 1},
-      %{two: 1, three: 1}
-    ]
+    data = [{1, 1}, {0, 0}, {0, 1}, {1, 1}]
 
     assert Solution.checksum(data) == 6
-    assert Solution.checksum([%{two: 0, three: 0}]) == 0
+    assert Solution.checksum([{0, 0}]) == 0
   end
 
   test "Remove at" do
