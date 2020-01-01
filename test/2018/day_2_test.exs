@@ -4,10 +4,10 @@ defmodule AdventOfCode.Y2018.Day2Test do
 
   alias AdventOfCode.Y2018.Day2, as: Solution
 
-  test "Word Count" do
-    assert Solution.word_count("aabcacacdd") == %{"a" => 4, "b" => 1, "c" => 3, "d" => 2}
-    assert Solution.word_count("") == %{}
-    assert Solution.word_count("123") == %{"1" => 1, "2" => 1, "3" => 1}
+  test "Letter Count" do
+    assert Solution.letter_count("aabcacacdd") == %{"a" => 4, "b" => 1, "c" => 3, "d" => 2}
+    assert Solution.letter_count("") == %{}
+    assert Solution.letter_count("123") == %{"1" => 1, "2" => 1, "3" => 1}
   end
 
   test "Two or Threes" do
@@ -26,8 +26,18 @@ defmodule AdventOfCode.Y2018.Day2Test do
       %{two: 1, three: 1}
     ]
 
-    assert Solution.checksum_1(data) == 6
-    assert Solution.checksum_1([%{two: 0, three: 0}]) == 0
+    assert Solution.checksum(data) == 6
+    assert Solution.checksum([%{two: 0, three: 0}]) == 0
+  end
+
+  test "Remove at" do
+    assert Solution.remove_at("abc", 0) == "?bc"
+    assert Solution.remove_at("abc", 1) == "a?c"
+    assert Solution.remove_at("abc", 2) == "ab?"
+  end
+
+  test "Remove one char" do
+    assert Solution.words_without_a_char("abc") == ["?bc", "a?c", "ab?"]
   end
 
   test "Year 2018, Day 2, Part 1" do

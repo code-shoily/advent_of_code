@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2018.Day2 do
     |> String.split("\n", trim: true)
   end
 
-  def word_count(word) do
+  def letter_count(word) do
     word
     |> String.graphemes()
     |> Enum.group_by(& &1)
@@ -26,7 +26,7 @@ defmodule AdventOfCode.Y2018.Day2 do
     end)
   end
 
-  def checksum_1(two_or_threes) do
+  def checksum(two_or_threes) do
     two_or_threes
     |> Enum.reduce(%{two: 0, three: 0}, fn %{two: two, three: three}, acc ->
       acc
@@ -38,12 +38,37 @@ defmodule AdventOfCode.Y2018.Day2 do
 
   def run_1 do
     process()
-    |> Enum.map(&word_count/1)
+    |> Enum.map(&letter_count/1)
     |> Enum.map(&two_or_three_count/1)
-    |> checksum_1()
+    |> checksum()
   end
 
-  def run_2, do: process()
+  def remove_at(str, idx) do
+    str
+    |> String.split_at(idx)
+    |> (fn {x, <<_>> <> xs} -> x <> "?" <> xs end).()
+  end
+
+  def words_without_a_char(s) do
+    0..(String.length(s) - 1)
+    |> Enum.map(&remove_at(s, &1))
+  end
+
+  def run_2 do
+    process()
+    |> Enum.flat_map(&words_without_a_char/1)
+    |> Enum.reduce(%{}, fn x, acc ->
+      Map.update(acc, x, 1, &(&1 + 1))
+    end)
+    |> Enum.to_list()
+    |> Enum.map(fn
+      {word, 2} -> word
+      _ -> false
+    end)
+    |> Enum.reject(&(&1 == false))
+    |> hd()
+    |> String.replace("?", "")
+  end
 
   def run, do: {run_1(), run_2()}
 end
