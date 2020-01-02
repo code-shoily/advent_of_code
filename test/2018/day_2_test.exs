@@ -18,7 +18,6 @@ defmodule AdventOfCode.Y2018.Day2Test do
     assert Solution.two_or_three_count(%{}) == {0, 0}
   end
 
-  @tag :current
   test "Checksum 1" do
     data = [{1, 1}, {0, 0}, {0, 1}, {1, 1}]
 
