@@ -4,16 +4,47 @@ defmodule AdventOfCode.Y2017.Day1 do
   """
   use AdventOfCode.Data.InputReader, year: 2017, day: 1
 
-  def process do
-    input!()
+  def process(input) do
+    input
+    |> String.graphemes()
+    |> Enum.map(&String.to_integer/1)
+  end
+
+  defp matches_with_next([h | _] = lst) do
+    lst
+    |> Enum.chunk_every(2, 1, [h])
+    |> Enum.map(fn pair ->
+      case pair do
+        [a, a] -> a
+        _ -> 0
+      end
+    end)
   end
 
   def run_1 do
-    {:not_implemented, 1}
+    input!()
+    |> process()
+    |> matches_with_next()
+    |> Enum.sum()
+  end
+
+  defp matching_pair_sum({a, b}) do
+    a
+    |> Enum.zip(b)
+    |> Enum.map(fn
+      {a, a} -> a + a
+      _ -> 0
+    end)
+    |> Enum.sum()
   end
 
   def run_2 do
-    {:not_implemented, 2}
+    with data <- process(input!()),
+         half <- data |> length() |> div(2) do
+      data
+      |> Enum.split(half)
+      |> matching_pair_sum()
+    end
   end
 
   def run, do: {run_1(), run_2()}
