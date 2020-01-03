@@ -4,8 +4,8 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
   """
   use AdventOfCode.Data.InputReader, year: <%= year %>, day: <%= day %>
 
-  def process do
-    input!()
+  def process(input) do
+    input
   end
 
   def run_1 do
