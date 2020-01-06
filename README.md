@@ -1,21 +1,7 @@
 # AdventOfCode
 
-**TODO: Add description**
+Advent of Code puzzle solutions in Elixir. It's work in progress and starting year 2015 to 2019, random days are attempted.
 
-## Installation
+All solution modules reside in `lib/<year>/day_<day>.ex` and associated tests have the same structure in `test/` folder. Input files are in `lib/data/inputs/<year>_<day>.txt`.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent_of_code` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:advent_of_code, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/advent_of_code](https://hexdocs.pm/advent_of_code).
-
+To make the experience boilerplate free and give all solutions uniform (more or less) structure, type `mix solve --year <year> --day <day>` to have the structure and stub generated. For example, `mix solve --year 2015 --day 2` will generate `lib/2015/day_2.ex`, `lib/data/inputs/2015_2.txt`, and `test/2015/day_2_test.exs` and contain the common structure (i.e. module name, file reader function, test cases etc).
