@@ -22,13 +22,13 @@ defmodule Mix.Tasks.Solve do
   @impl Mix.Task
   def run(args) do
     case InputParser.parse(args) do
-      nil ->
-        Mix.shell().error("[Usage] #{@usage}")
-
-      result ->
-        result
+      {year, day} ->
+        {to_string(year), to_string(day)}
         |> FileWriter.write()
         |> Mix.shell().info()
+
+      _ ->
+        Mix.shell().error("[Usage] #{@usage}")
     end
   end
 end
