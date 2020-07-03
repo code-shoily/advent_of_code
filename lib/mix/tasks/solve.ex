@@ -1,4 +1,6 @@
 defmodule Mix.Tasks.Solve do
+  @moduledoc false
+
   def run(args) do
     case AdventOfCode.Helpers.InputParser.parse(args) do
       nil ->

@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2019.IntCode do
+  @moduledoc false
+
   use GenServer
 
   @store "00003"

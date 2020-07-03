@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Helpers.FileWriter do
+  @moduledoc false
+
   @type file_type :: :code | :data | :test
 
   @spec write(tuple) :: String.t()

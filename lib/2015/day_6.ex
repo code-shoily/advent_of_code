@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2015.Day6 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2015/day/6
   """
-  # TODO: Faster implementation of this.
+  # ! Faster implementation of this.
   use AdventOfCode.Data.InputReader, year: 2015, day: 6
 
   def make_grid(dim) do

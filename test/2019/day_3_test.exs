@@ -9,6 +9,6 @@ defmodule AdventOfCode.Y2019.Day3Test do
   end
 
   test "Year 2019, Day 3, Part 2" do
-    assert Solution.run_2() == 91518
+    assert Solution.run_2() == 91_518
   end
 end
