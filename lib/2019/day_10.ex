@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2019.Day10 do
 
   @asteroid "#"
 
-  def process() do
+  def process do
     input!()
     |> String.split("\n")
     |> Enum.with_index()

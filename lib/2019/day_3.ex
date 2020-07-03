@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2019.Day3 do
 
   @origin {0, 0}
 
-  def process() do
+  def process do
     input!()
     |> String.split("\n")
     |> Enum.map(fn line ->

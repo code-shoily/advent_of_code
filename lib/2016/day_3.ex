@@ -23,7 +23,7 @@ defmodule AdventOfCode.Y2016.Day3 do
     |> length
   end
 
-  def transpose_group() do
+  def transpose_group do
     input!()
     |> String.split("\n")
     |> Enum.flat_map(fn d -> String.split(d, ~r{\s}, trim: true) end)

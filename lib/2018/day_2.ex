@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2018.Day2 do
 
   use AdventOfCode.Data.InputReader, year: 2018, day: 2
 
-  def process(), do: String.split(input!(), "\n")
+  def process, do: String.split(input!(), "\n")
 
   def letter_count(word) do
     word

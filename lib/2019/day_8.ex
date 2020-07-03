@@ -25,7 +25,7 @@ defmodule AdventOfCode.Y2019.Day8 do
 
   def run, do: {run_1(), run_2()}
 
-  def process() do
+  def process do
     input!()
     |> String.codepoints()
     |> Enum.map(&String.to_integer/1)

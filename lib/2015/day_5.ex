@@ -18,7 +18,7 @@ defmodule AdventOfCode.Y2015.Day5 do
 
   def run, do: {run_1(), run_2()}
 
-  defp process(), do: String.split(input!(), "\n")
+  defp process, do: String.split(input!(), "\n")
 
   defp vowel?(s), do: s in ~w/a e i o u/
 

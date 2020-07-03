@@ -18,7 +18,7 @@ defmodule AdventOfCode.Y2019.Day6 do
     |> count_orbital_transfers()
   end
 
-  def process() do
+  def process do
     input!() |> String.split("\n") |> Enum.map(&String.split(&1, ")"))
   end
 

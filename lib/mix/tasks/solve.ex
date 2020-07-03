@@ -1,14 +1,16 @@
 defmodule Mix.Tasks.Solve do
   @moduledoc false
 
+  alias AdventOfCode.Helpers.{FileWriter, InputParser}
+
   def run(args) do
-    case AdventOfCode.Helpers.InputParser.parse(args) do
+    case InputParser.parse(args) do
       nil ->
         IO.puts("ERROR!")
 
       result ->
         result
-        |> AdventOfCode.Helpers.FileWriter.write()
+        |> FileWriter.write()
         |> IO.puts()
     end
   end
