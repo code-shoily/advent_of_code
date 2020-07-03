@@ -8,8 +8,6 @@ defmodule AdventOfCode.Y2016.Day4 do
     input
     |> String.split("\n", trim: true)
     |> Enum.map(&parse_encrypted_name/1)
-    |> Enum.filter(&real_room?/1)
-    |> Enum.reduce(0, fn %{sector: sector}, acc -> sector + acc end)
   end
 
   def parse_encrypted_name(name) do
@@ -47,13 +45,39 @@ defmodule AdventOfCode.Y2016.Day4 do
     |> Enum.join()
   end
 
+  def rotate('-', _), do: " "
+
+  def rotate(char, by) do
+    ?a..?z
+    |> Stream.cycle()
+    |> Stream.take(by + rem(hd(char), 97) + 1)
+    |> Enum.reverse()
+    |> hd()
+    |> List.wrap()
+    |> to_string()
+  end
+
   def run_1 do
     input!()
     |> process()
+    |> Enum.filter(&real_room?/1)
+    |> Enum.reduce(0, fn %{sector: sector}, acc -> sector + acc end)
   end
 
+  @key "northpole object storage"
   def run_2 do
-    {:not_implemented, 2}
+    input!()
+    |> process()
+    |> Enum.map(fn %{names: names, sector: sector} ->
+      names
+      |> Enum.join("-")
+      |> String.to_charlist()
+      |> Enum.map(&rotate([&1], sector))
+      |> Enum.join()
+      |> (fn name -> {name, sector} end).()
+    end)
+    |> Enum.into(%{})
+    |> Map.get(@key)
   end
 
   def run, do: {run_1(), run_2()}
