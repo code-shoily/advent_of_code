@@ -5,7 +5,7 @@ defmodule AdventOfCode.MixProject do
     [
       app: :advent_of_code,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -21,10 +21,8 @@ defmodule AdventOfCode.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.4.0", only: [:dev, :test], runtime: false},
-      {:jason, "~> 1.2.1"}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:jason, "~> 1.2"}
     ]
   end
 end
