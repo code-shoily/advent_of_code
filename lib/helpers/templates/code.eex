@@ -2,10 +2,12 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
   @moduledoc """
   Problem Link: https://adventofcode.com/<%= year %>/day/<%= day %>
   """
+
   use AdventOfCode.Data.InputReader, year: <%= year %>, day: <%= day %>
 
   def process(input) do
     input
+    |> String.split("\n", trim: true)
   end
 
   def run_1 do

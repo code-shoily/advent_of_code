@@ -1,14 +1,17 @@
 defmodule AdventOfCode.Y<%= year %>.Day<%= day %>Test do
   @moduledoc false
+
   use ExUnit.Case
-  @moduletag :y<%= year %><%= day %>
+  @moduletag :y<%= year |> String.split_at(2) |> elem(1) %><%= day %>
 
-  alias AdventOfCode.Y<%= year |> String.split_at(2) |> elem(1) %>.Day<%= day %>, as: Solution
+  alias AdventOfCode.Y<%= year  %>.Day<%= day %>, as: Solution
 
+  @tag :p1
   test "Year <%= year %>, Day <%= day %>, Part 1" do
     assert Solution.run_1() == nil
   end
 
+  @tag :p2
   test "Year <%= year %>, Day <%= day %>, Part 2" do
     assert Solution.run_2() == nil
   end
