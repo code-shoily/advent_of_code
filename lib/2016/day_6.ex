@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2016.Day6 do
   use AdventOfCode.Data.InputReader, year: 2016, day: 6
 
   def process(input) do
-    len = String.split(input, "\n", trim: true) |> Enum.at(0) |> String.length()
+    len = String.split(input, "\n", trim: true) |> hd() |> String.length()
 
     input
     |> String.replace("\n", "")
@@ -18,35 +18,22 @@ defmodule AdventOfCode.Y2016.Day6 do
   end
 
   def run_1 do
-    input!()
-    |> process()
-    |> Enum.map(&most_frequent_character/1)
-    |> Enum.join()
+    input!() |> process() |> Enum.map_join(&frequency(&1, :max))
   end
 
-  defp most_frequent_character(word) do
+  defp frequency(word, by) do
     word
     |> String.codepoints()
     |> Enum.group_by(& &1)
     |> Map.values()
-    |> Enum.max_by(&length/1)
-    |> hd()
+    |> Enum.min_max_by(&length/1)
+    |> (fn {min, max} -> hd((by == :max && max) || min) end).()
   end
 
   def run_2 do
     input!()
     |> process()
-    |> Enum.map(&least_frequent_character/1)
-    |> Enum.join()
-  end
-
-  defp least_frequent_character(word) do
-    word
-    |> String.codepoints()
-    |> Enum.group_by(& &1)
-    |> Map.values()
-    |> Enum.min_by(&length/1)
-    |> hd()
+    |> Enum.map_join(&frequency(&1, :min))
   end
 
   def run, do: {run_1(), run_2()}
