@@ -13,6 +13,6 @@ defmodule AdventOfCode.Y2016.Day7Test do
 
   @tag :p2
   test "Year 2016, Day 7, Part 2" do
-    assert Solution.run_2() == nil
+    assert Solution.run_2() == 258
   end
 end

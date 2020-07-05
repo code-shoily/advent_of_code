@@ -6,15 +6,22 @@ defmodule AdventOfCode.Y2016.Day7 do
   use AdventOfCode.Data.InputReader, year: 2016, day: 7
 
   def process(input) do
-    String.split(input, "\n", trim: true)
+    String.split(input, "\n", trim: true) |> Enum.map(&parse_line/1)
+  end
+
+  def run_1 do
+    input!()
+    |> process()
+    |> Enum.filter(&supports_tls?/1)
+    |> Enum.count()
   end
 
   @pattern ~r/\[(.*?)\]/
   defp parse_line(line) do
-    hypernets = @pattern |> Regex.scan(line) |> Enum.map(&Enum.at(&1, 1))
-    sequences = String.split(line, @pattern)
-
-    {hypernets, sequences}
+    %{
+      hypernets: @pattern |> Regex.scan(line) |> Enum.map(&Enum.at(&1, 1)),
+      sequences: String.split(line, @pattern)
+    }
   end
 
   defp abba?([a, b, b, a]), do: a != b
@@ -36,21 +43,39 @@ defmodule AdventOfCode.Y2016.Day7 do
     end)
   end
 
-  defp supports_tls?({hypernets, sequences}) do
+  defp supports_tls?(%{hypernets: hypernets, sequences: sequences}) do
     not contains_abba?(hypernets) and contains_abba?(sequences)
   end
 
-  def run_1 do
+  def run_2 do
     input!()
     |> process()
-    |> Enum.map(&parse_line/1)
-    |> Enum.filter(&supports_tls?/1)
+    |> Enum.filter(&supports_ssl?/1)
     |> Enum.count()
   end
 
-  def run_2 do
-    {:not_implemented, 2}
+  defp supports_ssl?(%{hypernets: hypernets, sequences: sequences}) do
+    with abas <- Enum.flat_map(sequences, &get_abas/1),
+         true <- not Enum.empty?(abas),
+         valid_babs <- Enum.map(abas, &bab_for/1),
+         babs <- Enum.flat_map(hypernets, &get_abas/1),
+         overlaps <- MapSet.intersection(MapSet.new(valid_babs), MapSet.new(babs)) do
+      MapSet.size(overlaps) > 0
+    end
   end
+
+  defp get_abas(sequence) do
+    sequence
+    |> String.codepoints()
+    |> Enum.chunk_every(3, 1, :discard)
+    |> Enum.filter(&aba?/1)
+  end
+
+  defp aba?([a, b, a]), do: a != b
+  defp aba?(_), do: false
+
+  defp bab_for([a, b, a]), do: [b, a, b]
+  defp bab_for(_), do: :error
 
   def run, do: {run_1(), run_2()}
 end
