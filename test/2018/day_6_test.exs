@@ -38,52 +38,23 @@ defmodule AdventOfCode.Y2018.Day6Test do
 
   describe "get_corners/1" do
     test "Computes the extreme corners of a set of points" do
-      assert Solution.get_corners(@points) == {{1, 1}, {8, 9}}
+      assert Solution.get_corners(@points) == {{1, 8}, {1, 9}}
     end
   end
 
-  describe "create_world/1" do
-    test "Valid world is generated" do
-      corners = Solution.get_corners(@points)
-      world = Solution.create_world(corners)
-      keys = Map.keys(world)
-
-      assert length(keys) == 72
-
-      assert keys |> Enum.map(&elem(&1, 0)) |> Enum.uniq() |> Enum.sort() ==
-               Enum.into(1..8, [])
-
-      assert keys |> Enum.map(&elem(&1, 1)) |> Enum.uniq() |> Enum.sort() ==
-               Enum.into(1..9, [])
-
-      assert world |> Map.values() |> Enum.sum() == 0
-    end
+  describe "covers_most_points/3" do
+    assert Solution.covers_most_points(@points) == 17
   end
 
-  describe "remove_edges/1" do
-    test "edges are removed from the points" do
-      corners = Solution.get_corners(@points)
-      assert Solution.remove_edges(@points, corners) == [{3, 4}, {5, 5}]
-    end
+  describe "covers_distances_within/3" do
+    assert Solution.covers_distances_within(@points, 32) == 16
   end
 
-  describe "nearest_area/1" do
-    test "Finds the nearest area" do
-      areas = %{7 => 10, 1 => 11, 2 => 15}
-      assert Solution.get_nearest_area(areas) == 7
-    end
-
-    test "Returns 0 for tied nearest area" do
-      areas = %{0 => 10, 1 => 10, 2 => 15}
-      assert Solution.get_nearest_area(areas) == 0
-    end
+  test "Year 2018, Day 6, Part 1" do
+    assert Solution.run_1() == 4284
   end
 
-  # test "Year 2018, Day 6, Part 1" do
-  #   assert Solution.run_1() == nil
-  # end
-
-  # test "Year 2018, Day 6, Part 2" do
-  #   assert Solution.run_2() == nil
-  # end
+  test "Year 2018, Day 6, Part 2" do
+    assert Solution.run_2() == 35_490
+  end
 end

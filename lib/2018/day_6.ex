@@ -5,94 +5,105 @@ defmodule AdventOfCode.Y2018.Day6 do
   use AdventOfCode.Data.InputReader, year: 2018, day: 6
 
   @type point :: {integer(), integer()}
-  @type corners :: {point, point}
+  @type points :: list(point())
+  @type corners :: {point(), point()}
+  @type world :: list({point(), list({point(), integer()})})
 
-  def process(data \\ input!()) do
+  @spec process(binary()) :: points()
+  def process(data) do
     data
-    |> String.split("\n")
-    |> Enum.map(
-      &(&1
-        |> String.split(",")
-        |> Enum.map(fn n -> n |> String.trim() |> String.to_integer() end)
-        |> List.to_tuple())
-    )
+    |> String.split("\n", trim: true)
+    |> Enum.map(fn line ->
+      line
+      |> String.split(",")
+      |> Enum.map(&String.to_integer(String.trim(&1)))
+      |> List.to_tuple()
+    end)
   end
 
+  def run, do: {run_1(), run_2()}
+
+  def run_1 do
+    input!()
+    |> process()
+    |> covers_most_points()
+  end
+
+  def run_2 do
+    input!()
+    |> process()
+    |> covers_distances_within(10_000)
+  end
+
+  @spec manhattan_distance(point, point) :: integer()
   def manhattan_distance({x1, y1}, {x2, y2}), do: abs(x2 - x1) + abs(y2 - y1)
 
   @spec get_corners([point]) :: corners
   def get_corners(points) do
-    {{xmin, _}, {xmax, _}} = Enum.min_max_by(points, &elem(&1, 0))
-    {{_, ymin}, {_, ymax}} = Enum.min_max_by(points, &elem(&1, 1))
-
-    {{xmin, ymin}, {xmax, ymax}}
+    points
+    |> Enum.unzip()
+    |> Tuple.to_list()
+    |> Enum.map(&Enum.min_max/1)
+    |> List.to_tuple()
   end
 
-  @spec create_world(corners) :: %{required(point) => integer()}
-  def create_world({{xl, yt}, {xr, yb}}) do
-    for x <- xl..xr, y <- yt..yb, into: %{} do
-      {{x, y}, 0}
+  @spec create_world(points()) :: world()
+  defp create_world(points) do
+    {{xl, xr}, {yt, yb}} = get_corners(points)
+
+    for x <- xr..xl, y <- yt..yb do
+      {{x, y},
+       points
+       |> Enum.map(fn {xi, yi} ->
+         {{xi, yi}, manhattan_distance({xi, yi}, {x, y})}
+       end)}
     end
   end
 
-  def remove_edges(points, {{xl, yt}, {xr, yb}}) do
-    extremes = MapSet.new([xl, xr, yt, yb])
-
-    points
-    |> Enum.reject(fn {x, y} ->
-      x in extremes or y in extremes
-    end)
-  end
-
-  defp label_points(points) do
-    points
-    |> Enum.with_index(1)
-    |> Enum.into(%{})
-  end
-
-  defp create_cache(labeled_points) do
-    labeled_points
-    |> Map.values()
-    |> Enum.map(&{&1, 0})
-    |> Enum.into(%{})
-  end
-
-  defp initialize_universe() do
-    points = process()
-    corners = get_corners(points)
-    world = create_world(corners)
-
-    finite_points = remove_edges(points, corners)
-    labels = label_points(finite_points)
-    cache = create_cache(labels)
-
-    %{
-      points: finite_points,
-      world: world,
-      labels: labels,
-      cache: cache
-    }
-  end
-
-  def get_nearest_area(areas) do
-    areas
-    |> Enum.sort_by(fn {_, distance} -> distance end)
+  @spec nearest_point(list({point(), integer()})) :: nil | point()
+  defp nearest_point(distances) do
+    distances
+    |> Enum.sort_by(&elem(&1, 1))
     |> Enum.take(2)
     |> (fn
-          [{_, d}, {_, d}] -> 0
+          [{_, d}, {_, d}] -> nil
           [{p, _} | _] -> p
         end).()
   end
 
-  def run_1 do
-    %{points: _, world: _, labels: _, cache: cache} = initialize_universe()
-
-    Enum.max_by(cache, fn {_, v} -> v end)
+  defp edges(world, {{xl, xr}, {yt, yb}}) do
+    for {{x, y}, p} <- world,
+        x == xl or y == yt or x == xr or y == yb or is_nil(p),
+        into: %MapSet{},
+        do: p
   end
 
-  def run_2 do
-    {:not_implemented, 2}
+  @spec covers_most_points(points()) :: integer()
+  def covers_most_points(points) do
+    world = Enum.map(create_world(points), fn {p, ds} -> {p, nearest_point(ds)} end)
+    rejects = edges(world, get_corners(points))
+
+    world
+    |> Enum.group_by(&elem(&1, 1))
+    |> Enum.reduce(-1, fn {p, ds}, largest ->
+      (p not in rejects && max(length(ds), largest)) || largest
+    end)
   end
 
-  def run, do: {run_1(), run_2()}
+  @spec covers_distances_within(points(), integer()) :: integer()
+  def covers_distances_within(points, threshold) do
+    Enum.reduce(create_world(points), 0, fn {_, d}, acc ->
+      within_distance_threshold(d, threshold) + acc
+    end)
+  end
+
+  defp within_distance_threshold(distances, threshold) do
+    distances
+    |> Enum.map(&elem(&1, 1))
+    |> Enum.sum()
+    |> case do
+      n when n < threshold -> 1
+      _ -> 0
+    end
+  end
 end
