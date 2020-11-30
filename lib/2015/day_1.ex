@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2015.Day1 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2015/day/1
   """
-  use AdventOfCode.Data.InputReader, year: 2015, day: 1
+  use AdventOfCode.Helpers.InputReader, year: 2015, day: 1
 
   @spec run_1() :: non_neg_integer
   def run_1, do: input!() |> floor(0)

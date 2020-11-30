@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2016.Day3 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2016/day/3
   """
-  use AdventOfCode.Data.InputReader, year: 2016, day: 3
+  use AdventOfCode.Helpers.InputReader, year: 2016, day: 3
 
   def triangle?([a, b, c]) do
     a + b > c and b + c > a and c + a > b

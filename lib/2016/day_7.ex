@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day7 do
   Problem Link: https://adventofcode.com/2016/day/7
   """
 
-  use AdventOfCode.Data.InputReader, year: 2016, day: 7
+  use AdventOfCode.Helpers.InputReader, year: 2016, day: 7
 
   def process(input) do
     String.split(input, "\n", trim: true) |> Enum.map(&parse_line/1)

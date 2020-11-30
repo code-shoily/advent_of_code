@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2019.Day8 do
   @moduledoc """
   Problem description: https://adventofcode.com/2019/day/8
   """
-  use AdventOfCode.Data.InputReader, year: 2019, day: 8
+  use AdventOfCode.Helpers.InputReader, year: 2019, day: 8
 
   @width 25
   @height 6

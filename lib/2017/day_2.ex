@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2017.Day2 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2017/day/2
   """
-  use AdventOfCode.Data.InputReader, year: 2017, day: 2
+  use AdventOfCode.Helpers.InputReader, year: 2017, day: 2
 
   def process(input) do
     input

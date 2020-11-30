@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2016.Day6 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2016/day/6
   """
-  use AdventOfCode.Data.InputReader, year: 2016, day: 6
+  use AdventOfCode.Helpers.InputReader, year: 2016, day: 6
 
   def process(input) do
     len = String.split(input, "\n", trim: true) |> hd() |> String.length()

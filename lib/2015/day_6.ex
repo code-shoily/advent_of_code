@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day6 do
   Problem Link: https://adventofcode.com/2015/day/6
   """
   # ! Faster implementation of this.
-  use AdventOfCode.Data.InputReader, year: 2015, day: 6
+  use AdventOfCode.Helpers.InputReader, year: 2015, day: 6
 
   def make_grid(dim) do
     0..(dim - 1)

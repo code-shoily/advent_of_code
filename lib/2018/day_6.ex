@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2018.Day6 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2018/day/6
   """
-  use AdventOfCode.Data.InputReader, year: 2018, day: 6
+  use AdventOfCode.Helpers.InputReader, year: 2018, day: 6
 
   @type point :: {integer(), integer()}
   @type points :: list(point())

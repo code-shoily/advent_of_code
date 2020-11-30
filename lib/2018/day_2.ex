@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day2 do
   Problem Link: https://adventofcode.com/2018/day/2
   """
 
-  use AdventOfCode.Data.InputReader, year: 2018, day: 2
+  use AdventOfCode.Helpers.InputReader, year: 2018, day: 2
 
   def process, do: String.split(input!(), "\n")
 

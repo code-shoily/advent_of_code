@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2018.Day1 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2018/day/1
   """
-  use AdventOfCode.Data.InputReader, year: 2018, day: 1
+  use AdventOfCode.Helpers.InputReader, year: 2018, day: 1
 
   @spec to_number_list(String.t()) :: [String.t()]
   def to_number_list(raw_input) do

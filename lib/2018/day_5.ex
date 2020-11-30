@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2018.Day5 do
   Thanks to `BenAlbin/Adent-Of-Code-2018` for the fastest solution, and helping me
   learn interesting way of solving the problem.
   """
-  use AdventOfCode.Data.InputReader, year: 2018, day: 5
+  use AdventOfCode.Helpers.InputReader, year: 2018, day: 5
 
   def process(input), do: String.to_charlist(input)
 

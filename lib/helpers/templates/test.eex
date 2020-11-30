@@ -6,12 +6,10 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= day %>Test do
 
   alias AdventOfCode.Y<%= year  %>.Day<%= day %>, as: Solution
 
-  @tag :p1
   test "Year <%= year %>, Day <%= day %>, Part 1" do
     assert Solution.run_1() == nil
   end
 
-  @tag :p2
   test "Year <%= year %>, Day <%= day %>, Part 2" do
     assert Solution.run_2() == nil
   end
