@@ -1,6 +1,8 @@
 defmodule AdventOfCode.Helpers.FileWriter do
   @moduledoc false
 
+  @input_dir Path.join(:code.priv_dir(:advent_of_code), "input_files")
+
   @type file_type :: :code | :data | :test
 
   @spec write(tuple) :: String.t()
@@ -16,7 +18,7 @@ defmodule AdventOfCode.Helpers.FileWriter do
   end
 
   @spec path_for({any, any}, file_type) :: Path.t()
-  defp path_for({year, day}, :data), do: "lib/data/inputs/#{year}_#{day}.txt"
+  defp path_for({year, day}, :data), do: Path.join(@input_dir, "#{year}_#{day}.txt")
   defp path_for({year, day}, :code), do: "lib/#{year}/day_#{day}.ex"
   defp path_for({year, day}, :test), do: "test/#{year}/day_#{day}_test.exs"
 
