@@ -37,9 +37,24 @@ defmodule AdventOfCode.Y2020.Day3 do
   end
 
   defp traverse(xy, slope \\ @default_slope), do: traverse(xy, 0, 0, 0, slope)
-  defp traverse({_, _, col_size}, row, _, result, _) when row > col_size, do: result
 
-  defp traverse({xy, row_size, _} = world, row, col, result, {right, down} = slope) do
+  defp traverse(
+         {_, _, col_size},
+         row,
+         _,
+         result,
+         _
+       )
+       when row > col_size,
+       do: result
+
+  defp traverse(
+         {xy, row_size, _} = world,
+         row,
+         col,
+         result,
+         {right, down} = slope
+       ) do
     traverse(
       world,
       row + down,
