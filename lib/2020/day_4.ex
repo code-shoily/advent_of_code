@@ -5,10 +5,10 @@ defmodule AdventOfCode.Y2020.Day4 do
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 4
 
   def run_1,
-    do: input!() |> process() |> Enum.filter(&ok?(&1, :fields)) |> length()
+    do: input!() |> process() |> Enum.filter(&ok?(:fields, &1)) |> length()
 
   def run_2,
-    do: input!() |> process() |> Enum.filter(&ok?(&1, :values)) |> length()
+    do: input!() |> process() |> Enum.filter(&ok?(:values, &1)) |> length()
 
   def run, do: {run_1(), run_2()}
 
@@ -29,7 +29,7 @@ defmodule AdventOfCode.Y2020.Day4 do
   end
 
   @required_fields ~w/byr cid ecl eyr hcl hgt iyr pid/
-  defp ok?(passport, :fields) do
+  defp ok?(:fields, passport) do
     fields = MapSet.new(Map.keys(passport))
     required = MapSet.new(@required_fields)
     missing = MapSet.to_list(MapSet.difference(required, fields))
@@ -41,7 +41,7 @@ defmodule AdventOfCode.Y2020.Day4 do
     end
   end
 
-  defp ok?(passport, :values) do
+  defp ok?(:values, passport) do
     @required_fields
     |> Enum.map(&ok?(&1, passport))
     |> Enum.all?()
