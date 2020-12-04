@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Transformers do
-  @doc """
+  @moduledoc """
   Converts a list of list into a map of map.
 
   ## Example
