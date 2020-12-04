@@ -4,18 +4,15 @@ defmodule AdventOfCode.Y2020.Day4 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 4
 
-  def run_1, do: input!() |> process() |> Enum.filter(&key_ok?/1) |> length()
+  def run_1,
+    do: input!() |> process() |> Enum.filter(&ok?(&1, :fields)) |> length()
 
   def run_2,
-    do:
-      input!()
-      |> process()
-      |> Enum.filter(&(key_ok?(&1) && value_ok?(&1)))
-      |> length()
+    do: input!() |> process() |> Enum.filter(&ok?(&1, :values)) |> length()
 
   def run, do: {run_1(), run_2()}
 
-  def process(input \\ input!()) do
+  def process(input) do
     input
     |> String.split("\n")
     |> Enum.chunk_by(&(&1 == ""))
@@ -27,57 +24,63 @@ defmodule AdventOfCode.Y2020.Day4 do
     list
     |> Enum.join(" ")
     |> String.split(" ")
-    |> Enum.map(&(String.split(&1, ":") |> List.to_tuple()))
+    |> Enum.map(&List.to_tuple(String.split(&1, ":")))
     |> Enum.into(%{})
   end
 
-  @fields ~w/byr cid ecl eyr hcl hgt iyr pid/
-  def key_ok?(data) do
-    keyset = data |> Map.keys() |> Enum.into(%MapSet{})
-    fieldset = @fields |> Enum.into(%MapSet{})
-    keys = MapSet.difference(fieldset, keyset) |> Enum.into([])
+  @required_fields ~w/byr cid ecl eyr hcl hgt iyr pid/
+  defp ok?(passport, :fields) do
+    fields = MapSet.new(Map.keys(passport))
+    required = MapSet.new(@required_fields)
+    missing = MapSet.to_list(MapSet.difference(required, fields))
 
-    case keys do
+    case missing do
       [] -> true
       ["cid"] -> true
       _ -> false
     end
   end
 
-  def value_ok?(%{
-        "byr" => byr,
-        "eyr" => eyr,
-        "iyr" => iyr,
-        "hgt" => hgt,
-        "hcl" => hcl,
-        "ecl" => ecl,
-        "pid" => pid
-      }) do
-    [
-      byr?(String.to_integer(byr)),
-      iyr?(String.to_integer(iyr)),
-      eyr?(String.to_integer(eyr)),
-      pid?(pid),
-      ecl?(ecl),
-      hcl?(String.graphemes(hcl)),
-      hgt?(hgt)
-    ]
+  defp ok?(passport, :values) do
+    @required_fields
+    |> Enum.map(&ok?(&1, passport))
     |> Enum.all?()
   end
 
-  defp byr?(byr), do: 1920 <= byr and byr <= 2002
-  defp eyr?(eyr), do: 2020 <= eyr and eyr <= 2030
-  defp iyr?(iyr), do: 2010 <= iyr and iyr <= 2020
-  defp pid?(pid), do: String.length(pid) == 9 && String.to_integer(pid)
-  defp ecl?(ecl), do: ecl in ~w/amb blu brn gry grn hzl oth/
-  defp hcl?(["#" | nums]), do: length(nums) == 6
-  defp hcl?(_), do: false
+  defp ok?("byr", %{"byr" => byr}) do
+    byr = String.to_integer(byr)
+    1920 <= byr and byr <= 2002
+  end
 
-  defp hgt?(hgt) do
+  defp ok?("eyr", %{"eyr" => eyr}) do
+    eyr = String.to_integer(eyr)
+    2020 <= eyr and eyr <= 2030
+  end
+
+  defp ok?("iyr", %{"iyr" => iyr}) do
+    iyr = String.to_integer(iyr)
+    2010 <= iyr and iyr <= 2020
+  end
+
+  defp ok?("pid", %{"pid" => pid}), do: String.length(pid) == 9 && String.to_integer(pid)
+  defp ok?("ecl", %{"ecl" => ecl}), do: ecl in ~w/amb blu brn gry grn hzl oth/
+
+  defp ok?("hcl", %{"hcl" => hcl}) do
+    case String.graphemes(hcl) do
+      ["#" | digits] -> length(digits) == 6
+      _ -> false
+    end
+  end
+
+  defp ok?("hgt", %{"hgt" => hgt}) do
     case Integer.parse(hgt) do
       {height, "cm"} when 150 <= height and height <= 193 -> true
       {height, "in"} when 59 <= height and height <= 76 -> true
       _ -> false
     end
   end
+
+  defp ok?("cid", _), do: true
+
+  defp ok?(_, _), do: false
 end
