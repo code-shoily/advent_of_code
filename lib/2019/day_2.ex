@@ -4,59 +4,48 @@ defmodule AdventOfCode.Y2019.Day2 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 2
 
-  @spec run_1 :: integer
+  alias AdventOfCode.Y2019.IntCode
+
+  @range 99..0
+
+  @spec run_1 :: integer()
   def run_1 do
-    state = process()
-    process_command(state, state)
+    {:ok, pid} = IntCode.start_link(fix1202(process()))
+    IntCode.run(pid)
+    IntCode.get_output(pid)
   end
 
-  def process(noun \\ 12, verb \\ 2) do
+  def process() do
     input!()
     |> String.trim()
     |> String.split(",")
     |> Enum.map(&String.to_integer/1)
-    |> last_state(noun, verb)
   end
 
-  defp last_state(state, noun, verb) do
-    state |> List.replace_at(1, noun) |> List.replace_at(2, verb)
+  defp fix1202(memory, one \\ 12, two \\ 2) do
+    memory
+    |> List.replace_at(1, one)
+    |> List.replace_at(2, two)
   end
 
-  defp process_command([99 | _], state), do: hd(state)
+  @spec run_2 :: integer | nil
+  def run_2 do
+    memory = process()
 
-  defp process_command([op, a, b, out | rest], state) do
-    process_command(rest, next({op, a, b, out}, state))
-  end
+    pairs = for i <- @range, j <- @range, do: {i, j}
 
-  defp next({op, a, b, out}, state) do
-    List.replace_at(
-      state,
-      out,
-      apply(
-        case op do
-          1 -> &Kernel.+/2
-          2 -> &Kernel.*/2
-        end,
-        [Enum.at(state, a), Enum.at(state, b)]
-      )
-    )
-  end
+    {:ok, pid} = IntCode.start_link(memory)
 
-  @spec run_2 :: integer
-  def run_2, do: test_run(input_pairs(), 0)
+    Enum.reduce_while(pairs, nil, fn {noun, verb}, _ ->
+      new_memory = fix1202(memory, noun, verb)
+      IntCode.reset(pid, new_memory)
+      IntCode.run(pid)
 
-  defp test_run(_, {noun, verb, 19_690_720}), do: noun * 100 + verb
-
-  defp test_run([{noun, verb} | rest], _) do
-    state = process(noun, verb)
-    test_run(rest, {noun, verb, process_command(state, state)})
-  end
-
-  defp input_pairs do
-    for noun <- 0..99,
-        verb <- 0..99 do
-      {noun, verb}
-    end
+      case IntCode.get_output(pid) do
+        19_690_720 -> {:halt, 100 * noun + verb}
+        _ -> {:cont, nil}
+      end
+    end)
   end
 
   def run, do: {run_1(), run_2()}
