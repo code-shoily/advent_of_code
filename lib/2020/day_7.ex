@@ -4,66 +4,35 @@ defmodule AdventOfCode.Y2020.Day7 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 7
 
-  @mybag "shiny gold"
-
-  def run_1, do: process() |> build_graph() |> sources()
-  def run_2, do: bags(process(), @mybag) - 1
+  def run_1, do: input!() |> process() |> graph() |> ancestor_count("shiny gold")
+  def run_2, do: (input!() |> process() |> descendant_count("shiny gold")) - 1
   def run, do: {run_1(), run_2()}
 
-  def process(input \\ input!()) do
-    input
-    |> String.split("\n")
-    |> Enum.map(&parse/1)
-    |> Enum.into(%{})
+  def process(input), do: for(i <- String.split(input, "\n"), into: %{}, do: parse(i))
+
+  def parse(rule) do
+    line = Regex.named_captures(~r/(?<src>.+) bags contain (?<bags>.+)\./, rule)
+
+    {line["src"],
+     Regex.split(~r/bags?,?/, line["bags"], trim: true)
+     |> Enum.map(fn s ->
+       match = Regex.named_captures(~r/(?<n>no|\d+) (?<bag>.+)/, String.trim(s))
+       {(match["n"] == "no" && 0) || String.to_integer(match["n"]), match["bag"]}
+     end)}
   end
 
-  defp parse(sentence) do
-    [container, contained] = String.split(sentence, " bags contain ")
-    {container, split_bags(contained)}
-  end
+  defp graph(v), do: Enum.reduce(v, :digraph.new(), &connect(&2, &1))
 
-  defp split_bags(bags) do
-    bags
-    |> String.split(",")
-    |> Enum.map(fn bag ->
-      bag
-      |> String.replace(".", "")
-      |> String.replace(~r/ bags?/, "")
-      |> String.trim_leading()
-      |> String.split(" ")
-      |> to_bag_count()
+  defp connect(g, {vi, connections}) do
+    Enum.reduce(connections, nil, fn {n, vf}, _ ->
+      :digraph.add_edge(g, :digraph.add_vertex(g, vi), :digraph.add_vertex(g, vf), n)
     end)
+
+    g
   end
 
-  defp to_bag_count([number | bag]) do
-    number = (number == "no" && "0") || number
-    {String.to_integer(number), Enum.join(bag, " ")}
-  end
+  defp ancestor_count(g, v), do: length(:digraph_utils.reaching([v], g)) - 1
 
-  defp build_graph(vertices) do
-    Enum.reduce(vertices, :digraph.new(), fn v, graph -> build_edges(graph, v) end)
-  end
-
-  defp build_edges(graph, {node, edges}) do
-    :digraph.add_vertex(graph, node)
-
-    Enum.reduce(edges, graph, fn {_, dst}, graph ->
-      :digraph.add_vertex(graph, dst)
-      :digraph.add_edge(graph, node, dst)
-      graph
-    end)
-  end
-
-  defp sources(graph) do
-    graph
-    |> :digraph.vertices()
-    |> Enum.filter(&:digraph.get_path(graph, &1, @mybag))
-    |> Enum.count()
-  end
-
-  def bags(map, key) do
-    Enum.reduce(Map.get(map, key, []), 1, fn {n, k}, acc ->
-      acc + n * bags(map, k)
-    end)
-  end
+  def descendant_count(g, v),
+    do: Enum.reduce(g[v] || [], 1, fn {n, v}, num -> num + n * descendant_count(g, v) end)
 end
