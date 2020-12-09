@@ -6,7 +6,6 @@ defmodule AdventOfCode.Y2020.Day8 do
 
   def run_1, do: input!() |> process() |> exec() |> elem(1)
   def run_2, do: input!() |> process() |> fix()
-  def run, do: {run_1(), run_2()}
 
   def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
 
@@ -16,15 +15,16 @@ defmodule AdventOfCode.Y2020.Day8 do
 
   defp exec(prog, cur, acc, hist) do
     case Enum.at(prog, cur) do
-      {:acc, val} -> exec(prog, cur + 1, acc + val, Map.put(hist, cur, true))
-      {:nop, _} -> exec(prog, cur + 1, acc, Map.put(hist, cur, true))
-      {:jmp, val} -> exec(prog, cur + val, acc, Map.put(hist, cur, true))
+      {:acc, val} -> exec(prog, cur + 1, acc + val, Map.put(hist, cur, 0))
+      {:nop, _} -> exec(prog, cur + 1, acc, Map.put(hist, cur, 0))
+      {:jmp, val} -> exec(prog, cur + val, acc, Map.put(hist, cur, 0))
     end
   end
 
   defp parse(cmd) do
-    [[_, cmd, val]] = Regex.scan(~r/(.+) ([+-]\d+)/, cmd)
-    {String.to_existing_atom(cmd), String.to_integer(val)}
+    ~r/(?<cmd>.+) (?<val>[+-]\d+)/
+    |> Regex.named_captures(cmd)
+    |> (&{String.to_existing_atom(&1["cmd"]), String.to_integer(&1["val"])}).()
   end
 
   defp swaps(prog) do
