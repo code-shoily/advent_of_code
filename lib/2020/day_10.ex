@@ -7,8 +7,6 @@ defmodule AdventOfCode.Y2020.Day10 do
   def run_1, do: input!() |> process() |> rates() |> multiply_1_3()
   def run_2, do: input!() |> process() |> count()
 
-  def run, do: {run_1(), run_2()}
-
   def process(input),
     do: [0 | Enum.map(String.split(input, "\n"), &String.to_integer/1)] |> Enum.sort(:desc)
 
