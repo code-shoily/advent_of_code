@@ -4,28 +4,26 @@ defmodule AdventOfCode.Y2020.Day12 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 12
 
-  def run_1, do: input!() |> process() |> move() |> distance()
+  def run_1, do: input!() |> process() |> go() |> distance()
+  def run_2, do: input!() |> process() |> waypoints() |> distance()
 
   def process(input), do: input |> String.split("\n") |> parse()
 
   defp parse([]), do: []
 
-  defp parse([<<dir::utf8>> <> val | rest]),
-    do: [{String.to_existing_atom(<<dir>>), String.to_integer(val)} | parse(rest)]
+  defp parse([<<dir::utf8>> <> val | xs]),
+    do: [{String.to_existing_atom(<<dir>>), String.to_integer(val)} | parse(xs)]
 
-  defp move(dirs), do: move(dirs, {0, 0}, :E)
+  defp go(dirs), do: go(dirs, {0, 0}, :E)
+  defp go([], pos, _), do: pos
+  defp go([{:N, val} | xs], {x, y}, f), do: go(xs, {x, y + val}, f)
+  defp go([{:S, val} | xs], {x, y}, f), do: go(xs, {x, y - val}, f)
+  defp go([{:E, val} | xs], {x, y}, f), do: go(xs, {x + val, y}, f)
+  defp go([{:W, val} | xs], {x, y}, f), do: go(xs, {x - val, y}, f)
+  defp go([{:F, val} | xs], {x, y}, f), do: go([{f, val} | xs], {x, y}, f)
 
-  defp move([], pos, _), do: pos
-  defp move([{:N, val} | rest], {x, y}, f), do: move(rest, {x, y + val}, f)
-  defp move([{:S, val} | rest], {x, y}, f), do: move(rest, {x, y - val}, f)
-  defp move([{:E, val} | rest], {x, y}, f), do: move(rest, {x + val, y}, f)
-  defp move([{:W, val} | rest], {x, y}, f), do: move(rest, {x - val, y}, f)
-
-  defp move([{:F, val} | rest], {x, y}, f),
-    do: move([{f, val} | rest], {x, y}, f)
-
-  defp move([{lr, val} | rest], {x, y}, f) when lr in [:L, :R],
-    do: move([{turn(f, lr, val), 0} | rest], {x, y}, turn(f, lr, val))
+  defp go([{lr, val} | xs], {x, y}, f),
+    do: go([{turn(f, lr, val), 0} | xs], {x, y}, turn(f, lr, val))
 
   defp turn(:N, :L, val), do: do_turn([:W, :S, :E], val)
   defp turn(:N, :R, val), do: do_turn([:E, :S, :W], val)
@@ -39,4 +37,19 @@ defmodule AdventOfCode.Y2020.Day12 do
   defp do_turn(directions, val), do: Enum.at(directions, div(val, 90) - 1)
 
   defp distance({x, y}), do: abs(x) + abs(y)
+
+  defp waypoints(data), do: waypoints(data, [{0, 0}, {10, 1}])
+  defp waypoints([], [ship, _]), do: ship
+  defp waypoints([rule | xs], positions), do: waypoints(xs, positions(rule, positions))
+
+  defp positions({:N, val}, [{x, y}, {wx, wy}]), do: [{x, y}, {wx, wy + val}]
+  defp positions({:S, val}, [{x, y}, {wx, wy}]), do: [{x, y}, {wx, wy - val}]
+  defp positions({:E, val}, [{x, y}, {wx, wy}]), do: [{x, y}, {wx + val, wy}]
+  defp positions({:W, val}, [{x, y}, {wx, wy}]), do: [{x, y}, {wx - val, wy}]
+  defp positions({:F, val}, [{x, y}, {wx, wy}]), do: [{x + wx * val, y + wy * val}, {wx, wy}]
+  defp positions({lr, val}, [{x, y}, {wx, wy}]), do: [{x, y}, turn_waypoint({wx, wy}, lr, val)]
+
+  defp turn_waypoint({wx, wy}, _, 0), do: {wx, wy}
+  defp turn_waypoint({wx, wy}, :L, val), do: turn_waypoint({-wy, wx}, :L, val - 90)
+  defp turn_waypoint({wx, wy}, :R, val), do: turn_waypoint({wy, -wx}, :R, val - 90)
 end
