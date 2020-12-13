@@ -1,16 +1,16 @@
-defmodule AdventOfCode.Transformers do
+defmodule AdventOfCode.Helpers.Transformers do
   @moduledoc """
   Converts a list of list into a map of map.
 
   ## Example
 
-    iex> AdventOfCode.Transformers.grid2d([])
+    iex> AdventOfCode.Helpers.Transformers.grid2d([])
     %{}
 
-    iex> AdventOfCode.Transformers.grid2d([[1, 3, 5], [2, 4, 6]])
+    iex> AdventOfCode.Helpers.Transformers.grid2d([[1, 3, 5], [2, 4, 6]])
     %{0 => %{0 => 1, 1 => 3, 2 => 5}, 1 => %{0 => 2, 1 => 4, 2 => 6}}
 
-    iex> AdventOfCode.Transformers.grid2d([[1], [2, 3]])
+    iex> AdventOfCode.Helpers.Transformers.grid2d([[1], [2, 3]])
     %{0 => %{0 => 1}, 1 => %{0 => 2, 1 => 3}}
 
   """

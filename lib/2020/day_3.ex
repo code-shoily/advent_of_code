@@ -4,7 +4,7 @@ defmodule AdventOfCode.Y2020.Day3 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 3
 
-  alias AdventOfCode.Transformers
+  alias AdventOfCode.Helpers.Transformers
 
   @default_slope {3, 1}
   @slopes [{1, 1}, {3, 1}, {5, 1}, {7, 1}, {1, 2}]

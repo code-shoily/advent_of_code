@@ -1,6 +1,6 @@
-defmodule AdventOfCode.TransformersTest do
+defmodule AdventOfCode.Helpers.TransformersTest do
   use ExUnit.Case
   @moduletag :transformers
 
-  doctest AdventOfCode.Transformers
+  doctest AdventOfCode.Helpers.Transformers
 end

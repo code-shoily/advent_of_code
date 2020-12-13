@@ -24,7 +24,7 @@ defmodule AdventOfCode.Y2020.Day7 do
   defp graph(v), do: Enum.reduce(v, :digraph.new(), &connect(&2, &1))
 
   defp connect(g, {vi, connections}) do
-    Enum.reduce(connections, nil, fn {n, vf}, _ ->
+    Enum.each(connections, fn {n, vf} ->
       :digraph.add_edge(g, :digraph.add_vertex(g, vi), :digraph.add_vertex(g, vf), n)
     end)
 

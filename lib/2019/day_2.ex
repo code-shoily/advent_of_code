@@ -15,7 +15,7 @@ defmodule AdventOfCode.Y2019.Day2 do
     IntCode.get_output(pid)
   end
 
-  def process() do
+  def process do
     input!()
     |> String.trim()
     |> String.split(",")
