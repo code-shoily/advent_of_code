@@ -2,21 +2,22 @@ defmodule AdventOfCode.Helpers.ChineseRemainder do
   def chinese_remainder(congruences) do
     {modulii, residues} = Enum.unzip(congruences)
     mod_pi = List.foldl(modulii, 1, &Kernel.*/2)
-    crt_modulii = for m <- modulii, do: div(mod_pi, m)
+    crt_modulii = Enum.map(modulii, &div(mod_pi, &1))
 
     case calc_inverses(crt_modulii, modulii) do
       nil ->
         nil
 
       inverses ->
-        solution =
-          Enum.sum(
-            for {a, b} <-
-                  Enum.zip(crt_modulii, for({a, b} <- Enum.zip(residues, inverses), do: a * b)),
-                do: a * b
-          )
-
-        mod(solution, mod_pi)
+        crt_modulii
+        |> Enum.zip(
+          residues
+          |> Enum.zip(inverses)
+          |> Enum.map(fn {a, b} -> a * b end)
+        )
+        |> Enum.map(fn {a, b} -> a * b end)
+        |> Enum.sum()
+        |> mod(mod_pi)
     end
   end
 
@@ -34,12 +35,7 @@ defmodule AdventOfCode.Helpers.ChineseRemainder do
 
   defp mod(a, m) do
     x = rem(a, m)
-
-    if x < 0 do
-      x + m
-    else
-      x
-    end
+    (x < 0 && x + m) || x
   end
 
   defp calc_inverses([], []), do: []
