@@ -4,14 +4,32 @@ defmodule AdventOfCode.Y2020.Day13 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 13
 
-  def run_1, do: input!() |> process() |> earliest_bus() |> result()
-  def run_2, do: {:not_implemented, 2}
+  import AdventOfCode.Helpers.ChineseRemainder
 
-  def process(input \\ input!()) do
+  def run_1, do: input!() |> process_1() |> earliest_bus() |> result()
+  def run_2, do: input!() |> process_2() |> compute()
+
+  def process_1(input \\ input!()) do
     [time, ids] = String.split(input, "\n", trim: true)
 
     {String.to_integer(time),
      ids |> String.split(",") |> Enum.reject(&(&1 == "x")) |> Enum.map(&String.to_integer/1)}
+  end
+
+  def process_2(input \\ input!()) do
+    input
+    |> String.split("\n", trim: true)
+    |> Enum.at(-1)
+    |> String.split(",")
+    |> Enum.with_index()
+    |> Enum.reject(fn {x, _} -> x == "x" end)
+    |> Enum.map(fn {x, y} -> {String.to_integer(x), y} end)
+  end
+
+  def compute(list) do
+    list
+    |> Enum.map(fn {v, idx} -> {v, v - idx} end)
+    |> chinese_remainder()
   end
 
   defp next_departure(id, time) do
