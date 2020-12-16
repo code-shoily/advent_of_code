@@ -1,6 +1,9 @@
 defmodule AdventOfCode.Y2020.Day14 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2020/day/14
+
+  Hat-tip to Christian Blavier from ElixirForum.
+  https://github.com/cblavier/advent/tree/master/lib/2020/day14
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 14
 
