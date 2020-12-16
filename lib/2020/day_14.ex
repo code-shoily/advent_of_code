@@ -48,10 +48,8 @@ defmodule AdventOfCode.Y2020.Day14 do
   end
 
   defp find_addresses(address, mask) do
-    address
-    |> Enum.zip(mask)
-    |> Enum.reduce([0], fn
-      {_, "X"}, acc -> fork(acc)
+    Enum.reduce(Enum.zip(address, mask), [0], fn
+      {_, "X"}, acc -> Enum.flat_map(acc, &[&1 * 2, &1 * 2 + 1])
       {_, "1"}, acc -> add_bit(acc, 1)
       {"1", _}, acc -> add_bit(acc, 1)
       _, acc -> add_bit(acc, 0)
@@ -59,5 +57,4 @@ defmodule AdventOfCode.Y2020.Day14 do
   end
 
   defp add_bit(acc, bit), do: Enum.map(acc, &(&1 * 2 + bit))
-  defp fork(acc), do: Enum.flat_map(acc, &[&1 * 2, &1 * 2 + 1])
 end
