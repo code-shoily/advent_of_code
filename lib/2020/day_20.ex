@@ -4,27 +4,18 @@ defmodule AdventOfCode.Y2020.Day20 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 20
 
-  def run_1, do: input!() |> process() |> corner_tiles() |> product()
+  import AdventOfCode.Helpers.Transformers
 
-  def process(input \\ input!()) do
-    input
-    |> String.split("\n\n")
-    |> Enum.map(&parse_tile/1)
-    |> Enum.into(%{})
-  end
+  def run_1, do: input!() |> process() |> corners() |> product()
+  def process(input), do: String.split(input, "\n\n") |> Enum.map(&parse/1) |> Map.new()
 
-  defp parse_tile(tile) do
+  defp parse(tile) do
     [id | tiles] = String.split(tile, "\n")
     {extract_id(id), edges(Enum.map(tiles, &String.graphemes/1))}
   end
 
   defp extract_id(id), do: Regex.named_captures(~r/Tile (?<id>\d+):/, id)["id"]
-
-  defp product(ids) do
-    ids
-    |> Enum.map(&String.to_integer/1)
-    |> Enum.reduce(&Kernel.*/2)
-  end
+  defp product(ids), do: Enum.reduce(Enum.map(ids, &String.to_integer/1), &(&1 * &2))
 
   defp edges(tiles) do
     transposed = transpose(tiles)
@@ -35,12 +26,7 @@ defmodule AdventOfCode.Y2020.Day20 do
     )
   end
 
-  defp corner_tiles(data) do
-    data
-    |> all_edges()
-    |> find_unique(data)
-    |> Enum.reject(&is_nil/1)
-  end
+  defp corners(data), do: Enum.reject(find_unique(all_edges(data), data), &is_nil/1)
 
   defp all_edges(data) do
     data
@@ -60,12 +46,5 @@ defmodule AdventOfCode.Y2020.Day20 do
         _ -> nil
       end
     end)
-  end
-
-  defp transpose(m) do
-    case m do
-      [[] | _] -> []
-      m -> [Enum.map(m, &hd/1) | transpose(Enum.map(m, &tl/1))]
-    end
   end
 end

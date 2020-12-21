@@ -24,4 +24,14 @@ defmodule AdventOfCode.Helpers.Transformers do
        end}
     end
   end
+
+  @doc """
+  Transforms a 2x2 matrix
+  """
+  def transpose(m) do
+    case m do
+      [[] | _] -> []
+      m -> [Enum.map(m, &hd/1) | transpose(Enum.map(m, &tl/1))]
+    end
+  end
 end

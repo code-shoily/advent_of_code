@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2020.Day19 do
+  @moduledoc """
+  Problem Link: https://adventofcode.com/2020/day/19
+  """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 19
 
   def run_1, do: match_count(process(input!(), false))
