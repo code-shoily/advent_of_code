@@ -4,24 +4,21 @@ defmodule AdventOfCode.Y2020.Day21 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 21
 
-  def run_1 do
-    foods = process(input!())
-    allergens = allergens(foods)
+  def run_1, do: input!() |> process() |> allergen_free()
+  def run_2, do: input!() |> process() |> build() |> evolve() |> sort()
+  def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
 
+  defp sort(allergens), do: Enum.map_join(allergens, ",", &hd(MapSet.to_list(elem(&1, 1))))
+  defp ingredients(foods), do: Enum.flat_map(foods, &elem(&1, 1))
+
+  defp allergen_free(foods) do
+    allergens = allergens(foods)
     length(Enum.reject(ingredients(foods), &(&1 in allergens)))
   end
 
-  def run_2, do: input!() |> process() |> build() |> evolve() |> sort()
-
-  def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
-  defp ingredients(foods), do: Enum.flat_map(foods, &elem(&1, 1))
-  defp sort(allergens), do: Enum.map_join(allergens, ",", &hd(MapSet.to_list(elem(&1, 1))))
-
-  def parse(%{"items" => items, "allergens" => allergens}),
-    do: {String.split(allergens, ", "), String.split(items, " ")}
-
   @regex ~r/^(?<items>.+) \(contains (?<allergens>.+)\)$/
-  def parse(line), do: parse(Regex.named_captures(@regex, line))
+  defp parse([_, m1, m2]), do: {String.split(m2, ", "), String.split(m1, " ")}
+  defp parse(line), do: parse(Regex.run(@regex, line))
 
   defp build(foods) do
     Enum.reduce(foods, %{}, fn {allergens, items}, acc ->
@@ -43,9 +40,7 @@ defmodule AdventOfCode.Y2020.Day21 do
   defp evolve(allergen, result) when map_size(allergen) == map_size(result), do: result
 
   defp evolve(allergen, result) do
-    result =
-      Map.merge(result, Map.new(Enum.filter(allergen, fn {_, v} -> Enum.count(v) == 1 end)))
-
+    result = Map.merge(result, Map.new(Enum.filter(allergen, &(Enum.count(elem(&1, 1)) == 1))))
     found = unions(Map.values(result))
 
     allergen
