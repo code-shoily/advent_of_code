@@ -5,56 +5,40 @@ defmodule AdventOfCode.Y2020.Day22 do
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 22
 
   def run_1, do: input!() |> process() |> play() |> score()
-  def run_2, do: input!() |> process() |> recursive_combat() |> score()
-
-  def process(input) do
-    input
-    |> String.split("\n\n")
-    |> Enum.flat_map(&String.split(&1, ":"))
-    |> decks()
-  end
+  def run_2, do: input!() |> process() |> play_rec() |> score()
+  def process(deal), do: decks(Enum.map(String.split(deal, "\n\n"), &String.split(&1, ":")))
 
   defp score(cards) do
-    cards
-    |> Enum.reverse()
-    |> Enum.with_index(1)
-    |> Enum.map(fn {val, idx} -> val * idx end)
-    |> Enum.sum()
+    Enum.reduce(Enum.with_index(Enum.reverse(cards), 1), 0, fn {val, idx}, score ->
+      score + val * idx
+    end)
   end
 
-  defp decks([_, player_1, _, player_2]), do: {deck(player_1), deck(player_2)}
-  defp deck(player), do: Enum.map(String.split(player, "\n", trim: true), &String.to_integer/1)
+  defp decks([[_, human], [_, crab]]), do: {deck(human), deck(crab)}
+  defp deck(p), do: Enum.map(String.split(p, "\n", trim: true), &String.to_integer/1)
 
-  defp play({[], player_2}), do: player_2
-  defp play({player_1, []}), do: player_1
+  defp play({[], crab}), do: crab
+  defp play({human, []}), do: human
+  defp play({[h | human], [c | crab]}) when h > c, do: play({human ++ [h, c], crab})
+  defp play({[h | human], [c | crab]}), do: play({human, crab ++ [c, h]})
 
-  defp play({[card_1 | rest_1], [card_2 | rest_2]}) when card_1 > card_2,
-    do: play({rest_1 ++ [card_1, card_2], rest_2})
+  defp play_rec(decks), do: elem(play_rec(decks, {[], []}), 1)
+  defp play_rec({[], crab}, _), do: {2, crab}
+  defp play_rec({human, []}, _), do: {1, human}
 
-  defp play({[card_1 | rest_1], [card_2 | rest_2]}),
-    do: play({rest_1, rest_2 ++ [card_2, card_1]})
-
-  defp recursive_combat(decks), do: decks |> recursive_combat([], []) |> elem(1)
-  defp recursive_combat({[], player_2}, _, _), do: {2, player_2}
-  defp recursive_combat({player_1, []}, _, _), do: {1, player_1}
-
-  defp recursive_combat({[card_1 | rest_1] = a, [card_2 | rest_2] = b}, h1, h2) do
-    if a in h1 || b in h2 do
-      {1, a}
+  defp play_rec({[h | hs] = human, [c | cs] = crab}, {humans, crabs}) do
+    if human in humans || crab in crabs do
+      {1, human}
     else
-      h1 = [a | h1]
-      h2 = [b | h2]
+      memo = {[human | humans], [crab | crabs]}
 
-      if card_1 <= length(rest_1) && card_2 <= length(rest_2) do
-        case recursive_combat({Enum.take(rest_1, card_1), Enum.take(rest_2, card_2)}, [], []) do
-          {1, _} -> recursive_combat({rest_1 ++ [card_1, card_2], rest_2}, h1, h2)
-          {2, _} -> recursive_combat({rest_1, rest_2 ++ [card_2, card_1]}, h1, h2)
+      if h <= length(hs) && c <= length(cs) do
+        case play_rec({Enum.take(hs, h), Enum.take(cs, c)}, {[], []}) do
+          {1, _} -> play_rec({hs ++ [h, c], cs}, memo)
+          {2, _} -> play_rec({hs, cs ++ [c, h]}, memo)
         end
       else
-        case card_1 > card_2 do
-          true -> recursive_combat({rest_1 ++ [card_1, card_2], rest_2}, h1, h2)
-          _ -> recursive_combat({rest_1, rest_2 ++ [card_2, card_1]}, h1, h2)
-        end
+        (h > c && play_rec({hs ++ [h, c], cs}, memo)) || play_rec({hs, cs ++ [c, h]}, memo)
       end
     end
   end
