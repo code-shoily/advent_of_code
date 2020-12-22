@@ -11,6 +11,6 @@ defmodule AdventOfCode.Y2020.Day22Test do
   end
 
   test "Year 2020, Day 22, Part 2" do
-    assert Solution.run_2() == nil
+    assert Solution.run_2() == 32_534
   end
 end
