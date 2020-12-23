@@ -23,19 +23,19 @@ defmodule AdventOfCode.Y2020.Day22 do
   defp play({[h | human], [c | crab]}), do: play({human, crab ++ [c, h]})
 
   defp play_rec(decks), do: elem(play_rec(decks, {[], []}), 1)
-  defp play_rec({[], crab}, _), do: {2, crab}
-  defp play_rec({human, []}, _), do: {1, human}
+  defp play_rec({[], crab}, _), do: {:crab, crab}
+  defp play_rec({human, []}, _), do: {:human, human}
 
   defp play_rec({[h | hs] = human, [c | cs] = crab}, {humans, crabs}) do
     if human in humans || crab in crabs do
-      {1, human}
+      {:human, human}
     else
       memo = {[human | humans], [crab | crabs]}
 
       if h <= length(hs) && c <= length(cs) do
         case play_rec({Enum.take(hs, h), Enum.take(cs, c)}, {[], []}) do
-          {1, _} -> play_rec({hs ++ [h, c], cs}, memo)
-          {2, _} -> play_rec({hs, cs ++ [c, h]}, memo)
+          {:human, _} -> play_rec({hs ++ [h, c], cs}, memo)
+          {:crab, _} -> play_rec({hs, cs ++ [c, h]}, memo)
         end
       else
         (h > c && play_rec({hs ++ [h, c], cs}, memo)) || play_rec({hs, cs ++ [c, h]}, memo)
