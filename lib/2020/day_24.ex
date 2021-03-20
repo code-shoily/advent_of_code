@@ -5,6 +5,7 @@ defmodule AdventOfCode.Y2020.Day24 do
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 24
 
   def run_1, do: input!() |> process() |> walk() |> colorify() |> Enum.count(&(not &1))
+  def run_2, do: {:not_implemented, 2}
   def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
 
   defp walk("w", {x, y}), do: {x - 1, y}

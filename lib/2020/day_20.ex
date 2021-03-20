@@ -7,6 +7,7 @@ defmodule AdventOfCode.Y2020.Day20 do
   import AdventOfCode.Helpers.Transformers
 
   def run_1, do: input!() |> process() |> corners() |> product()
+  def run_2, do: {:not_implemented, 2}
   def process(input), do: String.split(input, "\n\n") |> Enum.map(&parse/1) |> Map.new()
 
   defp parse(tile) do
