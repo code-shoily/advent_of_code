@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Y2019.Day6 do
+defmodule AdventOfCode.Y2019.Day06 do
   @moduledoc """
   Problem Description: https://adventofcode.com/2019/day/6
   """

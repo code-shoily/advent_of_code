@@ -1,8 +1,8 @@
-defmodule AdventOfCode.Y2019.Day6Test do
+defmodule AdventOfCode.Y2019.Day06Test do
   @moduledoc false
   use ExUnit.Case
 
-  alias AdventOfCode.Y2019.Day6, as: Solution
+  alias AdventOfCode.Y2019.Day06, as: Solution
 
   test "Year 2019, Day 6, Part 1" do
     assert Solution.run_1() == 147_807
