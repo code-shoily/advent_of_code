@@ -10,5 +10,5 @@
 | 4 | [Secure Container](https://adventofcode.com/2019/day/4)  | :star2: | [day_04.ex](/lib/2019/day_04.ex) |
 | 5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)  | :star2: | [day_05.ex](/lib/2019/day_05.ex) |
 | 6 | [Universal Orbit Map](https://adventofcode.com/2019/day/6)  | :star2: :star2: :star2: | [day_06.ex](/lib/2019/day_06.ex) |
-| 8 | [Space Image Format](https://adventofcode.com/2019/day/8)  | :hourglass: | [day_06.ex](/lib/2019/day_08.ex) |
+| 8 | [Space Image Format](https://adventofcode.com/2019/day/8)  | :hourglass: | [day_08.ex](/lib/2019/day_08.ex) |
 | 10 | [Monitoring Station](https://adventofcode.com/2019/day/10)  | :star2: | [day_12.ex](/lib/2019/day_10.ex) |
