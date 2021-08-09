@@ -23,7 +23,7 @@ defmodule AdventOfCode.Helpers.FileWriter do
   defp path_for({year, day}, :test), do: "test/#{year}/day_#{day}_test.exs"
 
   @spec write_unless_exists(String.t(), iodata) :: :ok | {:error, File.posix()}
-  defp write_unless_exists(path, content \\ "") do
+  defp write_unless_exists(path, content) do
     unless File.exists?(path), do: File.write(path, content)
   end
 
@@ -51,10 +51,9 @@ defmodule AdventOfCode.Helpers.FileWriter do
     end)
   end
 
-  @spec write_input_data(String.t(), integer(), integer()) :: String.t()
   def write_input_data(path, year, day) do
-    with {:ok, data} = fetch_input_data(year, day),
-         {:ok, file} = File.open(path, [:write]),
+    with {:ok, data} <- fetch_input_data(year, day),
+         {:ok, file} <- File.open(path, [:write]),
          :ok <- IO.write(file, data) do
       File.close(file)
     end
