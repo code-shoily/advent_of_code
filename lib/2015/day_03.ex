@@ -1,12 +1,22 @@
-defmodule AdventOfCode.Y2015.Day3 do
+defmodule AdventOfCode.Y2015.Day03 do
   @moduledoc """
+  --- Day 3: Perfectly Spherical Houses in a Vacuum ---
   Problem Link: https://adventofcode.com/2015/day/3
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 3
+
   def run, do: {run_1(), run_2()}
 
   def run_1 do
     input!() |> deliver_present() |> MapSet.size()
+  end
+
+  def run_2 do
+    input!()
+    |> String.graphemes()
+    |> alternate()
+    |> deliver_present_each()
+    |> MapSet.size()
   end
 
   @start [0, 0]
@@ -26,14 +36,6 @@ defmodule AdventOfCode.Y2015.Day3 do
   defp deliver_present(<<direction::bytes-size(1)>> <> rest, current, db) do
     next = next_location(direction, current)
     deliver_present(rest, next, MapSet.put(db, next))
-  end
-
-  def run_2 do
-    input!()
-    |> String.graphemes()
-    |> alternate()
-    |> deliver_present_each()
-    |> MapSet.size()
   end
 
   defp alternate(directions) do

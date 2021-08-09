@@ -1,30 +1,30 @@
-defmodule AdventOfCode.Y2015.Day5 do
+defmodule AdventOfCode.Y2015.Day05 do
   @moduledoc """
+  --- Day 5: Doesn't He Have Intern-Elves For This? ---
   Problem Link: https://adventofcode.com/2015/day/5
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 5
 
+  def run, do: {run_1(), run_2()}
+
   def run_1 do
-    process()
+    parse()
     |> Enum.filter(&nice?/1)
     |> length()
   end
 
   def run_2 do
-    process()
+    parse()
     |> Enum.filter(&nice_v2?/1)
     |> length()
   end
 
-  def run, do: {run_1(), run_2()}
-
-  defp process, do: String.split(input!(), "\n")
+  defp parse, do: String.split(input!(), "\n")
 
   defp vowel?(s), do: s in ~w/a e i o u/
 
   defp nice?(s), do: nice?(s, 0, 0, "")
-  defp nice?("", vowels, dups, _) when vowels >= 3 and dups > 0, do: true
-  defp nice?("", _, _, _), do: false
+  defp nice?("", vowels, dups, _), do: vowels >= 3 and dups > 0
 
   defp nice?(<<s::bytes-size(1)>> <> rest, vowels, dups, e) do
     cond do

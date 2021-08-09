@@ -1,22 +1,42 @@
 defmodule AdventOfCode.Y2015.Day12 do
   @moduledoc """
+  --- Day 12: JSAbacusFramework.io ---
   Problem Link: https://adventofcode.com/2015/day/12
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 12
+
+  def run, do: {run_1(), run_2()}
+
+  def run_1 do
+    parse()
+    |> parse_json([])
+    |> compute()
+  end
+
+  def run_2 do
+    parse()
+    |> Jason.decode!()
+    |> total()
+  end
+
+  def parse do
+    input!()
+    |> String.graphemes()
+  end
 
   @numbers "-0123456789"
   @delim " "
 
   def number?(s), do: String.contains?(@numbers, s)
 
-  def parse([], result), do: result
+  def parse_json([], result), do: result
 
-  def parse([h | t], []) do
-    (number?(h) && parse(t, [h])) || parse(t, [@delim])
+  def parse_json([h | t], []) do
+    (number?(h) && parse_json(t, [h])) || parse_json(t, [@delim])
   end
 
-  def parse([h | t], [x | xs] = res) do
-    (number?(h) && parse(t, [x <> h | xs])) || parse(t, [@delim | res])
+  def parse_json([h | t], [x | xs] = res) do
+    (number?(h) && parse_json(t, [x <> h | xs])) || parse_json(t, [@delim | res])
   end
 
   def compute(parsed) do
@@ -25,17 +45,6 @@ defmodule AdventOfCode.Y2015.Day12 do
     |> String.split()
     |> Enum.map(&String.to_integer/1)
     |> Enum.sum()
-  end
-
-  def process do
-    input!()
-    |> String.graphemes()
-  end
-
-  def run_1 do
-    process()
-    |> parse([])
-    |> compute()
   end
 
   def total(obj) when is_map(obj) do
@@ -52,12 +61,4 @@ defmodule AdventOfCode.Y2015.Day12 do
     end)
     |> Enum.sum()
   end
-
-  def run_2 do
-    process()
-    |> Jason.decode!()
-    |> total()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

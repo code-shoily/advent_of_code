@@ -1,9 +1,36 @@
-defmodule AdventOfCode.Y2015.Day6 do
+defmodule AdventOfCode.Y2015.Day06 do
   @moduledoc """
+  --- Day 6: Probably a Fire Hazard ---
   Problem Link: https://adventofcode.com/2015/day/6
+  NOTE: This is slow!
   """
-  # ! Faster implementation of this.
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 6
+
+  def run, do: {run_1(), run_2()}
+
+  def run_1 do
+    grid = make_grid(1000)
+
+    input!()
+    |> parse()
+    |> Enum.reduce(grid, &apply_1(&1, &2))
+    |> total_brightness()
+  end
+
+  def run_2 do
+    grid = make_grid(1000)
+
+    input!()
+    |> parse()
+    |> Enum.reduce(grid, &apply_2(&1, &2))
+    |> total_brightness()
+  end
+
+  def parse(input) do
+    input
+    |> String.split("\n", trim: true)
+    |> Enum.map(&parse_input/1)
+  end
 
   def make_grid(dim) do
     0..(dim - 1)
@@ -13,19 +40,13 @@ defmodule AdventOfCode.Y2015.Day6 do
     |> Enum.into(%{})
   end
 
-  def process(input) do
-    input
-    |> String.split("\n", trim: true)
-    |> Enum.map(&parse/1)
-  end
-
   @regex ~r"""
   (?<cmd>toggle|turn\son|turn\soff)\s
   (?<x1>\d+),(?<y1>\d+)
   \s\S+\s
   (?<x2>\d+),(?<y2>\d+)
   """x
-  defp parse(line) do
+  defp parse_input(line) do
     @regex
     |> Regex.named_captures(line)
     |> format()
@@ -62,15 +83,6 @@ defmodule AdventOfCode.Y2015.Day6 do
     |> Enum.sum()
   end
 
-  def run_1 do
-    grid = make_grid(1000)
-
-    input!()
-    |> process()
-    |> Enum.reduce(grid, &apply_1(&1, &2))
-    |> total_brightness()
-  end
-
   def apply_2(:turn_on, coord, src), do: update_in(src, coord, fn v -> v + 1 end)
 
   def apply_2(:turn_off, coord, src),
@@ -88,15 +100,4 @@ defmodule AdventOfCode.Y2015.Day6 do
     end)
     |> Enum.reduce(src, fn x, acc -> apply_2(cmd, x, acc) end)
   end
-
-  def run_2 do
-    grid = make_grid(1000)
-
-    input!()
-    |> process()
-    |> Enum.reduce(grid, &apply_2(&1, &2))
-    |> total_brightness()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

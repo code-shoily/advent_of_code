@@ -1,27 +1,37 @@
-defmodule AdventOfCode.Y2015.Day2 do
+defmodule AdventOfCode.Y2015.Day02 do
   @moduledoc """
+  --- Day 2: I Was Told There Would Be No Math ---
   Problem Link: https://adventofcode.com/2015/day/2
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 2
 
-  @spec run_1 :: non_neg_integer()
+  def run, do: {run_1(), run_2()}
+
   def run_1 do
     input!()
-    |> process_input()
-    |> Enum.map(fn n -> n |> Enum.map(&String.to_integer/1) end)
-    |> Enum.map(&required_paper/1)
+    |> parse()
+    |> Enum.map(fn n -> n |> Enum.map(&String.to_integer/1) |> required_paper() end)
     |> Enum.sum()
   end
 
-  defp process_input(lines) do
+  def run_2 do
+    input!()
+    |> parse()
+    |> Enum.map(fn n ->
+      n |> Enum.map(&String.to_integer/1) |> smallest_perimeter_plus_volume()
+    end)
+    |> Enum.reduce(&Kernel.+/2)
+  end
+
+  defp parse(lines) do
     lines
     |> String.split("\n")
     |> Enum.map(&String.split(&1, "x"))
   end
 
   @spec required_paper([non_neg_integer(), ...]) :: non_neg_integer()
-  defp required_paper([_, _, _] = sides) do
-    (sides |> surface_area()) + (sides |> area_per_dim() |> minimum())
+  defp required_paper(sides) do
+    surface_area(sides) + minimum(area_per_dim(sides))
   end
 
   @spec surface_area([non_neg_integer(), ...]) :: non_neg_integer()
@@ -42,27 +52,11 @@ defmodule AdventOfCode.Y2015.Day2 do
     side_1 |> min(side_2) |> min(side_3)
   end
 
-  @spec run_2 :: non_neg_integer()
-  def run_2 do
-    input!()
-    |> process_input()
-    |> Enum.map(fn n -> Enum.map(n, &String.to_integer/1) end)
-    |> Enum.map(&smallest_perimeter_plus_volume/1)
-    |> Enum.reduce(&(&1 + &2))
-  end
-
   @spec smallest_perimeter_plus_volume([non_neg_integer(), ...]) :: non_neg_integer()
   defp smallest_perimeter_plus_volume([width, length, height]) do
-    volume = width * length * height
-
-    smallest_perimeter =
-      [width + length, length + height, height + width]
-      |> Enum.sort()
-      |> hd()
-      |> Kernel.*(2)
-
-    volume + smallest_perimeter
+    [width + length, length + height, height + width]
+    |> Enum.min()
+    |> Kernel.*(2)
+    |> Kernel.+(width * length * height)
   end
-
-  def run, do: {run_1(), run_2()}
 end
