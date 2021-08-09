@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Y2018.Day4 do
+defmodule AdventOfCode.Y2018.Day04 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2018/day/4
   """

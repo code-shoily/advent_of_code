@@ -1,8 +1,9 @@
-defmodule AdventOfCode.Y2018.Day2Test do
+defmodule AdventOfCode.Y2018.Day02Test do
   @moduledoc false
   use ExUnit.Case
+  @moduletag :y1802
 
-  alias AdventOfCode.Y2018.Day2, as: Solution
+  alias AdventOfCode.Y2018.Day02, as: Solution
 
   test "Letter Count" do
     assert Solution.letter_count("aabcacacdd") == %{"a" => 4, "b" => 1, "c" => 3, "d" => 2}

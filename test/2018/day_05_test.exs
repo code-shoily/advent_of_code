@@ -1,9 +1,9 @@
-defmodule AdventOfCode.Y2018.Day5Test do
+defmodule AdventOfCode.Y2018.Day05Test do
   @moduledoc false
   use ExUnit.Case
-  @moduletag :y185
+  @moduletag :y1805
 
-  alias AdventOfCode.Y2018.Day5, as: Solution
+  alias AdventOfCode.Y2018.Day05, as: Solution
 
   test "React (1)" do
     assert Solution.react('dabAcCaCBAcCcaDA') == 10

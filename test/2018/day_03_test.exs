@@ -1,9 +1,9 @@
-defmodule AdventOfCode.Y2018.Day3Test do
+defmodule AdventOfCode.Y2018.Day03Test do
   @moduledoc false
   use ExUnit.Case
-  @moduletag :y183
+  @moduletag :y1803
 
-  alias AdventOfCode.Y2018.Day3, as: Solution
+  alias AdventOfCode.Y2018.Day03, as: Solution
 
   test "Input processor" do
     sample = """
