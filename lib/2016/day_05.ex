@@ -1,6 +1,7 @@
-defmodule AdventOfCode.Y2016.Day5 do
+defmodule AdventOfCode.Y2016.Day05 do
   @moduledoc """
   Problem Link: https://adventofcode.com/2016/day/5
+  NOTE: This is slow!
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 5
 
