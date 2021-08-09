@@ -1,9 +1,9 @@
 defmodule AdventOfCode.Y2017.Day1Test do
   @moduledoc false
   use ExUnit.Case
-  @moduletag :y171
+  @moduletag :y1701
 
-  alias AdventOfCode.Y2017.Day1, as: Solution
+  alias AdventOfCode.Y2017.Day01, as: Solution
 
   test "Year 2017, Day 1, Part 1" do
     assert Solution.run_1() == 1089

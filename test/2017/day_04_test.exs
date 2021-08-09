@@ -2,9 +2,9 @@ defmodule AdventOfCode.Y2017.Day4Test do
   @moduledoc false
 
   use ExUnit.Case
-  @moduletag :y174
+  @moduletag :y1704
 
-  alias AdventOfCode.Y2017.Day4, as: Solution
+  alias AdventOfCode.Y2017.Day04, as: Solution
 
   test "containes_duplicates returns true if passphrases contain duplicates" do
     assert Solution.duplicates?(~w/aa bb cc dd ee/)
