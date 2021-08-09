@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Y2015.Day5Test do
+defmodule AdventOfCode.Y2015.Day05Test do
   @moduledoc false
   use ExUnit.Case
   @moduletag :y1505
