@@ -52,8 +52,8 @@ defmodule AdventOfCode.Helpers.FileWriter do
   end
 
   def write_input_data(path, year, day) do
-    with {:ok, data} = fetch_input_data(year, day),
-         {:ok, file} = File.open(path, [:write]),
+    with {:ok, data} <- fetch_input_data(year, day),
+         {:ok, file} <- File.open(path, [:write]),
          :ok <- IO.write(file, data) do
       File.close(file)
     end

@@ -15,7 +15,7 @@ defmodule AdventOfCode.Y2020.Day14 do
 
   def run(data, instruction), do: Enum.reduce(data, {%{}, nil}, instruction)
 
-  defp instruction_1(line = "mask" <> _, {memory, _mask}) do
+  defp instruction_1("mask" <> _ = line, {memory, _mask}) do
     mask = line |> String.split(" = ") |> Enum.at(-1)
     {or_mask, _} = mask |> String.replace("X", "0") |> Integer.parse(2)
     {and_mask, _} = mask |> String.replace("X", "1") |> Integer.parse(2)
@@ -31,7 +31,7 @@ defmodule AdventOfCode.Y2020.Day14 do
 
   defp memory_sum({memory, _}), do: memory |> Enum.map(&elem(&1, 1)) |> Enum.sum()
 
-  defp instruction_2(line = "mask" <> _, {memory, _}),
+  defp instruction_2("mask" <> _ = line, {memory, _}),
     do: {memory, line |> String.split(" = ") |> Enum.at(-1) |> String.graphemes()}
 
   @regex ~r/mem\[(?<address>\d+)\] = (?<value>\d+)/
