@@ -10,6 +10,7 @@ defmodule AdventOfCode.Y2020.Day20Test do
     assert Solution.run_1() == 29_125_888_761_511
   end
 
+  @tag :skip
   test "Year 2020, Day 20, Part 2" do
     assert Solution.run_2() == nil
   end

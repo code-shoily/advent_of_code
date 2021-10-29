@@ -9,6 +9,7 @@ defmodule AdventOfCode.Y2019.Day05Test do
     assert Solution.run_1() == 6_745_903
   end
 
+  @tag :skip
   test "Year 2019, Day 5, Part 2" do
     assert Solution.run_2() == :not_implemented
   end
