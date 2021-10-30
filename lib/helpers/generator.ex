@@ -1,0 +1,71 @@
+defmodule AdventOfCode.Helpers.Generator do
+  @moduledoc """
+  Module responsible for writing the generated code.
+  """
+  @code_template "lib/helpers/templates/code.eex"
+  @test_template "lib/helpers/templates/test.eex"
+
+  @doc """
+  Creates and writes files for a given day's problem.
+  """
+  @spec run({integer(), integer()}) :: String.t()
+  def run({year, day}) do
+    # Write the input data at `priv/input_files`
+    input_file_path =
+      :advent_of_code
+      |> :code.priv_dir()
+      |> Path.join("input_files")
+      |> Path.join("#{year}_#{day}.txt")
+
+    input_file =
+      input_file_path
+      |> write_input_file(year, day)
+
+    # Write code files at `lib/<year>/day_<day>.ex`
+    code_content =
+      @code_template
+      |> EEx.eval_file(day: day, year: year)
+
+    code_file =
+      "lib/#{year}/day_#{day}.ex"
+      |> create(code_content)
+
+    # Write test files at `test/<year>/day_<year>_test.exs`
+    test_content =
+      @test_template
+      |> EEx.eval_file(day: day, year: year)
+
+    test_file =
+      "test/#{year}/day_#{day}_test.exs"
+      |> create(test_content)
+
+    "INPUT: #{input_file}\tCODE: #{code_file}\tTEST: #{test_file}\n"
+  end
+
+  defp create(path, content) do
+    unless File.exists?(path) do
+      File.write(path, content)
+    end
+  end
+
+  defp fetch_cookie(year, day) do
+    HTTPoison.start()
+
+    "https://adventofcode.com/#{year}/day/#{day}/input"
+    |> HTTPoison.get([{"cookie", "session=#{System.get_env("COOKIE", "")}"}])
+    |> then(fn response ->
+      case response do
+        {:ok, %HTTPoison.Response{body: body}} -> {:ok, body}
+        _ -> nil
+      end
+    end)
+  end
+
+  defp write_input_file(path, year, day) do
+    with {:ok, data} <- fetch_cookie(year, day),
+         {:ok, file} <- File.open(path, [:write]),
+         :ok <- IO.write(file, data) do
+      File.close(file)
+    end
+  end
+end

@@ -8,8 +8,12 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
   def run_2, do: {:not_implemented, 2}
   def run, do: {run_1(), run_2()}
 
-  def process(input \\ input!()) do
-    input
+  def process(data \\ input()) do
+    data
     |> String.split("\n", trim: true)
+  end
+
+  def input() do
+    input!()
   end
 end
