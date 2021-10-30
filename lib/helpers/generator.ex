@@ -89,7 +89,7 @@ defmodule AdventOfCode.Helpers.Generator do
     end)
     |> Floki.parse_document!()
     |> Floki.find("h2")
-    |> then(fn [{"h2", [], [title | _]}] -> title  end)
+    |> then(fn [{"h2", [], [title | _]}] -> title end)
   rescue
     _ -> ""
   end
