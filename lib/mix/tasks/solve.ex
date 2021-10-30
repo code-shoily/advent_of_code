@@ -10,7 +10,7 @@ defmodule Mix.Tasks.Solve do
   structure (i.e. module name, file reader function, test cases etc)
   """
 
-  alias AdventOfCode.Helpers.{FileWriter, InputParser}
+  alias AdventOfCode.Helpers.{Generator, InputParser}
 
   use Mix.Task
 
@@ -24,7 +24,7 @@ defmodule Mix.Tasks.Solve do
     case InputParser.parse(args) do
       {year, day} ->
         {to_string(year), to_string(day)}
-        |> FileWriter.write()
+        |> Generator.run()
         |> Mix.shell().info()
 
       _ ->

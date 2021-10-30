@@ -1,5 +1,6 @@
 defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
   @moduledoc """
+  <%= title %>
   Problem Link: https://adventofcode.com/<%= year %>/day/<%= day %>
   """
   use AdventOfCode.Helpers.InputReader, year: <%= year %>, day: <%= day %>
@@ -8,8 +9,16 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
   def run_2, do: {:not_implemented, 2}
   def run, do: {run_1(), run_2()}
 
-  def process(input \\ input!()) do
-    input
+  def read(data \\ input()) do
+    data
     |> String.split("\n", trim: true)
   end
+
+  def input() do
+    # Use site provided test cases here, if necessary
+    input!()
+  end
+
+  # --- <Solution Functions> ---
+  # --- </Solution Functions> ---
 end

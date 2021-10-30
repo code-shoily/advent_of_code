@@ -29,10 +29,10 @@ defmodule AdventOfCode.Y2020.Day24 do
 
   defp walk("w", {x, y}), do: {x - 1, y}
   defp walk("e", {x, y}), do: {x + 1, y}
-  defp walk("nw", {x, y}), do: {Integer.is_even(y) && x || x - 1, y - 1}
-  defp walk("ne", {x, y}), do: {Integer.is_even(y) && x + 1 || x, y - 1}
-  defp walk("sw", {x, y}), do: {Integer.is_even(y) && x || x - 1, y + 1}
-  defp walk("se", {x, y}), do: {Integer.is_even(y) && x + 1 || x, y + 1}
+  defp walk("nw", {x, y}), do: {(Integer.is_even(y) && x) || x - 1, y - 1}
+  defp walk("ne", {x, y}), do: {(Integer.is_even(y) && x + 1) || x, y - 1}
+  defp walk("sw", {x, y}), do: {(Integer.is_even(y) && x) || x - 1, y + 1}
+  defp walk("se", {x, y}), do: {(Integer.is_even(y) && x + 1) || x, y + 1}
 
   defp flip(tiles), do: Enum.map(tiles, fn sides -> Enum.reduce(sides, {0, 0}, &walk/2) end)
 
