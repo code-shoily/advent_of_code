@@ -8,3 +8,4 @@
 | 2 | [Corruption Checksum](https://adventofcode.com/2017/day/2) | :star2: | [day_02.ex](/lib/2017/day_02.ex) |
 | 4 | [High-Entropy Passphrases](https://adventofcode.com/2017/day/4)  | :star2: | [day_04.ex](/lib/2017/day_04.ex) |
 | 5 | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5)  | :hourglass: | [day_05.ex](/lib/2017/day_05.ex) |
+| 9 | [Stream Processing](https://adventofcode.com/2017/day/5)  | :star2: | [day_09.ex](/lib/2017/day_09.ex) |
