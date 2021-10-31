@@ -8,17 +8,17 @@ defmodule AdventOfCode.Helpers.ChineseRemainder do
 
   ## Example
 
-    iex> AdventOfCode.Helpers.ChineseRemainder.chinese_remainder([{11, 10}, {12, 4}, {13, 12}])
+    iex> AdventOfCode.Helpers.ChineseRemainder.compute([{11, 10}, {12, 4}, {13, 12}])
     1000
 
-    iex> AdventOfCode.Helpers.ChineseRemainder.chinese_remainder([{11, 10}, {22, 4}, {19, 9}])
+    iex> AdventOfCode.Helpers.ChineseRemainder.compute([{11, 10}, {22, 4}, {19, 9}])
     nil
 
-    iex> AdventOfCode.Helpers.ChineseRemainder.chinese_remainder([{3, 2}, {5, 3}, {7, 2}])
+    iex> AdventOfCode.Helpers.ChineseRemainder.compute([{3, 2}, {5, 3}, {7, 2}])
     23
 
   """
-  def chinese_remainder(congruences) do
+  def compute(congruences) do
     {modulii, residues} = Enum.unzip(congruences)
     mod_pi = Enum.reduce(modulii, 1, &Kernel.*/2)
     crt_modulii = Enum.map(modulii, &div(mod_pi, &1))
@@ -40,27 +40,8 @@ defmodule AdventOfCode.Helpers.ChineseRemainder do
     end
   end
 
-  @doc """
-  Calculates extended GCD
-
-  ## Example
-
-    iex> AdventOfCode.Helpers.ChineseRemainder.egcd(1914, 899)
-    {8, -17}
-
-    iex> AdventOfCode.Helpers.ChineseRemainder.egcd(1432, 123211)
-    {-22973, 267}
-
-  """
-  def egcd(_, 0), do: {1, 0}
-
-  def egcd(a, b) do
-    {s, t} = egcd(b, rem(a, b))
-    {t, s - div(a, b) * t}
-  end
-
   defp mod_inverse(a, b) do
-    {x, y} = egcd(a, b)
+    {_, x, y} = Integer.extended_gcd(a, b)
     (a * x + b * y == 1 && x) || nil
   end
 
