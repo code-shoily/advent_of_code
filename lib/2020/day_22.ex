@@ -1,12 +1,13 @@
 defmodule AdventOfCode.Y2020.Day22 do
   @moduledoc """
+  --- Day 22: Crab Combat ---
   Problem Link: https://adventofcode.com/2020/day/22
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 22
 
-  def run_1, do: input!() |> process() |> play() |> score()
-  def run_2, do: input!() |> process() |> play_rec() |> score()
-  def process(deal), do: decks(Enum.map(String.split(deal, "\n\n"), &String.split(&1, ":")))
+  def run_1, do: input!() |> parse() |> play() |> score()
+  def run_2, do: input!() |> parse() |> play_rec() |> score()
+  def parse(deal), do: decks(Enum.map(String.split(deal, "\n\n"), &String.split(&1, ":")))
 
   defp score(cards) do
     Enum.reduce(Enum.with_index(Enum.reverse(cards), 1), 0, fn {val, idx}, score ->

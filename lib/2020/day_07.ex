@@ -1,16 +1,16 @@
 defmodule AdventOfCode.Y2020.Day07 do
   @moduledoc """
+  --- Day 7: Handy Haversacks ---
   Problem Link: https://adventofcode.com/2020/day/7
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 7
 
-  def run_1, do: input!() |> process() |> graph() |> ancestor_count("shiny gold")
-  def run_2, do: (input!() |> process() |> descendant_count("shiny gold")) - 1
-  def run, do: {run_1(), run_2()}
+  def run_1, do: input!() |> parse() |> graph() |> ancestor_count("shiny gold")
+  def run_2, do: (input!() |> parse() |> descendant_count("shiny gold")) - 1
 
-  def process(input), do: for(i <- String.split(input, "\n"), into: %{}, do: parse(i))
+  def parse(input), do: for(i <- String.split(input, "\n"), into: %{}, do: parse_rule(i))
 
-  def parse(rule) do
+  def parse_rule(rule) do
     line = Regex.named_captures(~r/(?<src>.+) bags contain (?<bags>.+)\./, rule)
 
     {line["src"],

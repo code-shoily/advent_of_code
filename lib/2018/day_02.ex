@@ -25,7 +25,7 @@ defmodule AdventOfCode.Y2018.Day02 do
     |> then(fn [{box, _}] -> String.replace(box, "?", "") end)
   end
 
-  def parse(data \\ input!()), do: String.split(data, "\n")
+  def parse(data), do: String.split(data, "\n")
 
   def letter_count(word) do
     word

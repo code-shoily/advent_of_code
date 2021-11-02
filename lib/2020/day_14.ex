@@ -1,5 +1,6 @@
 defmodule AdventOfCode.Y2020.Day14 do
   @moduledoc """
+  --- Day 14: Docking Data ---
   Problem Link: https://adventofcode.com/2020/day/14
 
   Hat-tip to Christian Blavier from ElixirForum.
@@ -9,9 +10,9 @@ defmodule AdventOfCode.Y2020.Day14 do
 
   use Bitwise
 
-  def run_1, do: input!() |> process() |> run(&instruction_1/2) |> memory_sum()
-  def run_2, do: input!() |> process() |> run(&instruction_2/2) |> memory_sum()
-  def process(input), do: String.split(input, "\n")
+  def run_1, do: input!() |> parse() |> run(&instruction_1/2) |> memory_sum()
+  def run_2, do: input!() |> parse() |> run(&instruction_2/2) |> memory_sum()
+  def parse(input), do: String.split(input, "\n")
 
   def run(data, instruction), do: Enum.reduce(data, {%{}, nil}, instruction)
 

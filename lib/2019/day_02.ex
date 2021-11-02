@@ -1,6 +1,7 @@
 defmodule AdventOfCode.Y2019.Day02 do
   @moduledoc """
-  Problem description: https://adventofcode.com/2019/day/2
+  --- Day 2: 1202 Program Alarm ---
+  Problem Link: https://adventofcode.com/2019/day/2
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 2
 
@@ -10,27 +11,19 @@ defmodule AdventOfCode.Y2019.Day02 do
 
   @spec run_1 :: integer()
   def run_1 do
-    {:ok, pid} = IntCode.start_link(fix1202(process()))
+    {:ok, pid} =
+      input!()
+      |> parse()
+      |> fix1202()
+      |> IntCode.start_link()
+
     IntCode.run(pid)
     IntCode.get_output(pid)
   end
 
-  def process do
-    input!()
-    |> String.trim()
-    |> String.split(",")
-    |> Enum.map(&String.to_integer/1)
-  end
-
-  defp fix1202(memory, one \\ 12, two \\ 2) do
-    memory
-    |> List.replace_at(1, one)
-    |> List.replace_at(2, two)
-  end
-
   @spec run_2 :: integer | nil
   def run_2 do
-    memory = process()
+    memory = input!() |> parse()
 
     pairs = for i <- @range, j <- @range, do: {i, j}
 
@@ -46,6 +39,19 @@ defmodule AdventOfCode.Y2019.Day02 do
         _ -> {:cont, nil}
       end
     end)
+  end
+
+  def parse(data) do
+    data
+    |> String.trim()
+    |> String.split(",")
+    |> Enum.map(&String.to_integer/1)
+  end
+
+  defp fix1202(memory, one \\ 12, two \\ 2) do
+    memory
+    |> List.replace_at(1, one)
+    |> List.replace_at(2, two)
   end
 
   def run, do: {run_1(), run_2()}

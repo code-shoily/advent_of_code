@@ -5,7 +5,6 @@ defmodule AdventOfCode.Y2015.Day01 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 1
 
-  def run, do: {run_1(), run_2()}
   def run_1, do: input!() |> floor(0)
   def run_2, do: input!() |> to_basement(0, 0)
 

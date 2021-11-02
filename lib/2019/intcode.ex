@@ -1,5 +1,7 @@
 defmodule AdventOfCode.Y2019.IntCode do
-  @moduledoc false
+  @moduledoc """
+  The IntCode computer.
+  """
 
   use GenServer
 

@@ -27,7 +27,7 @@ defmodule AdventOfCode.Y2016.Day04 do
     |> elem(1)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n", trim: true)
     |> Enum.map(&decrypt/1)

@@ -1,8 +1,25 @@
 defmodule AdventOfCode.Y2017.Day01 do
   @moduledoc """
+  --- Day 1: Inverse Captcha ---
   Problem Link: https://adventofcode.com/2017/day/1
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 1
+
+  def run_1 do
+    input!()
+    |> process()
+    |> matches_with_next()
+    |> Enum.sum()
+  end
+
+  def run_2 do
+    with data <- process(input!()),
+         half <- data |> length() |> div(2) do
+      data
+      |> Enum.split(half)
+      |> matching_pair_sum()
+    end
+  end
 
   def process(input) do
     input
@@ -21,13 +38,6 @@ defmodule AdventOfCode.Y2017.Day01 do
     end)
   end
 
-  def run_1 do
-    input!()
-    |> process()
-    |> matches_with_next()
-    |> Enum.sum()
-  end
-
   defp matching_pair_sum({a, b}) do
     a
     |> Enum.zip(b)
@@ -37,15 +47,4 @@ defmodule AdventOfCode.Y2017.Day01 do
     end)
     |> Enum.sum()
   end
-
-  def run_2 do
-    with data <- process(input!()),
-         half <- data |> length() |> div(2) do
-      data
-      |> Enum.split(half)
-      |> matching_pair_sum()
-    end
-  end
-
-  def run, do: {run_1(), run_2()}
 end

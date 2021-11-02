@@ -1,10 +1,27 @@
 defmodule AdventOfCode.Y2017.Day02 do
   @moduledoc """
+  --- Day 2: Corruption Checksum ---
   Problem Link: https://adventofcode.com/2017/day/2
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 2
 
-  def process(input) do
+  def run_1 do
+    input!()
+    |> parse()
+    |> Enum.map(&Enum.min_max/1)
+    |> Enum.map(fn {min, max} -> max - min end)
+    |> Enum.sum()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> Enum.map(&evenly_divide/1)
+    |> Enum.map(fn [a, b] -> div(a, b) end)
+    |> Enum.sum()
+  end
+
+  def parse(input) do
     input
     |> String.split("\n")
     |> Enum.map(fn line ->
@@ -12,14 +29,6 @@ defmodule AdventOfCode.Y2017.Day02 do
       |> String.split("\t")
       |> Enum.map(&String.to_integer/1)
     end)
-  end
-
-  def run_1 do
-    input!()
-    |> process()
-    |> Enum.map(&Enum.min_max/1)
-    |> Enum.map(fn {min, max} -> max - min end)
-    |> Enum.sum()
   end
 
   def evenly_divide(lst) do
@@ -34,14 +43,4 @@ defmodule AdventOfCode.Y2017.Day02 do
     |> Enum.flat_map(& &1)
     |> hd()
   end
-
-  def run_2 do
-    input!()
-    |> process()
-    |> Enum.map(&evenly_divide/1)
-    |> Enum.map(fn [a, b] -> div(a, b) end)
-    |> Enum.sum()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

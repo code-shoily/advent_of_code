@@ -1,7 +1,8 @@
 defmodule AdventOfCode.Y2016.Day05 do
   @moduledoc """
+  !TODO: UPDATE ME
   Problem Link: https://adventofcode.com/2016/day/5
-  NOTE: This is slow!
+  !FIXME: This is slow!
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 5
 

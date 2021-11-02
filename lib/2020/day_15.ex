@@ -1,5 +1,6 @@
 defmodule AdventOfCode.Y2020.Day15 do
   @moduledoc """
+  --- Day 15: Rambunctious Recitation ---
   Problem Link: https://adventofcode.com/2020/day/15
   """
   def run_1, do: [6, 19, 0, 5, 7, 13, 1] |> play(2020)

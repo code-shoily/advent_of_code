@@ -5,8 +5,6 @@ defmodule AdventOfCode.Y2015.Day03 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 3
 
-  def run, do: {run_1(), run_2()}
-
   def run_1 do
     input!() |> deliver_present() |> MapSet.size()
   end

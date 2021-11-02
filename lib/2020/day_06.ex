@@ -1,14 +1,14 @@
 defmodule AdventOfCode.Y2020.Day06 do
   @moduledoc """
+  --- Day 6: Custom Customs ---
   Problem Link: https://adventofcode.com/2020/day/6
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 6
 
-  def run_1, do: input!() |> process() |> Enum.map(&answers/1) |> Enum.sum()
-  def run_2, do: input!() |> process() |> Enum.map(&unanimous_answers/1) |> Enum.sum()
-  def run, do: {run_1(), run_2()}
+  def run_1, do: input!() |> parse() |> Enum.map(&answers/1) |> Enum.sum()
+  def run_2, do: input!() |> parse() |> Enum.map(&unanimous_answers/1) |> Enum.sum()
 
-  def process(input) do
+  def parse(input) do
     input
     |> String.split("\n")
     |> Enum.chunk_by(&(&1 == ""))

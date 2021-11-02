@@ -1,18 +1,19 @@
 defmodule AdventOfCode.Y2017.Day05 do
   @moduledoc """
+  --- Day 5: A Maze of Twisty Trampolines, All Alike ---
   Problem Link: https://adventofcode.com/2017/day/5
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 5
 
-  def run_1, do: process() |> then(fn _ -> jump_1(0, 0) end)
-  def run_2, do: process() |> then(fn _ -> jump_2(0, 0) end)
+  def run_1, do: input!() |> parse() |> then(fn _ -> jump_1(0, 0) end)
+  def run_2, do: input!() |> parse() |> then(fn _ -> jump_2(0, 0) end)
   def run, do: {run_1(), run_2()}
 
-  def process(input \\ input!()) do
+  def parse(input) do
     input
     |> String.split("\n")
     |> Enum.with_index()
-    |> Enum.map(fn {v, k} -> Process.put(k, String.to_integer(v)) end)
+    |> Enum.each(fn {v, k} -> Process.put(k, String.to_integer(v)) end)
   end
 
   def jump_1(x, steps), do: jump_1(Process.get(x), x, steps)

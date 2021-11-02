@@ -23,7 +23,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   end
 
   @spec parse(binary()) :: points()
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n", trim: true)
     |> Enum.map(fn line ->

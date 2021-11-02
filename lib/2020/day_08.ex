@@ -8,7 +8,7 @@ defmodule AdventOfCode.Y2020.Day08 do
   def run_1, do: input!() |> parse() |> exec() |> elem(1)
   def run_2, do: input!() |> parse() |> fix()
 
-  def parse(input \\ input!()), do: Enum.map(String.split(input, "\n"), &parse_command/1)
+  def parse(input), do: Enum.map(String.split(input, "\n"), &parse_command/1)
 
   defp exec(prog), do: exec(prog, 0, 0, %{})
   defp exec(_, cur, acc, hist) when is_map_key(hist, cur), do: {:cont, acc}
@@ -22,8 +22,9 @@ defmodule AdventOfCode.Y2020.Day08 do
     end
   end
 
+  @rule ~r/(?<cmd>.+) (?<val>[+-]\d+)/
   defp parse_command(cmd) do
-    ~r/(?<cmd>.+) (?<val>[+-]\d+)/
+    @rule
     |> Regex.named_captures(cmd)
     |> then(&{String.to_existing_atom(&1["cmd"]), String.to_integer(&1["val"])})
   end

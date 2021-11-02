@@ -1,5 +1,6 @@
 defmodule AdventOfCode.Y2020.Day16 do
   @moduledoc """
+  --- Day 16: Ticket Translation ---
   Problem Link: https://adventofcode.com/2020/day/16
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 16

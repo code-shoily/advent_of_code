@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Y2019.Day03 do
   @moduledoc """
   --- Day 3: Crossed Wires ---
-  Problem description: https://adventofcode.com/2019/day/3
+  Problem Link: https://adventofcode.com/2019/day/3
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 3
 
@@ -35,7 +35,7 @@ defmodule AdventOfCode.Y2019.Day03 do
     |> Enum.sum()
   end
 
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n")
     |> Enum.map(fn line ->

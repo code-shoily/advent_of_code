@@ -1,11 +1,12 @@
 defmodule AdventOfCode.Y2020.Day11 do
   @moduledoc """
+  --- Day 11: Seating System ---
   Problem Link: https://adventofcode.com/2020/day/11
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 11
 
-  def run_1, do: input!() |> process() |> seats(&adjacents/3, 4)
-  def run_2, do: input!() |> process() |> seats(&adjacents_view/3, 5)
+  def run_1, do: input!() |> parse() |> seats(&adjacents/3, 4)
+  def run_2, do: input!() |> parse() |> seats(&adjacents_view/3, 5)
 
   defp seats(data, strategy, limit) do
     data
@@ -16,7 +17,7 @@ defmodule AdventOfCode.Y2020.Day11 do
     |> length()
   end
 
-  def process(input \\ input!()) do
+  def parse(input) do
     input = String.split(input, "\n")
     size = length(input)
 

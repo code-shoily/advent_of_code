@@ -1,21 +1,23 @@
 defmodule AdventOfCode.Y2020.Day20 do
   @moduledoc """
+  --- Day 20: Jurassic Jigsaw ---
   Problem Link: https://adventofcode.com/2020/day/20
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 20
 
   import AdventOfCode.Helpers.Transformers
 
-  def run_1, do: input!() |> process() |> corners() |> product()
+  def run_1, do: input!() |> parse() |> corners() |> product()
   def run_2, do: {:not_implemented, 2}
-  def process(input), do: String.split(input, "\n\n") |> Enum.map(&parse/1) |> Map.new()
+  def parse(input), do: String.split(input, "\n\n") |> Enum.map(&parse_tiles/1) |> Map.new()
 
-  defp parse(tile) do
+  defp parse_tiles(tile) do
     [id | tiles] = String.split(tile, "\n")
     {extract_id(id), edges(Enum.map(tiles, &String.graphemes/1))}
   end
 
-  defp extract_id(id), do: Regex.named_captures(~r/Tile (?<id>\d+):/, id)["id"]
+  @regex ~r/Tile (?<id>\d+):/
+  defp extract_id(id), do: Regex.named_captures(@regex, id)["id"]
   defp product(ids), do: Enum.reduce(Enum.map(ids, &String.to_integer/1), &(&1 * &2))
 
   defp edges(tiles) do
@@ -34,8 +36,8 @@ defmodule AdventOfCode.Y2020.Day20 do
     |> Map.values()
     |> Enum.flat_map(& &1)
     |> Enum.frequencies()
-    |> Enum.filter(fn {_, c} -> c == 1 end)
-    |> Enum.map(&elem(&1, 0))
+    |> Map.filter(fn {_, c} -> c == 1 end)
+    |> Map.keys()
     |> MapSet.new()
   end
 

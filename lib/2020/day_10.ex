@@ -1,13 +1,14 @@
 defmodule AdventOfCode.Y2020.Day10 do
   @moduledoc """
+  --- Day 10: Adapter Array ---
   Problem Link: https://adventofcode.com/2020/day/10
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 10
 
-  def run_1, do: input!() |> process() |> rates() |> multiply_1_3()
-  def run_2, do: input!() |> process() |> count()
+  def run_1, do: input!() |> parse() |> rates() |> multiply_1_3()
+  def run_2, do: input!() |> parse() |> count()
 
-  def process(input),
+  def parse(input),
     do: [0 | Enum.map(String.split(input, "\n"), &String.to_integer/1)] |> Enum.sort(:desc)
 
   defp rates(data) do

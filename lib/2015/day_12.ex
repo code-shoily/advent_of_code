@@ -5,8 +5,6 @@ defmodule AdventOfCode.Y2015.Day12 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 12
 
-  def run, do: {run_1(), run_2()}
-
   def run_1 do
     parse()
     |> parse_json([])

@@ -7,16 +7,10 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %> do
 
   def run_1, do: {:not_implemented, 1}
   def run_2, do: {:not_implemented, 2}
-  def run, do: {run_1(), run_2()}
 
-  def parse(data \\ input()) do
+  def parse(data) do
     data
     |> String.split("\n", trim: true)
-  end
-
-  def input() do
-    # Use site provided test cases here, if necessary
-    input!()
   end
 
   # --- <Solution Functions> ---

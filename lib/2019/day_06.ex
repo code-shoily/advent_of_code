@@ -1,25 +1,26 @@
 defmodule AdventOfCode.Y2019.Day06 do
   @moduledoc """
-  Problem Description: https://adventofcode.com/2019/day/6
+  --- Day 6: Universal Orbit Map ---
+  Problem Link: https://adventofcode.com/2019/day/6
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 6
 
-  def run, do: {run_1(), run_2()}
-
   def run_1 do
-    process()
+    input!()
+    |> parse()
     |> to_graph(:digraph.new([:acyclic]))
     |> count_orbits()
   end
 
   def run_2 do
-    process()
+    input!()
+    |> parse()
     |> to_graph(:digraph.new())
     |> count_orbital_transfers()
   end
 
-  def process do
-    input!() |> String.split("\n") |> Enum.map(&String.split(&1, ")"))
+  def parse(data) do
+    data |> String.split("\n") |> Enum.map(&String.split(&1, ")"))
   end
 
   defp to_graph(data, graph) do

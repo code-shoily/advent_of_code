@@ -1,14 +1,14 @@
 defmodule AdventOfCode.Y2020.Day01 do
   @moduledoc """
+  --- Day 1: Report Repair ---
   Problem Link: https://adventofcode.com/2020/day/1
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 1
 
-  def run_1, do: input!() |> process() |> two_entries()
-  def run_2, do: input!() |> process() |> three_entries()
-  def run, do: {run_1(), run_2()}
+  def run_1, do: input!() |> parse() |> two_entries()
+  def run_2, do: input!() |> parse() |> three_entries()
 
-  def process(input) do
+  def parse(input) do
     input
     |> String.split("\n", trim: true)
     |> Enum.map(&String.to_integer(&1))

@@ -1,18 +1,19 @@
 defmodule AdventOfCode.Y2020.Day12 do
   @moduledoc """
+  --- Day 12: Rain Risk ---
   Problem Link: https://adventofcode.com/2020/day/12
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 12
 
-  def run_1, do: input!() |> process() |> go() |> distance()
-  def run_2, do: input!() |> process() |> waypoints() |> distance()
+  def run_1, do: input!() |> parse() |> go() |> distance()
+  def run_2, do: input!() |> parse() |> waypoints() |> distance()
 
-  def process(input), do: input |> String.split("\n") |> parse()
+  def parse(input), do: input |> String.split("\n") |> parse_actions()
 
-  defp parse([]), do: []
+  defp parse_actions([]), do: []
 
-  defp parse([<<dir::utf8>> <> val | xs]),
-    do: [{String.to_existing_atom(<<dir>>), String.to_integer(val)} | parse(xs)]
+  defp parse_actions([<<dir::utf8>> <> val | xs]),
+    do: [{String.to_existing_atom(<<dir>>), String.to_integer(val)} | parse_actions(xs)]
 
   defp go(dirs), do: go(dirs, {0, 0}, :E)
   defp go([], pos, _), do: pos

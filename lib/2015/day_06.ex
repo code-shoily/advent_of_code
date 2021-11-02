@@ -6,8 +6,6 @@ defmodule AdventOfCode.Y2015.Day06 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 6
 
-  def run, do: {run_1(), run_2()}
-
   def run_1 do
     grid = make_grid(1000)
 

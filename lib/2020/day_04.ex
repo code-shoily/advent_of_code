@@ -1,15 +1,15 @@
 defmodule AdventOfCode.Y2020.Day04 do
   @moduledoc """
+  --- Day 4: Passport Processing ---
   Problem Link: https://adventofcode.com/2020/day/4
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 4
 
   def run_1, do: input!() |> process() |> Enum.filter(&ok?(:k, &1)) |> length()
   def run_2, do: input!() |> process() |> Enum.filter(&ok?(:v, &1)) |> length()
-  def run, do: {run_1(), run_2()}
 
-  def process(input) do
-    input
+  def process(data) do
+    data
     |> String.split("\n")
     |> Enum.chunk_by(&(&1 == ""))
     |> Enum.reject(&(&1 == [""]))

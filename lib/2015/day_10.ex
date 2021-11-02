@@ -7,7 +7,6 @@ defmodule AdventOfCode.Y2015.Day10 do
 
   def run_1, do: read() |> look_and_say(40) |> String.length()
   def run_2, do: read() |> look_and_say(50) |> String.length()
-  def run, do: {run_1(), run_2()}
 
   def read() do
     # Use site provided test cases here, if necessary

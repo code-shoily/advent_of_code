@@ -1,12 +1,18 @@
 defmodule AdventOfCode.Y2020.Day21 do
   @moduledoc """
+  --- Day 21: Allergen Assessment ---
   Problem Link: https://adventofcode.com/2020/day/21
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 21
 
-  def run_1, do: input!() |> process() |> allergen_free()
-  def run_2, do: input!() |> process() |> build() |> evolve() |> sort()
-  def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
+  def run_1, do: input!() |> parse() |> allergen_free()
+  def run_2, do: input!() |> parse() |> build() |> evolve() |> sort()
+
+  def parse(input) do
+    input
+    |> String.split("\n")
+    |> Enum.map(&decrypt/1)
+  end
 
   defp sort(allergens), do: Enum.map_join(allergens, ",", &hd(MapSet.to_list(elem(&1, 1))))
   defp ingredients(foods), do: Enum.flat_map(foods, &elem(&1, 1))
@@ -17,19 +23,21 @@ defmodule AdventOfCode.Y2020.Day21 do
   end
 
   @regex ~r/^(?<items>.+) \(contains (?<allergens>.+)\)$/
-  defp parse([_, m1, m2]), do: {String.split(m2, ", "), String.split(m1, " ")}
-  defp parse(line), do: parse(Regex.run(@regex, line))
+  defp decrypt([_, m1, m2]), do: {String.split(m2, ", "), String.split(m1, " ")}
+  defp decrypt(line), do: decrypt(Regex.run(@regex, line))
 
   defp build(foods) do
-    Enum.reduce(foods, %{}, fn {allergens, items}, acc ->
-      items = MapSet.new(items)
-
-      Enum.reduce(allergens, acc, fn allergen, acc ->
-        Map.update(acc, allergen, [items], &[items | &1])
+    foods
+    |> Enum.reduce(%{}, fn {allergens, items}, acc ->
+      items
+      |> MapSet.new()
+      |> then(fn items ->
+        Enum.reduce(allergens, acc, fn allergen, acc ->
+          Map.update(acc, allergen, [items], &[items | &1])
+        end)
       end)
     end)
-    |> Enum.map(fn {k, v} -> {k, intersections(v)} end)
-    |> Enum.into(%{})
+    |> Map.map(fn {_, v} -> intersections(v) end)
   end
 
   defp allergens(foods), do: build(foods) |> Map.values() |> unions()
@@ -44,8 +52,7 @@ defmodule AdventOfCode.Y2020.Day21 do
     found = unions(Map.values(result))
 
     allergen
-    |> Enum.map(fn {k, v} -> {k, (Enum.count(v) == 1 && v) || MapSet.difference(v, found)} end)
-    |> Enum.into(%{})
+    |> Map.map(fn {_, v} -> (Enum.count(v) == 1 && v) || MapSet.difference(v, found) end)
     |> evolve(result)
   end
 end

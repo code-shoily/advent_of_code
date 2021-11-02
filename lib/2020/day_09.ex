@@ -1,13 +1,13 @@
 defmodule AdventOfCode.Y2020.Day09 do
   @moduledoc """
+  --- Day 9: Encoding Error ---
   Problem Link: https://adventofcode.com/2020/day/9
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 9
 
-  def run_1, do: input!() |> process() |> find_invalid()
-  def run_2, do: input!() |> process() |> contiguous_list()
-
-  def process(input), do: Enum.map(String.split(input, "\n"), &String.to_integer/1)
+  def run_1, do: input!() |> parse() |> find_invalid()
+  def run_2, do: input!() |> parse() |> contiguous_list()
+  def parse(input), do: Enum.map(String.split(input, "\n"), &String.to_integer/1)
 
   defp find_invalid(data) do
     {frame, [v | _] = next} = Enum.split(data, 25)

@@ -34,7 +34,7 @@ defmodule AdventOfCode.Y2018.Day04 do
     |> then(fn %{id: id, minutes: {minute, _}} -> id * minute end)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n", trim: true)
     |> Enum.map(&parse_line/1)

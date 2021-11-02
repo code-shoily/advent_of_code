@@ -1,13 +1,14 @@
 defmodule AdventOfCode.Y2020.Day23 do
   @moduledoc """
+  --- Day 23: Crab Cups ---
   Problem Link: https://adventofcode.com/2020/day/23
   """
   @input "467528193"
   @part_1_limit 100
 
-  def run_1, do: process() |> play() |> labels_after(1)
+  def run_1, do: parse() |> play() |> labels_after(1)
   def run_2, do: {:not_implemented, 2}
-  def process, do: Enum.map(String.graphemes(@input), &String.to_integer/1)
+  def parse, do: Enum.map(String.graphemes(@input), &String.to_integer/1)
 
   def play(cups), do: play(cups, hd(cups), 1)
   def play(cups, _, @part_1_limit), do: cups

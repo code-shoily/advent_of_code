@@ -1,14 +1,15 @@
 defmodule AdventOfCode.Y2017.Day04 do
   @moduledoc """
+  --- Day 4: High-Entropy Passphrases ---
   Problem Link: https://adventofcode.com/2017/day/4
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 4
 
-  def run_1, do: input!() |> process() |> count_valids(&duplicates?/1)
-  def run_2, do: input!() |> process() |> count_valids(&anagrams?/1)
+  def run_1, do: input!() |> parse() |> count_valids(&duplicates?/1)
+  def run_2, do: input!() |> parse() |> count_valids(&anagrams?/1)
   def run, do: {run_1(), run_2()}
 
-  def process(input), do: String.split(input, "\n") |> Enum.map(&String.split(&1, " "))
+  def parse(input), do: String.split(input, "\n") |> Enum.map(&String.split(&1, " "))
 
   def count_valids(data, fun), do: data |> Enum.map(fun) |> Enum.filter(& &1) |> length()
 

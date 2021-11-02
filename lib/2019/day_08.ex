@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Y2019.Day08 do
   @moduledoc """
   --- Day 8: Space Image Format ---
-  Problem description: https://adventofcode.com/2019/day/8
+  Problem Link: https://adventofcode.com/2019/day/8
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 8
 
@@ -26,7 +26,7 @@ defmodule AdventOfCode.Y2019.Day08 do
     |> print_image()
   end
 
-  def process(data \\ input!()) do
+  def process(data) do
     data
     |> String.codepoints()
     |> Enum.map(&String.to_integer/1)

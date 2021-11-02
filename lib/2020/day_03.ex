@@ -19,9 +19,7 @@ defmodule AdventOfCode.Y2020.Day03 do
     end
   end
 
-  def run, do: {run_1(), run_2()}
-
-  def parse(input \\ input!()) do
+  def parse(input) do
     input
     |> String.split("\n", trim: true)
     |> Enum.map(&String.graphemes/1)

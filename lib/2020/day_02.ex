@@ -7,9 +7,8 @@ defmodule AdventOfCode.Y2020.Day02 do
 
   def run_1, do: input!() |> parse() |> solve()
   def run_2, do: input!() |> parse() |> solve_corrected()
-  def run, do: {run_1(), run_2()}
 
-  def parse(input \\ input!()) do
+  def parse(input) do
     input
     |> String.split("\n")
     |> Enum.map(&parse_line/1)

@@ -22,7 +22,7 @@ defmodule AdventOfCode.Y2019.Day10 do
     |> result()
   end
 
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n")
     |> Enum.with_index()

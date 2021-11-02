@@ -1,15 +1,16 @@
 defmodule AdventOfCode.Y2020.Day13 do
   @moduledoc """
+  --- Day 13: Shuttle Search ---
   Problem Link: https://adventofcode.com/2020/day/13
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 13
 
   alias AdventOfCode.Helpers.ChineseRemainder
 
-  def run_1, do: input!() |> process_1() |> earliest_bus() |> elem(3)
-  def run_2, do: input!() |> process_2() |> ChineseRemainder.compute()
+  def run_1, do: input!() |> parse_1() |> earliest_bus() |> elem(3)
+  def run_2, do: input!() |> parse_2() |> ChineseRemainder.compute()
 
-  def process_1(input) do
+  def parse_1(input) do
     [time, ids] = String.split(input, "\n", trim: true)
 
     {String.to_integer(time),
@@ -19,7 +20,7 @@ defmodule AdventOfCode.Y2020.Day13 do
      |> Enum.map(&String.to_integer/1)}
   end
 
-  def process_2(input) do
+  def parse_2(input) do
     input
     |> String.split("\n", trim: true)
     |> Enum.at(-1)

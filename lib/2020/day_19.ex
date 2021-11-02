@@ -1,13 +1,14 @@
 defmodule AdventOfCode.Y2020.Day19 do
   @moduledoc """
+  --- Day 19: Monster Messages ---
   Problem Link: https://adventofcode.com/2020/day/19
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 19
 
-  def run_1, do: match_count(process(input!(), false))
-  def run_2, do: match_count(process(input!(), true))
+  def run_1, do: match_count(parse_input(input!(), false))
+  def run_2, do: match_count(parse_input(input!(), true))
 
-  def process(input, loop?) do
+  def parse_input(input, loop?) do
     {rules, messages} = input |> String.split("\n\n") |> parse() |> maybe_override(loop?)
     {messages, rules |> to_re("0", "", loop?) |> :erlang.iolist_to_binary() |> to_re()}
   end

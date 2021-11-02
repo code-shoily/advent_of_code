@@ -7,7 +7,6 @@ defmodule AdventOfCode.Y2015.Day11 do
 
   def run_1, do: read() |> next_valid_password()
   def run_2, do: read() |> next_valid_password() |> next_valid_password()
-  def run, do: {run_1(), run_2()}
 
   def read(), do: input!()
 
