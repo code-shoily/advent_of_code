@@ -18,7 +18,7 @@ defmodule AdventOfCode.Y2015.Day10 do
     input
     |> String.graphemes()
     |> Enum.chunk_by(&Function.identity/1)
-    |> Enum.map_join("", fn ([n | _] = lst) ->
+    |> Enum.map_join("", fn [n | _] = lst ->
       "#{length(lst)}#{n}"
     end)
   end
