@@ -21,7 +21,6 @@ defmodule AdventOfCode.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8.0"},
       {:floki, "~> 0.32.0"},
       {:jason, "~> 1.2"}
