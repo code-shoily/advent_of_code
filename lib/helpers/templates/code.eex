@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Y<%= year %>.Day<%= day %> do
+defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %> do
   @moduledoc """
   <%= title %>
   Problem Link: https://adventofcode.com/<%= year %>/day/<%= day %>

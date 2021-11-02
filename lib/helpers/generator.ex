@@ -34,7 +34,7 @@ defmodule AdventOfCode.Helpers.Generator do
       |> EEx.eval_file(day: day, year: year, title: get_title(year, day))
 
     code_file =
-      "lib/#{year}/day_#{day}.ex"
+      "lib/#{year}/day_#{zero_padded(day)}.ex"
       |> create_file(code_content)
 
     # Write test files at `test/<year>/day_<year>_test.exs`
@@ -43,7 +43,7 @@ defmodule AdventOfCode.Helpers.Generator do
       |> EEx.eval_file(day: day, year: year)
 
     test_file =
-      "test/#{year}/day_#{day}_test.exs"
+      "test/#{year}/day_#{zero_padded(day)}_test.exs"
       |> create_file(test_content)
 
     "INPUT: #{input_file}\tCODE: #{code_file}\tTEST: #{test_file}\n"
@@ -93,4 +93,6 @@ defmodule AdventOfCode.Helpers.Generator do
   rescue
     _ -> ""
   end
+
+  defp zero_padded(day), do: day |> to_string() |> String.pad_leading(2, "0")
 end
