@@ -1,5 +1,6 @@
 defmodule AdventOfCode.Y2018.Day06 do
   @moduledoc """
+  --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   """
   use AdventOfCode.Helpers.InputReader, year: 2018, day: 6
@@ -9,8 +10,20 @@ defmodule AdventOfCode.Y2018.Day06 do
   @type corners :: {point(), point()}
   @type world :: list({point(), list({point(), integer()})})
 
-  @spec process(binary()) :: points()
-  def process(data) do
+  def run_1 do
+    input!()
+    |> parse()
+    |> covers_most_points()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> covers_distances_within(10_000)
+  end
+
+  @spec parse(binary()) :: points()
+  def parse(data \\ input!()) do
     data
     |> String.split("\n", trim: true)
     |> Enum.map(fn line ->
@@ -19,20 +32,6 @@ defmodule AdventOfCode.Y2018.Day06 do
       |> Enum.map(&String.to_integer(String.trim(&1)))
       |> List.to_tuple()
     end)
-  end
-
-  def run, do: {run_1(), run_2()}
-
-  def run_1 do
-    input!()
-    |> process()
-    |> covers_most_points()
-  end
-
-  def run_2 do
-    input!()
-    |> process()
-    |> covers_distances_within(10_000)
   end
 
   @spec manhattan_distance(point, point) :: integer()
@@ -65,10 +64,10 @@ defmodule AdventOfCode.Y2018.Day06 do
     distances
     |> Enum.sort_by(&elem(&1, 1))
     |> Enum.take(2)
-    |> (fn
-          [{_, d}, {_, d}] -> nil
-          [{p, _} | _] -> p
-        end).()
+    |> then(fn
+      [{_, d}, {_, d}] -> nil
+      [{p, _} | _] -> p
+    end)
   end
 
   defp edges(world, {{xl, xr}, {yt, yb}}) do

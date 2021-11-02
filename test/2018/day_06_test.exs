@@ -16,9 +16,9 @@ defmodule AdventOfCode.Y2018.Day06Test do
     {8, 9}
   ]
 
-  describe "process" do
-    test "Processes input by creating a list of points from a set of strings" do
-      assert Solution.process(@data) == @points
+  describe "parse" do
+    test "Parses input by creating a list of points from a set of strings" do
+      assert Solution.parse(@data) == @points
     end
   end
 

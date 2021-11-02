@@ -1,14 +1,14 @@
 defmodule AdventOfCode.Y2020.Day05 do
   @moduledoc """
+  --- Day 5: Binary Boarding ---
   Problem Link: https://adventofcode.com/2020/day/5
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 5
 
-  def run_1, do: input!() |> process() |> Enum.max()
-  def run_2, do: input!() |> process() |> my_id()
-  def run, do: {run_1(), run_2()}
+  def run_1, do: input!() |> parse() |> Enum.max()
+  def run_2, do: input!() |> parse() |> my_id()
 
-  def process(input), do: String.split(input, "\n") |> ids()
+  def parse(input), do: String.split(input, "\n") |> ids()
 
   def walk("F" <> pass, lo, hi), do: walk(pass, lo, mid(lo, hi))
   def walk("B" <> pass, lo, hi), do: walk(pass, mid(lo, hi) + 1, hi)
@@ -28,7 +28,7 @@ defmodule AdventOfCode.Y2020.Day05 do
 
     sorted_ids
     |> Enum.zip(tl(sorted_ids))
-    |> Enum.filter(fn {a, b} -> b - a != 1 end)
-    |> (fn [{_, b}] -> b - 1 end).()
+    |> Keyword.filter(fn {a, b} -> b - a != 1 end)
+    |> then(fn [{_, b}] -> b - 1 end)
   end
 end

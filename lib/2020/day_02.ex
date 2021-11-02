@@ -1,14 +1,15 @@
 defmodule AdventOfCode.Y2020.Day02 do
   @moduledoc """
+  --- Day 2: Password Philosophy ---
   Problem Link: https://adventofcode.com/2020/day/2
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 2
 
-  def run_1, do: input!() |> process() |> solve()
-  def run_2, do: input!() |> process() |> solve_corrected()
+  def run_1, do: input!() |> parse() |> solve()
+  def run_2, do: input!() |> parse() |> solve_corrected()
   def run, do: {run_1(), run_2()}
 
-  def process(input) do
+  def parse(input \\ input!()) do
     input
     |> String.split("\n")
     |> Enum.map(&parse_line/1)
@@ -29,7 +30,7 @@ defmodule AdventOfCode.Y2020.Day02 do
     |> String.graphemes()
     |> Enum.frequencies()
     |> Map.get(char)
-    |> (fn freq -> freq >= lo and freq <= hi end).()
+    |> then(fn freq -> freq >= lo and freq <= hi end)
   end
 
   defp valid_position?({lo, hi, char, pass}) do

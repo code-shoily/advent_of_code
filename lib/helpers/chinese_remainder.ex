@@ -32,9 +32,9 @@ defmodule AdventOfCode.Helpers.ChineseRemainder do
         |> Enum.zip(
           residues
           |> Enum.zip(inverses)
-          |> Enum.map(fn {a, b} -> a * b end)
+          |> Enum.map(&Tuple.product/1)
         )
-        |> Enum.map(fn {a, b} -> a * b end)
+        |> Enum.map(&Tuple.product/1)
         |> Enum.sum()
         |> mod(mod_pi)
     end

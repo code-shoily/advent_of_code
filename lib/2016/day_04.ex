@@ -1,23 +1,39 @@
 defmodule AdventOfCode.Y2016.Day04 do
   @moduledoc """
+  --- Day 4: Security Through Obscurity ---
   Problem Link: https://adventofcode.com/2016/day/4
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 4
 
-  def process(input) do
-    input
-    |> String.split("\n", trim: true)
-    |> Enum.map(&parse_encrypted_name/1)
-  end
-
-  def parse_encrypted_name(name) do
-    name
-    |> String.split("-")
-    |> Enum.split(-1)
+  def run_1 do
+    input!()
     |> parse()
+    |> Enum.filter(&real_room?/1)
+    |> Enum.reduce(0, fn %{sector: sector}, acc -> sector + acc end)
   end
 
-  defp parse({names, [suffix]}) do
+  @key "northpole object storage"
+  def run_2 do
+    input!()
+    |> parse()
+    |> Enum.map(fn %{names: names, sector: sector} ->
+      names
+      |> Enum.join("-")
+      |> String.to_charlist()
+      |> Enum.map_join(&rotate([&1], sector))
+      |> then(fn name -> {name, sector} end)
+    end)
+    |> List.keyfind(@key, 0)
+    |> elem(1)
+  end
+
+  def parse(data \\ input!()) do
+    data
+    |> String.split("\n", trim: true)
+    |> Enum.map(&decrypt/1)
+  end
+
+  defp decrypt({names, [suffix]}) do
     [sector, checksum] = String.split(suffix |> String.replace("]", ""), "[")
 
     %{
@@ -25,6 +41,13 @@ defmodule AdventOfCode.Y2016.Day04 do
       sector: String.to_integer(sector),
       checksum: checksum
     }
+  end
+
+  defp decrypt(name) do
+    name
+    |> String.split("-")
+    |> Enum.split(-1)
+    |> decrypt()
   end
 
   defp real_room?(%{names: names, checksum: checksum}) do
@@ -56,29 +79,4 @@ defmodule AdventOfCode.Y2016.Day04 do
     |> List.wrap()
     |> to_string()
   end
-
-  def run_1 do
-    input!()
-    |> process()
-    |> Enum.filter(&real_room?/1)
-    |> Enum.reduce(0, fn %{sector: sector}, acc -> sector + acc end)
-  end
-
-  @key "northpole object storage"
-  def run_2 do
-    input!()
-    |> process()
-    |> Enum.map(fn %{names: names, sector: sector} ->
-      names
-      |> Enum.join("-")
-      |> String.to_charlist()
-      |> Enum.map(&rotate([&1], sector))
-      |> Enum.join()
-      |> (fn name -> {name, sector} end).()
-    end)
-    |> Enum.into(%{})
-    |> Map.get(@key)
-  end
-
-  def run, do: {run_1(), run_2()}
 end

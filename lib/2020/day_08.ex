@@ -1,13 +1,14 @@
 defmodule AdventOfCode.Y2020.Day08 do
   @moduledoc """
+  --- Day 8: Handheld Halting ---
   Problem Link: https://adventofcode.com/2020/day/8
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 8
 
-  def run_1, do: input!() |> process() |> exec() |> elem(1)
-  def run_2, do: input!() |> process() |> fix()
+  def run_1, do: input!() |> parse() |> exec() |> elem(1)
+  def run_2, do: input!() |> parse() |> fix()
 
-  def process(input), do: Enum.map(String.split(input, "\n"), &parse/1)
+  def parse(input \\ input!()), do: Enum.map(String.split(input, "\n"), &parse_command/1)
 
   defp exec(prog), do: exec(prog, 0, 0, %{})
   defp exec(_, cur, acc, hist) when is_map_key(hist, cur), do: {:cont, acc}
@@ -21,10 +22,10 @@ defmodule AdventOfCode.Y2020.Day08 do
     end
   end
 
-  defp parse(cmd) do
+  defp parse_command(cmd) do
     ~r/(?<cmd>.+) (?<val>[+-]\d+)/
     |> Regex.named_captures(cmd)
-    |> (&{String.to_existing_atom(&1["cmd"]), String.to_integer(&1["val"])}).()
+    |> then(&{String.to_existing_atom(&1["cmd"]), String.to_integer(&1["val"])})
   end
 
   defp swaps(prog) do

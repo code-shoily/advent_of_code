@@ -1,13 +1,42 @@
 defmodule AdventOfCode.Y2019.Day03 do
   @moduledoc """
-  Problem description: Problem description: https://adventofcode.com/2019/day/3
+  --- Day 3: Crossed Wires ---
+  Problem description: https://adventofcode.com/2019/day/3
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 3
 
   @origin {0, 0}
 
-  def process do
+  def run_1 do
     input!()
+    |> parse()
+    |> Enum.map(&move(&1, @origin, []))
+    |> nearest_intersection()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> Enum.map(fn wire ->
+      wire
+      |> move(@origin, [])
+      |> Enum.dedup()
+      |> calculate_steps(0, %{})
+    end)
+    |> then(fn [a, b] ->
+      Map.merge(a, b, fn
+        _, 0, 0 -> :discard
+        _, a, b -> [a, b]
+      end)
+    end)
+    |> Map.filter(fn {_, v} -> is_list(v) end)
+    |> Enum.map(fn {_, steps} -> steps end)
+    |> Enum.min_by(fn [first, second] -> first + second end)
+    |> Enum.sum()
+  end
+
+  def parse(data \\ input!()) do
+    data
     |> String.split("\n")
     |> Enum.map(fn line ->
       line
@@ -15,17 +44,9 @@ defmodule AdventOfCode.Y2019.Day03 do
       |> Enum.map(fn instruction ->
         instruction
         |> String.split_at(1)
-        |> (fn {dir, val} -> {dir, String.to_integer(val)} end).()
+        |> then(fn {dir, val} -> {dir, String.to_integer(val)} end)
       end)
     end)
-  end
-
-  def run, do: {run_1(), run_2()}
-
-  def run_1 do
-    process()
-    |> Enum.map(&move(&1, @origin, []))
-    |> nearest_intersection()
   end
 
   defp move([instruction | []], current, results) do
@@ -63,26 +84,6 @@ defmodule AdventOfCode.Y2019.Day03 do
     |> MapSet.delete(@origin)
     |> Enum.min_by(&manhattan/1)
     |> manhattan()
-  end
-
-  def run_2 do
-    process()
-    |> Enum.map(fn wire ->
-      wire
-      |> move(@origin, [])
-      |> Enum.dedup()
-      |> calculate_steps(0, %{})
-    end)
-    |> (fn [a, b] ->
-          Map.merge(a, b, fn
-            _, 0, 0 -> :discard
-            _, a, b -> [a, b]
-          end)
-        end).()
-    |> Enum.filter(fn {_, v} -> is_list(v) end)
-    |> Enum.map(fn {_, steps} -> steps end)
-    |> Enum.min_by(fn [first, second] -> first + second end)
-    |> Enum.sum()
   end
 
   defp calculate_steps([p], step, results), do: Map.put_new(results, p, step)

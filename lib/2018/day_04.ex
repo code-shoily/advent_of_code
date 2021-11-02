@@ -1,13 +1,43 @@
 defmodule AdventOfCode.Y2018.Day04 do
   @moduledoc """
+  --- Day 4: Repose Record ---
   Problem Link: https://adventofcode.com/2018/day/4
   """
   use AdventOfCode.Helpers.InputReader, year: 2018, day: 4
 
-  def process(input) do
-    input
+  def run_1 do
+    store = input!() |> parse() |> sleep_time()
+
+    most_sleeper =
+      store
+      |> Enum.max_by(& &1[:logs][:duration])
+      |> Map.get(:id)
+
+    most_minute =
+      store
+      |> Enum.group_by(& &1[:id])
+      |> Map.get(most_sleeper)
+      |> hd()
+      |> get_in([:logs, :minutes])
+      |> get_mode()
+      |> elem(0)
+
+    most_minute * most_sleeper
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> sleep_time()
+    |> Enum.map(fn %{id: id, logs: %{minutes: m}} -> %{id: id, minutes: get_mode(m)} end)
+    |> Enum.max_by(&elem(&1[:minutes], 1))
+    |> then(fn %{id: id, minutes: {minute, _}} -> id * minute end)
+  end
+
+  def parse(data \\ input!()) do
+    data
     |> String.split("\n", trim: true)
-    |> Enum.map(&parse/1)
+    |> Enum.map(&parse_line/1)
     |> Enum.sort(fn a, b -> NaiveDateTime.diff(a[:timestamp], b[:timestamp]) < 0 end)
     |> normalize()
   end
@@ -17,7 +47,7 @@ defmodule AdventOfCode.Y2018.Day04 do
        (?<hour>\d{2}):(?<minute>\d{2})\]
       \s(?<log>.+)$
   """x
-  defp parse(line) do
+  defp parse_line(line) do
     @regex
     |> Regex.named_captures(line)
     |> sanitize()
@@ -63,8 +93,7 @@ defmodule AdventOfCode.Y2018.Day04 do
     |> Enum.reverse()
     |> Enum.map(fn %{log: {action, id}} = log ->
       log
-      |> Map.put_new(:action, action)
-      |> Map.put_new(:id, id)
+      |> Map.merge(%{action: action, id: id})
       |> Map.delete(:log)
     end)
   end
@@ -113,35 +142,4 @@ defmodule AdventOfCode.Y2018.Day04 do
 
     {hd(mode_line), length(mode_line)}
   end
-
-  def run_1 do
-    store = input!() |> process() |> sleep_time()
-
-    most_sleeper =
-      store
-      |> Enum.max_by(& &1[:logs][:duration])
-      |> Map.get(:id)
-
-    most_minute =
-      store
-      |> Enum.group_by(& &1[:id])
-      |> Map.get(most_sleeper)
-      |> hd()
-      |> get_in([:logs, :minutes])
-      |> get_mode()
-      |> elem(0)
-
-    most_minute * most_sleeper
-  end
-
-  def run_2 do
-    input!()
-    |> process()
-    |> sleep_time()
-    |> Enum.map(fn %{id: id, logs: %{minutes: m}} -> %{id: id, minutes: get_mode(m)} end)
-    |> Enum.max_by(&elem(&1[:minutes], 1))
-    |> (fn %{id: id, minutes: {minute, _}} -> id * minute end).()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

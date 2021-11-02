@@ -1,13 +1,29 @@
 defmodule AdventOfCode.Y2019.Day10 do
   @moduledoc """
+  --- Day 10: Monitoring Station ---
   Problem Link: https://adventofcode.com/2019/day/10
   """
   use AdventOfCode.Helpers.InputReader, year: 2019, day: 10
 
   @asteroid "#"
 
-  def process do
+  def run_1 do
     input!()
+    |> parse()
+    |> visible_asteroid_count()
+    |> Enum.max_by(fn {_, number} -> number end)
+    |> elem(1)
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> the_200th_asteroid()
+    |> result()
+  end
+
+  def parse(data \\ input!()) do
+    data
     |> String.split("\n")
     |> Enum.with_index()
     |> Enum.flat_map(fn {line, row} ->
@@ -19,13 +35,6 @@ defmodule AdventOfCode.Y2019.Day10 do
       end)
     end)
     |> Map.new()
-  end
-
-  def run_1 do
-    process()
-    |> visible_asteroid_count()
-    |> Enum.max_by(fn {_, number} -> number end)
-    |> elem(1)
   end
 
   defp visible_asteroid_count(world) do
@@ -49,12 +58,6 @@ defmodule AdventOfCode.Y2019.Day10 do
   end
 
   defp radian_of({x1, y1}, {x2, y2}), do: :math.atan2(y1 - y2, x1 - x2)
-
-  def run_2 do
-    process()
-    |> the_200th_asteroid()
-    |> result()
-  end
 
   defp result({x, y}), do: x * 100 + y
 
@@ -106,7 +109,7 @@ defmodule AdventOfCode.Y2019.Day10 do
   end
 
   defp distance({x1, y1}, {x2, y2}),
-    do: :math.sqrt(:math.pow(x1 - x2, 2) + :math.pow(y1 - y2, 2))
+    do: :math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
   defp radial_sort(objects, {xi, yi}) do
     objects
@@ -117,6 +120,4 @@ defmodule AdventOfCode.Y2019.Day10 do
       end
     end)
   end
-
-  def run, do: {run_1(), run_2()}
 end
