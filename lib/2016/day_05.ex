@@ -1,18 +1,12 @@
 defmodule AdventOfCode.Y2016.Day05 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 5: How About a Nice Game of Chess? ---
   Problem Link: https://adventofcode.com/2016/day/5
   !FIXME: This is slow!
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 5
 
   @input "cxdnnyjw"
-
-  def md5(door_id) do
-    :crypto.hash(:md5, door_id) |> Base.encode16(case: :lower)
-  end
-
-  def five_zeroes?(door_id), do: String.starts_with?(door_id, "00000")
 
   def run_1 do
     Stream.iterate(1, &(&1 + 1))
@@ -50,11 +44,15 @@ defmodule AdventOfCode.Y2016.Day05 do
     |> construct_pasword()
   end
 
+  defp md5(door_id) do
+    :crypto.hash(:md5, door_id) |> Base.encode16(case: :lower)
+  end
+
+  defp five_zeroes?(door_id), do: String.starts_with?(door_id, "00000")
+
   defp construct_pasword(%{coords: coords}) do
     coords
     |> Enum.sort_by(&elem(&1, 0))
     |> Enum.map_join(fn {_, v} -> v end)
   end
-
-  def run, do: {run_1(), run_2()}
 end

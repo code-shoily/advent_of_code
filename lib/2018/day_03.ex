@@ -1,16 +1,33 @@
 defmodule AdventOfCode.Y2018.Day03 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 3: No Matter How You Slice It ---
   Problem Link: https://adventofcode.com/2018/day/3
   """
   use AdventOfCode.Helpers.InputReader, year: 2018, day: 3
 
-  def process(input) do
+  def run_1 do
+    input!()
+    |> parse()
+    |> Enum.filter(fn {_, v} -> length(v) > 1 end)
+    |> length()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> claim_world_view()
+    |> Enum.filter(&elem(&1, 1))
+    |> hd()
+    |> elem(0)
+  end
+
+  def parse(input) do
     input
     |> String.split("\n", trim: true)
     |> Stream.map(&parse_line/1)
     |> Stream.map(&sanitize/1)
     |> Enum.to_list()
+    |> Enum.reduce(%{}, &claim/2)
   end
 
   @regex ~r/#(?<id>\d+)\s@\s(?<x>\d+),(?<y>\d+):\s(?<w>\d+)x(?<h>\d+)/
@@ -41,19 +58,6 @@ defmodule AdventOfCode.Y2018.Day03 do
     end)
   end
 
-  def populate_claims(input) do
-    input
-    |> process()
-    |> Enum.reduce(%{}, &claim/2)
-  end
-
-  def run_1 do
-    input!()
-    |> populate_claims()
-    |> Enum.filter(fn {_, v} -> length(v) > 1 end)
-    |> length()
-  end
-
   def claim_world_view(claims) do
     claims
     |> Enum.reduce(%{}, fn {_, ids}, world ->
@@ -63,15 +67,4 @@ defmodule AdventOfCode.Y2018.Day03 do
       end
     end)
   end
-
-  def run_2 do
-    input!()
-    |> populate_claims()
-    |> claim_world_view()
-    |> Enum.filter(&elem(&1, 1))
-    |> hd()
-    |> elem(0)
-  end
-
-  def run, do: {run_1(), run_2()}
 end

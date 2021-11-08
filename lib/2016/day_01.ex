@@ -1,11 +1,29 @@
 defmodule AdventOfCode.Y2016.Day01 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 1: No Time for a Taxicab ---
   Problem Link: https://adventofcode.com/2016/day/1
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 1
 
-  defp process(input) do
+  def run_1 do
+    input!()
+    |> parse()
+    |> move()
+    |> Enum.reverse()
+    |> hd()
+    |> blocks()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> move()
+    |> merge_points()
+    |> first_duplicate(MapSet.new())
+    |> blocks()
+  end
+
+  defp parse(input) do
     input
     |> String.split(",")
     |> Enum.map(&String.trim/1)
@@ -76,24 +94,4 @@ defmodule AdventOfCode.Y2016.Day01 do
     do:
       (MapSet.member?(history, position) && position) ||
         first_duplicate(rest, MapSet.put(history, position))
-
-  def run_1 do
-    input!()
-    |> process()
-    |> move()
-    |> Enum.reverse()
-    |> hd()
-    |> blocks()
-  end
-
-  def run_2 do
-    input!()
-    |> process()
-    |> move()
-    |> merge_points()
-    |> first_duplicate(MapSet.new())
-    |> blocks()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

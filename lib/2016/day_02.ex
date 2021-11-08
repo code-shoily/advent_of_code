@@ -1,11 +1,41 @@
 defmodule AdventOfCode.Y2016.Day02 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 2: Bathroom Security ---
   Problem Link: https://adventofcode.com/2016/day/2
   """
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 2
 
-  @initial_position 5
+  @initial_position_1 5
+  @initial_position_2 [{"5", 2, 0}]
+
+  def run_1 do
+    input!()
+    |> parse()
+    |> parse_rule([], @initial_position_1)
+    |> Enum.reverse()
+    |> Enum.join()
+    |> String.to_integer()
+  end
+
+  def run_2 do
+    data = to_matrix_map()
+
+    input!()
+    |> parse()
+    |> Enum.reduce(@initial_position_2, fn cmd, [{_, x, y} | _] = acc ->
+      [run_cmds(data, cmd, x, y) | acc]
+    end)
+    |> Enum.map_join(fn {v, _, _} -> v end)
+    |> String.split_at(-1)
+    |> elem(0)
+    |> String.reverse()
+  end
+
+  defp parse(input) do
+    input
+    |> String.split("\n")
+    |> Enum.map(&String.graphemes/1)
+  end
 
   defp valid?(number), do: number <= 0 or number > 9
 
@@ -15,9 +45,13 @@ defmodule AdventOfCode.Y2016.Day02 do
   defp next_1(cur, "D"), do: cur + 3
   defp next_1(_, _), do: -1
 
-  defp parse([], res), do: res
-  defp parse([h | t], []), do: parse(t, [find(h, @initial_position, &next_1/2)])
-  defp parse([h | t], [x | _] = res), do: parse(t, [find(h, x, &next_1/2) | res])
+  defp parse_rule([], res, _), do: res
+
+  defp parse_rule([h | t], [], position),
+    do: parse_rule(t, [find(h, position, &next_1/2)], position)
+
+  defp parse_rule([h | t], [x | _] = res, position),
+    do: parse_rule(t, [find(h, x, &next_1/2) | res], position)
 
   defp find([], cur, _), do: cur
 
@@ -29,20 +63,6 @@ defmodule AdventOfCode.Y2016.Day02 do
     else
       find(t, next_key, next_fn)
     end
-  end
-
-  def run_1 do
-    process_input()
-    |> parse([])
-    |> Enum.reverse()
-    |> Enum.join()
-    |> String.to_integer()
-  end
-
-  defp process_input do
-    input!()
-    |> String.split("\n")
-    |> Enum.map(&String.graphemes/1)
   end
 
   @matrix [
@@ -84,20 +104,4 @@ defmodule AdventOfCode.Y2016.Day02 do
   def run_cmds(data, ["R" | rest], x, y) do
     (data[x][y + 1] == nil && run_cmds(data, rest, x, y)) || run_cmds(data, rest, x, y + 1)
   end
-
-  @initial_position [{"5", 2, 0}]
-  def run_2 do
-    data = to_matrix_map()
-
-    process_input()
-    |> Enum.reduce(@initial_position, fn cmd, [{_, x, y} | _] = acc ->
-      [run_cmds(data, cmd, x, y) | acc]
-    end)
-    |> Enum.map_join(fn {v, _, _} -> v end)
-    |> String.split_at(-1)
-    |> elem(0)
-    |> String.reverse()
-  end
-
-  def run, do: {run_1(), run_2()}
 end

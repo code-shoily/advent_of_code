@@ -1,20 +1,26 @@
 defmodule AdventOfCode.Y2016.Day07 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 7: Internet Protocol Version 7 ---
   Problem Link: https://adventofcode.com/2016/day/7
   """
-
   use AdventOfCode.Helpers.InputReader, year: 2016, day: 7
-
-  def process(input) do
-    String.split(input, "\n", trim: true) |> Enum.map(&parse_line/1)
-  end
 
   def run_1 do
     input!()
-    |> process()
+    |> parse()
     |> Enum.filter(&supports_tls?/1)
     |> Enum.count()
+  end
+
+  def run_2 do
+    input!()
+    |> parse()
+    |> Enum.filter(&supports_ssl?/1)
+    |> Enum.count()
+  end
+
+  def parse(input) do
+    String.split(input, "\n", trim: true) |> Enum.map(&parse_line/1)
   end
 
   @pattern ~r/\[(.*?)\]/
@@ -48,13 +54,6 @@ defmodule AdventOfCode.Y2016.Day07 do
     not contains_abba?(hypernets) and contains_abba?(sequences)
   end
 
-  def run_2 do
-    input!()
-    |> process()
-    |> Enum.filter(&supports_ssl?/1)
-    |> Enum.count()
-  end
-
   defp supports_ssl?(%{hypernets: hypernets, sequences: sequences}) do
     with abas <- Enum.flat_map(sequences, &get_abas/1),
          true <- not Enum.empty?(abas),
@@ -77,6 +76,4 @@ defmodule AdventOfCode.Y2016.Day07 do
 
   defp bab_for([a, b, a]), do: [b, a, b]
   defp bab_for(_), do: :error
-
-  def run, do: {run_1(), run_2()}
 end

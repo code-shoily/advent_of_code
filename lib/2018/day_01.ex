@@ -1,24 +1,17 @@
 defmodule AdventOfCode.Y2018.Day01 do
   @moduledoc """
-  !TODO: UPDATE ME
+  --- Day 1: Chronal Calibration ---
   Problem Link: https://adventofcode.com/2018/day/1
   """
   use AdventOfCode.Helpers.InputReader, year: 2018, day: 1
 
-  @spec to_number_list(String.t()) :: [String.t()]
-  def to_number_list(raw_input) do
-    raw_input
-    |> String.split("\n")
-    |> Enum.map(&String.to_integer/1)
-  end
-
   @spec run_1() :: integer()
-  def run_1, do: input!() |> to_number_list() |> Enum.reduce(0, &Kernel.+/2)
+  def run_1, do: input!() |> parse() |> Enum.reduce(0, &Kernel.+/2)
 
   @spec run_2() :: non_neg_integer()
   def run_2 do
     input!()
-    |> to_number_list()
+    |> parse()
     |> Stream.cycle()
     |> Enum.reduce_while({%MapSet{}, 0}, fn cur, {history, prev} ->
       new_frequency = prev + cur
@@ -31,5 +24,10 @@ defmodule AdventOfCode.Y2018.Day01 do
     end)
   end
 
-  def run, do: {run_1(), run_2()}
+  @spec parse(String.t()) :: [String.t()]
+  def parse(input) do
+    input
+    |> String.split("\n")
+    |> Enum.map(&String.to_integer/1)
+  end
 end
