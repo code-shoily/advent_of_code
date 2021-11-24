@@ -10,3 +10,4 @@
 | 4 | [Repose Record](https://adventofcode.com/2018/day/4)  | :star2: | [day_04.ex](/lib/2018/day_04.ex) |
 | 5 | [Alchemical Reduction](https://adventofcode.com/2018/day/5)  | :hourglass: | [day_05.ex](/lib/2018/day_05.ex) |
 | 6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6)  | :star2: | [day_06.ex](/lib/2018/day_06.ex) |
+| 8 | [Memory Maneuver](https://adventofcode.com/2018/day/8)  | :star: | [day_08.ex](/lib/2018/day_08.ex) |
