@@ -31,13 +31,15 @@ defmodule AdventOfCode.Y2020.Day21 do
     |> Enum.reduce(%{}, fn {allergens, items}, acc ->
       items
       |> MapSet.new()
-      |> then(fn items ->
-        Enum.reduce(allergens, acc, fn allergen, acc ->
-          Map.update(acc, allergen, [items], &[items | &1])
-        end)
-      end)
+      |> then(fn items -> collect(allergens, acc, items) end)
     end)
     |> Map.map(fn {_, v} -> intersections(v) end)
+  end
+
+  defp collect(allergens, init, items) do
+    Enum.reduce(allergens, init, fn allergen, acc ->
+      Map.update(acc, allergen, [items], &[items | &1])
+    end)
   end
 
   defp allergens(foods), do: build(foods) |> Map.values() |> unions()

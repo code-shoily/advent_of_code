@@ -41,12 +41,14 @@ defmodule AdventOfCode.Y2019.Day03 do
     |> Enum.map(fn line ->
       line
       |> String.split(",")
-      |> Enum.map(fn instruction ->
-        instruction
-        |> String.split_at(1)
-        |> then(fn {dir, val} -> {dir, String.to_integer(val)} end)
-      end)
+      |> Enum.map(&parse_instruction/1)
     end)
+  end
+
+  defp parse_instruction(instruction) do
+    instruction
+    |> String.split_at(1)
+    |> then(fn {dir, val} -> {dir, String.to_integer(val)} end)
   end
 
   defp move([instruction | []], current, results) do
