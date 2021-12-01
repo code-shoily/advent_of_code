@@ -19,13 +19,13 @@ defmodule Solution do
 
   def run_1(input) do
     input
-    |> Enum.chunk(2, 1)
+    |> Enum.chunk_every(2, 1, :discard)
     |> Enum.count(fn [a, b] -> b - a > 0 end)
   end
 
   def run_2(input) do
     input
-    |> Enum.chunk(3, 1)
+    |> Enum.chunk_every(3, 1, :discard)
     |> Enum.map(&Enum.sum/1)
     |> run_1()
   end
