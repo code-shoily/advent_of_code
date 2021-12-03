@@ -5,13 +5,8 @@ defmodule AdventOfCode.Y2015.Day10 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 10
 
-  def run_1, do: read() |> look_and_say(40) |> String.length()
-  def run_2, do: read() |> look_and_say(50) |> String.length()
-
-  def read() do
-    # Use site provided test cases here, if necessary
-    input!()
-  end
+  def run_1, do: input!() |> look_and_say(40) |> String.length()
+  def run_2, do: input!() |> look_and_say(50) |> String.length()
 
   def look_and_say(input) do
     input

@@ -5,10 +5,8 @@ defmodule AdventOfCode.Y2015.Day11 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 11
 
-  def run_1, do: read() |> next_valid_password()
-  def run_2, do: read() |> next_valid_password() |> next_valid_password()
-
-  def read(), do: input!()
+  def run_1, do: input!() |> next_valid_password()
+  def run_2, do: input!() |> next_valid_password() |> next_valid_password()
 
   def next_valid_password(password) do
     next_sequence = next_sequence(password)
