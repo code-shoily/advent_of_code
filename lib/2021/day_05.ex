@@ -33,5 +33,5 @@ defmodule AdventOfCode.Y2021.Day05 do
   end
 
   defp diagonals({[a, b], [c, d]}),
-    do: Enum.map(0..abs(c - a), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
+    do: Enum.map(0..abs(a - c), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
 end
