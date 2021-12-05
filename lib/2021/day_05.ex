@@ -5,9 +5,9 @@ defmodule AdventOfCode.Y2021.Day05 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2021, day: 5
 
-  def run_1, do: input!() |> parse() |> Enum.filter(&colinear?/1) |> overlaps()
-  def run_2, do: input!() |> parse() |> overlaps()
-  def parse(data), do: data |> String.split("\n") |> Enum.map(&ranges/1)
+  def run_1, do: input!() |> parse() |> overlaps()
+  def run_2, do: input!() |> parse() |> overlaps(true)
+  def parse(data), do: Enum.map(String.split(data, "\n"), fn line -> ranges(line) end)
 
   defp ranges(line) do
     line
@@ -18,27 +18,26 @@ defmodule AdventOfCode.Y2021.Day05 do
     end)
   end
 
-  defp overlaps(ranges) do
+  defp overlaps(ranges, diagonal? \\ false) do
     ranges
-    |> Enum.flat_map(&points_between/1)
+    |> Enum.flat_map(&points_between(&1, diagonal?))
     |> Enum.frequencies()
     |> Enum.count(&(elem(&1, 1) >= 2))
   end
 
-  defp colinear?({[a, _], [a, _]}), do: true
-  defp colinear?({[_, b], [_, b]}), do: true
-  defp colinear?(_), do: false
-
-  defp points_between({from, to}) do
-    case {from, to} do
-      {[a, b], [c, d]} when abs(c - a) == abs(d - b) ->
-        Enum.map(0..abs(c - a), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
-
-      {[a, b], [a, c]} ->
+  defp points_between({from, to}, diagonal?) do
+    case {diagonal?, {from, to}} do
+      {_, {[a, b], [a, c]}} ->
         Enum.map(b..c, &{a, &1})
 
-      {[a, b], [c, b]} ->
+      {_, {[a, b], [c, b]}} ->
         Enum.map(a..c, &{&1, b})
+
+      {true, {[a, b], [c, d]}} ->
+        Enum.map(0..abs(c - a), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
+
+      _ ->
+        []
     end
   end
 end
