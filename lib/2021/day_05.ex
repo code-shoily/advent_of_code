@@ -9,7 +9,7 @@ defmodule AdventOfCode.Y2021.Day05 do
   def run_2, do: input!() |> parse() |> overlaps(true)
   def parse(data), do: Enum.map(String.split(data, "\n"), &ranges/1)
 
-  def ranges(line) do
+  defp ranges(line) do
     ~r/(\d+),(\d+) -> (\d+),(\d+)/
     |> Regex.run(line, capture: :all_but_first)
     |> Enum.map(&String.to_integer/1)
