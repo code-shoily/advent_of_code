@@ -15,7 +15,6 @@ defmodule AdventOfCode.Helpers.Generator do
   - Code file containing boilerplate code saved at `lib/<year>/day_<day>.ex` file
   - Test cases containing default tests for `run_1` and `run_2` at `test/<year>/day_<day>_test.exs` file
   """
-  @spec run({integer(), integer()}) :: String.t()
   def run({year, day}) do
     # Write the input data at `priv/input_files`
     input_file_path =
