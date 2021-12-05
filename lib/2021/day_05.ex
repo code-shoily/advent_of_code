@@ -22,7 +22,7 @@ defmodule AdventOfCode.Y2021.Day05 do
     ranges
     |> Enum.flat_map(&points_between/1)
     |> Enum.frequencies()
-    |> Enum.count(fn {_, value} -> value >= 2 end)
+    |> Enum.count(&(elem(&1, 1) >= 2))
   end
 
   defp colinear?({[a, _], [a, _]}), do: true
@@ -32,15 +32,13 @@ defmodule AdventOfCode.Y2021.Day05 do
   defp points_between({from, to}) do
     case {from, to} do
       {[a, b], [c, d]} when abs(c - a) == abs(d - b) ->
-        Enum.map(0..abs(c - a), fn x ->
-          {(a > c && a - x) || a + x, (b > d && b - x) || b + x}
-        end)
+        Enum.map(0..abs(c - a), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
 
       {[a, b], [a, c]} ->
-        b..c |> Enum.map(fn x -> {a, x} end)
+        Enum.map(b..c, &{a, &1})
 
       {[a, b], [c, b]} ->
-        a..c |> Enum.map(fn x -> {x, b} end)
+        Enum.map(a..c, &{&1, b})
     end
   end
 end
