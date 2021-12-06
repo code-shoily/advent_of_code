@@ -7,21 +7,20 @@ defmodule AdventOfCode.Y2021.Day06 do
 
   def run_1, do: input!() |> parse() |> multiply(80) |> Enum.sum()
   def run_2, do: input!() |> parse() |> multiply(256) |> Enum.sum()
-
-  def parse(data),
-    do: data |> String.split(",") |> Enum.map(&String.to_integer/1) |> Enum.frequencies()
+  def parse(f), do: f |> String.split(",") |> Enum.map(&String.to_integer/1) |> Enum.frequencies()
 
   def multiply(fishes, day) do
     (day == 0 && Map.values(fishes)) ||
-      fishes
-      |> Map.pop(0)
-      |> then(fn {z, fishes} ->
-        Map.merge(
-          for({k, v} <- fishes, into: %{}, do: {k - 1, v}),
-          %{6 => z || 0, 8 => z || 0},
-          fn _, a, b -> a + b end
-        )
-      end)
-      |> multiply(day - 1)
+      multiply(
+        Map.pop(fishes, 0)
+        |> then(
+          &Map.merge(
+            for({k, v} <- elem(&1, 1), into: %{}, do: {k - 1, v}),
+            %{6 => elem(&1, 0) || 0, 8 => elem(&1, 0) || 0},
+            fn _, a, b -> a + b end
+          )
+        ),
+        day - 1
+      )
   end
 end
