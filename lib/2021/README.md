@@ -9,3 +9,4 @@
 | 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | :star2: | [day_03.ex](/lib/2021/day_03.ex) |
 | 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :star2: :star2: | [day_04.ex](/lib/2021/day_04.ex) |
 | 5 | [Hypotherman Venture](https://adventofcode.com/2021/day/5) | :star2: | [day_05.ex](/lib/2021/day_05.ex) |
+| 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :star2: :star2: | [day_06.ex](/lib/2021/day_06.ex) |
