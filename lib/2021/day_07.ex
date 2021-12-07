@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2021.Day07 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2021, day: 7
 
-  def run_1, do: input!() |> parse() |> alignments() |> Enum.min()
-  def run_2, do: input!() |> parse() |> alignments(&cost/1) |> Enum.min()
+  def run_1, do: input!() |> parse() |> alignments(&fixed_cost/2) |> Enum.min()
+  def run_2, do: input!() |> parse() |> alignments(&cost/2) |> Enum.min()
 
   def parse(data) do
     data
@@ -14,13 +14,20 @@ defmodule AdventOfCode.Y2021.Day07 do
     |> Enum.map(&String.to_integer/1)
   end
 
-  defp alignments(positions, cost_fn \\ &Function.identity/1) do
+  defp alignments(positions, cost_fn) do
     {min, max} = Enum.min_max(positions)
 
     for cur <- min..max do
-      Enum.sum(for pos <- positions, do: cost_fn.(abs(cur - pos)))
+      for pos <- positions, reduce: 0 do
+        cost -> cost + cost_fn.(cur, pos)
+      end
     end
   end
 
-  defp cost(steps), do: (steps == 0 && 0) || div(steps * (steps + 1), 2)
+  defp fixed_cost(current, position), do: abs(position - current)
+
+  defp cost(current, position) do
+    steps = abs(position - current)
+    (steps == 0 && 0) || div(steps * (steps + 1), 2)
+  end
 end
