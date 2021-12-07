@@ -16,15 +16,12 @@ defmodule AdventOfCode.Y2021.Day07 do
   end
 
   defp alignments(positions, cost_fn \\ &Function.identity/1) do
-    for i <- positions do
-      Enum.sum(
-        for j <- positions do
-          cost_fn.(abs(i - j))
-        end
-      )
+    {min, max} = Enum.min_max(positions)
+
+    for cur <- min..max do
+      Enum.sum(for pos <- positions, do: cost_fn.(abs(cur - pos)))
     end
   end
 
-  defp cost(0), do: 0
-  defp cost(steps), do: div(steps * (steps + 1), 2)
+  defp cost(steps), do: (steps == 0 && 0) || div(steps * (steps + 1), 2)
 end
