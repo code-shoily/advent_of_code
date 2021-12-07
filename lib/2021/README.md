@@ -10,3 +10,4 @@
 | 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :star2: :star2: | [day_04.ex](/lib/2021/day_04.ex) |
 | 5 | [Hypotherman Venture](https://adventofcode.com/2021/day/5) | :star2: | [day_05.ex](/lib/2021/day_05.ex) |
 | 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :star2: :star2: | [day_06.ex](/lib/2021/day_06.ex) |
+| 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | :star2: | [day_07.ex](/lib/2021/day_07.ex) |
