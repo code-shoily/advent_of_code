@@ -2,7 +2,6 @@ defmodule AdventOfCode.Y2021.Day07 do
   @moduledoc """
   --- Day 7: The Treachery of Whales ---
   Problem Link: https://adventofcode.com/2021/day/7
-  Tweet sized version: https://twitter.com/mafinar/status/1468100177164746753
   """
   use AdventOfCode.Helpers.InputReader, year: 2021, day: 7
 
