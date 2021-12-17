@@ -29,7 +29,7 @@ defmodule AdventOfCode.Y2021.Day16 do
 
   defp parse_packets({packet, <<>>}), do: packet |> List.wrap()
   defp parse_packets({packet, rest}), do: [packet | parse_packets(rest)]
-  defp parse_packets(hex), do: hex |> parse_packet |> parse_packets()
+  defp parse_packets(packet), do: parse_packets(parse_packet(packet))
 
   defp parse_literal(<<1::1, bits::4, rest::bitstring>>, acc) do
     parse_literal(rest, acc * 0x10 + bits)
@@ -41,6 +41,7 @@ defmodule AdventOfCode.Y2021.Day16 do
 
   defp sum({:literal, ver, _}), do: ver
   defp sum({_, ver, val}), do: Enum.reduce(val, ver, &(sum(&1) + &2))
+
   defp eval({:literal, _, val}), do: val
   defp eval({0, _, _} = packet), do: reduce(packet, 0, &+/2)
   defp eval({1, _, _} = packet), do: reduce(packet, 1, &*/2)
@@ -49,6 +50,7 @@ defmodule AdventOfCode.Y2021.Day16 do
   defp eval({5, _, _} = packet), do: compare(packet, &>/2)
   defp eval({6, _, _} = packet), do: compare(packet, &</2)
   defp eval({7, _, _} = packet), do: compare(packet, &==/2)
+
   defp reduce({_, _, val}, x, f), do: Enum.reduce(val, x, &f.(eval(&1), &2))
   defp compare({_, _, [a, b]}, f), do: (f.(eval(a), eval(b)) && 1) || 0
 end
