@@ -24,7 +24,8 @@ defmodule AdventOfCode.MixProject do
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.8.0"},
       {:floki, "~> 0.32.0"},
-      {:jason, "~> 1.2"}
+      {:jason, "~> 1.2"},
+      {:libgraph, "~> 0.13"}
     ]
   end
 end

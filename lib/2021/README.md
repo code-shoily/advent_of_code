@@ -11,3 +11,4 @@
 | 5 | [Hypotherman Venture](https://adventofcode.com/2021/day/5) | :star2: | [day_05.ex](/lib/2021/day_05.ex) |
 | 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :star2: :star2: | [day_06.ex](/lib/2021/day_06.ex) |
 | 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | :star2: | [day_07.ex](/lib/2021/day_07.ex) |
+| 15 | [Chiton](https://adventofcode.com/2021/day/15) | :star2: :star2: | [day_25.ex](/lib/2021/day_15.ex) |
