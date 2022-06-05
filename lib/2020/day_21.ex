@@ -33,7 +33,8 @@ defmodule AdventOfCode.Y2020.Day21 do
       |> MapSet.new()
       |> then(fn items -> collect(allergens, acc, items) end)
     end)
-    |> Map.map(fn {_, v} -> intersections(v) end)
+    |> Enum.map(fn {k, v} -> {k, intersections(v)} end)
+    |> Map.new()
   end
 
   defp collect(allergens, init, items) do
@@ -54,7 +55,8 @@ defmodule AdventOfCode.Y2020.Day21 do
     found = unions(Map.values(result))
 
     allergen
-    |> Map.map(fn {_, v} -> (Enum.count(v) == 1 && v) || MapSet.difference(v, found) end)
+    |> Enum.map(fn {k, v} -> {k, (Enum.count(v) == 1 && v) || MapSet.difference(v, found)} end)
+    |> Map.new()
     |> evolve(result)
   end
 end

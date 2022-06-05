@@ -26,8 +26,8 @@ defmodule AdventOfCode.Y2021.Day04 do
       |> Enum.map(&String.to_integer/1)
     end)
     |> Enum.with_index()
+    |> Enum.map(fn {key, idx} -> {key, {div(idx, 5), rem(idx, 5)}} end)
     |> Enum.into(%{})
-    |> Map.map(fn {_, idx} -> {div(idx, 5), rem(idx, 5)} end)
     |> then(&board_state(&1, idx))
   end
 

@@ -20,7 +20,7 @@ defmodule AdventOfCode.Y2018.Day02 do
     |> parse()
     |> Enum.flat_map(&words_without_a_char/1)
     |> Enum.group_by(& &1)
-    |> Map.map(fn {_box, boxes} -> length(boxes) end)
+    |> Enum.map(fn {box, boxes} -> {box, length(boxes)} end)
     |> Enum.filter(fn {_, freq} -> freq == 2 end)
     |> then(fn [{box, _}] -> String.replace(box, "?", "") end)
   end
@@ -31,7 +31,8 @@ defmodule AdventOfCode.Y2018.Day02 do
     word
     |> String.graphemes()
     |> Enum.group_by(& &1)
-    |> Map.map(fn {_, val} -> length(val) end)
+    |> Enum.map(fn {key, val} -> {key, length(val)} end)
+    |> Map.new()
   end
 
   def two_or_three_count(frequency) do
