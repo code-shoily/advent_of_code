@@ -15,7 +15,7 @@ defmodule AdventOfCode.Y2016.Day06 do
     |> String.replace("\n", "")
     |> String.codepoints()
     |> Enum.with_index()
-    |> Keyword.map(fn {_, idx} -> rem(idx, len) end)
+    |> Enum.map(fn {k, idx} -> {k, rem(idx, len)} end)
     |> Enum.group_by(fn {_, group} -> group end, fn {v, _} -> v end)
     |> Map.values()
     |> Enum.map(&Enum.join/1)
