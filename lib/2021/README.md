@@ -1,4 +1,4 @@
-# Advent of Code 2015
+# Advent of Code 2021
 
 [Main Page](https://adventofcode.com/2021) | [Tests](/test/2021)
 
