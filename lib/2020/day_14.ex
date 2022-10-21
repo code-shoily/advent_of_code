@@ -8,7 +8,7 @@ defmodule AdventOfCode.Y2020.Day14 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2020, day: 14
 
-  use Bitwise
+  import Bitwise
 
   def run_1, do: input!() |> parse() |> run(&instruction_1/2) |> memory_sum()
   def run_2, do: input!() |> parse() |> run(&instruction_2/2) |> memory_sum()
