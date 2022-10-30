@@ -13,3 +13,4 @@
 | 7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7)  | :star2: | [day_07.ex](/lib/2016/day_07.ex) |
 | 9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9)  | :star2: | [day_09.ex](/lib/2016/day_09.ex) |
 | 10 | [Balance Bots](https://adventofcode.com/2016/day/10)  | :star2: :star2: | [day_10.ex](/lib/2016/day_10.ex) |
+| 12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12)  | :star2: :hourglass: | [day_12.ex](/lib/2016/day_12.ex) |
