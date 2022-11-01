@@ -13,7 +13,7 @@ run `mix test` to ensure all solutions are working okay.
 
 | Year | Progress |
 | :-----: | :------: |
-| [2015](/lib/2015) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :new_moon: :full_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: |
+| [2015](/lib/2015) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :full_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: |
 | [2016](/lib/2016) |:full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :full_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: |
 | [2017](/lib/2017) |:full_moon: :full_moon: :new_moon: :full_moon: :full_moon: :new_moon: :new_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: |
 | [2018](/lib/2018) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :last_quarter_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: |
