@@ -11,6 +11,8 @@
 | 5 | [Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5)  | :star2: | [day_05.ex](/lib/2015/day_05.ex) |
 | 6 | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6)  | :hourglass: | [day_06.ex](/lib/2015/day_06.ex) |
 | 7 | [Some Assembly Required](https://adventofcode.com/2015/day/7)  | :star2: :star2: | [day_06.ex](/lib/2015/day_07.ex) |
+| 8 | [Matchsticks](https://adventofcode.com/2015/day/8)  | :star2: :star2: | [day_06.ex](/lib/2015/day_08.ex) |
 | 9 | [All in a Single Night](https://adventofcode.com/2015/day/9)  | :star2: :star2: | [day_09.ex](/lib/2015/day_09.ex) |
 | 10 | [Day 10: Elves Look, Elves Say](https://adventofcode.com/2015/day/10)  | :hourglass: | [day_10.ex](/lib/2015/day_10.ex) |
 | 12 | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12)  | :star2: | [day_12.ex](/lib/2015/day_12.ex) |
+| 13 | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2015/day_13.ex) |
