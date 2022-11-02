@@ -1,10 +1,10 @@
 defmodule AdventOfCode.Helpers.CombinatoricsTest do
-	use ExUnit.Case
-	@moduletag :combinatorics
+  use ExUnit.Case
+  @moduletag :combinatorics
 
   alias AdventOfCode.Helpers.Combinatorics
 
-	doctest AdventOfCode.Helpers.Combinatorics
+  doctest AdventOfCode.Helpers.Combinatorics
 
   describe "permutations/1" do
     test "permutations result in a list of size factorial" do
