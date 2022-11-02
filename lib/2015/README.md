@@ -16,3 +16,4 @@
 | 10 | [Day 10: Elves Look, Elves Say](https://adventofcode.com/2015/day/10)  | :hourglass: | [day_10.ex](/lib/2015/day_10.ex) |
 | 12 | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12)  | :star2: | [day_12.ex](/lib/2015/day_12.ex) |
 | 13 | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2015/day_13.ex) |
+| 14 | [Reindeer Olympics](https://adventofcode.com/2015/day/14)  | :star2: | [day_14.ex](/lib/2015/day_14.ex) |
