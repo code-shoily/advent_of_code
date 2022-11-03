@@ -18,3 +18,5 @@
 | 13 | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2015/day_13.ex) |
 | 14 | [Reindeer Olympics](https://adventofcode.com/2015/day/14)  | :star2: | [day_14.ex](/lib/2015/day_14.ex) |
 | 15| [Science for Hungry People](https://adventofcode.com/2015/day/15)  | :star2: | [day_15.ex](/lib/2015/day_15.ex) |
+| 16| [Aunt Sue](https://adventofcode.com/2015/day/16)  | :star2: | [day_16.ex](/lib/2015/day_16.ex) |
+| 17| [No Such Thing as Too Much](https://adventofcode.com/2015/day/17)  | :star2: :hourglass: | [day_17.ex](/lib/2015/day_17.ex) |
