@@ -20,3 +20,4 @@
 | 15| [Science for Hungry People](https://adventofcode.com/2015/day/15)  | :star2: | [day_15.ex](/lib/2015/day_15.ex) |
 | 16| [Aunt Sue](https://adventofcode.com/2015/day/16)  | :star2: | [day_16.ex](/lib/2015/day_16.ex) |
 | 17| [No Such Thing as Too Much](https://adventofcode.com/2015/day/17)  | :star2: :hourglass: | [day_17.ex](/lib/2015/day_17.ex) |
+| 18| [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)  | :star2: :hourglass: | [day_18.ex](/lib/2015/day_18.ex) |
