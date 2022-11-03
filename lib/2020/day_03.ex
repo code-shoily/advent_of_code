@@ -49,7 +49,7 @@ defmodule AdventOfCode.Y2020.Day03 do
       world,
       row + down,
       rem(col + right, row_size),
-      result + ((xy[row][col] == "#" && 1) || 0),
+      result + ((xy[{row, col}] == "#" && 1) || 0),
       slope
     )
   end

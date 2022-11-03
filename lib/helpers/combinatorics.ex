@@ -51,7 +51,8 @@ defmodule AdventOfCode.Helpers.Combinatorics do
   """
   def combinations(_, 0), do: [[]]
   def combinations([], _), do: []
-  def combinations([x|xs], r) do
-      (for y <- combinations(xs, r - 1), do: [x|y]) ++ combinations(xs, r)
+
+  def combinations([x | xs], r) do
+    for(y <- combinations(xs, r - 1), do: [x | y]) ++ combinations(xs, r)
   end
 end
