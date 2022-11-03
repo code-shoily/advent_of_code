@@ -14,51 +14,40 @@ defmodule AdventOfCode.Y2015.Day18 do
   def run(input \\ input!()) do
     grid = parse(input)
 
-    {run_1(grid), run_2(grid)}
+    {
+      steps(grid, &state/3),
+      grid
+      |> update_corners()
+      |> steps(&state_with_faulty_corners/3)
+    }
   end
 
-  defp run_1(grid), do: steps(grid, &new_state/3)
-
-  defp run_2(grid) do
-    grid
-    |> update_corners()
-    |> steps(&new_state_with_faulty_bulbs/3)
-  end
-
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> Transformers.lines()
     |> Enum.map(&String.graphemes/1)
     |> Transformers.grid2d()
   end
 
-  defp steps(grid, state_computer) do
+  defp steps(grid, tx) do
     @repetitions
-    |> Enum.reduce(grid, fn _, acc ->
-      iterate(acc, state_computer)
-    end)
-    |> Map.values()
-    |> Enum.filter(&(&1 == "#"))
-    |> Enum.count()
+    |> Enum.reduce(grid, fn _, acc -> iterate(acc, tx) end)
+    |> Enum.count(fn {_, light} -> light == "#" end)
   end
 
-  defp iterate(grid, state_computer) do
+  defp iterate(grid, tx) do
     Map.new(grid, fn {{x, y}, state} ->
-      state_computer.(grid, {x, y}, state)
+      tx.(grid, {x, y}, state)
     end)
   end
 
-  defp new_state(grid, {x, y}, state) do
-    total_ons =
-      grid
-      |> get_neighbors({x, y})
-      |> Enum.filter(&(&1 == "#"))
-      |> Enum.count()
+  defp state(grid, {x, y}, state) do
+    ons = grid |> get_neighbors({x, y}) |> Enum.count(&(&1 == "#"))
 
     state =
       case state do
-        "#" -> (total_ons in [2, 3] && "#") || "."
-        "." -> (total_ons == 3 && "#") || "."
+        "#" -> (ons in [2, 3] && "#") || "."
+        "." -> (ons == 3 && "#") || "."
       end
 
     {{x, y}, state}
@@ -80,15 +69,11 @@ defmodule AdventOfCode.Y2015.Day18 do
   end
 
   defp update_corners(grid) do
-    always_on =
-      @corners
-      |> Map.new(fn corner -> {corner, "#"} end)
-
-    Map.merge(grid, always_on)
+    Map.merge(grid, Map.new(@corners, &{&1, "#"}))
   end
 
-  defp new_state_with_faulty_bulbs(grid, {x, y}, state) do
-    case new_state(grid, {x, y}, state) do
+  defp state_with_faulty_corners(grid, {x, y}, state) do
+    case state(grid, {x, y}, state) do
       {corner, _} when corner in @corners -> {corner, "#"}
       state -> state
     end
