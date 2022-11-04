@@ -5,14 +5,24 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %> do
   """
   use AdventOfCode.Helpers.InputReader, year: <%= year %>, day: <%= day %>
 
-  def run_1, do: {:not_implemented, 1}
-  def run_2, do: {:not_implemented, 2}
+  alias AdventOfCode.Helpers.Transformers
 
-  def parse(data) do
-    data
-    |> String.split("\n", trim: true)
+  def run(input \\ input!()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
   end
 
-  # --- <Solution Functions> ---
-  # --- </Solution Functions> ---
+  defp run_1(_input) do
+    {:todo, 1}
+  end
+
+  defp run_2(_input) do
+   {:todo, 2}
+  end
+
+  def parse(data \\ input!()) do
+    data
+    |> Transformers.lines()
+  end
 end
