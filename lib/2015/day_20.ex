@@ -5,6 +5,8 @@ defmodule AdventOfCode.Y2015.Day20 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 20
 
+  alias AdventOfCode.Helpers.Arithmetics
+
   def run(input \\ input!()) do
     input = parse(input)
 
@@ -34,19 +36,10 @@ defmodule AdventOfCode.Y2015.Day20 do
     String.to_integer(data)
   end
 
-  defp divisors(n) do
-    1..trunc(:math.sqrt(n))
-    |> Enum.flat_map(fn
-      x when rem(n, x) != 0 -> []
-      x when x != div(n, x) -> [x, div(n, x)]
-      x -> [x]
-    end)
-  end
-
   defp number_of_gifts(house) do
     gifts =
       house
-      |> divisors()
+      |> Arithmetics.divisors()
       |> Enum.map(&(&1 * 10))
       |> Enum.sum()
 
@@ -56,7 +49,7 @@ defmodule AdventOfCode.Y2015.Day20 do
   defp number_of_gifts_below_50(house) do
     gifts =
       house
-      |> divisors()
+      |> Arithmetics.divisors()
       |> Enum.filter(fn divisor -> div(house, divisor) < 50 end)
       |> Enum.map(&(&1 * 11))
       |> Enum.sum()
