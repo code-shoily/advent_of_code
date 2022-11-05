@@ -22,4 +22,5 @@
 | 17| [No Such Thing as Too Much](https://adventofcode.com/2015/day/17)  | :star2: :hourglass: | [day_17.ex](/lib/2015/day_17.ex) |
 | 18| [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)  | :star2: :hourglass: | [day_18.ex](/lib/2015/day_18.ex) |
 | 19| [Like a GIF For Your Yard](https://adventofcode.com/2015/day/19)  | :star2: :skull: :skull: :skull: :rage: | [day_19.ex](/lib/2015/day_19.ex) |
-| 20| [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)  | :star2: :hourglass: | [day_20.ex](/lib/2015/day_19.ex) |
+| 20| [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)  | :star2: :hourglass: | [day_20.ex](/lib/2015/day_20.ex) |
+| 21| [RPG Simulator 20XX](https://adventofcode.com/2015/day/21)  | :green_heart: | [day_21.ex](/lib/2015/day_21.ex) |
