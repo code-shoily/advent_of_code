@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day07.Wire do
+  @moduledoc """
+  Worker for wires.
+  """
   alias __MODULE__
 
   use GenServer, restart: :temporary

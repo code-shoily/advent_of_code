@@ -22,6 +22,7 @@ defmodule AdventOfCode.Helpers.Arithmetics do
 
   """
   def divisors(0), do: :error
+
   def divisors(n) do
     1..trunc(:math.sqrt(n))
     |> Enum.flat_map(fn

@@ -61,19 +61,23 @@ defmodule AdventOfCode.Y2015.Day15 do
   end
 
   defp total_nutrition([_, _, _, _] = nutrients) do
-    scoring_nutrients = [
-      nutrients |> Enum.map(& &1.capacity) |> Enum.sum() |> then(&((&1 < 0 && 0) || &1)),
-      nutrients |> Enum.map(& &1.durability) |> Enum.sum() |> then(&((&1 < 0 && 0) || &1)),
-      nutrients |> Enum.map(& &1.flavor) |> Enum.sum() |> then(&((&1 < 0 && 0) || &1)),
-      nutrients |> Enum.map(& &1.texture) |> Enum.sum() |> then(&((&1 < 0 && 0) || &1))
-    ]
+    capacity = nutrients |> total_of(:capacity)
+    durability = nutrients |> total_of(:durability)
+    flavor = nutrients |> total_of(:flavor)
+    texture = nutrients |> total_of(:texture)
+    calories = nutrients |> total_of(:calories)
 
-    calories = nutrients |> Enum.map(& &1.calories) |> Enum.sum() |> then(&((&1 < 0 && 0) || &1))
-
-    {scoring_nutrients, calories}
+    {[capacity, durability, flavor, texture], calories}
   end
 
-  defp get_quadruples() do
+  def total_of(nutrients, type) do
+    nutrients
+    |> Enum.map(& &1[type])
+    |> Enum.sum()
+    |> then(&((&1 < 0 && 0) || &1))
+  end
+
+  defp get_quadruples do
     for a <- 0..100,
         b <- 0..(100 - a),
         c <- 0..(100 - a - b),

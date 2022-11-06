@@ -81,7 +81,7 @@ defmodule AdventOfCode.Y2015.Day16 do
     possessions
     |> Enum.filter(fn {item, count} ->
       case @ticker_outputs[item] do
-        {fun, val} -> apply(fun, [count, val])
+        {fun, val} -> fun.(count, val)
         val -> val == count
       end
     end)

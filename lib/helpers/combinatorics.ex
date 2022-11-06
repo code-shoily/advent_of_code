@@ -1,4 +1,8 @@
 defmodule AdventOfCode.Helpers.Combinatorics do
+  @moduledoc """
+  Combinatorics functions.
+  """
+
   @doc """
   Computes the permutations of a list.
 

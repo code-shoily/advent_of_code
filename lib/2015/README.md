@@ -24,4 +24,5 @@
 | 19| [Like a GIF For Your Yard](https://adventofcode.com/2015/day/19)  | :star2: :skull: :skull: :skull: :rage: | [day_19.ex](/lib/2015/day_19.ex) |
 | 20| [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)  | :star2: :hourglass: | [day_20.ex](/lib/2015/day_20.ex) |
 | 21| [RPG Simulator 20XX](https://adventofcode.com/2015/day/21)  | :green_heart: | [day_21.ex](/lib/2015/day_21.ex) |
+| 23| [Opening the Turing Lock](https://adventofcode.com/2015/day/23)  | :star2: | [day_23.ex](/lib/2015/day_23.ex) |
 | 25| [Let It Snow](https://adventofcode.com/2015/day/25)  | :star2: | [day_25.ex](/lib/2015/day_25.ex) |
