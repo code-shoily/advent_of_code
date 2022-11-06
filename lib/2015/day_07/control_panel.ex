@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2015.Day07.ControlPanel do
+  @moduledoc """
+  ControlPanel for managing Wire Workers.
+  """
   alias AdventOfCode.Y2015.Day07.{RootSupervisor, Wire, WireSupervisor}
 
   @doc """

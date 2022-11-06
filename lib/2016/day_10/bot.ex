@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2016.Day10.Bot do
   @moduledoc """
   Bot worker. Each represents a bot with low/high interaction bots and assignability.
   """
-  alias AdventOfCode.Y2016.Day10.{OutputBin, Bot}
+  alias AdventOfCode.Y2016.Day10.{Bot, OutputBin}
 
   use GenServer, restart: :transient
 
