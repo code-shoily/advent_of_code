@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2015.Day17 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 17
 
-  alias AdventOfCode.Helpers.Combinatorics
+  alias ExAlgo.Counting.Combinatorics
 
   def run(input \\ input!()) do
     combinations =

@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2015.Day21 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 21
 
-  alias AdventOfCode.Helpers.Combinatorics
+  alias ExAlgo.Counting.Combinatorics
   alias AdventOfCode.Helpers.Transformers
 
   @item_db ~S"""

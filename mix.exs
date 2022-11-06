@@ -22,8 +22,9 @@ defmodule AdventOfCode.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:httpoison, "~> 1.8.0"},
+      {:ex_algo, git: "git@github.com:code-shoily/ex_algo.git"},
       {:floki, "~> 0.34.0"},
+      {:httpoison, "~> 1.8.0"},
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"}
     ]
