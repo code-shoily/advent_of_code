@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2015.Day21 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2015, day: 21
 
-  alias ExAlgo.Counting.Combinatorics
   alias AdventOfCode.Helpers.Transformers
+  alias ExAlgo.Counting.Combinatorics
 
   @item_db ~S"""
   Weapons:    Cost  Damage  Armor
