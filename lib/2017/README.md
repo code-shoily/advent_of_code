@@ -13,4 +13,5 @@
 | 7 | [Recursive Circus](https://adventofcode.com/2017/day/7)  | :star: | [day_07.ex](/lib/2017/day_07.ex) |
 | 8 | [I Heard You Like Registers](https://adventofcode.com/2017/day/8)  | :star2: | [day_08.ex](/lib/2017/day_08.ex) |
 | 9 | [Stream Processing](https://adventofcode.com/2017/day/9)  | :star2: | [day_09.ex](/lib/2017/day_09.ex) |
-| 10 | [Stream Processing](https://adventofcode.com/2017/day/10)  | :star2: :star2: | [day_10.ex](/lib/2017/day_10.ex) |
+| 10 | [Knot Hash](https://adventofcode.com/2017/day/10)  | :star2: :star2: | [day_10.ex](/lib/2017/day_10.ex) |
+| 11 | [Hex Ed](https://adventofcode.com/2017/day/11)  | :star2: | [day_11.ex](/lib/2017/day_11.ex) |
