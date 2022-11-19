@@ -15,3 +15,5 @@
 | 9 | [Stream Processing](https://adventofcode.com/2017/day/9)  | :star2: | [day_09.ex](/lib/2017/day_09.ex) |
 | 10 | [Knot Hash](https://adventofcode.com/2017/day/10)  | :star2: :star2: | [day_10.ex](/lib/2017/day_10.ex) |
 | 11 | [Hex Ed](https://adventofcode.com/2017/day/11)  | :star2: | [day_11.ex](/lib/2017/day_11.ex) |
+| 12 | [Digital Plumber](https://adventofcode.com/2017/day/12)  | :star2: :green_heart: | [day_12.ex](/lib/2017/day_12.ex) |
+| 13 | [Packet Scanners](https://adventofcode.com/2017/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2017/day_13.ex) |
