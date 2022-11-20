@@ -18,3 +18,4 @@
 | 12 | [Digital Plumber](https://adventofcode.com/2017/day/12)  | :star2: :green_heart: | [day_12.ex](/lib/2017/day_12.ex) |
 | 13 | [Packet Scanners](https://adventofcode.com/2017/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2017/day_13.ex) |
 | 14 | [Disk Defragmentation](https://adventofcode.com/2017/day/14)  | :star: :hourglass: | [day_14.ex](/lib/2017/day_14.ex) |
+| 15 | [Dueling Generators](https://adventofcode.com/2017/day/15)  | :star: :hourglass: | [day_15.ex](/lib/2017/day_15.ex) |
