@@ -7,7 +7,6 @@ defmodule AdventOfCode.Y2017.Day10 do
 
   require Bitwise
 
-  alias Hex.Crypto.PBES2_HMAC_SHA2
   alias AdventOfCode.Helpers.Transformers
 
   @lst 0..255

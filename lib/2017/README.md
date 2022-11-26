@@ -20,3 +20,4 @@
 | 14 | [Disk Defragmentation](https://adventofcode.com/2017/day/14)  | :star: :hourglass: | [day_14.ex](/lib/2017/day_14.ex) |
 | 15 | [Dueling Generators](https://adventofcode.com/2017/day/15)  | :star2: :hourglass: | [day_15.ex](/lib/2017/day_15.ex) |
 | 16 | [Permutation Promenade](https://adventofcode.com/2017/day/16)  | :star2: | [day_16.ex](/lib/2017/day_16.ex) |
+| 17 | [Spinlock](https://adventofcode.com/2017/day/17)  | :star2: | [day_17.ex](/lib/2017/day_17.ex) |
