@@ -3,11 +3,11 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %> do
   <%= title %>
   Problem Link: https://adventofcode.com/<%= year %>/day/<%= day %>
   """
-  use AdventOfCode.Helpers.InputReader, year: <%= year %>, day: <%= day %>
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  @input InputReader.read_from_file(<%= year %>, <%= day %>)
 
-  def run(input \\ input!()) do
+  def run(input \\ @input) do
     input = parse(input)
 
     {run_1(input), run_2(input)}
@@ -21,7 +21,7 @@ defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %> do
    {:todo, 2}
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ @input) do
     data
     |> Transformers.lines()
   end

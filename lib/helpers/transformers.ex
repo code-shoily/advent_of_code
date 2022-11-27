@@ -4,7 +4,9 @@ defmodule AdventOfCode.Helpers.Transformers do
   """
 
   @doc ~S"""
-  Extracts lines from a string.
+  Extracts lines from a string. `trim` configures whether consequetive empty lines should
+  be trimmed or not. This is due to the fact some problems have different meanings for single
+  versus multiple line gaps while others do not.
 
   ## Example
 
@@ -21,9 +23,9 @@ defmodule AdventOfCode.Helpers.Transformers do
     ["Line 1", "Line 2"]
 
   """
-  def lines(raw) do
+  def lines(raw, trim \\ true) do
     raw
-    |> String.split("\n", trim: true)
+    |> String.split("\n", trim: trim)
     |> Enum.reject(fn str ->
       String.trim(str) == ""
     end)
