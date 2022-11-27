@@ -3,14 +3,20 @@ defmodule AdventOfCode.Y2015.Day03 do
   --- Day 3: Perfectly Spherical Houses in a Vacuum ---
   Problem Link: https://adventofcode.com/2015/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 3
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1 do
-    input!() |> deliver_present() |> MapSet.size()
+  @input InputReader.read_from_file(2015, 3)
+
+  def run(input \\ @input) do
+    {run_1(input), run_2(input)}
   end
 
-  def run_2 do
-    input!()
+  defp run_1(input) do
+    input |> deliver_present() |> MapSet.size()
+  end
+
+  defp run_2(input) do
+    input
     |> String.graphemes()
     |> alternate()
     |> deliver_present_each()
