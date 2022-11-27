@@ -3,28 +3,34 @@ defmodule AdventOfCode.Y2015.Day02 do
   --- Day 2: I Was Told There Would Be No Math ---
   Problem Link: https://adventofcode.com/2015/day/2
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 2
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> parse()
+  @input InputReader.read_from_file(2015, 2)
+
+  def run(input \\ @input) do
+    data = parse(input)
+
+    {run_1(data), run_2(data)}
+  end
+
+  def parse(input \\ @input) do
+    input
+    |> Transformers.lines()
+    |> Enum.map(&Transformers.words(&1, "x"))
+  end
+
+  defp run_1(input) do
+    input
     |> Enum.map(fn n -> n |> Enum.map(&String.to_integer/1) |> required_paper() end)
     |> Enum.sum()
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  defp run_2(input) do
+    input
     |> Enum.map(fn n ->
       n |> Enum.map(&String.to_integer/1) |> smallest_perimeter_plus_volume()
     end)
     |> Enum.reduce(&Kernel.+/2)
-  end
-
-  defp parse(lines) do
-    lines
-    |> String.split("\n")
-    |> Enum.map(&String.split(&1, "x"))
   end
 
   @spec required_paper([non_neg_integer(), ...]) :: non_neg_integer()
