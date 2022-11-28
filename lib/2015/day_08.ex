@@ -3,10 +3,12 @@ defmodule AdventOfCode.Y2015.Day08 do
   --- Day 8: Matchsticks ---
   Problem Link: https://adventofcode.com/2015/day/8
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 8
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run(input \\ input!()) do
-    input = parse(input)
+  @input InputReader.read_from_file(2015, 8)
+
+  def run(input \\ @input) do
+    input = Transformers.lines(input)
 
     {run_1(input), run_2(input)}
   end
@@ -22,8 +24,6 @@ defmodule AdventOfCode.Y2015.Day08 do
       acc + expanded_length(line) - String.length(line)
     end)
   end
-
-  def parse(data), do: String.split(data, "\n", trim: true)
 
   @esc_regex ~r/(\\\\|\\\"|\\x[\da-f]{2})/
   @empty_regex ~r/\"/

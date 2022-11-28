@@ -3,14 +3,22 @@ defmodule AdventOfCode.Y2015.Day09 do
   --- Day 9: All in a Single Night ---
   Problem Link: https://adventofcode.com/2015/day/9
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 9
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> travel_all(&Enum.min/1)
-  def run_2, do: input!() |> parse() |> travel_all(&Enum.max/1)
+  @input InputReader.read_from_file(2015, 9)
+
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: input |> travel_all(&Enum.min/1)
+  def run_2(input), do: input |> travel_all(&Enum.max/1)
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(fn route ->
       ~r/(\w+) to (\w+) = (\d+)/
       |> Regex.run(route, capture: :all_but_first)

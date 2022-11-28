@@ -3,21 +3,26 @@ defmodule AdventOfCode.Y2015.Day05 do
   --- Day 5: Doesn't He Have Intern-Elves For This? ---
   Problem Link: https://adventofcode.com/2015/day/5
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 5
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    parse()
+  @input InputReader.read_from_file(2015, 5)
+
+  def run(input \\ @input) do
+    input = Transformers.lines(input)
+    {run_1(input), run_2(input)}
+  end
+
+  defp run_1(input) do
+    input
     |> Enum.filter(&nice?/1)
     |> length()
   end
 
-  def run_2 do
-    parse()
+  defp run_2(input) do
+    input
     |> Enum.filter(&nice_v2?/1)
     |> length()
   end
-
-  defp parse, do: String.split(input!(), "\n")
 
   defp vowel?(s), do: s in ~w/a e i o u/
 
