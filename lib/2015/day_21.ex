@@ -3,9 +3,7 @@ defmodule AdventOfCode.Y2015.Day21 do
   --- Day 21: RPG Simulator 20XX ---
   Problem Link: https://adventofcode.com/2015/day/21
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 21
-
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.Counting.Combinatorics
 
   @item_db ~S"""
@@ -32,7 +30,9 @@ defmodule AdventOfCode.Y2015.Day21 do
   Defense +3   80     0       3
   """
 
-  def run(input \\ input!()) do
+  @input InputReader.read_from_file(2015, 21)
+
+  def run(input \\ @input) do
     input = parse(input)
 
     {frugal_win(input), expensive_loss(input)}
@@ -58,7 +58,7 @@ defmodule AdventOfCode.Y2015.Day21 do
     |> then(& &1.cost)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ @input) do
     data
     |> Transformers.lines()
     |> Map.new(fn line ->

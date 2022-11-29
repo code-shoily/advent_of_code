@@ -3,9 +3,9 @@ defmodule AdventOfCode.Y2015.Day14 do
   --- Day 14: Reindeer Olympics ---
   Problem Link: https://adventofcode.com/2015/day/14
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 14
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  import AdventOfCode.Helpers.Transformers, only: [transpose: 1]
+  @input InputReader.read_from_file(2015, 14)
 
   @type outcome :: {binary(), stats(), list(non_neg_integer())}
   @type reindeer :: %{
@@ -23,31 +23,35 @@ defmodule AdventOfCode.Y2015.Day14 do
 
   @end_time 2503
 
-  def run_1(input \\ input!()) do
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  defp run_1(input) do
     input
-    |> parse()
     |> Enum.map(&race(&1, @end_time))
     |> Enum.max_by(fn {_, %{distance: distance}, _} -> distance end)
     |> then(fn {_, %{distance: distance}, _} -> distance end)
   end
 
-  def run_2(input \\ input!()) do
+  defp run_2(input) do
     input
-    |> parse()
     |> Enum.map(&elem(race(&1, @end_time), 2))
-    |> transpose()
+    |> Transformers.transpose()
     |> Enum.map(fn same_second_distance ->
       ahead = Enum.max(same_second_distance)
       Enum.map(same_second_distance, fn distance -> (distance == ahead && 1) || 0 end)
     end)
-    |> transpose()
+    |> Transformers.transpose()
     |> Enum.map(&Enum.sum/1)
     |> Enum.max()
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ @input) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&parse_stats/1)
   end
 

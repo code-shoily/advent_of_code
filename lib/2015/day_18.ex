@@ -3,22 +3,22 @@ defmodule AdventOfCode.Y2015.Day18 do
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 18
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
-
+  @input InputReader.read_from_file(2015, 18)
   @repetitions 1..100
   @last_index 99
   @corners [{0, 0}, {0, @last_index}, {@last_index, 0}, {@last_index, @last_index}]
 
-  def run(input \\ input!()) do
+  def run(input \\ @input) do
     grid = parse(input)
 
+    solution_1 = Task.async(fn -> steps(grid, &state/3) end)
+    solution_2 = Task.async(fn -> grid |> update_corners() |> steps(&state_with_faulty_corners/3) end)
+
     {
-      steps(grid, &state/3),
-      grid
-      |> update_corners()
-      |> steps(&state_with_faulty_corners/3)
+      Task.await(solution_1, 10_000),
+      Task.await(solution_2, 10_000)
     }
   end
 

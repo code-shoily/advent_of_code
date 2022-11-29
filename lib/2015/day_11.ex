@@ -3,10 +3,12 @@ defmodule AdventOfCode.Y2015.Day11 do
   --- Day 11: Corporate Policy ---
   Problem Link: https://adventofcode.com/2015/day/11
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 11
+  @input AdventOfCode.Helpers.InputReader.read_from_file(2015, 11)
 
-  def run_1, do: input!() |> next_valid_password()
-  def run_2, do: input!() |> next_valid_password() |> next_valid_password()
+  def run(input \\ @input) do
+    part_1 = next_valid_password(input)
+    {part_1, next_valid_password(part_1)}
+  end
 
   def next_valid_password(password) do
     next_sequence = next_sequence(password)

@@ -3,25 +3,29 @@ defmodule AdventOfCode.Y2015.Day17 do
   --- Day 17: No Such Thing as Too Much ---
   Problem Link: https://adventofcode.com/2015/day/17
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 17
-
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.Counting.Combinatorics
 
-  def run(input \\ input!()) do
+  @input InputReader.read_from_file(2015, 17)
+
+  def run(input \\ @input) do
     combinations =
       input
       |> parse()
       |> find_matching_combinations()
 
+    solution_1 = Task.async(fn -> Enum.count(combinations) end)
+    solution_2 = Task.async(fn -> minimum_bottle_count(Enum.map(combinations, &length/1)) end)
+
     {
-      Enum.count(combinations),
-      minimum_bottle_count(Enum.map(combinations, &length/1))
+      Task.await(solution_1),
+      Task.await(solution_2)
     }
   end
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&String.to_integer/1)
   end
 

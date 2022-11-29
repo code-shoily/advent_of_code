@@ -5,11 +5,17 @@ defmodule AdventOfCode.Y2015.Day15 do
   FIXME: I hate this solution, I don't want to be hardwiring the total number of ingredients here.
   Should look into better algorithm to generate the quadruples (n-tuples really)
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 15
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1(input \\ input!()) do
-    [sprinkles, peanut_butter, frosting, sugar] = parse(input)
+  @input InputReader.read_from_file(2015, 15)
 
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1([sprinkles, peanut_butter, frosting, sugar]) do
     for {sprinkles_count, peanut_butter_count, frosting_count, sugar_count} <- get_quadruples() do
       {scoring_nutrients, _} =
         total_nutrition([
@@ -24,9 +30,7 @@ defmodule AdventOfCode.Y2015.Day15 do
     |> Enum.max()
   end
 
-  def run_2(input \\ input!()) do
-    [sprinkles, peanut_butter, frosting, sugar] = parse(input)
-
+  def run_2([sprinkles, peanut_butter, frosting, sugar]) do
     for {sprinkles_count, peanut_butter_count, frosting_count, sugar_count} <- get_quadruples() do
       {scoring_nutrients, calories} =
         total_nutrition([
@@ -44,7 +48,7 @@ defmodule AdventOfCode.Y2015.Day15 do
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&parse_nutrients/1)
   end
 

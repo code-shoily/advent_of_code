@@ -3,13 +3,13 @@ defmodule AdventOfCode.Y2015.Day24 do
   --- Day 24: It Hangs in the Balance ---
   Problem Link: https://adventofcode.com/2015/day/24
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 24
-
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.DynamicProgramming.SubsetSum
 
-  def run(input \\ input!()) do
-    weights = parse(input)
+  @input InputReader.read_from_file(2015, 24)
+
+  def run(input \\ @input) do
+    weights = Transformers.int_lines(input)
     total = Enum.sum(weights)
 
     part_1 = Task.async(fn -> optimal_configuration(weights, div(total, 3)) end)
@@ -29,10 +29,6 @@ defmodule AdventOfCode.Y2015.Day24 do
     |> Enum.filter(&(length(&1) == smallest_length))
     |> Enum.min_by(&Enum.product/1)
     |> Enum.product()
-  end
-
-  def parse(data \\ input!()) do
-    Transformers.int_lines(data)
   end
 
   def smallest_length(list_of_list) do

@@ -6,17 +6,17 @@ defmodule AdventOfCode.Y2015.Day19 do
   Helpful Tips for Part II: (,) analogy
   https://www.reddit.com/r/adventofcode/comments/3xflz8/day_19_solutions/cy4etju
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 19
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  @input InputReader.read_from_file(2015, 19)
 
-  def run(input \\ input!()) do
+  def run(input \\ @input) do
     input = parse(input)
 
     {distinct_molecule_count(input), least_fabrication_steps(input)}
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ @input) do
     [molecule | replacements] = Enum.reverse(Transformers.lines(data))
     replacements = parse_replacements(Enum.reverse(replacements))
     {molecule, replacements}

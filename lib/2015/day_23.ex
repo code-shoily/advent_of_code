@@ -3,13 +3,13 @@ defmodule AdventOfCode.Y2015.Day23 do
   --- Day 23: Opening the Turing Lock ---
   Problem Link: https://adventofcode.com/2015/day/23
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 23
-
   require Integer
 
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run(input \\ input!()) do
+  @input InputReader.read_from_file(2015, 23)
+
+  def run(input \\ @input) do
     input = parse(input)
     size = Enum.count(input)
 
@@ -27,7 +27,7 @@ defmodule AdventOfCode.Y2015.Day23 do
     execute(instructions, registers, next_idx, size)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ @input) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

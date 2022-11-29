@@ -3,23 +3,24 @@ defmodule AdventOfCode.Y2015.Day12 do
   --- Day 12: JSAbacusFramework.io ---
   Problem Link: https://adventofcode.com/2015/day/12
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 12
+  @input AdventOfCode.Helpers.InputReader.read_from_file(2015, 12)
 
-  def run_1 do
-    parse()
+  def run(input \\ @input) do
+    input = String.graphemes(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> parse_json([])
     |> compute()
   end
 
-  def run_2 do
-    parse()
+  def run_2(input) do
+    input
     |> Jason.decode!()
     |> total()
-  end
-
-  def parse do
-    input!()
-    |> String.graphemes()
   end
 
   @numbers "-0123456789"

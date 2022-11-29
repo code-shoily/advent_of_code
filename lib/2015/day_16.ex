@@ -3,9 +3,11 @@ defmodule AdventOfCode.Y2015.Day16 do
   --- Day 16: Aunt Sue ---
   Problem Link: https://adventofcode.com/2015/day/16
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 16
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run(input \\ input!()) do
+  @input InputReader.read_from_file(2015, 16)
+
+  def run(input \\ @input) do
     input = parse(input)
 
     {runner(input, &guess_1/1), runner(input, &guess_2/1)}
@@ -15,7 +17,7 @@ defmodule AdventOfCode.Y2015.Day16 do
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Map.new(fn fact ->
       [aunt | possessions] = String.split(fact, ": ")
       {get_sue_number(aunt), parse_possessions(possessions |> Enum.join(": "))}

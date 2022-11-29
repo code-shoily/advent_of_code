@@ -3,12 +3,13 @@ defmodule AdventOfCode.Y2015.Day20 do
   --- Day 20: Infinite Elves and Infinite Houses ---
   Problem Link: https://adventofcode.com/2015/day/20
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 20
-
+  alias AdventOfCode.Helpers.InputReader
   alias ExAlgo.Number.Arithmetics
 
-  def run(input \\ input!()) do
-    input = parse(input)
+  @input InputReader.read_from_file(2015, 20)
+
+  def run(input \\ @input) do
+    input = String.to_integer(input)
 
     part_1 = Task.async(fn -> run_1(input) end)
     part_2 = Task.async(fn -> run_2(input) end)
@@ -30,10 +31,6 @@ defmodule AdventOfCode.Y2015.Day20 do
     |> Enum.take_while(fn {_, gifts} -> gifts < limit end)
     |> Enum.max_by(fn {house, _} -> house end)
     |> then(fn {house, _} -> house + 1 end)
-  end
-
-  def parse(data \\ input!()) do
-    String.to_integer(data)
   end
 
   defp number_of_gifts(house) do

@@ -3,9 +3,9 @@ defmodule AdventOfCode.Y2015.Day25 do
   --- Day 25: Let It Snow ---
   Problem Link: https://adventofcode.com/2015/day/25
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 25
+  @input AdventOfCode.Helpers.InputReader.read_from_file(2015, 25)
 
-  def run(input \\ input!()) do
+  def run(input \\ @input) do
     input
     |> parse()
     |> index_of()
@@ -36,8 +36,9 @@ defmodule AdventOfCode.Y2015.Day25 do
     end)
   end
 
-  def parse(data \\ input!()) do
-    Regex.run(~r/\D+(\d+)\D+(\d+)/, data, capture: :all_but_first)
+  def parse(data) do
+    ~r/\D+(\d+)\D+(\d+)/
+    |> Regex.run(data, capture: :all_but_first)
     |> Enum.map(&String.to_integer/1)
     |> List.to_tuple()
   end

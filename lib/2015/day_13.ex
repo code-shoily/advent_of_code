@@ -3,11 +3,13 @@ defmodule AdventOfCode.Y2015.Day13 do
   --- Day 13: Knights of the Dinner Table ---
   Problem Link: https://adventofcode.com/2015/day/13
   """
-  use AdventOfCode.Helpers.InputReader, year: 2015, day: 13
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   alias ExAlgo.Counting.Combinatorics
 
-  def run(input \\ input!()) do
+  @input InputReader.read_from_file(2015, 13)
+
+  def run(input \\ @input) do
     {people, facts} = parse(input)
 
     {
@@ -19,7 +21,7 @@ defmodule AdventOfCode.Y2015.Day13 do
   def parse(data) do
     facts =
       data
-      |> String.split("\n", trim: true)
+      |> Transformers.lines()
       |> Enum.map(&parse_fact/1)
       |> Enum.group_by(&elem(&1, 0), &elem(&1, 1))
       |> Enum.flat_map(fn {mapset, [happiness_1, happiness_2]} ->
