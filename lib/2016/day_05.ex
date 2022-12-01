@@ -32,23 +32,25 @@ defmodule AdventOfCode.Y2016.Day05 do
   @valid "01234567"
   def run_2(input) do
     Stream.iterate(1, &(&1 + 1))
-    |> Enum.reduce_while(%{coords: [], done: MapSet.new()}, fn x,
-                                                               %{coords: coords, done: done} = acc ->
-      hash = md5(input <> to_string(x))
-      {position, value} = {String.at(hash, 5), String.at(hash, 6)}
-      valid? = String.contains?(@valid, position) and position not in done
+    |> Enum.reduce_while(
+      %{coords: [], done: MapSet.new()},
+      fn x, %{coords: coords, done: done} = acc ->
+        hash = md5(input <> to_string(x))
+        {position, value} = {String.at(hash, 5), String.at(hash, 6)}
+        valid? = String.contains?(@valid, position) and position not in done
 
-      case {five_zeroes?(hash), valid?} do
-        {true, true} ->
-          done = MapSet.put(done, position)
-          coords = [{position, value} | coords]
-          instruction = (length(coords) == 8 && :halt) || :cont
-          {instruction, %{coords: coords, done: done}}
+        case {five_zeroes?(hash), valid?} do
+          {true, true} ->
+            done = MapSet.put(done, position)
+            coords = [{position, value} | coords]
+            instruction = (length(coords) == 8 && :halt) || :cont
+            {instruction, %{coords: coords, done: done}}
 
-        _ ->
-          {:cont, acc}
+          _ ->
+            {:cont, acc}
+        end
       end
-    end)
+    )
     |> construct_pasword()
   end
 
