@@ -3,25 +3,30 @@ defmodule AdventOfCode.Y2016.Day02 do
   --- Day 2: Bathroom Security ---
   Problem Link: https://adventofcode.com/2016/day/2
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 2
+  alias AdventOfCode.Helpers.InputReader
 
+  @input InputReader.read_from_file(2016, 2)
   @initial_position_1 5
   @initial_position_2 [{"5", 2, 0}]
 
-  def run_1 do
-    input!()
-    |> parse()
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> parse_rule([], @initial_position_1)
     |> Enum.reverse()
     |> Enum.join()
     |> String.to_integer()
   end
 
-  def run_2 do
+  def run_2(input) do
     data = to_matrix_map()
 
-    input!()
-    |> parse()
+    input
     |> Enum.reduce(@initial_position_2, fn cmd, [{_, x, y} | _] = acc ->
       [run_cmds(data, cmd, x, y) | acc]
     end)
@@ -76,13 +81,12 @@ defmodule AdventOfCode.Y2016.Day02 do
   def to_matrix_map(data \\ @matrix) do
     data
     |> Enum.with_index()
-    |> Enum.map(fn {val, idx} ->
+    |> Map.new(fn {val, idx} ->
       case val do
         val when is_list(val) -> {idx, to_matrix_map(val)}
         _ -> {idx, val}
       end
     end)
-    |> Enum.into(%{})
   end
 
   def run_cmds(data, [], x, y) do

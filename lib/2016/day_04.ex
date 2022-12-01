@@ -3,19 +3,24 @@ defmodule AdventOfCode.Y2016.Day04 do
   --- Day 4: Security Through Obscurity ---
   Problem Link: https://adventofcode.com/2016/day/4
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 4
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> parse()
+  @input InputReader.read_from_file(2016, 4)
+
+  def run(input \\ @input) do
+    input = parse(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> Enum.filter(&real_room?/1)
     |> Enum.reduce(0, fn %{sector: sector}, acc -> sector + acc end)
   end
 
   @key "northpole object storage"
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> Enum.map(fn %{names: names, sector: sector} ->
       names
       |> Enum.join("-")
@@ -28,9 +33,7 @@ defmodule AdventOfCode.Y2016.Day04 do
   end
 
   def parse(data) do
-    data
-    |> String.split("\n", trim: true)
-    |> Enum.map(&decrypt/1)
+    for line <- Transformers.lines(data), do: decrypt(line)
   end
 
   defp decrypt({names, [suffix]}) do
@@ -51,10 +54,7 @@ defmodule AdventOfCode.Y2016.Day04 do
   end
 
   defp real_room?(%{names: names, checksum: checksum}) do
-    names
-    |> Enum.join()
-    |> compute_checksum()
-    |> Kernel.==(checksum)
+    checksum == compute_checksum(Enum.join(names))
   end
 
   defp compute_checksum(name) do

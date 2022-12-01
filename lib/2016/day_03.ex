@@ -3,23 +3,25 @@ defmodule AdventOfCode.Y2016.Day03 do
   --- Day 3: Squares With Three Sides ---
   Problem Link: https://adventofcode.com/2016/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 3
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> String.split("\n")
+  @input InputReader.read_from_file(2016, 3)
+
+  def run(input \\ @input) do
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
+    |> Transformers.lines()
     |> Enum.map(&group/1)
-    |> Enum.filter(&triangle?/1)
-    |> Enum.count()
+    |> count_triangles()
   end
 
-  def run_2 do
-    transpose_group() |> Enum.filter(&triangle?/1) |> Enum.count()
-  end
+  def run_2(input), do: count_triangles(transpose_group(input))
 
-  def triangle?([a, b, c]) do
-    a + b > c and b + c > a and c + a > b
-  end
+  def triangle?([a, b, c]), do: a + b > c and b + c > a and c + a > b
+  def count_triangles(triples), do: Enum.count(triples, &triangle?/1)
 
   def group(line) do
     line
@@ -28,9 +30,9 @@ defmodule AdventOfCode.Y2016.Day03 do
     |> Enum.map(&String.to_integer/1)
   end
 
-  def transpose_group do
-    input!()
-    |> String.split("\n")
+  def transpose_group(input) do
+    input
+    |> Transformers.lines()
     |> Enum.flat_map(fn d -> String.split(d, ~r{\s}, trim: true) end)
     |> Enum.map(&String.to_integer/1)
     |> then(fn data ->

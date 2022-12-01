@@ -14,7 +14,9 @@ defmodule AdventOfCode.Y2015.Day18 do
     grid = parse(input)
 
     solution_1 = Task.async(fn -> steps(grid, &state/3) end)
-    solution_2 = Task.async(fn -> grid |> update_corners() |> steps(&state_with_faulty_corners/3) end)
+
+    solution_2 =
+      Task.async(fn -> grid |> update_corners() |> steps(&state_with_faulty_corners/3) end)
 
     {
       Task.await(solution_1, 10_000),

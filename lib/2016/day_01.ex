@@ -3,30 +3,30 @@ defmodule AdventOfCode.Y2016.Day01 do
   --- Day 1: No Time for a Taxicab ---
   Problem Link: https://adventofcode.com/2016/day/1
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 1
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> parse()
+  @input InputReader.read_from_file(2016, 1)
+
+  def run(input \\ @input) do
+    input = Transformers.words(input, ",")
+
+    {run_1(input), run_2(input)}
+  end
+
+  defp run_1(input) do
+    input
     |> move()
     |> Enum.reverse()
     |> hd()
     |> blocks()
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  defp run_2(input) do
+    input
     |> move()
     |> merge_points()
     |> first_duplicate(MapSet.new())
     |> blocks()
-  end
-
-  defp parse(input) do
-    input
-    |> String.split(",")
-    |> Enum.map(&String.trim/1)
   end
 
   defp move(directions), do: move(:origin, directions, [0, 0], [])
