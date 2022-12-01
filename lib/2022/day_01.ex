@@ -8,7 +8,10 @@ defmodule AdventOfCode.Y2022.Day01 do
   def run(input \\ input()) do
     calories = parse(input)
 
-    {Enum.max(calories), calories |> Enum.sort() |> Enum.reverse() |> Enum.take(3) |> Enum.sum()}
+    {
+      Enum.max(calories),
+      calories |> Enum.sort(:desc) |> Enum.take(3) |> Enum.sum()
+    }
   end
 
   def parse(data) do
