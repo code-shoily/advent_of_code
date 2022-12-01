@@ -3,24 +3,20 @@ defmodule AdventOfCode.Y2016.Day07 do
   --- Day 7: Internet Protocol Version 7 ---
   Problem Link: https://adventofcode.com/2016/day/7
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 7
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> parse()
-    |> Enum.filter(&supports_tls?/1)
-    |> Enum.count()
+  @input InputReader.read_from_file(2016, 7)
+
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {count_ipv7(input, &supports_tls?/1), count_ipv7(input, &supports_ssl?/1)}
   end
 
-  def run_2 do
-    input!()
-    |> parse()
-    |> Enum.filter(&supports_ssl?/1)
-    |> Enum.count()
-  end
+  def count_ipv7(input, pred), do: Enum.count(input, pred)
 
   def parse(input) do
-    String.split(input, "\n", trim: true) |> Enum.map(&parse_line/1)
+    for line <- Transformers.lines(input), do: parse_line(line)
   end
 
   @pattern ~r/\[(.*?)\]/
@@ -35,8 +31,7 @@ defmodule AdventOfCode.Y2016.Day07 do
   defp abba?(_), do: false
 
   def contains_abba?(sequences) when is_list(sequences) do
-    sequences
-    |> Enum.reduce_while(false, fn sequence, _ ->
+    Enum.reduce_while(sequences, false, fn sequence, _ ->
       (contains_abba?(sequence) && {:halt, true}) || {:cont, false}
     end)
   end
