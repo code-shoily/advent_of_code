@@ -3,10 +3,17 @@ defmodule AdventOfCode.Y2016.Day06 do
   --- Day 6: Signals and Noise ---
   Problem Link: https://adventofcode.com/2016/day/6
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 6
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> Enum.map_join(&frequency(&1, :max))
-  def run_2, do: input!() |> parse() |> Enum.map_join(&frequency(&1, :min))
+  @input InputReader.read_from_file(2016, 6)
+
+  def run(input \\ @input) do
+    input = parse(input)
+
+    {do_run(input, :max), do_run(input, :min)}
+  end
+
+  def do_run(input, type), do: Enum.map_join(input, &frequency(&1, type))
 
   def parse(input) do
     len = String.split(input, "\n", trim: true) |> hd() |> String.length()
