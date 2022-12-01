@@ -4,14 +4,22 @@ defmodule AdventOfCode.Y2016.Day05 do
   Problem Link: https://adventofcode.com/2016/day/5
   !FIXME: This is slow!
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 5
-
   @input "cxdnnyjw"
 
-  def run_1 do
+  def run(input \\ @input) do
+    solution_1 = Task.async(fn -> run_1(input) end)
+    solution_2 = Task.async(fn -> run_2(input) end)
+
+    {
+      Task.await(solution_1, :infinity),
+      Task.await(solution_2, :infinity)
+    }
+  end
+
+  def run_1(input) do
     Stream.iterate(1, &(&1 + 1))
     |> Enum.reduce_while({"", 0}, fn x, {hash, iter} ->
-      new_hash = md5(@input <> to_string(x))
+      new_hash = md5(input <> to_string(x))
 
       case {five_zeroes?(new_hash), iter + 1} do
         {true, 8} -> {:halt, hash <> String.at(new_hash, 5)}
@@ -22,11 +30,11 @@ defmodule AdventOfCode.Y2016.Day05 do
   end
 
   @valid "01234567"
-  def run_2 do
+  def run_2(input) do
     Stream.iterate(1, &(&1 + 1))
     |> Enum.reduce_while(%{coords: [], done: MapSet.new()}, fn x,
                                                                %{coords: coords, done: done} = acc ->
-      hash = md5(@input <> to_string(x))
+      hash = md5(input <> to_string(x))
       {position, value} = {String.at(hash, 5), String.at(hash, 6)}
       valid? = String.contains?(@valid, position) and position not in done
 
