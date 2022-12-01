@@ -6,9 +6,9 @@ defmodule AdventOfCode.Y2015.Day20 do
   alias AdventOfCode.Helpers.InputReader
   alias ExAlgo.Number.Arithmetics
 
-  @input InputReader.read_from_file(2015, 20)
+  def input, do: InputReader.read_from_file(2015, 20)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = String.to_integer(input)
 
     part_1 = Task.async(fn -> run_1(input) end)

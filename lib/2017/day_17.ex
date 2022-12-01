@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2017.Day17 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 17
 
-  @input 394
+  def input, do: 394
 
   def run, do: {run_1(), run_2()}
 
@@ -22,7 +22,7 @@ defmodule AdventOfCode.Y2017.Day17 do
 
   defp insert_nth(buffer, position, idx) do
     idx = idx + 1
-    position = rem(position + @input, idx) + 1
+    position = rem(position + input(), idx) + 1
     buffer = List.insert_at(buffer, position, idx)
 
     insert_nth(buffer, position, idx)
@@ -35,7 +35,7 @@ defmodule AdventOfCode.Y2017.Day17 do
 
   defp find_idx_1_after(position, idx, first) do
     idx = idx + 1
-    position = rem(position + @input, idx) + 1
+    position = rem(position + input(), idx) + 1
     first = (position == 1 && idx) || first
     find_idx_1_after(position, idx, first)
   end

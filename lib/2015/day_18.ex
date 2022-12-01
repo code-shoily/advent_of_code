@@ -5,12 +5,12 @@ defmodule AdventOfCode.Y2015.Day18 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2015, 18)
+  def input, do: InputReader.read_from_file(2015, 18)
   @repetitions 1..100
   @last_index 99
   @corners [{0, 0}, {0, @last_index}, {@last_index, 0}, {@last_index, @last_index}]
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     grid = parse(input)
 
     solution_1 = Task.async(fn -> steps(grid, &state/3) end)

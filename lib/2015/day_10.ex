@@ -5,9 +5,9 @@ defmodule AdventOfCode.Y2015.Day10 do
   """
   alias AdventOfCode.Helpers.InputReader
 
-  @input InputReader.read_from_file(2015, 10)
+  def input, do: InputReader.read_from_file(2015, 10)
 
-  def run(input \\ @input), do: look_and_say(String.graphemes(input), 40, 50)
+  def run(input \\ input()), do: look_and_say(String.graphemes(input), 40, 50)
 
   def encode(input), do: Enum.reverse(encode(input, nil, nil, []))
   def encode([], b, n, r), do: [b, to_string(n) | r]

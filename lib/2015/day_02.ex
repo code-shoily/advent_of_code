@@ -5,15 +5,15 @@ defmodule AdventOfCode.Y2015.Day02 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2015, 2)
+  def input, do: InputReader.read_from_file(2015, 2)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     data = parse(input)
 
     {run_1(data), run_2(data)}
   end
 
-  def parse(input \\ @input) do
+  def parse(input \\ input()) do
     input
     |> Transformers.lines()
     |> Enum.map(&Transformers.words(&1, "x"))

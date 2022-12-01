@@ -6,9 +6,9 @@ defmodule AdventOfCode.Y2015.Day24 do
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.DynamicProgramming.SubsetSum
 
-  @input InputReader.read_from_file(2015, 24)
+  def input, do: InputReader.read_from_file(2015, 24)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     weights = Transformers.int_lines(input)
     total = Enum.sum(weights)
 

@@ -5,12 +5,12 @@ defmodule AdventOfCode.Y2016.Day12 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2016, 12)
+  def input, do: InputReader.read_from_file(2016, 12)
 
   @tokens ~w/a b c d cpy inc dec jnz/
   @regs %{"a" => 0, "b" => 0, "c" => 0, "d" => 0}
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     instructions = parse(input)
 
     solution_1 = Task.async(fn -> run_1(instructions) end)

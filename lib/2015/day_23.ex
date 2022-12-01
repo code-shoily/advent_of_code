@@ -7,9 +7,9 @@ defmodule AdventOfCode.Y2015.Day23 do
 
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2015, 23)
+  def input, do: InputReader.read_from_file(2015, 23)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = parse(input)
     size = Enum.count(input)
 
@@ -27,7 +27,7 @@ defmodule AdventOfCode.Y2015.Day23 do
     execute(instructions, registers, next_idx, size)
   end
 
-  def parse(data \\ @input) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

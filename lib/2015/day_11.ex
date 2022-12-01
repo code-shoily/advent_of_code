@@ -3,9 +3,9 @@ defmodule AdventOfCode.Y2015.Day11 do
   --- Day 11: Corporate Policy ---
   Problem Link: https://adventofcode.com/2015/day/11
   """
-  @input AdventOfCode.Helpers.InputReader.read_from_file(2015, 11)
+  def input, do: AdventOfCode.Helpers.InputReader.read_from_file(2015, 11)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     part_1 = next_valid_password(input)
     {part_1, next_valid_password(part_1)}
   end

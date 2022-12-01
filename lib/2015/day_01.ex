@@ -5,9 +5,9 @@ defmodule AdventOfCode.Y2015.Day01 do
   """
   alias AdventOfCode.Helpers.InputReader
 
-  @input InputReader.read_from_file(2015, 1)
+  def input, do: InputReader.read_from_file(2015, 1)
 
-  def run, do: {floor(@input, 0), to_basement(@input, 0, 0)}
+  def run, do: {floor(input(), 0), to_basement(input(), 0, 0)}
 
   defp floor("", cur), do: cur
   defp floor("(" <> rst, cur), do: floor(rst, cur + 1)

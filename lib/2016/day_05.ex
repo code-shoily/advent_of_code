@@ -4,9 +4,9 @@ defmodule AdventOfCode.Y2016.Day05 do
   Problem Link: https://adventofcode.com/2016/day/5
   !FIXME: This is slow!
   """
-  @input "cxdnnyjw"
+  def input, do: "cxdnnyjw"
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     solution_1 = Task.async(fn -> run_1(input) end)
     solution_2 = Task.async(fn -> run_2(input) end)
 

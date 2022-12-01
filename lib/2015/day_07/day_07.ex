@@ -6,11 +6,11 @@ defmodule AdventOfCode.Y2015.Day07 do
   alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2015.Day07.ControlPanel
 
-  @input InputReader.read_from_file(2015, 7)
+  def input, do: InputReader.read_from_file(2015, 7)
 
   @bin_ops ~w/RSHIFT LSHIFT AND OR/
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     parsed_input = parse(input)
     solution_1 = run_1(parsed_input)
     solution_2 = run_2(parsed_input, solution_1)
@@ -32,7 +32,7 @@ defmodule AdventOfCode.Y2015.Day07 do
     |> process_and_get_signal("a")
   end
 
-  def parse(data \\ @input) do
+  def parse(data \\ input()) do
     data
     |> String.split("\n", trim: true)
     |> Enum.map(&tokenize/1)

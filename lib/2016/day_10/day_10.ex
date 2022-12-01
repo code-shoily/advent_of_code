@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2016.Day10 do
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias __MODULE__.{Bot, BotSupervisor, ControlPanel, OutputBin}
 
-  @input InputReader.read_from_file(2016, 10)
+  def input, do: InputReader.read_from_file(2016, 10)
 
   @param [17, 61]
   def run_1 do
@@ -29,7 +29,7 @@ defmodule AdventOfCode.Y2016.Day10 do
     |> Enum.product()
   end
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     ControlPanel.start_servers()
 
     input

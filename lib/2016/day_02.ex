@@ -5,11 +5,11 @@ defmodule AdventOfCode.Y2016.Day02 do
   """
   alias AdventOfCode.Helpers.InputReader
 
-  @input InputReader.read_from_file(2016, 2)
+  def input, do: InputReader.read_from_file(2016, 2)
   @initial_position_1 5
   @initial_position_2 [{"5", 2, 0}]
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = parse(input)
 
     {run_1(input), run_2(input)}

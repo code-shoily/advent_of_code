@@ -7,9 +7,9 @@ defmodule AdventOfCode.Y2015.Day15 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2015, 15)
+  def input, do: InputReader.read_from_file(2015, 15)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = parse(input)
 
     {run_1(input), run_2(input)}

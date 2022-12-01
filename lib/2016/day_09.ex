@@ -5,13 +5,13 @@ defmodule AdventOfCode.Y2016.Day09 do
   """
   alias AdventOfCode.Helpers.InputReader
 
-  @input InputReader.read_from_file(2016, 9)
+  def input, do: InputReader.read_from_file(2016, 9)
   @init [0, 1]
   @open "("
   @close ")"
   @regex ~r[\((\d+)x(\d+)\)]
 
-  def run(input \\ @input), do: {decompress_v1(input), decompress_v2(input)}
+  def run(input \\ input()), do: {decompress_v1(input), decompress_v2(input)}
 
   def decompress_v1(seq), do: decompress_v1(seq, @init, [], 0)
   def decompress_v1("", _, _, out), do: out

@@ -6,9 +6,9 @@ defmodule AdventOfCode.Y2015.Day17 do
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.Counting.Combinatorics
 
-  @input InputReader.read_from_file(2015, 17)
+  def input, do: InputReader.read_from_file(2015, 17)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     combinations =
       input
       |> parse()

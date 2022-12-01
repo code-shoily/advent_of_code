@@ -30,9 +30,9 @@ defmodule AdventOfCode.Y2015.Day21 do
   Defense +3   80     0       3
   """
 
-  @input InputReader.read_from_file(2015, 21)
+  def input, do: InputReader.read_from_file(2015, 21)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = parse(input)
 
     {frugal_win(input), expensive_loss(input)}
@@ -58,7 +58,7 @@ defmodule AdventOfCode.Y2015.Day21 do
     |> then(& &1.cost)
   end
 
-  def parse(data \\ @input) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Map.new(fn line ->

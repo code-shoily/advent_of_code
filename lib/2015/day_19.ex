@@ -8,15 +8,15 @@ defmodule AdventOfCode.Y2015.Day19 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @input InputReader.read_from_file(2015, 19)
+  def input, do: InputReader.read_from_file(2015, 19)
 
-  def run(input \\ @input) do
+  def run(input \\ input()) do
     input = parse(input)
 
     {distinct_molecule_count(input), least_fabrication_steps(input)}
   end
 
-  def parse(data \\ @input) do
+  def parse(data \\ input()) do
     [molecule | replacements] = Enum.reverse(Transformers.lines(data))
     replacements = parse_replacements(Enum.reverse(replacements))
     {molecule, replacements}
