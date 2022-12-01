@@ -3,18 +3,30 @@ defmodule AdventOfCode.Y2016.Day12 do
   --- Day 12: Leonardo's Monorail ---
   Problem Link: https://adventofcode.com/2016/day/12
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 12
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
+
+  @input InputReader.read_from_file(2016, 12)
 
   @tokens ~w/a b c d cpy inc dec jnz/
   @regs %{"a" => 0, "b" => 0, "c" => 0, "d" => 0}
 
-  def run_1(input \\ input!()) do
+  def run(input \\ @input) do
     instructions = parse(input)
+
+    solution_1 = Task.async(fn -> run_1(instructions) end)
+    solution_2 = Task.async(fn -> run_2(instructions) end)
+
+    {
+      Task.await(solution_1, :infinity),
+      Task.await(solution_2, :infinity)
+    }
+  end
+
+  def run_1(instructions) do
     Map.get(exec(instructions, @regs, 0, Enum.count(instructions)), "a")
   end
 
-  def run_2(input \\ input!()) do
-    instructions = parse(input)
+  def run_2(instructions) do
     Map.get(exec(instructions, %{@regs | "c" => 1}, 0, Enum.count(instructions)), "a")
   end
 
@@ -46,7 +58,7 @@ defmodule AdventOfCode.Y2016.Day12 do
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(fn instruction ->
       instruction
       |> String.split(" ")

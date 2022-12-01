@@ -3,9 +3,10 @@ defmodule AdventOfCode.Y2016.Day10 do
   --- Day 10: Balance Bots ---
   Problem Link: https://adventofcode.com/2016/day/10
   """
-  use AdventOfCode.Helpers.InputReader, year: 2016, day: 10
-
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias __MODULE__.{Bot, BotSupervisor, ControlPanel, OutputBin}
+
+  @input InputReader.read_from_file(2016, 10)
 
   @param [17, 61]
   def run_1 do
@@ -28,7 +29,7 @@ defmodule AdventOfCode.Y2016.Day10 do
     |> Enum.product()
   end
 
-  def run(input \\ input!()) do
+  def run(input \\ @input) do
     ControlPanel.start_servers()
 
     input
@@ -39,7 +40,7 @@ defmodule AdventOfCode.Y2016.Day10 do
   end
 
   def parse(data) do
-    lines = String.split(data, "\n", trim: true)
+    lines = Transformers.lines(data)
     configurations = lines |> Enum.map(&parse_configuration/1) |> Enum.reject(&is_nil/1)
     assignments = lines |> Enum.map(&parse_assignment/1) |> Enum.reject(&is_nil/1)
 
@@ -73,14 +74,12 @@ defmodule AdventOfCode.Y2016.Day10 do
   end
 
   def parse_names(lines) do
-    lines
-    |> Enum.flat_map(fn
+    Enum.flat_map(lines, fn
       {id_1, %{high: {sink_2, id_2}, low: {sink_3, id_3}}} ->
         [id_1, (sink_2 === "bot" && id_2) || nil, (sink_3 && id_3) || nil]
 
       {id, _} ->
         [id]
     end)
-    |> Enum.uniq()
   end
 end
