@@ -3,29 +3,21 @@ defmodule AdventOfCode.Y2022.Day01 do
   --- Day 1: Calorie Counting ---
   Problem Link: https://adventofcode.com/2022/day/1
   """
-  @input AdventOfCode.Helpers.InputReader.read_from_file(2022, 1)
+  def input, do: AdventOfCode.Helpers.InputReader.read_from_file(2022, 1)
 
-  def run(input \\ @input) do
-    {calorie_set, _} = parse(input)
-    {_, top_3} = top_n_calories(calorie_set, 3)
+  def run(input \\ input()) do
+    calories = parse(input)
 
-    {:gb_sets.largest(calorie_set), Enum.sum(top_3)}
+    {Enum.max(calories), calories |> Enum.sort() |> Enum.reverse() |> Enum.take(3) |> Enum.sum()}
   end
 
-  def parse(data \\ @input) do
-    Enum.reduce(String.split(data, "\n"), {:gb_sets.new(), 0}, fn
-      "", {calorie_set, total} -> {add_calories(calorie_set, total), 0}
-      calorie, {calorie_set, total} -> {calorie_set, String.to_integer(calorie) + total}
+  def parse(data) do
+    data
+    |> String.split("\n")
+    |> Enum.reduce({[], 0}, fn
+      "", {calories, total} -> {[total | calories], 0}
+      calorie, {calories, total} -> {calories, total + String.to_integer(calorie)}
     end)
-  end
-
-  defp add_calories(set, value),
-    do: (:gb_sets.is_element(value, set) && set) || :gb_sets.insert(value, set)
-
-  defp top_n_calories(calories, limit) do
-    Enum.reduce(1..limit, {calories, []}, fn _, {sets, xs} ->
-      {largest, sets} = :gb_sets.take_largest(sets)
-      {sets, [largest | xs]}
-    end)
+    |> then(fn {calories, last_calorie} -> [last_calorie | calories] end)
   end
 end
