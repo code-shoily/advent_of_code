@@ -6,6 +6,10 @@ defmodule AdventOfCode.Y2016.Day09Test do
 
   alias AdventOfCode.Y2016.Day09, as: Solution
 
+  test "Year 2016, Day 9" do
+    assert Solution.run() == {102_239, 10_780_403_063}
+  end
+
   describe "Year 2016, Day 9, Part 1" do
     params = [
       {"ADVENT", 6},
@@ -18,12 +22,8 @@ defmodule AdventOfCode.Y2016.Day09Test do
 
     for {input, output} <- params do
       test "Works for #{input}" do
-        assert Solution.run_1(unquote(input)) == unquote(output)
+        assert Solution.decompress_v1(unquote(input)) == unquote(output)
       end
-    end
-
-    test "Result" do
-      assert Solution.run_1(Solution.input!()) == 102_239
     end
   end
 
@@ -38,12 +38,8 @@ defmodule AdventOfCode.Y2016.Day09Test do
 
     for {input, output} <- params do
       test "Works for #{input}" do
-        assert Solution.run_2(unquote(input)) == unquote(output)
+        assert Solution.decompress_v2(unquote(input)) == unquote(output)
       end
-    end
-
-    test "Result" do
-      assert Solution.run_2(Solution.input!()) == 10_780_403_063
     end
   end
 end
