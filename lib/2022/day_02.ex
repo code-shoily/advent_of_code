@@ -5,8 +5,6 @@ defmodule AdventOfCode.Y2022.Day02 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @winning_pt 6
-  @draw_pt 3
   @pts %{rock: 1, paper: 2, scissor: 3}
   @to_win %{rock: :paper, paper: :scissor, scissor: :rock}
   @to_draw Map.new(@to_win, fn {a, _} -> {a, a} end)
@@ -28,7 +26,7 @@ defmodule AdventOfCode.Y2022.Day02 do
     end
   end
 
-  defp score_1(input), do: Enum.reduce(input, 0, fn x, tot -> tot + elem(pts(x), 1) end)
+  defp score_1(input), do: Enum.reduce(input, 0, fn x, tot -> tot + pts(x) end)
 
   defp score_2(input) do
     input
@@ -36,16 +34,12 @@ defmodule AdventOfCode.Y2022.Day02 do
     |> score_1()
   end
 
-  def lose(a), do: @to_lose[a]
-  def draw(a), do: a
-  def win(a), do: @to_win[a]
-
   def pts({a, b}) when is_binary(b), do: pts({a, to_rps(b)})
-  def pts({:scissor, :rock}), do: {3, @winning_pt + 1}
-  def pts({:rock, :paper}), do: {1, @winning_pt + 2}
-  def pts({:paper, :scissor}), do: {2, @winning_pt + 3}
-  def pts({a, a}), do: {@draw_pt + @pts[a], @draw_pt + @pts[a]}
-  def pts({a, b}), do: {@winning_pt + @pts[a], @pts[b]}
+  def pts({:scissor, :rock}), do: 7
+  def pts({:rock, :paper}), do: 8
+  def pts({:paper, :scissor}), do: 9
+  def pts({a, a}), do: 3 + @pts[a]
+  def pts({_, b}), do: @pts[b]
 
   def to_rps(a) when a in ~w/A X/, do: :rock
   def to_rps(a) when a in ~w/B Y/, do: :paper
