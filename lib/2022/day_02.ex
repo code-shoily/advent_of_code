@@ -9,8 +9,9 @@ defmodule AdventOfCode.Y2022.Day02 do
   @draw_pt 3
   @pts %{rock: 1, paper: 2, scissor: 3}
   @to_win %{rock: :paper, paper: :scissor, scissor: :rock}
+  @to_draw Map.new(@to_win, fn {a, _} -> {a, a} end)
   @to_lose Map.new(@to_win, fn {a, b} -> {b, a} end)
-  @fate %{"X" => &__MODULE__.lose/1, "Y" => &__MODULE__.draw/1, "Z" => &__MODULE__.win/1}
+  @fate %{"X" => @to_lose, "Y" => @to_draw, "Z" => @to_win}
 
   def input, do: InputReader.read_from_file(2022, 2)
 
@@ -31,7 +32,7 @@ defmodule AdventOfCode.Y2022.Day02 do
 
   defp score_2(input) do
     input
-    |> Enum.reduce([], fn {a, b}, acc -> [{a, @fate[b].(a)} | acc] end)
+    |> Enum.reduce([], fn {a, b}, acc -> [{a, @fate[b][a]} | acc] end)
     |> score_1()
   end
 
