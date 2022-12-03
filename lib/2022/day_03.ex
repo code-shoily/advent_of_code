@@ -14,22 +14,21 @@ defmodule AdventOfCode.Y2022.Day03 do
      total_priority(group_priorities(rucksacks))}
   end
 
-  defp compartment_priorities(rucksacks), do: Enum.map(rucksacks, &in_both_compartments/1)
+  defp compartment_priorities(rucksacks),
+    do: Enum.map(rucksacks, &in_both_compartments/1)
 
   defp group_priorities(rucksacks) do
     rucksacks
     |> Enum.chunk_every(3)
     |> Enum.map(fn [x | xs] ->
-      Enum.reduce(xs, as_set(x), fn rucksack, rucksacks ->
-        rucksack |> as_set() |> MapSet.intersection(rucksacks)
-      end)
+      Enum.reduce(xs, as_set(x), &MapSet.intersection(as_set(&1), &2))
     end)
   end
 
-  defp in_both_compartments(string) do
-    mid = Integer.floor_div(String.length(string), 2)
+  defp in_both_compartments(rucksack) do
+    mid = rucksack |> String.length() |> div(2)
 
-    [String.slice(string, 0, mid), String.slice(string, mid, mid)]
+    [String.slice(rucksack, 0, mid), String.slice(rucksack, mid, mid)]
     |> Enum.map(&MapSet.new(String.codepoints(&1)))
     |> then(fn [a, b] -> MapSet.intersection(a, b) end)
   end
