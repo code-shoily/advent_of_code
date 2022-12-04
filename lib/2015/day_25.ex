@@ -3,7 +3,9 @@ defmodule AdventOfCode.Y2015.Day25 do
   --- Day 25: Let It Snow ---
   Problem Link: https://adventofcode.com/2015/day/25
   """
-  def input, do: AdventOfCode.Helpers.InputReader.read_from_file(2015, 25)
+  alias AdventOfCode.Helpers.InputReader
+
+  def input, do: InputReader.read_from_file(2015, 25)
 
   def run(input \\ input()) do
     input

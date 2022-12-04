@@ -3,10 +3,20 @@ defmodule AdventOfCode.Y2020.Day11 do
   --- Day 11: Seating System ---
   Problem Link: https://adventofcode.com/2020/day/11
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 11
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> seats(&adjacents/3, 4)
-  def run_2, do: input!() |> parse() |> seats(&adjacents_view/3, 5)
+  def input, do: InputReader.read_from_file(2020, 11)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    task_1 = Task.async(fn -> run_1(input) end)
+    task_2 = Task.async(fn -> run_2(input) end)
+
+    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
+  end
+
+  def run_1(input), do: seats(input, &adjacents/3, 4)
+  def run_2(input), do: seats(input, &adjacents_view/3, 5)
 
   defp seats(data, strategy, limit) do
     data
@@ -18,7 +28,7 @@ defmodule AdventOfCode.Y2020.Day11 do
   end
 
   def parse(input) do
-    input = String.split(input, "\n")
+    input = Transformers.lines(input)
     size = length(input)
 
     grid =
@@ -29,25 +39,32 @@ defmodule AdventOfCode.Y2020.Day11 do
     {Map.new(grid), size, size}
   end
 
+  def update_changes(adjacents, seat, changes, x, y, occupy?, free?) do
+    cond do
+      seat == "L" && occupy?.(adjacents) -> [{x, y, "#"} | changes]
+      seat == "#" && free?.(adjacents) -> [{x, y, "L"} | changes]
+      true -> changes
+    end
+  end
+
+  def get_changes(grid, rows, cols, adjacents_fn, occupy?, free?) do
+    for(x <- 0..(cols - 1), y <- 0..(rows - 1), do: {x, y})
+    |> Enum.reduce([], fn {x, y}, changes ->
+      case Map.get(grid, {x, y}) do
+        "." ->
+          changes
+
+        seat ->
+          grid
+          |> adjacents_fn.(x, y)
+          |> update_changes(seat, changes, x, y, occupy?, free?)
+      end
+    end)
+  end
+
   def evolve({grid, rows, cols}, adjacents_fn, occupy?, free?) do
     Enum.reduce_while(Stream.cycle([0]), grid, fn _, grid ->
-      changes =
-        for(x <- 0..(cols - 1), y <- 0..(rows - 1), do: {x, y})
-        |> Enum.reduce([], fn {x, y}, changes ->
-          case Map.get(grid, {x, y}) do
-            "." ->
-              changes
-
-            seat ->
-              adjacents = adjacents_fn.(grid, x, y)
-
-              cond do
-                seat == "L" && occupy?.(adjacents) -> [{x, y, "#"} | changes]
-                seat == "#" && free?.(adjacents) -> [{x, y, "L"} | changes]
-                true -> changes
-              end
-          end
-        end)
+      changes = get_changes(grid, rows, cols, adjacents_fn, occupy?, free?)
 
       (Enum.empty?(changes) && {:halt, grid}) ||
         {:cont,
@@ -77,14 +94,16 @@ defmodule AdventOfCode.Y2020.Day11 do
     [{1, 1}, {1, 0}, {1, -1}, {0, 1}, {0, -1}, {-1, 1}, {-1, 0}, {-1, -1}]
     |> Enum.reduce([], fn {shift_x, shift_y}, acc ->
       Enum.reduce_while(Stream.cycle([0]), {acc, x, y}, fn _, {acc, x, y} ->
-        {new_x, new_y} = {x + shift_x, y + shift_y}
-
-        case Map.get(grid, {new_x, new_y}) do
-          "." -> {:cont, {acc, new_x, new_y}}
-          nil -> {:halt, acc}
-          seat -> {:halt, [seat | acc]}
-        end
+        reducing_cond(grid, {x + shift_x, y + shift_y}, acc)
       end)
     end)
+  end
+
+  defp reducing_cond(grid, {new_x, new_y}, acc) do
+    case Map.get(grid, {new_x, new_y}) do
+      "." -> {:cont, {acc, new_x, new_y}}
+      nil -> {:halt, acc}
+      seat -> {:halt, [seat | acc]}
+    end
   end
 end

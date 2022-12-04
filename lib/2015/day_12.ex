@@ -3,7 +3,9 @@ defmodule AdventOfCode.Y2015.Day12 do
   --- Day 12: JSAbacusFramework.io ---
   Problem Link: https://adventofcode.com/2015/day/12
   """
-  def input, do: AdventOfCode.Helpers.InputReader.read_from_file(2015, 12)
+  alias AdventOfCode.Helpers.InputReader
+
+  def input, do: InputReader.read_from_file(2015, 12)
 
   def run(input \\ input()) do
     input = String.graphemes(input)

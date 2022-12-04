@@ -3,15 +3,28 @@ defmodule AdventOfCode.Y2021.Day21 do
   --- Day 21: Dirac Dice ---
   Problem Link: https://adventofcode.com/2021/day/21
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 21
+  alias AdventOfCode.Helpers.InputReader
 
   require Integer
 
-  def run_1, do: input!() |> parse() |> roll(1, 0) |> Tuple.product()
+  def input, do: InputReader.read_from_file(2021, 21)
 
-  def run_2 do
+  def run(input \\ input()) do
+    input = parse(input)
+    task_1 = Task.async(fn -> run_1(input) end)
+    task_2 = Task.async(fn -> run_2(input) end)
+
+    {
+      Task.await(task_1, :infinity),
+      Task.await(task_2, :infinity)
+    }
+  end
+
+  def run_1(input), do: input |> roll(1, 0) |> Tuple.product()
+
+  def run_2(input) do
     {:ok, pid} = Agent.start_link(fn -> %{} end)
-    initial_state = input!() |> parse()
+    initial_state = input
 
     play_multiversal(pid).(initial_state)
     |> then(fn {player_1, player_2} ->
@@ -19,7 +32,7 @@ defmodule AdventOfCode.Y2021.Day21 do
     end)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data) do
     data
     |> String.split("\n")
     |> Enum.map(fn line ->
@@ -81,17 +94,21 @@ defmodule AdventOfCode.Y2021.Day21 do
     fn players ->
       case Agent.get(agent, &Map.get(&1, players)) do
         nil ->
-          value = play_multiversal(players)
-
-          Agent.get_and_update(
-            agent,
-            fn state -> {value, Map.put(state, players, value)} end
-          )
+          players
+          |> play_multiversal()
+          |> update_agent(agent, players)
 
         value ->
           value
       end
     end
+  end
+
+  defp update_agent(value, agent, players) do
+    Agent.get_and_update(
+      agent,
+      fn state -> {value, Map.put(state, players, value)} end
+    )
   end
 
   def next_move(total, {player, point}) do

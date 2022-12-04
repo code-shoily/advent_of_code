@@ -27,7 +27,8 @@ defmodule AdventOfCode.MixProject do
       {:floki, "~> 0.34.0"},
       {:httpoison, "~> 1.8.0"},
       {:jason, "~> 1.4"},
-      {:libgraph, "~> 0.16"}
+      {:libgraph, "~> 0.16"},
+      {:aja, "~> 0.6.1"}
     ]
   end
 end

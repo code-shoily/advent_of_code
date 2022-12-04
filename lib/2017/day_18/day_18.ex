@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2017.Day18 do
   """
   use AdventOfCode.Helpers.InputReader, year: 2017, day: 18
 
-  alias AdventOfCode.Helpers.Transformers
   alias __MODULE__.Duet
+  alias AdventOfCode.Helpers.Transformers
 
   def run(input \\ input!()) do
     instructions = parse(input)

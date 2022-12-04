@@ -3,7 +3,9 @@ defmodule AdventOfCode.Y2022.Day01 do
   --- Day 1: Calorie Counting ---
   Problem Link: https://adventofcode.com/2022/day/1
   """
-  def input, do: AdventOfCode.Helpers.InputReader.read_from_file(2022, 1)
+  alias AdventOfCode.Helpers.InputReader
+
+  def input, do: InputReader.read_from_file(2022, 1)
 
   def run(input \\ input()) do
     calories = parse(input)

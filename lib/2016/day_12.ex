@@ -30,6 +30,18 @@ defmodule AdventOfCode.Y2016.Day12 do
     Map.get(exec(instructions, %{@regs | "c" => 1}, 0, Enum.count(instructions)), "a")
   end
 
+  def parse(data) do
+    data
+    |> Transformers.lines()
+    |> Enum.map(fn instruction ->
+      instruction
+      |> String.split(" ")
+      |> Enum.map(&sanitize/1)
+    end)
+    |> Enum.with_index()
+    |> Map.new(fn {cmd, idx} -> {idx, cmd} end)
+  end
+
   defp exec(_, regs, s, s), do: regs
 
   defp exec(cmds, regs, idx, s) do
@@ -46,27 +58,18 @@ defmodule AdventOfCode.Y2016.Day12 do
       ["dec", reg] ->
         exec(cmds, %{regs | reg => regs[reg] - 1}, idx + 1, s)
 
+      ["jnz", 0, _] ->
+        exec(cmds, regs, idx + 1, s)
+
       ["jnz", val, step] when is_integer(val) ->
-        offset = (val == 0 && 1) || step
-        exec(cmds, regs, idx + offset, s)
+        exec(cmds, regs, idx + step, s)
 
       ["jnz", reg_val, step] ->
-        offset = (regs[reg_val] == 0 && 1) || step
-        exec(cmds, regs, idx + offset, s)
+        exec(cmds, regs, jump_on_nz(regs[reg_val], idx, step), s)
     end
   end
 
-  def parse(data) do
-    data
-    |> Transformers.lines()
-    |> Enum.map(fn instruction ->
-      instruction
-      |> String.split(" ")
-      |> Enum.map(&sanitize/1)
-    end)
-    |> Enum.with_index()
-    |> Map.new(fn {cmd, idx} -> {idx, cmd} end)
-  end
+  defp jump_on_nz(val, idx, step), do: idx + ((val == 0 && 1) || step)
 
   defp sanitize(reg) when reg in @tokens, do: reg
   defp sanitize(reg), do: String.to_integer(reg)

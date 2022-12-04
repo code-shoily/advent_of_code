@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Y2017.Day18.Duet do
+  @moduledoc """
+  Duet module to host all functions for register manipulation.
+  """
   alias __MODULE__
 
   defstruct [:instructions, seq: 0, registers: %{}, last: nil]
