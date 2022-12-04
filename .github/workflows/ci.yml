@@ -11,3 +11,4 @@ jobs:
           elixir-version: '1.14'
       - run: mix deps.get
       - run: mix test
+      - run: mix credo --strict
