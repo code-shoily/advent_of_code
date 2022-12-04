@@ -3,8 +3,6 @@ defmodule AdventOfCode.Y2017.Day17 do
   --- Day 17: Spinlock ---
   Problem Link: https://adventofcode.com/2017/day/17
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 17
-
   def input, do: 394
 
   def run, do: {run_1(), run_2()}

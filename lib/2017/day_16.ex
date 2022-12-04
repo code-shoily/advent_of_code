@@ -3,13 +3,13 @@ defmodule AdventOfCode.Y2017.Day16 do
   --- Day 16: Permutation Promenade ---
   Problem Link: https://adventofcode.com/2017/day/16
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 16
-
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   @dancers to_string(Enum.take(?a..?z, 16))
 
-  def run(input \\ input!()) do
+  def input, do: InputReader.read_from_file(2017, 16)
+
+  def run(input \\ input()) do
     moves = parse(input)
 
     {dance(@dancers, moves), perform_billionth(@dancers, moves)}
@@ -20,7 +20,7 @@ defmodule AdventOfCode.Y2017.Day16 do
     Enum.reduce(1..count, dancers, fn _, dancers -> dance(dancers, moves) end)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     for m <- Transformers.words(data, ","), do: parse_move(m)
   end
 

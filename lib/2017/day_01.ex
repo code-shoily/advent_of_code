@@ -3,25 +3,24 @@ defmodule AdventOfCode.Y2017.Day01 do
   --- Day 1: Inverse Captcha ---
   Problem Link: https://adventofcode.com/2017/day/1
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 1
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1 do
-    input!()
-    |> process()
-    |> matches_with_next()
-    |> Enum.sum()
+  def input, do: InputReader.read_from_file(2017, 1)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
   end
 
-  def run_2 do
-    with data <- process(input!()),
-         half <- data |> length() |> div(2) do
-      data
-      |> Enum.split(half)
-      |> matching_pair_sum()
-    end
+  defp run_1(input), do: Enum.sum(matches_with_next(input))
+
+  defp run_2(input) do
+    half = div(length(input), 2)
+    matching_pair_sum(Enum.split(input, half))
   end
 
-  def process(input) do
+  def parse(input) do
     input
     |> String.graphemes()
     |> Enum.map(&String.to_integer/1)

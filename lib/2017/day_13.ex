@@ -3,15 +3,18 @@ defmodule AdventOfCode.Y2017.Day13 do
   --- Day 13: Packet Scanners ---
   Problem Link: https://adventofcode.com/2017/day/13
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 13
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2017, 13)
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     input = parse(input)
-    limit = input |> Map.keys() |> Enum.max()
+    limit = Enum.max(Map.keys(input))
 
-    {run_1(input, limit), run_2(input, limit)}
+    task_1 = Task.async(fn -> run_1(input, limit) end)
+    task_2 = Task.async(fn -> run_2(input, limit) end)
+
+    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
   def parse(data) do

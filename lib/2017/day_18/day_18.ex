@@ -3,12 +3,12 @@ defmodule AdventOfCode.Y2017.Day18 do
   --- Day 18: Duet ---
   Problem Link: https://adventofcode.com/2017/day/18
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 18
-
   alias __MODULE__.Duet
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run(input \\ input!()) do
+  def input, do: InputReader.read_from_file(2017, 18)
+
+  def run(input \\ input()) do
     instructions = parse(input)
 
     {run_1(instructions), run_2(instructions)}
@@ -41,7 +41,7 @@ defmodule AdventOfCode.Y2017.Day18 do
     {:todo, 2}
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

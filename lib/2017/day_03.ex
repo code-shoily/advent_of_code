@@ -3,16 +3,14 @@ defmodule AdventOfCode.Y2017.Day03 do
   --- Day 3: Spiral Memory ---
   Problem Link: https://adventofcode.com/2017/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 3
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2017, 3)
 
-  def run(input \\ input!()) do
-    input = parse(input)
+  def run(input \\ input()) do
+    input = List.first(Transformers.int_lines(input))
     {run_1(input), run_2(input)}
   end
-
-  def parse(data), do: hd(Transformers.int_lines(data))
 
   defp run_1(input) do
     {x, y} = position(input)

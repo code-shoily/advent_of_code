@@ -19,11 +19,7 @@ defmodule AdventOfCode.Y2017.Day04Test do
     refute Solution.anagrams?(~w/oiii ioii iioi iiio/)
   end
 
-  test "Year 2017, Day 4, Part 1" do
-    assert Solution.run_1() == 455
-  end
-
-  test "Year 2017, Day 4, Part 2" do
-    assert Solution.run_2() == 186
+  test "Year 2017, Day 4" do
+    assert Solution.run() == {455, 186}
   end
 end

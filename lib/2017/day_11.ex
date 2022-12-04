@@ -4,18 +4,18 @@ defmodule AdventOfCode.Y2017.Day11 do
   Problem Link: https://adventofcode.com/2017/day/11
   Help: https://www.redblobgames.com/grids/hexagons/
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 11
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2017, 11)
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     dirs = parse(input)
     {distance, farthest, _} = journey(dirs)
 
     {distance, farthest}
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.words(",")
     |> Enum.map(&String.to_existing_atom/1)

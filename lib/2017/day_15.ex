@@ -4,15 +4,15 @@ defmodule AdventOfCode.Y2017.Day15 do
   Problem Link: https://adventofcode.com/2017/day/15
   FIXME: Number being Marsenne Prime, can't help but think there's a faster way to this.
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 15
-
-  alias AdventOfCode.Helpers.Transformers
-
   import Bitwise
+
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
+
+  def input, do: InputReader.read_from_file(2017, 15)
 
   @multipliers %{"A" => 16_807, "B" => 48_271}
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     input = parse(input)
 
     part_1 = Task.async(fn -> final_count_1(input) end)

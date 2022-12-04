@@ -5,18 +5,18 @@ defmodule AdventOfCode.Y2017.Day14 do
 
   TODO: Look into strongly connected components to get the regions.
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 14
-
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Y2017.Day10
 
-  def run(input \\ input!()) do
+  def input, do: InputReader.read_from_file(2017, 14)
+
+  def run(input \\ input()) do
     squares = input |> parse() |> squares()
 
     {run_1(squares), run_2(squares)}
   end
 
-  def parse(data \\ input!()), do: hd(Transformers.lines(data))
+  def parse(data \\ input()), do: hd(Transformers.lines(data))
 
   defp run_1(squares) do
     squares

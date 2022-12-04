@@ -3,11 +3,11 @@ defmodule AdventOfCode.Y2017.Day08 do
   --- Day 8: I Heard You Like Registers ---
   Problem Link: https://adventofcode.com/2017/day/8
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 8
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2017, 8)
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     input
     |> parse()
     |> Enum.reduce(
@@ -29,7 +29,7 @@ defmodule AdventOfCode.Y2017.Day08 do
   end
 
   @upd %{"inc" => :+, "dec" => :-}
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

@@ -3,12 +3,18 @@ defmodule AdventOfCode.Y2017.Day09 do
   --- Day 9: Stream Processing ---
   Problem Link: https://adventofcode.com/2017/day/9
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 9
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> process_groups()
-  def run_2, do: input!() |> parse() |> process_garbages()
+  def input, do: InputReader.read_from_file(2017, 9)
 
-  def parse(input), do: String.graphemes(input)
+  def run(input \\ input()) do
+    input = String.graphemes(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: process_groups(input)
+  def run_2(input), do: process_garbages(input)
 
   def process_groups(data) do
     data

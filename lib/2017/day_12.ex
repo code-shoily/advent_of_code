@@ -3,12 +3,12 @@ defmodule AdventOfCode.Y2017.Day12 do
   --- Day 12: Digital Plumber ---
   Problem Link: https://adventofcode.com/2017/day/12
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 12
-
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias ExAlgo.Set.DisjointSet
 
-  def run(input \\ input!()) do
+  def input, do: InputReader.read_from_file(2017, 12)
+
+  def run(input \\ input()) do
     disjoint_set = input |> parse() |> create_disjoint_set()
     nodes = Map.keys(disjoint_set.parents)
 
@@ -60,7 +60,7 @@ defmodule AdventOfCode.Y2017.Day12 do
     |> elem(0)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Map.new(fn line ->

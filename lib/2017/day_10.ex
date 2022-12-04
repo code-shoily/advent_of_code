@@ -3,17 +3,17 @@ defmodule AdventOfCode.Y2017.Day10 do
   --- Day 10: Knot Hash ---
   Problem Link: https://adventofcode.com/2017/day/10
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 10
-
   require Bitwise
 
-  alias AdventOfCode.Helpers.Transformers
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
+
+  def input, do: InputReader.read_from_file(2017, 10)
 
   @lst 0..255
   @size Enum.count(@lst)
   @suffix_lengths [17, 31, 73, 47, 23]
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     {lengths, bytes, list_map} = parse(input)
     {run_1(lengths, list_map), run_2(bytes, list_map)}
   end

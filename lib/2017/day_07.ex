@@ -5,11 +5,10 @@ defmodule AdventOfCode.Y2017.Day07 do
   TODO: Add part 2. Part 2 was determined with manual traversals through some helper functions
   but I was too lazy to implement them here.
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 7
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
+  def input, do: InputReader.read_from_file(2017, 7)
 
-  alias AdventOfCode.Helpers.Transformers
-
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     input = parse(input)
 
     {run_1(input), run_2(input)}
@@ -29,7 +28,7 @@ defmodule AdventOfCode.Y2017.Day07 do
   end
 
   @regex ~r/(?<name>[a-z]+) \((?<weight>\d+)\)( -> (?<branches>(\s*[a-z]+\,?)+))?/
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

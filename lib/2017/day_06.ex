@@ -3,11 +3,11 @@ defmodule AdventOfCode.Y2017.Day06 do
   --- Day 6: Memory Reallocation ---
   Problem Link: https://adventofcode.com/2017/day/6
   """
-  use AdventOfCode.Helpers.InputReader, year: 2017, day: 6
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2017, 6)
 
-  def run(input \\ input!()) do
+  def run(input \\ input()) do
     blocks = parse(input)
     {visited, blocks} = distribute_largest(blocks, %MapSet{})
     {second_visit, _} = distribute_largest(blocks, %MapSet{})
@@ -32,7 +32,7 @@ defmodule AdventOfCode.Y2017.Day06 do
     end)
   end
 
-  def parse(data \\ input!()) do
+  def parse(data \\ input()) do
     data
     |> Transformers.words("\t")
     |> Enum.map(&String.to_integer/1)
