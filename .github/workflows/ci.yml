@@ -11,4 +11,5 @@ jobs:
           elixir-version: '1.14'
       - run: mix deps.get
       - run: mix test
+      - run: mix format --check-formatted
       - run: mix credo --strict
