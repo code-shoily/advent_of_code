@@ -9,5 +9,4 @@ defmodule AdventOfCode.Y2021.Day15Test do
   test "Year 2021, Day 15" do
     assert Solution.run() == {583, 2927}
   end
-
 end
