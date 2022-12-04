@@ -7,3 +7,4 @@
 | 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :star2: | [day_01.ex](/lib/2022/day_01.ex) |
 | 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :star2: | [day_02.ex](/lib/2022/day_02.ex) |
 | 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :star2: | [day_02.ex](/lib/2022/day_03.ex) |
+| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :star2: | [day_02.ex](/lib/2022/day_04.ex) |
