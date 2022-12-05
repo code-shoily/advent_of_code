@@ -3,15 +3,20 @@ defmodule AdventOfCode.Y2018.Day01 do
   --- Day 1: Chronal Calibration ---
   Problem Link: https://adventofcode.com/2018/day/1
   """
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 1
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @spec run_1() :: integer()
-  def run_1, do: input!() |> parse() |> Enum.reduce(0, &Kernel.+/2)
+  def input, do: InputReader.read_from_file(2018, 1)
 
-  @spec run_2() :: non_neg_integer()
-  def run_2 do
-    input!()
-    |> parse()
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: Enum.reduce(input, 0, &Kernel.+/2)
+
+  def run_2(input) do
+    input
     |> Stream.cycle()
     |> Enum.reduce_while({%MapSet{}, 0}, fn cur, {history, prev} ->
       new_frequency = prev + cur
@@ -27,7 +32,7 @@ defmodule AdventOfCode.Y2018.Day01 do
   @spec parse(String.t()) :: [String.t()]
   def parse(input) do
     input
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(&String.to_integer/1)
   end
 end

@@ -3,15 +3,19 @@ defmodule AdventOfCode.Y2018.Day04 do
   --- Day 4: Repose Record ---
   Problem Link: https://adventofcode.com/2018/day/4
   """
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 4
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    store = input!() |> parse() |> sleep_time()
+  def input, do: InputReader.read_from_file(2018, 4)
 
-    most_sleeper =
-      store
-      |> Enum.max_by(& &1[:logs][:duration])
-      |> Map.get(:id)
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    store = sleep_time(input)
+    most_sleeper = Enum.max_by(store, & &1[:logs][:duration])[:id]
 
     most_minute =
       store
@@ -25,9 +29,8 @@ defmodule AdventOfCode.Y2018.Day04 do
     most_minute * most_sleeper
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> sleep_time()
     |> Enum.map(fn %{id: id, logs: %{minutes: m}} -> %{id: id, minutes: get_mode(m)} end)
     |> Enum.max_by(&elem(&1[:minutes], 1))
@@ -36,7 +39,7 @@ defmodule AdventOfCode.Y2018.Day04 do
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&parse_line/1)
     |> Enum.sort(fn a, b -> NaiveDateTime.diff(a[:timestamp], b[:timestamp]) < 0 end)
     |> normalize()

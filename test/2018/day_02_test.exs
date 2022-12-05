@@ -36,11 +36,7 @@ defmodule AdventOfCode.Y2018.Day02Test do
     assert Solution.words_without_a_char("abc") == ["?bc", "a?c", "ab?"]
   end
 
-  test "Year 2018, Day 2, Part 1" do
-    assert Solution.run_1() == 7221
-  end
-
-  test "Year 2018, Day 2, Part 2" do
-    assert Solution.run_2() == "mkcdflathzwsvjxrevymbdpoq"
+  test "Year 2018, Day 2" do
+    assert Solution.run() == {7221, "mkcdflathzwsvjxrevymbdpoq"}
   end
 end

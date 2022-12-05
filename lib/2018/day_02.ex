@@ -3,29 +3,28 @@ defmodule AdventOfCode.Y2018.Day02 do
   --- Day 2: Inventory Management System ---
   Problem Link: https://adventofcode.com/2018/day/2
   """
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 2
+  def input, do: InputReader.read_from_file(2018, 2)
 
-  def run_1 do
-    input!()
-    |> parse()
-    |> Enum.map(fn text ->
-      text |> letter_count() |> two_or_three_count()
-    end)
-    |> checksum()
+  def run(input \\ input()) do
+    input = Transformers.lines(input)
+
+    {run_1(input), run_2(input)}
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_1(input) do
+    checksum(Enum.map(input, &two_or_three_count(letter_count(&1))))
+  end
+
+  def run_2(input) do
+    input
     |> Enum.flat_map(&words_without_a_char/1)
     |> Enum.group_by(& &1)
     |> Enum.map(fn {box, boxes} -> {box, length(boxes)} end)
     |> Enum.filter(fn {_, freq} -> freq == 2 end)
     |> then(fn [{box, _}] -> String.replace(box, "?", "") end)
   end
-
-  def parse(data), do: String.split(data, "\n")
 
   def letter_count(word) do
     word

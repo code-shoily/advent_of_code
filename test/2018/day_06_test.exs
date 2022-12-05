@@ -50,11 +50,7 @@ defmodule AdventOfCode.Y2018.Day06Test do
     assert Solution.covers_distances_within(@points, 32) == 16
   end
 
-  test "Year 2018, Day 6, Part 1" do
-    assert Solution.run_1() == 4284
-  end
-
-  test "Year 2018, Day 6, Part 2" do
-    assert Solution.run_2() == 35_490
+  test "Year 2018, Day 6" do
+    assert Solution.run() == {4284, 35_490}
   end
 end

@@ -9,11 +9,7 @@ defmodule AdventOfCode.Y2018.Day05Test do
     assert Solution.react('dabAcCaCBAcCcaDA') == 10
   end
 
-  test "Year 2018, Day 5, Part 1" do
-    assert Solution.run_1() == 10_496
-  end
-
-  test "Year 2018, Day 5, Part 2" do
-    assert Solution.run_2() == 5774
+  test "Year 2018, Day 5" do
+    assert Solution.run() == {10_496, 5774}
   end
 end

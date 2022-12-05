@@ -3,27 +3,33 @@ defmodule AdventOfCode.Y2018.Day03 do
   --- Day 3: No Matter How You Slice It ---
   Problem Link: https://adventofcode.com/2018/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 3
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1 do
-    input!()
-    |> parse()
+  def input, do: InputReader.read_from_file(2018, 3)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> Enum.filter(fn {_, v} -> length(v) > 1 end)
     |> length()
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> claim_world_view()
     |> Enum.filter(&elem(&1, 1))
-    |> hd()
+    |> List.first()
     |> elem(0)
   end
 
   def parse(input) do
     input
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Stream.map(&parse_line/1)
     |> Stream.map(&sanitize/1)
     |> Enum.to_list()

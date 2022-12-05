@@ -3,32 +3,28 @@ defmodule AdventOfCode.Y2018.Day06 do
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   """
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 6
-
   @type point :: {integer(), integer()}
   @type points :: list(point())
   @type corners :: {point(), point()}
   @type world :: list({point(), list({point(), integer()})})
 
-  def run_1 do
-    input!()
-    |> parse()
-    |> covers_most_points()
-  end
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_2 do
-    input!()
-    |> parse()
-    |> covers_distances_within(10_000)
+  def input, do: InputReader.read_from_file(2018, 6)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {covers_most_points(input), covers_distances_within(input, 10_000)}
   end
 
   @spec parse(binary()) :: points()
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(fn line ->
       line
-      |> String.split(",")
+      |> Transformers.words(",")
       |> Enum.map(&String.to_integer(String.trim(&1)))
       |> List.to_tuple()
     end)

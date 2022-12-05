@@ -3,18 +3,17 @@ defmodule AdventOfCode.Y2018.Day08 do
   --- Day 8: Memory Maneuver ---
   Problem Link: https://adventofcode.com/2018/day/8
   """
-  use AdventOfCode.Helpers.InputReader, year: 2018, day: 8
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> metadata_sum()
-  def run_2, do: {:not_implemented, 2}
+  def input, do: InputReader.read_from_file(2018, 8)
 
-  def parse(data) do
-    data
-    |> String.split(" ", trim: true)
-    |> Enum.map(&String.to_integer/1)
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {metadata_sum(input), nil}
   end
 
-  # --- <Solution Functions> ---
+  def parse(data), do: Enum.map(Transformers.words(data), &String.to_integer/1)
   def metadata_sum(lst), do: walk(lst, [], [], []) |> Enum.flat_map(& &1) |> Enum.sum()
   def walk([], _, _, metadata), do: metadata
 
@@ -44,6 +43,4 @@ defmodule AdventOfCode.Y2018.Day08 do
   def values([node_n, meta_n | rest], [node_last | nodes], meta_ns, metadata) do
     values(rest, [node_n, node_last - 1 | nodes], [meta_n | meta_ns], metadata)
   end
-
-  # --- </Solution Functions> ---
 end
