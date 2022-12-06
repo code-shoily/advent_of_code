@@ -3,16 +3,18 @@ defmodule AdventOfCode.Y2017.Day17 do
   --- Day 17: Spinlock ---
   Problem Link: https://adventofcode.com/2017/day/17
   """
+  alias Aja.Vector
+
   def input, do: 394
 
   def run, do: {run_1(), run_2()}
 
   @target 2017
   defp run_1 do
-    [0]
+    Vector.new([0])
     |> insert_nth(0, 0)
     |> then(fn buffer ->
-      Enum.at(buffer, Enum.find_index(buffer, &(&1 == 2017)) + 1)
+      Vector.at(buffer, Aja.Enum.find_index(buffer, &(&1 == 2017)) + 1)
     end)
   end
 
@@ -21,7 +23,8 @@ defmodule AdventOfCode.Y2017.Day17 do
   defp insert_nth(buffer, position, idx) do
     idx = idx + 1
     position = rem(position + input(), idx) + 1
-    buffer = List.insert_at(buffer, position, idx)
+    {left, right} = {Vector.take(buffer, position), Vector.drop(buffer, position)}
+    buffer = left |> Vector.concat(Vector.new([idx])) |> Vector.concat(right)
 
     insert_nth(buffer, position, idx)
   end
