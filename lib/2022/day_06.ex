@@ -6,25 +6,9 @@ defmodule AdventOfCode.Y2022.Day06 do
   alias AdventOfCode.Helpers.InputReader
 
   def input, do: InputReader.read_from_file(2022, 6)
+  def run(data \\ input()), do: {marker(data, 4), marker(data, 14)}
+  defp uniq?(xs, len), do: len == Enum.count(MapSet.new(:binary.bin_to_list(xs)))
 
-  def run(input \\ input()) do
-    input = String.graphemes(input)
-    {run_1(input, 0), run_2(input, 0)}
-  end
-
-  defp run_1([a, b, c, d | rest], v) do
-    case uniq?([a, b, c, d]) do
-      true -> v + 4
-      _ -> run_1([b, c, d | rest], v + 1)
-    end
-  end
-
-  defp run_2([a, b, c, d, e, f, g, h, i, j, k, l, m, n | rest], v) do
-    case uniq?([a, b, c, d, e, f, g, h, i, j, k, l, m, n]) do
-      true -> v + 14
-      _ -> run_2([b, c, d, e, f, g, h, i, j, k, l, m, n | rest], v + 1)
-    end
-  end
-
-  defp uniq?(lst), do: Enum.count(MapSet.new(lst)) == length(lst)
+  defp marker(<<_::bytes-size(1)>> <> xs = data, len, v \\ 0),
+    do: (uniq?(:binary.part(data, 0, len), len) && v + len) || marker(xs, len, v + 1)
 end
