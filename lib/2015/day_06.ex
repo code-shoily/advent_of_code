@@ -4,6 +4,7 @@ defmodule AdventOfCode.Y2015.Day06 do
   Problem Link: https://adventofcode.com/2015/day/6
   NOTE: This is slow!
   """
+  alias Aja.Vector
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2015, 6)
@@ -37,11 +38,7 @@ defmodule AdventOfCode.Y2015.Day06 do
   end
 
   def make_grid(dim) do
-    0..(dim - 1)
-    |> Stream.map(fn x ->
-      {x, 0..(dim - 1) |> Stream.map(&{&1, 0}) |> Enum.into(%{})}
-    end)
-    |> Enum.into(%{})
+    0 |> Vector.duplicate(dim) |> Vector.duplicate(dim)
   end
 
   @regex ~r"""
@@ -64,39 +61,35 @@ defmodule AdventOfCode.Y2015.Day06 do
     }
   end
 
-  defp apply_1(:turn_on, coord, src), do: update_in(src, coord, fn _ -> 1 end)
-  defp apply_1(:turn_off, coord, src), do: update_in(src, coord, fn _ -> 0 end)
-  defp apply_1(:toggle, coord, src), do: update_in(src, coord, fn v -> (v == 0 && 1) || 0 end)
-
-  defp apply_1({cmd, {x1, y1}, {x2, y2}}, src) do
-    x1..x2
-    |> Stream.flat_map(fn x ->
-      y1..y2
-      |> Stream.map(fn y ->
-        [x, y]
-      end)
+  defp apply_1({cmd, {x1, y1}, {x2, y2}}, grid) do
+    for x <- x1..x2, y <- y1..y2 do
+      [x, y]
+    end
+    |> Aja.Enum.reduce(grid, fn [x, y], acc ->
+      case cmd do
+        :turn_on -> put_in(acc, [x, y], 1)
+        :turn_off -> put_in(acc, [x, y], 0)
+        :toggle -> update_in(acc, [x, y], fn v -> (v == 0 && 1) || 0 end)
+      end
     end)
-    |> Enum.reduce(src, fn x, acc -> apply_1(cmd, x, acc) end)
   end
 
   defp total_brightness(grid) do
-    grid
-    |> Stream.flat_map(fn {_, line} ->
-      Stream.map(line, fn {_, value} -> value end)
+    Aja.Enum.reduce(grid, 0, fn row, acc ->
+      acc + Aja.Enum.sum(Aja.Enum.filter(row, &(&1 > 0)))
     end)
-    |> Enum.sum()
   end
 
-  defp apply_2(:turn_on, coord, src), do: update_in(src, coord, fn v -> v + 1 end)
-
-  defp apply_2(:turn_off, coord, src),
-    do: update_in(src, coord, fn v -> (v - 1 < 0 && 0) || v - 1 end)
-
-  defp apply_2(:toggle, coord, src), do: update_in(src, coord, fn v -> v + 2 end)
-
-  defp apply_2({cmd, {x1, y1}, {x2, y2}}, src) do
-    x1..x2
-    |> Stream.flat_map(&Stream.map(y1..y2, fn y -> [&1, y] end))
-    |> Enum.reduce(src, fn x, acc -> apply_2(cmd, x, acc) end)
+  defp apply_2({cmd, {x1, y1}, {x2, y2}}, grid) do
+    for x <- x1..x2, y <- y1..y2 do
+      [x, y]
+    end
+    |> Aja.Enum.reduce(grid, fn [x, y], acc ->
+      case cmd do
+        :turn_on -> update_in(acc, [x, y], fn v -> v + 1 end)
+        :turn_off -> update_in(acc, [x, y], fn v -> max(0, v - 1) end)
+        :toggle -> update_in(acc, [x, y], fn v -> v + 2 end)
+      end
+    end)
   end
 end
