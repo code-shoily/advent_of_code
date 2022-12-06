@@ -12,7 +12,10 @@ defmodule AdventOfCode.Y2015.Day06 do
     input = parse(input)
     grid = make_grid(1000)
 
-    {run_1(input, grid), run_2(input, grid)}
+    task_1 = Task.async(fn -> run_1(input, grid) end)
+    task_2 = Task.async(fn -> run_2(input, grid) end)
+
+    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
   def parse(input) do
@@ -33,7 +36,7 @@ defmodule AdventOfCode.Y2015.Day06 do
     |> total_brightness()
   end
 
-  defp make_grid(dim) do
+  def make_grid(dim) do
     0..(dim - 1)
     |> Stream.map(fn x ->
       {x, 0..(dim - 1) |> Stream.map(&{&1, 0}) |> Enum.into(%{})}
