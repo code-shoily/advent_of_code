@@ -10,3 +10,4 @@
 | 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :star2: | [day_02.ex](/lib/2022/day_04.ex) |
 | 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :star2: | [day_02.ex](/lib/2022/day_05.ex) |
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [day_02.ex](/lib/2022/day_06.ex) |
+| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [day_02.ex](/lib/2022/day_07.ex) |
