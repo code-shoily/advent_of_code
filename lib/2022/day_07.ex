@@ -14,30 +14,30 @@ defmodule AdventOfCode.Y2022.Day07 do
 
   defp run_1(sizes), do: Enum.sum(Enum.filter(sizes, &(&1 <= 100_000)))
   defp run_2(sizes, tot), do: Enum.min(Enum.filter(sizes, &space_required(&1, tot)))
-
-  def parse(data \\ input()) do
-    [_ | cmds] = Enum.map(Transformers.lines(data), &parse_commands/1)
-    Map.values(dir_sizes(cmds))
-  end
-
-  defp parse_commands(command) do
-    case Transformers.words(command) do
-      ["$", "cd", ".."] -> :up
-      ["$", "cd", dir] -> {:cd, dir}
-      ["$", _] -> :discard
-      ["dir", _] -> :discard
-      [size, file] -> {:file, {file, String.to_integer(size)}}
-    end
-  end
+  def parse(data \\ input()), do: Map.values(dir_sizes(Transformers.lines(data)))
 
   defp dir_sizes(commands) do
     {_, _, files} =
       Enum.reduce(commands, {[], "/", []}, fn cmd, {path, cur, files} = acc ->
         case cmd do
-          {:cd, dir} -> {[cur | path], dir, files}
-          :up -> {tl(path), hd(path), files}
-          {:file, {file, size}} -> {path, cur, [{file, size, dirs([cur | path])} | files]}
-          _ -> acc
+          "$ cd /" ->
+            acc
+
+          "$ cd .." ->
+            {tl(path), hd(path), files}
+
+          "$ cd " <> dir ->
+            {[cur | path], dir, files}
+
+          "$" <> _ ->
+            acc
+
+          "dir" <> _ ->
+            acc
+
+          file ->
+            [size, file] = Transformers.words(file)
+            {path, cur, [{file, String.to_integer(size), dirs([cur | path])} | files]}
         end
       end)
 
