@@ -1,0 +1,158 @@
+# Day 12
+
+```elixir
+Mix.install([:priority_queue, {:vega_lite, "~> 0.1.6"}, {:kino_vega_lite, "~> 0.1.7"}])
+alias VegaLite, as: Vl
+```
+
+## Part 1
+
+```elixir
+kino_input = Kino.Input.textarea("Enter the input")
+```
+
+```elixir
+raw_input = Kino.Input.read(kino_input)
+```
+
+```elixir
+defmodule Solution do
+  def grid2d(data, tx \\ &Function.identity/1) do
+    for {row, row_idx} <- Enum.with_index(data),
+        {cell, col_idx} <- Enum.with_index(row),
+        into: %{} do
+      {{row_idx, col_idx}, tx.(cell)}
+    end
+  end
+
+  def parse(data) do
+    map =
+      data
+      |> String.split("\n", trim: true)
+      |> Enum.map(&String.graphemes/1)
+      |> grid2d(fn char -> :binary.first(char) end)
+
+    source = elem(Enum.find(map, fn {_, v} -> v == ?S end), 0)
+    destination = elem(Enum.find(map, fn {_, v} -> v == ?E end), 0)
+    map = %{map | source => ?a, destination => ?z}
+
+    {map, source, destination}
+  end
+
+  def to_digraph(grid) do
+    graph = :digraph.new()
+
+    Enum.reduce(grid, graph, fn {{x, y}, _}, _ ->
+      [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}]
+      |> Enum.filter(&Map.has_key?(grid, &1))
+      |> Enum.map(fn point ->
+        unless grid[point] - grid[{x, y}] > 1 do
+          {{x, y}, point}
+        end
+      end)
+      |> Enum.reject(&is_nil/1)
+      |> Enum.each(fn {v1, v2} ->
+        :digraph.add_vertex(graph, v1)
+        :digraph.add_vertex(graph, v2)
+        :digraph.add_edge(graph, v1, v2)
+      end)
+    end)
+
+    graph
+  end
+end
+```
+
+```elixir
+{map, source, destination} = Solution.parse(raw_input)
+graph = Solution.to_digraph(map)
+path = :digraph.get_short_path(graph, source, destination)
+
+:ok
+```
+
+<!-- livebook:{"reevaluate_automatically":true} -->
+
+```elixir
+path_chart =
+  Vl.new(width: 900, height: 250)
+  |> Vl.layers([
+    Vl.new()
+    |> Vl.data_from_values(
+      Enum.map(
+        map,
+        fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => ?z - h} end
+      )
+    )
+    |> Vl.mark(:rect, opacity: 0.9)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative),
+    Vl.new()
+    |> Vl.mark(:point, opacity: 1, size: 2, color: :red)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative)
+  ])
+  |> Kino.VegaLite.new()
+  |> Kino.render()
+
+for {x, y} <- path do
+  Kino.VegaLite.push(path_chart, %{"x" => y, "y" => x, "h" => -10})
+  Process.sleep(10)
+end
+
+:ok
+```
+
+```elixir
+solution_1 = length(path) - 1
+```
+
+```elixir
+sources = Enum.map(Enum.filter(map, fn {_, v} -> v == ?a end), &elem(&1, 0))
+
+paths =
+  sources
+  |> Enum.map(fn source ->
+    :digraph.get_short_path(graph, source, destination)
+  end)
+  |> Enum.filter(& &1)
+
+:ok
+
+paths
+```
+
+```elixir
+solution_1 = (paths |> Enum.map(&length/1) |> Enum.min()) - 1
+```
+
+```elixir
+Vl.new(width: 900, height: 250)
+|> Vl.layers([
+  Vl.new()
+  |> Vl.data_from_values(
+    Enum.map(
+      map,
+      fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => ?z - h} end
+    )
+  )
+  |> Vl.mark(:rect, opacity: 1)
+  |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+  |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+  |> Vl.encode(:color, field: "h", type: :quantitative)
+  | for path <- paths do
+      Vl.new()
+      |> Vl.data_from_values(
+        path
+        |> Enum.with_index()
+        |> Enum.map(fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => h * -20} end)
+      )
+      |> Vl.mark(:point, opacity: 1, size: 2)
+      |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+      |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+      |> Vl.encode(:color, field: "h", type: :quantitative)
+    end
+])
+```
