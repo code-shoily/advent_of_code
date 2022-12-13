@@ -2,7 +2,7 @@
 
 ```elixir
 Mix.install([
-  {:vega_lite, "~> 0.1.6"}, 
+  {:vega_lite, "~> 0.1.6"},
   {:kino_vega_lite, "~> 0.1.7"}
 ])
 
@@ -79,13 +79,18 @@ path = :digraph.get_short_path(graph, source, destination)
 
 ```elixir
 path_chart =
-  Vl.new(width: 900, height: 250)
+  Vl.new(width: 800, height: 200)
   |> Vl.layers([
     Vl.new()
     |> Vl.data_from_values(
       Enum.map(
         map,
-        fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => ?z - h} end
+        fn {{x, y}, h} ->
+          case {x, y} do
+            ^destination -> %{"x" => y, "y" => x, "h" => 30}
+            _ -> %{"x" => y, "y" => x, "h" => ?z - h}
+          end
+        end
       )
     )
     |> Vl.mark(:rect, opacity: 0.9)
@@ -93,7 +98,7 @@ path_chart =
     |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
     |> Vl.encode(:color, field: "h", type: :quantitative),
     Vl.new()
-    |> Vl.mark(:point, opacity: 1, size: 2, color: :red)
+    |> Vl.mark(:point, opacity: 1, size: 1, color: :red)
     |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
     |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
     |> Vl.encode(:color, field: "h", type: :quantitative)
@@ -102,12 +107,14 @@ path_chart =
   |> Kino.render()
 
 for {x, y} <- path do
-  Kino.VegaLite.push(path_chart, %{"x" => y, "y" => x, "h" => -10})
+  Kino.VegaLite.push(path_chart, %{"x" => y, "y" => x, "h" => -25})
   Process.sleep(10)
 end
 
 :ok
 ```
+
+### Solution Part 1
 
 ```elixir
 solution_1 = length(path) - 1
@@ -129,34 +136,25 @@ paths =
 ```
 
 ```elixir
-solution_2 = (paths |> Enum.map(&length/1) |> Enum.min()) - 1
+Vl.new(width: 800, height: 200)
+|> Vl.layers(
+  for path <- paths do
+    Vl.new()
+    |> Vl.data_from_values(
+      path
+      |> Enum.with_index()
+      |> Enum.map(fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => h} end)
+    )
+    |> Vl.mark(:point, opacity: 1, size: 2)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative)
+  end
+)
 ```
 
+### Solution Part II
+
 ```elixir
-Vl.new(width: 900, height: 250)
-|> Vl.layers([
-  Vl.new()
-  |> Vl.data_from_values(
-    Enum.map(
-      map,
-      fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => ?z - h} end
-    )
-  )
-  |> Vl.mark(:rect, opacity: 1)
-  |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
-  |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
-  |> Vl.encode(:color, field: "h", type: :quantitative)
-  | for path <- paths do
-      Vl.new()
-      |> Vl.data_from_values(
-        path
-        |> Enum.with_index()
-        |> Enum.map(fn {{x, y}, h} -> %{"x" => y, "y" => x, "h" => h * -20} end)
-      )
-      |> Vl.mark(:point, opacity: 1, size: 2)
-      |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
-      |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
-      |> Vl.encode(:color, field: "h", type: :quantitative)
-    end
-])
+solution_2 = (paths |> Enum.map(&length/1) |> Enum.min()) - 1
 ```
