@@ -24,8 +24,6 @@ defmodule Ordering do
   def order([_ | _], []), do: -1
   def order([], [_ | _]), do: 1
 
-  def order([x | x_rest], [x | y_rest]), do: order(x_rest, y_rest)
-
   def order([x | x_rest], [y | y_rest]) when is_integer(x) and is_integer(y) do
     cond do
       x < y -> 1
@@ -59,12 +57,8 @@ parsed_input =
   |> String.split("\n\n")
   |> Enum.map(fn pair ->
     [a, b] = String.split(pair, "\n")
-
-    if a != b do
-      {elem(Code.eval_string(a), 0), elem(Code.eval_string(b), 0)}
-    end
+    {elem(Code.eval_string(a), 0), elem(Code.eval_string(b), 0)}
   end)
-  |> Enum.reject(&is_nil/1)
 ```
 
 ```elixir
@@ -88,7 +82,9 @@ parsed_input =
   |> String.split("\n\n")
   |> Enum.flat_map(&String.split(&1, "\n"))
   |> Enum.map(&elem(Code.eval_string(&1), 0))
+```
 
+```elixir
 [[[2]], [[6]] | parsed_input]
 |> Enum.sort_by(fn x -> x end, fn a, b ->
   case Ordering.order(a, b) do
