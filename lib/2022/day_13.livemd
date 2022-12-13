@@ -1,0 +1,104 @@
+# Advent of Code Day 13
+
+```elixir
+Mix.install([
+  :kino
+])
+```
+
+## Input
+
+```elixir
+raw_input = Kino.Input.textarea("Please paste your input here")
+```
+
+```elixir
+input = Kino.Input.read(raw_input)
+```
+
+## Order Module
+
+```elixir
+defmodule Ordering do
+  def order([], []), do: 0
+  def order([_ | _], []), do: -1
+  def order([], [_ | _]), do: 1
+
+  def order([x | x_rest], [x | y_rest]), do: order(x_rest, y_rest)
+
+  def order([x | x_rest], [y | y_rest]) when is_integer(x) and is_integer(y) do
+    cond do
+      x < y -> 1
+      x > y -> -1
+      x == y -> order(x_rest, y_rest)
+    end
+  end
+
+  def order([x | x_rest], [y | y_rest]) when is_list(x) and is_list(y) do
+    case order(x, y) do
+      0 -> order(x_rest, y_rest)
+      val -> val
+    end
+  end
+
+  def order([x | x_rest], [y | y_rest]) when is_list(x) and is_integer(y) do
+    order([x | x_rest], [[y] | y_rest])
+  end
+
+  def order([x | x_rest], [y | y_rest]) when is_integer(x) and is_list(y) do
+    order([[x] | x_rest], [y | y_rest])
+  end
+end
+```
+
+## Part 1
+
+```elixir
+parsed_input =
+  input
+  |> String.split("\n\n")
+  |> Enum.map(fn pair ->
+    [a, b] = String.split(pair, "\n")
+
+    if a != b do
+      {elem(Code.eval_string(a), 0), elem(Code.eval_string(b), 0)}
+    end
+  end)
+  |> Enum.reject(&is_nil/1)
+```
+
+```elixir
+parsed_input
+|> Enum.with_index(1)
+|> Enum.map(fn {pair, idx} ->
+  {a, b} = pair
+  {idx, Ordering.order(a, b)}
+end)
+|> Enum.filter(fn {_, x} -> x > 0 end)
+|> Enum.map(&elem(&1, 0))
+|> Enum.sum()
+```
+
+## Part 2
+
+```elixir
+parsed_input =
+  raw_input
+  |> Kino.Input.read()
+  |> String.split("\n\n")
+  |> Enum.flat_map(&String.split(&1, "\n"))
+  |> Enum.map(&elem(Code.eval_string(&1), 0))
+
+[[[2]], [[6]] | parsed_input]
+|> Enum.sort_by(fn x -> x end, fn a, b ->
+  case Ordering.order(a, b) do
+    -1 -> false
+    1 -> true
+    0 -> nil
+  end
+end)
+|> Enum.with_index(1)
+|> Enum.filter(fn {elem, _idx} -> elem in [[[2]], [[6]]] end)
+|> Enum.map(fn {_elem, idx} -> idx end)
+|> Enum.product()
+```
