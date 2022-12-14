@@ -1,0 +1,197 @@
+# Advent of Code 2022 Day 14 - LiveBook Edition
+
+```elixir
+Mix.install([
+  :kino,
+  :kino_vega_lite
+])
+
+alias VegaLite, as: Vl
+```
+
+## Input
+
+```elixir
+raw_input = Kino.Input.textarea("Paste your input")
+```
+
+```elixir
+input = Kino.Input.read(raw_input)
+```
+
+```elixir
+defmodule Day14 do
+  @source {500, 0}
+  @wait :infinity
+
+  def run(input) do
+    input = parse(input)
+
+    run_1 = Task.async(fn -> Enum.count(endless_sands(input)) end)
+    run_2 = Task.async(fn -> Enum.count(floored_sands(input)) end)
+
+    {Task.await(run_1, @wait), Task.await(run_2, @wait)}
+  end
+
+  def endless_sands(input) do
+    floor = Enum.max_by(input, &elem(&1, 1)) |> elem(1)
+    Stream.unfold(input, &fall(&1, floor, @source))
+  end
+
+  def floored_sands(input) do
+    floor = Enum.max_by(input, &elem(&1, 1)) |> elem(1) |> Kernel.+(2)
+    state = (-floor - 1)..(floor + 1) |> Stream.map(&{500 + &1, floor}) |> Enum.into(input)
+
+    Stream.unfold(state, &fall(&1, floor, @source))
+  end
+
+  defp fall(state, floor, {x, y} = sand) do
+    case MapSet.member?(state, @source) do
+      false ->
+        down = {x, y + 1}
+        left = {x - 1, y + 1}
+        right = {x + 1, y + 1}
+
+        case Enum.find([down, left, right], &(!MapSet.member?(state, &1))) do
+          nil -> {state, MapSet.put(state, sand)}
+          {_, y} when y > floor -> nil
+          air -> fall(state, floor, air)
+        end
+
+      true ->
+        nil
+    end
+  end
+
+  def parse(path) do
+    path
+    |> String.split("\n", trim: true)
+    |> Enum.flat_map(fn line ->
+      line
+      |> String.split(" -> ")
+      |> Enum.map(fn coords ->
+        coords
+        |> String.split(",")
+        |> Enum.map(&String.to_integer/1)
+      end)
+      |> then(fn [_ | tail] = coords -> Enum.zip([coords, tail]) end)
+      |> Enum.flat_map(fn
+        {[a, x], [a, y]} -> Enum.map(x..y, &{a, &1})
+        {[x, b], [y, b]} -> Enum.map(x..y, &{&1, b})
+      end)
+    end)
+    |> MapSet.new()
+  end
+
+  def get_sands(rocks, sand_fn) do
+    rocks
+    |> sand_fn.()
+    |> Enum.reduce({[], rocks}, fn x, {list, acc} ->
+      difference = MapSet.difference(x, acc)
+      {[difference | list], MapSet.union(acc, difference)}
+    end)
+    |> elem(0)
+    |> Enum.reverse()
+    |> Enum.map(fn mapset ->
+      case MapSet.to_list(mapset) do
+        [x] -> x
+        _ -> nil
+      end
+    end)
+    |> Enum.reject(&is_nil/1)
+  end
+end
+```
+
+## Result
+
+```elixir
+Day14.run(input)
+```
+
+## Visualize Part 1
+
+```elixir
+rocks = Day14.parse(input)
+
+sands =
+  Day14.get_sands(
+    rocks,
+    &Day14.endless_sands/1
+  )
+```
+
+```elixir
+path_chart =
+  Vl.new(width: 800, height: 1200)
+  |> Vl.layers([
+    Vl.new()
+    |> Vl.data_from_values(
+      rocks
+      |> Enum.map(fn {x, y} -> %{"x" => x, "y" => y, "h" => 1} end)
+    )
+    |> Vl.mark(:rect, fill: :gray, stroke: :gray)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative),
+    Vl.new()
+    |> Vl.mark(:circle, fill: :yellow)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative, legend: nil)
+  ])
+  |> Vl.config(view: [stroke: nil, fill: :black])
+  |> Kino.VegaLite.new()
+  |> Kino.render()
+
+for {x, y} <- sands do
+  Kino.VegaLite.push(path_chart, %{"x" => x, "y" => y, "h" => 2})
+  Process.sleep(0)
+end
+
+:ok
+```
+
+## Visualize Part 2
+
+**Warning** This one takes a few seconds to compute!
+
+```elixir
+rocks = Day14.parse(input)
+
+sands =
+  Day14.get_sands(
+    rocks,
+    &Day14.floored_sands/1
+  )
+```
+
+```elixir
+path_chart =
+  Vl.new(width: 800, height: 1200)
+  |> Vl.layers([
+    Vl.new()
+    |> Vl.data_from_values(
+      rocks
+      |> Enum.map(fn {x, y} -> %{"x" => x, "y" => y, "h" => 1} end)
+    )
+    |> Vl.mark(:rect, fill: :gray, stroke: :gray)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative),
+    Vl.new()
+    |> Vl.data_from_values(
+      sands
+      |> Enum.map(fn {x, y} -> %{"x" => x, "y" => y, "h" => 2} end)
+    )
+    |> Vl.mark(:circle, size: 1, fill: :yellow)
+    |> Vl.encode_field(:x, "x", type: :nominal, axis: nil)
+    |> Vl.encode_field(:y, "y", type: :nominal, axis: nil)
+    |> Vl.encode(:color, field: "h", type: :quantitative, legend: nil)
+  ])
+  |> Vl.config(view: [stroke: nil, fill: :black])
+  |> Kino.VegaLite.new()
+  |> Kino.render()
+
+:ok
+```
