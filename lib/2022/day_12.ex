@@ -88,18 +88,4 @@ defmodule AdventOfCode.Y2022.Day12 do
 
     graph
   end
-
-  def to_graph(grid) do
-    Enum.reduce(grid, Graph.new(), fn {{x, y}, _}, graph ->
-      [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}]
-      |> Enum.filter(&Map.has_key?(grid, &1))
-      |> Enum.map(fn point ->
-        unless grid[point] - grid[{x, y}] > 1 do
-          {{x, y}, point}
-        end
-      end)
-      |> Enum.reject(&is_nil/1)
-      |> then(&Graph.add_edges(graph, &1))
-    end)
-  end
 end
