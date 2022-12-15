@@ -13,8 +13,8 @@ defmodule AdventOfCode.Y2022.Day13 do
     input
     |> String.split("\n\n")
     |> Enum.map(fn pair ->
-       [a, b] = String.split(pair, "\n")
-       {Jason.decode!(a), Jason.decode!(b)}
+      [a, b] = String.split(pair, "\n")
+      {Jason.decode!(a), Jason.decode!(b)}
     end)
     |> Enum.with_index(1)
     |> Enum.filter(fn {{x, y}, _} -> order(x, y) end)
@@ -39,8 +39,8 @@ defmodule AdventOfCode.Y2022.Day13 do
   def order([_ | _], []), do: false
   def order([], [_ | _]), do: true
 
-  def order([x | x_rest], [y | y_rest]) when is_integer(x) and is_integer(y), do:
-      x == y && order(x_rest, y_rest) || x < y
+  def order([x | x_rest], [y | y_rest]) when is_integer(x) and is_integer(y),
+    do: (x == y && order(x_rest, y_rest)) || x < y
 
   def order([x | x_rest], [y | y_rest]) when is_list(x) and is_list(y) do
     case order(x, y) do
