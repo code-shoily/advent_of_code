@@ -106,7 +106,7 @@ end
 ## Result
 
 ```elixir
-Day14.run(input)
+:timer.tc(fn -> Day14.run(input) end)
 ```
 
 ## Visualize Part 1
