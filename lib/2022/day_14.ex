@@ -7,7 +7,7 @@ defmodule AdventOfCode.Y2022.Day14 do
 
   @source {500, 0}
 
-  def input(), do: InputReader.read_from_file(2022, 14)
+  def input, do: InputReader.read_from_file(2022, 14)
 
   def run(input \\ input()) do
     input = parse(input)

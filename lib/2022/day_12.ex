@@ -18,41 +18,6 @@ defmodule AdventOfCode.Y2022.Day12 do
     {Task.await(solve_1, :infinity), Task.await(solve_2, :infinity)}
   end
 
-  defp run_1(graph, source, destination),
-    do: length(:digraph.get_short_path(graph, source, destination)) - 1
-
-  defp run_2(graph, sources, destination) do
-    source_map = sources |> Enum.with_index() |> Map.new(fn {k, _} -> {k, :empty} end)
-
-    sources
-    |> Enum.reduce(source_map, fn {_, _} = point, acc ->
-      case source_map[point] do
-        :empty ->
-          case :digraph.get_short_path(graph, point, destination) do
-            false ->
-              acc
-
-            path ->
-              len = length(path)
-
-              path
-              |> Enum.with_index(1)
-              |> Enum.reduce(acc, fn {{_, _} = x, p}, acc2 ->
-                case Map.get(acc2, x) do
-                  :empty -> Map.put(acc2, x, len - p)
-                  _ -> acc2
-                end
-              end)
-          end
-
-        _ ->
-          acc
-      end
-    end)
-    |> Enum.min_by(fn {_, v} -> v end)
-    |> elem(1)
-  end
-
   def parse(data \\ input()) do
     map =
       data
@@ -67,25 +32,68 @@ defmodule AdventOfCode.Y2022.Day12 do
     {map, source, destination}
   end
 
-  def to_digraph(grid) do
+  defp run_1(graph, source, destination),
+    do: length(:digraph.get_short_path(graph, source, destination)) - 1
+
+  defp run_2(graph, sources, destination) do
+    source_map = sources |> Enum.with_index() |> Map.new(fn {k, _} -> {k, :empty} end)
+
+    sources
+    |> Enum.reduce(source_map, fn {_, _} = point, acc ->
+      case source_map[point] do
+        :empty ->
+          get_and_update_shortest_path(graph, point, destination, acc)
+
+        _ ->
+          acc
+      end
+    end)
+    |> Enum.min_by(fn {_, v} -> v end)
+    |> elem(1)
+  end
+
+  defp to_digraph(grid) do
     graph = :digraph.new()
 
     Enum.reduce(grid, graph, fn {{x, y}, _}, _ ->
       [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}]
       |> Enum.filter(&Map.has_key?(grid, &1))
-      |> Enum.map(fn point ->
-        unless grid[point] - grid[{x, y}] > 1 do
-          {{x, y}, point}
-        end
-      end)
+      |> Enum.map(&add_edge(&1, grid, x, y))
       |> Enum.reject(&is_nil/1)
       |> Enum.each(fn {v1, v2} ->
         :digraph.add_vertex(graph, v1)
         :digraph.add_vertex(graph, v2)
         :digraph.add_edge(graph, v1, v2)
       end)
-    end)
 
-    graph
+      graph
+    end)
+  end
+
+  defp get_and_update_shortest_path(graph, point, destination, paths) do
+    case :digraph.get_short_path(graph, point, destination) do
+      false ->
+        paths
+
+      path ->
+        update_path(path, paths)
+    end
+  end
+
+  defp update_path(path, state) do
+    path
+    |> Enum.with_index(1)
+    |> Enum.reduce(state, fn {{_, _} = x, p}, acc ->
+      case Map.get(acc, x) do
+        :empty -> Map.put(acc, x, length(path) - p)
+        _ -> acc
+      end
+    end)
+  end
+
+  defp add_edge(point, grid, x, y) do
+    unless grid[point] - grid[{x, y}] > 1 do
+      {{x, y}, point}
+    end
   end
 end

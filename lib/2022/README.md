@@ -12,3 +12,5 @@
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [day_06.ex](/lib/2022/day_06.ex) |
 | 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [day_07.ex](/lib/2022/day_07.ex) |
 | 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex) |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex) |
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex) |
