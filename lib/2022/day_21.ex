@@ -13,6 +13,12 @@ defmodule AdventOfCode.Y2022.Day21 do
     {run_1(input), run_2(input)}
   end
 
+  def parse(data \\ input()) do
+    for line <- Transformers.lines(data), into: Map.new() do
+      parse_monkey(line)
+    end
+  end
+
   defp run_1(input) do
     yell(input, "root")
   end
@@ -23,13 +29,7 @@ defmodule AdventOfCode.Y2022.Day21 do
     inv(yell(input, m1), yell(input, m2))
   end
 
-  def parse(data \\ input()) do
-    for line <- Transformers.lines(data), into: Map.new() do
-      parse_monkey(line)
-    end
-  end
-
-  def parse_monkey(line) do
+  defp parse_monkey(line) do
     [monkey, raw_yell] = String.split(line, ": ")
 
     {monkey,
@@ -39,7 +39,7 @@ defmodule AdventOfCode.Y2022.Day21 do
      end}
   end
 
-  def yell(guide, monkey) do
+  defp yell(guide, monkey) do
     case guide[monkey] do
       num when is_integer(num) ->
         num
