@@ -39,13 +39,13 @@ defmodule AdventOfCode.Y2022.Day21 do
      end}
   end
 
-  defp yell(guide, monkey) do
-    case guide[monkey] do
+  defp yell(tasks, monkey) do
+    case tasks[monkey] do
       num when is_integer(num) ->
         num
 
       {op, [m1, m2]} ->
-        case {yell(guide, m1), yell(guide, m2)} do
+        case {yell(tasks, m1), yell(tasks, m2)} do
           {a, b} when is_integer(a) and is_integer(b) -> eval(op, [a, b])
           {a, b} -> {op, [a, b]}
         end
