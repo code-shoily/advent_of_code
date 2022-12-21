@@ -44,9 +44,8 @@ defmodule AdventOfCode.Y2022.Day20 do
   end
 
   defp grove_sum(sequence, n, zero_idx) do
-    [1000, 2000, 3000]
-    |> Enum.reduce(0, fn x, acc ->
-      {val, _} = sequence[rem(zero_idx + x, n + 1)]
+    Enum.reduce(1..3, 0, fn x, acc ->
+      {val, _} = sequence[rem(zero_idx + x * 1000, n)]
       acc + val
     end)
   end
@@ -55,19 +54,10 @@ defmodule AdventOfCode.Y2022.Day20 do
     1..repeat
     |> Enum.reduce(input, fn _, repeated_acc ->
       0..n
-      |> Enum.reduce(repeated_acc, fn i, acc1 ->
-        j =
-          Enum.reduce_while(0..n, acc1, fn j, acc2 ->
-            {_, idx} = acc1[j]
-
-            case idx do
-              ^i -> {:halt, j}
-              _ -> {:cont, acc2}
-            end
-          end)
-
-        {val, _} = acc1[j]
-        {_, popped} = Vector.pop_at(acc1, j)
+      |> Enum.reduce(repeated_acc, fn i, acc ->
+        j = value_of(acc, n, i)
+        {val, _} = Vector.at(acc, j)
+        {_, popped} = Vector.pop_at(acc, j)
         ins = (j + val) |> Integer.mod(n)
         insert_at(popped, ins, {val, i})
       end)
@@ -76,17 +66,23 @@ defmodule AdventOfCode.Y2022.Day20 do
 
   defp insert_at(vector, idx, value) do
     {left, right} = Vector.split(vector, idx)
-    left |> Vector.concat([value]) |> Vector.concat(right)
+    left |> Vector.append(value) |> Vector.concat(right)
+  end
+
+  defp value_of(sequence, n, idx) do
+    Enum.reduce_while(0..n, nil, fn val, _ ->
+      case sequence[val] do
+        {_, ^idx} -> {:halt, val}
+        _ -> {:cont, nil}
+      end
+    end)
   end
 
   defp index_of(sequence, n, idx) do
-    Enum.reduce_while(0..(n - 1), nil, fn x, acc ->
+    Enum.reduce_while(0..(n - 1), nil, fn x, _ ->
       case sequence[x] do
-        {^idx, _} ->
-          {:halt, x}
-
-        _ ->
-          {:cont, acc}
+        {^idx, _} -> {:halt, x}
+        _ -> {:cont, nil}
       end
     end)
   end
