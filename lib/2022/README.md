@@ -15,3 +15,4 @@
 | 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex) |
 | 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex) |
 | 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :star2: :star2: :hourglass: | [day_20.ex](/lib/2022/day_20.ex) |
+| 21 | [Grove Positioning System](https://adventofcode.com/2022/day/21) | :star2: | [day_21.ex](/lib/2022/day_21.ex) |
