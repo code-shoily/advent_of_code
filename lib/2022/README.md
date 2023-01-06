@@ -16,4 +16,5 @@
 | 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex) |
 | 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :star2: :star2: :hourglass: | [day_20.ex](/lib/2022/day_20.ex) |
 | 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :star2: | [day_21.ex](/lib/2022/day_21.ex) |
-| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :star2: :star2: star2: :ice_cube: | [day_21.ex](/lib/2022/day_22.ex) |
+| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :star2: :star2: star2: :ice_cube: | [day_22.ex](/lib/2022/day_22.ex) |
+| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :star2: | [day_25.ex](/lib/2022/day_25.ex) |
