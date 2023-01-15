@@ -1,3 +1,4 @@
+priv/
 .DS_Store
 .envrc
 .iex.exs
