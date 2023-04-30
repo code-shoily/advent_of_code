@@ -3,16 +3,17 @@ defmodule AdventOfCode.Y2021.Day07 do
   --- Day 7: The Treachery of Whales ---
   Problem Link: https://adventofcode.com/2021/day/7
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 7
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> alignments(&fixed_cost/2) |> Enum.min()
-  def run_2, do: input!() |> parse() |> alignments(&cost/2) |> Enum.min()
+  def input, do: InputReader.read_from_file(2021, 7)
 
-  def parse(data) do
-    data
-    |> String.split(",")
-    |> Enum.map(&String.to_integer/1)
+  def run(input \\ input()) do
+    input = Transformers.int_words(input, ",")
+    {run_1(input), run_2(input)}
   end
+
+  def run_1(input), do: input |> alignments(&fixed_cost/2) |> Enum.min()
+  def run_2(input), do: input |> alignments(&cost/2) |> Enum.min()
 
   defp alignments(positions, cost_fn) do
     {min, max} = Enum.min_max(positions)

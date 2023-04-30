@@ -3,14 +3,21 @@ defmodule AdventOfCode.Y2021.Day02 do
   --- Day 2: Dive! ---
   Problem Link: https://adventofcode.com/2021/day/2
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 2
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> track_positions() |> then(&(&1.depth * &1.horizontal))
-  def run_2, do: input!() |> parse() |> track_aims() |> then(&(&1.depth * &1.horizontal))
+  def input, do: InputReader.read_from_file(2021, 2)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: input |> track_positions() |> then(&(&1.depth * &1.horizontal))
+  def run_2(input), do: input |> track_aims() |> then(&(&1.depth * &1.horizontal))
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(fn line ->
       [direction, value] = String.split(line, " ")
       {String.to_existing_atom(direction), String.to_integer(value)}

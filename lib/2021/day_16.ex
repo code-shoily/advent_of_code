@@ -3,27 +3,27 @@ defmodule AdventOfCode.Y2021.Day16 do
   --- Day 16: Packet Decoder ---
   Problem Link: https://adventofcode.com/2021/day/16
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 16
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> sum()
-  def run_2, do: input!() |> parse() |> eval()
-  def parse(data), do: data |> Base.decode16!() |> parse_packet() |> elem(0)
+  def input, do: InputReader.read_from_file(2021, 16)
+
+  def run(input \\ input()) do
+    {input, _} = input |> Base.decode16!() |> parse_packet()
+    {sum(input), eval(input)}
+  end
 
   defp parse_packet(<<ver::3, 4::3, rest::bitstring>>) do
     {val, rest} = parse_literal(rest, 0)
-
     {{:literal, ver, val}, rest}
   end
 
   defp parse_packet(<<ver::3, type::3, 0::1, length::15, rest::bitstring>>) do
     <<subpackets::bitstring-size(length), rest::bitstring>> = rest
-
     {{type, ver, parse_packets(subpackets)}, rest}
   end
 
   defp parse_packet(<<ver::3, type::3, 1::1, length::11, rest::bitstring>>) do
     {val, rest} = Enum.map_reduce(1..length, rest, fn _, acc -> parse_packet(acc) end)
-
     {{type, ver, val}, rest}
   end
 

@@ -3,15 +3,13 @@ defmodule AdventOfCode.Y2021.Day01 do
   --- Day 1: Sonar Sweep ---
   Problem Link: https://adventofcode.com/2021/day/1
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 1
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> depth_increase()
-  def run_2, do: input!() |> parse() |> sliding_window() |> depth_increase()
+  def input, do: InputReader.read_from_file(2021, 1)
 
-  def parse(data) do
-    data
-    |> String.split("\n")
-    |> Enum.map(&String.to_integer/1)
+  def run(input \\ input()) do
+    input = Transformers.int_lines(input)
+    {depth_increase(input), depth_increase(sliding_window(input))}
   end
 
   defp depth_increase(measurements) do

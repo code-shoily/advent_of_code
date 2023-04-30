@@ -3,21 +3,18 @@ defmodule AdventOfCode.Y2021.Day09 do
   --- Day 9: Smoke Basin ---
   Problem Link: https://adventofcode.com/2021/day/9
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 9
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> risk_point()
+  def input, do: InputReader.read_from_file(2021, 9)
 
-  def run_2 do
-    input!()
-    |> parse()
-    |> Map.filter(fn {_, w} -> w != 9 end)
-    |> make_graph()
-    |> basin_multiplier()
+  def run(input \\ input()) do
+    input = parse(input)
+    {risk_point(input), basin_multiplier(make_graph(input))}
   end
 
   def parse(data) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.with_index()
     |> Enum.flat_map(fn {line, x} ->
       line
@@ -42,9 +39,11 @@ defmodule AdventOfCode.Y2021.Day09 do
     |> Enum.sum()
   end
 
-  defp make_graph(map) do
-    Enum.reduce(
-      map,
+  defp make_graph(input) do
+    map = Map.filter(input, fn {_, w} -> w != 9 end)
+
+    map
+    |> Enum.reduce(
       Graph.add_vertices(%Graph{}, Map.keys(map)),
       fn {{x, y} = vertex, weight}, g_1 ->
         {x, y}

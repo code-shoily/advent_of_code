@@ -3,11 +3,16 @@ defmodule AdventOfCode.Y2021.Day05 do
   --- Day 5: Hydrothermal Venture ---
   Problem Link: https://adventofcode.com/2021/day/5
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 5
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> overlaps(false)
-  def run_2, do: input!() |> parse() |> overlaps(true)
-  def parse(data), do: Enum.map(String.split(data, "\n"), &ranges/1)
+  def input, do: InputReader.read_from_file(2021, 5)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {overlaps(input, false), overlaps(input, true)}
+  end
+
+  def parse(data), do: Enum.map(Transformers.lines(data), &ranges/1)
 
   defp ranges(line) do
     ~r/(\d+),(\d+) -> (\d+),(\d+)/
@@ -32,6 +37,10 @@ defmodule AdventOfCode.Y2021.Day05 do
     end
   end
 
-  defp diagonals({[a, b], [c, d]}),
-    do: Enum.map(0..abs(a - c), &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1})
+  defp diagonals({[a, b], [c, d]}) do
+    Enum.map(
+      0..abs(a - c),
+      &{(a > c && a - &1) || a + &1, (b > d && b - &1) || b + &1}
+    )
+  end
 end

@@ -3,15 +3,24 @@ defmodule AdventOfCode.Y2021.Day03 do
   --- Day 3: Binary Diagnostic ---
   Problem Link: https://adventofcode.com/2021/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 3
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> epsilon_gamma() |> Tuple.product()
-  def run_2, do: input!() |> parse() |> life_support_rating()
+  import AdventOfCode.Helpers.Transformers
 
-  def parse(data), do: data |> String.split("\n") |> Enum.map(&to_ints/1)
-  defp to_ints(data), do: data |> String.graphemes() |> Enum.map(&String.to_integer/1)
-  defp epsilon_gamma(data), do: data |> transposed() |> then(&{to_int(&1, 0), to_int(&1, 1)})
-  defp transposed(data), do: data |> Enum.zip() |> Enum.map(&Tuple.to_list/1) |> bits()
+  def input, do: InputReader.read_from_file(2021, 3)
+
+  def run(input \\ input()) do
+    input = input |> lines() |> Enum.map(&digits/1)
+    {Tuple.product(epsilon_gamma(input)), life_support_rating(input)}
+  end
+
+  defp epsilon_gamma(data) do
+    data
+    |> transpose()
+    |> bits()
+    |> then(&{to_int(&1, 0), to_int(&1, 1)})
+  end
+
   defp life_support_rating(data), do: o2(data, 0) * co2(data, 0)
 
   defp bits(data) do
@@ -28,7 +37,9 @@ defmodule AdventOfCode.Y2021.Day03 do
   defp o2(data, idx) do
     value = frequent_by(data, idx, :o2)
 
-    o2(Enum.filter(data, &(Enum.at(&1, idx) == value)), idx + 1)
+    data
+    |> Enum.filter(&(Enum.at(&1, idx) == value))
+    |> o2(idx + 1)
   end
 
   defp co2([result], _), do: to_int(result)

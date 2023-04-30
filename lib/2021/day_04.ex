@@ -3,10 +3,14 @@ defmodule AdventOfCode.Y2021.Day04 do
   --- Day 4: Giant Squid ---
   Problem Link: https://adventofcode.com/2021/day/4
   """
-  use AdventOfCode.Helpers.InputReader, year: 2021, day: 4
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> play_1()
-  def run_2, do: input!() |> parse() |> play_2()
+  def input, do: InputReader.read_from_file(2021, 4)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {play_1(input), play_2(input)}
+  end
 
   def parse(data) do
     [order_data | board_data] = String.split(data, "\n\n", trim: true)
@@ -14,7 +18,6 @@ defmodule AdventOfCode.Y2021.Day04 do
   end
 
   defp get_orders(data), do: data |> String.split(",") |> Enum.map(&String.to_integer/1)
-
   defp get_boards(data), do: data |> Enum.with_index() |> Enum.map(&get_board/1)
 
   defp get_board({data, idx}) do
