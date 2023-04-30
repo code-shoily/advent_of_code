@@ -3,13 +3,14 @@ defmodule AdventOfCode.Y2020.Day10 do
   --- Day 10: Adapter Array ---
   Problem Link: https://adventofcode.com/2020/day/10
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 10
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> rates() |> multiply_1_3()
-  def run_2, do: input!() |> parse() |> count()
+  def input, do: InputReader.read_from_file(2020, 10)
 
-  def parse(input),
-    do: [0 | Enum.map(String.split(input, "\n"), &String.to_integer/1)] |> Enum.sort(:desc)
+  def run(input \\ input()) do
+    input = Enum.sort([0 | Transformers.int_lines(input)], :desc)
+    {multiply_1_3(rates(input)), count(input)}
+  end
 
   defp rates(data) do
     my_rate = Enum.max(data) + 3

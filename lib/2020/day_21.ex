@@ -3,15 +3,19 @@ defmodule AdventOfCode.Y2020.Day21 do
   --- Day 21: Allergen Assessment ---
   Problem Link: https://adventofcode.com/2020/day/21
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 21
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> allergen_free()
-  def run_2, do: input!() |> parse() |> build() |> evolve() |> sort()
+  def input, do: InputReader.read_from_file(2020, 21)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {allergen_free(input), input |> build() |> evolve() |> sort()}
+  end
 
   def parse(input) do
-    input
-    |> String.split("\n")
-    |> Enum.map(&decrypt/1)
+    for line <- Transformers.lines(input) do
+      decrypt(line)
+    end
   end
 
   defp sort(allergens), do: Enum.map_join(allergens, ",", &hd(MapSet.to_list(elem(&1, 1))))
@@ -19,7 +23,7 @@ defmodule AdventOfCode.Y2020.Day21 do
 
   defp allergen_free(foods) do
     allergens = allergens(foods)
-    length(Enum.reject(ingredients(foods), &(&1 in allergens)))
+    Enum.count(ingredients(foods), &(&1 not in allergens))
   end
 
   @regex ~r/^(?<items>.+) \(contains (?<allergens>.+)\)$/
@@ -33,8 +37,7 @@ defmodule AdventOfCode.Y2020.Day21 do
       |> MapSet.new()
       |> then(fn items -> collect(allergens, acc, items) end)
     end)
-    |> Enum.map(fn {k, v} -> {k, intersections(v)} end)
-    |> Map.new()
+    |> Map.new(fn {k, v} -> {k, intersections(v)} end)
   end
 
   defp collect(allergens, init, items) do

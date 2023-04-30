@@ -3,12 +3,16 @@ defmodule AdventOfCode.Y2020.Day04 do
   --- Day 4: Passport Processing ---
   Problem Link: https://adventofcode.com/2020/day/4
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 4
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> process() |> Enum.filter(&ok?(:k, &1)) |> length()
-  def run_2, do: input!() |> process() |> Enum.filter(&ok?(:v, &1)) |> length()
+  def input, do: InputReader.read_from_file(2020, 4)
 
-  def process(data) do
+  def run(input \\ input()) do
+    input = parse(input)
+    {Enum.count(input, &ok?(:k, &1)), Enum.count(input, &ok?(:v, &1))}
+  end
+
+  def parse(data) do
     data
     |> String.split("\n")
     |> Enum.chunk_by(&(&1 == ""))

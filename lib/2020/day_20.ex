@@ -3,13 +3,16 @@ defmodule AdventOfCode.Y2020.Day20 do
   --- Day 20: Jurassic Jigsaw ---
   Problem Link: https://adventofcode.com/2020/day/20
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 20
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  import AdventOfCode.Helpers.Transformers
+  def input, do: InputReader.read_from_file(2020, 20)
 
-  def run_1, do: input!() |> parse() |> corners() |> product()
-  def run_2, do: {:not_implemented, 2}
-  def parse(input), do: String.split(input, "\n\n") |> Enum.map(&parse_tiles/1) |> Map.new()
+  def run(input \\ input()) do
+    input = parse(input)
+    {product(corners(input)), {:todo, 2}}
+  end
+
+  def parse(input), do: input |> String.split("\n\n") |> Map.new(&parse_tiles/1)
 
   defp parse_tiles(tile) do
     [id | tiles] = String.split(tile, "\n")
@@ -21,7 +24,7 @@ defmodule AdventOfCode.Y2020.Day20 do
   defp product(ids), do: Enum.reduce(Enum.map(ids, &String.to_integer/1), &(&1 * &2))
 
   defp edges(tiles) do
-    transposed = transpose(tiles)
+    transposed = Transformers.transpose(tiles)
 
     Enum.map(
       [hd(tiles), List.last(tiles), hd(transposed), List.last(transposed)],

@@ -3,22 +3,36 @@ defmodule AdventOfCode.Y2020.Day19 do
   --- Day 19: Monster Messages ---
   Problem Link: https://adventofcode.com/2020/day/19
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 19
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: match_count(parse_input(input!(), false))
-  def run_2, do: match_count(parse_input(input!(), true))
+  def input, do: InputReader.read_from_file(2020, 19)
 
-  def parse_input(input, loop?) do
-    {rules, messages} = input |> String.split("\n\n") |> parse() |> maybe_override(loop?)
-    {messages, rules |> to_re("0", "", loop?) |> :erlang.iolist_to_binary() |> to_re()}
+  def run(input \\ input()), do: {run_1(input), run_2(input)}
+  def run_1(input), do: match_count(parse(input, false))
+  def run_2(input), do: match_count(parse(input, true))
+
+  def parse(input, loop?) do
+    {rules, messages} =
+      input
+      |> String.split("\n\n")
+      |> parse_paragraph()
+      |> maybe_override(loop?)
+
+    {
+      messages,
+      rules
+      |> to_re("0", "", loop?)
+      |> :erlang.iolist_to_binary()
+      |> to_re()
+    }
   end
 
   defp maybe_override(parsed, loop?),
     do: (loop? && override_8_11(parsed)) || Function.identity(parsed)
 
   @overrides %{"8" => "42 +", "11" => "42 31 | 42 11 31"}
-  def override_8_11({rules, messages}), do: {Map.merge(rules, @overrides), messages}
-  def parse([rules, messages]), do: {parse_rules(rules), parse_messages(messages)}
+  defp override_8_11({rules, messages}), do: {Map.merge(rules, @overrides), messages}
+  defp parse_paragraph([rules, messages]), do: {parse_rules(rules), parse_messages(messages)}
   defp parse_messages(messages), do: String.split(messages, "\n")
 
   defp parse_rules(rules) do

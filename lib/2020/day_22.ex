@@ -3,10 +3,15 @@ defmodule AdventOfCode.Y2020.Day22 do
   --- Day 22: Crab Combat ---
   Problem Link: https://adventofcode.com/2020/day/22
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 22
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> play() |> score()
-  def run_2, do: input!() |> parse() |> play_rec() |> score()
+  def input, do: InputReader.read_from_file(2020, 22)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {score(play(input)), score(play_rec(input))}
+  end
+
   def parse(deal), do: decks(Enum.map(String.split(deal, "\n\n"), &String.split(&1, ":")))
 
   defp score(cards) do

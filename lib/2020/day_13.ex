@@ -3,12 +3,17 @@ defmodule AdventOfCode.Y2020.Day13 do
   --- Day 13: Shuttle Search ---
   Problem Link: https://adventofcode.com/2020/day/13
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 13
-
+  alias AdventOfCode.Helpers.InputReader
   alias ExAlgo.Number.ChineseRemainder
 
-  def run_1, do: input!() |> parse_1() |> earliest_bus() |> elem(3)
-  def run_2, do: input!() |> parse_2() |> ChineseRemainder.compute()
+  def input, do: InputReader.read_from_file(2020, 13)
+
+  def run(input \\ input()) do
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: input |> parse_1() |> earliest_bus() |> elem(3)
+  def run_2(input), do: input |> parse_2() |> ChineseRemainder.compute()
 
   def parse_1(input) do
     [time, ids] = String.split(input, "\n", trim: true)

@@ -3,10 +3,16 @@ defmodule AdventOfCode.Y2020.Day06 do
   --- Day 6: Custom Customs ---
   Problem Link: https://adventofcode.com/2020/day/6
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 6
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1, do: input!() |> parse() |> Enum.map(&answers/1) |> Enum.sum()
-  def run_2, do: input!() |> parse() |> Enum.map(&unanimous_answers/1) |> Enum.sum()
+  def input, do: InputReader.read_from_file(2020, 6)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {reducer(input, &answers/1), reducer(input, &unanimous_answers/1)}
+  end
+
+  def reducer(input, mapper), do: Enum.reduce(input, 0, &(mapper.(&1) + &2))
 
   def parse(input) do
     input

@@ -3,12 +3,14 @@ defmodule AdventOfCode.Y2020.Day12 do
   --- Day 12: Rain Risk ---
   Problem Link: https://adventofcode.com/2020/day/12
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 12
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> go() |> distance()
-  def run_2, do: input!() |> parse() |> waypoints() |> distance()
+  def input, do: InputReader.read_from_file(2020, 12)
 
-  def parse(input), do: input |> String.split("\n") |> parse_actions()
+  def run(input \\ input()) do
+    input = input |> Transformers.lines() |> parse_actions()
+    {distance(go(input)), distance(waypoints(input))}
+  end
 
   defp parse_actions([]), do: []
 

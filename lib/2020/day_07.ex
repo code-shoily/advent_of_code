@@ -3,12 +3,14 @@ defmodule AdventOfCode.Y2020.Day07 do
   --- Day 7: Handy Haversacks ---
   Problem Link: https://adventofcode.com/2020/day/7
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 7
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> graph() |> ancestor_count("shiny gold")
-  def run_2, do: (input!() |> parse() |> descendant_count("shiny gold")) - 1
+  def input, do: InputReader.read_from_file(2020, 7)
 
-  def parse(input), do: for(i <- String.split(input, "\n"), into: %{}, do: parse_rule(i))
+  def run(input \\ input()) do
+    input = Map.new(Transformers.lines(input), &parse_rule/1)
+    {ancestor(graph(input)), descendant(input) - 1}
+  end
 
   def parse_rule(rule) do
     line = Regex.named_captures(~r/(?<src>.+) bags contain (?<bags>.+)\./, rule)
@@ -31,8 +33,8 @@ defmodule AdventOfCode.Y2020.Day07 do
     g
   end
 
-  defp ancestor_count(g, v), do: length(:digraph_utils.reaching([v], g)) - 1
+  defp ancestor(g, v \\ "shiny gold"), do: length(:digraph_utils.reaching([v], g)) - 1
 
-  def descendant_count(g, v),
-    do: Enum.reduce(g[v] || [], 1, fn {n, v}, num -> num + n * descendant_count(g, v) end)
+  defp descendant(g, v \\ "shiny gold"),
+    do: Enum.reduce(g[v] || [], 1, fn {n, v}, num -> num + n * descendant(g, v) end)
 end

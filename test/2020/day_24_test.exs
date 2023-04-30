@@ -6,12 +6,7 @@ defmodule AdventOfCode.Y2020.Day24Test do
 
   alias AdventOfCode.Y2020.Day24, as: Solution
 
-  test "Year 2020, Day 24, Part 1" do
-    assert Solution.run_1() == 307
-  end
-
-  @tag :skip
-  test "Year 2020, Day 24, Part 2" do
-    assert Solution.run_2() == nil
+  test "Year 2020, Day 24" do
+    assert Solution.run() == {307, {:todo, 2}}
   end
 end

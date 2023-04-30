@@ -3,11 +3,14 @@ defmodule AdventOfCode.Y2020.Day09 do
   --- Day 9: Encoding Error ---
   Problem Link: https://adventofcode.com/2020/day/9
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 9
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> find_invalid()
-  def run_2, do: input!() |> parse() |> contiguous_list()
-  def parse(input), do: Enum.map(String.split(input, "\n"), &String.to_integer/1)
+  def input, do: InputReader.read_from_file(2020, 9)
+
+  def run(input \\ input()) do
+    input = Transformers.int_lines(input)
+    {find_invalid(input), contiguous_list(input)}
+  end
 
   defp find_invalid(data) do
     {frame, [v | _] = next} = Enum.split(data, 25)

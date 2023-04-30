@@ -3,11 +3,19 @@ defmodule AdventOfCode.Y2020.Day18 do
   --- Day 18: Operation Order ---
   Problem Link: https://adventofcode.com/2020/day/18
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 18
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: solve(parse(input!(), false))
-  def run_2, do: solve(parse(input!(), true))
-  def parse(input, p), do: Enum.map(String.split(input, "\n"), &parse_rule(tokenize(&1), p))
+  def input, do: InputReader.read_from_file(2020, 18)
+
+  def run(input \\ input()) do
+    {solve(parse(input, false)), solve(parse(input, true))}
+  end
+
+  def parse(input, p) do
+    for line <- Transformers.lines(input) do
+      line |> tokenize() |> parse_rule(p)
+    end
+  end
 
   defp solve(expressions), do: Enum.sum(Enum.map(expressions, fn {d, _} -> eval(d) end))
 

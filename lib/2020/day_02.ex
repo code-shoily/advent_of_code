@@ -3,14 +3,19 @@ defmodule AdventOfCode.Y2020.Day02 do
   --- Day 2: Password Philosophy ---
   Problem Link: https://adventofcode.com/2020/day/2
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 2
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  def run_1, do: input!() |> parse() |> solve()
-  def run_2, do: input!() |> parse() |> solve_corrected()
+  def input, do: InputReader.read_from_file(2020, 2)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {solve(input), solve_corrected(input)}
+  end
 
   def parse(input) do
     input
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(&parse_line/1)
   end
 

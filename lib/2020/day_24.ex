@@ -3,23 +3,26 @@ defmodule AdventOfCode.Y2020.Day24 do
   --- Day 24: Lobby Layout ---
   Problem Link: https://adventofcode.com/2020/day/24
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 24
+  alias AdventOfCode.Helpers.InputReader
+
   require Integer
 
-  def run_1 do
-    input()
-    |> process()
+  def input, do: InputReader.read_from_file(2020, 24)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {run_1(input), {:todo, 2}}
+  end
+
+  def run_1(input) do
+    input
     |> flip()
     |> black_tiles()
     |> length()
   end
 
-  def run_2 do
-    {:not_implemented, 2}
-  end
-
   @directions ~r/e|w|se|sw|ne|nw/
-  def process(input) do
+  def parse(input) do
     for line <- String.split(input, "\n") do
       @directions
       |> Regex.scan(line, capture: :first)
@@ -38,9 +41,5 @@ defmodule AdventOfCode.Y2020.Day24 do
 
   defp black_tiles(tiles) do
     for {_, tile} <- Enum.frequencies(tiles), rem(tile, 2) == 1, do: tile
-  end
-
-  defp input do
-    input!()
   end
 end

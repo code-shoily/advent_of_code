@@ -6,11 +6,7 @@ defmodule AdventOfCode.Y2020.Day05Test do
 
   alias AdventOfCode.Y2020.Day05, as: Solution
 
-  test "Year 2020, Day 5, Part 1" do
-    assert Solution.run_1() == 930
-  end
-
-  test "Year 2020, Day 5, Part 2" do
-    assert Solution.run_2() == 515
+  test "Year 2020, Day 5" do
+    assert Solution.run() == {930, 515}
   end
 end

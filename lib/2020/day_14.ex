@@ -6,15 +6,21 @@ defmodule AdventOfCode.Y2020.Day14 do
   Hat-tip to Christian Blavier from ElixirForum.
   https://github.com/cblavier/advent/tree/master/lib/2020/day14
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 14
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   import Bitwise
 
-  def run_1, do: input!() |> parse() |> run(&instruction_1/2) |> memory_sum()
-  def run_2, do: input!() |> parse() |> run(&instruction_2/2) |> memory_sum()
-  def parse(input), do: String.split(input, "\n")
+  def input, do: InputReader.read_from_file(2020, 14)
 
-  def run(data, instruction), do: Enum.reduce(data, {%{}, nil}, instruction)
+  def run(input \\ input()) do
+    input = Transformers.lines(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input), do: input |> exec(&instruction_1/2) |> memory_sum()
+  def run_2(input), do: input |> exec(&instruction_2/2) |> memory_sum()
+
+  defp exec(data, instruction), do: Enum.reduce(data, {%{}, nil}, instruction)
 
   defp instruction_1("mask" <> _ = line, {memory, _mask}) do
     mask = line |> String.split(" = ") |> Enum.at(-1)

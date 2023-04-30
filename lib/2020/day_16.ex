@@ -3,10 +3,16 @@ defmodule AdventOfCode.Y2020.Day16 do
   --- Day 16: Ticket Translation ---
   Problem Link: https://adventofcode.com/2020/day/16
   """
-  use AdventOfCode.Helpers.InputReader, year: 2020, day: 16
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1 do
-    {ranges, tickets} = process(input!())
+  def input, do: InputReader.read_from_file(2020, 16)
+
+  def run(input \\ input()) do
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    {ranges, tickets} = parse(input)
 
     Enum.sum(
       Enum.filter(tickets, fn ticket ->
@@ -15,8 +21,8 @@ defmodule AdventOfCode.Y2020.Day16 do
     )
   end
 
-  def run_2, do: {:not_implemented, 2}
-  def process(input), do: {get_ranges(input), nearby_tickets(input)}
+  def run_2(_input), do: {:todo, 2}
+  def parse(input), do: {get_ranges(input), nearby_tickets(input)}
 
   def get_ranges(input) do
     Regex.scan(~r/\d+\-\d+/, input)
