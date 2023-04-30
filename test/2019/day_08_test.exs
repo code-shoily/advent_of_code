@@ -5,13 +5,24 @@ defmodule AdventOfCode.Y2019.Day08Test do
 
   alias AdventOfCode.Y2019.Day08, as: Solution
 
-  test "Year 2019, Day 8, Part 1" do
-    assert Solution.run_1() == 1572
+  @output """
+  ▒  ▒ ▒   ▒▒  ▒ ▒▒▒▒ ▒▒▒▒
+  ▒ ▒  ▒   ▒▒  ▒ ▒    ▒
+  ▒▒    ▒ ▒ ▒▒▒▒ ▒▒▒  ▒▒▒
+  ▒ ▒    ▒  ▒  ▒ ▒    ▒
+  ▒ ▒    ▒  ▒  ▒ ▒    ▒
+  ▒  ▒   ▒  ▒  ▒ ▒    ▒▒▒▒
+  """
+
+  test "Year 2019, Day 8" do
+    {solution_1, solution_2} = Solution.run()
+    assert solution_1 == 1572
+    assert strip_spaces(solution_2) == strip_spaces(@output)
   end
 
-  @tag :skip_fixme
-  test "Year 2019, Day 8, Part 2" do
-    # !FIXME "KYHFE"
-    assert Solution.run_2() == :ok
+  defp strip_spaces(lines) do
+    lines
+    |> String.split("\n", trim: true)
+    |> Enum.map_join("\n", &String.trim_trailing(&1, " "))
   end
 end

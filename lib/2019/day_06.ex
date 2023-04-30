@@ -3,18 +3,23 @@ defmodule AdventOfCode.Y2019.Day06 do
   --- Day 6: Universal Orbit Map ---
   Problem Link: https://adventofcode.com/2019/day/6
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 6
+  alias AdventOfCode.Helpers.InputReader
 
-  def run_1 do
-    input!()
-    |> parse()
+  def input, do: InputReader.read_from_file(2019, 6)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> to_graph(:digraph.new([:acyclic]))
     |> count_orbits()
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> to_graph(:digraph.new())
     |> count_orbital_transfers()
   end

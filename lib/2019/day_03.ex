@@ -3,20 +3,25 @@ defmodule AdventOfCode.Y2019.Day03 do
   --- Day 3: Crossed Wires ---
   Problem Link: https://adventofcode.com/2019/day/3
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 3
+  alias AdventOfCode.Helpers.InputReader
 
   @origin {0, 0}
 
-  def run_1 do
-    input!()
-    |> parse()
+  def input, do: InputReader.read_from_file(2019, 3)
+
+  def run(input \\ input()) do
+    input = parse(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> Enum.map(&move(&1, @origin, []))
     |> nearest_intersection()
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> Enum.map(fn wire ->
       wire
       |> move(@origin, [])

@@ -3,39 +3,45 @@ defmodule AdventOfCode.Y2019.Day08 do
   --- Day 8: Space Image Format ---
   Problem Link: https://adventofcode.com/2019/day/8
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 8
+  alias AdventOfCode.Helpers.InputReader
 
   @width 25
   @height 6
   @printchar "▒"
 
-  def run_1 do
-    input!()
-    |> process()
+  def input, do: InputReader.read_from_file(2019, 8)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> Enum.map(fn layer -> Enum.flat_map(layer, & &1) end)
     |> Enum.min_by(&Enum.count(&1, fn x -> x == 0 end))
     |> then(fn x -> Enum.count(x, &(&1 == 2)) * Enum.count(x, &(&1 == 1)) end)
   end
 
-  def run_2 do
-    input!()
-    |> process()
+  def run_2(input) do
+    input
     |> Enum.map(fn layer -> Enum.flat_map(layer, & &1) end)
     |> Enum.reduce(&overlay(&2, &1))
     |> Enum.join()
     |> print_image()
   end
 
-  def process(data) do
+  def parse(data) do
     data
-    |> String.codepoints()
+    |> String.graphemes()
     |> Enum.map(&String.to_integer/1)
     |> chunkify()
   end
 
-  defp overlay(l1, l2) do
-    l1
-    |> Enum.zip(l2)
+  defp overlay(layer_1, layer_2) do
+    layer_1
+    |> Enum.zip(layer_2)
     |> Enum.map(fn
       {2, x} -> x
       {1, _} -> 1
@@ -49,9 +55,9 @@ defmodule AdventOfCode.Y2019.Day08 do
     |> String.replace("0", " ")
     |> String.codepoints()
     |> chunkify()
-    |> hd()
+    |> List.first()
     |> Enum.map_join("\n", &Enum.join/1)
-    |> IO.puts()
+    |> tap(&IO.puts/1)
   end
 
   defp chunkify(data) do

@@ -3,20 +3,23 @@ defmodule AdventOfCode.Y2019.Day01 do
   --- Day 1: The Tyranny of the Rocket Equation ---
   Problem Link: https://adventofcode.com/2019/day/1
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 1
+  alias AdventOfCode.Helpers.InputReader
 
-  @spec run_1 :: non_neg_integer()
-  def run_1 do
-    input!()
-    |> parse()
+  def input, do: InputReader.read_from_file(2019, 1)
+
+  def run(input \\ input()) do
+    parsed_data = parse(input)
+    {run_1(parsed_data), run_2(parsed_data)}
+  end
+
+  def run_1(input) do
+    input
     |> Enum.map(&fuel_required/1)
     |> Enum.sum()
   end
 
-  @spec run_2 :: non_neg_integer()
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> Enum.map(fn mass ->
       required_fuel = fuel_required(mass)
       refuel(required_fuel, required_fuel)

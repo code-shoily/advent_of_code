@@ -3,14 +3,16 @@ defmodule AdventOfCode.Y2019.Day04 do
   --- Day 4: Secure Container ---
   Problem Link: https://adventofcode.com/2019/day/4
   """
-  @range 245_182..790_572
+  def input, do: 245_182..790_572
 
-  def run_1 do
-    Enum.count(for n <- @range, n |> adjacent() and n |> increasing(), do: n)
+  def run(input \\ input()), do: {run_1(input), run_2(input)}
+
+  def run_1(range) do
+    Enum.count(for n <- range, n |> adjacent() and n |> increasing(), do: n)
   end
 
-  def run_2 do
-    Enum.count(for n <- @range, n |> adjacent_2() and n |> increasing(), do: n)
+  def run_2(range) do
+    Enum.count(for n <- range, n |> adjacent_2() and n |> increasing(), do: n)
   end
 
   def adjacent(number) do

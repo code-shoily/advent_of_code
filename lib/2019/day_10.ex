@@ -3,21 +3,27 @@ defmodule AdventOfCode.Y2019.Day10 do
   --- Day 10: Monitoring Station ---
   Problem Link: https://adventofcode.com/2019/day/10
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 10
+  alias AdventOfCode.Helpers.InputReader
 
   @asteroid "#"
 
-  def run_1 do
-    input!()
-    |> parse()
+  def input, do: InputReader.read_from_file(2019, 10)
+
+  def run(input \\ input()) do
+    input = parse(input)
+
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    input
     |> visible_asteroid_count()
     |> Enum.max_by(fn {_, number} -> number end)
     |> elem(1)
   end
 
-  def run_2 do
-    input!()
-    |> parse()
+  def run_2(input) do
+    input
     |> the_200th_asteroid()
     |> result()
   end
@@ -28,7 +34,7 @@ defmodule AdventOfCode.Y2019.Day10 do
     |> Enum.with_index()
     |> Enum.flat_map(fn {line, row} ->
       line
-      |> String.codepoints()
+      |> String.graphemes()
       |> Enum.with_index()
       |> Enum.map(fn {maybe_asteroid, col} ->
         {{col, row}, maybe_asteroid}

@@ -3,14 +3,18 @@ defmodule AdventOfCode.Y2019.Day05 do
   --- Day 5: Sunny with a Chance of Asteroids ---
   Problem Link: https://adventofcode.com/2019/day/5
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 5
-
+  alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2019.IntCode
 
-  def parse(data), do: data |> String.split(",") |> Enum.map(&String.to_integer/1)
+  def input, do: InputReader.read_from_file(2019, 5)
 
-  def run_1 do
-    {:ok, pid} = input!() |> parse() |> IntCode.start_link()
+  def run(input \\ input()) do
+    input = parse(input)
+    {run_1(input), run_2(input)}
+  end
+
+  def run_1(input) do
+    {:ok, pid} = input |> IntCode.start_link()
     %{output: output} = IntCode.run(pid)
 
     output
@@ -21,7 +25,9 @@ defmodule AdventOfCode.Y2019.Day05 do
     end
   end
 
-  def run_2 do
-    {:not_implemented, 2}
+  def run_2(_) do
+    {:todo, 2}
   end
+
+  def parse(data), do: data |> String.split(",") |> Enum.map(&String.to_integer/1)
 end

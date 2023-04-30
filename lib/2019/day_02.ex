@@ -3,16 +3,18 @@ defmodule AdventOfCode.Y2019.Day02 do
   --- Day 2: 1202 Program Alarm ---
   Problem Link: https://adventofcode.com/2019/day/2
   """
-  use AdventOfCode.Helpers.InputReader, year: 2019, day: 2
-
+  alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2019.IntCode
+
+  def input, do: InputReader.read_from_file(2019, 2)
 
   @range 99..0
 
-  @spec run_1 :: integer()
-  def run_1 do
+  def run(input \\ input()), do: {run_1(input), run_2(input)}
+
+  def run_1(input) do
     {:ok, pid} =
-      input!()
+      input
       |> parse()
       |> fix1202()
       |> IntCode.start_link()
@@ -21,9 +23,8 @@ defmodule AdventOfCode.Y2019.Day02 do
     IntCode.get_output(pid)
   end
 
-  @spec run_2 :: integer | nil
-  def run_2 do
-    memory = input!() |> parse()
+  def run_2(input) do
+    memory = input |> parse()
 
     pairs = for i <- @range, j <- @range, do: {i, j}
 
@@ -53,6 +54,4 @@ defmodule AdventOfCode.Y2019.Day02 do
     |> List.replace_at(1, one)
     |> List.replace_at(2, two)
   end
-
-  def run, do: {run_1(), run_2()}
 end
