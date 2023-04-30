@@ -7,6 +7,6 @@ defmodule AdventOfCode.Y2022.Day22Test do
   alias AdventOfCode.Y2022.Day22, as: Solution
 
   test "Year 2022, Day 22 run/1" do
-    assert Solution.run() == {nil, nil}
+    assert Solution.run() == {123_046, {:todo, 2}}
   end
 end
