@@ -1,31 +1,25 @@
 defmodule Mix.Tasks.Solve do
   @moduledoc """
-  Generates boilerplate code for solving a problem for a `year` and `day`.
+  Solves a problem given `year` and `day`.
 
-  Type `mix solve --year <year> --day <day>` to create the boilerplate files for
-  solving the problem of the year <year> and day <day>.
-
-  For example, `mix solve --year 2015 --day 2` will generate `lib/2015/day_2.ex`,
-  `lib/data/inputs/2015_2.txt`, and `test/2015/day_2_test.exs` and contain the common
-  structure (i.e. module name, file reader function, test cases etc)
+  Type `mix solve --year <year> --day <day>` to see result for <year> and day <day>.
   """
-
-  alias AdventOfCode.Helpers.{Generator, InputParser}
+  alias AdventOfCode.Helpers.InputParser
 
   use Mix.Task
 
   @usage "mix solve --year <year> --day <day>"
 
   @shortdoc """
-  Creates a boilerplate for solving a year/day's problem.
+  Provides solution for <year> and <day>.
   """
   @impl Mix.Task
   def run(args) do
     case InputParser.parse(args) do
       {year, day} ->
-        {to_string(year), to_string(day)}
-        |> Generator.run()
-        |> Mix.shell().info()
+        {part_1, part_2} = AdventOfCode.solve(year, day)
+
+        Mix.shell().info("Part 1: #{part_1}\tPart 2: #{part_2}")
 
       _ ->
         Mix.shell().error("[Usage] #{@usage}")

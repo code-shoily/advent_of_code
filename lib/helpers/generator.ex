@@ -68,10 +68,12 @@ defmodule AdventOfCode.Helpers.Generator do
   end
 
   defp create_input_file(path, year, day) do
-    with {:ok, data} <- fetch_cookie(year, day),
-         {:ok, file} <- File.open(path, [:write]),
-         :ok <- IO.write(file, data) do
-      File.close(file)
+    unless File.exists?(path) do
+      with {:ok, data} <- fetch_cookie(year, day),
+           {:ok, file} <- File.open(path, [:write]),
+           :ok <- IO.write(file, data) do
+        File.close(file)
+      end
     end
   end
 
