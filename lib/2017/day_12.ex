@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2017.Day12 do
   --- Day 12: Digital Plumber ---
   Problem Link: https://adventofcode.com/2017/day/12
   """
+  alias AdventOfCode.Algorithms.DisjointSet
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias ExAlgo.Set.DisjointSet
 
   def input, do: InputReader.read_from_file(2017, 12)
 

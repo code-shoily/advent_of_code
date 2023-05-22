@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2015.Day24 do
   --- Day 24: It Hangs in the Balance ---
   Problem Link: https://adventofcode.com/2015/day/24
   """
+  alias AdventOfCode.Algorithms.SubsetSum
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias ExAlgo.DynamicProgramming.SubsetSum
 
   def input, do: InputReader.read_from_file(2015, 24)
 

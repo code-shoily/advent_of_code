@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2015.Day21 do
   --- Day 21: RPG Simulator 20XX ---
   Problem Link: https://adventofcode.com/2015/day/21
   """
+  alias AdventOfCode.Algorithms.Combinatorics
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias ExAlgo.Counting.Combinatorics
 
   @item_db ~S"""
   Weapons:    Cost  Damage  Armor

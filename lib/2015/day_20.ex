@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2015.Day20 do
   --- Day 20: Infinite Elves and Infinite Houses ---
   Problem Link: https://adventofcode.com/2015/day/20
   """
+  alias AdventOfCode.Algorithms.Arithmetics
   alias AdventOfCode.Helpers.InputReader
-  alias ExAlgo.Number.Arithmetics
 
   def input, do: InputReader.read_from_file(2015, 20)
 

@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2020.Day13 do
   --- Day 13: Shuttle Search ---
   Problem Link: https://adventofcode.com/2020/day/13
   """
+  alias AdventOfCode.Algorithms.ChineseRemainder
   alias AdventOfCode.Helpers.InputReader
-  alias ExAlgo.Number.ChineseRemainder
 
   def input, do: InputReader.read_from_file(2020, 13)
 

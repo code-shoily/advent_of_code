@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2015.Day17 do
   --- Day 17: No Such Thing as Too Much ---
   Problem Link: https://adventofcode.com/2015/day/17
   """
+  alias AdventOfCode.Algorithms.Combinatorics
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias ExAlgo.Counting.Combinatorics
 
   def input, do: InputReader.read_from_file(2015, 17)
 

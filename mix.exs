@@ -7,8 +7,7 @@ defmodule AdventOfCode.MixProject do
       version: "0.20.0",
       elixir: "~> 1.14.0",
       start_permanent: Mix.env() == :prod,
-      deps: deps(),
-      xref: [exclude: [ExAlgo.DynamicProgramming.SubsetSum]]
+      deps: deps()
     ]
   end
 
@@ -23,7 +22,6 @@ defmodule AdventOfCode.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:ex_algo, git: "https://github.com/code-shoily/ex_algo.git"},
       {:floki, "~> 0.34.0"},
       {:httpoison, "~> 1.8.0"},
       {:jason, "~> 1.4"},

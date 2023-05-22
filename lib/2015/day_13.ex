@@ -5,7 +5,7 @@ defmodule AdventOfCode.Y2015.Day13 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  alias ExAlgo.Counting.Combinatorics
+  alias AdventOfCode.Algorithms.Combinatorics
 
   def input, do: InputReader.read_from_file(2015, 13)
 
