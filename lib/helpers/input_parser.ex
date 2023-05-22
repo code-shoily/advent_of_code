@@ -3,7 +3,7 @@ defmodule AdventOfCode.Helpers.InputParser do
   Parses and validates input given in command line
   """
 
-  @years 2015..2022
+  @years 2015..AdventOfCode.get_latest_year()
   @days 1..25
 
   @doc """

@@ -14,7 +14,7 @@ defmodule Mix.Tasks.Gen do
 
   use Mix.Task
 
-  @usage "mix gen --year <year> --day <day>"
+  @usage "mix gen --year <year> --day <day> OR mix gen <year> <day>"
 
   @shortdoc """
   Creates a boilerplate for solving a year/day's problem.

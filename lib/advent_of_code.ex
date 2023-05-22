@@ -9,11 +9,19 @@ defmodule AdventOfCode do
   @type day() :: non_neg_integer()
 
   @doc """
+  Returns the latest year solved.
+  """
+  def get_latest_year, do: @latest_year
+
+  @doc """
   Solves for `year` and `day`.
   """
   @spec solve(year(), day()) :: {any(), any()}
   def solve(year, day) do
-    Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()
+    {:ok, Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()}
+  rescue
+    _ in FunctionClauseError -> {:error, :invalid_args}
+    _ in UndefinedFunctionError -> {:error, :not_yet_solved}
   end
 
   defp get_year_module(year) when year >= 2015 and year <= @latest_year do
