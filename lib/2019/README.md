@@ -2,6 +2,10 @@
 
 [Main Page](https://adventofcode.com/2019) | [Tests](/test/2019)
 
+[2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | 2019 | 2020 | [2021](/lib/2021) | [2022](/lib/2022)
+
+## :trophy: 8/25 :star2: 16/50
+
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
 | 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :star2: | [day_01.ex](/lib/2019/day_01.ex) |

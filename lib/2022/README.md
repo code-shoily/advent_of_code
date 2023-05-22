@@ -2,6 +2,10 @@
 
 [Main Page](https://adventofcode.com/2022) | [Tests](/test/2022)
 
+[2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | 2022
+
+## :trophy: 13.5/25 :star2: 27/50
+
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
 | 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :star2: | [day_01.ex](/lib/2022/day_01.ex) |

@@ -2,6 +2,10 @@
 
 [Main Page](https://adventofcode.com/2016) | [Tests](/test/2016)
 
+[2015](/lib/2015) | 2016 | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | 2020 | [2021](/lib/2021) | [2022](/lib/2022)
+
+## :trophy: 10/25 :star2: 20/50
+
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
 | 1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :star2: | [day_01.ex](/lib/2016/day_01.ex) |
