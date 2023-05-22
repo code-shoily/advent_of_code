@@ -2,6 +2,8 @@
 
 [Main Page](https://adventofcode.com/2015) | [Tests](/test/2015)
 
+## 24/25
+
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
 | 1 | [Not Quite Lisp](https://adventofcode.com/2015/day/1) | :star2: | [day_01.ex](/lib/2015/day_01.ex) |
