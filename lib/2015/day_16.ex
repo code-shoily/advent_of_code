@@ -62,9 +62,7 @@ defmodule AdventOfCode.Y2015.Day16 do
     "perfumes" => 1
   }
   defp guess_1(possessions) do
-    possessions
-    |> Enum.filter(fn {item, count} -> @ticker_outputs[item] == count end)
-    |> Enum.count()
+    Enum.count(possessions, fn {item, count} -> @ticker_outputs[item] == count end)
   end
 
   @ticker_outputs %{
@@ -80,13 +78,11 @@ defmodule AdventOfCode.Y2015.Day16 do
     "perfumes" => 1
   }
   defp guess_2(possessions) do
-    possessions
-    |> Enum.filter(fn {item, count} ->
+    Enum.count(possessions, fn {item, count} ->
       case @ticker_outputs[item] do
         {fun, val} -> fun.(count, val)
         val -> val == count
       end
     end)
-    |> Enum.count()
   end
 end

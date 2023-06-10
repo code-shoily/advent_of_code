@@ -36,10 +36,6 @@ defmodule AdventOfCode.Y2015.Day17 do
   end
 
   defp minimum_bottle_count(containers) do
-    smallest = Enum.min(containers)
-
-    containers
-    |> Enum.filter(&(&1 == smallest))
-    |> Enum.count()
+    Enum.count(containers, fn container -> container == Enum.min(containers) end)
   end
 end
