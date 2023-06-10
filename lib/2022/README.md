@@ -4,7 +4,7 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | 2022
 
-## :trophy: 13.5/25
+## :trophy: 17.5/25
 
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
@@ -15,6 +15,10 @@
 | 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :star2: | [day_05.ex](/lib/2022/day_05.ex) |
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [day_06.ex](/lib/2022/day_06.ex) |
 | 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [day_07.ex](/lib/2022/day_07.ex) |
+| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :star2: | [day_08.ex](/lib/2022/day_08.ex) [day_22_8.erl](/src/2022/day_22_8.erl)|
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :star2: | [day_09.ex](/lib/2022/day_09.ex) [day_22_9.erl](/src/2022/day_22_9.erl) |
+| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :star2: | [day_10.ex](/lib/2022/day_10.ex) [day_22_10.erl](/src/2022/day_22_10.erl) |
+| 11 | [Rope Bridge](https://adventofcode.com/2022/day/11) | :star2: | [day_11.ex](/lib/2022/day_11.ex) [day_22_11.erl](/src/2022/day_22_9.erl) |
 | 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex) |
 | 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex) |
 | 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex) |
