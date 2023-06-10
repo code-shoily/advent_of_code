@@ -4,7 +4,7 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | 2022
 
-## :trophy: 17.5/25
+## :trophy: 22.5/25
 
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
@@ -22,7 +22,12 @@
 | 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex), [day_12.livemd](/priv/livebooks/2022/day_12.livemd) |
 | 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex), [day_13.livemd](/priv/livebooks/2022/day_13.livemd) |
 | 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex), [day_14.livemd](/priv/livebooks/2022/day_14.livemd) |
+| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :star2: | [day_15.ex](/lib/2022/day_15.ex), [day_22_15.erl](/src/2022/day_22_15.erl) |
+| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :star2: | [day_18.ex](/lib/2022/day_18.ex), [day_22_18.erl](/src/2022/day_22_18.erl) |
+| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :star2: | [day_19.ex](/lib/2022/day_19.ex), [day_22_19.erl](/src/2022/day_22_19.erl) |
 | 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :star2: :star2: :hourglass: | [day_20.ex](/lib/2022/day_20.ex) |
 | 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :star2: | [day_21.ex](/lib/2022/day_21.ex) |
 | 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :star2: :star2: :star2: :ice_cube: | [day_22.ex](/lib/2022/day_22.ex) |
+| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :star2: | [day_23.ex](/lib/2022/day_23.ex), [day_22_23.erl](/src/2022/day_22_23.erl) |
+| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :star2: | [day_24.ex](/lib/2022/day_24.ex), [day_22_24.erl](/src/2022/day_22_24.erl) |
 | 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :star2: | [day_25.ex](/lib/2022/day_25.ex) |
