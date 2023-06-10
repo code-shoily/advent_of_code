@@ -15,13 +15,13 @@
 | 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :star2: | [day_05.ex](/lib/2022/day_05.ex) |
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [day_06.ex](/lib/2022/day_06.ex) |
 | 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [day_07.ex](/lib/2022/day_07.ex) |
-| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :star2: | [day_08.ex](/lib/2022/day_08.ex) [day_22_8.erl](/src/2022/day_22_8.erl)|
-| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :star2: | [day_09.ex](/lib/2022/day_09.ex) [day_22_9.erl](/src/2022/day_22_9.erl) |
-| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :star2: | [day_10.ex](/lib/2022/day_10.ex) [day_22_10.erl](/src/2022/day_22_10.erl) |
-| 11 | [Rope Bridge](https://adventofcode.com/2022/day/11) | :star2: | [day_11.ex](/lib/2022/day_11.ex) [day_22_11.erl](/src/2022/day_22_9.erl) |
-| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex) |
-| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex) |
-| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex) |
+| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :star2: | [day_08.ex](/lib/2022/day_08.ex), [day_22_8.erl](/src/2022/day_22_8.erl)|
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :star2: | [day_09.ex](/lib/2022/day_09.ex), [day_22_9.erl](/src/2022/day_22_9.erl) |
+| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :star2: | [day_10.ex](/lib/2022/day_10.ex), [day_22_10.erl](/src/2022/day_22_10.erl) |
+| 11 | [Rope Bridge](https://adventofcode.com/2022/day/11) | :star2: | [day_11.ex](/lib/2022/day_11.ex), [day_22_11.erl](/src/2022/day_22_9.erl) |
+| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex), [day_12.livemd](/priv/livebooks/2022/day_12.livemd) |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex), [day_13.livemd](/priv/livebooks/2022/day_13.livemd) |
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex), [day_14.livemd](/priv/livebooks/2022/day_14.livemd) |
 | 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :star2: :star2: :hourglass: | [day_20.ex](/lib/2022/day_20.ex) |
 | 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :star2: | [day_21.ex](/lib/2022/day_21.ex) |
 | 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :star2: :star2: :star2: :ice_cube: | [day_22.ex](/lib/2022/day_22.ex) |
