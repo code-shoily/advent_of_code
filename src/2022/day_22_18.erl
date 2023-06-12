@@ -36,7 +36,7 @@ exposed_sides({X, Y, Z}, Map) ->
      {X, Y + 1, Z},
      {X, Y, Z - 1},
      {X, Y, Z + 1}],
-  [C || C <- Coords, not is_map_key(C, Map)].
+  [C || C <- Coords, not sets:is_element(C, Map)].
 
 is_within_confines({X, Y, Z}, {X1, X2, Y1, Y2, Z1, Z2})
   when X >= X1 - 1, X =< X2 + 1, Y >= Y1 - 1, Y =< Y2 + 1, Z >= Z1 - 1, Z =< Z2 + 1 ->
