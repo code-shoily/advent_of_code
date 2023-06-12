@@ -111,7 +111,7 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
       %BiCircularList{visited: [10, 0], current: 20, upcoming: [30]}
       iex> bcl = BiCircularList.next(bcl)
       %BiCircularList{visited: [20, 10, 0], current: 30, upcoming: []}
-      iex> bcl = BiCircularList.next(bcl)
+      iex> BiCircularList.next(bcl)
       %BiCircularList{visited: [], current: 0, upcoming: [10, 20, 30]}
   """
   @spec next(BiCircularList.t()) :: BiCircularList.t() | :error
@@ -143,7 +143,7 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
       %BiCircularList{visited: [10, 0], current: 20, upcoming: [30]}
       iex> bcl = BiCircularList.previous(bcl)
       %BiCircularList{visited: [0], current: 10, upcoming: [20, 30]}
-      iex> bcl = BiCircularList.previous(bcl)
+      iex> BiCircularList.previous(bcl)
       %BiCircularList{visited: [], current: 0, upcoming: [10, 20, 30]}
   """
   @spec previous(BiCircularList.t()) :: BiCircularList.t() | :error
