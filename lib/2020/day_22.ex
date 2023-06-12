@@ -39,6 +39,7 @@ defmodule AdventOfCode.Y2020.Day22 do
       memo = {[human | humans], [crab | crabs]}
 
       if h <= length(hs) && c <= length(cs) do
+        # credo:disable-for-next-line
         case play_rec({Enum.take(hs, h), Enum.take(cs, c)}, {[], []}) do
           {:human, _} -> play_rec({hs ++ [h, c], cs}, memo)
           {:crab, _} -> play_rec({hs, cs ++ [c, h]}, memo)
