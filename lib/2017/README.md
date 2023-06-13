@@ -4,7 +4,7 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | 2017 | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022)
 
-## :trophy: 16.5/25
+## :trophy: 17/25
 
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
@@ -26,3 +26,4 @@
 | 16 | [Permutation Promenade](https://adventofcode.com/2017/day/16)  | :star2: | [day_16.ex](/lib/2017/day_16.ex) |
 | 17 | [Spinlock](https://adventofcode.com/2017/day/17)  | :star2: | [day_17.ex](/lib/2017/day_17.ex) |
 | 18 | [Duet](https://adventofcode.com/2017/day/18)  | :star: :anguished: | [day_18.ex](/lib/2017/day_18.ex) |
+| 23 | [Coprocessor Conflagration](https://adventofcode.com/2017/day/23)  | :star: :anguished: | [day_23.ex](/lib/2017/day_23.ex) |

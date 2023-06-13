@@ -10,17 +10,17 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.lines("")
-    []
+      iex> Transformers.lines("")
+      []
 
-    iex> Transformers.lines("Hello")
-    ["Hello"]
+      iex> Transformers.lines("Hello")
+      ["Hello"]
 
-    iex> Transformers.lines("Line 1\nLine 2")
-    ["Line 1", "Line 2"]
+      iex> Transformers.lines("Line 1\nLine 2")
+      ["Line 1", "Line 2"]
 
-    iex> Transformers.lines("Line 1\nLine 2\n ")
-    ["Line 1", "Line 2"]
+      iex> Transformers.lines("Line 1\nLine 2\n ")
+      ["Line 1", "Line 2"]
 
   """
   def lines(raw, trim \\ true) do
@@ -36,17 +36,17 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.int_lines("")
-    []
+      iex> Transformers.int_lines("")
+      []
 
-    iex> Transformers.int_lines("1")
-    [1]
+      iex> Transformers.int_lines("1")
+      [1]
 
-    iex> Transformers.int_lines("1\n2")
-    [1, 2]
+      iex> Transformers.int_lines("1\n2")
+      [1, 2]
 
-    iex> Transformers.int_lines("1\n2\n ")
-    [1, 2]
+      iex> Transformers.int_lines("1\n2\n ")
+      [1, 2]
 
   """
   def int_lines(raw) do
@@ -60,17 +60,17 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.digits(123)
-    [1, 2, 3]
+      iex> Transformers.digits(123)
+      [1, 2, 3]
 
-    iex> Transformers.digits("123")
-    [1, 2, 3]
+      iex> Transformers.digits("123")
+      [1, 2, 3]
 
-    iex> Transformers.digits("")
-    []
+      iex> Transformers.digits("")
+      []
 
-    iex> Transformers.digits(0)
-    [0]
+      iex> Transformers.digits(0)
+      [0]
 
   """
   def digits(raw) when is_integer(raw), do: raw |> to_string() |> digits()
@@ -86,11 +86,11 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.words("a, b, c", ",")
-    ["a", "b", "c"]
+      iex> Transformers.words("a, b, c", ",")
+      ["a", "b", "c"]
 
-    iex> Transformers.words("a b c")
-    ["a", "b", "c"]
+      iex> Transformers.words("a b c")
+      ["a", "b", "c"]
 
   """
   def words(sentence, sep \\ " ") do
@@ -104,11 +104,11 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.int_words("1, 2, 3", ",")
-    [1, 2, 3]
+      iex> Transformers.int_words("1, 2, 3", ",")
+      [1, 2, 3]
 
-    iex> Transformers.int_words("1 2 3")
-    [1, 2, 3]
+      iex> Transformers.int_words("1 2 3")
+      [1, 2, 3]
 
   """
   def int_words(sentence, sep \\ " ") do
@@ -122,25 +122,25 @@ defmodule AdventOfCode.Helpers.Transformers do
 
   ## Example
 
-    iex> Transformers.grid2d([])
-    %{}
+      iex> Transformers.grid2d([])
+      %{}
 
-    iex> Transformers.grid2d([[1, 3, 5], [2, 4, 6]])
-    %{
-      {0, 0} => 1,
-      {0, 1} => 3,
-      {0, 2} => 5,
-      {1, 0} => 2,
-      {1, 1} => 4,
-      {1, 2} => 6
-    }
+      iex> Transformers.grid2d([[1, 3, 5], [2, 4, 6]])
+      %{
+        {0, 0} => 1,
+        {0, 1} => 3,
+        {0, 2} => 5,
+        {1, 0} => 2,
+        {1, 1} => 4,
+        {1, 2} => 6
+      }
 
-    iex> Transformers.grid2d([[1], [2, 3]], fn i -> i**3 end)
-    %{
-      {0, 0} => 1,
-      {1, 0} => 8,
-      {1, 1} => 27
-    }
+      iex> Transformers.grid2d([[1], [2, 3]], fn i -> i**3 end)
+      %{
+        {0, 0} => 1,
+        {1, 0} => 8,
+        {1, 1} => 27
+      }
 
   """
   def grid2d(data, tx \\ &Function.identity/1) do
