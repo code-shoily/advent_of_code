@@ -68,7 +68,7 @@ defmodule AdventOfCode.Y2016.Day04 do
     |> Enum.join()
   end
 
-  def rotate('-', _), do: " "
+  def rotate(~c"-", _), do: " "
 
   def rotate(char, by) do
     ?a..?z

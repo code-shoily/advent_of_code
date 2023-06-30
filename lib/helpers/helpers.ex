@@ -20,4 +20,20 @@ defmodule AdventOfCode.Helpers do
       end
     end
   end
+
+  @doc """
+  Prints a 2D grid in stdout. No value is returned.
+  """
+  @spec print2d(%{required(idx()) => board()}) :: no_return()
+  def print2d_io(grid) do
+    {x, y} = grid |> Map.keys() |> Enum.max()
+
+    for i <- 0..x do
+      for j <- 0..y do
+        IO.write(grid[{i, j}])
+      end
+
+      IO.puts("")
+    end
+  end
 end

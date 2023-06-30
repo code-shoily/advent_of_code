@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2018.Day05Test do
   alias AdventOfCode.Y2018.Day05, as: Solution
 
   test "React (1)" do
-    assert Solution.react('dabAcCaCBAcCcaDA') == 10
+    assert Solution.react(~c"dabAcCaCBAcCcaDA") == 10
   end
 
   test "Year 2018, Day 5" do

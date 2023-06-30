@@ -4,7 +4,7 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | 2021 | [2022](/lib/2022)
 
-## :trophy: 11/25
+## :trophy: 12/25
 
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
@@ -19,3 +19,4 @@
 | 15 | [Chiton](https://adventofcode.com/2021/day/15) | :star2: :star2:| [day_15.ex](/lib/2021/day_15.ex) |
 | 16 | [Packet Decoder](https://adventofcode.com/2021/day/16) | :star2: :star2:| [day_16.ex](/lib/2021/day_16.ex) |
 | 21 | [Dirac Dice](https://adventofcode.com/2021/day/21) | :star2: :star2: :star2:| [day_21.ex](/lib/2021/day_21.ex) |
+| 25 | [Sea Cucumber](https://adventofcode.com/2021/day/25) | :star2: | [day_25.ex](/lib/2021/day_25.ex) |

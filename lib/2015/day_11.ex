@@ -42,10 +42,10 @@ defmodule AdventOfCode.Y2015.Day11 do
 
   def next_char(current) do
     case String.to_charlist(current) do
-      'h' -> 'j'
-      'k' -> 'm'
-      'n' -> 'p'
-      'z' -> 'a'
+      ~c"h" -> ~c"j"
+      ~c"k" -> ~c"m"
+      ~c"n" -> ~c"p"
+      ~c"z" -> ~c"a"
       c -> hd(c) + 1
     end
     |> List.wrap()
