@@ -3,6 +3,7 @@ priv/input_files/
 .envrc
 .iex.exs
 .elixir_ls
+.elixir-tools/
 # The directory Mix will write compiled artifacts to.
 /_build/
 
