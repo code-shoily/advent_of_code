@@ -18,6 +18,7 @@
 | 8 | [Matchsticks](https://adventofcode.com/2015/day/8)  | :star2: :star2: | [day_08.ex](/lib/2015/day_08.ex) |
 | 9 | [All in a Single Night](https://adventofcode.com/2015/day/9)  | :star2: :star2: | [day_09.ex](/lib/2015/day_09.ex) |
 | 10 | [Day 10: Elves Look, Elves Say](https://adventofcode.com/2015/day/10)  | :hourglass: | [day_10.ex](/lib/2015/day_10.ex) |
+| 11 | [Day 11: Corporate Policy](https://adventofcode.com/2015/day/11)  | :star2: | [day_11.ex](/lib/2015/day_11.ex) |
 | 12 | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12)  | :star2: | [day_12.ex](/lib/2015/day_12.ex) |
 | 13 | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13)  | :star2: :hourglass: | [day_13.ex](/lib/2015/day_13.ex) |
 | 14 | [Reindeer Olympics](https://adventofcode.com/2015/day/14)  | :star2: | [day_14.ex](/lib/2015/day_14.ex) |
