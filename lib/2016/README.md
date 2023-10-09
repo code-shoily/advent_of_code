@@ -4,7 +4,7 @@
 
 [2015](/lib/2015) | 2016 | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022)
 
-## :trophy: 10/25
+## :trophy: 11/25
 
 | Day | Problem Page | Difficulty | Solution Page |
 | :---: | :------: | ---: | :---: |
@@ -15,6 +15,7 @@
 | 5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)  | :hourglass: | [day_05.ex](/lib/2016/day_05.ex) |
 | 6 | [Signals and Noise](https://adventofcode.com/2016/day/6)  | :star2: | [day_06.ex](/lib/2016/day_06.ex) |
 | 7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7)  | :star2: | [day_07.ex](/lib/2016/day_07.ex) |
+| 8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8)  | :star2: | [day_08.ex](/lib/2016/day_08.ex) |
 | 9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9)  | :star2: | [day_09.ex](/lib/2016/day_09.ex) |
 | 10 | [Balance Bots](https://adventofcode.com/2016/day/10)  | :star2: :star2: | [day_10.ex](/lib/2016/day_10.ex) |
 | 12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12)  | :star2: :hourglass: | [day_12.ex](/lib/2016/day_12.ex) |

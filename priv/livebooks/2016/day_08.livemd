@@ -41,8 +41,6 @@ defmodule Grid do
   @width 50
   @height 6
 
-  @type t :: {{non_neg_integer(), non_neg_integer()}, Binary.t()}
-
   def new() do
     for w <- 0..(@width - 1), h <- 0..(@height - 1), into: %{} do
       {{w, h}, @off}
