@@ -8,11 +8,14 @@ defmodule AdventOfCode.Y2022.Day25 do
   def input, do: InputReader.read_from_file(2022, 25)
 
   def run(input \\ input()) do
-    to_snafu(
-      for snafu <- String.split(input, "\n"), reduce: 0 do
-        acc -> acc + to_decimal(snafu)
-      end
-    )
+    {
+      to_snafu(
+        for snafu <- String.split(input, "\n"), reduce: 0 do
+          acc -> acc + to_decimal(snafu)
+        end
+      ),
+      "🎉"
+    }
   end
 
   defp to_decimal(snafu) do

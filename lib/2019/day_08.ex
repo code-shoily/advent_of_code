@@ -13,8 +13,8 @@ defmodule AdventOfCode.Y2019.Day08 do
 
   def run(input \\ input()) do
     input = parse(input)
-
-    {run_1(input), run_2(input)}
+    run_2(input)
+    {run_1(input), :ok}
   end
 
   def run_1(input) do

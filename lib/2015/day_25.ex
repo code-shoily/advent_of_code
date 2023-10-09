@@ -8,10 +8,13 @@ defmodule AdventOfCode.Y2015.Day25 do
   def input, do: InputReader.read_from_file(2015, 25)
 
   def run(input \\ input()) do
-    input
-    |> parse()
-    |> index_of()
-    |> nth_code()
+    solution =
+      input
+      |> parse()
+      |> index_of()
+      |> nth_code()
+
+    {solution, "🎉"}
   end
 
   def index_of({row, 1}) do
