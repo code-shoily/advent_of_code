@@ -10,12 +10,12 @@ To solve the problem for a particular year/day, type in `mix solve --year <year>
 
 run `mix test` to ensure all solutions are working okay. To run test for a particular year and day, type `mix test --only y<last-two-digits-of-year><zero-padded-day>`. For example: `mix test --only y1501` tests for `2015` as year and `1` as day.
 
-## :star2: 245/400
+## :star2: 247/400
 
 | Year | Progress | :star2: |
 | :-----: | :---------: | :-: |
 | [2015](/lib/2015) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :full_moon: :full_moon: :full_moon: | 48 |
-| [2016](/lib/2016) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :full_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: | 20 |
+| [2016](/lib/2016) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: | 22 |
 | [2017](/lib/2017) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :last_quarter_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :last_quarter_moon: :full_moon: :full_moon: :full_moon: :last_quarter_moon: :new_moon: :new_moon: :new_moon: :new_moon: :last_quarter_moon: :new_moon: :new_moon: | 34 |
 | [2018](/lib/2018) | :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :full_moon: :new_moon: :last_quarter_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: | 15 |
 | [2019](/lib/2019) | :full_moon: :full_moon: :full_moon: :full_moon: :last_quarter_moon: :full_moon: :new_moon: :full_moon: :new_moon: :full_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: :new_moon: | 15 |

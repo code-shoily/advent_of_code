@@ -1,0 +1,105 @@
+# Advent of Code 2016 - Day 8
+
+```elixir
+Mix.install([
+  {:kino, "~> 0.10.0"}
+])
+```
+
+## Input
+
+```elixir
+raw_input = Kino.Input.textarea("Paste Input:")
+```
+
+```elixir
+input_lines = raw_input |> Kino.Input.read() |> String.split("\n")
+```
+
+```elixir
+defmodule InputParse do
+  import String, only: [to_integer: 1]
+
+  def to_dims(d) do
+    String.split(d, "x")
+    |> Enum.map(&to_integer/1)
+    |> List.to_tuple()
+  end
+
+  def parse(data), do: Enum.map(data, &parse_line(String.split(&1, " ")))
+
+  def parse_line(["rect", d]), do: {:rect, to_dims(d)}
+  def parse_line([_, _, "y=" <> y, _, by]), do: {:row, to_integer(y), to_integer(by)}
+  def parse_line([_, _, "x=" <> x, _, by]), do: {:column, to_integer(x), to_integer(by)}
+end
+```
+
+```elixir
+defmodule Grid do
+  @on "█"
+  @off "."
+  @width 50
+  @height 6
+
+  def new() do
+    for w <- 0..(@width - 1), h <- 0..(@height - 1), into: %{} do
+      {{w, h}, @off}
+    end
+  end
+
+  def operation(grid, {:rect, {w, h}}) do
+    for x <- 0..(w - 1), y <- 0..(h - 1), reduce: grid do
+      acc -> %{acc | {x, y} => @on}
+    end
+  end
+
+  def operation(grid, {:row, at, by}) do
+    grid
+    |> line_by_row(at)
+    |> Map.new(fn {{x, y}, _} ->
+      {{rem(x + by, @width), y}, grid[{x, y}]}
+    end)
+    |> then(&Map.merge(grid, &1))
+  end
+
+  def operation(grid, {:column, at, by}) do
+    grid
+    |> line_by_column(at)
+    |> Map.new(fn {{x, y}, _} ->
+      {{x, rem(y + by, @height)}, grid[{x, y}]}
+    end)
+    |> then(&Map.merge(grid, &1))
+  end
+
+  def display(grid) do
+    for h <- 0..(@height - 1) do
+      for w <- 0..(@width - 1) do
+        IO.write(grid[{w, h}])
+      end
+
+      IO.puts("")
+    end
+
+    IO.puts("")
+
+    :ok
+  end
+
+  defp line_by(grid, n, xy), do: Map.filter(grid, fn {k, _} -> elem(k, xy) == n end)
+  defp line_by_column(grid, at), do: line_by(grid, at, 0)
+  defp line_by_row(grid, at), do: line_by(grid, at, 1)
+
+  def run(input) do
+    process =
+      input
+      |> InputParse.parse()
+      |> Enum.reduce(Grid.new(), fn op, acc ->
+        Grid.operation(acc, op)
+      end)
+
+    {Enum.count(process, fn {_, v} -> v == @on end), display(after_lit)}
+  end
+end
+
+Grid.run(input_lines)
+```
