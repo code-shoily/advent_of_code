@@ -6,10 +6,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
   def summarize() do
     metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})
 
-    header = """
-    | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |
-    |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-    """
+    header = "| Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |"
     content =
       for i <- 1..25 do
         generate_stat_row(metadata, i)
@@ -17,7 +14,8 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
     """
     #{header}
-    #{content |> Enum.join("\n")}
+    |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+    #{content}
     """
   end
 
@@ -31,7 +29,9 @@ defmodule AdventOfCode.Helpers.Summarizer do
       end
       |> Enum.join(" | ")
 
-    "| #{day} | #{counts} |"
+    """
+    | #{day} | #{counts} |
+    """
   end
 
   def build_heading(year) do
@@ -78,8 +78,8 @@ defmodule AdventOfCode.Helpers.Summarizer do
     """
   end
 
-  defp award(1), do: ":trophy:"
-  defp award(2), do: ":trophy: :trophy:"
+  defp award(1), do: ":1st_place_medal:"
+  defp award(2), do: ":2nd_place_medal:"
 
   defp linkify(link) do
     file = link |> String.split("/") |> List.last()

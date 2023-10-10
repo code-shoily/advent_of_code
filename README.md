@@ -17,28 +17,28 @@ run `mix gen_stats` to update the relevant `README.md` so that the latest stats 
 
 | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 1 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 2 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 3 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 4 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 5 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 6 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 7 | :trophy: :trophy: | :trophy: :trophy: | :trophy: | _ | _ | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 8 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: | :trophy: :trophy: | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 9 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | _ | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 10 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | _ | :trophy: :trophy: | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 11 | :trophy: :trophy: | _ | :trophy: :trophy: | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 12 | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 13 | :trophy: :trophy: | _ | :trophy: :trophy: | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 14 | :trophy: :trophy: | _ | :trophy: | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 15 | :trophy: :trophy: | _ | :trophy: :trophy: | _ | _ | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 16 | :trophy: :trophy: | _ | :trophy: :trophy: | _ | _ | :trophy: | :trophy: :trophy: | _ |
-| 17 | :trophy: :trophy: | _ | :trophy: :trophy: | _ | _ | _ | _ | _ |
-| 18 | :trophy: :trophy: | _ | :trophy: | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 19 | :trophy: :trophy: | _ | _ | _ | _ | :trophy: :trophy: | _ | :trophy: :trophy: |
-| 20 | :trophy: :trophy: | _ | _ | _ | _ | :trophy: | _ | :trophy: :trophy: |
-| 21 | :trophy: :trophy: | _ | _ | _ | _ | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
-| 22 | _ | _ | _ | _ | _ | :trophy: :trophy: | _ | :trophy: |
-| 23 | :trophy: :trophy: | _ | :trophy: | _ | _ | :trophy: | _ | :trophy: :trophy: |
-| 24 | :trophy: :trophy: | _ | _ | _ | _ | :trophy: | _ | :trophy: :trophy: |
-| 25 | :trophy: :trophy: | _ | _ | _ | _ | :trophy: :trophy: | :trophy: :trophy: | :trophy: :trophy: |
+| 1 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 2 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 3 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 4 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 5 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :1st_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 6 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 7 | :2nd_place_medal: | :2nd_place_medal: | :1st_place_medal: | _ | _ | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 8 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :1st_place_medal: | :2nd_place_medal: | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 9 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | _ | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 10 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | _ | :2nd_place_medal: | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 11 | :2nd_place_medal: | _ | :2nd_place_medal: | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 12 | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 13 | :2nd_place_medal: | _ | :2nd_place_medal: | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 14 | :2nd_place_medal: | _ | :1st_place_medal: | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 15 | :2nd_place_medal: | _ | :2nd_place_medal: | _ | _ | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 16 | :2nd_place_medal: | _ | :2nd_place_medal: | _ | _ | :1st_place_medal: | :2nd_place_medal: | _ |
+| 17 | :2nd_place_medal: | _ | :2nd_place_medal: | _ | _ | _ | _ | _ |
+| 18 | :2nd_place_medal: | _ | :1st_place_medal: | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 19 | :2nd_place_medal: | _ | _ | _ | _ | :2nd_place_medal: | _ | :2nd_place_medal: |
+| 20 | :2nd_place_medal: | _ | _ | _ | _ | :1st_place_medal: | _ | :2nd_place_medal: |
+| 21 | :2nd_place_medal: | _ | _ | _ | _ | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
+| 22 | _ | _ | _ | _ | _ | :2nd_place_medal: | _ | :1st_place_medal: |
+| 23 | :2nd_place_medal: | _ | :1st_place_medal: | _ | _ | :1st_place_medal: | _ | :2nd_place_medal: |
+| 24 | :2nd_place_medal: | _ | _ | _ | _ | :1st_place_medal: | _ | :2nd_place_medal: |
+| 25 | :2nd_place_medal: | _ | _ | _ | _ | :2nd_place_medal: | :2nd_place_medal: | :2nd_place_medal: |
