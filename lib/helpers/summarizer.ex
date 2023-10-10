@@ -3,6 +3,37 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   @year_range 2015..2022
 
+  def summarize() do
+    metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})
+
+    header = """
+    | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |
+    |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+    """
+    content =
+      for i <- 1..25 do
+        generate_stat_row(metadata, i)
+      end
+
+    """
+    #{header}
+    #{content |> Enum.join("\n")}
+    """
+  end
+
+  def generate_stat_row(metadata, day) do
+    counts =
+      for year <- @year_range do
+        case metadata[year].summary[day] do
+          nil -> "_"
+          %{count: count} -> award(count)
+        end
+      end
+      |> Enum.join(" | ")
+
+    "| #{day} | #{counts} |"
+  end
+
   def build_heading(year) do
     links =
       for current_year <- @year_range do

@@ -3,12 +3,13 @@ defmodule AdventOfCode.Helpers.Meta do
   Returns the info of the year. This returns the important links and info
   of all the days completed.
   """
-  def get_info(year) do
+  def get_info(year, as_map \\ false) do
     daywise_summary =
       for day <- 1..25 do
         get_info_for_day(year, day)
       end
       |> Enum.reject(&is_nil/1)
+      |> then(fn data -> as_map && Map.new(data) || data end)
 
     stars_completed =
       daywise_summary
