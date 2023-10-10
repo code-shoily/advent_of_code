@@ -10,28 +10,28 @@
 
 | Day | Problem Page | Status | Solution Page | Test Page |
 | :---: | :------: | ---: | :---: | :---: |
-| 1 | [Report Repair](https://adventofcode.com/2020/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2020/day_01.ex) | [day_01_test.exs](/test/2020/day_01_test.exs) |
-| 2 | [Password Philosophy](https://adventofcode.com/2020/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2020/day_02.ex) | [day_02_test.exs](/test/2020/day_02_test.exs) |
-| 3 | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) | :trophy: :trophy: | [day_03.ex](/lib/2020/day_03.ex) | [day_03_test.exs](/test/2020/day_03_test.exs) |
-| 4 | [Passport Processing](https://adventofcode.com/2020/day/4) | :trophy: :trophy: | [day_04.ex](/lib/2020/day_04.ex) | [day_04_test.exs](/test/2020/day_04_test.exs) |
-| 5 | [Binary Boarding](https://adventofcode.com/2020/day/5) | :trophy: :trophy: | [day_05.ex](/lib/2020/day_05.ex) | [day_05_test.exs](/test/2020/day_05_test.exs) |
-| 6 | [Custom Customs](https://adventofcode.com/2020/day/6) | :trophy: :trophy: | [day_06.ex](/lib/2020/day_06.ex) | [day_06_test.exs](/test/2020/day_06_test.exs) |
-| 7 | [Handy Haversacks](https://adventofcode.com/2020/day/7) | :trophy: :trophy: | [day_07.ex](/lib/2020/day_07.ex) | [day_07_test.exs](/test/2020/day_07_test.exs) |
-| 8 | [Handheld Halting](https://adventofcode.com/2020/day/8) | :trophy: :trophy: | [day_08.ex](/lib/2020/day_08.ex) | [day_08_test.exs](/test/2020/day_08_test.exs) |
-| 9 | [Encoding Error](https://adventofcode.com/2020/day/9) | :trophy: :trophy: | [day_09.ex](/lib/2020/day_09.ex) | [day_09_test.exs](/test/2020/day_09_test.exs) |
-| 10 | [Adapter Array](https://adventofcode.com/2020/day/10) | :trophy: :trophy: | [day_10.ex](/lib/2020/day_10.ex) | [day_10_test.exs](/test/2020/day_10_test.exs) |
-| 11 | [Seating System](https://adventofcode.com/2020/day/11) | :trophy: :trophy: | [day_11.ex](/lib/2020/day_11.ex) | [day_11_test.exs](/test/2020/day_11_test.exs) |
-| 12 | [Rain Risk](https://adventofcode.com/2020/day/12) | :trophy: :trophy: | [day_12.ex](/lib/2020/day_12.ex) | [day_12_test.exs](/test/2020/day_12_test.exs) |
-| 13 | [Shuttle Search](https://adventofcode.com/2020/day/13) | :trophy: :trophy: | [day_13.ex](/lib/2020/day_13.ex) | [day_13_test.exs](/test/2020/day_13_test.exs) |
-| 14 | [Docking Data](https://adventofcode.com/2020/day/14) | :trophy: :trophy: | [day_14.ex](/lib/2020/day_14.ex) | [day_14_test.exs](/test/2020/day_14_test.exs) |
-| 15 | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | :trophy: :trophy: | [day_15.ex](/lib/2020/day_15.ex) | [day_15_test.exs](/test/2020/day_15_test.exs) |
-| 16 | [Ticket Translation](https://adventofcode.com/2020/day/16) | :trophy: | [day_16.ex](/lib/2020/day_16.ex) | [day_16_test.exs](/test/2020/day_16_test.exs) |
-| 18 | [Operation Order](https://adventofcode.com/2020/day/18) | :trophy: :trophy: | [day_18.ex](/lib/2020/day_18.ex) | [day_18_test.exs](/test/2020/day_18_test.exs) |
-| 19 | [Monster Messages](https://adventofcode.com/2020/day/19) | :trophy: :trophy: | [day_19.ex](/lib/2020/day_19.ex) | [day_19_test.exs](/test/2020/day_19_test.exs) |
-| 20 | [Jurassic Jigsaw](https://adventofcode.com/2020/day/20) | :trophy: | [day_20.ex](/lib/2020/day_20.ex) | [day_20_test.exs](/test/2020/day_20_test.exs) |
-| 21 | [Allergen Assessment](https://adventofcode.com/2020/day/21) | :trophy: :trophy: | [day_21.ex](/lib/2020/day_21.ex) | [day_21_test.exs](/test/2020/day_21_test.exs) |
-| 22 | [Crab Combat](https://adventofcode.com/2020/day/22) | :trophy: :trophy: | [day_22.ex](/lib/2020/day_22.ex) | [day_22_test.exs](/test/2020/day_22_test.exs) |
-| 23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :trophy: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |
-| 24 | [Lobby Layout](https://adventofcode.com/2020/day/24) | :trophy: | [day_24.ex](/lib/2020/day_24.ex) | [day_24_test.exs](/test/2020/day_24_test.exs) |
-| 25 | [Combo Breaker](https://adventofcode.com/2020/day/25) | :trophy: :trophy: | [day_25.ex](/lib/2020/day_25.ex) | [day_25_test.exs](/test/2020/day_25_test.exs) |
+| 1 | [Report Repair](https://adventofcode.com/2020/day/1) | :1st_place_medal: | [day_01.ex](/lib/2020/day_01.ex) | [day_01_test.exs](/test/2020/day_01_test.exs) |
+| 2 | [Password Philosophy](https://adventofcode.com/2020/day/2) | :1st_place_medal: | [day_02.ex](/lib/2020/day_02.ex) | [day_02_test.exs](/test/2020/day_02_test.exs) |
+| 3 | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) | :1st_place_medal: | [day_03.ex](/lib/2020/day_03.ex) | [day_03_test.exs](/test/2020/day_03_test.exs) |
+| 4 | [Passport Processing](https://adventofcode.com/2020/day/4) | :1st_place_medal: | [day_04.ex](/lib/2020/day_04.ex) | [day_04_test.exs](/test/2020/day_04_test.exs) |
+| 5 | [Binary Boarding](https://adventofcode.com/2020/day/5) | :1st_place_medal: | [day_05.ex](/lib/2020/day_05.ex) | [day_05_test.exs](/test/2020/day_05_test.exs) |
+| 6 | [Custom Customs](https://adventofcode.com/2020/day/6) | :1st_place_medal: | [day_06.ex](/lib/2020/day_06.ex) | [day_06_test.exs](/test/2020/day_06_test.exs) |
+| 7 | [Handy Haversacks](https://adventofcode.com/2020/day/7) | :1st_place_medal: | [day_07.ex](/lib/2020/day_07.ex) | [day_07_test.exs](/test/2020/day_07_test.exs) |
+| 8 | [Handheld Halting](https://adventofcode.com/2020/day/8) | :1st_place_medal: | [day_08.ex](/lib/2020/day_08.ex) | [day_08_test.exs](/test/2020/day_08_test.exs) |
+| 9 | [Encoding Error](https://adventofcode.com/2020/day/9) | :1st_place_medal: | [day_09.ex](/lib/2020/day_09.ex) | [day_09_test.exs](/test/2020/day_09_test.exs) |
+| 10 | [Adapter Array](https://adventofcode.com/2020/day/10) | :1st_place_medal: | [day_10.ex](/lib/2020/day_10.ex) | [day_10_test.exs](/test/2020/day_10_test.exs) |
+| 11 | [Seating System](https://adventofcode.com/2020/day/11) | :1st_place_medal: | [day_11.ex](/lib/2020/day_11.ex) | [day_11_test.exs](/test/2020/day_11_test.exs) |
+| 12 | [Rain Risk](https://adventofcode.com/2020/day/12) | :1st_place_medal: | [day_12.ex](/lib/2020/day_12.ex) | [day_12_test.exs](/test/2020/day_12_test.exs) |
+| 13 | [Shuttle Search](https://adventofcode.com/2020/day/13) | :1st_place_medal: | [day_13.ex](/lib/2020/day_13.ex) | [day_13_test.exs](/test/2020/day_13_test.exs) |
+| 14 | [Docking Data](https://adventofcode.com/2020/day/14) | :1st_place_medal: | [day_14.ex](/lib/2020/day_14.ex) | [day_14_test.exs](/test/2020/day_14_test.exs) |
+| 15 | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | :1st_place_medal: | [day_15.ex](/lib/2020/day_15.ex) | [day_15_test.exs](/test/2020/day_15_test.exs) |
+| 16 | [Ticket Translation](https://adventofcode.com/2020/day/16) | :2nd_place_medal: | [day_16.ex](/lib/2020/day_16.ex) | [day_16_test.exs](/test/2020/day_16_test.exs) |
+| 18 | [Operation Order](https://adventofcode.com/2020/day/18) | :1st_place_medal: | [day_18.ex](/lib/2020/day_18.ex) | [day_18_test.exs](/test/2020/day_18_test.exs) |
+| 19 | [Monster Messages](https://adventofcode.com/2020/day/19) | :1st_place_medal: | [day_19.ex](/lib/2020/day_19.ex) | [day_19_test.exs](/test/2020/day_19_test.exs) |
+| 20 | [Jurassic Jigsaw](https://adventofcode.com/2020/day/20) | :2nd_place_medal: | [day_20.ex](/lib/2020/day_20.ex) | [day_20_test.exs](/test/2020/day_20_test.exs) |
+| 21 | [Allergen Assessment](https://adventofcode.com/2020/day/21) | :1st_place_medal: | [day_21.ex](/lib/2020/day_21.ex) | [day_21_test.exs](/test/2020/day_21_test.exs) |
+| 22 | [Crab Combat](https://adventofcode.com/2020/day/22) | :1st_place_medal: | [day_22.ex](/lib/2020/day_22.ex) | [day_22_test.exs](/test/2020/day_22_test.exs) |
+| 23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :2nd_place_medal: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |
+| 24 | [Lobby Layout](https://adventofcode.com/2020/day/24) | :2nd_place_medal: | [day_24.ex](/lib/2020/day_24.ex) | [day_24_test.exs](/test/2020/day_24_test.exs) |
+| 25 | [Combo Breaker](https://adventofcode.com/2020/day/25) | :1st_place_medal: | [day_25.ex](/lib/2020/day_25.ex) | [day_25_test.exs](/test/2020/day_25_test.exs) |
 
