@@ -8,7 +8,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
     header = "| Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |"
     content =
-      for i <- 1..25 do
+      for i <- 0..25 do
         generate_stat_row(metadata, i)
       end
 
@@ -16,6 +16,17 @@ defmodule AdventOfCode.Helpers.Summarizer do
     #{header}
     |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
     #{content}
+    """
+  end
+
+  def generate_stat_row(metadata, 0) do
+    stars =
+      for year <- @year_range do
+        metadata[year].completed
+      end
+      |> Enum.join(" | ")
+    """
+    | :star2: | #{stars} |
     """
   end
 

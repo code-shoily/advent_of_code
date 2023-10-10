@@ -14,8 +14,10 @@ run `mix test` to ensure all solutions are working okay. To run test for a parti
 run `mix gen_stats` to update the relevant `README.md` so that the latest stats are always displayed.
 
 ## :star2: 247/400
+
 | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| :star2: | 48 | 22 | 34 | 15 | 15 | 44 | 24 | 45 |
 | 1 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 2 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 3 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
