@@ -41,7 +41,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
     #{trophy}
 
     #{table_header}
-    | :---: | :------: | ---: | :---: |
+    | :---: | :------: | ---: | :---: | :---: |
     #{table_content}
     """
   end
