@@ -40,8 +40,8 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
     #{trophy}
 
-    #{table_header}
-    | :---: | :------: | ---: | :---: |
+    #{table_header}\n
+    | :---: | :------: | ---: | :---: |\n
     #{table_content |> Enum.join("\n")}
     """
   end

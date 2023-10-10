@@ -8,7 +8,9 @@
 ## :trophy: 48/50
 
 | Day | Problem Page | Status | Solution Page | Test Page |
+
 | :---: | :------: | ---: | :---: |
+
 | 1 | [Not Quite Lisp](https://adventofcode.com/2015/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2015/day_01.ex)] | [day_01_test.exs](/test/2015/day_01_test.exs) |"
 
 | 2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2015/day_02.ex)] | [day_02_test.exs](/test/2015/day_02_test.exs) |"
