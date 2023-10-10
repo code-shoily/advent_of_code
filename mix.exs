@@ -7,6 +7,7 @@ defmodule AdventOfCode.MixProject do
       version: "0.20.0",
       elixir: "~> 1.15.0",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -27,6 +28,12 @@ defmodule AdventOfCode.MixProject do
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
       {:aja, "~> 0.6.1"}
+    ]
+  end
+
+  defp aliases do
+    [
+      update_stats: ["gen_stats", "gen_readme"]
     ]
   end
 end
