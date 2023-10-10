@@ -36,7 +36,9 @@ defmodule Mix.Tasks.GenReadme do
       """
 
     File.write!("README.md", content)
+
+    Mix.shell().info("README.md successfully updated.")
   rescue
-    _ -> IO.puts(@usage)
+    _ -> Mix.shell().error(@usage)
   end
 end

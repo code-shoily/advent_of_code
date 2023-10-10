@@ -25,9 +25,9 @@ defmodule Mix.Tasks.GenStats do
 
       File.write!("lib/#{year}/README.md", readme_content)
 
-      IO.puts("#{year}/README.md successfully updated!")
+      Mix.shell().info("#{year}/README.md successfully updated!")
     end
   rescue
-    _ -> IO.puts(@usage)
+    _ -> Mix.shell().error(@usage)
   end
 end
