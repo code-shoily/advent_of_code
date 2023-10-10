@@ -17,7 +17,7 @@ run `mix gen_stats` to update the relevant `README.md` so that the latest stats 
 
 | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| :star2: | 48 | 22 | 34 | 15 | 15 | 44 | 24 | 45/50 |
+| :star2: | 48/50 | 22/50 | 34/50 | 15/50 | 15/50 | 44/50 | 24/50 | 45/50 |
 | 1 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 2 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 3 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |

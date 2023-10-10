@@ -26,11 +26,11 @@ defmodule AdventOfCode.Helpers.Summarizer do
   def generate_stat_row(metadata, 0) do
     stars =
       for year <- @year_range do
-        metadata[year].completed
+        "#{metadata[year].completed}/50"
       end
       |> Enum.join(" | ")
     """
-    | :star2: | #{stars}/50 |
+    | :star2: | #{stars} |
     """
   end
 
