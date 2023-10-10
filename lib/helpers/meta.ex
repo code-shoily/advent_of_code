@@ -9,7 +9,7 @@ defmodule AdventOfCode.Helpers.Meta do
         get_info_for_day(year, day)
       end
       |> Enum.reject(&is_nil/1)
-      |> then(fn data -> as_map && Map.new(data) || data end)
+      |> then(fn data -> (as_map && Map.new(data)) || data end)
 
     stars_completed =
       daywise_summary

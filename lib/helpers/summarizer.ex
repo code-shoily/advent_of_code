@@ -5,10 +5,15 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   def summarize() do
     metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})
-    total_stars = metadata |> Enum.map(fn {_, %{completed: completed}} -> completed end) |> Enum.sum()
 
-    header = "| Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |"
+    total_stars =
+      metadata |> Enum.map(fn {_, %{completed: completed}} -> completed end) |> Enum.sum()
+
+    header =
+      "| Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) |"
+
     trophy = "## :trophy: #{total_stars}/400"
+
     content =
       for i <- 0..25 do
         generate_stat_row(metadata, i)
@@ -26,9 +31,10 @@ defmodule AdventOfCode.Helpers.Summarizer do
   def generate_stat_row(metadata, 0) do
     stars =
       for year <- @year_range do
-        "#{metadata[year].completed}/50"
+        metadata[year].completed
       end
       |> Enum.join(" | ")
+
     """
     | :star2: | #{stars} |
     """
