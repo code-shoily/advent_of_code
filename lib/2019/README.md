@@ -4,15 +4,17 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | 2019 | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022)
 
-## :trophy: 8/25
 
-| Day | Problem Page | Difficulty | Solution Page |
-| :---: | :------: | ---: | :---: |
-| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :star2: | [day_01.ex](/lib/2019/day_01.ex) |
-| 2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :star2: | [day_02.ex](/lib/2019/day_02.ex) |
-| 3 | [Crossed Wires](https://adventofcode.com/2019/day/3)  | :star2: | [day_03.ex](/lib/2019/day_03.ex) |
-| 4 | [Secure Container](https://adventofcode.com/2019/day/4)  | :star2: | [day_04.ex](/lib/2019/day_04.ex) |
-| 5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)  | :star2: | [day_05.ex](/lib/2019/day_05.ex) |
-| 6 | [Universal Orbit Map](https://adventofcode.com/2019/day/6)  | :star2: :star2: :star2: | [day_06.ex](/lib/2019/day_06.ex) |
-| 8 | [Space Image Format](https://adventofcode.com/2019/day/8)  | :hourglass: | [day_08.ex](/lib/2019/day_08.ex) |
-| 10 | [Monitoring Station](https://adventofcode.com/2019/day/10)  | :star2: | [day_12.ex](/lib/2019/day_10.ex) |
+## :trophy: 15/50
+
+| Day | Problem Page | Status | Solution Page | Test Page |
+| :---: | :------: | ---: | :---: | :---: |
+| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2019/day_01.ex) | [day_01_test.exs](/test/2019/day_01_test.exs) |
+| 2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2019/day_02.ex) | [day_02_test.exs](/test/2019/day_02_test.exs) |
+| 3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :trophy: :trophy: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) |
+| 4 | [Secure Container](https://adventofcode.com/2019/day/4) | :trophy: :trophy: | [day_04.ex](/lib/2019/day_04.ex) | [day_04_test.exs](/test/2019/day_04_test.exs) |
+| 5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5) | :trophy: | [day_05.ex](/lib/2019/day_05.ex) | [day_05_test.exs](/test/2019/day_05_test.exs) |
+| 6 | [Universal Orbit Map](https://adventofcode.com/2019/day/6) | :trophy: :trophy: | [day_06.ex](/lib/2019/day_06.ex) | [day_06_test.exs](/test/2019/day_06_test.exs) |
+| 8 | [Space Image Format](https://adventofcode.com/2019/day/8) | :trophy: :trophy: | [day_08.ex](/lib/2019/day_08.ex) | [day_08_test.exs](/test/2019/day_08_test.exs) |
+| 10 | [Monitoring Station](https://adventofcode.com/2019/day/10) | :trophy: :trophy: | [day_10.ex](/lib/2019/day_10.ex) | [day_10_test.exs](/test/2019/day_10_test.exs) |
+
