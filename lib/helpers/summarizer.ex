@@ -24,7 +24,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   def yearwise_readme(year) do
     heading = build_heading(year)
-    table_header = "| Day | Problem Page | Status | Solution Page | Test Page |"
+    table_header = "| Day | Problem Page | Status | Solution Page | Test Page |\n| :---: | :------: | ---: | :---: |"
     info = Meta.get_info(year)
     trophy = "## :trophy: #{info.completed}/50"
 
