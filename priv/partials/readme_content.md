@@ -11,3 +11,5 @@ To solve the problem for a particular year/day, type in `mix solve --year <year>
 run `mix test` to ensure all solutions are working okay. To run test for a particular year and day, type `mix test --only y<last-two-digits-of-year><zero-padded-day>`. For example: `mix test --only y1501` tests for `2015` as year and `1` as day.
 
 run `mix gen_stats` to update the relevant `README.md` so that the latest stats are always displayed.
+
+run `mix gen_readme` to update the main `README.md` to reflect all the stars.
