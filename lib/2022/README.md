@@ -4,30 +4,32 @@
 
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | 2022
 
-## :trophy: 22.5/25
 
-| Day | Problem Page | Difficulty | Solution Page |
-| :---: | :------: | ---: | :---: |
-| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :star2: | [day_01.ex](/lib/2022/day_01.ex) |
-| 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :star2: | [day_02.ex](/lib/2022/day_02.ex) |
-| 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :star2: | [day_03.ex](/lib/2022/day_03.ex) |
-| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :star2: | [day_04.ex](/lib/2022/day_04.ex) |
-| 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :star2: | [day_05.ex](/lib/2022/day_05.ex) |
-| 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [day_06.ex](/lib/2022/day_06.ex) |
-| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [day_07.ex](/lib/2022/day_07.ex) |
-| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :star2: | [day_08.ex](/lib/2022/day_08.ex), [day_22_8.erl](/src/2022/day_22_8.erl)|
-| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :star2: | [day_09.ex](/lib/2022/day_09.ex), [day_22_9.erl](/src/2022/day_22_9.erl) |
-| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :star2: | [day_10.ex](/lib/2022/day_10.ex), [day_22_10.erl](/src/2022/day_22_10.erl) |
-| 11 | [Rope Bridge](https://adventofcode.com/2022/day/11) | :star2: | [day_11.ex](/lib/2022/day_11.ex), [day_22_11.erl](/src/2022/day_22_9.erl) |
-| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :star2: | [day_12.ex](/lib/2022/day_12.ex), [day_12.livemd](/priv/livebooks/2022/day_12.livemd) |
-| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :star2: | [day_13.ex](/lib/2022/day_13.ex), [day_13.livemd](/priv/livebooks/2022/day_13.livemd) |
-| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :star2: | [day_14.ex](/lib/2022/day_14.ex), [day_14.livemd](/priv/livebooks/2022/day_14.livemd) |
-| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :star2: | [day_15.ex](/lib/2022/day_15.ex), [day_22_15.erl](/src/2022/day_22_15.erl) |
-| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :star2: | [day_18.ex](/lib/2022/day_18.ex), [day_22_18.erl](/src/2022/day_22_18.erl) |
-| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :star2: | [day_19.ex](/lib/2022/day_19.ex), [day_22_19.erl](/src/2022/day_22_19.erl) |
-| 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :star2: :star2: :hourglass: | [day_20.ex](/lib/2022/day_20.ex) |
-| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :star2: | [day_21.ex](/lib/2022/day_21.ex) |
-| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :star2: :star2: :star2: :ice_cube: | [day_22.ex](/lib/2022/day_22.ex) |
-| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :star2: | [day_23.ex](/lib/2022/day_23.ex), [day_22_23.erl](/src/2022/day_22_23.erl) |
-| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :star2: | [day_24.ex](/lib/2022/day_24.ex), [day_22_24.erl](/src/2022/day_22_24.erl) |
-| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :star2: | [day_25.ex](/lib/2022/day_25.ex) |
+## :trophy: 45/50
+
+| Day | Problem Page | Status | Solution Page | Test Page |
+| :---: | :------: | ---: | :---: | :---: |
+| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2022/day_01.ex) | [day_01_test.exs](/test/2022/day_01_test.exs) |
+| 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2022/day_02.ex) | [day_02_test.exs](/test/2022/day_02_test.exs) |
+| 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :trophy: :trophy: | [day_03.ex](/lib/2022/day_03.ex) | [day_03_test.exs](/test/2022/day_03_test.exs) |
+| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :trophy: :trophy: | [day_04.ex](/lib/2022/day_04.ex) | [day_04_test.exs](/test/2022/day_04_test.exs) |
+| 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :trophy: :trophy: | [day_05.ex](/lib/2022/day_05.ex) | [day_05_test.exs](/test/2022/day_05_test.exs) |
+| 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :trophy: :trophy: | [day_06.ex](/lib/2022/day_06.ex) | [day_06_test.exs](/test/2022/day_06_test.exs) |
+| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :trophy: :trophy: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) |
+| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :trophy: :trophy: | [day_08.ex](/lib/2022/day_08.ex) | [day_08_test.exs](/test/2022/day_08_test.exs) |
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :trophy: :trophy: | [day_09.ex](/lib/2022/day_09.ex) | [day_09_test.exs](/test/2022/day_09_test.exs) |
+| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :trophy: :trophy: | [day_10.ex](/lib/2022/day_10.ex) | [day_10_test.exs](/test/2022/day_10_test.exs) |
+| 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | :trophy: :trophy: | [day_11.ex](/lib/2022/day_11.ex) | [day_11_test.exs](/test/2022/day_11_test.exs) |
+| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :trophy: :trophy: | [day_12.ex](/lib/2022/day_12.ex) | [day_12_test.exs](/test/2022/day_12_test.exs) |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :trophy: :trophy: | [day_13.ex](/lib/2022/day_13.ex) | [day_13_test.exs](/test/2022/day_13_test.exs) |
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :trophy: :trophy: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) |
+| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :trophy: :trophy: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) |
+| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :trophy: :trophy: | [day_18.ex](/lib/2022/day_18.ex) | [day_18_test.exs](/test/2022/day_18_test.exs) |
+| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :trophy: :trophy: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) |
+| 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :trophy: :trophy: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) |
+| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :trophy: :trophy: | [day_21.ex](/lib/2022/day_21.ex) | [day_21_test.exs](/test/2022/day_21_test.exs) |
+| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :trophy: | [day_22.ex](/lib/2022/day_22.ex) | [day_22_test.exs](/test/2022/day_22_test.exs) |
+| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :trophy: :trophy: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) |
+| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :trophy: :trophy: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) |
+| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :trophy: :trophy: | [day_25.ex](/lib/2022/day_25.ex) | [day_25_test.exs](/test/2022/day_25_test.exs) |
+
