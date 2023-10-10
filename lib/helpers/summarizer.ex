@@ -31,7 +31,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
     table_content =
       for {day, line} <- info.summary do
         """
-        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{linkify(line.solution)}] | #{linkify(line.test)} |"
+        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{linkify(line.solution)} | #{linkify(line.test)} |
         """
       end
 
