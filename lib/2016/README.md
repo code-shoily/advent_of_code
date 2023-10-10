@@ -10,15 +10,15 @@
 
 | Day | Problem Page | Status | Solution Page | Test Page |
 | :---: | :------: | ---: | :---: | :---: |
-| 1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) |
-| 2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2016/day_02.ex) | [day_02_test.exs](/test/2016/day_02_test.exs) |
-| 3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :trophy: :trophy: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) |
-| 4 | [Security Through Obscurity](https://adventofcode.com/2016/day/4) | :trophy: :trophy: | [day_04.ex](/lib/2016/day_04.ex) | [day_04_test.exs](/test/2016/day_04_test.exs) |
-| 5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | :trophy: :trophy: | [day_05.ex](/lib/2016/day_05.ex) | [day_05_test.exs](/test/2016/day_05_test.exs) |
-| 6 | [Signals and Noise](https://adventofcode.com/2016/day/6) | :trophy: :trophy: | [day_06.ex](/lib/2016/day_06.ex) | [day_06_test.exs](/test/2016/day_06_test.exs) |
-| 7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7) | :trophy: :trophy: | [day_07.ex](/lib/2016/day_07.ex) | [day_07_test.exs](/test/2016/day_07_test.exs) |
-| 8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | :trophy: :trophy: | [day_08.ex](/lib/2016/day_08.ex) | [day_08_test.exs](/test/2016/day_08_test.exs) |
-| 9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9) | :trophy: :trophy: | [day_09.ex](/lib/2016/day_09.ex) | [day_09_test.exs](/test/2016/day_09_test.exs) |
-| 10 | [Balance Bots](https://adventofcode.com/2016/day/10) | :trophy: :trophy: | [day_10.ex](/lib/2016/day_10.ex) | [day_10_test.exs](/test/2016/day_10_test.exs) |
-| 12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12) | :trophy: :trophy: | [day_12.ex](/lib/2016/day_12.ex) | [day_12_test.exs](/test/2016/day_12_test.exs) |
+| 1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :1st_place_medal: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) |
+| 2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | :1st_place_medal: | [day_02.ex](/lib/2016/day_02.ex) | [day_02_test.exs](/test/2016/day_02_test.exs) |
+| 3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :1st_place_medal: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) |
+| 4 | [Security Through Obscurity](https://adventofcode.com/2016/day/4) | :1st_place_medal: | [day_04.ex](/lib/2016/day_04.ex) | [day_04_test.exs](/test/2016/day_04_test.exs) |
+| 5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | :1st_place_medal: | [day_05.ex](/lib/2016/day_05.ex) | [day_05_test.exs](/test/2016/day_05_test.exs) |
+| 6 | [Signals and Noise](https://adventofcode.com/2016/day/6) | :1st_place_medal: | [day_06.ex](/lib/2016/day_06.ex) | [day_06_test.exs](/test/2016/day_06_test.exs) |
+| 7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7) | :1st_place_medal: | [day_07.ex](/lib/2016/day_07.ex) | [day_07_test.exs](/test/2016/day_07_test.exs) |
+| 8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | :1st_place_medal: | [day_08.ex](/lib/2016/day_08.ex) | [day_08_test.exs](/test/2016/day_08_test.exs) |
+| 9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9) | :1st_place_medal: | [day_09.ex](/lib/2016/day_09.ex) | [day_09_test.exs](/test/2016/day_09_test.exs) |
+| 10 | [Balance Bots](https://adventofcode.com/2016/day/10) | :1st_place_medal: | [day_10.ex](/lib/2016/day_10.ex) | [day_10_test.exs](/test/2016/day_10_test.exs) |
+| 12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12) | :1st_place_medal: | [day_12.ex](/lib/2016/day_12.ex) | [day_12_test.exs](/test/2016/day_12_test.exs) |
 

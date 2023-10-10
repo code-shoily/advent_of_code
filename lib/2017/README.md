@@ -10,23 +10,23 @@
 
 | Day | Problem Page | Status | Solution Page | Test Page |
 | :---: | :------: | ---: | :---: | :---: |
-| 1 | [Inverse Captcha](https://adventofcode.com/2017/day/1) | :trophy: :trophy: | [day_01.ex](/lib/2017/day_01.ex) | [day_01_test.exs](/test/2017/day_01_test.exs) |
-| 2 | [Corruption Checksum](https://adventofcode.com/2017/day/2) | :trophy: :trophy: | [day_02.ex](/lib/2017/day_02.ex) | [day_02_test.exs](/test/2017/day_02_test.exs) |
-| 3 | [Spiral Memory](https://adventofcode.com/2017/day/3) | :trophy: :trophy: | [day_03.ex](/lib/2017/day_03.ex) | [day_03_test.exs](/test/2017/day_03_test.exs) |
-| 4 | [High-Entropy Passphrases](https://adventofcode.com/2017/day/4) | :trophy: :trophy: | [day_04.ex](/lib/2017/day_04.ex) | [day_04_test.exs](/test/2017/day_04_test.exs) |
-| 5 | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) | :trophy: :trophy: | [day_05.ex](/lib/2017/day_05.ex) | [day_05_test.exs](/test/2017/day_05_test.exs) |
-| 6 | [Memory Reallocation](https://adventofcode.com/2017/day/6) | :trophy: :trophy: | [day_06.ex](/lib/2017/day_06.ex) | [day_06_test.exs](/test/2017/day_06_test.exs) |
-| 7 | [Recursive Circus](https://adventofcode.com/2017/day/7) | :trophy: | [day_07.ex](/lib/2017/day_07.ex) | [day_07_test.exs](/test/2017/day_07_test.exs) |
-| 8 | [I Heard You Like Registers](https://adventofcode.com/2017/day/8) | :trophy: :trophy: | [day_08.ex](/lib/2017/day_08.ex) | [day_08_test.exs](/test/2017/day_08_test.exs) |
-| 9 | [Stream Processing](https://adventofcode.com/2017/day/9) | :trophy: :trophy: | [day_09.ex](/lib/2017/day_09.ex) | [day_09_test.exs](/test/2017/day_09_test.exs) |
-| 10 | [Knot Hash](https://adventofcode.com/2017/day/10) | :trophy: :trophy: | [day_10.ex](/lib/2017/day_10.ex) | [day_10_test.exs](/test/2017/day_10_test.exs) |
-| 11 | [Hex Ed](https://adventofcode.com/2017/day/11) | :trophy: :trophy: | [day_11.ex](/lib/2017/day_11.ex) | [day_11_test.exs](/test/2017/day_11_test.exs) |
-| 12 | [Digital Plumber](https://adventofcode.com/2017/day/12) | :trophy: :trophy: | [day_12.ex](/lib/2017/day_12.ex) | [day_12_test.exs](/test/2017/day_12_test.exs) |
-| 13 | [Packet Scanners](https://adventofcode.com/2017/day/13) | :trophy: :trophy: | [day_13.ex](/lib/2017/day_13.ex) | [day_13_test.exs](/test/2017/day_13_test.exs) |
-| 14 | [Disk Defragmentation](https://adventofcode.com/2017/day/14) | :trophy: | [day_14.ex](/lib/2017/day_14.ex) | [day_14_test.exs](/test/2017/day_14_test.exs) |
-| 15 | [Dueling Generators](https://adventofcode.com/2017/day/15) | :trophy: :trophy: | [day_15.ex](/lib/2017/day_15.ex) | [day_15_test.exs](/test/2017/day_15_test.exs) |
-| 16 | [Permutation Promenade](https://adventofcode.com/2017/day/16) | :trophy: :trophy: | [day_16.ex](/lib/2017/day_16.ex) | [day_16_test.exs](/test/2017/day_16_test.exs) |
-| 17 | [Spinlock](https://adventofcode.com/2017/day/17) | :trophy: :trophy: | [day_17.ex](/lib/2017/day_17.ex) | [day_17_test.exs](/test/2017/day_17_test.exs) |
-| 18 | [Duet](https://adventofcode.com/2017/day/18) | :trophy: | [day_18.ex](/lib/2017/day_18.ex) | [day_18_test.exs](/test/2017/day_18_test.exs) |
-| 23 | [Coprocessor Conflagration](https://adventofcode.com/2017/day/23) | :trophy: | [day_23.ex](/lib/2017/day_23.ex) | [day_23_test.exs](/test/2017/day_23_test.exs) |
+| 1 | [Inverse Captcha](https://adventofcode.com/2017/day/1) | :1st_place_medal: | [day_01.ex](/lib/2017/day_01.ex) | [day_01_test.exs](/test/2017/day_01_test.exs) |
+| 2 | [Corruption Checksum](https://adventofcode.com/2017/day/2) | :1st_place_medal: | [day_02.ex](/lib/2017/day_02.ex) | [day_02_test.exs](/test/2017/day_02_test.exs) |
+| 3 | [Spiral Memory](https://adventofcode.com/2017/day/3) | :1st_place_medal: | [day_03.ex](/lib/2017/day_03.ex) | [day_03_test.exs](/test/2017/day_03_test.exs) |
+| 4 | [High-Entropy Passphrases](https://adventofcode.com/2017/day/4) | :1st_place_medal: | [day_04.ex](/lib/2017/day_04.ex) | [day_04_test.exs](/test/2017/day_04_test.exs) |
+| 5 | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) | :1st_place_medal: | [day_05.ex](/lib/2017/day_05.ex) | [day_05_test.exs](/test/2017/day_05_test.exs) |
+| 6 | [Memory Reallocation](https://adventofcode.com/2017/day/6) | :1st_place_medal: | [day_06.ex](/lib/2017/day_06.ex) | [day_06_test.exs](/test/2017/day_06_test.exs) |
+| 7 | [Recursive Circus](https://adventofcode.com/2017/day/7) | :2nd_place_medal: | [day_07.ex](/lib/2017/day_07.ex) | [day_07_test.exs](/test/2017/day_07_test.exs) |
+| 8 | [I Heard You Like Registers](https://adventofcode.com/2017/day/8) | :1st_place_medal: | [day_08.ex](/lib/2017/day_08.ex) | [day_08_test.exs](/test/2017/day_08_test.exs) |
+| 9 | [Stream Processing](https://adventofcode.com/2017/day/9) | :1st_place_medal: | [day_09.ex](/lib/2017/day_09.ex) | [day_09_test.exs](/test/2017/day_09_test.exs) |
+| 10 | [Knot Hash](https://adventofcode.com/2017/day/10) | :1st_place_medal: | [day_10.ex](/lib/2017/day_10.ex) | [day_10_test.exs](/test/2017/day_10_test.exs) |
+| 11 | [Hex Ed](https://adventofcode.com/2017/day/11) | :1st_place_medal: | [day_11.ex](/lib/2017/day_11.ex) | [day_11_test.exs](/test/2017/day_11_test.exs) |
+| 12 | [Digital Plumber](https://adventofcode.com/2017/day/12) | :1st_place_medal: | [day_12.ex](/lib/2017/day_12.ex) | [day_12_test.exs](/test/2017/day_12_test.exs) |
+| 13 | [Packet Scanners](https://adventofcode.com/2017/day/13) | :1st_place_medal: | [day_13.ex](/lib/2017/day_13.ex) | [day_13_test.exs](/test/2017/day_13_test.exs) |
+| 14 | [Disk Defragmentation](https://adventofcode.com/2017/day/14) | :2nd_place_medal: | [day_14.ex](/lib/2017/day_14.ex) | [day_14_test.exs](/test/2017/day_14_test.exs) |
+| 15 | [Dueling Generators](https://adventofcode.com/2017/day/15) | :1st_place_medal: | [day_15.ex](/lib/2017/day_15.ex) | [day_15_test.exs](/test/2017/day_15_test.exs) |
+| 16 | [Permutation Promenade](https://adventofcode.com/2017/day/16) | :1st_place_medal: | [day_16.ex](/lib/2017/day_16.ex) | [day_16_test.exs](/test/2017/day_16_test.exs) |
+| 17 | [Spinlock](https://adventofcode.com/2017/day/17) | :1st_place_medal: | [day_17.ex](/lib/2017/day_17.ex) | [day_17_test.exs](/test/2017/day_17_test.exs) |
+| 18 | [Duet](https://adventofcode.com/2017/day/18) | :2nd_place_medal: | [day_18.ex](/lib/2017/day_18.ex) | [day_18_test.exs](/test/2017/day_18_test.exs) |
+| 23 | [Coprocessor Conflagration](https://adventofcode.com/2017/day/23) | :2nd_place_medal: | [day_23.ex](/lib/2017/day_23.ex) | [day_23_test.exs](/test/2017/day_23_test.exs) |
 
