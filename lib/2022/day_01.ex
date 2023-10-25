@@ -18,11 +18,17 @@ defmodule AdventOfCode.Y2022.Day01 do
 
   def parse(data) do
     data
-    |> Transformers.lines(true)
-    |> Enum.reduce({[], 0}, fn
-      "", {calories, total} -> {[total | calories], 0}
-      calorie, {calories, total} -> {calories, total + String.to_integer(calorie)}
+    |> String.split(~r{(\r\n\r\n|\r\r|\n\n)}, trim: true)
+    |> Enum.map(fn calories ->
+      calories
+      |> Transformers.lines()
+      |> Enum.map(&String.to_integer/1)
+      |> Enum.sum()
     end)
-    |> then(fn {calories, last_calorie} -> [last_calorie | calories] end)
+    # |> Enum.reduce({[], 0}, fn
+    #   "", {calories, total} -> {[total | calories], 0}
+    #   calorie, {calories, total} -> {calories, total + String.to_integer(calorie)}
+    # end)
+    # |> then(fn {calories, last_calorie} -> [last_calorie | calories] end)
   end
 end

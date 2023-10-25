@@ -43,7 +43,11 @@ defmodule AdventOfCode.Y2020.Day16 do
 
   def nearby_tickets(input) do
     ~r/.+nearby\stickets:\s(?<tickets>.+)/
-    |> Regex.named_captures(String.replace(input, "\n", " "))
+    |> Regex.named_captures(
+      input
+      |> String.replace("\r", "")
+      |> String.replace("\n", " ")
+    )
     |> Map.get("tickets")
     |> String.replace(" ", ",")
     |> String.split(",")
