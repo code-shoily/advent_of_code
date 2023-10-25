@@ -25,6 +25,7 @@ defmodule AdventOfCode.Y2022.Day01 do
       |> Enum.map(&String.to_integer/1)
       |> Enum.sum()
     end)
+
     # |> Enum.reduce({[], 0}, fn
     #   "", {calories, total} -> {[total | calories], 0}
     #   calorie, {calories, total} -> {calories, total + String.to_integer(calorie)}
