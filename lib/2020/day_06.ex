@@ -16,9 +16,8 @@ defmodule AdventOfCode.Y2020.Day06 do
 
   def parse(input) do
     input
-    |> Transformers.lines(false)
-    |> Enum.chunk_by(&(&1 == ""))
-    |> Enum.reject(&(&1 == [""]))
+    |> String.split(~r{\n\n|\r\r|\r\n\r\n})
+    |> Enum.map(&Transformers.lines/1)
   end
 
   defp answers(group) do

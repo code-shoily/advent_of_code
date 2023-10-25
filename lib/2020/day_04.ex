@@ -14,15 +14,17 @@ defmodule AdventOfCode.Y2020.Day04 do
 
   def parse(data) do
     data
-    |> Transformers.lines()
-    |> Enum.chunk_by(&(&1 == ""))
-    |> Enum.reject(&(&1 == [""]))
-    |> Enum.map(&as_pp/1)
+    |> String.split(~r{\n\n|\r\r|\r\n\r\n})
+    |> Enum.map(fn pp_raw ->
+      pp_raw
+      |> Transformers.lines()
+      |> Enum.map_join(" ", &Function.identity/1)
+      |> as_pp()
+    end)
   end
 
   defp as_pp(fields) do
     fields
-    |> Enum.join(" ")
     |> String.split(" ")
     |> Enum.map(&List.to_tuple(String.split(&1, ":")))
     |> Enum.into(%{})
