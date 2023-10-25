@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day01 do
   --- Day 1: The Tyranny of the Rocket Equation ---
   Problem Link: https://adventofcode.com/2019/day/1
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2019, 1)
 
@@ -29,7 +29,7 @@ defmodule AdventOfCode.Y2019.Day01 do
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(&String.to_integer/1)
   end
 

@@ -5,18 +5,18 @@ defmodule AdventOfCode.Algorithms.ChineseRemainder do
 
   @doc """
   Chinese Remainder Theorem.
-
+  
   ## Example
-
+  
     iex> ChineseRemainder.compute([{11, 10}, {12, 4}, {13, 12}])
     1000
-
+  
     iex> ChineseRemainder.compute([{11, 10}, {22, 4}, {19, 9}])
     nil
-
+  
     iex> ChineseRemainder.compute([{3, 2}, {5, 3}, {7, 2}])
     23
-
+  
   """
   def compute(congruences) do
     {modulii, residues} = Enum.unzip(congruences)

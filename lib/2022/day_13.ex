@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day13 do
   --- Day 13: Distress Signal ---
   Problem Link: https://adventofcode.com/2022/day/13
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2022, 13)
 
@@ -11,9 +11,9 @@ defmodule AdventOfCode.Y2022.Day13 do
 
   def run_1(input) do
     input
-    |> String.split("\n\n")
+    |> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
     |> Enum.map(fn pair ->
-      [a, b] = String.split(pair, "\n")
+      [a, b] = Transformers.lines(pair)
       {Jason.decode!(a), Jason.decode!(b)}
     end)
     |> Enum.with_index(1)
@@ -24,8 +24,8 @@ defmodule AdventOfCode.Y2022.Day13 do
 
   def run_2(input) do
     input
-    |> String.split("\n\n")
-    |> Enum.flat_map(&String.split(&1, "\n"))
+    |> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
+    |> Enum.flat_map(&Transformers.lines(&1))
     |> Enum.map(&Jason.decode!/1)
     |> Kernel.++([[[2]], [[6]]])
     |> Enum.sort_by(&Function.identity/1, &order/2)

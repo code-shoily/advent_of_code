@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Algorithms.DisjointSet do
   @moduledoc """
   Implementation of a discjoint set data structure.
-
+  
   More on this: https://en.wikipedia.org/wiki/Disjoint_sets
   """
   defstruct parents: %{}, ranks: %{}
@@ -15,18 +15,18 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
 
   @doc """
   State of a disjoint set with initialized ranks and parents.
-
+  
   ## Example
-
+  
       iex> DisjointSet.new(0)
       %DisjointSet{}
-
+  
       iex> DisjointSet.new(3)
       %DisjointSet{
         parents: %{0 => 0, 1 => 1, 2 => 2},
         ranks: %{0 => 1, 1 => 1, 2 => 1}
       }
-
+  
   """
   @spec new(non_neg_integer()) :: t()
   def new(0), do: %__MODULE__{}
@@ -41,16 +41,16 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
   @doc """
   Finds the parent of a given node. Returns `:error` if given a node that does
   not exist.
-
+  
   ## Example
-
+  
       iex> set = DisjointSet.new(4)
       iex> Enum.reduce(0..3, true, fn x, acc ->
       ...>   {value, _} = DisjointSet.find(set, x)
       ...>   value == x and acc
       ...> end)
       true
-
+  
       iex> set = %DisjointSet{
       ...>  parents: %{0 => 1, 1 => 2, 2 => 3, 3 => 3, 4 => 1},
       ...>  ranks: %{0 => 1, 1 => 1, 2 => 1, 3 => 1, 4 => 1}
@@ -60,7 +60,7 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       true
       iex> new_set.ranks == set.ranks
       true
-
+  
       iex> set = %DisjointSet{
       ...>  parents: %{0 => 1, 1 => 2, 2 => 3, 3 => 3, 4 => 1},
       ...>  ranks: %{0 => 1, 1 => 1, 2 => 1, 3 => 1, 4 => 1}
@@ -70,10 +70,10 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       %{0 => 3, 1 => 3, 2 => 3, 3 => 3, 4 => 1}
       iex> set.ranks
       %{0 => 1, 1 => 1, 2 => 1, 3 => 1, 4 => 1}
-
+  
     iex> DisjointSet.new(4) |> DisjointSet.find(100)
     :error
-
+  
   """
   @spec find(t(), value()) :: {value(), t()} | :error
   def find(%__MODULE__{parents: parents} = disjoint_set, value) do
@@ -98,9 +98,9 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
 
   @doc """
   Performs a union between two elements and returns the updated set.
-
+  
   ## Example
-
+  
       iex> set = DisjointSet.new(5)
       iex> set =
       ...>   set
@@ -114,10 +114,10 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       }
       iex> DisjointSet.union(set, 3, 1) == set
       true
-
+  
       iex> DisjointSet.new(1) |> DisjointSet.union(100, 200)
       :error
-
+  
   """
   @spec union(t(), value(), value()) :: t() | :error
   def union(disjoint_set, a, b) do

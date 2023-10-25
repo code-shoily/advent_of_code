@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day19 do
   --- Day 19: Monster Messages ---
   Problem Link: https://adventofcode.com/2020/day/19
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2020, 19)
 
@@ -14,7 +14,7 @@ defmodule AdventOfCode.Y2020.Day19 do
   def parse(input, loop?) do
     {rules, messages} =
       input
-      |> String.split("\n\n")
+      |> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
       |> parse_paragraph()
       |> maybe_override(loop?)
 
@@ -33,10 +33,10 @@ defmodule AdventOfCode.Y2020.Day19 do
   @overrides %{"8" => "42 +", "11" => "42 31 | 42 11 31"}
   defp override_8_11({rules, messages}), do: {Map.merge(rules, @overrides), messages}
   defp parse_paragraph([rules, messages]), do: {parse_rules(rules), parse_messages(messages)}
-  defp parse_messages(messages), do: String.split(messages, "\n")
+  defp parse_messages(messages), do: Transformers.lines(messages)
 
   defp parse_rules(rules) do
-    for rule <- String.split(rules, "\n"), into: %{} do
+    for rule <- Transformers.lines(rules), into: %{} do
       [idx, rule] = String.split(String.replace(rule, "\"", ""), ":")
       {idx, String.trim(rule)}
     end

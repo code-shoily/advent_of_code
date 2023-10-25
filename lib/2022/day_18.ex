@@ -7,6 +7,7 @@ defmodule AdventOfCode.Y2022.Day18 do
 
   def input, do: InputReader.read_from_file(2022, 18)
 
+  @spec run(binary()) :: {number(), number()}
   def run(input \\ input()) do
     :day_22_18.solve(input)
   end

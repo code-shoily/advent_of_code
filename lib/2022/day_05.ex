@@ -13,7 +13,7 @@ defmodule AdventOfCode.Y2022.Day05 do
   end
 
   def parse(data \\ input()) do
-    [stacks, moves] = String.split(data, "\n\n")
+    [stacks, moves] = String.split(data, ~r{(\r\n\r\n|\r\r|\n\n)})
     {parse_stacks(stacks), parse_moves(moves)}
   end
 

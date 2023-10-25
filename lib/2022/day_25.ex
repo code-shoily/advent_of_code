@@ -3,14 +3,14 @@ defmodule AdventOfCode.Y2022.Day25 do
   --- Day 25: Full of Hot Air ---
   Problem Link: https://adventofcode.com/2022/day/25
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2022, 25)
 
   def run(input \\ input()) do
     {
       to_snafu(
-        for snafu <- String.split(input, "\n"), reduce: 0 do
+        for snafu <- Transformers.lines(input), reduce: 0 do
           acc -> acc + to_decimal(snafu)
         end
       ),

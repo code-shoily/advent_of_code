@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day04 do
   --- Day 4: Giant Squid ---
   Problem Link: https://adventofcode.com/2021/day/4
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2021, 4)
 
@@ -13,7 +13,7 @@ defmodule AdventOfCode.Y2021.Day04 do
   end
 
   def parse(data) do
-    [order_data | board_data] = String.split(data, "\n\n", trim: true)
+    [order_data | board_data] = String.split(data, ~r{(\r\n\r\n|\r\r|\n\n)}, trim: true)
     {get_orders(order_data), get_boards(board_data)}
   end
 
@@ -22,7 +22,7 @@ defmodule AdventOfCode.Y2021.Day04 do
 
   defp get_board({data, idx}) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.flat_map(fn line ->
       line
       |> String.split(" ", trim: true)

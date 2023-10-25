@@ -12,10 +12,10 @@ defmodule AdventOfCode.Y2020.Day20 do
     {product(corners(input)), {:todo, 2}}
   end
 
-  def parse(input), do: input |> String.split("\n\n") |> Map.new(&parse_tiles/1)
+  def parse(input), do: input |> String.split(~r{(\r\n\r\n|\r\r|\n\n)}) |> Map.new(&parse_tiles/1)
 
   defp parse_tiles(tile) do
-    [id | tiles] = String.split(tile, "\n")
+    [id | tiles] = tile |> Transformers.lines()
     {extract_id(id), edges(Enum.map(tiles, &String.graphemes/1))}
   end
 

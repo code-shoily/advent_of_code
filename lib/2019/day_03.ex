@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day03 do
   --- Day 3: Crossed Wires ---
   Problem Link: https://adventofcode.com/2019/day/3
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   @origin {0, 0}
 
@@ -42,7 +42,7 @@ defmodule AdventOfCode.Y2019.Day03 do
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(fn line ->
       line
       |> String.split(",")

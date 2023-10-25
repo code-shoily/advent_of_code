@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day10 do
   --- Day 10: Monitoring Station ---
   Problem Link: https://adventofcode.com/2019/day/10
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   @asteroid "#"
 
@@ -30,7 +30,7 @@ defmodule AdventOfCode.Y2019.Day10 do
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.with_index()
     |> Enum.flat_map(fn {line, row} ->
       line

@@ -1,9 +1,9 @@
 defmodule Mix.Tasks.GenStats do
   @moduledoc """
   Updates the README.md for all years.
-
+  
   Type `mix gen_stats` to update all `year/README.md`.
-
+  
   For example, `mix gen_stats` will generate `lib/<year>/README.md` of all years.
   """
 

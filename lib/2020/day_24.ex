@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day24 do
   --- Day 24: Lobby Layout ---
   Problem Link: https://adventofcode.com/2020/day/24
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   require Integer
 
@@ -23,7 +23,7 @@ defmodule AdventOfCode.Y2020.Day24 do
 
   @directions ~r/e|w|se|sw|ne|nw/
   def parse(input) do
-    for line <- String.split(input, "\n") do
+    for line <- Transformers.lines(input) do
       @directions
       |> Regex.scan(line, capture: :first)
       |> List.flatten()

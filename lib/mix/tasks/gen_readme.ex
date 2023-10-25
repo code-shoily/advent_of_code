@@ -1,9 +1,9 @@
 defmodule Mix.Tasks.GenReadme do
   @moduledoc """
   Updates the README.md for all years.
-
+  
   Type `mix gen_readme` to update `README.md` with total stars gained for all years.
-
+  
   For example, `mix gen_readme` will generate `README.md`.
   """
 

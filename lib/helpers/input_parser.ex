@@ -8,7 +8,7 @@ defmodule AdventOfCode.Helpers.InputParser do
 
   @doc """
   Parses the input from option parser and returns the year and day.
-
+  
     ## EXAMPLE
       iex> import AdventOfCode.Helpers.InputParser, only: [parse: 1]
       iex> parse(["2019", "2"])

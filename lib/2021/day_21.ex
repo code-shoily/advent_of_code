@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day21 do
   --- Day 21: Dirac Dice ---
   Problem Link: https://adventofcode.com/2021/day/21
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   require Integer
 
@@ -34,7 +34,7 @@ defmodule AdventOfCode.Y2021.Day21 do
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(fn line ->
       line
       |> String.split(":")

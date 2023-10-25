@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day25 do
   --- Day 25: Sea Cucumber ---
   Problem Link: https://adventofcode.com/2021/day/25
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Aja.Vector
 
   def input, do: InputReader.read_from_file(2021, 25)
@@ -11,7 +11,7 @@ defmodule AdventOfCode.Y2021.Day25 do
 
   def parse(data \\ input()) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(&(&1 |> String.graphemes() |> Vector.new()))
     |> then(fn [x | _] = xs -> {Vector.new(xs), {length(xs), Vector.size(x)}} end)
   end

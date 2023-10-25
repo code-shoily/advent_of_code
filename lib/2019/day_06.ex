@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day06 do
   --- Day 6: Universal Orbit Map ---
   Problem Link: https://adventofcode.com/2019/day/6
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2019, 6)
 
@@ -25,7 +25,7 @@ defmodule AdventOfCode.Y2019.Day06 do
   end
 
   def parse(data) do
-    data |> String.split("\n") |> Enum.map(&String.split(&1, ")"))
+    data |> Transformers.lines() |> Enum.map(&String.split(&1, ")"))
   end
 
   defp to_graph(data, graph) do

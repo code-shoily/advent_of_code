@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day06 do
   --- Day 6: Signals and Noise ---
   Problem Link: https://adventofcode.com/2016/day/6
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2016, 6)
 
@@ -16,10 +16,11 @@ defmodule AdventOfCode.Y2016.Day06 do
   def do_run(input, type), do: Enum.map_join(input, &frequency(&1, type))
 
   def parse(input) do
-    len = String.split(input, "\n", trim: true) |> hd() |> String.length()
+    len = input |> Transformers.lines() |> hd() |> String.length()
 
     input
     |> String.replace("\n", "")
+    |> String.replace("\r", "")
     |> String.codepoints()
     |> Enum.with_index()
     |> Enum.map(fn {k, idx} -> {k, rem(idx, len)} end)

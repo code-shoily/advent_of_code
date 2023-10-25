@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day02 do
   --- Day 2: Bathroom Security ---
   Problem Link: https://adventofcode.com/2016/day/2
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2016, 2)
   @initial_position_1 5
@@ -38,7 +38,7 @@ defmodule AdventOfCode.Y2016.Day02 do
 
   defp parse(input) do
     input
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.map(&String.graphemes/1)
   end
 

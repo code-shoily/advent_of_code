@@ -3,6 +3,8 @@ defmodule AdventOfCode.Helpers.Meta do
   Returns the info of the year. This returns the important links and info
   of all the days completed.
   """
+  alias AdventOfCode.Helpers.Transformers
+
   def get_info(year, as_map \\ false) do
     daywise_summary =
       for day <- 1..25 do
@@ -54,7 +56,7 @@ defmodule AdventOfCode.Helpers.Meta do
     |> Code.fetch_docs()
     |> elem(4)
     |> Map.fetch!("en")
-    |> String.split("\n")
+    |> Transformers.lines()
     |> hd()
     |> then(fn padded_title ->
       ~r/--- Day (\d+): (?<name>.+) ---/

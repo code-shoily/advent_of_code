@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day07 do
   --- Day 7: Some Assembly Required ---
   Problem Link: https://adventofcode.com/2015/day/7
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Y2015.Day07.ControlPanel
 
   def input, do: InputReader.read_from_file(2015, 7)
@@ -34,7 +34,7 @@ defmodule AdventOfCode.Y2015.Day07 do
 
   def parse(data \\ input()) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&tokenize/1)
     |> Map.new(fn {instruction, wire} ->
       {wire, %{relation: instruction, providers: get_providers(instruction)}}

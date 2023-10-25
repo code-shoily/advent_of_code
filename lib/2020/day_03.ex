@@ -25,7 +25,7 @@ defmodule AdventOfCode.Y2020.Day03 do
 
   def parse(input) do
     input
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&String.graphemes/1)
     |> then(&{Transformers.grid2d(&1), length(hd(&1)), length(&1)})
   end

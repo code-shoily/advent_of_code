@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day04 do
   --- Day 4: Passport Processing ---
   Problem Link: https://adventofcode.com/2020/day/4
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2020, 4)
 
@@ -14,7 +14,7 @@ defmodule AdventOfCode.Y2020.Day04 do
 
   def parse(data) do
     data
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.chunk_by(&(&1 == ""))
     |> Enum.reject(&(&1 == [""]))
     |> Enum.map(&as_pp/1)

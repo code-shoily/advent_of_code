@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day22 do
   --- Day 22: Crab Combat ---
   Problem Link: https://adventofcode.com/2020/day/22
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2020, 22)
 
@@ -12,7 +12,8 @@ defmodule AdventOfCode.Y2020.Day22 do
     {score(play(input)), score(play_rec(input))}
   end
 
-  def parse(deal), do: decks(Enum.map(String.split(deal, "\n\n"), &String.split(&1, ":")))
+  def parse(deal),
+    do: decks(Enum.map(String.split(deal, ~r{(\r\n\r\n|\r\r|\n\n)}), &String.split(&1, ":")))
 
   defp score(cards) do
     Enum.reduce(Enum.with_index(Enum.reverse(cards), 1), 0, fn {val, idx}, score ->
@@ -21,7 +22,7 @@ defmodule AdventOfCode.Y2020.Day22 do
   end
 
   defp decks([[_, human], [_, crab]]), do: {deck(human), deck(crab)}
-  defp deck(p), do: Enum.map(String.split(p, "\n", trim: true), &String.to_integer/1)
+  defp deck(p), do: Enum.map(Transformers.lines(p), &String.to_integer/1)
 
   defp play({[], crab}), do: crab
   defp play({human, []}), do: human

@@ -5,13 +5,15 @@
 -define(re, <<"([-\\d]+)">>).
 
 parse(RawData) ->
-    [begin
-         {_, Match} = re:run(Line, ?re, [{capture, all_but_first, binary}, global]),
-         [Xs, Ys, Xb, Yb] = [binary_to_integer(N) || [N] <- Match],
-         {Sensor, Beacon} = {{Xs, Ys}, {Xb, Yb}},
-         {Sensor, Beacon, distance(Sensor, Beacon)}
-     end
-     || Line <- binary:split(RawData, <<"\n">>, [global, trim])].
+    [
+        begin
+            {_, Match} = re:run(Line, ?re, [{capture, all_but_first, binary}, global]),
+            [Xs, Ys, Xb, Yb] = [binary_to_integer(N) || [N] <- Match],
+            {Sensor, Beacon} = {{Xs, Ys}, {Xb, Yb}},
+            {Sensor, Beacon, distance(Sensor, Beacon)}
+        end
+     || Line <- binary:split(RawData, [<<"\r">>, <<"\n">>, <<"\r\n">>], [global, trim])
+    ].
 
 solve(RawInput) ->
     Input = parse(RawInput),
@@ -19,7 +21,8 @@ solve(RawInput) ->
 
 solve1(Input) ->
     ordsets:size(
-        ordsets:union([empty_positions(X, 2_000_000) || X <- Input])).
+        ordsets:union([empty_positions(X, 2_000_000) || X <- Input])
+    ).
 
 solve2(Input) ->
     tuning_freq(empty_coordinate(0, 0, Input, 4_000_000)).

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day20 do
   --- Day 20: Grove Positioning System ---
   Problem Link: https://adventofcode.com/2022/day/20
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Aja.Vector
 
   def input, do: InputReader.read_from_file(2022, 20)
@@ -30,7 +30,7 @@ defmodule AdventOfCode.Y2022.Day20 do
 
   def parse(data \\ input()) do
     data
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.map(&String.to_integer/1)
     |> Enum.with_index()
     |> Vector.new()

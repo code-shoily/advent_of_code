@@ -4,10 +4,11 @@ defmodule AdventOfCode.Y2020.Day13 do
   Problem Link: https://adventofcode.com/2020/day/13
   """
   alias AdventOfCode.Algorithms.ChineseRemainder
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2020, 13)
 
+  @spec run(binary()) :: {any(), false | nil | integer()}
   def run(input \\ input()) do
     {run_1(input), run_2(input)}
   end
@@ -16,7 +17,7 @@ defmodule AdventOfCode.Y2020.Day13 do
   def run_2(input), do: input |> parse_2() |> ChineseRemainder.compute()
 
   def parse_1(input) do
-    [time, ids] = String.split(input, "\n", trim: true)
+    [time, ids] = Transformers.lines(input)
 
     {String.to_integer(time),
      ids
@@ -27,7 +28,7 @@ defmodule AdventOfCode.Y2020.Day13 do
 
   def parse_2(input) do
     input
-    |> String.split("\n", trim: true)
+    |> Transformers.lines()
     |> Enum.at(-1)
     |> String.split(",")
     |> Enum.with_index()

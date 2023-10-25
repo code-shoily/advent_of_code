@@ -47,7 +47,7 @@ end
 
 ```elixir
 input
-|> String.split("\n\n")
+|> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
 |> Enum.map(fn pair ->
   [a, b] = String.split(pair, "\n")
   {Jason.decode!(a), Jason.decode!(b)}
@@ -62,7 +62,7 @@ end)
 
 ```elixir
 input
-|> String.split("\n\n")
+|> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
 |> Enum.flat_map(&String.split(&1, "\n"))
 |> Enum.map(&Jason.decode!/1)
 |> Kernel.++([[[2]], [[6]]])

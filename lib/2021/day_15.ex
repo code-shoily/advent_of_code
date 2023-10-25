@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day15 do
   --- Day 15: Chiton ---
   Problem Link: https://adventofcode.com/2021/day/15
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2021, 15)
 
@@ -38,7 +38,7 @@ defmodule AdventOfCode.Y2021.Day15 do
 
   def parse(input) do
     input
-    |> String.split("\n")
+    |> Transformers.lines()
     |> Enum.with_index()
     |> Enum.flat_map(fn {line, y} ->
       line

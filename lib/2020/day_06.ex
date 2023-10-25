@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day06 do
   --- Day 6: Custom Customs ---
   Problem Link: https://adventofcode.com/2020/day/6
   """
-  alias AdventOfCode.Helpers.InputReader
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2020, 6)
 
@@ -16,7 +16,7 @@ defmodule AdventOfCode.Y2020.Day06 do
 
   def parse(input) do
     input
-    |> String.split("\n")
+    |> Transformers.lines(false)
     |> Enum.chunk_by(&(&1 == ""))
     |> Enum.reject(&(&1 == [""]))
   end
