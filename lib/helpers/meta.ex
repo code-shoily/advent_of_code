@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Helpers.Meta do
-  @doc """
+  @moduledoc """
   Returns the info of the year. This returns the important links and info
   of all the days completed.
   """
