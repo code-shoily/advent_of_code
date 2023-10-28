@@ -75,7 +75,7 @@ defmodule AdventOfCode.Helpers.Meta do
 
   defp get_solution_count({:ok, {:defmodule, _, module_content}}, year, day) do
     with [_, [{:do, do_block}]] <- module_content,
-         {:__block__, _, cases} = do_block do
+         {:__block__, _, cases} <- do_block do
       cases
       |> Enum.filter(&(elem(&1, 0) == :test))
       |> Enum.map(&elem(&1, 2))
