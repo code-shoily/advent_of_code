@@ -3,9 +3,9 @@ defmodule AdventOfCode do
   Module that solves problem given year and day.
   """
 
-  @latest_year 2022
+  @latest_year 2023
 
-  @type year() :: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022
+  @type year() :: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
   @type day() :: non_neg_integer()
 
   @doc """
