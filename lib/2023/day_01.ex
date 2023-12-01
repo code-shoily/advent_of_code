@@ -28,13 +28,11 @@ defmodule AdventOfCode.Y2023.Day01 do
     end
   end
 
-  defp tr(i) when i in ["one", "1"], do: 1
-  defp tr(i) when i in ["two", "2"], do: 2
-  defp tr(i) when i in ["three", "3"], do: 3
-  defp tr(i) when i in ["four", "4"], do: 4
-  defp tr(i) when i in ["five", "5"], do: 5
-  defp tr(i) when i in ["six", "6"], do: 6
-  defp tr(i) when i in ["seven", "7"], do: 7
-  defp tr(i) when i in ["eight", "8"], do: 8
-  defp tr(i) when i in ["nine", "9"], do: 9
+  ~w/one two three four five six seven eight nine/
+  |> Enum.with_index(1)
+  |> Enum.each(fn {word, index} ->
+    defp tr(unquote(word)), do: unquote(index)
+  end)
+
+  defp tr(numeric), do: String.to_integer(numeric)
 end
