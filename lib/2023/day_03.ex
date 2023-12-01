@@ -16,25 +16,18 @@ defmodule AdventOfCode.Y2023.Day03 do
   end
 
   defp run_1(input) do
-    input
-    |> Enum.map(fn {v, _, _} -> String.to_integer(v) end)
-    |> Enum.sum()
+    Enum.reduce(input, 0, fn {part_num, _, _}, acc -> acc + part_num end)
   end
 
   defp run_2(input) do
     input
-    |> Enum.map(fn {v, _, gear} -> {String.to_integer(v), Enum.uniq(gear)} end)
-    |> Enum.flat_map(fn {num, gears} ->
-      gears
-      |> Enum.map(fn gear ->
-        {gear, num}
-      end)
-    end)
+    |> Enum.map(fn {part_num, _, gear} -> {part_num, Enum.uniq(gear)} end)
+    |> Enum.flat_map(fn {num, gears} -> Enum.map(gears, &{&1, num}) end)
     |> Enum.group_by(fn {a, _} -> a end, fn {_, b} -> b end)
-    |> Map.filter(fn {_, v} -> length(v) == 2 end)
-    |> Map.values()
-    |> Enum.map(fn [a, b] -> a * b end)
-    |> Enum.sum()
+    |> Enum.reduce(0, fn
+      {_, [a, b]}, acc -> a * b + acc
+      _, acc -> acc
+    end)
   end
 
   def parse(data \\ input()) do
@@ -58,11 +51,10 @@ defmodule AdventOfCode.Y2023.Day03 do
     ]
   end
 
-  @reject MapSet.new(~w/. 1 2 3 4 5 6 7 8 9 0/)
   defp is_part(grid, {x, y}) do
     dirs(x, y)
     |> Enum.map(&grid[&1])
-    |> Enum.reject(&(is_nil(&1) || MapSet.member?(@reject, &1)))
+    |> Enum.reject(&(is_nil(&1) || MapSet.member?(MapSet.new(~w/. 1 2 3 4 5 6 7 8 9 0/), &1)))
     |> Enum.empty?()
     |> Kernel.not()
   end
@@ -96,10 +88,10 @@ defmodule AdventOfCode.Y2023.Day03 do
         collect_all(grid, row, col + 1, numbers)
 
       {:halt, number, part?, gears} ->
-        [{number, part?, gears} | numbers]
+        [{String.to_integer(number), part?, gears} | numbers]
 
       {{:cont, next}, number, part?, gears} ->
-        collect_all(grid, row, next, [{number, part?, gears} | numbers])
+        collect_all(grid, row, next, [{String.to_integer(number), part?, gears} | numbers])
     end
   end
 end
