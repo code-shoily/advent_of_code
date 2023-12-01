@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2018.Day05 do
   @moduledoc """
   --- Day 5: Alchemical Reduction ---
   Problem Link: https://adventofcode.com/2018/day/5
-  
+
   Thanks to `BenAlbin/Adent-Of-Code-2018` for the fastest solution, and helping me
   learn interesting way of solving the problem.
   """

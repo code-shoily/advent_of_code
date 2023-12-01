@@ -10,32 +10,32 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
 
   @doc """
   Checks if the list is empty.
-  
+
   ## Example
-  
+
       iex> %BiCircularList{} |> BiCircularList.empty?()
       true
-  
+
       iex> %BiCircularList{current: 10} |> BiCircularList.empty?()
       false
-  
+
   """
   @spec empty?(BiCircularList.t()) :: boolean()
   def empty?(%BiCircularList{current: current}), do: is_nil(current)
 
   @doc """
   Adds `value` AFTER the current value and sets the cursor as current.
-  
+
   ## Example
-  
+
     iex> BiCircularList.insert(%BiCircularList{}, 10)
     %BiCircularList{visited: [], current: 10, upcoming: []}
-  
+
     iex>  %BiCircularList{visited: [10, 20], current: 30, upcoming: [-40]}
     ...>  |> BiCircularList.insert(-10)
     ...>  |> BiCircularList.insert(-20)
     %BiCircularList{visited: [-10, 30, 10, 20], current: -20, upcoming: [-40]}
-  
+
   """
   @spec insert(BiCircularList.t(), any()) :: BiCircularList.t()
   def insert(%{current: nil} = bcl, value) when not is_nil(value) do
@@ -49,24 +49,24 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
   @doc """
   Removes the current element and returns the new list with current element as
   the next one.
-  
+
   ## Example
       iex> empty_bcl = %BiCircularList{}
       iex> BiCircularList.pop(empty_bcl)
       :error
-  
+
       iex> bcl = %BiCircularList{current: 1}
       iex> BiCircularList.pop(bcl)
       {1, %BiCircularList{}}
-  
+
       iex> bcl = %BiCircularList{visited: [1, 2, 3], current: 4}
       iex> BiCircularList.pop(bcl)
       {4, %BiCircularList{visited: [], current: 3, upcoming: [2, 1]}}
-  
+
       iex> bcl = %BiCircularList{current: 5, upcoming: [6, 7, 8]}
       iex> BiCircularList.pop(bcl)
       {5, %BiCircularList{current: 6, upcoming: [7, 8]}}
-  
+
       iex> bcl = %BiCircularList{visited: [1, 2], current: 3, upcoming: [5, 6]}
       iex> BiCircularList.pop(bcl)
       {3, %BiCircularList{visited: [1, 2], current: 5, upcoming: [6]}}
@@ -89,22 +89,22 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
 
   @doc """
   Move cursor to the next. Wraps back to first if end of list is reached.
-  
+
   ## Example
-  
+
       iex> BiCircularList.next(%BiCircularList{})
       :error
-  
+
       iex> BiCircularList.next(%BiCircularList{current: :single})
       %BiCircularList{current: :single}
-  
+
       iex> %BiCircularList{visited: [:before], current: 20, upcoming: [:after]}
       ...> |> BiCircularList.next()
       ...> |> BiCircularList.next()
       ...> |> BiCircularList.next()
       ...> |> BiCircularList.next()
       %BiCircularList{visited: [20, :before], current: :after, upcoming: []}
-  
+
       iex> bcl = BiCircularList.next(%BiCircularList{current: 0, upcoming: [10, 20, 30]})
       %BiCircularList{visited: [0], current: 10, upcoming: [20, 30]}
       iex> bcl = BiCircularList.next(bcl)
@@ -129,14 +129,14 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
 
   @doc """
   Goes backward.
-  
+
   ## Example
       iex> BiCircularList.previous(%BiCircularList{})
       :error
-  
+
       iex> BiCircularList.previous(%BiCircularList{current: :single})
       %BiCircularList{current: :single}
-  
+
       iex> bcl = BiCircularList.previous(%BiCircularList{current: 0, upcoming: [10, 20, 30]})
       %BiCircularList{visited: [20, 10, 0], current: 30, upcoming: []}
       iex> bcl = BiCircularList.previous(bcl)

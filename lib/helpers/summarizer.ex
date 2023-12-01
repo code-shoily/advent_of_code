@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Helpers.Summarizer do
-  @moduledoc"""
+  @moduledoc """
   Collects summary information about the codebase such as number of stars, problems solved etc
   """
 

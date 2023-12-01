@@ -4,21 +4,21 @@ defmodule AdventOfCode.Algorithms.Arithmetics do
   """
   @doc """
   Returns a list of divisors of a number.
-  
+
   ## Example
-  
+
     iex> Arithmetics.divisors(0)
     :error
-  
+
     iex> Arithmetics.divisors(1)
     [1]
-  
+
     iex> Arithmetics.divisors(12)
     [1, 12, 2, 6, 3, 4]
-  
+
     iex> Arithmetics.divisors(13)
     [1, 13]
-  
+
   """
   def divisors(0), do: :error
 

@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Algorithms.SubsetSum do
   @moduledoc """
   Provides functions related to subsets that sum to given target.
-  
+
   NOTE: Currently this algorithm assumes all numbers are positive
   """
 
@@ -10,16 +10,16 @@ defmodule AdventOfCode.Algorithms.SubsetSum do
 
   @doc """
   Initializes the cache. All cells are `false` except `{0, x}` where `nums[0] == x`
-  
+
   ## Example
-  
+
     iex> SubsetSum.init_cache([1, 2, 3], 3)
     %{
       {0, 0} => false, {0, 1} => true, {0, 2} => false, {0, 3} => false,
       {1, 0} => false, {1, 1} => false, {1, 2} => false, {1, 3} => false,
       {2, 0} => false, {2, 1} => false, {2, 2} => false, {2, 3} => false,
     }
-  
+
   """
   @spec init_cache(nums(), non_neg_integer()) :: cache()
   def init_cache([head | _] = lst, target) do
@@ -37,16 +37,16 @@ defmodule AdventOfCode.Algorithms.SubsetSum do
   @doc """
   Builds cache where each {x, y} value depicts a subset exists from `1..x` of sorted
   `nums` where the sum of that subset is `y`.
-  
+
   ## Example
-  
+
     iex> SubsetSum.build_cache([1, 2, 3], 3)
     %{
       {0, 0} => false, {0, 1} => true, {0, 2} => false, {0, 3} => false, # [1] has subset that sums to 1
       {1, 0} => false, {1, 1} => true, {1, 2} => true, {1, 3} => true, # [1, 2] has subsets that sums to 1, 2, 3
       {2, 0} => false, {2, 1} => true, {2, 2} => true, {2, 3} => true, # [1, 2, 3] has subsets that sums to 1, 2, 3
     }
-  
+
   """
   @spec build_cache(nums(), non_neg_integer()) :: cache()
   def build_cache(nums, target) do
@@ -89,26 +89,26 @@ defmodule AdventOfCode.Algorithms.SubsetSum do
 
   @doc """
   Determines if there exists a subset in a list that sums to the given target.
-  
+
   Reference: https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
-  
+
   ## Example
-  
+
     iex> SubsetSum.has_subset_sum([1, 2, 3], 3)
     true
-  
+
     iex> SubsetSum.has_subset_sum([1, 3, 7], 2)
     false
-  
+
     iex> SubsetSum.has_subset_sum([], 10)
     false
-  
+
     iex> SubsetSum.has_subset_sum([1, 2, 3], -1)
     false
-  
+
     iex> SubsetSum.has_subset_sum([1, 2, 3, 4], 11)
     false
-  
+
   """
   @spec has_subset_sum(nums(), non_neg_integer()) :: boolean()
   def has_subset_sum([], _), do: false
@@ -123,7 +123,7 @@ defmodule AdventOfCode.Algorithms.SubsetSum do
 
   @doc """
   Returns a list of subset that make target sum.
-  
+
   FIXME: This solution has issues, while it somehow solves the Advent of Code problem it intended to solve, but
   it does not get all enumerations of subsets.
   """

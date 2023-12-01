@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2017.Day14 do
   @moduledoc """
   --- Day 14: Disk Defragmentation ---
   Problem Link: https://adventofcode.com/2017/day/14
-  
+
   TODO: Look into strongly connected components to get the regions.
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}

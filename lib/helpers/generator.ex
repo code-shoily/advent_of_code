@@ -8,9 +8,9 @@ defmodule AdventOfCode.Helpers.Generator do
 
   @doc """
   Generates the necessary artifacts for solving a day's problem.
-  
+
   Given {year, day} as input, it creates the following-
-  
+
   - Input file fetched from advent of code site and saved at `priv/input_files/` as `<year>_<day>.txt` file.
   - Code file containing boilerplate code saved at `lib/<year>/day_<day>.ex` file
   - Test cases containing default tests for `run_1` and `run_2` at `test/<year>/day_<day>_test.exs` file

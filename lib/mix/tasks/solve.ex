@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.Solve do
   @moduledoc """
   Solves a problem given `year` and `day`.
-  
+
   Type `mix solve --year <year> --day <day>` to see result for <year> and day <day>.
   """
   alias AdventOfCode.Helpers.InputParser
