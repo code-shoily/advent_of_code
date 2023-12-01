@@ -27,7 +27,8 @@ defmodule AdventOfCode.MixProject do
       {:httpoison, "~> 2.1.0"},
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
-      {:aja, "~> 0.6.1"}
+      {:aja, "~> 0.6.1"},
+      {:nimble_parsec, "~> 1.0"}
     ]
   end
 
