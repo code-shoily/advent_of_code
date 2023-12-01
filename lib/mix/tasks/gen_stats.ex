@@ -11,7 +11,7 @@ defmodule Mix.Tasks.GenStats do
 
   use Mix.Task
 
-  @year_range 2015..2022
+  @year_range 2015..2023
 
   @usage "mix gen_stats"
 
