@@ -38,7 +38,7 @@ defmodule AdventOfCode.Y2016.Day08 do
     end)
   end
 
-  defp empty_grid() do
+  defp empty_grid do
     for w <- 0..(@width - 1), h <- 0..(@height - 1), into: %{} do
       {{w, h}, @off}
     end

@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2020.Day03 do
   --- Day 3: Toboggan Trajectory ---
   Problem Link: https://adventofcode.com/2020/day/3
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   @default_slope {3, 1}
   @slopes [{1, 1}, {3, 1}, {5, 1}, {7, 1}, {1, 2}]

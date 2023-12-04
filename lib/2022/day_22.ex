@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2022.Day22 do
   --- Day 22: Monkey Map ---
   Problem Link: https://adventofcode.com/2022/day/22
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2022, 22, false)
 

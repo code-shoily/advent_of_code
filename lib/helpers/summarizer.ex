@@ -7,7 +7,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   @year_range 2015..2023
 
-  def summarize() do
+  def summarize do
     metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})
 
     total_stars =

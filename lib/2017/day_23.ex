@@ -63,48 +63,59 @@ defmodule AdventOfCode.Y2017.Day23 do
        when index > map_size(commands) - 1 or index < 0,
        do: muls
 
-  defp process(%{index: index, registers: registers, muls: muls} = state, commands) do
+  defp process(%{index: index} = state, commands) do
     case commands[index] do
-      {"set", x, y} ->
-        y_value = (is_integer(y) && y) || registers[y]
-
-        state
-        |> Map.merge(%{registers: %{registers | x => y_value}, index: index + 1})
-        |> process(commands)
-
-      {"sub", x, y} ->
-        y_value = (is_integer(y) && y) || registers[y]
-
-        state
-        |> Map.merge(%{
-          registers: %{registers | x => registers[x] - y_value},
-          index: index + 1
-        })
-        |> process(commands)
-
-      {"mul", x, y} ->
-        y_value = (is_integer(y) && y) || registers[y]
-
-        state
-        |> Map.merge(%{
-          registers: %{registers | x => registers[x] * y_value},
-          index: index + 1,
-          muls: muls + 1
-        })
-        |> process(commands)
-
-      {"jnz", 0, _} ->
-        state
-        |> Map.put(:index, index + 1)
-        |> process(commands)
-
-      {"jnz", x, y} ->
-        y_value = (is_integer(y) && y) || registers[y]
-        jump_value = (registers[x] == 0 && 1) || y_value
-
-        state
-        |> Map.put(:index, index + jump_value)
-        |> process(commands)
+      {"set", x, y} -> process(:set, state, commands, x, y)
+      {"sub", x, y} -> process(:sub, state, commands, x, y)
+      {"mul", x, y} -> process(:mul, state, commands, x, y)
+      {"jnz", 0, _} -> process(:jnz, state, commands)
+      {"jnz", x, y} -> process(:jnz, state, commands, x, y)
     end
+  end
+
+  defp process(:set, %{index: index, registers: registers} = state, commands, x, y) do
+    y_value = (is_integer(y) && y) || registers[y]
+
+    state
+    |> Map.merge(%{registers: %{registers | x => y_value}, index: index + 1})
+    |> process(commands)
+  end
+
+  defp process(:sub, %{index: index, registers: registers} = state, commands, x, y) do
+    y_value = (is_integer(y) && y) || registers[y]
+
+    state
+    |> Map.merge(%{
+      registers: %{registers | x => registers[x] - y_value},
+      index: index + 1
+    })
+    |> process(commands)
+  end
+
+  defp process(:mul, %{index: index, registers: registers, muls: muls} = state, commands, x, y) do
+    y_value = (is_integer(y) && y) || registers[y]
+
+    state
+    |> Map.merge(%{
+      registers: %{registers | x => registers[x] * y_value},
+      index: index + 1,
+      muls: muls + 1
+    })
+    |> process(commands)
+  end
+
+  defp process(:jnz, %{index: index, registers: registers} = state, commands, x, y) do
+    y_value = (is_integer(y) && y) || registers[y]
+    jump_value = (registers[x] == 0 && 1) || y_value
+
+    state
+    |> Map.put(:index, index + jump_value)
+    |> process(commands)
+  end
+
+  defp process(:jnz, %{index: index} = state, commands) do
+    state
+    |> Map.put(:index, index + 1)
+    |> process(commands)
   end
 end

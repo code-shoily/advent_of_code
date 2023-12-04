@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2015.Day18 do
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2015, 18)
   @repetitions 1..100

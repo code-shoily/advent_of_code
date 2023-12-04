@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2023.Day03 do
   Difficulty: m
   Tags: grid-walk
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2023, 3)
 

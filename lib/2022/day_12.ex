@@ -3,8 +3,8 @@ defmodule AdventOfCode.Y2022.Day12 do
   --- Day 12: Hill Climbing Algorithm ---
   Problem Link: https://adventofcode.com/2022/day/12
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2022, 12)
 
