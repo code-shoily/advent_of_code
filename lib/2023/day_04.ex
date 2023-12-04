@@ -33,17 +33,13 @@ defmodule AdventOfCode.Y2023.Day04 do
   end
 
   def parse(data \\ input()) do
-    for line <- Transformers.lines(data), do: parse_card(line)
-  end
-
-  defp parse_card(line) do
-    with ["Card", id | cards] <- String.split(line, ~r{\s+}),
-         {winning, ["|" | got]} <- Enum.split_while(cards, fn v -> v != "|" end),
-         {id, ":"} <- Integer.parse(id) do
-      {id,
-       MapSet.new(winning)
-       |> MapSet.intersection(MapSet.new(got))
-       |> MapSet.size()}
+    for line <- Transformers.lines(data) do
+      with ["Card", id | cards] <- String.split(line, ~r{\s+}),
+           {winning, ["|" | got]} <- Enum.split_while(cards, fn v -> v != "|" end),
+           {id, ":"} <- Integer.parse(id) do
+        matches = MapSet.intersection(MapSet.new(winning), MapSet.new(got))
+        {id, MapSet.size(matches)}
+      end
     end
   end
 
