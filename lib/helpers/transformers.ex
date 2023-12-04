@@ -32,6 +32,20 @@ defmodule AdventOfCode.Helpers.Transformers do
   end
 
   @doc ~S"""
+  Extracts paragraph from a string.
+
+  ### Example
+
+      iex> Transformers.sections("")
+      []
+
+      iex> Transformers.sections("a\nb\n\nx\ny\n")
+      ["a\nb", "x\ny\n"]
+
+  """
+  def sections(raw, trim \\ true), do: String.split(raw, ~r{(\r\n\r\n|\r\r|\n\n)}, trim: trim)
+
+  @doc ~S"""
   Extracts lines as ints from a string.
 
   ## Example
