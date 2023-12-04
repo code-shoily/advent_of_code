@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day04 do
   @moduledoc """
   --- Day 4: Camp Cleanup ---
   Problem Link: https://adventofcode.com/2022/day/4
+  Difficulty: xs
+  Tags: range set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

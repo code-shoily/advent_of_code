@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day02 do
   @moduledoc """
   --- Day 2: Rock Paper Scissors ---
   Problem Link: https://adventofcode.com/2022/day/2
+  Difficulty: xs
+  Tags: table-lookup
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

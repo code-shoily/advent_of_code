@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day07 do
   @moduledoc """
   --- Day 7: No Space Left On Device ---
   Problem Link: https://adventofcode.com/2022/day/7
+  Difficulty: xs
+  Tags: command-parsing linked-list
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

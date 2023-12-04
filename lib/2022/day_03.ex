@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day03 do
   @moduledoc """
   --- Day 3: Rucksack Reorganization ---
   Problem Link: https://adventofcode.com/2022/day/3
+  Difficulty: xs
+  Tags: set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

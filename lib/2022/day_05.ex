@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day05 do
   @moduledoc """
   --- Day 5: Supply Stacks ---
   Problem Link: https://adventofcode.com/2022/day/5
+  Difficulty: s
+  Tags: parse-heavy stack linked-list
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
