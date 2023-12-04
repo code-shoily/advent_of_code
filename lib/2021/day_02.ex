@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day02 do
   @moduledoc """
   --- Day 2: Dive! ---
   Problem Link: https://adventofcode.com/2021/day/2
+  Difficulty: xs
+  Tags: traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

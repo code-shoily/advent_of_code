@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day03 do
   @moduledoc """
   --- Day 3: Binary Diagnostic ---
   Problem Link: https://adventofcode.com/2021/day/3
+  Difficulty: s
+  Tags: computation
   """
   alias AdventOfCode.Helpers.InputReader
 
