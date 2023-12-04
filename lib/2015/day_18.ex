@@ -4,6 +4,7 @@ defmodule AdventOfCode.Y2015.Day18 do
   Problem Link: https://adventofcode.com/2015/day/18
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias AdventOfCode.Algorithms.Grid
 
   def input, do: InputReader.read_from_file(2015, 18)
   @repetitions 1..100
@@ -28,7 +29,7 @@ defmodule AdventOfCode.Y2015.Day18 do
     data
     |> Transformers.lines()
     |> Enum.map(&String.graphemes/1)
-    |> Transformers.grid2d()
+    |> Grid.grid2d()
   end
 
   defp steps(grid, tx) do

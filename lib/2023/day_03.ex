@@ -6,6 +6,7 @@ defmodule AdventOfCode.Y2023.Day03 do
   Tags: grid-walk
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias AdventOfCode.Algorithms.Grid
 
   def input, do: InputReader.read_from_file(2023, 3)
 
@@ -31,35 +32,23 @@ defmodule AdventOfCode.Y2023.Day03 do
   end
 
   def parse(data \\ input()) do
-    grid = data |> Transformers.lines() |> Enum.map(&String.graphemes/1) |> Transformers.grid2d()
+    grid = data |> Transformers.lines() |> Enum.map(&String.graphemes/1) |> Grid.grid2d()
 
     0..(grid |> Map.keys() |> Enum.max() |> elem(0))
     |> Enum.flat_map(&collect_all(grid, &1))
     |> Enum.filter(fn {_, n, _} -> n == true end)
   end
 
-  defp dirs(x, y) do
-    [
-      {x + 1, y},
-      {x - 1, y},
-      {x, y + 1},
-      {x, y - 1},
-      {x + 1, y + 1},
-      {x - 1, y - 1},
-      {x + 1, y - 1},
-      {x - 1, y + 1}
-    ]
-  end
-
-  defp is_part(grid, {x, y}) do
-    dirs(x, y)
+  defp is_part(grid, pos) do
+    pos
+    |> Grid.surrounding8()
     |> Enum.map(&grid[&1])
     |> Enum.reject(&(is_nil(&1) || MapSet.member?(MapSet.new(~w/. 1 2 3 4 5 6 7 8 9 0/), &1)))
     |> Enum.empty?()
     |> Kernel.not()
   end
 
-  defp get_gears(grid, {x, y}), do: Enum.filter(dirs(x, y), &(grid[&1] == "*"))
+  defp get_gears(grid, pos), do: Enum.filter(Grid.surrounding8(pos), &(grid[&1] == "*"))
 
   defp collect_one(grid, pos), do: collect_one(grid[pos], grid, pos, "", false, [])
 

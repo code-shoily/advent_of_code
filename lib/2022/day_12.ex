@@ -4,6 +4,7 @@ defmodule AdventOfCode.Y2022.Day12 do
   Problem Link: https://adventofcode.com/2022/day/12
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias AdventOfCode.Algorithms.Grid
 
   def input, do: InputReader.read_from_file(2022, 12)
 
@@ -23,7 +24,7 @@ defmodule AdventOfCode.Y2022.Day12 do
       data
       |> Transformers.lines()
       |> Enum.map(&String.graphemes/1)
-      |> Transformers.grid2d(fn char -> :binary.first(char) end)
+      |> Grid.grid2d(fn char -> :binary.first(char) end)
 
     source = elem(Enum.find(map, fn {_, v} -> v == ?S end), 0)
     destination = elem(Enum.find(map, fn {_, v} -> v == ?E end), 0)

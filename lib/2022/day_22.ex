@@ -4,6 +4,7 @@ defmodule AdventOfCode.Y2022.Day22 do
   Problem Link: https://adventofcode.com/2022/day/22
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias AdventOfCode.Algorithms.Grid
 
   def input, do: InputReader.read_from_file(2022, 22, false)
 
@@ -84,7 +85,7 @@ defmodule AdventOfCode.Y2022.Day22 do
   defp parse_path(path) do
     path
     |> Enum.map(&String.graphemes/1)
-    |> Transformers.grid2d()
+    |> Grid.grid2d()
     |> Map.reject(fn {_, v} -> v == " " end)
   end
 
