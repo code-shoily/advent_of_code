@@ -47,9 +47,9 @@ defmodule AdventOfCode.Y2023.Day04 do
     end
   end
 
-  def updated_cards({_, 0}, _, card_map), do: card_map
+  defp updated_cards({_, 0}, _, card_map), do: card_map
 
-  def updated_cards({id, count}, end_of_table, card_map) do
+  defp updated_cards({id, count}, end_of_table, card_map) do
     Stream.unfold(id + 1, fn n -> {n, n + 1} end)
     |> Enum.take(count)
     |> Enum.reject(&(&1 > end_of_table))
