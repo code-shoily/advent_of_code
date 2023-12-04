@@ -6,7 +6,7 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022) | 2023
 
 
-## :trophy: 8/50
+## :trophy: 10/50
 
 | Day | Problem Page | Status | Solution Page | Test Page |
 | :---: | :------: | ---: | :---: | :---: |
@@ -14,4 +14,5 @@
 | 2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) |
 | 3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) |
 | 4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) |
+| 5 | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | :1st_place_medal: | [day_05.ex](/lib/2023/day_05.ex) | [day_05_test.exs](/test/2023/day_05_test.exs) |
 
