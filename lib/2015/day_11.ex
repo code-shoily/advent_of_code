@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day11 do
   @moduledoc """
   --- Day 11: Corporate Policy ---
   Problem Link: https://adventofcode.com/2015/day/11
+  Difficulty: xs
+  Tags: sequence char-sequence validation
   """
   alias AdventOfCode.Helpers.InputReader
 

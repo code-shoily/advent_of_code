@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day12 do
   @moduledoc """
   --- Day 12: JSAbacusFramework.io ---
   Problem Link: https://adventofcode.com/2015/day/12
+  Difficulty: xs
+  Tags: json parsing
   """
   alias AdventOfCode.Helpers.InputReader
 

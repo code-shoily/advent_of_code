@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day04 do
   @moduledoc """
   --- Day 4: The Ideal Stocking Stuffer ---
   Problem Link: https://adventofcode.com/2015/day/4
+  Difficulty: s
+  Tags: md5 annoying
   """
   def run_1, do: lowest_number("bgvyzdsv", 1)
   def run_2, do: "bgvyzdsv" |> lowest_number_2(1)

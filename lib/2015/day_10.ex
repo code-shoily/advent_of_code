@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day10 do
   @moduledoc """
   --- Day 10: Elves Look, Elves Say ---
   Problem Link: https://adventofcode.com/2015/day/10
+  Difficulty: xs
+  Tags: string-encoding sequence reduction
   """
   alias AdventOfCode.Helpers.InputReader
 

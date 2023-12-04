@@ -2,7 +2,8 @@ defmodule AdventOfCode.Y2015.Day06 do
   @moduledoc """
   --- Day 6: Probably a Fire Hazard ---
   Problem Link: https://adventofcode.com/2015/day/6
-  NOTE: This is slow!
+  Difficulty: m
+  Tags: grid vector reduction slow
   """
   alias Aja.Vector
   alias AdventOfCode.Helpers.{InputReader, Transformers}

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day01 do
   @moduledoc """
   --- Day 1: Not Quite Lisp ---
   Problem Link: https://adventofcode.com/2015/day/1
+  Difficulty: xs
+  Tags: sequential
   """
   alias AdventOfCode.Helpers.InputReader
 

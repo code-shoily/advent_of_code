@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day08 do
   @moduledoc """
   --- Day 8: Matchsticks ---
   Problem Link: https://adventofcode.com/2015/day/8
+  Difficulty: m
+  Tags: string-encoding annoying
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

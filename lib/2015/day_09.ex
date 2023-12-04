@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day09 do
   @moduledoc """
   --- Day 9: All in a Single Night ---
   Problem Link: https://adventofcode.com/2015/day/9
+  Difficulty: s
+  Tags: graph weighted-graph routing-algorithm
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -16,7 +18,7 @@ defmodule AdventOfCode.Y2015.Day09 do
   def run_1(input), do: input |> travel_all(&Enum.min/1)
   def run_2(input), do: input |> travel_all(&Enum.max/1)
 
-  def parse(data) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn route ->

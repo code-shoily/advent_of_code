@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day13 do
   @moduledoc """
   --- Day 13: Knights of the Dinner Table ---
   Problem Link: https://adventofcode.com/2015/day/13
+  Difficulty: s
+  Tags: brute-force permutations slow
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -18,7 +20,7 @@ defmodule AdventOfCode.Y2015.Day13 do
     }
   end
 
-  def parse(data) do
+  def parse(data \\ input()) do
     facts =
       data
       |> Transformers.lines()

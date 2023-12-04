@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day05 do
   @moduledoc """
   --- Day 5: Doesn't He Have Intern-Elves For This? ---
   Problem Link: https://adventofcode.com/2015/day/5
+  Difficulty: xs
+  Tags: string
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
