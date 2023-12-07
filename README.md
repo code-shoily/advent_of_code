@@ -32,11 +32,11 @@ The stats, both in `<year>/README.md` and the bottom part of `README.md` are aut
 
 Note that you can call those commands independently and also set up pre-commit hooks to run it for you.
 
-## :trophy: 261/400
+## :trophy: 263/400
 
 | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) | [2023](lib/2023)
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| :star2: | 48 | 22 | 34 | 15 | 15 | 44 | 24 | 45 | 14 |
+| :star2: | 48 | 22 | 34 | 15 | 15 | 44 | 24 | 45 | 16 |
 | 1 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 2 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 3 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
@@ -44,7 +44,7 @@ Note that you can call those commands independently and also set up pre-commit h
 | 5 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 6 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 | 7 | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: |   |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 8 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: |   |
+| 8 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: |
 | 9 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   |
 | 10 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: |   |
 | 11 | :1st_place_medal: |   | :1st_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
