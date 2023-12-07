@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day23 do
   @moduledoc """
   --- Day 23: Unstable Diffusion ---
   Problem Link: https://adventofcode.com/2022/day/23
+  Difficulty: m
+  Tags: erlang slow grid2d grid-walk
   """
   alias AdventOfCode.Helpers.InputReader
 

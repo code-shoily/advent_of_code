@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day19 do
   @moduledoc """
   --- Day 19: Not Enough Minerals ---
   Problem Link: https://adventofcode.com/2022/day/19
+  Difficulty: xl
+  Tags: erlang slow revisit navigation maximization
   """
   alias AdventOfCode.Helpers.InputReader
 

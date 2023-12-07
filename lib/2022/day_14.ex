@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day14 do
   @moduledoc """
   --- Day 14: Regolith Reservoir ---
   Problem Link: https://adventofcode.com/2022/day/14
+  Difficulty: l
+  Tags: live-book visualized slow traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

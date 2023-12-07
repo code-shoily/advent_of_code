@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day15 do
   @moduledoc """
   --- Day 15: Beacon Exclusion Zone ---
   Problem Link: https://adventofcode.com/2022/day/15
+  Difficulty: xl
+  Tags: erlang slow large-number geometry2d
   """
   alias AdventOfCode.Helpers.InputReader
 

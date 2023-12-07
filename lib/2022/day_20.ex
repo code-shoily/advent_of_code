@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day20 do
   @moduledoc """
   --- Day 20: Grove Positioning System ---
   Problem Link: https://adventofcode.com/2022/day/20
+  Difficulty: m
+  Tags: slow vector sequence large-number random-access
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Aja.Vector

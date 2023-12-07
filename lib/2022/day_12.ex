@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day12 do
   @moduledoc """
   --- Day 12: Hill Climbing Algorithm ---
   Problem Link: https://adventofcode.com/2022/day/12
+  Difficulty: m
+  Tags: graph graph-traversal slow revisit
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}

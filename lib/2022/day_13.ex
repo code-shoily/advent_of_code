@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2022.Day13 do
   @moduledoc """
   --- Day 13: Distress Signal ---
   Problem Link: https://adventofcode.com/2022/day/13
+  Difficulty: s
+  Tags: json sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
