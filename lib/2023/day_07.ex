@@ -33,33 +33,23 @@ defmodule AdventOfCode.Y2023.Day07 do
     {run_1(input), run_2(input)}
   end
 
-  defp run_1(input) do
-    input
-    |> Enum.group_by(&elem(&1, 0))
-    |> Enum.sort_by(fn {rank, _} -> rank end)
-    |> Enum.flat_map(fn {_, hands} ->
-      Enum.sort(hands, fn {_, h1, _}, {_, h2, _} -> smaller?(h1, h2, @card_rank_1) end)
-    end)
-    |> Enum.with_index(1)
-    |> Enum.reduce(0, fn {{_, _, bid}, rank}, acc ->
-      acc + bid * rank
-    end)
-  end
+  defp run_1(input), do: get_winnings(input, @card_rank_1)
 
   defp run_2(input) do
     input
-    |> Enum.map(fn {rank, hand, bid} ->
-      {get_updated_rank(rank, hand), hand, bid}
-    end)
+    |> Enum.map(fn {rank, hand, bid} -> {jokered_rank(rank, hand), hand, bid} end)
+    |> get_winnings(@card_rank_2)
+  end
+
+  def get_winnings(card_configuration, value_mapping) do
+    card_configuration
     |> Enum.group_by(&elem(&1, 0))
     |> Enum.sort_by(fn {rank, _} -> rank end)
     |> Enum.flat_map(fn {_, hands} ->
-      Enum.sort(hands, fn {_, h1, _}, {_, h2, _} -> smaller?(h1, h2, @card_rank_2) end)
+      hands |> Enum.sort(fn {_, h1, _}, {_, h2, _} -> smaller?(h1, h2, value_mapping) end)
     end)
     |> Enum.with_index(1)
-    |> Enum.reduce(0, fn {{_, _, bid}, rank}, acc ->
-      acc + bid * rank
-    end)
+    |> Enum.reduce(0, fn {{_, _, bid}, rank}, acc -> acc + bid * rank end)
   end
 
   def parse(data \\ input()) do
@@ -78,48 +68,31 @@ defmodule AdventOfCode.Y2023.Day07 do
     |> Map.new(fn {a, b} -> {a, length(b)} end)
   end
 
-  def get_updated_rank(rank, hand) do
+  def jokered_rank(rank, hand) do
     freq = frequency(hand)
 
     case {rank, freq["J"]} do
-      # No J present
       {_, nil} -> rank
-      # high card
       {1, _} -> 2
-      # 1 pair
       {2, _} -> 4
-      # 2 pairs
       {3, 1} -> 5
       {3, 2} -> 6
-      # 3 of a kind
       {4, _} -> 6
-      # full house
       {5, _} -> 7
-      # 4 of a kind
       {6, _} -> 7
-      # no change - highest rank
       {7, _} -> rank
     end
   end
 
   def get_rank(hand) do
-    values = hand |> frequency() |> Map.values() |> Enum.sort()
-
-    cond do
-      # High Card
-      [1, 1, 1, 1, 1] == values -> 1
-      # 1 Pair
-      [1, 1, 1, 2] == values -> 2
-      # 2 Pairs
-      [1, 2, 2] == values -> 3
-      # 3 of a kind
-      [1, 1, 3] == values -> 4
-      # Full House
-      [2, 3] == values -> 5
-      # 4 of a kind
-      [1, 4] == values -> 6
-      # 5 of a kind
-      [5] == values -> 7
+    case hand |> frequency() |> Map.values() |> Enum.sort() do
+      [1, 1, 1, 1, 1] -> 1
+      [1, 1, 1, 2] -> 2
+      [1, 2, 2] -> 3
+      [1, 1, 3] -> 4
+      [2, 3] -> 5
+      [1, 4] -> 6
+      [5] -> 7
     end
   end
 
