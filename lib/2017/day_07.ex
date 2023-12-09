@@ -2,8 +2,6 @@ defmodule AdventOfCode.Y2017.Day07 do
   @moduledoc """
   --- Day 7: Recursive Circus ---
   Problem Link: https://adventofcode.com/2017/day/7
-  TODO: Add part 2. Part 2 was determined with manual traversals through some helper functions
-  but I was too lazy to implement them here.
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   def input, do: InputReader.read_from_file(2017, 7)
