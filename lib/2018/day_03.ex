@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day03 do
   @moduledoc """
   --- Day 3: No Matter How You Slice It ---
   Problem Link: https://adventofcode.com/2018/day/3
+  Difficulty: m
+  Tags: grid set not-fast-enough
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -27,7 +29,7 @@ defmodule AdventOfCode.Y2018.Day03 do
     |> elem(0)
   end
 
-  def parse(input) do
+  def parse(input \\ input()) do
     input
     |> Transformers.lines()
     |> Stream.map(&parse_line/1)

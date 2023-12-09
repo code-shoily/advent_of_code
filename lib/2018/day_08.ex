@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day08 do
   @moduledoc """
   --- Day 8: Memory Maneuver ---
   Problem Link: https://adventofcode.com/2018/day/8
+  Difficulty: l
+  Tags: sequence walk
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -13,7 +15,7 @@ defmodule AdventOfCode.Y2018.Day08 do
     {metadata_sum(input), nil}
   end
 
-  def parse(data), do: Enum.map(Transformers.words(data), &String.to_integer/1)
+  def parse(data \\ input()), do: Enum.map(Transformers.words(data), &String.to_integer/1)
   def metadata_sum(lst), do: walk(lst, [], [], []) |> Enum.flat_map(& &1) |> Enum.sum()
   def walk([], _, _, metadata), do: metadata
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day04 do
   @moduledoc """
   --- Day 4: Repose Record ---
   Problem Link: https://adventofcode.com/2018/day/4
+  Difficulty: s
+  Tags: date-time sequence sort map
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

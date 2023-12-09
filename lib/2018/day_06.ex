@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day06 do
   @moduledoc """
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
+  Difficulty: s
+  Tags: not-fast-enough grid distance bounded-box
   """
   @type point :: {integer(), integer()}
   @type points :: list(point())
@@ -19,7 +21,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   end
 
   @spec parse(binary()) :: points()
-  def parse(data) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->

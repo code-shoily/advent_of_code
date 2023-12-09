@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day09 do
   @moduledoc """
   --- Day 9: Marble Mania ---
   Problem Link: https://adventofcode.com/2018/day/9
+  Difficulty: s
+  Tags: not-fast-enough circular-linked-list
   """
   alias AdventOfCode.Algorithms.BiCircularList
 

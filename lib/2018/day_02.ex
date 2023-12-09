@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2018.Day02 do
   @moduledoc """
   --- Day 2: Inventory Management System ---
   Problem Link: https://adventofcode.com/2018/day/2
+  Difficulty: s
+  Tags: checksum string-result set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
