@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day20 do
   @moduledoc """
   --- Day 20: Infinite Elves and Infinite Houses ---
   Problem Link: https://adventofcode.com/2015/day/20
+  Difficulty: l
+  Tags: slow infinite-sequence sequence
   """
   alias AdventOfCode.Algorithms.Arithmetics
   alias AdventOfCode.Helpers.InputReader

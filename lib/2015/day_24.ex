@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day24 do
   @moduledoc """
   --- Day 24: It Hangs in the Balance ---
   Problem Link: https://adventofcode.com/2015/day/24
+  Difficulty: xl
+  Tags: not-fast-enough power-set ambiguous-solution
   """
   alias AdventOfCode.Algorithms.SubsetSum
   alias AdventOfCode.Helpers.{InputReader, Transformers}

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day07 do
   @moduledoc """
   --- Day 7: Some Assembly Required ---
   Problem Link: https://adventofcode.com/2015/day/7
+  Difficulty: m
+  Tags: genserver data-modelling op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Y2015.Day07.ControlPanel

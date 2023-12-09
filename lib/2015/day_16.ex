@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day16 do
   @moduledoc """
   --- Day 16: Aunt Sue ---
   Problem Link: https://adventofcode.com/2015/day/16
+  Difficulty: m
+  Tags: hard-description count
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

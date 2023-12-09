@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day25 do
   @moduledoc """
   --- Day 25: Let It Snow ---
   Problem Link: https://adventofcode.com/2015/day/25
+  Difficulty: m
+  Tags: table-lookup modular-arithmetic
   """
   alias AdventOfCode.Helpers.InputReader
 

@@ -2,8 +2,8 @@ defmodule AdventOfCode.Y2015.Day15 do
   @moduledoc """
   --- Day 15: Science for Hungry People ---
   Problem Link: https://adventofcode.com/2015/day/15
-  FIXME: I hate this solution, I don't want to be hardwiring the total number of ingredients here.
-  Should look into better algorithm to generate the quadruples (n-tuples really)
+  Difficulty: m
+  Tags: quadratic-time not-fast-enough sequence revisit
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

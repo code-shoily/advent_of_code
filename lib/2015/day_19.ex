@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day19 do
   @moduledoc """
   --- Day 19: Medicine for Rudolph ---
   Problem Link: https://adventofcode.com/2015/day/19
+  Difficulty: m
+  Tags: not-fast-enough revisit vector random-access-list
 
   Helpful Tips for Part II: (,) analogy
   https://www.reddit.com/r/adventofcode/comments/3xflz8/day_19_solutions/cy4etju

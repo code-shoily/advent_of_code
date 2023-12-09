@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day18 do
   @moduledoc """
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
+  Difficulty: ms
+  Tags: grid map bounded-box not-fast-enough
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}
@@ -25,7 +27,7 @@ defmodule AdventOfCode.Y2015.Day18 do
     }
   end
 
-  def parse(data) do
+  def parse(data \\ input()) do
     data
     |> Transformers.lines()
     |> Enum.map(&String.graphemes/1)

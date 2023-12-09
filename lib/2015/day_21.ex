@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2015.Day21 do
   @moduledoc """
   --- Day 21: RPG Simulator 20XX ---
   Problem Link: https://adventofcode.com/2015/day/21
+  Difficulty: l
+  Tags: double-parse data-modelling combinatorics strategy
   """
   alias AdventOfCode.Algorithms.Combinatorics
   alias AdventOfCode.Helpers.{InputReader, Transformers}
