@@ -5,6 +5,14 @@ defmodule AdventOfCode.Helpers.Meta do
   """
   alias AdventOfCode.Helpers.Transformers
 
+  @current_year 2023
+
+  def solutions_summary do
+    for year <- 2015..@current_year, into: %{} do
+      {year, get_info(year, true)}
+    end
+  end
+
   def get_info(year, as_map \\ false) do
     daywise_summary =
       for day <- 1..25 do
@@ -37,6 +45,9 @@ defmodule AdventOfCode.Helpers.Meta do
         nil
 
       solution_count ->
+        %{title: title, difficulty: difficulty, tags: tags, extra: extra} =
+          get_metadata(year, day)
+
         {day,
          %{
            year: year,
@@ -44,26 +55,47 @@ defmodule AdventOfCode.Helpers.Meta do
            link: "https://adventofcode.com/#{year}/day/#{day}",
            solution: "/lib/#{year}/day_#{padded(day)}.ex",
            test: "/test/#{year}/day_#{padded(day)}_test.exs",
-           title: title(year, day),
+           title: title,
+           difficulty: difficulty,
+           tags: tags,
+           extra: extra,
            count: solution_count
          }}
     end
   end
 
-  defp title(year, day) do
+  def get_metadata(year, day) do
     "Elixir.AdventOfCode.Y#{year}.Day#{padded(day)}"
     |> String.to_existing_atom()
     |> Code.fetch_docs()
     |> elem(4)
     |> Map.fetch!("en")
     |> Transformers.lines()
-    |> hd()
-    |> then(fn padded_title ->
-      ~r/--- Day (\d+): (?<name>.+) ---/
-      |> Regex.named_captures(padded_title)
-      |> Map.fetch!("name")
+    |> then(fn
+      [title, _, difficulty, tags | []] ->
+        {format_title(title), format_difficulty(difficulty), format_tags(tags), "N/A"}
+
+      [title, _, difficulty, tags | extra] ->
+        {format_title(title), format_difficulty(difficulty), format_tags(tags),
+         format_extra(extra)}
+
+      [title, _ | _] ->
+        {format_title(title), "N/A", [], "N/A"}
+    end)
+    |> then(fn {title, difficulty, tags, extra} ->
+      %{title: title, difficulty: difficulty, tags: tags, extra: extra}
     end)
   end
+
+  defp format_title(padded_title) do
+    ~r/--- Day (\d+): (?<name>.+) ---/
+    |> Regex.named_captures(padded_title)
+    |> Map.fetch!("name")
+  end
+
+  defp format_difficulty("Difficulty:" <> difficulty), do: String.trim(difficulty)
+  defp format_tags("Tags:" <> tags), do: tags |> String.trim() |> String.split(" ", trim: true)
+  defp format_extra(extra), do: Enum.join(extra, " ")
 
   defp get_solution_count(year, day) do
     year
