@@ -8,29 +8,29 @@
 
 ## :trophy: 45/50
 
-| Day | Problem Page | Status | Solution Page | Test Page |
-| :---: | :------: | ---: | :---: | :---: |
-| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :1st_place_medal: | [day_01.ex](/lib/2022/day_01.ex) | [day_01_test.exs](/test/2022/day_01_test.exs) |
-| 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :1st_place_medal: | [day_02.ex](/lib/2022/day_02.ex) | [day_02_test.exs](/test/2022/day_02_test.exs) |
-| 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :1st_place_medal: | [day_03.ex](/lib/2022/day_03.ex) | [day_03_test.exs](/test/2022/day_03_test.exs) |
-| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :1st_place_medal: | [day_04.ex](/lib/2022/day_04.ex) | [day_04_test.exs](/test/2022/day_04_test.exs) |
-| 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :1st_place_medal: | [day_05.ex](/lib/2022/day_05.ex) | [day_05_test.exs](/test/2022/day_05_test.exs) |
-| 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :1st_place_medal: | [day_06.ex](/lib/2022/day_06.ex) | [day_06_test.exs](/test/2022/day_06_test.exs) |
-| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :1st_place_medal: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) |
-| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :1st_place_medal: | [day_08.ex](/lib/2022/day_08.ex) | [day_08_test.exs](/test/2022/day_08_test.exs) |
-| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :1st_place_medal: | [day_09.ex](/lib/2022/day_09.ex) | [day_09_test.exs](/test/2022/day_09_test.exs) |
-| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :1st_place_medal: | [day_10.ex](/lib/2022/day_10.ex) | [day_10_test.exs](/test/2022/day_10_test.exs) |
-| 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | :1st_place_medal: | [day_11.ex](/lib/2022/day_11.ex) | [day_11_test.exs](/test/2022/day_11_test.exs) |
-| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :1st_place_medal: | [day_12.ex](/lib/2022/day_12.ex) | [day_12_test.exs](/test/2022/day_12_test.exs) |
-| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :1st_place_medal: | [day_13.ex](/lib/2022/day_13.ex) | [day_13_test.exs](/test/2022/day_13_test.exs) |
-| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) |
-| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :1st_place_medal: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) |
-| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :1st_place_medal: | [day_18.ex](/lib/2022/day_18.ex) | [day_18_test.exs](/test/2022/day_18_test.exs) |
-| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) |
-| 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) |
-| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :1st_place_medal: | [day_21.ex](/lib/2022/day_21.ex) | [day_21_test.exs](/test/2022/day_21_test.exs) |
-| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :2nd_place_medal: | [day_22.ex](/lib/2022/day_22.ex) | [day_22_test.exs](/test/2022/day_22_test.exs) |
-| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :1st_place_medal: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) |
-| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) |
-| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :1st_place_medal: | [day_25.ex](/lib/2022/day_25.ex) | [day_25_test.exs](/test/2022/day_25_test.exs) |
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2022/day_01.ex) | [day_01_test.exs](/test/2022/day_01_test.exs) | sequence |
+| 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2022/day_02.ex) | [day_02_test.exs](/test/2022/day_02_test.exs) | table-lookup |
+| 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2022/day_03.ex) | [day_03_test.exs](/test/2022/day_03_test.exs) | set |
+| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2022/day_04.ex) | [day_04_test.exs](/test/2022/day_04_test.exs) | range, set |
+| 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2022/day_05.ex) | [day_05_test.exs](/test/2022/day_05_test.exs) | parse-heavy, stack, linked-list |
+| 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2022/day_06.ex) | [day_06_test.exs](/test/2022/day_06_test.exs) | binary-manipulation, set |
+| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) | command-parsing, linked-list |
+| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2022/day_08.ex) | [day_08_test.exs](/test/2022/day_08_test.exs) | erlang, grid |
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_09.ex](/lib/2022/day_09.ex) | [day_09_test.exs](/test/2022/day_09_test.exs) | erlang, grid, grid-walk |
+| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2022/day_10.ex) | [day_10_test.exs](/test/2022/day_10_test.exs) | erlang, visual-result, op-code |
+| 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_11.ex](/lib/2022/day_11.ex) | [day_11_test.exs](/test/2022/day_11_test.exs) | erlang, parse-heavy, math |
+| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2022/day_12.ex) | [day_12_test.exs](/test/2022/day_12_test.exs) | graph, graph-traversal, slow, revisit |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | :1st_place_medal: | :snowflake: :snowflake: | [day_13.ex](/lib/2022/day_13.ex) | [day_13_test.exs](/test/2022/day_13_test.exs) | json, sequence |
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | live-book, visualized, slow, traversal |
+| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) | erlang, slow, large-number, geometry2d |
+| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2022/day_18.ex) | [day_18_test.exs](/test/2022/day_18_test.exs) | erlang, geometry3d, surface, set |
+| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | erlang, slow, revisit, navigation, maximization |
+| 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) | slow, vector, sequence, large-number, random-access |
+| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :1st_place_medal: | :snowflake: :snowflake: | [day_21.ex](/lib/2022/day_21.ex) | [day_21_test.exs](/test/2022/day_21_test.exs) | erlang, op-code, large-number, arithmetic |
+| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_22.ex](/lib/2022/day_22.ex) | [day_22_test.exs](/test/2022/day_22_test.exs) | half-done, geometry3d, walk3d |
+| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) | erlang, slow, grid2d, grid-walk |
+| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | erlang, slow, optimization, grid, search |
+| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2022/day_25.ex) | [day_25_test.exs](/test/2022/day_25_test.exs) | number-system, math |
 

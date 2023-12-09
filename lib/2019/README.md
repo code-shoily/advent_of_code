@@ -8,14 +8,14 @@
 
 ## :trophy: 15/50
 
-| Day | Problem Page | Status | Solution Page | Test Page |
-| :---: | :------: | ---: | :---: | :---: |
-| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :1st_place_medal: | [day_01.ex](/lib/2019/day_01.ex) | [day_01_test.exs](/test/2019/day_01_test.exs) |
-| 2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :1st_place_medal: | [day_02.ex](/lib/2019/day_02.ex) | [day_02_test.exs](/test/2019/day_02_test.exs) |
-| 3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :1st_place_medal: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) |
-| 4 | [Secure Container](https://adventofcode.com/2019/day/4) | :1st_place_medal: | [day_04.ex](/lib/2019/day_04.ex) | [day_04_test.exs](/test/2019/day_04_test.exs) |
-| 5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5) | :2nd_place_medal: | [day_05.ex](/lib/2019/day_05.ex) | [day_05_test.exs](/test/2019/day_05_test.exs) |
-| 6 | [Universal Orbit Map](https://adventofcode.com/2019/day/6) | :1st_place_medal: | [day_06.ex](/lib/2019/day_06.ex) | [day_06_test.exs](/test/2019/day_06_test.exs) |
-| 8 | [Space Image Format](https://adventofcode.com/2019/day/8) | :1st_place_medal: | [day_08.ex](/lib/2019/day_08.ex) | [day_08_test.exs](/test/2019/day_08_test.exs) |
-| 10 | [Monitoring Station](https://adventofcode.com/2019/day/10) | :1st_place_medal: | [day_10.ex](/lib/2019/day_10.ex) | [day_10_test.exs](/test/2019/day_10_test.exs) |
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2019/day_01.ex) | [day_01_test.exs](/test/2019/day_01_test.exs) | calculation |
+| 2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2019/day_02.ex) | [day_02_test.exs](/test/2019/day_02_test.exs) | simulation, op-code, not-fast-enough, int-code |
+| 3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) | grid, navigation, set, not-fast-enough |
+| 4 | [Secure Container](https://adventofcode.com/2019/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2019/day_04.ex) | [day_04_test.exs](/test/2019/day_04_test.exs) | sequence, inline-input, not-fast-enough |
+| 5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5) | :2nd_place_medal: | :snowflake: | [day_05.ex](/lib/2019/day_05.ex) | [day_05_test.exs](/test/2019/day_05_test.exs) | simulation, op-code, int-code |
+| 6 | [Universal Orbit Map](https://adventofcode.com/2019/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2019/day_06.ex) | [day_06_test.exs](/test/2019/day_06_test.exs) | graph, shortest-path |
+| 8 | [Space Image Format](https://adventofcode.com/2019/day/8) | :1st_place_medal: | :snowflake: | [day_08.ex](/lib/2019/day_08.ex) | [day_08_test.exs](/test/2019/day_08_test.exs) | sequence, visual-result |
+| 10 | [Monitoring Station](https://adventofcode.com/2019/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2019/day_10.ex) | [day_10_test.exs](/test/2019/day_10_test.exs) | sequence, grid, trigonometry |
 

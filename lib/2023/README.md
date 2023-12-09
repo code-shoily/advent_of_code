@@ -8,15 +8,15 @@
 
 ## :trophy: 18/50
 
-| Day | Problem Page | Status | Solution Page | Test Page |
-| :---: | :------: | ---: | :---: | :---: |
-| 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | :1st_place_medal: | [day_01.ex](/lib/2023/day_01.ex) | [day_01_test.exs](/test/2023/day_01_test.exs) |
-| 2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) |
-| 3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) |
-| 4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) |
-| 5 | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | :1st_place_medal: | [day_05.ex](/lib/2023/day_05.ex) | [day_05_test.exs](/test/2023/day_05_test.exs) |
-| 6 | [Wait For It](https://adventofcode.com/2023/day/6) | :1st_place_medal: | [day_06.ex](/lib/2023/day_06.ex) | [day_06_test.exs](/test/2023/day_06_test.exs) |
-| 7 | [Camel Cards](https://adventofcode.com/2023/day/7) | :1st_place_medal: | [day_07.ex](/lib/2023/day_07.ex) | [day_07_test.exs](/test/2023/day_07_test.exs) |
-| 8 | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | :1st_place_medal: | [day_08.ex](/lib/2023/day_08.ex) | [day_08_test.exs](/test/2023/day_08_test.exs) |
-| 9 | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | :1st_place_medal: | [day_09.ex](/lib/2023/day_09.ex) | [day_09_test.exs](/test/2023/day_09_test.exs) |
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2023/day_01.ex) | [day_01_test.exs](/test/2023/day_01_test.exs) | regex |
+| 2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) | reduction |
+| 3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) | grid-walk |
+| 4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) | set, reduction |
+| 5 | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_05.ex](/lib/2023/day_05.ex) | [day_05_test.exs](/test/2023/day_05_test.exs) | internval-tree, gb-tree |
+| 6 | [Wait For It](https://adventofcode.com/2023/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2023/day_06.ex) | [day_06_test.exs](/test/2023/day_06_test.exs) | algebra |
+| 7 | [Camel Cards](https://adventofcode.com/2023/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2023/day_07.ex) | [day_07_test.exs](/test/2023/day_07_test.exs) | map, pattern-matching |
+| 8 | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | :1st_place_medal: | :snowflake: :snowflake: | [day_08.ex](/lib/2023/day_08.ex) | [day_08_test.exs](/test/2023/day_08_test.exs) | arithmetic, lcd, sequence |
+| 9 | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | :1st_place_medal: | :snowflake: | [day_09.ex](/lib/2023/day_09.ex) | [day_09_test.exs](/test/2023/day_09_test.exs) | sequence, reduce |
 

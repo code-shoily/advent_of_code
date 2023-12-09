@@ -81,14 +81,14 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   def yearwise_readme(year) do
     heading = build_heading(year)
-    table_header = "| Day | Problem Page | Status | Solution Page | Test Page |"
+    table_header = "| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |"
     info = Meta.get_info(year)
     trophy = "## :trophy: #{info.completed}/50"
 
     table_content =
       for {day, line} <- info.summary do
         """
-        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{linkify(line.solution)} | #{linkify(line.test)} |
+        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{difficulty(line.difficulty)} | #{linkify(line.solution)} | #{linkify(line.test)} | #{tags(line.tags)} |
         """
       end
 
@@ -98,10 +98,22 @@ defmodule AdventOfCode.Helpers.Summarizer do
     #{trophy}
 
     #{table_header}
-    | :---: | :------: | ---: | :---: | :---: |
+    | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
     #{table_content}
     """
   end
+
+  defp difficulty_level_icon(count), do: ":snowflake:" |> List.duplicate(count) |> Enum.join(" ")
+
+  defp difficulty("xs"), do: difficulty_level_icon(1)
+  defp difficulty("s"), do: difficulty_level_icon(2)
+  defp difficulty("m"), do: difficulty_level_icon(3)
+  defp difficulty("l"), do: difficulty_level_icon(4)
+  defp difficulty("xl"), do: difficulty_level_icon(5)
+  defp difficulty("xxl"), do: difficulty_level_icon(6)
+  defp difficulty(_), do: ":shrug:"
+
+  defp tags(tags), do: tags |> Enum.join(", ")
 
   defp award(1), do: ":2nd_place_medal:"
   defp award(2), do: ":1st_place_medal:"

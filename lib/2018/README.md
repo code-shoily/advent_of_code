@@ -8,14 +8,14 @@
 
 ## :trophy: 15/50
 
-| Day | Problem Page | Status | Solution Page | Test Page |
-| :---: | :------: | ---: | :---: | :---: |
-| 1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) |
-| 2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :1st_place_medal: | [day_02.ex](/lib/2018/day_02.ex) | [day_02_test.exs](/test/2018/day_02_test.exs) |
-| 3 | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | :1st_place_medal: | [day_03.ex](/lib/2018/day_03.ex) | [day_03_test.exs](/test/2018/day_03_test.exs) |
-| 4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) |
-| 5 | [Alchemical Reduction](https://adventofcode.com/2018/day/5) | :1st_place_medal: | [day_05.ex](/lib/2018/day_05.ex) | [day_05_test.exs](/test/2018/day_05_test.exs) |
-| 6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) |
-| 8 | [Memory Maneuver](https://adventofcode.com/2018/day/8) | :2nd_place_medal: | [day_08.ex](/lib/2018/day_08.ex) | [day_08_test.exs](/test/2018/day_08_test.exs) |
-| 9 | [Marble Mania](https://adventofcode.com/2018/day/9) | :1st_place_medal: | [day_09.ex](/lib/2018/day_09.ex) | [day_09_test.exs](/test/2018/day_09_test.exs) |
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) | sequence, set |
+| 2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2018/day_02.ex) | [day_02_test.exs](/test/2018/day_02_test.exs) | checksum, string-result, set |
+| 3 | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2018/day_03.ex) | [day_03_test.exs](/test/2018/day_03_test.exs) | grid, set, not-fast-enough |
+| 4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) | date-time, sequence, sort, map |
+| 5 | [Alchemical Reduction](https://adventofcode.com/2018/day/5) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_05.ex](/lib/2018/day_05.ex) | [day_05_test.exs](/test/2018/day_05_test.exs) | reduction, simulation |
+| 6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | :snowflake: :snowflake: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) | not-fast-enough, grid, distance, bounded-box |
+| 8 | [Memory Maneuver](https://adventofcode.com/2018/day/8) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2018/day_08.ex) | [day_08_test.exs](/test/2018/day_08_test.exs) | sequence, walk |
+| 9 | [Marble Mania](https://adventofcode.com/2018/day/9) | :1st_place_medal: | :snowflake: :snowflake: | [day_09.ex](/lib/2018/day_09.ex) | [day_09_test.exs](/test/2018/day_09_test.exs) | not-fast-enough, circular-linked-list |
 

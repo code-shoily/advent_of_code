@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2015.Day18 do
   @moduledoc """
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
-  Difficulty: ms
+  Difficulty: m
   Tags: grid map bounded-box not-fast-enough
   """
   alias AdventOfCode.Algorithms.Grid
