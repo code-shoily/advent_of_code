@@ -49,7 +49,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
       for year <- @year_range do
         case metadata[year].summary[day] do
           nil -> " "
-          %{count: count} -> award(count)
+          %{count: count, solution: solution} -> award_with_link(count, solution)
         end
       end
       |> Enum.join(" | ")
@@ -105,6 +105,10 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   defp award(1), do: ":2nd_place_medal:"
   defp award(2), do: ":1st_place_medal:"
+
+  defp award_with_link(count, link) do
+    "[#{award(count)}](#{link})"
+  end
 
   defp linkify(link) do
     file = link |> String.split("/") |> List.last()

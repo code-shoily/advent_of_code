@@ -37,30 +37,30 @@ Note that you can call those commands independently and also set up pre-commit h
 | Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) | [2023](lib/2023)
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | :star2: | 48 | 22 | 34 | 15 | 15 | 44 | 24 | 45 | 18 |
-| 1 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 2 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 3 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 4 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 5 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 6 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 7 | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: |   |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 8 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :2nd_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: |
-| 9 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-| 10 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: | :1st_place_medal: |   | :1st_place_medal: |   |
-| 11 | :1st_place_medal: |   | :1st_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 12 | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 13 | :1st_place_medal: |   | :1st_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 14 | :1st_place_medal: |   | :2nd_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 15 | :1st_place_medal: |   | :1st_place_medal: |   |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   |
-| 16 | :1st_place_medal: |   | :1st_place_medal: |   |   | :2nd_place_medal: | :1st_place_medal: |   |   |
-| 17 | :1st_place_medal: |   | :1st_place_medal: |   |   |   |   |   |   |
-| 18 | :1st_place_medal: |   | :2nd_place_medal: |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 19 | :1st_place_medal: |   |   |   |   | :1st_place_medal: |   | :1st_place_medal: |   |
-| 20 | :1st_place_medal: |   |   |   |   | :2nd_place_medal: |   | :1st_place_medal: |   |
-| 21 | :1st_place_medal: |   |   |   |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   |
-| 22 |   |   |   |   |   | :1st_place_medal: |   | :2nd_place_medal: |   |
-| 23 | :1st_place_medal: |   | :2nd_place_medal: |   |   | :2nd_place_medal: |   | :1st_place_medal: |   |
-| 24 | :1st_place_medal: |   |   |   |   | :2nd_place_medal: |   | :1st_place_medal: |   |
-| 25 | :1st_place_medal: |   |   |   |   | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |   |
+| 1 | [:1st_place_medal:](/lib/2015/day_01.ex) | [:1st_place_medal:](/lib/2016/day_01.ex) | [:1st_place_medal:](/lib/2017/day_01.ex) | [:1st_place_medal:](/lib/2018/day_01.ex) | [:1st_place_medal:](/lib/2019/day_01.ex) | [:1st_place_medal:](/lib/2020/day_01.ex) | [:1st_place_medal:](/lib/2021/day_01.ex) | [:1st_place_medal:](/lib/2022/day_01.ex) | [:1st_place_medal:](/lib/2023/day_01.ex) |
+| 2 | [:1st_place_medal:](/lib/2015/day_02.ex) | [:1st_place_medal:](/lib/2016/day_02.ex) | [:1st_place_medal:](/lib/2017/day_02.ex) | [:1st_place_medal:](/lib/2018/day_02.ex) | [:1st_place_medal:](/lib/2019/day_02.ex) | [:1st_place_medal:](/lib/2020/day_02.ex) | [:1st_place_medal:](/lib/2021/day_02.ex) | [:1st_place_medal:](/lib/2022/day_02.ex) | [:1st_place_medal:](/lib/2023/day_02.ex) |
+| 3 | [:1st_place_medal:](/lib/2015/day_03.ex) | [:1st_place_medal:](/lib/2016/day_03.ex) | [:1st_place_medal:](/lib/2017/day_03.ex) | [:1st_place_medal:](/lib/2018/day_03.ex) | [:1st_place_medal:](/lib/2019/day_03.ex) | [:1st_place_medal:](/lib/2020/day_03.ex) | [:1st_place_medal:](/lib/2021/day_03.ex) | [:1st_place_medal:](/lib/2022/day_03.ex) | [:1st_place_medal:](/lib/2023/day_03.ex) |
+| 4 | [:1st_place_medal:](/lib/2015/day_04.ex) | [:1st_place_medal:](/lib/2016/day_04.ex) | [:1st_place_medal:](/lib/2017/day_04.ex) | [:1st_place_medal:](/lib/2018/day_04.ex) | [:1st_place_medal:](/lib/2019/day_04.ex) | [:1st_place_medal:](/lib/2020/day_04.ex) | [:1st_place_medal:](/lib/2021/day_04.ex) | [:1st_place_medal:](/lib/2022/day_04.ex) | [:1st_place_medal:](/lib/2023/day_04.ex) |
+| 5 | [:1st_place_medal:](/lib/2015/day_05.ex) | [:1st_place_medal:](/lib/2016/day_05.ex) | [:1st_place_medal:](/lib/2017/day_05.ex) | [:1st_place_medal:](/lib/2018/day_05.ex) | [:2nd_place_medal:](/lib/2019/day_05.ex) | [:1st_place_medal:](/lib/2020/day_05.ex) | [:1st_place_medal:](/lib/2021/day_05.ex) | [:1st_place_medal:](/lib/2022/day_05.ex) | [:1st_place_medal:](/lib/2023/day_05.ex) |
+| 6 | [:1st_place_medal:](/lib/2015/day_06.ex) | [:1st_place_medal:](/lib/2016/day_06.ex) | [:1st_place_medal:](/lib/2017/day_06.ex) | [:1st_place_medal:](/lib/2018/day_06.ex) | [:1st_place_medal:](/lib/2019/day_06.ex) | [:1st_place_medal:](/lib/2020/day_06.ex) | [:1st_place_medal:](/lib/2021/day_06.ex) | [:1st_place_medal:](/lib/2022/day_06.ex) | [:1st_place_medal:](/lib/2023/day_06.ex) |
+| 7 | [:1st_place_medal:](/lib/2015/day_07.ex) | [:1st_place_medal:](/lib/2016/day_07.ex) | [:2nd_place_medal:](/lib/2017/day_07.ex) |   |   | [:1st_place_medal:](/lib/2020/day_07.ex) | [:1st_place_medal:](/lib/2021/day_07.ex) | [:1st_place_medal:](/lib/2022/day_07.ex) | [:1st_place_medal:](/lib/2023/day_07.ex) |
+| 8 | [:1st_place_medal:](/lib/2015/day_08.ex) | [:1st_place_medal:](/lib/2016/day_08.ex) | [:1st_place_medal:](/lib/2017/day_08.ex) | [:2nd_place_medal:](/lib/2018/day_08.ex) | [:1st_place_medal:](/lib/2019/day_08.ex) | [:1st_place_medal:](/lib/2020/day_08.ex) |   | [:1st_place_medal:](/lib/2022/day_08.ex) | [:1st_place_medal:](/lib/2023/day_08.ex) |
+| 9 | [:1st_place_medal:](/lib/2015/day_09.ex) | [:1st_place_medal:](/lib/2016/day_09.ex) | [:1st_place_medal:](/lib/2017/day_09.ex) | [:1st_place_medal:](/lib/2018/day_09.ex) |   | [:1st_place_medal:](/lib/2020/day_09.ex) | [:1st_place_medal:](/lib/2021/day_09.ex) | [:1st_place_medal:](/lib/2022/day_09.ex) | [:1st_place_medal:](/lib/2023/day_09.ex) |
+| 10 | [:1st_place_medal:](/lib/2015/day_10.ex) | [:1st_place_medal:](/lib/2016/day_10.ex) | [:1st_place_medal:](/lib/2017/day_10.ex) |   | [:1st_place_medal:](/lib/2019/day_10.ex) | [:1st_place_medal:](/lib/2020/day_10.ex) |   | [:1st_place_medal:](/lib/2022/day_10.ex) |   |
+| 11 | [:1st_place_medal:](/lib/2015/day_11.ex) |   | [:1st_place_medal:](/lib/2017/day_11.ex) |   |   | [:1st_place_medal:](/lib/2020/day_11.ex) |   | [:1st_place_medal:](/lib/2022/day_11.ex) |   |
+| 12 | [:1st_place_medal:](/lib/2015/day_12.ex) | [:1st_place_medal:](/lib/2016/day_12.ex) | [:1st_place_medal:](/lib/2017/day_12.ex) |   |   | [:1st_place_medal:](/lib/2020/day_12.ex) |   | [:1st_place_medal:](/lib/2022/day_12.ex) |   |
+| 13 | [:1st_place_medal:](/lib/2015/day_13.ex) |   | [:1st_place_medal:](/lib/2017/day_13.ex) |   |   | [:1st_place_medal:](/lib/2020/day_13.ex) |   | [:1st_place_medal:](/lib/2022/day_13.ex) |   |
+| 14 | [:1st_place_medal:](/lib/2015/day_14.ex) |   | [:2nd_place_medal:](/lib/2017/day_14.ex) |   |   | [:1st_place_medal:](/lib/2020/day_14.ex) |   | [:1st_place_medal:](/lib/2022/day_14.ex) |   |
+| 15 | [:1st_place_medal:](/lib/2015/day_15.ex) |   | [:1st_place_medal:](/lib/2017/day_15.ex) |   |   | [:1st_place_medal:](/lib/2020/day_15.ex) | [:1st_place_medal:](/lib/2021/day_15.ex) | [:1st_place_medal:](/lib/2022/day_15.ex) |   |
+| 16 | [:1st_place_medal:](/lib/2015/day_16.ex) |   | [:1st_place_medal:](/lib/2017/day_16.ex) |   |   | [:2nd_place_medal:](/lib/2020/day_16.ex) | [:1st_place_medal:](/lib/2021/day_16.ex) |   |   |
+| 17 | [:1st_place_medal:](/lib/2015/day_17.ex) |   | [:1st_place_medal:](/lib/2017/day_17.ex) |   |   |   |   |   |   |
+| 18 | [:1st_place_medal:](/lib/2015/day_18.ex) |   | [:2nd_place_medal:](/lib/2017/day_18.ex) |   |   | [:1st_place_medal:](/lib/2020/day_18.ex) |   | [:1st_place_medal:](/lib/2022/day_18.ex) |   |
+| 19 | [:1st_place_medal:](/lib/2015/day_19.ex) |   |   |   |   | [:1st_place_medal:](/lib/2020/day_19.ex) |   | [:1st_place_medal:](/lib/2022/day_19.ex) |   |
+| 20 | [:1st_place_medal:](/lib/2015/day_20.ex) |   |   |   |   | [:2nd_place_medal:](/lib/2020/day_20.ex) |   | [:1st_place_medal:](/lib/2022/day_20.ex) |   |
+| 21 | [:1st_place_medal:](/lib/2015/day_21.ex) |   |   |   |   | [:1st_place_medal:](/lib/2020/day_21.ex) | [:1st_place_medal:](/lib/2021/day_21.ex) | [:1st_place_medal:](/lib/2022/day_21.ex) |   |
+| 22 |   |   |   |   |   | [:1st_place_medal:](/lib/2020/day_22.ex) |   | [:2nd_place_medal:](/lib/2022/day_22.ex) |   |
+| 23 | [:1st_place_medal:](/lib/2015/day_23.ex) |   | [:2nd_place_medal:](/lib/2017/day_23.ex) |   |   | [:2nd_place_medal:](/lib/2020/day_23.ex) |   | [:1st_place_medal:](/lib/2022/day_23.ex) |   |
+| 24 | [:1st_place_medal:](/lib/2015/day_24.ex) |   |   |   |   | [:2nd_place_medal:](/lib/2020/day_24.ex) |   | [:1st_place_medal:](/lib/2022/day_24.ex) |   |
+| 25 | [:1st_place_medal:](/lib/2015/day_25.ex) |   |   |   |   | [:1st_place_medal:](/lib/2020/day_25.ex) | [:1st_place_medal:](/lib/2021/day_25.ex) | [:1st_place_medal:](/lib/2022/day_25.ex) |   |
 
 
