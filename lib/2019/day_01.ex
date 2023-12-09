@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2019.Day01 do
   @moduledoc """
   --- Day 1: The Tyranny of the Rocket Equation ---
   Problem Link: https://adventofcode.com/2019/day/1
+  Difficulty: xs
+  Tags: calculation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2019.Day06 do
   @moduledoc """
   --- Day 6: Universal Orbit Map ---
   Problem Link: https://adventofcode.com/2019/day/6
+  Difficulty: xs
+  Tags: graph shortest-path
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2019.Day10 do
   @moduledoc """
   --- Day 10: Monitoring Station ---
   Problem Link: https://adventofcode.com/2019/day/10
+  Difficulty: m
+  Tags: sequence grid trigonometry
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

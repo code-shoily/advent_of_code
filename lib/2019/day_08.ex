@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2019.Day08 do
   @moduledoc """
   --- Day 8: Space Image Format ---
   Problem Link: https://adventofcode.com/2019/day/8
+  Difficulty: xs
+  Tags: sequence visual-result
   """
   alias AdventOfCode.Helpers.InputReader
 

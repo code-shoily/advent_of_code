@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day10 do
   --- Day 10: Cathode-Ray Tube ---p
   Problem Link: https://adventofcode.com/2022/day/10
   Difficulty: m
-  Tags: erlang visual-result opcode
+  Tags: erlang visual-result op-code
   """
   alias AdventOfCode.Helpers.InputReader
 

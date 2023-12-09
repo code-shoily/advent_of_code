@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2019.Day03 do
   @moduledoc """
   --- Day 3: Crossed Wires ---
   Problem Link: https://adventofcode.com/2019/day/3
+  Difficulty: xs
+  Tags: grid navigation set not-fast-enough
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
