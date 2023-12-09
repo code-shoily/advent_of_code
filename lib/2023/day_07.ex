@@ -68,21 +68,16 @@ defmodule AdventOfCode.Y2023.Day07 do
     |> Map.new(fn {a, b} -> {a, length(b)} end)
   end
 
-  def jokered_rank(rank, hand) do
-    freq = frequency(hand)
-
-    case {rank, freq["J"]} do
-      {_, nil} -> rank
-      {1, _} -> 2
-      {2, _} -> 4
-      {3, 1} -> 5
-      {3, 2} -> 6
-      {4, _} -> 6
-      {5, _} -> 7
-      {6, _} -> 7
-      {7, _} -> rank
-    end
-  end
+  def jokered_rank(rank, hand), do: jokered_rank({rank, frequency(hand)["J"]})
+  def jokered_rank({rank, nil}), do: rank
+  def jokered_rank({1, _}), do: 2
+  def jokered_rank({2, _}), do: 4
+  def jokered_rank({3, 1}), do: 5
+  def jokered_rank({3, 2}), do: 6
+  def jokered_rank({4, _}), do: 6
+  def jokered_rank({5, _}), do: 7
+  def jokered_rank({6, _}), do: 7
+  def jokered_rank({rank, _}), do: rank
 
   def get_rank(hand) do
     case hand |> frequency() |> Map.values() |> Enum.sort() do
