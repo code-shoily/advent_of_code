@@ -49,7 +49,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
       for year <- @year_range do
         case metadata[year].summary[day] do
           nil -> " "
-          %{count: count, solution: solution} -> award_with_link(count, solution)
+          %{count: count} -> award(count)
         end
       end
       |> Enum.join(" | ")
@@ -81,14 +81,26 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   def yearwise_readme(year) do
     heading = build_heading(year)
-    table_header = "| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |"
+
+    table_header =
+      "| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |"
+
     info = Meta.get_info(year)
     trophy = "## :trophy: #{info.completed}/50"
 
     table_content =
-      for {day, line} <- info.summary do
+      for {day,
+           %{
+             title: title,
+             link: link,
+             count: count,
+             difficulty: difficulty,
+             solution: solution,
+             test: test,
+             tags: tags
+           }} <- info.summary do
         """
-        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{difficulty(line.difficulty)} | #{linkify(line.solution)} | #{linkify(line.test)} | #{tags(line.tags)} |
+        | #{day} | [#{title}](#{link}) | #{award(count)} | #{difficulty(difficulty)} | #{linkify(solution)} | #{linkify(test)} | #{tags(tags)} |
         """
       end
 
@@ -117,10 +129,6 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   defp award(1), do: ":2nd_place_medal:"
   defp award(2), do: ":1st_place_medal:"
-
-  defp award_with_link(count, link) do
-    "[#{award(count)}](#{link})"
-  end
 
   defp linkify(link) do
     file = link |> String.split("/") |> List.last()
