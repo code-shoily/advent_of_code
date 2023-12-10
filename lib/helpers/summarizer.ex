@@ -13,8 +13,12 @@ defmodule AdventOfCode.Helpers.Summarizer do
     total_stars =
       metadata |> Enum.map(fn {_, %{completed: completed}} -> completed end) |> Enum.sum()
 
+    year_links =
+      @year_range
+      |> Enum.map_join("|", fn year -> " [#{year}](/lib/#{year}) " end)
+
     header =
-      "| Day | [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](lib/2021) | [2022](lib/2022) | [2023](lib/2023)"
+      "| Day |#{year_links}|"
 
     trophy = "## :trophy: #{total_stars}/450"
 
