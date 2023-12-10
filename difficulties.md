@@ -75,6 +75,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :1st_place_medal: | :snowflake: :snowflake: | [day_21.ex](/lib/2022/day_21.ex) | [day_21_test.exs](/test/2022/day_21_test.exs) | [erlang](/tags.md#erlang), [op-code](/tags.md#op-code), [large-number](/tags.md#large-number), [arithmetic](/tags.md#arithmetic) |
 | 2023/2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) | [reduction](/tags.md#reduction) |
 | 2023/8 | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | :1st_place_medal: | :snowflake: :snowflake: | [day_08.ex](/lib/2023/day_08.ex) | [day_08_test.exs](/test/2023/day_08_test.exs) | [arithmetic](/tags.md#arithmetic), [sequence](/tags.md#sequence) |
+| 2023/11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
 
 ## m
 
@@ -135,6 +136,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2022/day_18.ex) | [day_18_test.exs](/test/2022/day_18_test.exs) | [erlang](/tags.md#erlang), [geometry3d](/tags.md#geometry3d), [surface](/tags.md#surface), [set](/tags.md#set) |
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [needs-improvement](/tags.md#needs-improvement), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2023/5 | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_05.ex](/lib/2023/day_05.ex) | [day_05_test.exs](/test/2023/day_05_test.exs) | [range](/tags.md#range), [gb-tree](/tags.md#gb-tree) |
+| 2023/10 | [Pipe Maze](https://adventofcode.com/2023/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2023/day_10.ex) | [day_10_test.exs](/test/2023/day_10_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [needs-improvement](/tags.md#needs-improvement), [not-fast-enough](/tags.md#not-fast-enough) |
 
 ## xxl
 
