@@ -17,6 +17,16 @@ To make the experience boilerplate-free and give all solutions uniform (more or 
 
 To solve the problem for a particular year/day, type in `mix solve --year <year> --day <day>` or `mix solve <year> <day>` and you will see the result of the mentioned `year/day` if it is valid and has been solved. Type `mix help solve` for more.
 
+## Introducing a new year
+
+During December 1 of a new year (if Advent of Code is happening that year), the following steps should be taken (this should be more streamlined in future):
+
+* Create a new folder `XXXX` (in year format) under `/lib` or `/test`
+* Update the `@latest_year` attribute on `advent_of_code.ex`
+* Double check your session cookie (in case you're using it)
+
+All commands should work from then on.
+
 ## Testing
 
 run `mix test` to ensure all solutions are working okay. To run test for a particular year and day, type `mix test --only y<last-two-digits-of-year><zero-padded-day>`. For example: `mix test --only y1501` tests for `2015` as year and `1` as day.
@@ -35,6 +45,7 @@ The stats, both in `<year>/README.md` and the bottom part of `README.md` are aut
 Note that you can call those commands independently and also set up pre-commit hooks to run it for you.
 
 ## Pages
+
 * [tags.md](/tags.md) contains information about tags, a loose attempt to have an idea of nature (i.e. algorithms, output type, input size etc) of puzzles
 * [difficulties.md](/difficulties.md) contains information about relative difficulties, marked with :snowflake: (higher number of icons represent higher difficulty)
 * Each year has its own `README.md` to have summarized information of that year. Those pages are:

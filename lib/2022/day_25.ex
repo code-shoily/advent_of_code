@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day25 do
   --- Day 25: Full of Hot Air ---
   Problem Link: https://adventofcode.com/2022/day/25
   Difficulty: m
-  Tags: number-system math
+  Tags: number-system
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

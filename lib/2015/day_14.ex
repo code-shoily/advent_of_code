@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day14 do
   --- Day 14: Reindeer Olympics ---
   Problem Link: https://adventofcode.com/2015/day/14
   Difficulty: s
-  Tags: speed-math recursion sequence
+  Tags: measurement recursion sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
