@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day06 do
   --- Day 6: Tuning Trouble ---
   Problem Link: https://adventofcode.com/2022/day/6
   Difficulty: xs
-  Tags: binary-manipulation set
+  Tags: bitwise set
   """
   alias AdventOfCode.Helpers.InputReader
 

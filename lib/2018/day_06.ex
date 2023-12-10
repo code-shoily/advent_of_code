@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   Difficulty: s
-  Tags: not-fast-enough grid distance bounded-box
+  Tags: not-fast-enough grid measurement bounded-box
   """
   @type point :: {integer(), integer()}
   @type points :: list(point())

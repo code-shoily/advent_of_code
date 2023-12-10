@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day09 do
   --- Day 9: Mirage Maintenance ---
   Problem Link: https://adventofcode.com/2023/day/9
   Difficulty: xs
-  Tags: sequence reduce
+  Tags: sequence reduction
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day08 do
   --- Day 8: Haunted Wasteland ---
   Problem Link: https://adventofcode.com/2023/day/8
   Difficulty: s
-  Tags: arithmetic lcd sequence
+  Tags: arithmetic sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

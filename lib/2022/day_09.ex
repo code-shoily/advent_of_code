@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day09 do
   --- Day 9: Rope Bridge ---
   Problem Link: https://adventofcode.com/2022/day/9
   Difficulty: m
-  Tags: erlang grid grid-walk
+  Tags: erlang grid walk
   """
   alias AdventOfCode.Helpers.InputReader
 

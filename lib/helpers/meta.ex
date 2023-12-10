@@ -7,12 +7,36 @@ defmodule AdventOfCode.Helpers.Meta do
 
   @year_range 2015..AdventOfCode.get_latest_year()
 
+  @doc """
+  Returns data of all solutions.
+  """
   def solutions_summary do
     for year <- @year_range, into: %{} do
       {year, get_info(year, true)}
     end
   end
 
+  @doc """
+  Returns all the tags that is created. This is useful to run on the REPL and dedupe similar tags with typos.
+  """
+  def all_tags, do: enlist_attr_type(:tag_summary)
+
+  @doc """
+  Returns all the difficulty levels that were added. This is useful to run on the REPL and fix typos.
+  """
+  def all_difficulties, do: enlist_attr_type(:difficulty_summary)
+
+  defp enlist_attr_type(attr) do
+    @year_range
+    |> Enum.map(&get_info/1)
+    |> Enum.flat_map(&Map.keys(&1[attr]))
+    |> Enum.sort()
+    |> Enum.dedup()
+  end
+
+  @doc """
+  Gets solutions metadata for given year. Returns either as a map or keyword tuple
+  """
   def get_info(year, as_map \\ false) do
     daywise_summary =
       for day <- 1..25 do
@@ -87,7 +111,7 @@ defmodule AdventOfCode.Helpers.Meta do
     end
   end
 
-  def get_metadata(year, day) do
+  defp get_metadata(year, day) do
     "Elixir.AdventOfCode.Y#{year}.Day#{padded(day)}"
     |> String.to_existing_atom()
     |> Code.fetch_docs()

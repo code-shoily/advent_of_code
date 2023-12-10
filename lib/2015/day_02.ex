@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day02 do
   --- Day 2: I Was Told There Would Be No Math ---
   Problem Link: https://adventofcode.com/2015/day/2
   Difficulty: xs
-  Tags: geometry2D
+  Tags: geometry2d
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

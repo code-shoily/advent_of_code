@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day13 do
   --- Day 13: Knights of the Dinner Table ---
   Problem Link: https://adventofcode.com/2015/day/13
   Difficulty: s
-  Tags: brute-force permutations slow
+  Tags: brute-force combinatorics slow
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
