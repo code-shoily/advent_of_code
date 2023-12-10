@@ -28,7 +28,7 @@ defmodule AdventOfCode.MixProject do
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
       {:aja, "~> 0.6.1"},
-      {:nimble_parsec, "~> 1.0"}
+      {:topo, "~> 1.0"}
     ]
   end
 
