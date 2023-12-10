@@ -38,16 +38,16 @@ defmodule AdventOfCode.Y2023.Day11 do
     |> then(fn [current | remaining] -> all_pairs_distance(0, current, remaining) end)
   end
 
-  def all_pairs_distance(distance, _, []), do: distance
+  defp all_pairs_distance(distance, _, []), do: distance
 
-  def all_pairs_distance(distance, {x1, y1}, [next | remaining] = galaxies) do
+  defp all_pairs_distance(distance, {x1, y1}, [next | remaining] = galaxies) do
     for {x2, y2} <- galaxies, reduce: distance do
       acc -> acc + abs(x2 - x1) + abs(y2 - y1)
     end
     |> all_pairs_distance(next, remaining)
   end
 
-  def expand(galaxies, rows, cols, rate) do
+  defp expand(galaxies, rows, cols, rate) do
     for {x, y} <- galaxies,
         do:
           {x + (rate - 1) * Enum.count(rows, &(&1 < x)),
