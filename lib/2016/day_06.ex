@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day06 do
   @moduledoc """
   --- Day 6: Signals and Noise ---
   Problem Link: https://adventofcode.com/2016/day/6
+  Difficulty: xs
+  Tags: sequence optimization
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

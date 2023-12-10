@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day09 do
   @moduledoc """
   --- Day 9: Explosives in Cyberspace ---
   Problem Link: https://adventofcode.com/2016/day/9
+  Difficulty: m
+  Tags: sequence unfold
   """
   alias AdventOfCode.Helpers.InputReader
 

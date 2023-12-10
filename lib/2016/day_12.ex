@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day12 do
   @moduledoc """
   --- Day 12: Leonardo's Monorail ---
   Problem Link: https://adventofcode.com/2016/day/12
+  Difficulty: s
+  Tags: slow op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

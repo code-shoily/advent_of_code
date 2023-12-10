@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day04 do
   @moduledoc """
   --- Day 4: Security Through Obscurity ---
   Problem Link: https://adventofcode.com/2016/day/4
+  Difficulty: xs
+  Tags: sequence checksum
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

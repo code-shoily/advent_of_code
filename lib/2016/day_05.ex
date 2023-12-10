@@ -2,7 +2,8 @@ defmodule AdventOfCode.Y2016.Day05 do
   @moduledoc """
   --- Day 5: How About a Nice Game of Chess? ---
   Problem Link: https://adventofcode.com/2016/day/5
-  !FIXME: This is slow!
+  Difficulty: s
+  Tags: slow md5 annoying
   """
   def input, do: "cxdnnyjw"
 

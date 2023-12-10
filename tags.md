@@ -25,6 +25,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/4 | [The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2015/day_04.ex) | [day_04_test.exs](/test/2015/day_04_test.exs) | [md5](/tags.md#md5), [annoying](/tags.md#annoying) |
 | 2015/8 | [Matchsticks](https://adventofcode.com/2015/day/8) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2015/day_08.ex) | [day_08_test.exs](/test/2015/day_08_test.exs) | [string-encoding](/tags.md#string-encoding), [annoying](/tags.md#annoying) |
+| 2016/5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2016/day_05.ex) | [day_05_test.exs](/test/2016/day_05_test.exs) | [slow](/tags.md#slow), [md5](/tags.md#md5), [annoying](/tags.md#annoying) |
 
 ## arithmetic
 
@@ -45,6 +46,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/18 | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2015/day_18.ex) | [day_18_test.exs](/test/2015/day_18_test.exs) | [grid](/tags.md#grid), [map](/tags.md#map), [bounded-box](/tags.md#bounded-box), [not-fast-enough](/tags.md#not-fast-enough) |
+| 2016/2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2016/day_02.ex) | [day_02_test.exs](/test/2016/day_02_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [bounded-box](/tags.md#bounded-box) |
 | 2018/6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | :snowflake: :snowflake: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) | [not-fast-enough](/tags.md#not-fast-enough), [grid](/tags.md#grid), [measurement](/tags.md#measurement), [bounded-box](/tags.md#bounded-box) |
 
 ## brute-force
@@ -70,6 +72,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/4 | [Security Through Obscurity](https://adventofcode.com/2016/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2016/day_04.ex) | [day_04_test.exs](/test/2016/day_04_test.exs) | [sequence](/tags.md#sequence), [checksum](/tags.md#checksum) |
 | 2018/2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2018/day_02.ex) | [day_02_test.exs](/test/2018/day_02_test.exs) | [checksum](/tags.md#checksum), [string-result](/tags.md#string-result), [set](/tags.md#set) |
 
 ## circular-linked-list
@@ -91,6 +94,8 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/16 | [Aunt Sue](https://adventofcode.com/2015/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2015/day_16.ex) | [day_16_test.exs](/test/2015/day_16_test.exs) | [hard-description](/tags.md#hard-description), [count](/tags.md#count) |
+| 2016/3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) | [geometry2d](/tags.md#geometry2d), [matrix](/tags.md#matrix), [count](/tags.md#count) |
+| 2016/7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2016/day_07.ex) | [day_07_test.exs](/test/2016/day_07_test.exs) | [validation](/tags.md#validation), [count](/tags.md#count) |
 
 ## data-modelling
 
@@ -98,6 +103,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/7 | [Some Assembly Required](https://adventofcode.com/2015/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2015/day_07.ex) | [day_07_test.exs](/test/2015/day_07_test.exs) | [genserver](/tags.md#genserver), [data-modelling](/tags.md#data-modelling), [op-code](/tags.md#op-code) |
 | 2015/21 | [RPG Simulator 20XX](https://adventofcode.com/2015/day/21) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_21.ex](/lib/2015/day_21.ex) | [day_21_test.exs](/test/2015/day_21_test.exs) | [double-parse](/tags.md#double-parse), [data-modelling](/tags.md#data-modelling), [combinatorics](/tags.md#combinatorics), [strategy](/tags.md#strategy) |
+| 2016/10 | [Balance Bots](https://adventofcode.com/2016/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2016/day_10.ex) | [day_10_test.exs](/test/2016/day_10_test.exs) | [data-modelling](/tags.md#data-modelling), [genserver](/tags.md#genserver) |
 
 ## date-time
 
@@ -136,7 +142,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill) |
+| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
 
 ## gb-tree
 
@@ -149,12 +155,14 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/7 | [Some Assembly Required](https://adventofcode.com/2015/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2015/day_07.ex) | [day_07_test.exs](/test/2015/day_07_test.exs) | [genserver](/tags.md#genserver), [data-modelling](/tags.md#data-modelling), [op-code](/tags.md#op-code) |
+| 2016/10 | [Balance Bots](https://adventofcode.com/2016/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2016/day_10.ex) | [day_10_test.exs](/test/2016/day_10_test.exs) | [data-modelling](/tags.md#data-modelling), [genserver](/tags.md#genserver) |
 
 ## geometry2d
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2015/day_02.ex) | [day_02_test.exs](/test/2015/day_02_test.exs) | [geometry2d](/tags.md#geometry2d) |
+| 2016/3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) | [geometry2d](/tags.md#geometry2d), [matrix](/tags.md#matrix), [count](/tags.md#count) |
 | 2022/15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [large-number](/tags.md#large-number), [geometry2d](/tags.md#geometry2d) |
 
 ## geometry3d
@@ -184,6 +192,8 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/6 | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_06.ex](/lib/2015/day_06.ex) | [day_06_test.exs](/test/2015/day_06_test.exs) | [grid](/tags.md#grid), [vector](/tags.md#vector), [reduction](/tags.md#reduction), [slow](/tags.md#slow) |
 | 2015/18 | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2015/day_18.ex) | [day_18_test.exs](/test/2015/day_18_test.exs) | [grid](/tags.md#grid), [map](/tags.md#map), [bounded-box](/tags.md#bounded-box), [not-fast-enough](/tags.md#not-fast-enough) |
+| 2016/1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [measurement](/tags.md#measurement), [set](/tags.md#set) |
+| 2016/2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2016/day_02.ex) | [day_02_test.exs](/test/2016/day_02_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [bounded-box](/tags.md#bounded-box) |
 | 2018/3 | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2018/day_03.ex) | [day_03_test.exs](/test/2018/day_03_test.exs) | [grid](/tags.md#grid), [set](/tags.md#set), [not-fast-enough](/tags.md#not-fast-enough) |
 | 2018/6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | :snowflake: :snowflake: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) | [not-fast-enough](/tags.md#not-fast-enough), [grid](/tags.md#grid), [measurement](/tags.md#measurement), [bounded-box](/tags.md#bounded-box) |
 | 2019/3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [set](/tags.md#set), [not-fast-enough](/tags.md#not-fast-enough) |
@@ -259,7 +269,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill) |
+| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
 
 ## map
 
@@ -269,17 +279,26 @@ optimize them and update this page with refined and more accurate data.
 | 2018/4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) | [date-time](/tags.md#date-time), [sequence](/tags.md#sequence), [sort](/tags.md#sort), [map](/tags.md#map) |
 | 2023/7 | [Camel Cards](https://adventofcode.com/2023/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2023/day_07.ex) | [day_07_test.exs](/test/2023/day_07_test.exs) | [map](/tags.md#map), [pattern-matching](/tags.md#pattern-matching) |
 
+## matrix
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) | [geometry2d](/tags.md#geometry2d), [matrix](/tags.md#matrix), [count](/tags.md#count) |
+| 2016/8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2016/day_08.ex) | [day_08_test.exs](/test/2016/day_08_test.exs) | [visual-result](/tags.md#visual-result), [matrix](/tags.md#matrix), [op-code](/tags.md#op-code) |
+
 ## md5
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/4 | [The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2015/day_04.ex) | [day_04_test.exs](/test/2015/day_04_test.exs) | [md5](/tags.md#md5), [annoying](/tags.md#annoying) |
+| 2016/5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2016/day_05.ex) | [day_05_test.exs](/test/2016/day_05_test.exs) | [slow](/tags.md#slow), [md5](/tags.md#md5), [annoying](/tags.md#annoying) |
 
 ## measurement
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/14 | [Reindeer Olympics](https://adventofcode.com/2015/day/14) | :1st_place_medal: | :snowflake: :snowflake: | [day_14.ex](/lib/2015/day_14.ex) | [day_14_test.exs](/test/2015/day_14_test.exs) | [measurement](/tags.md#measurement), [recursion](/tags.md#recursion), [sequence](/tags.md#sequence) |
+| 2016/1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [measurement](/tags.md#measurement), [set](/tags.md#set) |
 | 2018/6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | :snowflake: :snowflake: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) | [not-fast-enough](/tags.md#not-fast-enough), [grid](/tags.md#grid), [measurement](/tags.md#measurement), [bounded-box](/tags.md#bounded-box) |
 
 ## modular-arithmetic
@@ -316,6 +335,8 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/7 | [Some Assembly Required](https://adventofcode.com/2015/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2015/day_07.ex) | [day_07_test.exs](/test/2015/day_07_test.exs) | [genserver](/tags.md#genserver), [data-modelling](/tags.md#data-modelling), [op-code](/tags.md#op-code) |
 | 2015/23 | [Opening the Turing Lock](https://adventofcode.com/2015/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2015/day_23.ex) | [day_23_test.exs](/test/2015/day_23_test.exs) | [op-code](/tags.md#op-code), [emulation](/tags.md#emulation) |
+| 2016/8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2016/day_08.ex) | [day_08_test.exs](/test/2016/day_08_test.exs) | [visual-result](/tags.md#visual-result), [matrix](/tags.md#matrix), [op-code](/tags.md#op-code) |
+| 2016/12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12) | :1st_place_medal: | :snowflake: :snowflake: | [day_12.ex](/lib/2016/day_12.ex) | [day_12_test.exs](/test/2016/day_12_test.exs) | [slow](/tags.md#slow), [op-code](/tags.md#op-code) |
 | 2019/2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2019/day_02.ex) | [day_02_test.exs](/test/2019/day_02_test.exs) | [op-code](/tags.md#op-code), [not-fast-enough](/tags.md#not-fast-enough), [int-code](/tags.md#int-code) |
 | 2019/5 | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5) | :2nd_place_medal: | :snowflake: | [day_05.ex](/lib/2019/day_05.ex) | [day_05_test.exs](/test/2019/day_05_test.exs) | [op-code](/tags.md#op-code), [int-code](/tags.md#int-code) |
 | 2022/7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) | [op-code](/tags.md#op-code), [linked-list](/tags.md#linked-list) |
@@ -326,6 +347,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/6 | [Signals and Noise](https://adventofcode.com/2016/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2016/day_06.ex) | [day_06_test.exs](/test/2016/day_06_test.exs) | [sequence](/tags.md#sequence), [optimization](/tags.md#optimization) |
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [revisit](/tags.md#revisit), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
 
@@ -429,6 +451,9 @@ optimize them and update this page with refined and more accurate data.
 | 2015/14 | [Reindeer Olympics](https://adventofcode.com/2015/day/14) | :1st_place_medal: | :snowflake: :snowflake: | [day_14.ex](/lib/2015/day_14.ex) | [day_14_test.exs](/test/2015/day_14_test.exs) | [measurement](/tags.md#measurement), [recursion](/tags.md#recursion), [sequence](/tags.md#sequence) |
 | 2015/15 | [Science for Hungry People](https://adventofcode.com/2015/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2015/day_15.ex) | [day_15_test.exs](/test/2015/day_15_test.exs) | [quadratic-time](/tags.md#quadratic-time), [not-fast-enough](/tags.md#not-fast-enough), [sequence](/tags.md#sequence), [revisit](/tags.md#revisit) |
 | 2015/20 | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2015/day_20.ex) | [day_20_test.exs](/test/2015/day_20_test.exs) | [slow](/tags.md#slow), [infinite-sequence](/tags.md#infinite-sequence), [sequence](/tags.md#sequence) |
+| 2016/4 | [Security Through Obscurity](https://adventofcode.com/2016/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2016/day_04.ex) | [day_04_test.exs](/test/2016/day_04_test.exs) | [sequence](/tags.md#sequence), [checksum](/tags.md#checksum) |
+| 2016/6 | [Signals and Noise](https://adventofcode.com/2016/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2016/day_06.ex) | [day_06_test.exs](/test/2016/day_06_test.exs) | [sequence](/tags.md#sequence), [optimization](/tags.md#optimization) |
+| 2016/9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_09.ex](/lib/2016/day_09.ex) | [day_09_test.exs](/test/2016/day_09_test.exs) | [sequence](/tags.md#sequence), [unfold](/tags.md#unfold) |
 | 2018/1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) | [sequence](/tags.md#sequence), [set](/tags.md#set) |
 | 2018/4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) | [date-time](/tags.md#date-time), [sequence](/tags.md#sequence), [sort](/tags.md#sort), [map](/tags.md#map) |
 | 2018/8 | [Memory Maneuver](https://adventofcode.com/2018/day/8) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2018/day_08.ex) | [day_08_test.exs](/test/2018/day_08_test.exs) | [sequence](/tags.md#sequence), [walk](/tags.md#walk) |
@@ -447,6 +472,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/3 | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2015/day_03.ex) | [day_03_test.exs](/test/2015/day_03_test.exs) | [grid-walk](/tags.md#grid-walk), [set](/tags.md#set) |
+| 2016/1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [measurement](/tags.md#measurement), [set](/tags.md#set) |
 | 2018/1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) | [sequence](/tags.md#sequence), [set](/tags.md#set) |
 | 2018/2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2018/day_02.ex) | [day_02_test.exs](/test/2018/day_02_test.exs) | [checksum](/tags.md#checksum), [string-result](/tags.md#string-result), [set](/tags.md#set) |
 | 2018/3 | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2018/day_03.ex) | [day_03_test.exs](/test/2018/day_03_test.exs) | [grid](/tags.md#grid), [set](/tags.md#set), [not-fast-enough](/tags.md#not-fast-enough) |
@@ -470,8 +496,10 @@ optimize them and update this page with refined and more accurate data.
 | 2015/6 | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_06.ex](/lib/2015/day_06.ex) | [day_06_test.exs](/test/2015/day_06_test.exs) | [grid](/tags.md#grid), [vector](/tags.md#vector), [reduction](/tags.md#reduction), [slow](/tags.md#slow) |
 | 2015/13 | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13) | :1st_place_medal: | :snowflake: :snowflake: | [day_13.ex](/lib/2015/day_13.ex) | [day_13_test.exs](/test/2015/day_13_test.exs) | [brute-force](/tags.md#brute-force), [combinatorics](/tags.md#combinatorics), [slow](/tags.md#slow) |
 | 2015/20 | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2015/day_20.ex) | [day_20_test.exs](/test/2015/day_20_test.exs) | [slow](/tags.md#slow), [infinite-sequence](/tags.md#infinite-sequence), [sequence](/tags.md#sequence) |
+| 2016/5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2016/day_05.ex) | [day_05_test.exs](/test/2016/day_05_test.exs) | [slow](/tags.md#slow), [md5](/tags.md#md5), [annoying](/tags.md#annoying) |
+| 2016/12 | [Leonardo's Monorail](https://adventofcode.com/2016/day/12) | :1st_place_medal: | :snowflake: :snowflake: | [day_12.ex](/lib/2016/day_12.ex) | [day_12_test.exs](/test/2016/day_12_test.exs) | [slow](/tags.md#slow), [op-code](/tags.md#op-code) |
 | 2022/12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2022/day_12.ex) | [day_12_test.exs](/test/2022/day_12_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [slow](/tags.md#slow), [revisit](/tags.md#revisit) |
-| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill) |
+| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
 | 2022/15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [large-number](/tags.md#large-number), [geometry2d](/tags.md#geometry2d) |
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [revisit](/tags.md#revisit), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2022/20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) | [slow](/tags.md#slow), [vector](/tags.md#vector), [sequence](/tags.md#sequence), [large-number](/tags.md#large-number), [random-access](/tags.md#random-access) |
@@ -534,11 +562,19 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2019/10 | [Monitoring Station](https://adventofcode.com/2019/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2019/day_10.ex) | [day_10_test.exs](/test/2019/day_10_test.exs) | [sequence](/tags.md#sequence), [grid](/tags.md#grid), [trigonometry](/tags.md#trigonometry) |
 
+## unfold
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/9 | [Explosives in Cyberspace](https://adventofcode.com/2016/day/9) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_09.ex](/lib/2016/day_09.ex) | [day_09_test.exs](/test/2016/day_09_test.exs) | [sequence](/tags.md#sequence), [unfold](/tags.md#unfold) |
+| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
+
 ## validation
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/11 | [Corporate Policy](https://adventofcode.com/2015/day/11) | :1st_place_medal: | :snowflake: | [day_11.ex](/lib/2015/day_11.ex) | [day_11_test.exs](/test/2015/day_11_test.exs) | [sequence](/tags.md#sequence), [char-sequence](/tags.md#char-sequence), [validation](/tags.md#validation) |
+| 2016/7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2016/day_07.ex) | [day_07_test.exs](/test/2016/day_07_test.exs) | [validation](/tags.md#validation), [count](/tags.md#count) |
 
 ## vector
 
@@ -552,6 +588,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2016/day_08.ex) | [day_08_test.exs](/test/2016/day_08_test.exs) | [visual-result](/tags.md#visual-result), [matrix](/tags.md#matrix), [op-code](/tags.md#op-code) |
 | 2019/8 | [Space Image Format](https://adventofcode.com/2019/day/8) | :1st_place_medal: | :snowflake: | [day_08.ex](/lib/2019/day_08.ex) | [day_08_test.exs](/test/2019/day_08_test.exs) | [sequence](/tags.md#sequence), [visual-result](/tags.md#visual-result) |
 | 2022/10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2022/day_10.ex) | [day_10_test.exs](/test/2022/day_10_test.exs) | [erlang](/tags.md#erlang), [visual-result](/tags.md#visual-result), [op-code](/tags.md#op-code) |
 
@@ -559,12 +596,14 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill) |
+| 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
 
 ## walk
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2016/1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2016/day_01.ex) | [day_01_test.exs](/test/2016/day_01_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [measurement](/tags.md#measurement), [set](/tags.md#set) |
+| 2016/2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2016/day_02.ex) | [day_02_test.exs](/test/2016/day_02_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [bounded-box](/tags.md#bounded-box) |
 | 2018/8 | [Memory Maneuver](https://adventofcode.com/2018/day/8) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_08.ex](/lib/2018/day_08.ex) | [day_08_test.exs](/test/2018/day_08_test.exs) | [sequence](/tags.md#sequence), [walk](/tags.md#walk) |
 | 2019/3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk), [set](/tags.md#set), [not-fast-enough](/tags.md#not-fast-enough) |
 | 2021/2 | [Dive!](https://adventofcode.com/2021/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2021/day_02.ex) | [day_02_test.exs](/test/2021/day_02_test.exs) | [grid](/tags.md#grid), [walk](/tags.md#walk) |

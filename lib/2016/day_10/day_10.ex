@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day10 do
   @moduledoc """
   --- Day 10: Balance Bots ---
   Problem Link: https://adventofcode.com/2016/day/10
+  Difficulty: m
+  Tags: data-modelling genserver
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias __MODULE__.{Bot, BotSupervisor, ControlPanel, OutputBin}

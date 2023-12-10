@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2016.Day01 do
   @moduledoc """
   --- Day 1: No Time for a Taxicab ---
   Problem Link: https://adventofcode.com/2016/day/1
+  Difficulty: s
+  Tags: grid walk measurement set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
