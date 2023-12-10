@@ -97,13 +97,31 @@ defmodule AdventOfCode.Helpers.Summarizer do
     """
   end
 
-  def tag_page, do: generate_subpage("Tags", :tag_summary, fn {k, _} -> k end)
+  @doc """
+  Generates page containing all the tags.
+  """
+  def tag_page do
+    generate_subpage(
+      "Tags",
+      "List of all tags to categorize solutions.",
+      :tag_summary,
+      fn {k, _} -> k end
+    )
+  end
 
-  def difficulty_page,
-    do:
-      generate_subpage("Difficulties", :difficulty_summary, fn {k, _} -> difficulty_level(k) end)
+  @doc """
+  Generates page containing all difficulty levels.
+  """
+  def difficulty_page do
+    generate_subpage(
+      "Difficulties",
+      "List of (relative) difficulties encountered while solving.",
+      :difficulty_summary,
+      fn {k, _} -> difficulty_level(k) end
+    )
+  end
 
-  defp generate_subpage(title, attr, sorter) do
+  defp generate_subpage(title, description, attr, sorter) do
     metadata =
       Meta.solutions_summary()
       |> Map.values()
@@ -129,6 +147,13 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
     """
     # #{title}
+
+    # #{description}
+
+    ### Please Note:
+    * The statistics on this page is not as refined as I would like it to be, will revisit problems,
+    optimize them and update this page with refined and more accurate data.
+    * Instead of a single page, I am planning to add a per tag or per difficulty page for less overwhelming content.
 
     #{content}
     """

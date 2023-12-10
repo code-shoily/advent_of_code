@@ -1,5 +1,12 @@
 # Tags
 
+# List of all tags to categorize solutions.
+
+### Please Note:
+* The statistics on this page is not as refined as I would like it to be, will revisit problems,
+optimize them and update this page with refined and more accurate data.
+* Instead of a single page, I am planning to add a per tag or per difficulty page for less overwhelming content.
+
 ## algebra
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
