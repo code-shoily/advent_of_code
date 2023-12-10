@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day02 do
   --- Day 2: Dive! ---
   Problem Link: https://adventofcode.com/2021/day/2
   Difficulty: xs
-  Tags: traversal
+  Tags: grid walk
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

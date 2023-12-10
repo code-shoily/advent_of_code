@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day02 do
   --- Day 2: 1202 Program Alarm ---
   Problem Link: https://adventofcode.com/2019/day/2
   Difficulty: xs
-  Tags: simulation op-code not-fast-enough int-code
+  Tags: op-code not-fast-enough int-code
   """
   alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2019.IntCode

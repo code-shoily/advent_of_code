@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day05 do
   --- Day 5: If You Give A Seed A Fertilizer ---
   Problem Link: https://adventofcode.com/2023/day/5
   Difficulty: xl
-  Tags: internval-tree gb-tree
+  Tags: range gb-tree
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

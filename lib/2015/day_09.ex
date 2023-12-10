@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day09 do
   --- Day 9: All in a Single Night ---
   Problem Link: https://adventofcode.com/2015/day/9
   Difficulty: s
-  Tags: graph weighted-graph routing-algorithm
+  Tags: graph routing
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

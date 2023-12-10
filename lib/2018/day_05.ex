@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day05 do
   --- Day 5: Alchemical Reduction ---
   Problem Link: https://adventofcode.com/2018/day/5
   Difficulty: l
-  Tags: reduction simulation
+  Tags: reduction
   """
   alias AdventOfCode.Helpers.InputReader
 
