@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day02 do
   @moduledoc """
   --- Day 2: Corruption Checksum ---
   Problem Link: https://adventofcode.com/2017/day/2
+  Difficulty: xs
+  Tags: arithmetic sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

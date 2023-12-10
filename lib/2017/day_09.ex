@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day09 do
   @moduledoc """
   --- Day 9: Stream Processing ---
   Problem Link: https://adventofcode.com/2017/day/9
+  Difficulty: s
+  Tags: fsm
   """
   alias AdventOfCode.Helpers.InputReader
 

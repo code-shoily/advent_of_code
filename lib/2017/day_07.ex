@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day07 do
   @moduledoc """
   --- Day 7: Recursive Circus ---
   Problem Link: https://adventofcode.com/2017/day/7
+  Difficulty: m
+  Tags: tree
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   def input, do: InputReader.read_from_file(2017, 7)

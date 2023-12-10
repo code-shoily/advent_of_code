@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day18 do
   @moduledoc """
   --- Day 18: Duet ---
   Problem Link: https://adventofcode.com/2017/day/18
+  Difficulty: m
+  Tags: data-modelling op-code half-done
   """
   alias __MODULE__.Duet
   alias AdventOfCode.Helpers.{InputReader, Transformers}

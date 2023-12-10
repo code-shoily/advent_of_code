@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day01 do
   @moduledoc """
   --- Day 1: Inverse Captcha ---
   Problem Link: https://adventofcode.com/2017/day/1
+  Difficulty: xs
+  Tags: sliding-window
   """
   alias AdventOfCode.Helpers.InputReader
 

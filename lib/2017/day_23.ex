@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day23 do
   @moduledoc """
   --- Day 23: Coprocessor Conflagration ---
   Problem Link: https://adventofcode.com/2017/day/23
+  Difficulty: m
+  Tags: op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

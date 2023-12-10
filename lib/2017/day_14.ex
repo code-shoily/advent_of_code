@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day14 do
   @moduledoc """
   --- Day 14: Disk Defragmentation ---
   Problem Link: https://adventofcode.com/2017/day/14
+  Difficulty: m
+  Tags: not-fast-enough half-done hash
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Y2017.Day10

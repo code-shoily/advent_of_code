@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day05 do
   @moduledoc """
   --- Day 5: A Maze of Twisty Trampolines, All Alike ---
   Problem Link: https://adventofcode.com/2017/day/5
+  Difficulty: s
+  Tags: not-fast-enough random-access
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

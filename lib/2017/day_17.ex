@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day17 do
   @moduledoc """
   --- Day 17: Spinlock ---
   Problem Link: https://adventofcode.com/2017/day/17
+  Difficulty: m
+  Tags: vector random-access not-fast-enough
   """
   alias Aja.Vector
 

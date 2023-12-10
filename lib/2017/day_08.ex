@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day08 do
   @moduledoc """
   --- Day 8: I Heard You Like Registers ---
   Problem Link: https://adventofcode.com/2017/day/8
+  Difficulty: s
+  Tags: op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

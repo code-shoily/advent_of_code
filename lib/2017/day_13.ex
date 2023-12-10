@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day13 do
   @moduledoc """
   --- Day 13: Packet Scanners ---
   Problem Link: https://adventofcode.com/2017/day/13
+  Difficulty: s
+  Tags: sequence slow
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

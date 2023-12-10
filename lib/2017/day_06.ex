@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day06 do
   @moduledoc """
   --- Day 6: Memory Reallocation ---
   Problem Link: https://adventofcode.com/2017/day/6
+  Difficulty: m
+  Tags: sequence reduction
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

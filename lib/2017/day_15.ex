@@ -2,6 +2,9 @@ defmodule AdventOfCode.Y2017.Day15 do
   @moduledoc """
   --- Day 15: Dueling Generators ---
   Problem Link: https://adventofcode.com/2017/day/15
+  Difficulty: l
+  Tags: number-theory bitwise slow
+
   FIXME: Number being Marsenne Prime, can't help but think there's a faster way to this.
   """
   import Bitwise

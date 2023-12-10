@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day03 do
   @moduledoc """
   --- Day 3: Spiral Memory ---
   Problem Link: https://adventofcode.com/2017/day/3
+  Difficulty: m
+  Tags: spiral matrix
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

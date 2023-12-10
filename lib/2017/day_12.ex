@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day12 do
   @moduledoc """
   --- Day 12: Digital Plumber ---
   Problem Link: https://adventofcode.com/2017/day/12
+  Difficulty: s
+  Tags: disjoint-set
   """
   alias AdventOfCode.Algorithms.DisjointSet
   alias AdventOfCode.Helpers.{InputReader, Transformers}

@@ -2,6 +2,9 @@ defmodule AdventOfCode.Y2017.Day11 do
   @moduledoc """
   --- Day 11: Hex Ed ---
   Problem Link: https://adventofcode.com/2017/day/11
+  Difficulty: l
+  Tags: hexagon
+
   Help: https://www.redblobgames.com/grids/hexagons/
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}

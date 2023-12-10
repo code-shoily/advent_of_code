@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2017.Day10 do
   @moduledoc """
   --- Day 10: Knot Hash ---
   Problem Link: https://adventofcode.com/2017/day/10
+  Difficulty: s
+  Tags: hash
   """
   require Bitwise
 
