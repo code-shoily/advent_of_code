@@ -81,16 +81,10 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   def yearwise_readme(year) do
     heading = build_heading(year)
-    table_header = "| Day | Problem Page | Status | Solution Page | Test Page |"
     info = Meta.get_info(year)
     trophy = "## :trophy: #{info.completed}/50"
 
-    table_content =
-      for {day, line} <- info.summary do
-        """
-        | #{day} | [#{line.title}](#{line.link}) | #{award(line.count)} | #{linkify(line.solution)} | #{linkify(line.test)} |
-        """
-      end
+    {table_header, aligner, table_content} = summary_table(info.summary)
 
     """
     #{heading}
@@ -98,10 +92,93 @@ defmodule AdventOfCode.Helpers.Summarizer do
     #{trophy}
 
     #{table_header}
-    | :---: | :------: | ---: | :---: | :---: |
+    #{aligner}
     #{table_content}
     """
   end
+
+  def tag_page, do: generate_subpage("Tags", :tag_summary, fn {k, _} -> k end)
+
+  def difficulty_page,
+    do:
+      generate_subpage("Difficulties", :difficulty_summary, fn {k, _} -> difficulty_level(k) end)
+
+  defp generate_subpage(title, attr, sorter) do
+    metadata =
+      Meta.solutions_summary()
+      |> Map.values()
+      |> Enum.map(& &1[attr])
+      |> Enum.reduce(%{}, fn x, acc ->
+        Map.merge(acc, x, fn _, v1, v2 -> v1 ++ v2 end)
+      end)
+      |> Enum.sort_by(sorter)
+
+    content =
+      metadata
+      |> Enum.map(fn {head, summary} ->
+        {table_header, aligner, table_content} = summary_table(summary, true)
+
+        """
+        ## #{head}
+
+        #{table_header}
+        #{aligner}
+        #{table_content}
+        """
+      end)
+
+    """
+    # #{title}
+
+    #{content}
+    """
+  end
+
+  def summary_table(summary, show_year \\ false) do
+    table_header =
+      "| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |"
+
+    table_content =
+      for {day,
+           %{
+             title: title,
+             link: link,
+             count: count,
+             difficulty: difficulty,
+             solution: solution,
+             test: test,
+             tags: tags,
+             year: year
+           }} <- summary do
+        day = (show_year && "#{year}/#{day}") || day
+
+        """
+        | #{day} | [#{title}](#{link}) | #{award(count)} | #{difficulty(difficulty)} | #{linkify(solution)} | #{linkify(test)} | #{tags(tags)} |
+        """
+      end
+
+    aligner = "| :---: | :------: | :---: | :---: | :---: | :---: | :---: |"
+
+    {table_header, aligner, table_content}
+  end
+
+  @difficulty_sizes ~w/xs s m l xl xxl/
+  defp difficulty_level("xs"), do: 1
+  defp difficulty_level("s"), do: 2
+  defp difficulty_level("m"), do: 3
+  defp difficulty_level("l"), do: 4
+  defp difficulty_level("xl"), do: 5
+  defp difficulty_level("xxl"), do: 6
+  defp difficulty_level(_), do: 7
+
+  defp difficulty_icon(count), do: ":snowflake:" |> List.duplicate(count) |> Enum.join(" ")
+
+  defp difficulty(size) when size in @difficulty_sizes,
+    do: size |> difficulty_level() |> difficulty_icon()
+
+  defp difficulty(_), do: ":shrug:"
+
+  defp tags(tags), do: tags |> Enum.map_join(", ", fn tag -> "[#{tag}](/tags.md##{tag})" end)
 
   defp award(1), do: ":2nd_place_medal:"
   defp award(2), do: ":1st_place_medal:"

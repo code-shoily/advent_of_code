@@ -8,18 +8,18 @@
 
 ## :trophy: 24/50
 
-| Day | Problem Page | Status | Solution Page | Test Page |
-| :---: | :------: | ---: | :---: | :---: |
-| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :1st_place_medal: | [day_01.ex](/lib/2021/day_01.ex) | [day_01_test.exs](/test/2021/day_01_test.exs) |
-| 2 | [Dive!](https://adventofcode.com/2021/day/2) | :1st_place_medal: | [day_02.ex](/lib/2021/day_02.ex) | [day_02_test.exs](/test/2021/day_02_test.exs) |
-| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | :1st_place_medal: | [day_03.ex](/lib/2021/day_03.ex) | [day_03_test.exs](/test/2021/day_03_test.exs) |
-| 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :1st_place_medal: | [day_04.ex](/lib/2021/day_04.ex) | [day_04_test.exs](/test/2021/day_04_test.exs) |
-| 5 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :1st_place_medal: | [day_05.ex](/lib/2021/day_05.ex) | [day_05_test.exs](/test/2021/day_05_test.exs) |
-| 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :1st_place_medal: | [day_06.ex](/lib/2021/day_06.ex) | [day_06_test.exs](/test/2021/day_06_test.exs) |
-| 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | :1st_place_medal: | [day_07.ex](/lib/2021/day_07.ex) | [day_07_test.exs](/test/2021/day_07_test.exs) |
-| 9 | [Smoke Basin](https://adventofcode.com/2021/day/9) | :1st_place_medal: | [day_09.ex](/lib/2021/day_09.ex) | [day_09_test.exs](/test/2021/day_09_test.exs) |
-| 15 | [Chiton](https://adventofcode.com/2021/day/15) | :1st_place_medal: | [day_15.ex](/lib/2021/day_15.ex) | [day_15_test.exs](/test/2021/day_15_test.exs) |
-| 16 | [Packet Decoder](https://adventofcode.com/2021/day/16) | :1st_place_medal: | [day_16.ex](/lib/2021/day_16.ex) | [day_16_test.exs](/test/2021/day_16_test.exs) |
-| 21 | [Dirac Dice](https://adventofcode.com/2021/day/21) | :1st_place_medal: | [day_21.ex](/lib/2021/day_21.ex) | [day_21_test.exs](/test/2021/day_21_test.exs) |
-| 25 | [Sea Cucumber](https://adventofcode.com/2021/day/25) | :1st_place_medal: | [day_25.ex](/lib/2021/day_25.ex) | [day_25_test.exs](/test/2021/day_25_test.exs) |
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2021/day_01.ex) | [day_01_test.exs](/test/2021/day_01_test.exs) | [sliding-window](/tags.md#sliding-window), [sequence](/tags.md#sequence) |
+| 2 | [Dive!](https://adventofcode.com/2021/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2021/day_02.ex) | [day_02_test.exs](/test/2021/day_02_test.exs) | [traversal](/tags.md#traversal) |
+| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | :1st_place_medal: | :snowflake: :snowflake: | [day_03.ex](/lib/2021/day_03.ex) | [day_03_test.exs](/test/2021/day_03_test.exs) | [computation](/tags.md#computation) |
+| 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :1st_place_medal: | :shrug: | [day_04.ex](/lib/2021/day_04.ex) | [day_04_test.exs](/test/2021/day_04_test.exs) |  |
+| 5 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :1st_place_medal: | :shrug: | [day_05.ex](/lib/2021/day_05.ex) | [day_05_test.exs](/test/2021/day_05_test.exs) |  |
+| 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :1st_place_medal: | :shrug: | [day_06.ex](/lib/2021/day_06.ex) | [day_06_test.exs](/test/2021/day_06_test.exs) |  |
+| 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | :1st_place_medal: | :shrug: | [day_07.ex](/lib/2021/day_07.ex) | [day_07_test.exs](/test/2021/day_07_test.exs) |  |
+| 9 | [Smoke Basin](https://adventofcode.com/2021/day/9) | :1st_place_medal: | :shrug: | [day_09.ex](/lib/2021/day_09.ex) | [day_09_test.exs](/test/2021/day_09_test.exs) |  |
+| 15 | [Chiton](https://adventofcode.com/2021/day/15) | :1st_place_medal: | :shrug: | [day_15.ex](/lib/2021/day_15.ex) | [day_15_test.exs](/test/2021/day_15_test.exs) |  |
+| 16 | [Packet Decoder](https://adventofcode.com/2021/day/16) | :1st_place_medal: | :shrug: | [day_16.ex](/lib/2021/day_16.ex) | [day_16_test.exs](/test/2021/day_16_test.exs) |  |
+| 21 | [Dirac Dice](https://adventofcode.com/2021/day/21) | :1st_place_medal: | :shrug: | [day_21.ex](/lib/2021/day_21.ex) | [day_21_test.exs](/test/2021/day_21_test.exs) |  |
+| 25 | [Sea Cucumber](https://adventofcode.com/2021/day/25) | :1st_place_medal: | :shrug: | [day_25.ex](/lib/2021/day_25.ex) | [day_25_test.exs](/test/2021/day_25_test.exs) |  |
 
