@@ -5,7 +5,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   alias AdventOfCode.Helpers.Meta
 
-  @year_range 2015..2023
+  @year_range 2015..AdventOfCode.get_latest_year()
 
   def summarize do
     metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})

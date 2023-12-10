@@ -5,10 +5,10 @@ defmodule AdventOfCode.Helpers.Meta do
   """
   alias AdventOfCode.Helpers.Transformers
 
-  @current_year 2023
+  @year_range 2015..AdventOfCode.get_latest_year()
 
   def solutions_summary do
-    for year <- 2015..@current_year, into: %{} do
+    for year <- @year_range, into: %{} do
       {year, get_info(year, true)}
     end
   end

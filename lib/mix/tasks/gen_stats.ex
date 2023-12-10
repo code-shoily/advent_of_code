@@ -11,7 +11,7 @@ defmodule Mix.Tasks.GenStats do
 
   use Mix.Task
 
-  @year_range 2015..2023
+  @year_range 2015..AdventOfCode.get_latest_year()
 
   @usage "mix gen_stats"
 
