@@ -26,12 +26,35 @@ defmodule AdventOfCode.Helpers.Meta do
       |> Enum.map(fn {_, %{count: count}} -> count end)
       |> Enum.sum()
 
+    tag_summary = daywise_summary |> group_by_tags()
+    difficulty_summary = daywise_summary |> group_by_difficulty()
+
     %{
       completed: stars_completed,
       link: "http://adventofcode/#{year}",
       test: "/test/#{year}/",
-      summary: daywise_summary
+      summary: daywise_summary,
+      tag_summary: tag_summary,
+      difficulty_summary: difficulty_summary
     }
+  end
+
+  defp group_by_tags(summary) do
+    summary
+    |> Enum.map(fn {_, a} -> a end)
+    |> Enum.flat_map(fn line ->
+      line[:tags]
+      |> Enum.map(fn tag ->
+        {tag, line}
+      end)
+    end)
+    |> Enum.group_by(fn {tag, _} -> tag end, fn {_, data} -> {data.day, data} end)
+  end
+
+  defp group_by_difficulty(summary) do
+    summary
+    |> Enum.map(fn {_, a} -> a end)
+    |> Enum.group_by(& &1.difficulty, fn data -> {data.day, data} end)
   end
 
   @doc """

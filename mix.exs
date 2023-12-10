@@ -34,7 +34,7 @@ defmodule AdventOfCode.MixProject do
 
   defp aliases do
     [
-      update_stats: ["gen_stats", "gen_readme"]
+      update_stats: ["gen_stats", "gen_readme", "gen_tags", "gen_difficulties"]
     ]
   end
 end

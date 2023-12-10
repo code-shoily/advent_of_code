@@ -10,9 +10,9 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2021/day_01.ex) | [day_01_test.exs](/test/2021/day_01_test.exs) | sliding-window, sequence |
-| 2 | [Dive!](https://adventofcode.com/2021/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2021/day_02.ex) | [day_02_test.exs](/test/2021/day_02_test.exs) | traversal |
-| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | :1st_place_medal: | :snowflake: :snowflake: | [day_03.ex](/lib/2021/day_03.ex) | [day_03_test.exs](/test/2021/day_03_test.exs) | computation |
+| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2021/day_01.ex) | [day_01_test.exs](/test/2021/day_01_test.exs) | [sliding-window](/tags.md#sliding-window), [sequence](/tags.md#sequence) |
+| 2 | [Dive!](https://adventofcode.com/2021/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2021/day_02.ex) | [day_02_test.exs](/test/2021/day_02_test.exs) | [traversal](/tags.md#traversal) |
+| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | :1st_place_medal: | :snowflake: :snowflake: | [day_03.ex](/lib/2021/day_03.ex) | [day_03_test.exs](/test/2021/day_03_test.exs) | [computation](/tags.md#computation) |
 | 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :1st_place_medal: | :shrug: | [day_04.ex](/lib/2021/day_04.ex) | [day_04_test.exs](/test/2021/day_04_test.exs) |  |
 | 5 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | :1st_place_medal: | :shrug: | [day_05.ex](/lib/2021/day_05.ex) | [day_05_test.exs](/test/2021/day_05_test.exs) |  |
 | 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | :1st_place_medal: | :shrug: | [day_06.ex](/lib/2021/day_06.ex) | [day_06_test.exs](/test/2021/day_06_test.exs) |  |
