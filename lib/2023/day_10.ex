@@ -5,32 +5,26 @@ defmodule AdventOfCode.Y2023.Day10 do
   Difficulty: xl
   Tags: graph graph-traversal needs-improvement not-fast-enough
   """
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias AdventOfCode.Algorithms.Grid
-  alias Geo.Polygon
-
-  import Topo, only: [contains?: 2]
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2023, 10)
 
   def run(input \\ input()) do
     input = parse(input)
-
     task_1 = Task.async(fn -> run_1(input) end)
     task_2 = Task.async(fn -> run_2(input) end)
 
     {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
-  defp run_1({_, circuit}) do
-    circuit |> Enum.count() |> div(2)
-  end
+  defp run_1({_, circuit}), do: circuit |> Enum.count() |> div(2)
 
   defp run_2({graph, circuit}) do
     graph
     |> Graph.vertices()
     |> Stream.reject(&(&1 in circuit))
-    |> Stream.map(&contains?(%Polygon{coordinates: [circuit]}, &1))
+    |> Stream.map(&Topo.contains?(%Geo.Polygon{coordinates: [circuit]}, &1))
     |> Enum.count(&Function.identity/1)
   end
 
@@ -40,10 +34,10 @@ defmodule AdventOfCode.Y2023.Day10 do
     |> Enum.map(&String.graphemes/1)
     |> Grid.grid2d()
     |> then(fn grid ->
-      {start, _} = Enum.find(grid, fn {_, tile} -> tile == "S" end)
       graph = to_graph(grid)
-      circuit = circuit_nodes(graph, start)
-      {graph, circuit}
+      {start, _} = Enum.find(grid, fn {_, tile} -> tile == "S" end)
+
+      {graph, circuit_nodes(graph, start)}
     end)
   end
 
