@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day19 do
   --- Day 19: Not Enough Minerals ---
   Problem Link: https://adventofcode.com/2022/day/19
   Difficulty: xl
-  Tags: erlang slow revisit grid walk optimization
+  Tags: erlang slow needs-improvement grid walk optimization
   """
   alias AdventOfCode.Helpers.InputReader
 
