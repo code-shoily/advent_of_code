@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day04 do
   @moduledoc """
   --- Day 4: Giant Squid ---
   Problem Link: https://adventofcode.com/2021/day/4
+  Difficulty: s
+  Tags: grid random-access optimization
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

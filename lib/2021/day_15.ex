@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day15 do
   @moduledoc """
   --- Day 15: Chiton ---
   Problem Link: https://adventofcode.com/2021/day/15
+  Difficulty: l
+  Tags: graph graph-route slow
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

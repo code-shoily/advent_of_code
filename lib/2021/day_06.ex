@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day06 do
   @moduledoc """
   --- Day 6: Lanternfish ---
   Problem Link: https://adventofcode.com/2021/day/6
+  Difficulty: s
+  Tags: map
   """
   alias AdventOfCode.Helpers.InputReader
 

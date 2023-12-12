@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day07 do
   @moduledoc """
   --- Day 7: The Treachery of Whales ---
   Problem Link: https://adventofcode.com/2021/day/7
+  Difficulty: xs
+  Tags: calculation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

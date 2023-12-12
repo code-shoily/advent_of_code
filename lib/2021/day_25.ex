@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day25 do
   @moduledoc """
   --- Day 25: Sea Cucumber ---
   Problem Link: https://adventofcode.com/2021/day/25
+  Difficulty: m
+  Tags: vector quadratic not-fast-enough grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Aja.Vector

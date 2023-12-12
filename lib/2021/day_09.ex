@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day09 do
   @moduledoc """
   --- Day 9: Smoke Basin ---
   Problem Link: https://adventofcode.com/2021/day/9
+  Difficulty: m
+  Tags: graph scc
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

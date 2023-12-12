@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day05 do
   @moduledoc """
   --- Day 5: Hydrothermal Venture ---
   Problem Link: https://adventofcode.com/2021/day/5
+  Difficulty: xs
+  Tags: set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

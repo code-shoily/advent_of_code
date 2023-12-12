@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day16 do
   @moduledoc """
   --- Day 16: Packet Decoder ---
   Problem Link: https://adventofcode.com/2021/day/16
+  Difficulty: m
+  Tags: bitwise
   """
   alias AdventOfCode.Helpers.InputReader
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2021.Day21 do
   @moduledoc """
   --- Day 21: Dirac Dice ---
   Problem Link: https://adventofcode.com/2021/day/21
+  Difficulty: xl
+  Tags: slow needs-improvement
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
