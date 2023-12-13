@@ -120,6 +120,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2022/day_25.ex) | [day_25_test.exs](/test/2022/day_25_test.exs) | [number-system](/tags.md#number-system) |
 | 2023/3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) | [grid-walk](/tags.md#grid-walk) |
 | 2023/7 | [Camel Cards](https://adventofcode.com/2023/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2023/day_07.ex) | [day_07_test.exs](/test/2023/day_07_test.exs) | [map](/tags.md#map), [pattern-matching](/tags.md#pattern-matching) |
+| 2023/13 | [Point of Incidence](https://adventofcode.com/2023/day/13) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_13.ex](/lib/2023/day_13.ex) | [day_13_test.exs](/test/2023/day_13_test.exs) | [sliding-window](/tags.md#sliding-window), [palindrome](/tags.md#palindrome) |
 
 ## l
 

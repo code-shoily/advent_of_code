@@ -433,6 +433,12 @@ optimize them and update this page with refined and more accurate data.
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [needs-improvement](/tags.md#needs-improvement), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
 
+## palindrome
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/13 | [Point of Incidence](https://adventofcode.com/2023/day/13) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_13.ex](/lib/2023/day_13.ex) | [day_13_test.exs](/test/2023/day_13_test.exs) | [sliding-window](/tags.md#sliding-window), [palindrome](/tags.md#palindrome) |
+
 ## parse-heavy
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
@@ -582,6 +588,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2017/1 | [Inverse Captcha](https://adventofcode.com/2017/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2017/day_01.ex) | [day_01_test.exs](/test/2017/day_01_test.exs) | [sliding-window](/tags.md#sliding-window) |
 | 2021/1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2021/day_01.ex) | [day_01_test.exs](/test/2021/day_01_test.exs) | [sliding-window](/tags.md#sliding-window), [sequence](/tags.md#sequence) |
+| 2023/13 | [Point of Incidence](https://adventofcode.com/2023/day/13) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_13.ex](/lib/2023/day_13.ex) | [day_13_test.exs](/test/2023/day_13_test.exs) | [sliding-window](/tags.md#sliding-window), [palindrome](/tags.md#palindrome) |
 
 ## slow
 
