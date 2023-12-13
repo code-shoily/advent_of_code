@@ -6,7 +6,7 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022) | 2023
 
 
-## :trophy: 22/50
+## :trophy: 24/50
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
@@ -21,4 +21,5 @@
 | 9 | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | :1st_place_medal: | :snowflake: | [day_09.ex](/lib/2023/day_09.ex) | [day_09_test.exs](/test/2023/day_09_test.exs) | [sequence](/tags.md#sequence), [reduction](/tags.md#reduction) |
 | 10 | [Pipe Maze](https://adventofcode.com/2023/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2023/day_10.ex) | [day_10_test.exs](/test/2023/day_10_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [needs-improvement](/tags.md#needs-improvement), [not-fast-enough](/tags.md#not-fast-enough) |
 | 11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
+| 12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector), [slow](/tags.md#slow) |
 

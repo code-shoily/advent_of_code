@@ -350,6 +350,12 @@ optimize them and update this page with refined and more accurate data.
 | 2018/6 | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | :1st_place_medal: | :snowflake: :snowflake: | [day_06.ex](/lib/2018/day_06.ex) | [day_06_test.exs](/test/2018/day_06_test.exs) | [not-fast-enough](/tags.md#not-fast-enough), [grid](/tags.md#grid), [measurement](/tags.md#measurement), [bounded-box](/tags.md#bounded-box) |
 | 2023/11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
 
+## memoization
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector), [slow](/tags.md#slow) |
+
 ## modular-arithmetic
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
@@ -597,6 +603,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) | [slow](/tags.md#slow), [vector](/tags.md#vector), [sequence](/tags.md#sequence), [large-number](/tags.md#large-number), [random-access](/tags.md#random-access) |
 | 2022/23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [grid](/tags.md#grid), [walk](/tags.md#walk) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
+| 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector), [slow](/tags.md#slow) |
 
 ## sort
 
@@ -690,6 +697,7 @@ optimize them and update this page with refined and more accurate data.
 | 2017/17 | [Spinlock](https://adventofcode.com/2017/day/17) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_17.ex](/lib/2017/day_17.ex) | [day_17_test.exs](/test/2017/day_17_test.exs) | [vector](/tags.md#vector), [random-access](/tags.md#random-access), [not-fast-enough](/tags.md#not-fast-enough) |
 | 2021/25 | [Sea Cucumber](https://adventofcode.com/2021/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2021/day_25.ex) | [day_25_test.exs](/test/2021/day_25_test.exs) | [vector](/tags.md#vector), [quadratic](/tags.md#quadratic), [not-fast-enough](/tags.md#not-fast-enough), [grid](/tags.md#grid) |
 | 2022/20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) | [slow](/tags.md#slow), [vector](/tags.md#vector), [sequence](/tags.md#sequence), [large-number](/tags.md#large-number), [random-access](/tags.md#random-access) |
+| 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector), [slow](/tags.md#slow) |
 
 ## visual-result
 

@@ -146,6 +146,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [needs-improvement](/tags.md#needs-improvement), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2023/5 | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_05.ex](/lib/2023/day_05.ex) | [day_05_test.exs](/test/2023/day_05_test.exs) | [range](/tags.md#range), [gb-tree](/tags.md#gb-tree) |
 | 2023/10 | [Pipe Maze](https://adventofcode.com/2023/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2023/day_10.ex) | [day_10_test.exs](/test/2023/day_10_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [needs-improvement](/tags.md#needs-improvement), [not-fast-enough](/tags.md#not-fast-enough) |
+| 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector), [slow](/tags.md#slow) |
 
 ## xxl
 
