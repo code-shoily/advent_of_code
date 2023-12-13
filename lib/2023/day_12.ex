@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day12 do
   --- Day 12: Hot Springs ---
   Problem Link: https://adventofcode.com/2023/day/12
   Difficulty: xl
-  Tags: memoization vector slow
+  Tags: memoization vector
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Aja.Vector
