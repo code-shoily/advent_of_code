@@ -56,23 +56,25 @@ defmodule AdventOfCode.Y2023.Day12 do
   end
 
   defp arrangements({springs, groups, current, current_count, processed} = input, :operational) do
-    if processed < Vector.size(groups) and current_count == Vector.at(groups, processed) do
-      memoized({springs, groups, current + 1, 0, processed + 1})
-    else
-      (current_count == 0 && memoized({springs, groups, current + 1, 0, processed})) ||
-        tap(0, &memoize(input, &1))
+    groups_processed = Vector.at(groups, processed)
+
+    case {processed < Vector.size(groups), current_count} do
+      {true, ^groups_processed} -> memoized({springs, groups, current + 1, 0, processed + 1})
+      {_, 0} -> memoized({springs, groups, current + 1, 0, processed})
+      _ -> tap(0, fn zero -> memoize(input, zero) end)
     end
   end
 
   defp arrangements({springs, groups, current, current_count, processed} = input, :unknown) do
     groups_processed = Vector.at(groups, processed)
 
-    case current_count do
-      ^groups_processed -> memoized({springs, groups, current + 1, 0, processed + 1})
-      0 -> memoized({springs, groups, current + 1, 0, processed})
-      _ -> 0
-    end
-    |> Kernel.+(memoized({springs, groups, current + 1, current_count + 1, processed}))
-    |> tap(fn counts -> memoize(input, counts) end)
+    tap(
+      case current_count do
+        ^groups_processed -> memoized({springs, groups, current + 1, 0, processed + 1})
+        0 -> memoized({springs, groups, current + 1, 0, processed})
+        _ -> 0
+      end + memoized({springs, groups, current + 1, current_count + 1, processed}),
+      fn counts -> memoize(input, counts) end
+    )
   end
 end
