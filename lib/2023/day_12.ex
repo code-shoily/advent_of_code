@@ -13,115 +13,66 @@ defmodule AdventOfCode.Y2023.Day12 do
   def run(input \\ input()) do
     input = parse(input)
 
-    task_1 = Task.async(fn -> run_1(input) end)
-    task_2 = Task.async(fn -> run_2(input) end)
-
-    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
+    {total_arrangements(input, fn {spring, groups} ->
+       arrangements({as_vector(spring), groups})
+     end),
+     total_arrangements(input, fn {spring, groups} ->
+       arrangements(
+         {[spring] |> List.duplicate(5) |> Enum.join("?") |> as_vector(),
+          groups |> Vector.duplicate(5) |> Vector.flat_map(& &1)}
+       )
+     end)}
   end
 
-  defp run_1(input) do
-    for {spring, groups} <- input, reduce: 0 do
-      acc ->
-        acc + arrangements({as_vector(spring), groups})
-    end
-  end
-
-  defp run_2(input) do
-    for {spring, groups} <- input, reduce: 0 do
-      acc ->
-        acc +
-          arrangements(
-            {[spring] |> List.duplicate(5) |> Enum.join("?") |> as_vector(),
-             groups |> Vector.duplicate(5) |> Vector.flat_map(& &1)}
-          )
+  defp total_arrangements(input, fun) do
+    for {:ok, count} <- Task.async_stream(input, fun), reduce: 0 do
+      acc -> acc + count
     end
   end
 
   def parse(data \\ input()) do
-    data
-    |> Transformers.lines()
-    |> Enum.map(fn line ->
+    for line <- Transformers.lines(data) do
       [springs, data] = String.split(line, " ")
-      {springs, data |> Transformers.int_words(",") |> Vector.new()}
-    end)
-  end
-
-  defp as_vector(springs) do
-    springs
-    |> Kernel.<>(".")
-    |> String.codepoints()
-    |> Vector.new()
-  end
-
-  @damaged "#"
-  @operational "."
-  defp arrangements({springs, groups}), do: arrangements({springs, groups, 0, 0, 0})
-
-  defp arrangements({springs, groups, current, current_count, processed} = input) do
-    cond do
-      current == Vector.size(springs) ->
-        input |> memoize(if Vector.size(groups) == processed, do: 1, else: 0)
-
-      Vector.at(springs, current) == @damaged ->
-        memoized({springs, groups, current + 1, current_count + 1, processed})
-
-      Vector.at(springs, current) == @operational or Vector.size(groups) == processed ->
-        input |> arrangements(:operational_or_done)
-
-      true ->
-        input |> arrangements(:unknown)
+      {springs, Vector.new(Transformers.int_words(data, ","))}
     end
   end
 
-  defp arrangements(
-         {springs, groups, current, current_count, processed} = input,
-         :operational_or_done
-       ) do
+  defp memoize(input, counts), do: Process.put(input, counts)
+  defp memoized({_, _, _, _, _} = input), do: memoized(input, Process.get(input))
+  defp memoized(input, nil), do: tap(arrangements(input), &memoize(input, &1))
+  defp memoized(_, counts), do: counts
+  defp as_vector(springs), do: Vector.new(String.graphemes(springs <> "."))
+  defp arrangements({springs, groups}), do: arrangements({springs, groups, 0, 0, 0})
+
+  defp arrangements({springs, groups, current, current_count, processed} = input) do
+    case {Vector.at(springs, current), Vector.size(springs), Vector.size(groups)} do
+      {_, ^current, ^processed} -> tap(1, &memoize(input, &1))
+      {_, ^current, _} -> tap(0, &memoize(input, &1))
+      {"#", _, _} -> memoized({springs, groups, current + 1, current_count + 1, processed})
+      {".", _, _} -> arrangements(input, :operational)
+      {_, _, ^processed} -> arrangements(input, :operational)
+      _ -> arrangements(input, :unknown)
+    end
+  end
+
+  defp arrangements({springs, groups, current, current_count, processed} = input, :operational) do
     if processed < Vector.size(groups) and current_count == Vector.at(groups, processed) do
       memoized({springs, groups, current + 1, 0, processed + 1})
     else
-      (current_count == 0 &&
-         memoized({springs, groups, current + 1, 0, processed})) ||
-        memoize(input, 0)
+      (current_count == 0 && memoized({springs, groups, current + 1, 0, processed})) ||
+        tap(0, &memoize(input, &1))
     end
   end
 
   defp arrangements({springs, groups, current, current_count, processed} = input, :unknown) do
-    damaged =
-      memoized({springs, groups, current + 1, current_count + 1, processed})
-
     groups_processed = Vector.at(groups, processed)
 
-    counts =
-      case current_count do
-        ^groups_processed ->
-          damaged + memoized({springs, groups, current + 1, 0, processed + 1})
-
-        0 ->
-          damaged + memoized({springs, groups, current + 1, 0, processed})
-
-        _ ->
-          damaged
-      end
-
-    memoize(input, counts)
-  end
-
-  defp memoize(input, counts) do
-    input
-    |> Process.put(counts)
-    |> then(fn _ -> counts end)
-  end
-
-  defp memoized(input) do
-    case Process.get(input) do
-      nil ->
-        input
-        |> arrangements()
-        |> then(fn counts -> memoize(input, counts) end)
-
-      data ->
-        data
+    case current_count do
+      ^groups_processed -> memoized({springs, groups, current + 1, 0, processed + 1})
+      0 -> memoized({springs, groups, current + 1, 0, processed})
+      _ -> 0
     end
+    |> Kernel.+(memoized({springs, groups, current + 1, current_count + 1, processed}))
+    |> tap(fn counts -> memoize(input, counts) end)
   end
 end
