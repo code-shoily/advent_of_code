@@ -3,6 +3,7 @@
 .iex.exs
 .elixir_ls
 .elixir-tools/
+priv/experiments/
 # The directory Mix will write compiled artifacts to.
 /_build/
 
