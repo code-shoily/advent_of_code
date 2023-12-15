@@ -6,7 +6,7 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022) | 2023
 
 
-## :trophy: 28/50
+## :trophy: 30/50
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
@@ -24,4 +24,5 @@
 | 12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector) |
 | 13 | [Point of Incidence](https://adventofcode.com/2023/day/13) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_13.ex](/lib/2023/day_13.ex) | [day_13_test.exs](/test/2023/day_13_test.exs) | [sliding-window](/tags.md#sliding-window), [palindrome](/tags.md#palindrome) |
 | 14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
+| 15 | [Lens Library](https://adventofcode.com/2023/day/15) | :1st_place_medal: | :snowflake: :snowflake: | [day_15.ex](/lib/2023/day_15.ex) | [day_15_test.exs](/test/2023/day_15_test.exs) | [hash](/tags.md#hash), [ordered-map](/tags.md#ordered-map) |
 

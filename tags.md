@@ -270,6 +270,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2017/10 | [Knot Hash](https://adventofcode.com/2017/day/10) | :1st_place_medal: | :snowflake: :snowflake: | [day_10.ex](/lib/2017/day_10.ex) | [day_10_test.exs](/test/2017/day_10_test.exs) | [hash](/tags.md#hash) |
 | 2017/14 | [Disk Defragmentation](https://adventofcode.com/2017/day/14) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2017/day_14.ex) | [day_14_test.exs](/test/2017/day_14_test.exs) | [not-fast-enough](/tags.md#not-fast-enough), [half-done](/tags.md#half-done), [hash](/tags.md#hash) |
+| 2023/15 | [Lens Library](https://adventofcode.com/2023/day/15) | :1st_place_medal: | :snowflake: :snowflake: | [day_15.ex](/lib/2023/day_15.ex) | [day_15_test.exs](/test/2023/day_15_test.exs) | [hash](/tags.md#hash), [ordered-map](/tags.md#ordered-map) |
 
 ## hexagon
 
@@ -441,6 +442,12 @@ optimize them and update this page with refined and more accurate data.
 | 2021/4 | [Giant Squid](https://adventofcode.com/2021/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2021/day_04.ex) | [day_04_test.exs](/test/2021/day_04_test.exs) | [grid](/tags.md#grid), [random-access](/tags.md#random-access), [optimization](/tags.md#optimization) |
 | 2022/19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2022/day_19.ex) | [day_19_test.exs](/test/2022/day_19_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [needs-improvement](/tags.md#needs-improvement), [grid](/tags.md#grid), [walk](/tags.md#walk), [optimization](/tags.md#optimization) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
+
+## ordered-map
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/15 | [Lens Library](https://adventofcode.com/2023/day/15) | :1st_place_medal: | :snowflake: :snowflake: | [day_15.ex](/lib/2023/day_15.ex) | [day_15_test.exs](/test/2023/day_15_test.exs) | [hash](/tags.md#hash), [ordered-map](/tags.md#ordered-map) |
 
 ## palindrome
 

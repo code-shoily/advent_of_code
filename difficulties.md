@@ -80,6 +80,7 @@ optimize them and update this page with refined and more accurate data.
 | 2023/2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) | [reduction](/tags.md#reduction) |
 | 2023/8 | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | :1st_place_medal: | :snowflake: :snowflake: | [day_08.ex](/lib/2023/day_08.ex) | [day_08_test.exs](/test/2023/day_08_test.exs) | [arithmetic](/tags.md#arithmetic), [sequence](/tags.md#sequence) |
 | 2023/11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
+| 2023/15 | [Lens Library](https://adventofcode.com/2023/day/15) | :1st_place_medal: | :snowflake: :snowflake: | [day_15.ex](/lib/2023/day_15.ex) | [day_15_test.exs](/test/2023/day_15_test.exs) | [hash](/tags.md#hash), [ordered-map](/tags.md#ordered-map) |
 
 ## m
 
