@@ -235,6 +235,13 @@ optimize them and update this page with refined and more accurate data.
 | 2022/23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [grid](/tags.md#grid), [walk](/tags.md#walk) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
 | 2023/11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
+| 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
+
+## grid-rotation
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
 
 ## grid-walk
 
@@ -355,12 +362,14 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector) |
+| 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
 
 ## modular-arithmetic
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/25 | [Let It Snow](https://adventofcode.com/2015/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2015/day_25.ex) | [day_25_test.exs](/test/2015/day_25_test.exs) | [table-lookup](/tags.md#table-lookup), [modular-arithmetic](/tags.md#modular-arithmetic) |
+| 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
 
 ## needs-improvement
 

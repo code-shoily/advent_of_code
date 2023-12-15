@@ -28,7 +28,7 @@ defmodule AdventOfCode.Y2019.Day05 do
   end
 
   def run_2(_) do
-    {:todo, 2}
+    nil
   end
 
   def parse(data), do: data |> String.split(",") |> Enum.map(&String.to_integer/1)

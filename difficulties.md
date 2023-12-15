@@ -135,6 +135,7 @@ optimize them and update this page with refined and more accurate data.
 | 2021/15 | [Chiton](https://adventofcode.com/2021/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2021/day_15.ex) | [day_15_test.exs](/test/2021/day_15_test.exs) | [graph](/tags.md#graph), [graph-route](/tags.md#graph-route), [slow](/tags.md#slow) |
 | 2022/11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_11.ex](/lib/2022/day_11.ex) | [day_11_test.exs](/test/2022/day_11_test.exs) | [erlang](/tags.md#erlang), [parse-heavy](/tags.md#parse-heavy), [arithmetic](/tags.md#arithmetic) |
 | 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
+| 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
 
 ## xl
 
