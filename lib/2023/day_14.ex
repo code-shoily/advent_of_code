@@ -11,7 +11,6 @@ defmodule AdventOfCode.Y2023.Day14 do
 
   def run(input \\ input()) do
     input = parse(input)
-
     {run_1(input), run_2(input)}
   end
 
@@ -37,14 +36,11 @@ defmodule AdventOfCode.Y2023.Day14 do
     |> get_load()
   end
 
-  def parse(data \\ input()) do
-    data
-    |> Transformers.lines()
-    |> Enum.map(&String.graphemes/1)
-    |> turn()
-  end
+  def parse(data \\ input()),
+    do: data |> Transformers.lines() |> Enum.map(&String.graphemes(&1)) |> turn()
 
   defp roll(dish), do: Enum.reduce(1..4, dish, fn _, acc -> turn(tilt(acc)) end)
+  defp turn(dish), do: for(row <- Transformers.transpose(dish), do: Enum.reverse(row))
 
   defp tilt(dish) do
     Enum.map(dish, fn row ->
@@ -55,15 +51,10 @@ defmodule AdventOfCode.Y2023.Day14 do
     end)
   end
 
-  defp turn(dish) do
-    dish
-    |> Transformers.transpose()
-    |> Enum.map(&Enum.reverse/1)
-  end
-
+  @weights %{"O" => 1, "#" => 0, "." => 0}
   defp get_load(tilted_dish) do
     tilted_dish
     |> Enum.flat_map(fn row -> Enum.with_index(row, 1) end)
-    |> Enum.reduce(0, fn {value, idx}, acc -> acc + ((value == "O" && idx) || 0) end)
+    |> Enum.reduce(0, fn {value, idx}, acc -> acc + idx * @weights[value] end)
   end
 end
