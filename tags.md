@@ -236,6 +236,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
 | 2023/11 | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | :1st_place_medal: | :snowflake: :snowflake: | [day_11.ex](/lib/2023/day_11.ex) | [day_11_test.exs](/test/2023/day_11_test.exs) | [grid](/tags.md#grid), [measurement](/tags.md#measurement) |
 | 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
+| 2023/16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2023/day_16.ex) | [day_16_test.exs](/test/2023/day_16_test.exs) | [grid](/tags.md#grid), [grid-walk](/tags.md#grid-walk), [memoization](/tags.md#memoization) |
 
 ## grid-rotation
 
@@ -249,6 +250,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2015/3 | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2015/day_03.ex) | [day_03_test.exs](/test/2015/day_03_test.exs) | [grid-walk](/tags.md#grid-walk), [set](/tags.md#set) |
 | 2023/3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) | [grid-walk](/tags.md#grid-walk) |
+| 2023/16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2023/day_16.ex) | [day_16_test.exs](/test/2023/day_16_test.exs) | [grid](/tags.md#grid), [grid-walk](/tags.md#grid-walk), [memoization](/tags.md#memoization) |
 
 ## half-done
 
@@ -364,6 +366,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2023/12 | [Hot Springs](https://adventofcode.com/2023/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2023/day_12.ex) | [day_12_test.exs](/test/2023/day_12_test.exs) | [memoization](/tags.md#memoization), [vector](/tags.md#vector) |
 | 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
+| 2023/16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2023/day_16.ex) | [day_16_test.exs](/test/2023/day_16_test.exs) | [grid](/tags.md#grid), [grid-walk](/tags.md#grid-walk), [memoization](/tags.md#memoization) |
 
 ## modular-arithmetic
 
