@@ -5,12 +5,14 @@ defmodule AdventOfCode.Y2018.Day06 do
   Difficulty: s
   Tags: not-fast-enough grid measurement bounded-box
   """
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
+
+  import AdventOfCode.Algorithms.Geometry, only: [manhattan_distance: 2]
+
   @type point :: {integer(), integer()}
   @type points :: list(point())
   @type corners :: {point(), point()}
   @type world :: list({point(), list({point(), integer()})})
-
-  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2018, 6)
 
@@ -31,9 +33,6 @@ defmodule AdventOfCode.Y2018.Day06 do
       |> List.to_tuple()
     end)
   end
-
-  @spec manhattan_distance(point, point) :: integer()
-  def manhattan_distance({x1, y1}, {x2, y2}), do: abs(x2 - x1) + abs(y2 - y1)
 
   @spec get_corners([point]) :: corners
   def get_corners(points) do

@@ -22,20 +22,6 @@ defmodule AdventOfCode.Y2018.Day06Test do
     end
   end
 
-  describe "manhattan_distance" do
-    test "Computes manhattan distance between origin and another" do
-      assert Solution.manhattan_distance({0, 0}, {10, 20}) == 30
-    end
-
-    test "Computes manhattan distance when there is no negative" do
-      assert Solution.manhattan_distance({100, 50}, {10, 10}) == 130
-    end
-
-    test "Computes manhattan distance when there is no positive" do
-      assert Solution.manhattan_distance({15, 17}, {16, 19}) == 3
-    end
-  end
-
   describe "get_corners/1" do
     test "Computes the extreme corners of a set of points" do
       assert Solution.get_corners(@points) == {{1, 8}, {1, 9}}

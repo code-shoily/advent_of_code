@@ -7,6 +7,8 @@ defmodule AdventOfCode.Y2019.Day03 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
+  import AdventOfCode.Algorithms.Geometry, only: [manhattan_distance: 2]
+
   @origin {0, 0}
 
   def input, do: InputReader.read_from_file(2019, 3)
@@ -84,15 +86,13 @@ defmodule AdventOfCode.Y2019.Day03 do
     for x <- x1..x2, y <- y1..y2, do: {x, y}
   end
 
-  defp manhattan({x, y}), do: abs(x) + abs(y)
-
   defp nearest_intersection([first, second]) do
     first
     |> MapSet.new()
     |> MapSet.intersection(MapSet.new(second))
     |> MapSet.delete(@origin)
-    |> Enum.min_by(&manhattan/1)
-    |> manhattan()
+    |> Enum.min_by(&manhattan_distance({0, 0}, &1))
+    |> manhattan_distance({0, 0})
   end
 
   defp calculate_steps([p], step, results), do: Map.put_new(results, p, step)
