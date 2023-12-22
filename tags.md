@@ -175,6 +175,12 @@ optimize them and update this page with refined and more accurate data.
 | 2015/7 | [Some Assembly Required](https://adventofcode.com/2015/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2015/day_07.ex) | [day_07_test.exs](/test/2015/day_07_test.exs) | [genserver](/tags.md#genserver), [data-modelling](/tags.md#data-modelling), [op-code](/tags.md#op-code) |
 | 2016/10 | [Balance Bots](https://adventofcode.com/2016/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2016/day_10.ex) | [day_10_test.exs](/test/2016/day_10_test.exs) | [data-modelling](/tags.md#data-modelling), [genserver](/tags.md#genserver) |
 
+## geometry
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/18 | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2023/day_18.ex) | [day_18_test.exs](/test/2023/day_18_test.exs) | [geometry](/tags.md#geometry) |
+
 ## geometry2d
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
