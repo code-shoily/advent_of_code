@@ -1,4 +1,7 @@
 defmodule AdventOfCode.Algorithms.Geometry do
+  @moduledoc """
+  Geometry related functions that mostly have to do with geometric computations and measurements.
+  """
   @type point2d :: {integer(), integer()}
 
   @doc """

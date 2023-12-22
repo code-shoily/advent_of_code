@@ -39,7 +39,7 @@ defmodule AdventOfCode.Y2023.Day03 do
     |> Enum.filter(fn {_, n, _} -> n == true end)
   end
 
-  defp is_part(grid, pos) do
+  defp part?(grid, pos) do
     pos
     |> Grid.surrounding8()
     |> Enum.map(&grid[&1])
@@ -58,7 +58,7 @@ defmodule AdventOfCode.Y2023.Day03 do
       grid,
       {x, y + 1},
       digits <> cur,
-      part? || is_part(grid, {x, y}),
+      part? || part?(grid, {x, y}),
       get_gears(grid, {x, y}) ++ gears
     )
   end

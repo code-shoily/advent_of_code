@@ -49,7 +49,7 @@ defmodule AdventOfCode.Y2016.Day09 do
         {cov, rep} = {String.to_integer(cov), String.to_integer(rep)}
 
         decompress_v2(
-          String.slice(xs, cov..-1),
+          String.slice(xs, cov..-1//1),
           count + String.length(prefix) + decompress_v2(String.slice(xs, 0, cov), 0) * rep
         )
     end

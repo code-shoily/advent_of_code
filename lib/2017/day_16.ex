@@ -52,12 +52,12 @@ defmodule AdventOfCode.Y2017.Day16 do
       String.at(dancers, b),
       String.slice(dancers, a + 1, b - a - 1),
       String.at(dancers, a),
-      String.slice(dancers, (b + 1)..-1)
+      String.slice(dancers, (b + 1)..-1//1)
     ])
   end
 
   defp dance(dancers, {:spin, a}) do
-    String.slice(dancers, -a..-1) <> String.slice(dancers, 0..(-a - 1))
+    String.slice(dancers, -a..-1//1) <> String.slice(dancers, 0..(-a - 1)//1)
   end
 
   defp dance(dancers, {:partner, [a, b]}) do

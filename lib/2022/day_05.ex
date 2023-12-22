@@ -37,7 +37,7 @@ defmodule AdventOfCode.Y2022.Day05 do
       |> Enum.with_index(1)
     end)
     |> List.flatten()
-    |> Enum.slice(1..-2)
+    |> Enum.slice(1..-2//1)
     |> Enum.group_by(&elem(&1, 1), &elem(&1, 0))
     |> Map.new(fn {k, v} -> {k, Enum.drop_while(v, &(&1 == ""))} end)
   end
