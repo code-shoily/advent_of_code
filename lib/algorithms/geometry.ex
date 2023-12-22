@@ -27,4 +27,21 @@ defmodule AdventOfCode.Algorithms.Geometry do
     end)
     |> then(fn {_, area} -> abs(area / 2) end)
   end
+
+  @doc """
+  Computes manhattan distance between two points
+
+  ## Example
+
+      iex> Geometry.manhattan_distance({0, 0}, {10, 20})
+      30
+
+      iex> Geometry.manhattan_distance({100, 50}, {10, 10})
+      130
+
+      iex> Geometry.manhattan_distance({15, 17}, {16, 19})
+      3
+  """
+  @spec manhattan_distance(point2d, point2d) :: integer()
+  def manhattan_distance({x1, y1}, {x2, y2}), do: abs(x2 - x1) + abs(y2 - y1)
 end
