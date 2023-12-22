@@ -23,7 +23,7 @@ defmodule AdventOfCode.Algorithms.Geometry do
   def polygon_area([first | points]) do
     points
     |> Enum.reduce({first, 0.0}, fn {x, y} = p, {{xi, yi}, area} ->
-      {p, area + (x + xi) * (y - yi)}
+      {p, area + (x - xi) * (y + yi)}
     end)
     |> then(fn {_, area} -> abs(area / 2) end)
   end

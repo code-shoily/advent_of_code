@@ -88,7 +88,7 @@ defmodule AdventOfCode.Algorithms.Grid do
     )
   end
 
-  @doc"""
+  @doc """
   Adds two tuples. This is useful when moving directions.
 
   ## Example
