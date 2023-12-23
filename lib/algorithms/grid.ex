@@ -84,7 +84,23 @@ defmodule AdventOfCode.Algorithms.Grid do
   def surrounding8({x, y}) do
     Enum.map(
       [{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}],
-      fn {dx, dy} -> {x + dx, y + dy} end
+      &add(&1, {x, y})
+    )
+  end
+
+  @doc """
+  Gets the co-ordinates of 4 surrounding neighbours in a 2D grid.
+
+  ## Example
+
+      iex> Grid.surrounding4({0, 0})
+      [{1, 0}, {-1, 0}, {0, 1}, {0, -1}]
+
+  """
+  def surrounding4({x, y}) do
+    Enum.map(
+      [{1, 0}, {-1, 0}, {0, 1}, {0, -1}],
+      &add(&1, {x, y})
     )
   end
 
