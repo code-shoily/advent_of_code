@@ -158,6 +158,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2022/22 | [Monkey Map](https://adventofcode.com/2022/day/22) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_22.ex](/lib/2022/day_22.ex) | [day_22_test.exs](/test/2022/day_22_test.exs) | [half-done](/tags.md#half-done), [geometry3d](/tags.md#geometry3d), [walk3d](/tags.md#walk3d) |
+| 2023/24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2023/day_24.ex) | [day_24_test.exs](/test/2023/day_24_test.exs) | [geometry2d](/tags.md#geometry2d), [refactor](/tags.md#refactor) |
 
 ## N/A
 

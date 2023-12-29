@@ -6,7 +6,7 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022) | 2023
 
 
-## :trophy: 34/50
+## :trophy: 36/50
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
@@ -27,4 +27,5 @@
 | 15 | [Lens Library](https://adventofcode.com/2023/day/15) | :1st_place_medal: | :snowflake: :snowflake: | [day_15.ex](/lib/2023/day_15.ex) | [day_15_test.exs](/test/2023/day_15_test.exs) | [hash](/tags.md#hash), [ordered-map](/tags.md#ordered-map) |
 | 16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2023/day_16.ex) | [day_16_test.exs](/test/2023/day_16_test.exs) | [grid](/tags.md#grid), [grid-walk](/tags.md#grid-walk), [memoization](/tags.md#memoization) |
 | 18 | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2023/day_18.ex) | [day_18_test.exs](/test/2023/day_18_test.exs) | [geometry](/tags.md#geometry) |
+| 24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2023/day_24.ex) | [day_24_test.exs](/test/2023/day_24_test.exs) | [geometry2d](/tags.md#geometry2d), [refactor](/tags.md#refactor) |
 

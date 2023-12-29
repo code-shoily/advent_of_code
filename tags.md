@@ -188,6 +188,7 @@ optimize them and update this page with refined and more accurate data.
 | 2015/2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2015/day_02.ex) | [day_02_test.exs](/test/2015/day_02_test.exs) | [geometry2d](/tags.md#geometry2d) |
 | 2016/3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2016/day_03.ex) | [day_03_test.exs](/test/2016/day_03_test.exs) | [geometry2d](/tags.md#geometry2d), [matrix](/tags.md#matrix), [count](/tags.md#count) |
 | 2022/15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2022/day_15.ex) | [day_15_test.exs](/test/2022/day_15_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [large-number](/tags.md#large-number), [geometry2d](/tags.md#geometry2d) |
+| 2023/24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2023/day_24.ex) | [day_24_test.exs](/test/2023/day_24_test.exs) | [geometry2d](/tags.md#geometry2d), [refactor](/tags.md#refactor) |
 
 ## geometry3d
 
@@ -535,6 +536,12 @@ optimize them and update this page with refined and more accurate data.
 | 2023/2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) | [reduction](/tags.md#reduction) |
 | 2023/4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) | [set](/tags.md#set), [reduction](/tags.md#reduction) |
 | 2023/9 | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | :1st_place_medal: | :snowflake: | [day_09.ex](/lib/2023/day_09.ex) | [day_09_test.exs](/test/2023/day_09_test.exs) | [sequence](/tags.md#sequence), [reduction](/tags.md#reduction) |
+
+## refactor
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2023/day_24.ex) | [day_24_test.exs](/test/2023/day_24_test.exs) | [geometry2d](/tags.md#geometry2d), [refactor](/tags.md#refactor) |
 
 ## regex
 
