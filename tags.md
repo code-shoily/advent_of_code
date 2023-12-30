@@ -7,6 +7,12 @@
 optimize them and update this page with refined and more accurate data.
 * Instead of a single page, I am planning to add a per tag or per difficulty page for less overwhelming content.
 
+## agent
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/19 | [Aplenty](https://adventofcode.com/2023/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2023/day_19.ex) | [day_19_test.exs](/test/2023/day_19_test.exs) | [agent](/tags.md#agent), [op-code](/tags.md#op-code), [parse-heavy](/tags.md#parse-heavy) |
+
 ## algebra
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
@@ -459,6 +465,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) | [op-code](/tags.md#op-code), [linked-list](/tags.md#linked-list) |
 | 2022/10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2022/day_10.ex) | [day_10_test.exs](/test/2022/day_10_test.exs) | [erlang](/tags.md#erlang), [visual-result](/tags.md#visual-result), [op-code](/tags.md#op-code) |
 | 2022/21 | [Monkey Math](https://adventofcode.com/2022/day/21) | :1st_place_medal: | :snowflake: :snowflake: | [day_21.ex](/lib/2022/day_21.ex) | [day_21_test.exs](/test/2022/day_21_test.exs) | [erlang](/tags.md#erlang), [op-code](/tags.md#op-code), [large-number](/tags.md#large-number), [arithmetic](/tags.md#arithmetic) |
+| 2023/19 | [Aplenty](https://adventofcode.com/2023/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2023/day_19.ex) | [day_19_test.exs](/test/2023/day_19_test.exs) | [agent](/tags.md#agent), [op-code](/tags.md#op-code), [parse-heavy](/tags.md#parse-heavy) |
 
 ## optimization
 
@@ -487,6 +494,7 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2022/5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2022/day_05.ex) | [day_05_test.exs](/test/2022/day_05_test.exs) | [parse-heavy](/tags.md#parse-heavy), [stack](/tags.md#stack), [linked-list](/tags.md#linked-list) |
 | 2022/11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_11.ex](/lib/2022/day_11.ex) | [day_11_test.exs](/test/2022/day_11_test.exs) | [erlang](/tags.md#erlang), [parse-heavy](/tags.md#parse-heavy), [arithmetic](/tags.md#arithmetic) |
+| 2023/19 | [Aplenty](https://adventofcode.com/2023/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2023/day_19.ex) | [day_19_test.exs](/test/2023/day_19_test.exs) | [agent](/tags.md#agent), [op-code](/tags.md#op-code), [parse-heavy](/tags.md#parse-heavy) |
 
 ## parsing
 

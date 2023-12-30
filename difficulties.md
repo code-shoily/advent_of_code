@@ -139,6 +139,7 @@ optimize them and update this page with refined and more accurate data.
 | 2023/14 | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2023/day_14.ex) | [day_14_test.exs](/test/2023/day_14_test.exs) | [grid](/tags.md#grid), [grid-rotation](/tags.md#grid-rotation), [modular-arithmetic](/tags.md#modular-arithmetic), [memoization](/tags.md#memoization) |
 | 2023/16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_16.ex](/lib/2023/day_16.ex) | [day_16_test.exs](/test/2023/day_16_test.exs) | [grid](/tags.md#grid), [grid-walk](/tags.md#grid-walk), [memoization](/tags.md#memoization) |
 | 2023/18 | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2023/day_18.ex) | [day_18_test.exs](/test/2023/day_18_test.exs) | [geometry](/tags.md#geometry) |
+| 2023/19 | [Aplenty](https://adventofcode.com/2023/day/19) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_19.ex](/lib/2023/day_19.ex) | [day_19_test.exs](/test/2023/day_19_test.exs) | [agent](/tags.md#agent), [op-code](/tags.md#op-code), [parse-heavy](/tags.md#parse-heavy) |
 
 ## xl
 
