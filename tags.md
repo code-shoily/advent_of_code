@@ -207,6 +207,7 @@ optimize them and update this page with refined and more accurate data.
 | 2021/15 | [Chiton](https://adventofcode.com/2021/day/15) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_15.ex](/lib/2021/day_15.ex) | [day_15_test.exs](/test/2021/day_15_test.exs) | [graph](/tags.md#graph), [graph-route](/tags.md#graph-route), [slow](/tags.md#slow) |
 | 2022/12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2022/day_12.ex) | [day_12_test.exs](/test/2022/day_12_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [slow](/tags.md#slow), [needs-improvement](/tags.md#needs-improvement) |
 | 2023/10 | [Pipe Maze](https://adventofcode.com/2023/day/10) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_10.ex](/lib/2023/day_10.ex) | [day_10_test.exs](/test/2023/day_10_test.exs) | [graph](/tags.md#graph), [graph-traversal](/tags.md#graph-traversal), [needs-improvement](/tags.md#needs-improvement), [not-fast-enough](/tags.md#not-fast-enough) |
+| 2023/23 | [A Long Walk](https://adventofcode.com/2023/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2023/day_23.ex) | [day_23_test.exs](/test/2023/day_23_test.exs) | [graph](/tags.md#graph), [longest-path](/tags.md#longest-path), [slow](/tags.md#slow), [refactor](/tags.md#refactor) |
 | 2023/25 | [Snowverload](https://adventofcode.com/2023/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2023/day_25.ex) | [day_25_test.exs](/test/2023/day_25_test.exs) | [graph](/tags.md#graph), [min-cut](/tags.md#min-cut), [probabilistic](/tags.md#probabilistic), [refactor](/tags.md#refactor), [not-fast-enough](/tags.md#not-fast-enough) |
 
 ## graph-route
@@ -334,6 +335,12 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2022/14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_14.ex](/lib/2022/day_14.ex) | [day_14_test.exs](/test/2022/day_14_test.exs) | [live-book](/tags.md#live-book), [visualized](/tags.md#visualized), [slow](/tags.md#slow), [flood-fill](/tags.md#flood-fill), [unfold](/tags.md#unfold) |
+
+## longest-path
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/23 | [A Long Walk](https://adventofcode.com/2023/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2023/day_23.ex) | [day_23_test.exs](/test/2023/day_23_test.exs) | [graph](/tags.md#graph), [longest-path](/tags.md#longest-path), [slow](/tags.md#slow), [refactor](/tags.md#refactor) |
 
 ## map
 
@@ -555,6 +562,7 @@ optimize them and update this page with refined and more accurate data.
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2023/23 | [A Long Walk](https://adventofcode.com/2023/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2023/day_23.ex) | [day_23_test.exs](/test/2023/day_23_test.exs) | [graph](/tags.md#graph), [longest-path](/tags.md#longest-path), [slow](/tags.md#slow), [refactor](/tags.md#refactor) |
 | 2023/24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2023/day_24.ex) | [day_24_test.exs](/test/2023/day_24_test.exs) | [geometry2d](/tags.md#geometry2d), [refactor](/tags.md#refactor) |
 | 2023/25 | [Snowverload](https://adventofcode.com/2023/day/25) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_25.ex](/lib/2023/day_25.ex) | [day_25_test.exs](/test/2023/day_25_test.exs) | [graph](/tags.md#graph), [min-cut](/tags.md#min-cut), [probabilistic](/tags.md#probabilistic), [refactor](/tags.md#refactor), [not-fast-enough](/tags.md#not-fast-enough) |
 
@@ -657,6 +665,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_20.ex](/lib/2022/day_20.ex) | [day_20_test.exs](/test/2022/day_20_test.exs) | [slow](/tags.md#slow), [vector](/tags.md#vector), [sequence](/tags.md#sequence), [large-number](/tags.md#large-number), [random-access](/tags.md#random-access) |
 | 2022/23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2022/day_23.ex) | [day_23_test.exs](/test/2022/day_23_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [grid](/tags.md#grid), [walk](/tags.md#walk) |
 | 2022/24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_24.ex](/lib/2022/day_24.ex) | [day_24_test.exs](/test/2022/day_24_test.exs) | [erlang](/tags.md#erlang), [slow](/tags.md#slow), [optimization](/tags.md#optimization), [grid](/tags.md#grid), [search](/tags.md#search) |
+| 2023/23 | [A Long Walk](https://adventofcode.com/2023/day/23) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_23.ex](/lib/2023/day_23.ex) | [day_23_test.exs](/test/2023/day_23_test.exs) | [graph](/tags.md#graph), [longest-path](/tags.md#longest-path), [slow](/tags.md#slow), [refactor](/tags.md#refactor) |
 
 ## sort
 
