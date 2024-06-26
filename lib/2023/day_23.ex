@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2023.Day23 do
   Difficulty: xl
   Tags: graph longest-path slow refactor
   """
-  alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Algorithms.Grid
+  alias AdventOfCode.Helpers.InputReader
 
   def input, do: InputReader.read_from_file(2023, 23)
 
