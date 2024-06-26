@@ -10,7 +10,7 @@ defmodule AdventOfCode.Y2019.Day02 do
 
   def input, do: InputReader.read_from_file(2019, 2)
 
-  @range 99..0
+  @range 99..0//-1
 
   def run(input \\ input()), do: {run_1(input), run_2(input)}
 
