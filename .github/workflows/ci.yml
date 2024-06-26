@@ -111,7 +111,7 @@ jobs:
       run: mix format --check-formatted
 
     - name: Credo
-      run: mix credo
+      run: mix credo --strict
 
     # Step: Execute the tests.
     - name: Run tests
