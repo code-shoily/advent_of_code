@@ -54,7 +54,7 @@ defmodule AdventOfCode.Y2020.Day16 do
     |> Enum.map(&String.to_integer/1)
   end
 
-  def merge_ranges(a..b = r1, x..y = r2),
+  def merge_ranges(a..b//_ = r1, x..y//_ = r2),
     do:
       (Range.disjoint?(r1, r2) &&
          [r1, r2]) || [((a < x && a) || x)..((b > y && b) || y)]

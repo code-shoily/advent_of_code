@@ -36,22 +36,22 @@ defmodule AdventOfCode.Y2023.Day22 do
   defp drop(bricks),
     do:
       bricks
-      |> Enum.sort_by(fn {_, _, _, z1.._} -> z1 end)
+      |> Enum.sort_by(fn {_, _, _, z1.._//_} -> z1 end)
       |> drop([])
 
   defp drop([], settled), do: settled
 
-  defp drop([{_, _, _, 1.._} = brick | bricks], settled),
+  defp drop([{_, _, _, 1.._//_} = brick | bricks], settled),
     do: drop(bricks, [brick | settled])
 
   defp drop([{id, ax, ay, az} | bricks], settled) do
-    {_, _, _, _..bz2} =
+    {_, _, _, _..bz2//_} =
       Enum.filter(settled, fn {_, bx, by, _} ->
         not (Range.disjoint?(ax, bx) or
                Range.disjoint?(ay, by))
       end)
       |> Enum.max_by(
-        fn {_, _, _, _..bz2} -> bz2 end,
+        fn {_, _, _, _..bz2//_} -> bz2 end,
         fn -> {nil, nil, nil, 0..0} end
       )
 
@@ -65,9 +65,9 @@ defmodule AdventOfCode.Y2023.Day22 do
   defp support(bricks), do: support(bricks, bricks, %{})
   defp support([], _, supports), do: supports
 
-  defp support([{_, ax, ay, az1.._} = current | rest], bricks, supports) do
+  defp support([{_, ax, ay, az1.._//_} = current | rest], bricks, supports) do
     others =
-      Enum.filter(bricks, fn {_, bx, by, _..bz2} ->
+      Enum.filter(bricks, fn {_, bx, by, _..bz2//_} ->
         bz2 == az1 - 1 and
           not (Range.disjoint?(ax, bx) or
                  Range.disjoint?(ay, by))

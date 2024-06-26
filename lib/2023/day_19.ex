@@ -74,11 +74,11 @@ defmodule AdventOfCode.Y2023.Day19 do
     end)
   end
 
-  defp range_reducer({c, :lt, v}, acc), do: Map.update!(acc, c, fn l.._ -> l..(v - 1) end)
-  defp range_reducer({c, :gt, v}, acc), do: Map.update!(acc, c, fn _..u -> (v + 1)..u end)
-  defp range_reducer({c, :lte, v}, acc), do: Map.update!(acc, c, fn l.._ -> l..v end)
-  defp range_reducer({c, :gte, v}, acc), do: Map.update!(acc, c, fn _..u -> v..u end)
-  defp range_combination({_, l..u}, acc), do: acc * (u - l + 1)
+  defp range_reducer({c, :lt, v}, acc), do: Map.update!(acc, c, fn l.._//_ -> l..(v - 1)//1 end)
+  defp range_reducer({c, :gt, v}, acc), do: Map.update!(acc, c, fn _..u//_ -> (v + 1)..u//1 end)
+  defp range_reducer({c, :lte, v}, acc), do: Map.update!(acc, c, fn l.._//_ -> l..v//1 end)
+  defp range_reducer({c, :gte, v}, acc), do: Map.update!(acc, c, fn _..u//_ -> v..u//1 end)
+  defp range_combination({_, l..u//_}, acc), do: acc * (u - l + 1)
 
   defp parse_workflow(workflow) do
     [_, name, instructions] = Regex.run(~r/(\w+)\{(.+)\}/, workflow)
