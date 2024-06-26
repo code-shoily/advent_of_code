@@ -5,7 +5,7 @@ defmodule AdventOfCode.MixProject do
     [
       app: :advent_of_code,
       version: "0.20.0",
-      elixir: "~> 1.16.0",
+      elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -23,7 +23,7 @@ defmodule AdventOfCode.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:floki, "~> 0.35.0"},
+      {:floki, "~> 0.36"},
       {:httpoison, "~> 2.2.0"},
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
