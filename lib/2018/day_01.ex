@@ -15,7 +15,9 @@ defmodule AdventOfCode.Y2018.Day01 do
     {run_1(input), run_2(input)}
   end
 
-  def run_1(input), do: Enum.reduce(input, 0, &Kernel.+/2)
+  def run_1(input) do
+    Enum.reduce(input, 0, &Kernel.+/2)
+  end
 
   def run_2(input) do
     input
