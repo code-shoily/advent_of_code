@@ -1,8 +1,8 @@
 defmodule Mix.Tasks.GenDifficulties do
   @moduledoc """
-  Updates the difficulties.md for all years.
+  Updates the wiki/difficulties.md for all years.
 
-  Type `mix gen_difficulties` to update `difficulties.md` with latest difficulty summary.
+  Type `mix gen_difficulties` to update `wiki/difficulties.md` with latest difficulty summary.
   """
 
   alias AdventOfCode.Helpers.Summarizer
@@ -11,10 +11,10 @@ defmodule Mix.Tasks.GenDifficulties do
 
   @usage "mix gen_difficulties"
 
-  @filename "difficulties.md"
+  @filename "wiki/difficulties.md"
 
   @shortdoc """
-  Creates or updates `difficulties.md` with latest tag data.
+  Creates or updates `#{@filename}` with latest tag data.
   """
   @impl Mix.Task
   def run(_) do

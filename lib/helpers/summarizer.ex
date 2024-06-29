@@ -214,7 +214,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
 
   defp difficulty(_), do: ":shrug:"
 
-  defp tags(tags), do: tags |> Enum.map_join(", ", fn tag -> "[#{tag}](/tags.md##{tag})" end)
+  defp tags(tags), do: tags |> Enum.map_join(", ", fn tag -> "[#{tag}](/wiki/tags.md##{tag})" end)
 
   defp award(1), do: ":2nd_place_medal:"
   defp award(2), do: ":1st_place_medal:"

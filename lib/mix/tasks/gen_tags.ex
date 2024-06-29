@@ -1,8 +1,8 @@
 defmodule Mix.Tasks.GenTags do
   @moduledoc """
-  Updates the tags.md for all years.
+  Updates the wiki/tags.md for all years.
 
-  Type `mix gen_tags` to update all `tags.md` with latest tag summary.
+  Type `mix gen_tags` to update all `wiki/tags.md` with latest tag summary.
   """
 
   alias AdventOfCode.Helpers.Summarizer
@@ -11,10 +11,10 @@ defmodule Mix.Tasks.GenTags do
 
   @usage "mix gen_tags"
 
-  @filename "tags.md"
+  @filename "wiki/tags.md"
 
   @shortdoc """
-  Creates or updates `tags.md` with latest tag data.
+  Creates or updates `#{@filename}` with latest tag data.
   """
   @impl Mix.Task
   def run(_) do

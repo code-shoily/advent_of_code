@@ -34,15 +34,15 @@ The stats, both in `<year>/README.md` and the bottom part of `README.md` are aut
 
 * Runs `mix gen_stats` to update the relevant `README.md` so that the latest stats are always displayed.
 * Runs `mix gen_readme` to update the main `README.md` to reflect all the stars.
-* Runs `mix gen_tags` to update `tags.md` with latest tag summary
-* Runs `mix gen_difficulties` to update `difficulties.md` with latest difficulty summary
+* Runs `mix gen_tags` to update `wiki/tags.md` with latest tag summary
+* Runs `mix gen_difficulties` to update `wiki/difficulties.md` with latest difficulty summary
 
 Note that you can call those commands independently and also set up pre-commit hooks to run it for you.
 
 ## Pages
 
-* [tags.md](/tags.md) contains information about tags, a loose attempt to have an idea of nature (i.e. algorithms, output type, input size etc) of puzzles
-* [difficulties.md](/difficulties.md) contains information about relative difficulties, marked with :snowflake: (higher number of icons represent higher difficulty)
+* [tags.md](/wiki/tags.md) contains information about tags, a loose attempt to have an idea of nature (i.e. algorithms, output type, input size etc) of puzzles
+* [difficulties.md](/wiki/difficulties.md) contains information about relative difficulties, marked with :snowflake: (higher number of icons represent higher difficulty)
 * Each year has its own `README.md` to have summarized information of that year. Those pages are:
     - [2015/README.md](/lib/2015/README.md)
     - [2016/README.md](/lib/2016/README.md)
