@@ -29,8 +29,6 @@ defmodule AdventOfCode.Helpers.Summarizer do
     aligner_years = Enum.map_join(@year_range, "|", fn _ -> ":-:" end)
 
     """
-    #{stars}
-
     #{score_summary}
 
     #{header}
