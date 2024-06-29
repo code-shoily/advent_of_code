@@ -23,7 +23,10 @@ defmodule AdventOfCode.Helpers.Summarizer do
     year_links = Enum.map_join(@year_range, "|", fn year -> " [#{year}](/lib/#{year}) " end)
     header = "| Day |#{year_links}|"
     stars = ":star: #{stars_completed}/#{@total_stars} :dart: #{@total_stars - stars_completed}"
-    problems = ":trophy: #{problems_solved}/#{@total_problems} :dart: #{@total_problems - problems_solved}"
+
+    problems =
+      ":trophy: #{problems_solved}/#{@total_problems} :dart: #{@total_problems - problems_solved}"
+
     score_summary = "# #{stars} #{problems}"
     content = for i <- 0..25, do: generate_stat_row(metadata, i)
     aligner_years = Enum.map_join(@year_range, "|", fn _ -> ":-:" end)
