@@ -10,7 +10,7 @@ defmodule AdventOfCode.Helpers.InputReader do
   is configurable because some AoC problems (i.e. Year 2017 day 19) has significant leading
   or trailing space(s)
   """
-  @spec read_from_file(non_neg_integer(), non_neg_integer(), boolean()) :: binary()
+  @spec read_from_file(pos_integer(), pos_integer(), boolean()) :: binary()
   def read_from_file(year, day, trim \\ true) do
     case {trim, File.read!("#{@input_dir}/#{year}_#{day}.txt")} do
       {true, data} -> String.trim(data)

@@ -35,12 +35,12 @@ defmodule AdventOfCode.Y2015.Day02 do
     |> Enum.reduce(&Kernel.+/2)
   end
 
-  @spec required_paper([non_neg_integer(), ...]) :: non_neg_integer()
+  @spec required_paper([pos_integer(), ...]) :: pos_integer()
   defp required_paper(sides) do
     surface_area(sides) + minimum(area_per_dim(sides))
   end
 
-  @spec surface_area([non_neg_integer(), ...]) :: non_neg_integer()
+  @spec surface_area([pos_integer(), ...]) :: pos_integer()
   defp surface_area(sides) do
     sides
     |> area_per_dim()
@@ -48,17 +48,17 @@ defmodule AdventOfCode.Y2015.Day02 do
     |> Kernel.*(2)
   end
 
-  @spec area_per_dim([non_neg_integer(), ...]) :: [non_neg_integer(), ...]
+  @spec area_per_dim([pos_integer(), ...]) :: [pos_integer(), ...]
   defp area_per_dim([width, length, height]) do
     [length * width, width * height, height * length]
   end
 
-  @spec minimum([non_neg_integer(), ...]) :: non_neg_integer()
+  @spec minimum([pos_integer(), ...]) :: pos_integer()
   defp minimum([side_1, side_2, side_3]) do
     side_1 |> min(side_2) |> min(side_3)
   end
 
-  @spec smallest_perimeter_plus_volume([non_neg_integer(), ...]) :: non_neg_integer()
+  @spec smallest_perimeter_plus_volume([pos_integer(), ...]) :: pos_integer()
   defp smallest_perimeter_plus_volume([width, length, height]) do
     [width + length, length + height, height + width]
     |> Enum.min()

@@ -6,7 +6,7 @@ defmodule AdventOfCode do
   @latest_year 2023
 
   @type year() :: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
-  @type day() :: non_neg_integer()
+  @type day() :: pos_integer()
 
   @doc """
   Returns the latest year solved.
