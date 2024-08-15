@@ -29,7 +29,8 @@ defmodule AdventOfCode.MixProject do
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
       {:aja, "~> 0.6.1"},
-      {:topo, "~> 1.0"}
+      {:topo, "~> 1.0"},
+      {:rustler, "~> 0.34.0"}
     ]
   end
 
