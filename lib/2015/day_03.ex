@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day03 do
   --- Day 3: Perfectly Spherical Houses in a Vacuum ---
   Problem Link: https://adventofcode.com/2015/day/3
   Difficulty: xs
-  Tags: grid-walk set rust
+  Tags: grid set rust
   """
   alias AdventOfCode.Helpers.InputReader
 

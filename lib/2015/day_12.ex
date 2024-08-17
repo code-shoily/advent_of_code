@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day12 do
   --- Day 12: JSAbacusFramework.io ---
   Problem Link: https://adventofcode.com/2015/day/12
   Difficulty: xs
-  Tags: json parsing
+  Tags: json
   """
   alias AdventOfCode.Helpers.InputReader
 

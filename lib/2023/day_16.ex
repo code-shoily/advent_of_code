@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day16 do
   --- Day 16: The Floor Will Be Lava ---
   Problem Link: https://adventofcode.com/2023/day/16
   Difficulty: l
-  Tags: grid grid-walk memoization
+  Tags: grid memoization
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.InputReader

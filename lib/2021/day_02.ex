@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day02 do
   --- Day 2: Dive! ---
   Problem Link: https://adventofcode.com/2021/day/2
   Difficulty: xs
-  Tags: grid walk rust
+  Tags: grid rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

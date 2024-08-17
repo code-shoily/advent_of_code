@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day03 do
   --- Day 3: Gear Ratios ---
   Problem Link: https://adventofcode.com/2023/day/3
   Difficulty: m
-  Tags: grid-walk
+  Tags: grid
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}

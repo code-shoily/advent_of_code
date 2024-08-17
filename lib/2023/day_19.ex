@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day19 do
   --- Day 19: Aplenty ---
   Problem Link: https://adventofcode.com/2023/day/19
   Difficulty: l
-  Tags: agent op-code parse-heavy
+  Tags: op-code parse-heavy
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

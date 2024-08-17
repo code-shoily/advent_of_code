@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day01 do
   --- Day 1: No Time for a Taxicab ---
   Problem Link: https://adventofcode.com/2016/day/1
   Difficulty: s
-  Tags: grid walk measurement set rust
+  Tags: grid measurement set rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
