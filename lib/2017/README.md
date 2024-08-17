@@ -10,10 +10,10 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Inverse Captcha](https://adventofcode.com/2017/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2017/day_01.ex) | [day_01_test.exs](/test/2017/day_01_test.exs) | [sliding-window](/wiki/tags.md#sliding-window) |
-| 2 | [Corruption Checksum](https://adventofcode.com/2017/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2017/day_02.ex) | [day_02_test.exs](/test/2017/day_02_test.exs) | [arithmetic](/wiki/tags.md#arithmetic), [sequence](/wiki/tags.md#sequence) |
+| 1 | [Inverse Captcha](https://adventofcode.com/2017/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2017/day_01.ex) | [day_01_test.exs](/test/2017/day_01_test.exs) | [sliding-window](/wiki/tags.md#sliding-window), [rust](/wiki/tags.md#rust) |
+| 2 | [Corruption Checksum](https://adventofcode.com/2017/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2017/day_02.ex) | [day_02_test.exs](/test/2017/day_02_test.exs) | [arithmetic](/wiki/tags.md#arithmetic), [sequence](/wiki/tags.md#sequence), [rust](/wiki/tags.md#rust) |
 | 3 | [Spiral Memory](https://adventofcode.com/2017/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2017/day_03.ex) | [day_03_test.exs](/test/2017/day_03_test.exs) | [spiral](/wiki/tags.md#spiral), [matrix](/wiki/tags.md#matrix) |
-| 4 | [High-Entropy Passphrases](https://adventofcode.com/2017/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2017/day_04.ex) | [day_04_test.exs](/test/2017/day_04_test.exs) | [validation](/wiki/tags.md#validation) |
+| 4 | [High-Entropy Passphrases](https://adventofcode.com/2017/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2017/day_04.ex) | [day_04_test.exs](/test/2017/day_04_test.exs) | [validation](/wiki/tags.md#validation), [rust](/wiki/tags.md#rust) |
 | 5 | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2017/day_05.ex) | [day_05_test.exs](/test/2017/day_05_test.exs) | [not-fast-enough](/wiki/tags.md#not-fast-enough), [random-access](/wiki/tags.md#random-access) |
 | 6 | [Memory Reallocation](https://adventofcode.com/2017/day/6) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_06.ex](/lib/2017/day_06.ex) | [day_06_test.exs](/test/2017/day_06_test.exs) | [sequence](/wiki/tags.md#sequence), [reduction](/wiki/tags.md#reduction) |
 | 7 | [Recursive Circus](https://adventofcode.com/2017/day/7) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2017/day_07.ex) | [day_07_test.exs](/test/2017/day_07_test.exs) | [tree](/wiki/tags.md#tree) |

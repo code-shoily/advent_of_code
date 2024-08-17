@@ -10,7 +10,7 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2023/day_01.ex) | [day_01_test.exs](/test/2023/day_01_test.exs) | [regex](/wiki/tags.md#regex) |
+| 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2023/day_01.ex) | [day_01_test.exs](/test/2023/day_01_test.exs) | [regex](/wiki/tags.md#regex), [rust](/wiki/tags.md#rust) |
 | 2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2023/day_02.ex) | [day_02_test.exs](/test/2023/day_02_test.exs) | [reduction](/wiki/tags.md#reduction) |
 | 3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) | [grid-walk](/wiki/tags.md#grid-walk) |
 | 4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) | [set](/wiki/tags.md#set), [reduction](/wiki/tags.md#reduction) |

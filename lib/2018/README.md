@@ -10,7 +10,7 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) | [sequence](/wiki/tags.md#sequence), [set](/wiki/tags.md#set) |
+| 1 | [Chronal Calibration](https://adventofcode.com/2018/day/1) | :1st_place_medal: | :snowflake: :snowflake: | [day_01.ex](/lib/2018/day_01.ex) | [day_01_test.exs](/test/2018/day_01_test.exs) | [sequence](/wiki/tags.md#sequence), [set](/wiki/tags.md#set), [rust](/wiki/tags.md#rust) |
 | 2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :1st_place_medal: | :snowflake: :snowflake: | [day_02.ex](/lib/2018/day_02.ex) | [day_02_test.exs](/test/2018/day_02_test.exs) | [checksum](/wiki/tags.md#checksum), [string-result](/wiki/tags.md#string-result), [set](/wiki/tags.md#set) |
 | 3 | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2018/day_03.ex) | [day_03_test.exs](/test/2018/day_03_test.exs) | [grid](/wiki/tags.md#grid), [set](/wiki/tags.md#set), [not-fast-enough](/wiki/tags.md#not-fast-enough) |
 | 4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) | [date-time](/wiki/tags.md#date-time), [sequence](/wiki/tags.md#sequence), [sort](/wiki/tags.md#sort), [map](/wiki/tags.md#map) |

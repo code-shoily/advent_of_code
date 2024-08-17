@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day01 do
   --- Day 1: Trebuchet?! ---
   Problem Link: https://adventofcode.com/2023/day/1
   Difficulty: xs
-  Tags: regex
+  Tags: regex rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

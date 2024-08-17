@@ -10,7 +10,7 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2022/day_01.ex) | [day_01_test.exs](/test/2022/day_01_test.exs) | [sequence](/wiki/tags.md#sequence) |
+| 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2022/day_01.ex) | [day_01_test.exs](/test/2022/day_01_test.exs) | [sequence](/wiki/tags.md#sequence), [rust](/wiki/tags.md#rust) |
 | 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2022/day_02.ex) | [day_02_test.exs](/test/2022/day_02_test.exs) | [table-lookup](/wiki/tags.md#table-lookup) |
 | 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2022/day_03.ex) | [day_03_test.exs](/test/2022/day_03_test.exs) | [set](/wiki/tags.md#set) |
 | 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2022/day_04.ex) | [day_04_test.exs](/test/2022/day_04_test.exs) | [range](/wiki/tags.md#range), [set](/wiki/tags.md#set) |

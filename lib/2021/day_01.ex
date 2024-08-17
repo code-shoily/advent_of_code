@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day01 do
   --- Day 1: Sonar Sweep ---
   Problem Link: https://adventofcode.com/2021/day/1
   Difficulty: xs
-  Tags: sliding-window sequence
+  Tags: sliding-window sequence rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

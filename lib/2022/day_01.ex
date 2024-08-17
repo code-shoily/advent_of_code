@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day01 do
   --- Day 1: Calorie Counting ---
   Problem Link: https://adventofcode.com/2022/day/1
   Difficulty: xs
-  Tags: sequence
+  Tags: sequence rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

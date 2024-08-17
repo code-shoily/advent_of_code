@@ -10,9 +10,9 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [Not Quite Lisp](https://adventofcode.com/2015/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2015/day_01.ex) | [day_01_test.exs](/test/2015/day_01_test.exs) | [sequence](/wiki/tags.md#sequence) |
-| 2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2015/day_02.ex) | [day_02_test.exs](/test/2015/day_02_test.exs) | [geometry2d](/wiki/tags.md#geometry2d) |
-| 3 | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2015/day_03.ex) | [day_03_test.exs](/test/2015/day_03_test.exs) | [grid-walk](/wiki/tags.md#grid-walk), [set](/wiki/tags.md#set) |
+| 1 | [Not Quite Lisp](https://adventofcode.com/2015/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2015/day_01.ex) | [day_01_test.exs](/test/2015/day_01_test.exs) | [sequence](/wiki/tags.md#sequence), [rust](/wiki/tags.md#rust) |
+| 2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2015/day_02.ex) | [day_02_test.exs](/test/2015/day_02_test.exs) | [geometry2d](/wiki/tags.md#geometry2d), [rust](/wiki/tags.md#rust) |
+| 3 | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2015/day_03.ex) | [day_03_test.exs](/test/2015/day_03_test.exs) | [grid-walk](/wiki/tags.md#grid-walk), [set](/wiki/tags.md#set), [rust](/wiki/tags.md#rust) |
 | 4 | [The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2015/day_04.ex) | [day_04_test.exs](/test/2015/day_04_test.exs) | [md5](/wiki/tags.md#md5), [annoying](/wiki/tags.md#annoying) |
 | 5 | [Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) | :1st_place_medal: | :snowflake: | [day_05.ex](/lib/2015/day_05.ex) | [day_05_test.exs](/test/2015/day_05_test.exs) | [string](/wiki/tags.md#string) |
 | 6 | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_06.ex](/lib/2015/day_06.ex) | [day_06_test.exs](/test/2015/day_06_test.exs) | [grid](/wiki/tags.md#grid), [vector](/wiki/tags.md#vector), [reduction](/wiki/tags.md#reduction), [slow](/wiki/tags.md#slow) |

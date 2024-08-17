@@ -10,7 +10,7 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2019/day_01.ex) | [day_01_test.exs](/test/2019/day_01_test.exs) | [calculation](/wiki/tags.md#calculation) |
+| 1 | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2019/day_01.ex) | [day_01_test.exs](/test/2019/day_01_test.exs) | [calculation](/wiki/tags.md#calculation), [rust](/wiki/tags.md#rust) |
 | 2 | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | :1st_place_medal: | :snowflake: | [day_02.ex](/lib/2019/day_02.ex) | [day_02_test.exs](/test/2019/day_02_test.exs) | [op-code](/wiki/tags.md#op-code), [not-fast-enough](/wiki/tags.md#not-fast-enough), [int-code](/wiki/tags.md#int-code) |
 | 3 | [Crossed Wires](https://adventofcode.com/2019/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2019/day_03.ex) | [day_03_test.exs](/test/2019/day_03_test.exs) | [grid](/wiki/tags.md#grid), [walk](/wiki/tags.md#walk), [set](/wiki/tags.md#set), [not-fast-enough](/wiki/tags.md#not-fast-enough) |
 | 4 | [Secure Container](https://adventofcode.com/2019/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2019/day_04.ex) | [day_04_test.exs](/test/2019/day_04_test.exs) | [sequence](/wiki/tags.md#sequence), [inline-input](/wiki/tags.md#inline-input), [not-fast-enough](/wiki/tags.md#not-fast-enough) |

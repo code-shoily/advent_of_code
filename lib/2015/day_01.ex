@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day01 do
   --- Day 1: Not Quite Lisp ---
   Problem Link: https://adventofcode.com/2015/day/1
   Difficulty: xs
-  Tags: sequence
+  Tags: sequence rust
   """
   alias AdventOfCode.Helpers.InputReader
 

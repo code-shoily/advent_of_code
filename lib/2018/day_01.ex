@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day01 do
   --- Day 1: Chronal Calibration ---
   Problem Link: https://adventofcode.com/2018/day/1
   Difficulty: s
-  Tags: sequence set
+  Tags: sequence set rust
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
