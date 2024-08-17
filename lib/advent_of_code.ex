@@ -2,7 +2,6 @@ defmodule AdventOfCode do
   @moduledoc """
   Module that solves problem given year and day.
   """
-
   @latest_year 2023
 
   @type year() :: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
