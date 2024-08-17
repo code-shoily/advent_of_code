@@ -17,8 +17,8 @@ defmodule Mix.Tasks.Solve do
   def run(args) do
     case InputParser.parse(args) do
       {year, day} ->
-        case AdventOfCode.solve(year, day) do
-          {:ok, {part_1, part_2}} -> Mix.shell().info("Part 1: #{part_1}\tPart 2: #{part_2}")
+        case AdventOfCode.solve(year, day, false) do
+          {:ok, {time, {part_1, part_2}}} -> Mix.shell().info("Part 1: #{part_1}\tPart 2: #{part_2}\tTime: #{time} µs")
           {:error, :not_yet_solved} -> Mix.shell().error("#{year}/#{day} is not solved yet")
           {:error, :invalid_args} -> Mix.shell().error("Invalid year/day: #{year}/#{day}")
         end
