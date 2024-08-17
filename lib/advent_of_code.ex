@@ -17,14 +17,18 @@ defmodule AdventOfCode do
   """
   @spec solve(year(), day()) :: {any(), any()}
   def solve(year, day, rust? \\ false) do
-    solution = :timer.tc(fn ->
-      case rust? do
-        true ->
+    solution =
+      :timer.tc(fn ->
+        case rust? do
+          true ->
             {_, result} = AdventOfCode.RustNif.solve(year, day)
             result
-        false -> Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()
-      end
-    end)
+
+          false ->
+            Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()
+        end
+      end)
+
     {:ok, solution}
   rescue
     _ in FunctionClauseError -> {:error, :invalid_args}
