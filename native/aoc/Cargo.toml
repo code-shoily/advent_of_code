@@ -1,0 +1,15 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "aoc"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.34.0"
+itertools = "0.13.0"
+clap = { version = "4.5.11", features = ["derive"] }
