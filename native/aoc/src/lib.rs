@@ -1,8 +1,8 @@
 pub mod util {
     pub mod io_helpers;
     pub mod parsers;
-    pub mod runner;
     pub mod result;
+    pub mod runner;
 }
 
 // All modules for year 2015
@@ -15,6 +15,7 @@ pub mod year_2015 {
 
 // All modules for year 2016
 pub mod year_2016 {
+    mod day_16_01;
     mod day_16_02;
     mod day_16_04;
     pub mod solver;
@@ -22,6 +23,8 @@ pub mod year_2016 {
 
 // All modules for year 2017
 pub mod year_2017 {
+    mod day_17_01;
+    mod day_17_02;
     mod day_17_04;
     pub mod solver;
 }
@@ -64,10 +67,10 @@ pub mod year_2023 {
     pub mod solver;
 }
 
+use rustler::Error;
 use util::io_helpers::read_input_from_resources;
 use util::result::Solution;
 use util::runner::Runner;
-use rustler::Error;
 
 #[rustler::nif]
 fn solve(year: i16, day: i8) -> Result<Solution, Error> {
