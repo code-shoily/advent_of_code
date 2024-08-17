@@ -5,6 +5,7 @@ defmodule AdventOfCode.Y2015.Day04 do
   Difficulty: s
   Tags: md5 annoying
   """
+  def run, do: {run_1(), run_2()}
   def run_1, do: lowest_number("bgvyzdsv", 1)
   def run_2, do: "bgvyzdsv" |> lowest_number_2(1)
 

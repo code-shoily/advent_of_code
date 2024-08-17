@@ -11,13 +11,17 @@ defmodule AdventOfCode.Y2015.Day06 do
   def input, do: InputReader.read_from_file(2015, 6)
 
   def run(input \\ input()) do
-    input = Enum.map(Transformers.lines(input), &parse_input/1)
+    parsed_input = parse(input)
     grid = make_grid(1000)
 
-    task_1 = Task.async(fn -> brightness(Enum.reduce(input, grid, &apply_1/2)) end)
-    task_2 = Task.async(fn -> brightness(Enum.reduce(input, grid, &apply_2/2)) end)
+    task_1 = Task.async(fn -> brightness(Enum.reduce(parsed_input, grid, &apply_1/2)) end)
+    task_2 = Task.async(fn -> brightness(Enum.reduce(parsed_input, grid, &apply_2/2)) end)
 
     {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
+  end
+
+  def parse(input \\ input()) do
+    Enum.map(Transformers.lines(input), &parse_input/1)
   end
 
   def apply_1(line, grid),
