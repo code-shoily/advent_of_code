@@ -28,7 +28,7 @@ defmodule AdventOfCode.MixProject do
       {:httpoison, "~> 2.2.0"},
       {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
-      {:aja, "~> 0.6.1"},
+      {:aja, "~> 0.7"},
       {:topo, "~> 1.0"},
       {:rustler, "~> 0.34.0"}
     ]
