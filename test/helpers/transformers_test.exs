@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Helpers.TransformersTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   @moduletag :transformers
 
   alias AdventOfCode.Helpers.Transformers

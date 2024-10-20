@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Y<%= year %>.Day<%= String.pad_leading(day, 2, "0") %>Test do
   @moduledoc false
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   @moduletag :y<%= year |> String.split_at(2) |> elem(1) %><%= String.pad_leading(day, 2, "0") %>
 
   alias AdventOfCode.Y<%= year  %>.Day<%= String.pad_leading(day, 2, "0") %>, as: Solution

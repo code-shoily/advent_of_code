@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Algorithms.GridTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AdventOfCode.Algorithms.Grid
 

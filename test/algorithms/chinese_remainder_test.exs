@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Algorithms.ChineseRemainderTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AdventOfCode.Algorithms.ChineseRemainder
 

@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Algorithms.CombinatoricsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AdventOfCode.Algorithms.Combinatorics
 

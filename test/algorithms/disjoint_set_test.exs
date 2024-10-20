@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Algorithms.DisjointSetTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AdventOfCode.Algorithms.DisjointSet
 

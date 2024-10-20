@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Y2015.Day24Test do
   @moduledoc false
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   @moduletag :y1524
 
   alias AdventOfCode.Y2015.Day24, as: Solution
