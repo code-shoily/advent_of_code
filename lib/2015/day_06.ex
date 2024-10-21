@@ -32,17 +32,14 @@ defmodule AdventOfCode.Y2015.Day06 do
   defp apply({cmd, xs, ys}, grid, on, off, toggle) do
     Vector.foldl(coords(xs, ys), grid, fn [x, y], acc ->
       case cmd do
-        :turn_on -> Vector.update_at(acc, x, &Vector.update_at(&1, y, on))
-        :turn_off -> Vector.update_at(acc, x, &Vector.update_at(&1, y, off))
-        :toggle -> Vector.update_at(acc, x, &Vector.update_at(&1, y, toggle))
+        "turn on" -> Vector.update_at(acc, x, &Vector.update_at(&1, y, on))
+        "turn off" -> Vector.update_at(acc, x, &Vector.update_at(&1, y, off))
+        "toggle" -> Vector.update_at(acc, x, &Vector.update_at(&1, y, toggle))
       end
     end)
   end
 
   defp make_grid(dim), do: Vector.duplicate(Vector.duplicate(0, dim), dim)
-  defp as_atom("turn on"), do: :turn_on
-  defp as_atom("turn off"), do: :turn_off
-  defp as_atom("toggle"), do: :toggle
   defp brightness(grid), do: Aja.Enum.reduce(grid, 0, &(&2 + Aja.Enum.sum(&1)))
   defp coords(xs, ys), do: Vector.new(for x <- xs, y <- ys, do: [x, y])
 
@@ -50,7 +47,7 @@ defmodule AdventOfCode.Y2015.Day06 do
   defp parse_input(line), do: format(Regex.named_captures(@regex, line))
 
   defp format(%{"cmd" => cmd, "x1" => x1, "x2" => x2, "y1" => y1, "y2" => y2}) do
-    {as_atom(cmd), String.to_integer(x1)..String.to_integer(x2),
+    {cmd, String.to_integer(x1)..String.to_integer(x2),
      String.to_integer(y1)..String.to_integer(y2)}
   end
 end
