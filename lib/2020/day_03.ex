@@ -20,7 +20,8 @@ defmodule AdventOfCode.Y2020.Day03 do
 
   def run_2(input) do
     for result <- Enum.map(@slopes, &traverse(input, &1)), reduce: 1 do
-      acc -> acc * result
+      acc ->
+        acc * result
     end
   end
 
