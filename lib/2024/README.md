@@ -10,5 +10,5 @@
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
-| 3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :shrug: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) |  |
+| 3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) | [regex](/wiki/tags.md#regex), [fsm](/wiki/tags.md#fsm) |
 

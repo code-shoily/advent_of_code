@@ -2,8 +2,8 @@ defmodule AdventOfCode.Y2024.Day03 do
   @moduledoc """
   --- Day 3: Mull It Over ---
   Problem Link: https://adventofcode.com/2024/day/3
-  Difficulty:
-  Tags:
+  Difficulty: xs
+  Tags: regex fsm
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
