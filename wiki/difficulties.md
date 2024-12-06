@@ -47,6 +47,9 @@ optimize them and update this page with refined and more accurate data.
 | 2023/4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) | [set](/wiki/tags.md#set), [reduction](/wiki/tags.md#reduction) |
 | 2023/6 | [Wait For It](https://adventofcode.com/2023/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2023/day_06.ex) | [day_06_test.exs](/test/2023/day_06_test.exs) | [algebra](/wiki/tags.md#algebra) |
 | 2023/9 | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | :1st_place_medal: | :snowflake: | [day_09.ex](/lib/2023/day_09.ex) | [day_09_test.exs](/test/2023/day_09_test.exs) | [sequence](/wiki/tags.md#sequence), [reduction](/wiki/tags.md#reduction) |
+| 2024/1 | [Historian Hysteria](https://adventofcode.com/2024/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2024/day_01.ex) | [day_01_test.exs](/test/2024/day_01_test.exs) | [list](/wiki/tags.md#list) |
+| 2024/3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) | [regex](/wiki/tags.md#regex), [fsm](/wiki/tags.md#fsm) |
+| 2024/5 | [Print Queue](https://adventofcode.com/2024/day/5) | :1st_place_medal: | :snowflake: | [day_05.ex](/lib/2024/day_05.ex) | [day_05_test.exs](/test/2024/day_05_test.exs) | [set](/wiki/tags.md#set), [sort](/wiki/tags.md#sort) |
 
 ## s
 

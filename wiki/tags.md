@@ -153,6 +153,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2017/9 | [Stream Processing](https://adventofcode.com/2017/day/9) | :1st_place_medal: | :snowflake: :snowflake: | [day_09.ex](/lib/2017/day_09.ex) | [day_09_test.exs](/test/2017/day_09_test.exs) | [fsm](/wiki/tags.md#fsm) |
+| 2024/3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) | [regex](/wiki/tags.md#regex), [fsm](/wiki/tags.md#fsm) |
 
 ## gb-tree
 
@@ -309,6 +310,12 @@ optimize them and update this page with refined and more accurate data.
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2022/5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | :1st_place_medal: | :snowflake: :snowflake: | [day_05.ex](/lib/2022/day_05.ex) | [day_05_test.exs](/test/2022/day_05_test.exs) | [parse-heavy](/wiki/tags.md#parse-heavy), [stack](/wiki/tags.md#stack), [linked-list](/wiki/tags.md#linked-list) |
 | 2022/7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :1st_place_medal: | :snowflake: | [day_07.ex](/lib/2022/day_07.ex) | [day_07_test.exs](/test/2022/day_07_test.exs) | [op-code](/wiki/tags.md#op-code), [linked-list](/wiki/tags.md#linked-list) |
+
+## list
+
+| Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
+| :---: | :------: | :---: | :---: | :---: | :---: | :---: |
+| 2024/1 | [Historian Hysteria](https://adventofcode.com/2024/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2024/day_01.ex) | [day_01_test.exs](/test/2024/day_01_test.exs) | [list](/wiki/tags.md#list) |
 
 ## live-book
 
@@ -549,6 +556,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2023/1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2023/day_01.ex) | [day_01_test.exs](/test/2023/day_01_test.exs) | [regex](/wiki/tags.md#regex), [rust](/wiki/tags.md#rust) |
+| 2024/3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) | [regex](/wiki/tags.md#regex), [fsm](/wiki/tags.md#fsm) |
 
 ## rotation
 
@@ -640,6 +648,7 @@ optimize them and update this page with refined and more accurate data.
 | 2022/6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :1st_place_medal: | :snowflake: | [day_06.ex](/lib/2022/day_06.ex) | [day_06_test.exs](/test/2022/day_06_test.exs) | [bitwise](/wiki/tags.md#bitwise), [set](/wiki/tags.md#set) |
 | 2022/18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2022/day_18.ex) | [day_18_test.exs](/test/2022/day_18_test.exs) | [erlang](/wiki/tags.md#erlang), [geometry3d](/wiki/tags.md#geometry3d), [surface](/wiki/tags.md#surface), [set](/wiki/tags.md#set) |
 | 2023/4 | [Scratchcards](https://adventofcode.com/2023/day/4) | :1st_place_medal: | :snowflake: | [day_04.ex](/lib/2023/day_04.ex) | [day_04_test.exs](/test/2023/day_04_test.exs) | [set](/wiki/tags.md#set), [reduction](/wiki/tags.md#reduction) |
+| 2024/5 | [Print Queue](https://adventofcode.com/2024/day/5) | :1st_place_medal: | :snowflake: | [day_05.ex](/lib/2024/day_05.ex) | [day_05_test.exs](/test/2024/day_05_test.exs) | [set](/wiki/tags.md#set), [sort](/wiki/tags.md#sort) |
 
 ## sliding-window
 
@@ -676,6 +685,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2018/4 | [Repose Record](https://adventofcode.com/2018/day/4) | :1st_place_medal: | :snowflake: :snowflake: | [day_04.ex](/lib/2018/day_04.ex) | [day_04_test.exs](/test/2018/day_04_test.exs) | [date-time](/wiki/tags.md#date-time), [sequence](/wiki/tags.md#sequence), [sort](/wiki/tags.md#sort), [map](/wiki/tags.md#map) |
+| 2024/5 | [Print Queue](https://adventofcode.com/2024/day/5) | :1st_place_medal: | :snowflake: | [day_05.ex](/lib/2024/day_05.ex) | [day_05_test.exs](/test/2024/day_05_test.exs) | [set](/wiki/tags.md#set), [sort](/wiki/tags.md#sort) |
 
 ## spiral
 
