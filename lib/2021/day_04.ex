@@ -65,7 +65,7 @@ defmodule AdventOfCode.Y2021.Day04 do
 
   defp get_winner(board_states) do
     Enum.reduce_while(board_states, nil, fn {_, board, rows, cols}, _ ->
-      5 in rows or (5 in cols && {:halt, board}) || {:cont, nil}
+      (5 in rows or (5 in cols && {:halt, board})) || {:cont, nil}
     end)
   end
 

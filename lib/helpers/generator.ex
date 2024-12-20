@@ -49,7 +49,7 @@ defmodule AdventOfCode.Helpers.Generator do
   end
 
   defp create_file(path, content) do
-    unless File.exists?(path) do
+    if !File.exists?(path) do
       File.write(path, content)
     end
   end
@@ -68,7 +68,7 @@ defmodule AdventOfCode.Helpers.Generator do
   end
 
   defp create_input_file(path, year, day) do
-    unless File.exists?(path) do
+    if !File.exists?(path) do
       with {:ok, data} <- fetch_cookie(year, day),
            {:ok, file} <- File.open(path, [:write]),
            :ok <- IO.write(file, data) do

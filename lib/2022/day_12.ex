@@ -95,7 +95,7 @@ defmodule AdventOfCode.Y2022.Day12 do
   end
 
   defp add_edge(point, grid, x, y) do
-    unless grid[point] - grid[{x, y}] > 1 do
+    if not (grid[point] - grid[{x, y}] > 1) do
       {{x, y}, point}
     end
   end
