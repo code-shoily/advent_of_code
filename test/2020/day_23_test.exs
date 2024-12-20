@@ -12,6 +12,6 @@ defmodule AdventOfCode.Y2020.Day23Test do
 
   @tag :skip
   test "Year 2020, Day 23, Part 2" do
-    assert Solution.run_2() == nil
+    assert Solution.run_2() == {:not_implemented, 2}
   end
 end
