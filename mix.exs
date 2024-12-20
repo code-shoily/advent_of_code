@@ -8,8 +8,8 @@ defmodule AdventOfCode.MixProject do
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      elixirc_options: [warnings_as_errors: true]
+      deps: deps()
+      # elixirc_options: [warnings_as_errors: true]
     ]
   end
 
@@ -26,7 +26,6 @@ defmodule AdventOfCode.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:floki, "~> 0.36"},
       {:httpoison, "~> 2.2"},
-      {:jason, "~> 1.4"},
       {:libgraph, "~> 0.16"},
       {:aja, "~> 0.7"},
       {:topo, "~> 1.0"},

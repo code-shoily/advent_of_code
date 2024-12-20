@@ -10,20 +10,19 @@ defmodule AdventOfCode.Y2015.Day12 do
   def input, do: InputReader.read_from_file(2015, 12)
 
   def run(input \\ input()) do
-    input = String.graphemes(input)
-
     {run_1(input), run_2(input)}
   end
 
   def run_1(input) do
     input
+    |> String.graphemes()
     |> parse_json([])
     |> compute()
   end
 
   def run_2(input) do
     input
-    |> Jason.decode!()
+    |> JSON.decode!()
     |> total()
   end
 

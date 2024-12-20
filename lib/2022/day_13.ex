@@ -16,7 +16,7 @@ defmodule AdventOfCode.Y2022.Day13 do
     |> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
     |> Enum.map(fn pair ->
       [a, b] = Transformers.lines(pair)
-      {Jason.decode!(a), Jason.decode!(b)}
+      {JSON.decode!(a), JSON.decode!(b)}
     end)
     |> Enum.with_index(1)
     |> Enum.filter(fn {{x, y}, _} -> order(x, y) end)
@@ -28,7 +28,7 @@ defmodule AdventOfCode.Y2022.Day13 do
     input
     |> String.split(~r{(\r\n\r\n|\r\r|\n\n)})
     |> Enum.flat_map(&Transformers.lines(&1))
-    |> Enum.map(&Jason.decode!/1)
+    |> Enum.map(&JSON.decode!/1)
     |> Kernel.++([[[2]], [[6]]])
     |> Enum.sort_by(&Function.identity/1, &order/2)
     |> Enum.with_index(1)
