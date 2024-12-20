@@ -5,7 +5,7 @@ defmodule AdventOfCode.MixProject do
     [
       app: :advent_of_code,
       version: "0.21.0",
-      elixir: "~> 1.17",
+      elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -30,7 +30,7 @@ defmodule AdventOfCode.MixProject do
       {:libgraph, "~> 0.16"},
       {:aja, "~> 0.7"},
       {:topo, "~> 1.0"},
-      {:rustler, "~> 0.34.0"}
+      {:rustler, "~> 0.35"}
     ]
   end
 
