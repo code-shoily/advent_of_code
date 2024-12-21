@@ -20,8 +20,7 @@ defmodule AdventOfCode.Y2022.Day13 do
     end)
     |> Enum.with_index(1)
     |> Enum.filter(fn {{x, y}, _} -> order(x, y) end)
-    |> Enum.map(&elem(&1, 1))
-    |> Enum.sum()
+    |> Enum.sum_by(&elem(&1, 1))
   end
 
   def run_2(input) do
@@ -33,8 +32,7 @@ defmodule AdventOfCode.Y2022.Day13 do
     |> Enum.sort_by(&Function.identity/1, &order/2)
     |> Enum.with_index(1)
     |> Enum.filter(fn {elem, _} -> elem in [[[2]], [[6]]] end)
-    |> Enum.map(&elem(&1, 1))
-    |> Enum.product()
+    |> Enum.product_by(&elem(&1, 1))
   end
 
   def order([], []), do: nil

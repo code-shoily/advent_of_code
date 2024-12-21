@@ -24,9 +24,7 @@ defmodule AdventOfCode.Y2023.Day09 do
 
   defp forward(data) do
     extrapolate(data, [data], fn acc ->
-      acc
-      |> Enum.map(&List.last/1)
-      |> Enum.sum()
+      Enum.sum_by(acc, &List.last/1)
     end)
   end
 

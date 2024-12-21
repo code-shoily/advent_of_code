@@ -16,7 +16,7 @@ defmodule AdventOfCode.Helpers.Summarizer do
     metadata = Map.new(@year_range, &{&1, Meta.get_info(&1, true)})
 
     stars_completed =
-      Enum.map(metadata, fn {_, %{completed: completed}} -> completed end) |> Enum.sum()
+      Enum.sum_by(metadata, fn {_, %{completed: completed}} -> completed end)
 
     problems_solved = stars_completed / 2
 

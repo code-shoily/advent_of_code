@@ -95,8 +95,7 @@ defmodule AdventOfCode.Y2018.Day06 do
 
   defp within_distance_threshold(distances, threshold) do
     distances
-    |> Enum.map(&elem(&1, 1))
-    |> Enum.sum()
+    |> Enum.sum_by(&elem(&1, 1))
     |> case do
       n when n < threshold -> 1
       _ -> 0

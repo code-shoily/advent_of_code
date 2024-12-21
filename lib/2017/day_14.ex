@@ -20,8 +20,7 @@ defmodule AdventOfCode.Y2017.Day14 do
 
   defp run_1(squares) do
     squares
-    |> Enum.map(&Enum.count(&1, fn i -> i == "1" end))
-    |> Enum.sum()
+    |> Enum.sum_by(&Enum.count(&1, fn i -> i == "1" end))
   end
 
   defp run_2(_squares) do

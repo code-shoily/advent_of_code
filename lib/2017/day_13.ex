@@ -59,7 +59,6 @@ defmodule AdventOfCode.Y2017.Day13 do
   defp severity(detections, input) do
     input
     |> Map.take(detections)
-    |> Enum.map(fn {k, v} -> k * v end)
-    |> Enum.sum()
+    |> Enum.sum_by(fn {k, v} -> k * v end)
   end
 end

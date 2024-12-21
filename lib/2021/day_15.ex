@@ -23,8 +23,7 @@ defmodule AdventOfCode.Y2021.Day15 do
     |> to_graph()
     |> Graph.dijkstra({0, 0}, get_destination(grid))
     |> tl()
-    |> Enum.map(&Map.get(grid, &1))
-    |> Enum.sum()
+    |> Enum.sum_by(&Map.get(grid, &1))
   end
 
   def run_2(grid) do
@@ -34,8 +33,7 @@ defmodule AdventOfCode.Y2021.Day15 do
     |> to_graph()
     |> Graph.dijkstra({0, 0}, get_destination(grid))
     |> tl()
-    |> Enum.map(&Map.get(grid, &1))
-    |> Enum.sum()
+    |> Enum.sum_by(&Map.get(grid, &1))
   end
 
   def parse(input) do

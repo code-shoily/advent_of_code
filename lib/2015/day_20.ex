@@ -39,8 +39,7 @@ defmodule AdventOfCode.Y2015.Day20 do
     gifts =
       house
       |> Arithmetics.divisors()
-      |> Enum.map(&(&1 * 10))
-      |> Enum.sum()
+      |> Enum.sum_by(&(&1 * 10))
 
     {house, gifts}
   end
@@ -50,8 +49,7 @@ defmodule AdventOfCode.Y2015.Day20 do
       house
       |> Arithmetics.divisors()
       |> Enum.filter(fn divisor -> div(house, divisor) < 50 end)
-      |> Enum.map(&(&1 * 11))
-      |> Enum.sum()
+      |> Enum.sum_by(&(&1 * 11))
 
     {house, gifts}
   end

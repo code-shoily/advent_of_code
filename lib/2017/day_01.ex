@@ -40,12 +40,10 @@ defmodule AdventOfCode.Y2017.Day01 do
   end
 
   defp matching_pair_sum({a, b}) do
-    a
-    |> Enum.zip(b)
-    |> Enum.map(fn
+    Enum.zip(a, b)
+    |> Enum.sum_by(fn
       {a, a} -> a + a
       _ -> 0
     end)
-    |> Enum.sum()
   end
 end

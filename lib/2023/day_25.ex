@@ -20,8 +20,7 @@ defmodule AdventOfCode.Y2023.Day25 do
     |> Enum.find(fn g1 -> cut_size(g1, input) == 3 end)
     |> Map.keys()
     |> Enum.map(&String.length/1)
-    |> Enum.map(&div(&1, 3))
-    |> Enum.product()
+    |> Enum.product_by(&div(&1, 3))
   end
 
   defp run_2(_), do: "🎉"

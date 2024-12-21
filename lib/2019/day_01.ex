@@ -15,18 +15,15 @@ defmodule AdventOfCode.Y2019.Day01 do
   end
 
   def run_1(input) do
-    input
-    |> Enum.map(&fuel_required/1)
-    |> Enum.sum()
+    Enum.sum_by(input, &fuel_required/1)
   end
 
   def run_2(input) do
     input
-    |> Enum.map(fn mass ->
+    |> Enum.sum_by(fn mass ->
       required_fuel = fuel_required(mass)
       refuel(required_fuel, required_fuel)
     end)
-    |> Enum.sum()
   end
 
   def parse(data) do

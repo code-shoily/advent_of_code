@@ -33,7 +33,7 @@ defmodule AdventOfCode.Y2020.Day14 do
     {Map.put(memory, address, (value ||| or_mask) &&& and_mask), masks}
   end
 
-  defp memory_sum({memory, _}), do: memory |> Enum.map(&elem(&1, 1)) |> Enum.sum()
+  defp memory_sum({memory, _}), do: memory |> Enum.sum_by(&elem(&1, 1))
 
   defp instruction_2("mask" <> _ = line, {memory, _}),
     do: {memory, line |> String.split(" = ") |> Enum.at(-1) |> String.graphemes()}

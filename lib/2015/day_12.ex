@@ -45,8 +45,7 @@ defmodule AdventOfCode.Y2015.Day12 do
     parsed
     |> Enum.join()
     |> String.split()
-    |> Enum.map(&String.to_integer/1)
-    |> Enum.sum()
+    |> Enum.sum_by(&String.to_integer/1)
   end
 
   def total(obj) when is_map(obj) do
@@ -56,11 +55,10 @@ defmodule AdventOfCode.Y2015.Day12 do
 
   def total(obj) when is_list(obj) do
     obj
-    |> Enum.map(fn
+    |> Enum.sum_by(fn
       value when is_map(value) or is_list(value) -> total(value)
       value when is_integer(value) -> value
       _ -> 0
     end)
-    |> Enum.sum()
   end
 end

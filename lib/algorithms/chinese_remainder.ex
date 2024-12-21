@@ -34,8 +34,7 @@ defmodule AdventOfCode.Algorithms.ChineseRemainder do
           |> Enum.zip(inverses)
           |> Enum.map(&Tuple.product/1)
         )
-        |> Enum.map(&Tuple.product/1)
-        |> Enum.sum()
+        |> Enum.sum_by(&Tuple.product/1)
         |> mod(mod_pi)
     end
   end

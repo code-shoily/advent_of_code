@@ -65,12 +65,11 @@ defmodule AdventOfCode.Y2023.Day19 do
 
     Agent.get(agent, fn content ->
       content
-      |> Enum.map(fn steps ->
+      |> Enum.sum_by(fn steps ->
         steps
         |> Enum.reduce(Map.new(~w(x m a s), &{&1, 1..4000}), &range_reducer/2)
         |> Enum.reduce(1, &range_combination/2)
       end)
-      |> Enum.sum()
     end)
   end
 

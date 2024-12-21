@@ -18,15 +18,13 @@ defmodule AdventOfCode.Y2024.Day05 do
   defp run_1(input) do
     input
     |> Enum.filter(fn {a, b} -> a == b end)
-    |> Enum.map(fn {a, _} -> a |> Enum.at(div(length(a), 2)) end)
-    |> Enum.sum()
+    |> Enum.sum_by(fn {a, _} -> a |> Enum.at(div(length(a), 2)) end)
   end
 
   defp run_2(input) do
     input
     |> Enum.filter(fn {a, b} -> a != b end)
-    |> Enum.map(fn {_, b} -> b |> Enum.at(div(length(b), 2)) end)
-    |> Enum.sum()
+    |> Enum.sum_by(fn {_, b} -> b |> Enum.at(div(length(b), 2)) end)
   end
 
   def parse(data \\ input()) do

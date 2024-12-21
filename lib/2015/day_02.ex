@@ -22,17 +22,13 @@ defmodule AdventOfCode.Y2015.Day02 do
   end
 
   defp run_1(input) do
-    input
-    |> Enum.map(fn n -> n |> Enum.map(&String.to_integer/1) |> required_paper() end)
-    |> Enum.sum()
+    Enum.sum_by(input, fn n -> n |> Enum.map(&String.to_integer/1) |> required_paper() end)
   end
 
   defp run_2(input) do
-    input
-    |> Enum.map(fn n ->
-      n |> Enum.map(&String.to_integer/1) |> smallest_perimeter_plus_volume()
+    Enum.sum_by(input, fn n ->
+      Enum.map(n, &String.to_integer/1) |> smallest_perimeter_plus_volume()
     end)
-    |> Enum.reduce(&Kernel.+/2)
   end
 
   @spec required_paper([pos_integer(), ...]) :: pos_integer()

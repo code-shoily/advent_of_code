@@ -76,8 +76,7 @@ defmodule AdventOfCode.Y2015.Day15 do
 
   def total_of(nutrients, type) do
     nutrients
-    |> Enum.map(& &1[type])
-    |> Enum.sum()
+    |> Enum.sum_by(& &1[type])
     |> then(&((&1 < 0 && 0) || &1))
   end
 

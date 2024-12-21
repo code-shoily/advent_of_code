@@ -47,8 +47,7 @@ defmodule AdventOfCode.Helpers.Meta do
 
     stars_completed =
       daywise_summary
-      |> Enum.map(fn {_, %{count: count}} -> count end)
-      |> Enum.sum()
+      |> Enum.sum_by(fn {_, %{count: count}} -> count end)
 
     tag_summary = daywise_summary |> group_by_tags()
     difficulty_summary = daywise_summary |> group_by_difficulty()
