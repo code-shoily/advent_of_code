@@ -19,7 +19,9 @@ defmodule AdventOfCode.Y2018.Day06 do
   def run(input \\ input()) do
     input = parse(input)
 
-    {covers_most_points(input), covers_distances_within(input, 10_000)}
+    task_1 = Task.async(fn -> covers_most_points(input) end)
+    task_2 = Task.async(fn -> covers_distances_within(input, 10_000) end)
+    {Task.await(task_1), Task.await(task_2)}
   end
 
   @spec parse(binary()) :: points()
@@ -92,6 +94,6 @@ defmodule AdventOfCode.Y2018.Day06 do
   end
 
   defp within_distance_threshold(distances, threshold) do
-    Enum.sum_by(distances, &elem(&1, 1)) < threshold && 1 || 0
+    (Enum.sum_by(distances, &elem(&1, 1)) < threshold && 1) || 0
   end
 end
