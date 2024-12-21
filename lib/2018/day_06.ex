@@ -49,8 +49,7 @@ defmodule AdventOfCode.Y2018.Day06 do
 
     for x <- xr..xl//-1, y <- yt..yb do
       {{x, y},
-       points
-       |> Enum.map(fn {xi, yi} ->
+       Enum.map(points, fn {xi, yi} ->
          {{xi, yi}, manhattan_distance({xi, yi}, {x, y})}
        end)}
     end
@@ -60,9 +59,8 @@ defmodule AdventOfCode.Y2018.Day06 do
   defp nearest_point(distances) do
     distances
     |> Enum.sort_by(&elem(&1, 1))
-    |> Enum.take(2)
     |> then(fn
-      [{_, d}, {_, d}] -> nil
+      [{_, d}, {_, d} | _] -> nil
       [{p, _} | _] -> p
     end)
   end
@@ -94,11 +92,6 @@ defmodule AdventOfCode.Y2018.Day06 do
   end
 
   defp within_distance_threshold(distances, threshold) do
-    distances
-    |> Enum.sum_by(&elem(&1, 1))
-    |> case do
-      n when n < threshold -> 1
-      _ -> 0
-    end
+    Enum.sum_by(distances, &elem(&1, 1)) < threshold && 1 || 0
   end
 end
