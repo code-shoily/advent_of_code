@@ -47,7 +47,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   defp create_world(points) do
     {{xl, xr}, {yt, yb}} = get_corners(points)
 
-    for x <- xr..xl, y <- yt..yb do
+    for x <- xr..xl//-1, y <- yt..yb do
       {{x, y},
        points
        |> Enum.map(fn {xi, yi} ->
