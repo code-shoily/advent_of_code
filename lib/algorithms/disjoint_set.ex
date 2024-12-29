@@ -28,13 +28,20 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       }
 
   """
-  @spec new(non_neg_integer()) :: t()
+  @spec new(non_neg_integer() | List.t()) :: t()
   def new(0), do: %__MODULE__{}
 
-  def new(size) do
+  def new(size) when is_integer(size) do
     %__MODULE__{
-      ranks: 0..(size - 1) |> Enum.map(&{&1, 1}) |> Enum.into(%{}),
-      parents: 0..(size - 1) |> Enum.map(&{&1, &1}) |> Enum.into(%{})
+      ranks: 0..(size - 1) |> Map.new(&{&1, 1}),
+      parents: 0..(size - 1) |> Map.new(&{&1, &1})
+    }
+  end
+
+  def new(lst) when is_list(lst) do
+    %__MODULE__{
+      ranks: lst |> Map.new(&{&1, 1}),
+      parents: lst |> Map.new(&{&1, &1})
     }
   end
 
@@ -97,7 +104,8 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
   end
 
   @doc """
-  Performs a union between two elements and returns the updated set.
+  Performs a union between two elements and returns the updated set. `:error` case is matched so that it fails
+  in a piped flow.
 
   ## Example
 
@@ -118,9 +126,12 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       iex> DisjointSet.new(1) |> DisjointSet.union(100, 200)
       :error
 
+      iex> DisjointSet.union(:error, 100, 200)
+      :error
+
   """
-  @spec union(t(), value(), value()) :: t() | :error
-  def union(disjoint_set, a, b) do
+  @spec union(t() | :error, value(), value()) :: t() | :error
+  def union(%__MODULE__{} = disjoint_set, a, b) do
     with {root_a, disjoint_set} <- find(disjoint_set, a),
          {root_b, disjoint_set} <- find(disjoint_set, b) do
       union_by_rank(disjoint_set, root_a, root_b)
@@ -128,6 +139,37 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       _ -> :error
     end
   end
+
+  def union(:error, _, _), do: :error
+
+  @doc """
+  Returns the connected components of a set of data. `:error` case is matched so that it fails
+  in a piped flow.
+
+  ## Example
+
+      iex> DisjointSet.new([{0, 0}, {0, 1}, {0, 2}, {10, 11}, {10, 12}, {100, 200}])
+      ...> |> DisjointSet.union({0, 0}, {0, 1})
+      ...> |> DisjointSet.union({0, 1}, {0, 2})
+      ...> |> DisjointSet.union({10, 11}, {10, 12})
+      ...> |> DisjointSet.components()
+      [MapSet.new([{0, 0}, {0, 1}, {0, 2}]), MapSet.new([{10, 11}, {10, 12}]), MapSet.new([{100, 200}])]
+
+      iex> DisjointSet.new(10)
+      ...> |> DisjointSet.union(20, 30)
+      ...> |> DisjointSet.components()
+      :error
+
+  """
+  @spec components(t() | :error) :: [[term()]]
+  def components(%__MODULE__{parents: parents}) do
+    parents
+    |> Enum.group_by(&elem(&1, 1), fn {a, _} -> a end)
+    |> Map.values()
+    |> Enum.map(&Enum.into(&1, %MapSet{}))
+  end
+
+  def components(:error), do: :error
 
   defp union_by_rank(disjoint_set, parent, parent), do: disjoint_set
 
