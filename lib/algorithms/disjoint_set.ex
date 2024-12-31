@@ -123,20 +123,18 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       iex> DisjointSet.union(set, 3, 1) == set
       true
 
-      iex> DisjointSet.new(1) |> DisjointSet.union(100, 200)
-      :error
-
-      iex> DisjointSet.union(:error, 100, 200)
-      :error
+      iex> ds = DisjointSet.new(1)
+      iex> ds == DisjointSet.union(ds, 100, 200)
+      true
 
   """
-  @spec union(t() | :error, value(), value()) :: t() | :error
+  @spec union(t(), value(), value()) :: t()
   def union(%__MODULE__{} = disjoint_set, a, b) do
     with {root_a, disjoint_set} <- find(disjoint_set, a),
          {root_b, disjoint_set} <- find(disjoint_set, b) do
       union_by_rank(disjoint_set, root_a, root_b)
     else
-      _ -> :error
+      _ -> disjoint_set
     end
   end
 
@@ -155,10 +153,10 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       ...> |> DisjointSet.components()
       [MapSet.new([{0, 0}, {0, 1}, {0, 2}]), MapSet.new([{10, 11}, {10, 12}]), MapSet.new([{100, 200}])]
 
-      iex> DisjointSet.new(10)
+      iex> DisjointSet.new(3)
       ...> |> DisjointSet.union(20, 30)
       ...> |> DisjointSet.components()
-      :error
+      [MapSet.new([0]), MapSet.new([1]), MapSet.new([2])]
 
   """
   @spec components(t() | :error) :: [[term()]]
