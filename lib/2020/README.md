@@ -6,7 +6,7 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | 2020 | [2021](/lib/2021) | [2022](/lib/2022) | [2023](/lib/2023) | [2024](/lib/2024)
 
 
-## :trophy: 44/50
+## :trophy: 45/50
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
@@ -31,7 +31,7 @@
 | 20 | [Jurassic Jigsaw](https://adventofcode.com/2020/day/20) | :2nd_place_medal: | :shrug: | [day_20.ex](/lib/2020/day_20.ex) | [day_20_test.exs](/test/2020/day_20_test.exs) |  |
 | 21 | [Allergen Assessment](https://adventofcode.com/2020/day/21) | :1st_place_medal: | :shrug: | [day_21.ex](/lib/2020/day_21.ex) | [day_21_test.exs](/test/2020/day_21_test.exs) |  |
 | 22 | [Crab Combat](https://adventofcode.com/2020/day/22) | :1st_place_medal: | :shrug: | [day_22.ex](/lib/2020/day_22.ex) | [day_22_test.exs](/test/2020/day_22_test.exs) |  |
-| 23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :2nd_place_medal: | :shrug: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |  |
+| 23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :1st_place_medal: | :shrug: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |  |
 | 24 | [Lobby Layout](https://adventofcode.com/2020/day/24) | :2nd_place_medal: | :shrug: | [day_24.ex](/lib/2020/day_24.ex) | [day_24_test.exs](/test/2020/day_24_test.exs) |  |
 | 25 | [Combo Breaker](https://adventofcode.com/2020/day/25) | :1st_place_medal: | :shrug: | [day_25.ex](/lib/2020/day_25.ex) | [day_25_test.exs](/test/2020/day_25_test.exs) |  |
 

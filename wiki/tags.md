@@ -114,6 +114,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2017/12 | [Digital Plumber](https://adventofcode.com/2017/day/12) | :1st_place_medal: | :snowflake: :snowflake: | [day_12.ex](/lib/2017/day_12.ex) | [day_12_test.exs](/test/2017/day_12_test.exs) | [disjoint-set](/wiki/tags.md#disjoint-set) |
+| 2024/12 | [Garden Groups](https://adventofcode.com/2024/day/12) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2024/day_12.ex) | [day_12_test.exs](/test/2024/day_12_test.exs) | [geometry](/wiki/tags.md#geometry), [disjoint-set](/wiki/tags.md#disjoint-set) |
 
 ## double-parse
 
@@ -173,6 +174,7 @@ optimize them and update this page with refined and more accurate data.
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 2023/18 | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: :snowflake: | [day_18.ex](/lib/2023/day_18.ex) | [day_18_test.exs](/test/2023/day_18_test.exs) | [geometry](/wiki/tags.md#geometry) |
+| 2024/12 | [Garden Groups](https://adventofcode.com/2024/day/12) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2024/day_12.ex) | [day_12_test.exs](/test/2024/day_12_test.exs) | [geometry](/wiki/tags.md#geometry), [disjoint-set](/wiki/tags.md#disjoint-set) |
 
 ## geometry2d
 

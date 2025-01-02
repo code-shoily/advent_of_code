@@ -125,6 +125,7 @@ optimize them and update this page with refined and more accurate data.
 | 2023/3 | [Gear Ratios](https://adventofcode.com/2023/day/3) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_03.ex](/lib/2023/day_03.ex) | [day_03_test.exs](/test/2023/day_03_test.exs) | [grid](/wiki/tags.md#grid) |
 | 2023/7 | [Camel Cards](https://adventofcode.com/2023/day/7) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_07.ex](/lib/2023/day_07.ex) | [day_07_test.exs](/test/2023/day_07_test.exs) | [map](/wiki/tags.md#map), [pattern-matching](/wiki/tags.md#pattern-matching) |
 | 2023/13 | [Point of Incidence](https://adventofcode.com/2023/day/13) | :1st_place_medal: | :snowflake: :snowflake: :snowflake: | [day_13.ex](/lib/2023/day_13.ex) | [day_13_test.exs](/test/2023/day_13_test.exs) | [sliding-window](/wiki/tags.md#sliding-window), [palindrome](/wiki/tags.md#palindrome) |
+| 2024/12 | [Garden Groups](https://adventofcode.com/2024/day/12) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2024/day_12.ex) | [day_12_test.exs](/test/2024/day_12_test.exs) | [geometry](/wiki/tags.md#geometry), [disjoint-set](/wiki/tags.md#disjoint-set) |
 
 ## l
 
@@ -192,7 +193,7 @@ optimize them and update this page with refined and more accurate data.
 | 2020/20 | [Jurassic Jigsaw](https://adventofcode.com/2020/day/20) | :2nd_place_medal: | :shrug: | [day_20.ex](/lib/2020/day_20.ex) | [day_20_test.exs](/test/2020/day_20_test.exs) |  |
 | 2020/21 | [Allergen Assessment](https://adventofcode.com/2020/day/21) | :1st_place_medal: | :shrug: | [day_21.ex](/lib/2020/day_21.ex) | [day_21_test.exs](/test/2020/day_21_test.exs) |  |
 | 2020/22 | [Crab Combat](https://adventofcode.com/2020/day/22) | :1st_place_medal: | :shrug: | [day_22.ex](/lib/2020/day_22.ex) | [day_22_test.exs](/test/2020/day_22_test.exs) |  |
-| 2020/23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :2nd_place_medal: | :shrug: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |  |
+| 2020/23 | [Crab Cups](https://adventofcode.com/2020/day/23) | :1st_place_medal: | :shrug: | [day_23.ex](/lib/2020/day_23.ex) | [day_23_test.exs](/test/2020/day_23_test.exs) |  |
 | 2020/24 | [Lobby Layout](https://adventofcode.com/2020/day/24) | :2nd_place_medal: | :shrug: | [day_24.ex](/lib/2020/day_24.ex) | [day_24_test.exs](/test/2020/day_24_test.exs) |  |
 | 2020/25 | [Combo Breaker](https://adventofcode.com/2020/day/25) | :1st_place_medal: | :shrug: | [day_25.ex](/lib/2020/day_25.ex) | [day_25_test.exs](/test/2020/day_25_test.exs) |  |
 

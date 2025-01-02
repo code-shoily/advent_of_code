@@ -6,11 +6,12 @@
 [2015](/lib/2015) | [2016](/lib/2016) | [2017](/lib/2017) | [2018](/lib/2018) | [2019](/lib/2019) | [2020](/lib/2020) | [2021](/lib/2021) | [2022](/lib/2022) | [2023](/lib/2023) | 2024
 
 
-## :trophy: 6/50
+## :trophy: 7/50
 
 | Day | Problem Page | Status | Difficulty | Solution Page | Test Page | Tags |
 | :---: | :------: | :---: | :---: | :---: | :---: | :---: |
 | 1 | [Historian Hysteria](https://adventofcode.com/2024/day/1) | :1st_place_medal: | :snowflake: | [day_01.ex](/lib/2024/day_01.ex) | [day_01_test.exs](/test/2024/day_01_test.exs) | [list](/wiki/tags.md#list) |
 | 3 | [Mull It Over](https://adventofcode.com/2024/day/3) | :1st_place_medal: | :snowflake: | [day_03.ex](/lib/2024/day_03.ex) | [day_03_test.exs](/test/2024/day_03_test.exs) | [regex](/wiki/tags.md#regex), [fsm](/wiki/tags.md#fsm) |
 | 5 | [Print Queue](https://adventofcode.com/2024/day/5) | :1st_place_medal: | :snowflake: | [day_05.ex](/lib/2024/day_05.ex) | [day_05_test.exs](/test/2024/day_05_test.exs) | [set](/wiki/tags.md#set), [sort](/wiki/tags.md#sort) |
+| 12 | [Garden Groups](https://adventofcode.com/2024/day/12) | :2nd_place_medal: | :snowflake: :snowflake: :snowflake: | [day_12.ex](/lib/2024/day_12.ex) | [day_12_test.exs](/test/2024/day_12_test.exs) | [geometry](/wiki/tags.md#geometry), [disjoint-set](/wiki/tags.md#disjoint-set) |
 
