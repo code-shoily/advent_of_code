@@ -4,12 +4,14 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
 
   More on this: https://en.wikipedia.org/wiki/Disjoint_sets
   """
+  alias AdventOfCode.Algorithms.DisjointSet
   defstruct parents: %{}, ranks: %{}
 
-  @type mapped_array() :: %{required(non_neg_integer()) => non_neg_integer()}
-  @type value() :: non_neg_integer()
+  @type mapped_parents() :: %{term() => term()}
+  @type mapped_array() :: %{required(non_neg_integer()) => term()}
+  @type value() :: term()
   @type t() :: %__MODULE__{
-          parents: mapped_array(),
+          parents: mapped_parents(),
           ranks: mapped_array()
         }
 
@@ -28,7 +30,7 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
       }
 
   """
-  @spec new(non_neg_integer() | List.t()) :: t()
+  @spec new(non_neg_integer() | [term()]) :: t()
   def new(0), do: %__MODULE__{}
 
   def new(size) when is_integer(size) do
@@ -104,8 +106,46 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
   end
 
   @doc """
-  Performs a union between two elements and returns the updated set. `:error` case is matched so that it fails
-  in a piped flow.
+  Performs a union between two elements and returns a tuple with set and find status.
+
+  If either of the element being unionized were not a part of the set, then it returns `:error` as first element
+  of the tuple otherwise `:ok`
+
+  ## Example
+
+      iex> set = DisjointSet.new(5)
+      iex> set =
+      ...>   set
+      ...>   |> DisjointSet.union(0, 2)
+      ...>   |> DisjointSet.union(4, 2)
+      ...>   |> DisjointSet.union(3, 1)
+      iex> set
+      %DisjointSet{
+        parents: %{0 => 0, 1 => 3, 2 => 0, 3 => 3, 4 => 0},
+        ranks: %{0 => 2, 1 => 1, 2 => 1, 3 => 2, 4 => 1}
+      }
+      iex> DisjointSet.strict_union(set, 3, 1) == {:ok, set}
+      true
+
+      iex> ds = DisjointSet.new(1)
+      iex> DisjointSet.strict_union(ds, 100, 200) == {:error, ds}
+      true
+
+  """
+  @spec strict_union(t(), value(), value()) :: {:ok, t()} | {:error, t()}
+  def strict_union(%__MODULE__{} = disjoint_set, a, b) do
+    with {root_a, disjoint_set_1} <- find(disjoint_set, a),
+         {root_b, disjoint_set_2} <- find(disjoint_set_1, b) do
+      {:ok, union_by_rank(disjoint_set_2, root_a, root_b)}
+    else
+      _ -> {:error, disjoint_set}
+    end
+  end
+
+  @doc """
+  Performs a union between two elements and returns the updated set. It returns the set, either original or
+  updated depending on whether there was a match or not. See `DisjointSet.strict_union` if you want to know
+  element membership.
 
   ## Example
 
@@ -130,15 +170,9 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
   """
   @spec union(t(), value(), value()) :: t()
   def union(%__MODULE__{} = disjoint_set, a, b) do
-    with {root_a, disjoint_set} <- find(disjoint_set, a),
-         {root_b, disjoint_set} <- find(disjoint_set, b) do
-      union_by_rank(disjoint_set, root_a, root_b)
-    else
-      _ -> disjoint_set
-    end
+    {_, disjoint_set} = DisjointSet.strict_union(disjoint_set, a, b)
+    disjoint_set
   end
-
-  def union(:error, _, _), do: :error
 
   @doc """
   Returns the connected components of a set of data. `:error` case is matched so that it fails
@@ -160,8 +194,9 @@ defmodule AdventOfCode.Algorithms.DisjointSet do
 
   """
   @spec components(t() | :error) :: [[term()]]
-  def components(%__MODULE__{parents: parents}) do
+  def components(%__MODULE__{parents: parents} = disjoint_set) do
     parents
+    |> Enum.map(fn {k, _} -> {k, find(disjoint_set, k) |> elem(0)} end)
     |> Enum.group_by(&elem(&1, 1), fn {a, _} -> a end)
     |> Map.values()
     |> Enum.map(&Enum.into(&1, %MapSet{}))
