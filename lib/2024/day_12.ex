@@ -61,22 +61,4 @@ defmodule AdventOfCode.Y2024.Day12 do
       |> Enum.count()
     end)
   end
-
-  def sample_input_1, do: "AAAA\nBBCD\nBBCC\nEEEC"
-
-  def sample_input_2 do
-    ~w[
-    RRRRIICCFF
-    RRRRIICCCF
-    VVRRRCCFFF
-    VVRCCCJFFF
-    VVVVCJJCFE
-    VVIVCCJJEE
-    VVIIICJJEE
-    MIIIIIJJEE
-    MIIISIJEEE
-    MMMISSJEEE
-    ]
-    |> Enum.join("\n")
-  end
 end
