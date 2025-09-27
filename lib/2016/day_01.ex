@@ -85,8 +85,8 @@ defmodule AdventOfCode.Y2016.Day01 do
     move(:south, rest, new_position, positions ++ positions_between([x, y], new_position))
   end
 
-  defp positions_between([x1, y], [x2, y]), do: x1..x2 |> Enum.map(&[&1, y])
-  defp positions_between([x, y1], [x, y2]), do: y1..y2 |> Enum.map(&[x, &1])
+  defp positions_between([x1, y], [x2, y]), do: range_between(x1, x2) |> Enum.map(&[&1, y])
+  defp positions_between([x, y1], [x, y2]), do: range_between(y1, y2) |> Enum.map(&[x, &1])
 
   defp merge_points(positions), do: positions |> Enum.chunk_by(& &1) |> Enum.map(&hd(&1))
 
@@ -96,4 +96,7 @@ defmodule AdventOfCode.Y2016.Day01 do
     do:
       (MapSet.member?(history, position) && position) ||
         first_duplicate(rest, MapSet.put(history, position))
+
+  defp range_between(x1, x2) when x1 <= x2, do: x1..x2//1
+  defp range_between(x1, x2), do: x1..x2//-1
 end

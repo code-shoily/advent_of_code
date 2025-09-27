@@ -11,8 +11,8 @@ defmodule AdventOfCode.Y2017.Day06 do
 
   def run(input \\ input()) do
     blocks = parse(input)
-    {visited, blocks} = distribute_largest(blocks, %MapSet{})
-    {second_visit, _} = distribute_largest(blocks, %MapSet{})
+    {visited, blocks} = distribute_largest(blocks, MapSet.new([]))
+    {second_visit, _} = distribute_largest(blocks, MapSet.new([]))
 
     {Enum.count(visited) + 1, Enum.count(second_visit)}
   end
