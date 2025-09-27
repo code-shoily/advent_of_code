@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   Difficulty: s
-  Tags: not-fast-enough grid measurement
+  Tags: slow revisit grid measurement
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -21,7 +21,7 @@ defmodule AdventOfCode.Y2018.Day06 do
 
     task_1 = Task.async(fn -> covers_most_points(input) end)
     task_2 = Task.async(fn -> covers_distances_within(input, 10_000) end)
-    {Task.await(task_1), Task.await(task_2)}
+    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
   @spec parse(binary()) :: points()

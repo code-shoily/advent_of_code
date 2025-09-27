@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day17 do
   --- Day 17: No Such Thing as Too Much ---
   Problem Link: https://adventofcode.com/2015/day/17
   Difficulty: s
-  Tags: not-fast-enough combinatorics
+  Tags: slow revisit combinatorics
   """
   alias AdventOfCode.Algorithms.Combinatorics
   alias AdventOfCode.Helpers.{InputReader, Transformers}
@@ -20,8 +20,8 @@ defmodule AdventOfCode.Y2015.Day17 do
     solution_2 = Task.async(fn -> minimum_bottle_count(Enum.map(combinations, &length/1)) end)
 
     {
-      Task.await(solution_1),
-      Task.await(solution_2)
+      Task.await(solution_1, :infinity),
+      Task.await(solution_2, :infinity)
     }
   end
 

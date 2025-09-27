@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day09 do
   --- Day 9: Marble Mania ---
   Problem Link: https://adventofcode.com/2018/day/9
   Difficulty: s
-  Tags: not-fast-enough circular-linked-list
+  Tags: slow revisit circular-linked-list
   """
   alias AdventOfCode.Algorithms.BiCircularList
 
@@ -14,7 +14,7 @@ defmodule AdventOfCode.Y2018.Day09 do
     task_1 = Task.async(fn -> run_1() end)
     task_2 = Task.async(fn -> run_2() end)
 
-    {Task.await(task_1), Task.await(task_2)}
+    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
   def run_1 do
