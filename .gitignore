@@ -4,6 +4,7 @@ priv/native/libaoc.so
 .iex.exs
 .elixir_ls
 .elixir-tools/
+.zed/
 # All tests and scratchpads are done on experiments 
 priv/experiments/
 # The directory Mix will write compiled artifacts to.
