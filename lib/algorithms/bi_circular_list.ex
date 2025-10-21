@@ -38,7 +38,7 @@ defmodule AdventOfCode.Algorithms.BiCircularList do
 
   """
   @spec insert(BiCircularList.t(), any()) :: BiCircularList.t()
-  def insert(%{current: nil} = bcl, value) when not is_nil(value) do
+  def insert(%BiCircularList{current: nil} = bcl, value) when not is_nil(value) do
     %BiCircularList{bcl | current: value}
   end
 
