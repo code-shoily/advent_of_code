@@ -148,6 +148,7 @@
 | 2024 | [12](https://adventofcode.com/2024/day/12) | [Garden Groups](https://adventofcode.com/2024/day/12) | [geometry](tags/geometry.md), [disjoint-set](tags/disjoint-set.md) | [day_12.ex](../lib/2024/day_12.ex) |
 | 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | [graph](tags/graph.md), [shortest-path](tags/shortest-path.md), [binary-search](tags/binary-search.md), [dijkstra](tags/dijkstra.md), [grid-traversal](tags/grid-traversal.md) | [day_18.ex](../lib/2024/day_18.ex) |
 | 2024 | [23](https://adventofcode.com/2024/day/23) | [LAN Party](https://adventofcode.com/2024/day/23) | [graph](tags/graph.md), [clique](tags/clique.md), [bron-kerbosch](tags/bron-kerbosch.md), [maximum-clique](tags/maximum-clique.md), [lan-party](tags/lan-party.md) | [day_23.ex](../lib/2024/day_23.ex) |
+| 2025 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | [simulation](tags/simulation.md), [grid](tags/grid.md), [graph](tags/graph.md) | [day_04.ex](../lib/2025/day_04.ex) |
 
 ## 🔴 L
 

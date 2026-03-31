@@ -45,10 +45,10 @@
 | [geometry](geometry.md) | 3 |
 | [geometry2d](geometry2d.md) | 5 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 21 |
+| [graph](graph.md) | 22 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
-| [grid](grid.md) | 27 |
+| [grid](grid.md) | 28 |
 | [grid-traversal](grid-traversal.md) | 1 |
 | [half-done](half-done.md) | 6 |
 | [hard-description](hard-description.md) | 1 |
@@ -105,7 +105,7 @@
 | [sequence](sequence.md) | 25 |
 | [set](set.md) | 16 |
 | [shortest-path](shortest-path.md) | 5 |
-| [simulation](simulation.md) | 2 |
+| [simulation](simulation.md) | 3 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 16 |
 | [sort](sort.md) | 3 |

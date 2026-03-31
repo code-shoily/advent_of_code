@@ -25,3 +25,4 @@
 | 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | [topological-sort](topological-sort.md), [sort](sort.md) | [day_05.ex](../../lib/2024/day_05.ex) |
 | 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | 🟠 | [shortest-path](shortest-path.md), [binary-search](binary-search.md), [dijkstra](dijkstra.md), [grid-traversal](grid-traversal.md) | [day_18.ex](../../lib/2024/day_18.ex) |
 | 2024 | [23](https://adventofcode.com/2024/day/23) | [LAN Party](https://adventofcode.com/2024/day/23) | 🟠 | [clique](clique.md), [bron-kerbosch](bron-kerbosch.md), [maximum-clique](maximum-clique.md), [lan-party](lan-party.md) | [day_23.ex](../../lib/2024/day_23.ex) |
+| 2025 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | 🟠 | [simulation](simulation.md), [grid](grid.md) | [day_04.ex](../../lib/2025/day_04.ex) |
