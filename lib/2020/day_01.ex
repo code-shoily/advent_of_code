@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day01 do
   @moduledoc """
   --- Day 1: Report Repair ---
   Problem Link: https://adventofcode.com/2020/day/1
+  Difficulty: xs
+  Tags: set arithmetic
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day24 do
   @moduledoc """
   --- Day 24: Lobby Layout ---
   Problem Link: https://adventofcode.com/2020/day/24
+  Difficulty: m
+  Tags: hexagon walk half-done
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

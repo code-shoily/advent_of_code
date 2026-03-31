@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day07 do
   @moduledoc """
   --- Day 7: Handy Haversacks ---
   Problem Link: https://adventofcode.com/2020/day/7
+  Difficulty: s
+  Tags: graph-traversal digraph recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

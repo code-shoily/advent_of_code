@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day02 do
   @moduledoc """
   --- Day 2: Password Philosophy ---
   Problem Link: https://adventofcode.com/2020/day/2
+  Difficulty: xs
+  Tags: regex string
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

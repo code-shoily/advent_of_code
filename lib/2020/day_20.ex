@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day20 do
   @moduledoc """
   --- Day 20: Jurassic Jigsaw ---
   Problem Link: https://adventofcode.com/2020/day/20
+  Difficulty: xl
+  Tags: geometry rotation half-done
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
