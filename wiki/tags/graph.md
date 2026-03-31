@@ -23,3 +23,5 @@
 | 2023 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | 💀 | [longest-path](longest-path.md) | [day_23.ex](../../lib/2023/day_23.ex) |
 | 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 🔴 | [min-cut](min-cut.md) | [day_25.ex](../../lib/2023/day_25.ex) |
 | 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | [topological-sort](topological-sort.md), [sort](sort.md) | [day_05.ex](../../lib/2024/day_05.ex) |
+| 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | 🟠 | [shortest-path](shortest-path.md), [binary-search](binary-search.md), [dijkstra](dijkstra.md), [grid-traversal](grid-traversal.md) | [day_18.ex](../../lib/2024/day_18.ex) |
+| 2024 | [23](https://adventofcode.com/2024/day/23) | [LAN Party](https://adventofcode.com/2024/day/23) | 🟠 | [clique](clique.md), [bron-kerbosch](bron-kerbosch.md), [maximum-clique](maximum-clique.md), [lan-party](lan-party.md) | [day_23.ex](../../lib/2024/day_23.ex) |

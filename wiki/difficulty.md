@@ -138,15 +138,15 @@
 | 2022 | [12](https://adventofcode.com/2022/day/12) | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [graph](tags/graph.md), [graph-traversal](tags/graph-traversal.md) | [day_12.ex](../lib/2022/day_12.ex) |
 | 2022 | [16](https://adventofcode.com/2022/day/16) | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [graph](tags/graph.md), [floyd-warshall](tags/floyd-warshall.md), [johnsons-algorithm](tags/johnsons-algorithm.md), [dfs](tags/dfs.md), [optimization](tags/optimization.md) | [day_16.ex](../lib/2022/day_16.ex) |
 | 2022 | [20](https://adventofcode.com/2022/day/20) | [Grove Positioning System](https://adventofcode.com/2022/day/20) | [slow](tags/slow.md), [vector](tags/vector.md), [sequence](tags/sequence.md), [large-number](tags/large-number.md), [random-access](tags/random-access.md) | [day_20.ex](../lib/2022/day_20.ex) |
-| 2022 | [22](https://adventofcode.com/2022/day/22) | [Monkey Map](https://adventofcode.com/2022/day/22) | [half-done](tags/half-done.md), [geometry3d](tags/geometry3d.md), [walk3d](tags/walk3d.md) | [day_22.ex](../lib/2022/day_22.ex) |
 | 2022 | [23](https://adventofcode.com/2022/day/23) | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | [erlang](tags/erlang.md), [slow](tags/slow.md), [grid](tags/grid.md), [walk](tags/walk.md) | [day_23.ex](../lib/2022/day_23.ex) |
 | 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | [graph](tags/graph.md), [implicit-graph](tags/implicit-graph.md), [shortest-path](tags/shortest-path.md), [a-star](tags/a-star.md) | [day_24.ex](../lib/2022/day_24.ex) |
 | 2022 | [25](https://adventofcode.com/2022/day/25) | [Full of Hot Air](https://adventofcode.com/2022/day/25) | [number-system](tags/number-system.md) | [day_25.ex](../lib/2022/day_25.ex) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | [grid](tags/grid.md) | [day_03.ex](../lib/2023/day_03.ex) |
 | 2023 | [7](https://adventofcode.com/2023/day/7) | [Camel Cards](https://adventofcode.com/2023/day/7) | [map](tags/map.md), [pattern-matching](tags/pattern-matching.md) | [day_07.ex](../lib/2023/day_07.ex) |
 | 2023 | [13](https://adventofcode.com/2023/day/13) | [Point of Incidence](https://adventofcode.com/2023/day/13) | [sliding-window](tags/sliding-window.md), [palindrome](tags/palindrome.md) | [day_13.ex](../lib/2023/day_13.ex) |
-| 2023 | [24](https://adventofcode.com/2023/day/24) | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | [geometry2d](tags/geometry2d.md), [refactor](tags/refactor.md) | [day_24.ex](../lib/2023/day_24.ex) |
 | 2024 | [12](https://adventofcode.com/2024/day/12) | [Garden Groups](https://adventofcode.com/2024/day/12) | [geometry](tags/geometry.md), [disjoint-set](tags/disjoint-set.md) | [day_12.ex](../lib/2024/day_12.ex) |
+| 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | [graph](tags/graph.md), [shortest-path](tags/shortest-path.md), [binary-search](tags/binary-search.md), [dijkstra](tags/dijkstra.md), [grid-traversal](tags/grid-traversal.md) | [day_18.ex](../lib/2024/day_18.ex) |
+| 2024 | [23](https://adventofcode.com/2024/day/23) | [LAN Party](https://adventofcode.com/2024/day/23) | [graph](tags/graph.md), [clique](tags/clique.md), [bron-kerbosch](tags/bron-kerbosch.md), [maximum-clique](tags/maximum-clique.md), [lan-party](tags/lan-party.md) | [day_23.ex](../lib/2024/day_23.ex) |
 
 ## 🔴 L
 
@@ -181,9 +181,11 @@
 | 2022 | [15](https://adventofcode.com/2022/day/15) | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [erlang](tags/erlang.md), [slow](tags/slow.md), [large-number](tags/large-number.md), [geometry2d](tags/geometry2d.md) | [day_15.ex](../lib/2022/day_15.ex) |
 | 2022 | [18](https://adventofcode.com/2022/day/18) | [Boiling Boulders](https://adventofcode.com/2022/day/18) | [erlang](tags/erlang.md), [geometry3d](tags/geometry3d.md), [surface](tags/surface.md), [set](tags/set.md) | [day_18.ex](../lib/2022/day_18.ex) |
 | 2022 | [19](https://adventofcode.com/2022/day/19) | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | [erlang](tags/erlang.md), [slow](tags/slow.md), [needs-improvement](tags/needs-improvement.md), [grid](tags/grid.md), [optimization](tags/optimization.md) | [day_19.ex](../lib/2022/day_19.ex) |
+| 2022 | [22](https://adventofcode.com/2022/day/22) | [Monkey Map](https://adventofcode.com/2022/day/22) | [half-done](tags/half-done.md), [geometry3d](tags/geometry3d.md), [walk3d](tags/walk3d.md) | [day_22.ex](../lib/2022/day_22.ex) |
 | 2023 | [5](https://adventofcode.com/2023/day/5) | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | [range](tags/range.md), [gb-tree](tags/gb-tree.md) | [day_05.ex](../lib/2023/day_05.ex) |
 | 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | [graph](tags/graph.md), [bfs](tags/bfs.md), [grid](tags/grid.md) | [day_10.ex](../lib/2023/day_10.ex) |
 | 2023 | [12](https://adventofcode.com/2023/day/12) | [Hot Springs](https://adventofcode.com/2023/day/12) | [memoization](tags/memoization.md), [vector](tags/vector.md) | [day_12.ex](../lib/2023/day_12.ex) |
 | 2023 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | [stack](tags/stack.md), [range](tags/range.md), [not-fast-enough](tags/not-fast-enough.md) | [day_22.ex](../lib/2023/day_22.ex) |
 | 2023 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | [graph](tags/graph.md), [longest-path](tags/longest-path.md) | [day_23.ex](../lib/2023/day_23.ex) |
+| 2023 | [24](https://adventofcode.com/2023/day/24) | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | [geometry2d](tags/geometry2d.md), [refactor](tags/refactor.md) | [day_24.ex](../lib/2023/day_24.ex) |
 

@@ -29,5 +29,5 @@
 | [19](https://adventofcode.com/2023/day/19) | [Aplenty](https://adventofcode.com/2023/day/19) | 🔴 | [op-code](../../wiki/tags/op-code.md), [parse-heavy](../../wiki/tags/parse-heavy.md) | [day_19.ex](day_19.ex) |
 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | 💀 | [stack](../../wiki/tags/stack.md), [range](../../wiki/tags/range.md), [not-fast-enough](../../wiki/tags/not-fast-enough.md) | [day_22.ex](day_22.ex) |
 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | 💀 | [graph](../../wiki/tags/graph.md), [longest-path](../../wiki/tags/longest-path.md) | [day_23.ex](day_23.ex) |
-| [24](https://adventofcode.com/2023/day/24) | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | 🟠 | [geometry2d](../../wiki/tags/geometry2d.md), [refactor](../../wiki/tags/refactor.md) | [day_24.ex](day_24.ex) |
+| [24](https://adventofcode.com/2023/day/24) | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | 💀 | [geometry2d](../../wiki/tags/geometry2d.md), [refactor](../../wiki/tags/refactor.md) | [day_24.ex](day_24.ex) |
 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 🔴 | [graph](../../wiki/tags/graph.md), [min-cut](../../wiki/tags/min-cut.md) | [day_25.ex](day_25.ex) |

@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2023.Day24 do
   @moduledoc """
   --- Day 24: Never Tell Me The Odds ---
   Problem Link: https://adventofcode.com/2023/day/24
-  Difficulty: xxl
+  Difficulty: xl
   Tags: geometry2d refactor
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}

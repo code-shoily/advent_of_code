@@ -10,15 +10,18 @@
 | [annoying](annoying.md) | 3 |
 | [arithmetic](arithmetic.md) | 5 |
 | [bfs](bfs.md) | 2 |
+| [binary-search](binary-search.md) | 1 |
 | [binary-space](binary-space.md) | 1 |
 | [bitmask](bitmask.md) | 1 |
 | [bitwise](bitwise.md) | 4 |
+| [bron-kerbosch](bron-kerbosch.md) | 1 |
 | [brute-force](brute-force.md) | 1 |
 | [calculation](calculation.md) | 3 |
 | [char-sequence](char-sequence.md) | 1 |
 | [checksum](checksum.md) | 2 |
 | [chinese-remainder](chinese-remainder.md) | 1 |
 | [circular-linked-list](circular-linked-list.md) | 2 |
+| [clique](clique.md) | 1 |
 | [combinatorics](combinatorics.md) | 3 |
 | [concurrency](concurrency.md) | 1 |
 | [connectivity](connectivity.md) | 3 |
@@ -28,7 +31,7 @@
 | [date-time](date-time.md) | 1 |
 | [dfs](dfs.md) | 1 |
 | [digraph](digraph.md) | 1 |
-| [dijkstra](dijkstra.md) | 2 |
+| [dijkstra](dijkstra.md) | 3 |
 | [disjoint-set](disjoint-set.md) | 1 |
 | [double-parse](double-parse.md) | 1 |
 | [dynamic-programming](dynamic-programming.md) | 1 |
@@ -42,10 +45,11 @@
 | [geometry](geometry.md) | 3 |
 | [geometry2d](geometry2d.md) | 5 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 19 |
+| [graph](graph.md) | 21 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
 | [grid](grid.md) | 26 |
+| [grid-traversal](grid-traversal.md) | 1 |
 | [half-done](half-done.md) | 6 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
@@ -56,6 +60,7 @@
 | [int-code](int-code.md) | 2 |
 | [johnsons-algorithm](johnsons-algorithm.md) | 1 |
 | [json](json.md) | 2 |
+| [lan-party](lan-party.md) | 1 |
 | [large-number](large-number.md) | 3 |
 | [linked-list](linked-list.md) | 3 |
 | [list](list.md) | 1 |
@@ -64,6 +69,7 @@
 | [map](map.md) | 4 |
 | [mask](mask.md) | 1 |
 | [matrix](matrix.md) | 4 |
+| [maximum-clique](maximum-clique.md) | 1 |
 | [md5](md5.md) | 2 |
 | [measurement](measurement.md) | 4 |
 | [memoization](memoization.md) | 5 |
@@ -98,7 +104,7 @@
 | [rust](rust.md) | 15 |
 | [sequence](sequence.md) | 25 |
 | [set](set.md) | 16 |
-| [shortest-path](shortest-path.md) | 4 |
+| [shortest-path](shortest-path.md) | 5 |
 | [simulation](simulation.md) | 2 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 16 |
