@@ -5,7 +5,6 @@
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
 | 2015 | [6](https://adventofcode.com/2015/day/6) | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | 🟠 | [grid](grid.md), [vector](vector.md), [reduction](reduction.md) | [day_06.ex](../../lib/2015/day_06.ex) |
-| 2015 | [13](https://adventofcode.com/2015/day/13) | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13) | 🟡 | [brute-force](brute-force.md), [combinatorics](combinatorics.md) | [day_13.ex](../../lib/2015/day_13.ex) |
 | 2015 | [17](https://adventofcode.com/2015/day/17) | [No Such Thing as Too Much](https://adventofcode.com/2015/day/17) | 🟡 | [revisit](revisit.md), [combinatorics](combinatorics.md) | [day_17.ex](../../lib/2015/day_17.ex) |
 | 2015 | [20](https://adventofcode.com/2015/day/20) | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20) | 🔴 | [infinite-sequence](infinite-sequence.md), [sequence](sequence.md) | [day_20.ex](../../lib/2015/day_20.ex) |
 | 2016 | [5](https://adventofcode.com/2016/day/5) | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | 🟡 | [md5](md5.md), [annoying](annoying.md) | [day_05.ex](../../lib/2016/day_05.ex) |

@@ -5,8 +5,10 @@
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
 | 2015 | [9](https://adventofcode.com/2015/day/9) | [All in a Single Night](https://adventofcode.com/2015/day/9) | 🟡 | [routing](routing.md) | [day_09.ex](../../lib/2015/day_09.ex) |
+| 2015 | [13](https://adventofcode.com/2015/day/13) | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13) | 🟡 | [dynamic-programming](dynamic-programming.md) | [day_13.ex](../../lib/2015/day_13.ex) |
 | 2016 | [13](https://adventofcode.com/2016/day/13) | [A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13) | 🟠 | [implicit-graph](implicit-graph.md), [shortest-path](shortest-path.md), [a-star](a-star.md), [bfs](bfs.md) | [day_13.ex](../../lib/2016/day_13.ex) |
 | 2016 | [24](https://adventofcode.com/2016/day/24) | [Air Duct Spelunking](https://adventofcode.com/2016/day/24) | 🟠 | [shortest-path](shortest-path.md), [tsp](tsp.md), [grid](grid.md), [matrix](matrix.md) | [day_24.ex](../../lib/2016/day_24.ex) |
+| 2017 | [7](https://adventofcode.com/2017/day/7) | [Recursive Circus](https://adventofcode.com/2017/day/7) | 🟠 | [tree](tree.md) | [day_07.ex](../../lib/2017/day_07.ex) |
 | 2017 | [12](https://adventofcode.com/2017/day/12) | [Digital Plumber](https://adventofcode.com/2017/day/12) | 🟡 | [connectivity](connectivity.md) | [day_12.ex](../../lib/2017/day_12.ex) |
 | 2018 | [7](https://adventofcode.com/2018/day/7) | [The Sum of Its Parts](https://adventofcode.com/2018/day/7) | 🟠 | [topological-sort](topological-sort.md), [simulation](simulation.md) | [day_07.ex](../../lib/2018/day_07.ex) |
 | 2018 | [25](https://adventofcode.com/2018/day/25) | [Four-Dimensional Adventure](https://adventofcode.com/2018/day/25) | 🟠 | [connectivity](connectivity.md), [constellation](constellation.md) | [day_25.ex](../../lib/2018/day_25.ex) |
