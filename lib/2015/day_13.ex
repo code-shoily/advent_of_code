@@ -14,10 +14,7 @@ defmodule AdventOfCode.Y2015.Day13 do
   def run(input \\ input()) do
     graph = parse(input)
 
-    {
-      solve(graph),
-      solve(add_me(graph))
-    }
+    {solve(graph), solve(add_me(graph))}
   end
 
   def parse(data \\ input()) do
@@ -58,11 +55,9 @@ defmodule AdventOfCode.Y2015.Day13 do
   end
 
   defp solve(graph) do
-    nodes = Model.all_nodes(graph)
-    [root | _rest] = nodes
+    [root | _rest] = nodes = Model.all_nodes(graph)
     nodes_indexed = Enum.with_index(nodes)
     node_to_idx = Map.new(nodes_indexed)
-    _idx_to_node = Map.new(Enum.map(nodes_indexed, fn {n, i} -> {i, n} end))
 
     weights =
       for {u, i} <- nodes_indexed, {v, j} <- nodes_indexed, into: %{} do

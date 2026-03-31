@@ -20,7 +20,6 @@ defmodule AdventOfCode.Y2020.Day07 do
   defp solve_part_1(builder) do
     {:ok, shiny_gold_id} = Labeled.get_id(builder, "shiny gold")
     graph = Labeled.to_graph(builder)
-    # Transpose to find containers (walking from gold bag outwards)
     transposed = Transform.transpose(graph)
 
     Implicit.implicit_fold(
@@ -28,7 +27,6 @@ defmodule AdventOfCode.Y2020.Day07 do
       using: :breadth_first,
       initial: MapSet.new(),
       successors_of: fn id ->
-        # Use transposed graph to find which bags can contain this one
         transposed
         |> Yog.successors(id)
         |> Enum.map(fn {nid, _} -> nid end)
@@ -49,11 +47,9 @@ defmodule AdventOfCode.Y2020.Day07 do
   end
 
   defp count_bags_inside(graph, node_id) do
-    # Successors are the bags contained within this one
     successors = Yog.successors(graph, node_id)
 
     Enum.reduce(successors, 0, fn {child_id, count}, acc ->
-      # Each child bag plus all the bags inside it
       acc + count + count * count_bags_inside(graph, child_id)
     end)
   end
@@ -62,7 +58,6 @@ defmodule AdventOfCode.Y2020.Day07 do
     lines = Transformers.lines(data)
 
     Enum.reduce(lines, Labeled.directed(), fn line, builder ->
-      # Example: "vibrant plum bags contain 5 faded blue bags, 6 dotted black bags."
       [parent, contents] = String.split(line, " bags contain ")
 
       contents
