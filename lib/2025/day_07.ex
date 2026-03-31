@@ -7,6 +7,7 @@ defmodule AdventOfCode.Y2025.Day07 do
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog
+  alias Yog.Traversal.{Sort, Walk}
 
   def input, do: InputReader.read_from_file(2025, 7)
 
@@ -32,7 +33,7 @@ defmodule AdventOfCode.Y2025.Day07 do
     start = find_start(grid)
 
     reached =
-      Yog.Traversal.Walk.fold_walk(
+      Walk.fold_walk(
         over: graph,
         from: start,
         using: :breadth_first,
@@ -54,7 +55,7 @@ defmodule AdventOfCode.Y2025.Day07 do
     start = find_start(grid)
     max_r = get_max_r(grid)
 
-    case Yog.Traversal.Sort.topological_sort(graph) do
+    case Sort.topological_sort(graph) do
       {:ok, sorted} ->
         counts =
           Enum.reduce(sorted, %{start => 1}, fn node, acc ->
