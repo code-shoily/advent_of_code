@@ -16,64 +16,81 @@ defmodule AdventOfCode.Helpers.Generator do
   - Test cases containing default tests for `run_1` and `run_2` at `test/<year>/day_<day>_test.exs` file
   """
   def run({year, day}) do
-    # Write the input data at `priv/input_files`
-    input_file_path =
-      :advent_of_code
-      |> :code.priv_dir()
-      |> Path.join("input_files")
-      |> Path.join("#{year}_#{day}.txt")
+    padded_day = zero_padded(day)
 
-    input_file =
-      input_file_path
-      |> create_input_file(year, day)
+    # Write the input data at `priv/input_files`
+    input_path = "priv/input_files/#{year}_#{day}.txt"
+    input_result = create_input_file(input_path, year, day)
 
     # Write code files at `lib/<year>/day_<day>.ex`
     code_content =
       @code_template
       |> EEx.eval_file(day: day, year: year, title: get_title(year, day))
 
-    code_file =
-      "lib/#{year}/day_#{zero_padded(day)}.ex"
-      |> create_file(code_content)
+    code_path = "lib/#{year}/day_#{padded_day}.ex"
+    code_result = create_file(code_path, code_content)
 
     # Write test files at `test/<year>/day_<year>_test.exs`
     test_content =
       @test_template
       |> EEx.eval_file(day: day, year: year)
 
-    test_file =
-      "test/#{year}/day_#{zero_padded(day)}_test.exs"
-      |> create_file(test_content)
+    test_path = "test/#{year}/day_#{padded_day}_test.exs"
+    test_result = create_file(test_path, test_content)
 
-    "INPUT: #{input_file}\tCODE: #{code_file}\tTEST: #{test_file}\n"
+    [input_result, code_result, test_result]
   end
 
   defp create_file(path, content) do
     if !File.exists?(path) do
-      File.write(path, content)
+      path |> Path.dirname() |> File.mkdir_p!()
+
+      case File.write(path, content) do
+        :ok -> {:ok, path}
+        {:error, reason} -> {:error, path, reason}
+      end
+    else
+      {:exists, path}
     end
   end
 
   defp fetch_cookie(year, day) do
-    HTTPoison.start()
+    session_key = System.get_env("AOC_SESSION_KEY")
 
-    "https://adventofcode.com/#{year}/day/#{day}/input"
-    |> HTTPoison.get([{"cookie", "session=#{System.get_env("COOKIE", "")}"}])
-    |> then(fn response ->
-      case response do
-        {:ok, %HTTPoison.Response{body: body}} -> {:ok, body}
-        _ -> nil
-      end
-    end)
+    if is_nil(session_key) or session_key == "" do
+      {:error, "AOC_SESSION_KEY environment variable is not set"}
+    else
+      HTTPoison.start()
+
+      "https://adventofcode.com/#{year}/day/#{day}/input"
+      |> HTTPoison.get([{"cookie", "session=#{session_key}"}])
+      |> then(fn response ->
+        case response do
+          {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> {:ok, body}
+          {:ok, %HTTPoison.Response{status_code: status}} -> {:error, "Received HTTP #{status}"}
+          {:error, %HTTPoison.Error{reason: reason}} -> {:error, reason}
+          _ -> {:error, "unknown error"}
+        end
+      end)
+    end
   end
 
   defp create_input_file(path, year, day) do
     if !File.exists?(path) do
-      with {:ok, data} <- fetch_cookie(year, day),
-           {:ok, file} <- File.open(path, [:write]),
-           :ok <- IO.write(file, data) do
-        File.close(file)
+      path |> Path.dirname() |> File.mkdir_p!()
+
+      case fetch_cookie(year, day) do
+        {:ok, data} ->
+          case File.write(path, data) do
+            :ok -> {:ok, path}
+            {:error, reason} -> {:error, path, reason}
+          end
+
+        {:error, reason} ->
+          {:error, path, reason}
       end
+    else
+      {:exists, path}
     end
   end
 

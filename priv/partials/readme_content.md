@@ -8,7 +8,7 @@ All solution modules reside in `lib/<year>/day_<day>.ex` and associated tests ha
 
 ## Stubs
 
-To make the experience boilerplate-free and give all solutions uniform (more or less) structure, type `mix gen --year <year> --day <day>` or `mix gen <year> <day>` to have the structure and stub generated. Optionally, if you have `COOKIE` environment variable storing your cookie then it will download the input file and add the title on the moduledocs for you. Type `mix help gen` for more.
+To make the experience boilerplate-free and give all solutions uniform (more or less) structure, type `mix gen --year <year> --day <day>` or `mix gen <year> <day>` to have the structure and stub generated. Optionally, if you have `AOC_SESSION_KEY` environment variable storing your cookie then it will download the input file and add the title on the moduledocs for you. Type `mix help gen` for more.
 
 To solve the problem for a particular year/day, type in `mix solve --year <year> --day <day>` or `mix solve <year> <day>` and you will see the result of the mentioned `year/day` if it is valid and has been solved. Type `mix help solve` for more.
 
@@ -18,7 +18,7 @@ During December 1 of a new year (if Advent of Code is happening that year), the 
 
 * Create a new folder `XXXX` (in year format) under `/lib` or `/test`
 * Update the `@latest_year` attribute on `advent_of_code.ex`
-* Double check your session cookie (in case you're using it)
+* Double check your session cookie `AOC_SESSION_KEY` (in case you're using it)
 
 All commands should work from then on.
 
