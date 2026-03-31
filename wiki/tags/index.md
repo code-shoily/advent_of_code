@@ -34,7 +34,7 @@
 | [dijkstra](dijkstra.md) | 3 |
 | [disjoint-set](disjoint-set.md) | 1 |
 | [double-parse](double-parse.md) | 1 |
-| [dynamic-programming](dynamic-programming.md) | 1 |
+| [dynamic-programming](dynamic-programming.md) | 2 |
 | [emulation](emulation.md) | 2 |
 | [erlang](erlang.md) | 10 |
 | [flood-fill](flood-fill.md) | 2 |
@@ -48,7 +48,7 @@
 | [graph](graph.md) | 21 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
-| [grid](grid.md) | 26 |
+| [grid](grid.md) | 27 |
 | [grid-traversal](grid-traversal.md) | 1 |
 | [half-done](half-done.md) | 6 |
 | [hard-description](hard-description.md) | 1 |
@@ -125,6 +125,7 @@
 | [trigonometry](trigonometry.md) | 1 |
 | [tsp](tsp.md) | 1 |
 | [unfold](unfold.md) | 2 |
+| [union-find](union-find.md) | 1 |
 | [validation](validation.md) | 5 |
 | [vector](vector.md) | 6 |
 | [visual-result](visual-result.md) | 3 |

@@ -91,6 +91,7 @@
 | 2023 | [8](https://adventofcode.com/2023/day/8) | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | [arithmetic](tags/arithmetic.md), [sequence](tags/sequence.md) | [day_08.ex](../lib/2023/day_08.ex) |
 | 2023 | [11](https://adventofcode.com/2023/day/11) | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | [grid](tags/grid.md), [measurement](tags/measurement.md) | [day_11.ex](../lib/2023/day_11.ex) |
 | 2023 | [15](https://adventofcode.com/2023/day/15) | [Lens Library](https://adventofcode.com/2023/day/15) | [hash](tags/hash.md), [ordered-map](tags/ordered-map.md) | [day_15.ex](../lib/2023/day_15.ex) |
+| 2025 | [8](https://adventofcode.com/2025/day/8) | [Playground](https://adventofcode.com/2025/day/8) | [union-find](tags/union-find.md) | [day_08.ex](../lib/2025/day_08.ex) |
 
 ## 🟠 M
 
@@ -169,6 +170,7 @@
 | 2023 | [18](https://adventofcode.com/2023/day/18) | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | [geometry](tags/geometry.md) | [day_18.ex](../lib/2023/day_18.ex) |
 | 2023 | [19](https://adventofcode.com/2023/day/19) | [Aplenty](https://adventofcode.com/2023/day/19) | [op-code](tags/op-code.md), [parse-heavy](tags/parse-heavy.md) | [day_19.ex](../lib/2023/day_19.ex) |
 | 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | [graph](tags/graph.md), [min-cut](tags/min-cut.md) | [day_25.ex](../lib/2023/day_25.ex) |
+| 2025 | [7](https://adventofcode.com/2025/day/7) | [Laboratories](https://adventofcode.com/2025/day/7) | [grid](tags/grid.md), [dynamic-programming](tags/dynamic-programming.md) | [day_07.ex](../lib/2025/day_07.ex) |
 
 ## 💀 XL
 
