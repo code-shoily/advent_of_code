@@ -6,51 +6,59 @@ defmodule AdventOfCode.Y2015.Day09 do
   Tags: graph routing
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Builder.Labeled
 
   def input, do: InputReader.read_from_file(2015, 9)
 
   def run(input \\ input()) do
-    input = parse(input)
+    builder = parse(input)
+    graph = Labeled.to_graph(builder)
+    node_ids = Yog.node_ids(graph)
 
-    {run_1(input), run_2(input)}
-  end
-
-  def run_1(input), do: input |> travel_all(&Enum.min/1)
-  def run_2(input), do: input |> travel_all(&Enum.max/1)
-
-  def parse(data \\ input()) do
-    data
-    |> Transformers.lines()
-    |> Enum.map(fn route ->
-      ~r/(\w+) to (\w+) = (\d+)/
-      |> Regex.run(route, capture: :all_but_first)
-      |> then(&List.to_tuple/1)
-    end)
-    |> to_graph()
-  end
-
-  defp to_graph(data) do
-    routes =
-      data
-      |> Enum.flat_map(fn {c1, c2, dist} ->
-        [{{c1, c2}, String.to_integer(dist)}, {{c2, c1}, String.to_integer(dist)}]
-      end)
+    # Pre-generate adjacency map for fast weight lookup
+    adj =
+      Yog.all_edges(graph)
+      |> Enum.flat_map(fn {u, v, w} -> [{{u, v}, w}, {{v, u}, w}] end)
       |> Map.new()
 
-    cities = routes |> Map.keys() |> Enum.flat_map(&Tuple.to_list/1) |> MapSet.new()
+    # AOC Day 9 has a small number of cities (8), making permutations feasible.
+    distances =
+      node_ids
+      |> permutations()
+      |> Enum.map(&path_distance(&1, adj))
+      |> Enum.reject(&is_nil/1)
 
-    {cities, routes}
+    {Enum.min(distances), Enum.max(distances)}
   end
 
-  defp travel_all({cities, routes}, min_max_fn),
-    do: min_max_fn.(Enum.map(cities, &travel(&1, routes, cities, 0, min_max_fn)))
+  def parse(data) do
+    Transformers.lines(data)
+    |> Enum.reduce(Labeled.undirected(), fn line, acc ->
+      [_, from, to, dist] = Regex.run(~r/(\w+) to (\w+) = (\d+)/, line)
+      Labeled.add_edge(acc, from, to, String.to_integer(dist))
+    end)
+  end
 
-  defp travel(city, routes, cities, distance, min_max_fn) do
-    cities = MapSet.delete(cities, city)
+  # Calculate the total distance of a specific path (list of node IDs)
+  defp path_distance([_], _), do: 0
 
-    (Enum.empty?(cities) && distance) ||
-      cities
-      |> Enum.map(&travel(&1, routes, cities, distance + routes[{city, &1}], min_max_fn))
-      |> min_max_fn.()
+  defp path_distance([u, v | rest], adj) do
+    case Map.get(adj, {u, v}) do
+      nil ->
+        nil
+
+      weight ->
+        case path_distance([v | rest], adj) do
+          nil -> nil
+          rest_dist -> weight + rest_dist
+        end
+    end
+  end
+
+  # Standard permutations generator
+  defp permutations([]), do: [[]]
+
+  defp permutations(list) do
+    for x <- list, rest <- permutations(list -- [x]), do: [x | rest]
   end
 end
