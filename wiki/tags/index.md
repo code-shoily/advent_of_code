@@ -4,6 +4,7 @@
 
 | Tag | Problems |
 |-----|--------:|
+| [a-star](a-star.md) | 1 |
 | [algebra](algebra.md) | 1 |
 | [ambiguous-solution](ambiguous-solution.md) | 1 |
 | [annoying](annoying.md) | 3 |
@@ -19,16 +20,16 @@
 | [circular-linked-list](circular-linked-list.md) | 2 |
 | [combinatorics](combinatorics.md) | 3 |
 | [concurrency](concurrency.md) | 1 |
-| [connectivity](connectivity.md) | 1 |
+| [connectivity](connectivity.md) | 2 |
 | [count](count.md) | 5 |
 | [data-modelling](data-modelling.md) | 1 |
 | [date-time](date-time.md) | 1 |
 | [digraph](digraph.md) | 1 |
-| [disjoint-set](disjoint-set.md) | 2 |
+| [disjoint-set](disjoint-set.md) | 1 |
 | [double-parse](double-parse.md) | 1 |
 | [dynamic-programming](dynamic-programming.md) | 1 |
 | [emulation](emulation.md) | 2 |
-| [erlang](erlang.md) | 11 |
+| [erlang](erlang.md) | 10 |
 | [flood-fill](flood-fill.md) | 2 |
 | [fsm](fsm.md) | 2 |
 | [game](game.md) | 1 |
@@ -36,14 +37,15 @@
 | [geometry](geometry.md) | 3 |
 | [geometry2d](geometry2d.md) | 5 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 8 |
+| [graph](graph.md) | 11 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
-| [grid](grid.md) | 25 |
+| [grid](grid.md) | 24 |
 | [half-done](half-done.md) | 6 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
 | [hexagon](hexagon.md) | 2 |
+| [implicit-graph](implicit-graph.md) | 1 |
 | [infinite-sequence](infinite-sequence.md) | 1 |
 | [inline-input](inline-input.md) | 1 |
 | [int-code](int-code.md) | 2 |
@@ -67,7 +69,7 @@
 | [number-theory](number-theory.md) | 3 |
 | [op-code](op-code.md) | 12 |
 | [operator-precedence](operator-precedence.md) | 1 |
-| [optimization](optimization.md) | 4 |
+| [optimization](optimization.md) | 3 |
 | [ordered-map](ordered-map.md) | 1 |
 | [palindrome](palindrome.md) | 1 |
 | [parse-heavy](parse-heavy.md) | 4 |
@@ -87,12 +89,12 @@
 | [rotation](rotation.md) | 3 |
 | [routing](routing.md) | 2 |
 | [rust](rust.md) | 15 |
-| [search](search.md) | 1 |
 | [sequence](sequence.md) | 25 |
-| [set](set.md) | 17 |
+| [set](set.md) | 16 |
+| [shortest-path](shortest-path.md) | 1 |
 | [simulation](simulation.md) | 1 |
 | [sliding-window](sliding-window.md) | 4 |
-| [slow](slow.md) | 17 |
+| [slow](slow.md) | 16 |
 | [sort](sort.md) | 3 |
 | [spiral](spiral.md) | 1 |
 | [stack](stack.md) | 2 |
@@ -102,6 +104,7 @@
 | [string-result](string-result.md) | 1 |
 | [surface](surface.md) | 1 |
 | [table-lookup](table-lookup.md) | 2 |
+| [topological-sort](topological-sort.md) | 1 |
 | [tree](tree.md) | 1 |
 | [trigonometry](trigonometry.md) | 1 |
 | [unfold](unfold.md) | 2 |

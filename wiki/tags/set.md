@@ -20,4 +20,3 @@
 | 2022 | [6](https://adventofcode.com/2022/day/6) | [Tuning Trouble](https://adventofcode.com/2022/day/6) | 🟢 | [bitwise](bitwise.md) | [day_06.ex](../../lib/2022/day_06.ex) |
 | 2022 | [18](https://adventofcode.com/2022/day/18) | [Boiling Boulders](https://adventofcode.com/2022/day/18) | 💀 | [erlang](erlang.md), [geometry3d](geometry3d.md), [surface](surface.md) | [day_18.ex](../../lib/2022/day_18.ex) |
 | 2023 | [4](https://adventofcode.com/2023/day/4) | [Scratchcards](https://adventofcode.com/2023/day/4) | 🟢 | [reduction](reduction.md) | [day_04.ex](../../lib/2023/day_04.ex) |
-| 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | [sort](sort.md) | [day_05.ex](../../lib/2024/day_05.ex) |

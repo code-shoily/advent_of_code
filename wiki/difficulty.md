@@ -49,7 +49,7 @@
 | 2023 | [9](https://adventofcode.com/2023/day/9) | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | [sequence](tags/sequence.md), [reduction](tags/reduction.md) | [day_09.ex](../lib/2023/day_09.ex) |
 | 2024 | [1](https://adventofcode.com/2024/day/1) | [Historian Hysteria](https://adventofcode.com/2024/day/1) | [list](tags/list.md) | [day_01.ex](../lib/2024/day_01.ex) |
 | 2024 | [3](https://adventofcode.com/2024/day/3) | [Mull It Over](https://adventofcode.com/2024/day/3) | [regex](tags/regex.md), [fsm](tags/fsm.md) | [day_03.ex](../lib/2024/day_03.ex) |
-| 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | [set](tags/set.md), [sort](tags/sort.md) | [day_05.ex](../lib/2024/day_05.ex) |
+| 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | [graph](tags/graph.md), [topological-sort](tags/topological-sort.md), [sort](tags/sort.md) | [day_05.ex](../lib/2024/day_05.ex) |
 
 ## 🟡 S
 
@@ -67,7 +67,7 @@
 | 2017 | [8](https://adventofcode.com/2017/day/8) | [I Heard You Like Registers](https://adventofcode.com/2017/day/8) | [op-code](tags/op-code.md) | [day_08.ex](../lib/2017/day_08.ex) |
 | 2017 | [9](https://adventofcode.com/2017/day/9) | [Stream Processing](https://adventofcode.com/2017/day/9) | [fsm](tags/fsm.md) | [day_09.ex](../lib/2017/day_09.ex) |
 | 2017 | [10](https://adventofcode.com/2017/day/10) | [Knot Hash](https://adventofcode.com/2017/day/10) | [hash](tags/hash.md) | [day_10.ex](../lib/2017/day_10.ex) |
-| 2017 | [12](https://adventofcode.com/2017/day/12) | [Digital Plumber](https://adventofcode.com/2017/day/12) | [disjoint-set](tags/disjoint-set.md) | [day_12.ex](../lib/2017/day_12.ex) |
+| 2017 | [12](https://adventofcode.com/2017/day/12) | [Digital Plumber](https://adventofcode.com/2017/day/12) | [graph](tags/graph.md), [connectivity](tags/connectivity.md) | [day_12.ex](../lib/2017/day_12.ex) |
 | 2017 | [13](https://adventofcode.com/2017/day/13) | [Packet Scanners](https://adventofcode.com/2017/day/13) | [sequence](tags/sequence.md), [slow](tags/slow.md) | [day_13.ex](../lib/2017/day_13.ex) |
 | 2018 | [1](https://adventofcode.com/2018/day/1) | [Chronal Calibration](https://adventofcode.com/2018/day/1) | [sequence](tags/sequence.md), [set](tags/set.md), [rust](tags/rust.md) | [day_01.ex](../lib/2018/day_01.ex) |
 | 2018 | [2](https://adventofcode.com/2018/day/2) | [Inventory Management System](https://adventofcode.com/2018/day/2) | [checksum](tags/checksum.md), [string-result](tags/string-result.md), [set](tags/set.md) | [day_02.ex](../lib/2018/day_02.ex) |
@@ -134,7 +134,7 @@
 | 2022 | [20](https://adventofcode.com/2022/day/20) | [Grove Positioning System](https://adventofcode.com/2022/day/20) | [slow](tags/slow.md), [vector](tags/vector.md), [sequence](tags/sequence.md), [large-number](tags/large-number.md), [random-access](tags/random-access.md) | [day_20.ex](../lib/2022/day_20.ex) |
 | 2022 | [22](https://adventofcode.com/2022/day/22) | [Monkey Map](https://adventofcode.com/2022/day/22) | [half-done](tags/half-done.md), [geometry3d](tags/geometry3d.md), [walk3d](tags/walk3d.md) | [day_22.ex](../lib/2022/day_22.ex) |
 | 2022 | [23](https://adventofcode.com/2022/day/23) | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | [erlang](tags/erlang.md), [slow](tags/slow.md), [grid](tags/grid.md), [walk](tags/walk.md) | [day_23.ex](../lib/2022/day_23.ex) |
-| 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | [erlang](tags/erlang.md), [slow](tags/slow.md), [optimization](tags/optimization.md), [grid](tags/grid.md), [search](tags/search.md) | [day_24.ex](../lib/2022/day_24.ex) |
+| 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | [graph](tags/graph.md), [implicit-graph](tags/implicit-graph.md), [shortest-path](tags/shortest-path.md), [a-star](tags/a-star.md) | [day_24.ex](../lib/2022/day_24.ex) |
 | 2022 | [25](https://adventofcode.com/2022/day/25) | [Full of Hot Air](https://adventofcode.com/2022/day/25) | [number-system](tags/number-system.md) | [day_25.ex](../lib/2022/day_25.ex) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | [grid](tags/grid.md) | [day_03.ex](../lib/2023/day_03.ex) |
 | 2023 | [7](https://adventofcode.com/2023/day/7) | [Camel Cards](https://adventofcode.com/2023/day/7) | [map](tags/map.md), [pattern-matching](tags/pattern-matching.md) | [day_07.ex](../lib/2023/day_07.ex) |

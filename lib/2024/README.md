@@ -4,11 +4,11 @@
 
 ## ⭐ 8/50
 
-[disjoint-set](../../wiki/tags/disjoint-set.md)&nbsp;`1`  [fsm](../../wiki/tags/fsm.md)&nbsp;`1`  [geometry](../../wiki/tags/geometry.md)&nbsp;`1`  [list](../../wiki/tags/list.md)&nbsp;`1`  [regex](../../wiki/tags/regex.md)&nbsp;`1`  [set](../../wiki/tags/set.md)&nbsp;`1`  [sort](../../wiki/tags/sort.md)&nbsp;`1`
+[disjoint-set](../../wiki/tags/disjoint-set.md)&nbsp;`1`  [fsm](../../wiki/tags/fsm.md)&nbsp;`1`  [geometry](../../wiki/tags/geometry.md)&nbsp;`1`  [graph](../../wiki/tags/graph.md)&nbsp;`1`  [list](../../wiki/tags/list.md)&nbsp;`1`  [regex](../../wiki/tags/regex.md)&nbsp;`1`  [sort](../../wiki/tags/sort.md)&nbsp;`1`  [topological-sort](../../wiki/tags/topological-sort.md)&nbsp;`1`
 
 | Day | Title | Difficulty | Tags | Source |
 |:---:|-------|:----------:|------|--------|
 | [1](https://adventofcode.com/2024/day/1) | [Historian Hysteria](https://adventofcode.com/2024/day/1) | 🟢 | [list](../../wiki/tags/list.md) | [day_01.ex](day_01.ex) |
 | [3](https://adventofcode.com/2024/day/3) | [Mull It Over](https://adventofcode.com/2024/day/3) | 🟢 | [regex](../../wiki/tags/regex.md), [fsm](../../wiki/tags/fsm.md) | [day_03.ex](day_03.ex) |
-| [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | [set](../../wiki/tags/set.md), [sort](../../wiki/tags/sort.md) | [day_05.ex](day_05.ex) |
+| [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | [graph](../../wiki/tags/graph.md), [topological-sort](../../wiki/tags/topological-sort.md), [sort](../../wiki/tags/sort.md) | [day_05.ex](day_05.ex) |
 | [12](https://adventofcode.com/2024/day/12) | [Garden Groups](https://adventofcode.com/2024/day/12) | 🟠 | [geometry](../../wiki/tags/geometry.md), [disjoint-set](../../wiki/tags/disjoint-set.md) | [day_12.ex](day_12.ex) |

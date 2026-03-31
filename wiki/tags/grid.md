@@ -23,7 +23,6 @@
 | 2022 | [9](https://adventofcode.com/2022/day/9) | [Rope Bridge](https://adventofcode.com/2022/day/9) | 🟠 | [erlang](erlang.md), [walk](walk.md) | [day_09.ex](../../lib/2022/day_09.ex) |
 | 2022 | [19](https://adventofcode.com/2022/day/19) | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | 💀 | [erlang](erlang.md), [slow](slow.md), [needs-improvement](needs-improvement.md), [optimization](optimization.md) | [day_19.ex](../../lib/2022/day_19.ex) |
 | 2022 | [23](https://adventofcode.com/2022/day/23) | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | 🟠 | [erlang](erlang.md), [slow](slow.md), [walk](walk.md) | [day_23.ex](../../lib/2022/day_23.ex) |
-| 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | 🟠 | [erlang](erlang.md), [slow](slow.md), [optimization](optimization.md), [search](search.md) | [day_24.ex](../../lib/2022/day_24.ex) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | 🟠 |  | [day_03.ex](../../lib/2023/day_03.ex) |
 | 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | 💀 | [graph](graph.md), [bfs](bfs.md) | [day_10.ex](../../lib/2023/day_10.ex) |
 | 2023 | [11](https://adventofcode.com/2023/day/11) | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | 🟡 | [measurement](measurement.md) | [day_11.ex](../../lib/2023/day_11.ex) |
