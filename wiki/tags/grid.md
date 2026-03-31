@@ -9,6 +9,7 @@
 | 2015 | [18](https://adventofcode.com/2015/day/18) | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18) | 🟠 | [map](map.md), [not-fast-enough](not-fast-enough.md) | [day_18.ex](../../lib/2015/day_18.ex) |
 | 2016 | [1](https://adventofcode.com/2016/day/1) | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | 🟡 | [measurement](measurement.md), [set](set.md), [rust](rust.md) | [day_01.ex](../../lib/2016/day_01.ex) |
 | 2016 | [2](https://adventofcode.com/2016/day/2) | [Bathroom Security](https://adventofcode.com/2016/day/2) | 🟢 | [rust](rust.md) | [day_02.ex](../../lib/2016/day_02.ex) |
+| 2016 | [24](https://adventofcode.com/2016/day/24) | [Air Duct Spelunking](https://adventofcode.com/2016/day/24) | 🟠 | [graph](graph.md), [shortest-path](shortest-path.md), [tsp](tsp.md), [matrix](matrix.md) | [day_24.ex](../../lib/2016/day_24.ex) |
 | 2018 | [3](https://adventofcode.com/2018/day/3) | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | 🟠 | [set](set.md), [not-fast-enough](not-fast-enough.md) | [day_03.ex](../../lib/2018/day_03.ex) |
 | 2018 | [6](https://adventofcode.com/2018/day/6) | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | 🟡 | [slow](slow.md), [revisit](revisit.md), [measurement](measurement.md) | [day_06.ex](../../lib/2018/day_06.ex) |
 | 2019 | [3](https://adventofcode.com/2019/day/3) | [Crossed Wires](https://adventofcode.com/2019/day/3) | 🟢 | [set](set.md), [not-fast-enough](not-fast-enough.md) | [day_03.ex](../../lib/2019/day_03.ex) |

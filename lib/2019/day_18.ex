@@ -1,7 +1,9 @@
 defmodule AdventOfCode.Y2019.Day18 do
   @moduledoc """
   --- Day 18: Many-Worlds Interpretation ---
-  Shortest path to collect all keys in a maze.
+  Problem Link: https://adventofcode.com/2019/day/18
+  Difficulty: xl
+  Tags: graph dijkstra implicit-graph bitmask state-space-search
   """
   import Bitwise
   alias AdventOfCode.Helpers.{InputReader, Transformers}

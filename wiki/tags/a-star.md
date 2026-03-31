@@ -4,4 +4,5 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
+| 2016 | [13](https://adventofcode.com/2016/day/13) | [A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13) | 🟠 | [graph](graph.md), [implicit-graph](implicit-graph.md), [shortest-path](shortest-path.md), [bfs](bfs.md) | [day_13.ex](../../lib/2016/day_13.ex) |
 | 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | 🟠 | [graph](graph.md), [implicit-graph](implicit-graph.md), [shortest-path](shortest-path.md) | [day_24.ex](../../lib/2022/day_24.ex) |
