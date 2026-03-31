@@ -13,6 +13,8 @@
 | 2018 | [6](https://adventofcode.com/2018/day/6) | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | 🟡 | [slow](slow.md), [revisit](revisit.md), [measurement](measurement.md) | [day_06.ex](../../lib/2018/day_06.ex) |
 | 2019 | [3](https://adventofcode.com/2019/day/3) | [Crossed Wires](https://adventofcode.com/2019/day/3) | 🟢 | [set](set.md), [not-fast-enough](not-fast-enough.md) | [day_03.ex](../../lib/2019/day_03.ex) |
 | 2019 | [10](https://adventofcode.com/2019/day/10) | [Monitoring Station](https://adventofcode.com/2019/day/10) | 🟠 | [sequence](sequence.md), [trigonometry](trigonometry.md) | [day_10.ex](../../lib/2019/day_10.ex) |
+| 2020 | [3](https://adventofcode.com/2020/day/3) | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) | 🟢 | [walk](walk.md) | [day_03.ex](../../lib/2020/day_03.ex) |
+| 2020 | [11](https://adventofcode.com/2020/day/11) | [Seating System](https://adventofcode.com/2020/day/11) | 🟠 | [flood-fill](flood-fill.md), [concurrency](concurrency.md) | [day_11.ex](../../lib/2020/day_11.ex) |
 | 2021 | [2](https://adventofcode.com/2021/day/2) | [Dive!](https://adventofcode.com/2021/day/2) | 🟢 | [rust](rust.md) | [day_02.ex](../../lib/2021/day_02.ex) |
 | 2021 | [4](https://adventofcode.com/2021/day/4) | [Giant Squid](https://adventofcode.com/2021/day/4) | 🟡 | [random-access](random-access.md), [optimization](optimization.md) | [day_04.ex](../../lib/2021/day_04.ex) |
 | 2021 | [25](https://adventofcode.com/2021/day/25) | [Sea Cucumber](https://adventofcode.com/2021/day/25) | 🟠 | [vector](vector.md), [quadratic](quadratic.md), [not-fast-enough](not-fast-enough.md) | [day_25.ex](../../lib/2021/day_25.ex) |
