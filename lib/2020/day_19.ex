@@ -54,7 +54,7 @@ defmodule AdventOfCode.Y2020.Day19 do
     |> Enum.map(&((&1 in @reserved && &1) || ["(", to_re(rules, &1, re, loop?), ")"]))
   end
 
-  defp to_re(source), do: %Regex{source: splat("^" <> source <> "$")}
+  defp to_re(source), do: Regex.compile!(splat("^" <> source <> "$"))
   defp splat(re), do: Enum.reduce(@reserved, re, &String.replace(&2, "(#{&1})", &1))
-  defp match_count({messages, re}), do: length(Enum.filter(messages, &Regex.match?(re, &1)))
+  defp match_count({messages, re}), do: Enum.count(messages, &Regex.match?(re, &1))
 end
