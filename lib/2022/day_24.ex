@@ -32,6 +32,7 @@ defmodule AdventOfCode.Y2022.Day24 do
     {t1, t3}
   end
 
+  # credo:disable-next-line Credo.Check.Refactor.FunctionArity
   defp solve_path({sx, sy}, {gx, gy}, start_t, up, down, left, right, w, h, cycle) do
     inner_w = w - 2
     inner_h = h - 2

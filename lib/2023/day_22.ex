@@ -73,17 +73,15 @@ defmodule AdventOfCode.Y2023.Day22 do
                  Range.disjoint?(ay, by))
       end)
 
-    supports =
-      Map.update(
-        supports,
-        current,
-        %{is_above: others, is_below: []},
-        fn %{is_above: above} = existing ->
-          %{existing | is_above: others ++ above}
-        end
-      )
-
-    supports =
+    supports
+    |> Map.update(
+      current,
+      %{is_above: others, is_below: []},
+      fn %{is_above: above} = existing ->
+        %{existing | is_above: others ++ above}
+      end
+    )
+    |> then(fn supports ->
       Enum.reduce(others, supports, fn other, supports ->
         Map.update(
           supports,
@@ -94,8 +92,8 @@ defmodule AdventOfCode.Y2023.Day22 do
           end
         )
       end)
-
-    support(rest, bricks, supports)
+    end)
+    |> then(fn supports -> support(rest, bricks, supports) end)
   end
 
   defp free(supports) do

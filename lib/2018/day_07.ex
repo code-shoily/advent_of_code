@@ -32,8 +32,7 @@ defmodule AdventOfCode.Y2018.Day07 do
       end)
 
     ids
-    |> Enum.map(&Yog.Model.node(graph, &1))
-    |> Enum.join("")
+    |> Enum.map_join("", fn id -> Yog.Model.node(graph, id) end)
   end
 
   defp run_2(graph) do

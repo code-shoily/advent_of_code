@@ -5,8 +5,8 @@ defmodule AdventOfCode.Y2015.Day06 do
   Difficulty: m
   Tags: grid vector reduction slow
   """
-  alias Aja.Vector
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Aja.Vector
 
   def input, do: InputReader.read_from_file(2015, 6)
 
