@@ -13,7 +13,7 @@
 | [binary-search](binary-search.md) | 1 |
 | [binary-space](binary-space.md) | 1 |
 | [bitmask](bitmask.md) | 1 |
-| [bitwise](bitwise.md) | 4 |
+| [bitwise](bitwise.md) | 5 |
 | [bron-kerbosch](bron-kerbosch.md) | 1 |
 | [brute-force](brute-force.md) | 1 |
 | [calculation](calculation.md) | 3 |
@@ -34,7 +34,7 @@
 | [dijkstra](dijkstra.md) | 3 |
 | [disjoint-set](disjoint-set.md) | 1 |
 | [double-parse](double-parse.md) | 1 |
-| [dynamic-programming](dynamic-programming.md) | 2 |
+| [dynamic-programming](dynamic-programming.md) | 4 |
 | [emulation](emulation.md) | 2 |
 | [erlang](erlang.md) | 10 |
 | [flood-fill](flood-fill.md) | 2 |
@@ -45,7 +45,7 @@
 | [geometry](geometry.md) | 3 |
 | [geometry2d](geometry2d.md) | 5 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 22 |
+| [graph](graph.md) | 24 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
 | [grid](grid.md) | 28 |
@@ -104,7 +104,7 @@
 | [rust](rust.md) | 15 |
 | [sequence](sequence.md) | 25 |
 | [set](set.md) | 16 |
-| [shortest-path](shortest-path.md) | 5 |
+| [shortest-path](shortest-path.md) | 6 |
 | [simulation](simulation.md) | 3 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 16 |
