@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day23 do
   --- Day 23: Crab Cups ---
   Problem Link: https://adventofcode.com/2020/day/23
   Difficulty: l
-  Tags: circular-linked-list slow
+  Tags: circular-linked-list atomics
   """
   def input, do: "467528193"
 
@@ -20,90 +20,83 @@ defmodule AdventOfCode.Y2020.Day23 do
     input |> String.graphemes() |> Enum.map(&String.to_integer/1)
   end
 
-  # Part 1 and Part 2 use the same logic, but different constraints
   defp solve(initial_cups, moves, total_cups) do
-    # 1. Build the circular linked list using :counters (O(1) mutable array)
-    arr = :counters.new(total_cups + 1, [:write_concurrency])
+    arr = :atomics.new(total_cups + 1, [])
+    setup_pointers(arr, initial_cups, total_cups)
 
-    # Fill initial cups
-    initial_len = length(initial_cups)
-    max_initial = Enum.max(initial_cups)
-
-    initial_cups
-    |> Enum.chunk_every(2, 1, [])
-    |> Enum.each(fn
-      [curr, nxt] ->
-        :counters.put(arr, curr, nxt)
-
-      [last] ->
-        if total_cups > initial_len do
-          :counters.put(arr, last, max_initial + 1)
-        else
-          :counters.put(arr, last, hd(initial_cups))
-        end
-    end)
-
-    # Fill the rest for Part 2
-    if total_cups > initial_len do
-      Enum.each((max_initial + 1)..total_cups, fn i ->
-        if i == total_cups do
-          :counters.put(arr, i, hd(initial_cups))
-        else
-          :counters.put(arr, i, i + 1)
-        end
-      end)
-    end
-
-    first_cup = hd(initial_cups)
-
-    play(arr, first_cup, moves, total_cups)
+    [first | _] = initial_cups
+    play(arr, first, moves, total_cups)
 
     if total_cups == 9 do
-      # Part 1: Labels after cup 1
       read_after(arr, 1, 8)
     else
-      # Part 2: Product of two cups after cup 1
-      c1 = :counters.get(arr, 1)
-      c2 = :counters.get(arr, c1)
+      c1 = :atomics.get(arr, 1)
+      c2 = :atomics.get(arr, c1)
       c1 * c2
     end
   end
 
-  defp play(_arr, _current, 0, _), do: :ok
+  defp setup_pointers(arr, initial, total) do
+    max_init = Enum.max(initial)
+    [first | _] = initial
+    last_init = List.last(initial)
 
-  defp play(arr, current, moves, max) do
-    # 1. Pick up three cups immediately clockwise of current
-    c1 = :counters.get(arr, current)
-    c2 = :counters.get(arr, c1)
-    c3 = :counters.get(arr, c2)
-    after_picked = :counters.get(arr, c3)
+    initial
+    |> Enum.chunk_every(2, 1, :discard)
+    |> Enum.each(fn [u, v] -> :atomics.put(arr, u, v) end)
 
-    # 2. Select destination cup
-    dest = select_destination(current - 1, c1, c2, c3, max)
+    if total > length(initial) do
+      :atomics.put(arr, last_init, max_init + 1)
 
-    # 3. Update pointers to "insert" cups
-    after_dest = :counters.get(arr, dest)
+      if total > max_init + 1 do
+        Enum.each((max_init + 1)..(total - 1), fn i -> :atomics.put(arr, i, i + 1) end)
+      end
 
-    :counters.put(arr, current, after_picked)
-    :counters.put(arr, dest, c1)
-    :counters.put(arr, c3, after_dest)
-
-    play(arr, after_picked, moves - 1, max)
-  end
-
-  defp select_destination(0, c1, c2, c3, max), do: select_destination(max, c1, c2, c3, max)
-
-  defp select_destination(dest, c1, c2, c3, max) do
-    if dest == c1 or dest == c2 or dest == c3 do
-      select_destination(dest - 1, c1, c2, c3, max)
+      :atomics.put(arr, total, first)
     else
-      dest
+      :atomics.put(arr, last_init, first)
     end
   end
 
-  defp read_after(arr, start, count) do
-    Enum.reduce(1..count, {[], start}, fn _, {acc, curr} ->
-      nxt = :counters.get(arr, curr)
+  defp play(_arr, _current, 0, _max), do: :ok
+
+  defp play(arr, current, moves, max) do
+    c1 = :atomics.get(arr, current)
+    c2 = :atomics.get(arr, c1)
+    c3 = :atomics.get(arr, c2)
+    after_c3 = :atomics.get(arr, c3)
+
+    d1 = if current == 1, do: max, else: current - 1
+
+    dest =
+      if d1 == c1 or d1 == c2 or d1 == c3 do
+        d2 = if d1 == 1, do: max, else: d1 - 1
+
+        if d2 == c1 or d2 == c2 or d2 == c3 do
+          d3 = if d2 == 1, do: max, else: d2 - 1
+
+          if d3 == c1 or d3 == c2 or d3 == c3,
+            do: if(d3 == 1, do: max, else: d3 - 1),
+            else: d3
+        else
+          d2
+        end
+      else
+        d1
+      end
+
+    after_dest = :atomics.get(arr, dest)
+
+    :atomics.put(arr, current, after_c3)
+    :atomics.put(arr, dest, c1)
+    :atomics.put(arr, c3, after_dest)
+
+    play(arr, after_c3, moves - 1, max)
+  end
+
+  defp read_after(arr, current, count) do
+    Enum.reduce(1..count, {[], current}, fn _, {acc, curr} ->
+      nxt = :atomics.get(arr, curr)
       {[nxt | acc], nxt}
     end)
     |> elem(0)
