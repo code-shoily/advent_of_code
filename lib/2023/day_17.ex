@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2023.Day17 do
   @moduledoc """
   --- Day 17: Clumsy Crucible ---
   Problem Link: https://adventofcode.com/2023/day/17
-  Difficulty: hard
+  Difficulty: l
   Tags: graph dijkstra shortest-path state-space grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
