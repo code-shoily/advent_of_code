@@ -4,4 +4,4 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
-| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 💀 | [graph](graph.md), [probabilistic](probabilistic.md), [refactor](refactor.md), [not-fast-enough](not-fast-enough.md) | [day_25.ex](../../lib/2023/day_25.ex) |
+| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 💀 | [graph](graph.md), [deterministic](deterministic.md), [refactor](refactor.md) | [day_25.ex](../../lib/2023/day_25.ex) |

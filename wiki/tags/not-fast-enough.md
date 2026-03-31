@@ -17,4 +17,3 @@
 | 2019 | [4](https://adventofcode.com/2019/day/4) | [Secure Container](https://adventofcode.com/2019/day/4) | 🟢 | [sequence](sequence.md), [inline-input](inline-input.md) | [day_04.ex](../../lib/2019/day_04.ex) |
 | 2021 | [25](https://adventofcode.com/2021/day/25) | [Sea Cucumber](https://adventofcode.com/2021/day/25) | 🟠 | [vector](vector.md), [quadratic](quadratic.md), [grid](grid.md) | [day_25.ex](../../lib/2021/day_25.ex) |
 | 2023 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | 💀 | [stack](stack.md), [range](range.md) | [day_22.ex](../../lib/2023/day_22.ex) |
-| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 💀 | [graph](graph.md), [min-cut](min-cut.md), [probabilistic](probabilistic.md), [refactor](refactor.md) | [day_25.ex](../../lib/2023/day_25.ex) |

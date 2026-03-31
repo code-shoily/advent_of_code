@@ -17,6 +17,7 @@
 | 2020 | [11](https://adventofcode.com/2020/day/11) | [Seating System](https://adventofcode.com/2020/day/11) | 🟠 | [flood-fill](flood-fill.md), [concurrency](concurrency.md) | [day_11.ex](../../lib/2020/day_11.ex) |
 | 2021 | [2](https://adventofcode.com/2021/day/2) | [Dive!](https://adventofcode.com/2021/day/2) | 🟢 | [rust](rust.md) | [day_02.ex](../../lib/2021/day_02.ex) |
 | 2021 | [4](https://adventofcode.com/2021/day/4) | [Giant Squid](https://adventofcode.com/2021/day/4) | 🟡 | [random-access](random-access.md), [optimization](optimization.md) | [day_04.ex](../../lib/2021/day_04.ex) |
+| 2021 | [9](https://adventofcode.com/2021/day/9) | [Smoke Basin](https://adventofcode.com/2021/day/9) | 🟠 | [graph](graph.md), [connectivity](connectivity.md) | [day_09.ex](../../lib/2021/day_09.ex) |
 | 2021 | [25](https://adventofcode.com/2021/day/25) | [Sea Cucumber](https://adventofcode.com/2021/day/25) | 🟠 | [vector](vector.md), [quadratic](quadratic.md), [not-fast-enough](not-fast-enough.md) | [day_25.ex](../../lib/2021/day_25.ex) |
 | 2022 | [8](https://adventofcode.com/2022/day/8) | [Treetop Tree House](https://adventofcode.com/2022/day/8) | 🟠 | [erlang](erlang.md) | [day_08.ex](../../lib/2022/day_08.ex) |
 | 2022 | [9](https://adventofcode.com/2022/day/9) | [Rope Bridge](https://adventofcode.com/2022/day/9) | 🟠 | [erlang](erlang.md), [walk](walk.md) | [day_09.ex](../../lib/2022/day_09.ex) |
@@ -24,6 +25,7 @@
 | 2022 | [23](https://adventofcode.com/2022/day/23) | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | 🟠 | [erlang](erlang.md), [slow](slow.md), [walk](walk.md) | [day_23.ex](../../lib/2022/day_23.ex) |
 | 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | 🟠 | [erlang](erlang.md), [slow](slow.md), [optimization](optimization.md), [search](search.md) | [day_24.ex](../../lib/2022/day_24.ex) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | 🟠 |  | [day_03.ex](../../lib/2023/day_03.ex) |
+| 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | 💀 | [graph](graph.md), [bfs](bfs.md) | [day_10.ex](../../lib/2023/day_10.ex) |
 | 2023 | [11](https://adventofcode.com/2023/day/11) | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | 🟡 | [measurement](measurement.md) | [day_11.ex](../../lib/2023/day_11.ex) |
 | 2023 | [14](https://adventofcode.com/2023/day/14) | [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14) | 🔴 | [rotation](rotation.md), [modular-arithmetic](modular-arithmetic.md), [memoization](memoization.md) | [day_14.ex](../../lib/2023/day_14.ex) |
 | 2023 | [16](https://adventofcode.com/2023/day/16) | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | 🔴 | [memoization](memoization.md) | [day_16.ex](../../lib/2023/day_16.ex) |
