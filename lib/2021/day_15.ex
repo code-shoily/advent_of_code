@@ -3,91 +3,87 @@ defmodule AdventOfCode.Y2021.Day15 do
   --- Day 15: Chiton ---
   Problem Link: https://adventofcode.com/2021/day/15
   Difficulty: l
-  Tags: graph graph-route slow
+  Tags: graph graph-route
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Builder.Grid
+  alias Yog.Pathfinding.{AStar, Dijkstra}
 
   def input, do: InputReader.read_from_file(2021, 15)
 
   def run(input \\ input()) do
-    input = parse(input)
+    input_grid = parse(input)
 
-    task_1 = Task.async(fn -> run_1(input) end)
-    task_2 = Task.async(fn -> run_2(input) end)
+    task_1 = Task.async(fn -> solve_part_1(input_grid) end)
+    task_2 = Task.async(fn -> solve_part_2(input_grid) end)
 
     {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
-  def run_1(grid) do
-    grid
-    |> to_graph()
-    |> Graph.dijkstra({0, 0}, get_destination(grid))
-    |> tl()
-    |> Enum.sum_by(&Map.get(grid, &1))
-  end
-
-  def run_2(grid) do
-    grid = multiply(grid)
-
-    grid
-    |> to_graph()
-    |> Graph.dijkstra({0, 0}, get_destination(grid))
-    |> tl()
-    |> Enum.sum_by(&Map.get(grid, &1))
-  end
-
-  def parse(input) do
-    input
+  def parse(data) do
+    data
     |> Transformers.lines()
-    |> Enum.with_index()
-    |> Enum.flat_map(fn {line, y} ->
+    |> Enum.map(fn line ->
       line
       |> String.graphemes()
-      |> Enum.with_index()
-      |> Enum.map(fn {column, x} -> {{x, y}, String.to_integer(column)} end)
+      |> Enum.map(&String.to_integer/1)
     end)
-    |> Map.new()
   end
 
-  def to_graph(grid) do
+  defp solve_part_1(grid_data) do
+    grid = Grid.from_2d_list(grid_data, :directed, Grid.always())
+    graph = Grid.to_graph(grid)
+    rows = grid.rows
+    cols = grid.cols
+
+    # Weights are the target node's data (the risk level of the cell entered)
     graph =
-      Enum.reduce(grid, Graph.new(), fn {{x, y}, _}, graph ->
-        nbs =
-          [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}]
-          |> Enum.filter(&Map.has_key?(grid, &1))
-          |> Enum.map(fn point -> {{x, y}, point, [weight: Map.get(grid, point)]} end)
-
-        Graph.add_edges(graph, nbs)
+      Yog.Transform.map_edges_indexed(graph, fn _src, dst, _weight ->
+        Yog.Model.node(graph, dst)
       end)
 
-    invalid_edges =
-      graph
-      |> Graph.edges()
-      |> Enum.filter(fn %Graph.Edge{v1: {x1, y1}, v2: {x2, y2}} ->
-        abs(x1 - x2) > 1 and abs(y1 - y2) > 1
-      end)
-
-    Graph.delete_edges(graph, invalid_edges)
+    {:ok, path} = Dijkstra.shortest_path(graph, 0, rows * cols - 1)
+    path.weight
   end
 
-  defp multiply(grid) do
-    {max_x, max_y} = get_destination(grid)
+  defp solve_part_2(grid_data) do
+    rows = length(grid_data)
+    cols = length(hd(grid_data))
 
-    grid =
-      grid
-      |> Enum.reduce(grid, fn {{x, y}, risk}, grid ->
-        Enum.reduce(1..4, grid, fn index, grid ->
-          Map.put(grid, {x + index * (max_x + 1), y}, increment(risk + index))
-        end)
+    # Pre-calculate base values in a tuple for O(1) access during expansion
+    base_grid = grid_data |> Enum.map(&List.to_tuple/1) |> List.to_tuple()
+
+    big_grid_data =
+      for r <- 0..(rows * 5 - 1) do
+        for c <- 0..(cols * 5 - 1) do
+          base_r = rem(r, rows)
+          base_c = rem(c, cols)
+          offset = div(r, rows) + div(c, cols)
+
+          val = elem(elem(base_grid, base_r), base_c) + offset
+          if val > 9, do: val - 9, else: val
+        end
+      end
+
+    grid = Grid.from_2d_list(big_grid_data, :directed, Grid.always())
+    graph = Grid.to_graph(grid)
+    big_rows = grid.rows
+    big_cols = grid.cols
+
+    # Weights are the target node's data
+    graph =
+      Yog.Transform.map_edges_indexed(graph, fn _src, dst, _weight ->
+        Yog.Model.node(graph, dst)
       end)
 
-    Enum.reduce(grid, grid, fn {{x, y}, risk}, grid ->
-      Enum.reduce(1..4, grid, fn index, grid ->
-        Map.put(grid, {x, y + index * (max_y + 1)}, increment(risk + index))
-      end)
-    end)
+    # Manhattan distance heuristic for A*
+    heuristic = fn node_id, goal_id ->
+      {r1, c1} = {div(node_id, big_cols), rem(node_id, big_cols)}
+      {r2, c2} = {div(goal_id, big_cols), rem(goal_id, big_cols)}
+      abs(r1 - r2) + abs(c1 - c2)
+    end
+
+    {:ok, path} = AStar.a_star(graph, 0, big_rows * big_cols - 1, heuristic)
+    path.weight
   end
-
-  defp increment(weight), do: (weight > 9 && weight - 9) || weight
-  defp get_destination(grid), do: grid |> Map.keys() |> Enum.max()
 end

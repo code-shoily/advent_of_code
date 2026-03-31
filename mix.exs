@@ -26,7 +26,7 @@ defmodule AdventOfCode.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:floki, "~> 0.36"},
       {:httpoison, "~> 2.2"},
-      {:libgraph, "~> 0.16"},
+      {:yog_ex, "~> 0.90.0"},
       {:aja, "~> 0.7"},
       {:topo, "~> 1.0"},
       {:rustler, "~> 0.35"}
