@@ -60,7 +60,7 @@ defmodule AdventOfCode.Y2016.Day13 do
     |> MapSet.size()
   end
 
-  defp is_wall?(x, y, fav) do
+  defp wall?(x, y, fav) do
     if x < 0 or y < 0 do
       true
     else
@@ -71,7 +71,7 @@ defmodule AdventOfCode.Y2016.Day13 do
 
   defp open_neighbors({x, y}, fav) do
     [{x + 1, y}, {x - 1, y}, {x, y + 1}, {x, y - 1}]
-    |> Enum.filter(fn {nx, ny} -> not is_wall?(nx, ny, fav) end)
+    |> Enum.filter(fn {nx, ny} -> not wall?(nx, ny, fav) end)
   end
 
   defp count_ones(0), do: 0

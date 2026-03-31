@@ -59,7 +59,6 @@ defmodule AdventOfCode.Y2019.Day08 do
     |> chunkify()
     |> List.first()
     |> Enum.map_join("\n", &Enum.join/1)
-    |> tap(&IO.puts/1)
   end
 
   defp chunkify(data) do

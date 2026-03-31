@@ -32,8 +32,6 @@ defmodule AdventOfCode.Helpers do
       for j <- 0..y do
         IO.write(grid[{i, j}])
       end
-
-      IO.puts("")
     end
   end
 end

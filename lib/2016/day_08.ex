@@ -75,11 +75,7 @@ defmodule AdventOfCode.Y2016.Day08 do
       for w <- 0..(@width - 1) do
         IO.write(grid[{w, h}])
       end
-
-      IO.puts("")
     end
-
-    IO.puts("")
 
     :ok
   end

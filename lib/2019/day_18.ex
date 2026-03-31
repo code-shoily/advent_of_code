@@ -109,21 +109,21 @@ defmodule AdventOfCode.Y2019.Day18 do
 
   defp find_pois(grid, start_chars) do
     grid
-    |> Enum.filter(fn {_, char} -> char in start_chars or is_key?(char) end)
+    |> Enum.filter(fn {_, char} -> char in start_chars or key?(char) end)
     |> Map.new(fn {pos, char} -> {char, pos} end)
   end
 
   defp find_pois_part_2(grid, start_chars) do
     grid
     |> Enum.filter(fn {_, char} ->
-      char in start_chars or is_key?(char)
+      char in start_chars or key?(char)
     end)
     |> Map.new(fn {pos, char} -> {char, pos} end)
   end
 
   defp calculate_keys_mask(pois) do
     Enum.reduce(pois, 0, fn {label, _}, acc ->
-      if is_key?(label), do: bor(acc, key_bit(label)), else: acc
+      if key?(label), do: bor(acc, key_bit(label)), else: acc
     end)
   end
 
@@ -150,7 +150,7 @@ defmodule AdventOfCode.Y2019.Day18 do
 
         # Record this key if we found one (but don't stop exploring!)
         new_acc =
-          if dist > 0 and is_key?(char) do
+          if dist > 0 and key?(char) do
             [%{to: char, dist: dist, required: mask} | acc]
           else
             acc
@@ -159,8 +159,8 @@ defmodule AdventOfCode.Y2019.Day18 do
         # Continue exploring - update mask with doors AND keys we pass through
         new_mask =
           cond do
-            is_door?(char) -> bor(mask, door_bit(char))
-            is_key?(char) -> bor(mask, key_bit(char))
+            door?(char) -> bor(mask, door_bit(char))
+            key?(char) -> bor(mask, key_bit(char))
             true -> mask
           end
 
@@ -181,8 +181,8 @@ defmodule AdventOfCode.Y2019.Day18 do
 
   defp neighbors({x, y}), do: [{x + 1, y}, {x - 1, y}, {x, y + 1}, {x, y - 1}]
 
-  defp is_key?(char), do: char != nil and char >= "a" and char <= "z"
-  defp is_door?(char), do: char != nil and char >= "A" and char <= "Z"
+  defp key?(char), do: char != nil and char >= "a" and char <= "z"
+  defp door?(char), do: char != nil and char >= "A" and char <= "Z"
 
   defp key_bit(char), do: bsl(1, hd(String.to_charlist(char)) - ?a)
   defp door_bit(char), do: bsl(1, hd(String.to_charlist(char)) - ?A)

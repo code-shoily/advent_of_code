@@ -6,7 +6,8 @@ defmodule AdventOfCode.Y2023.Day10 do
   Tags: graph bfs grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias Yog.Builder.Grid
+  alias Yog.Builder.{Grid, GridGraph}
+  alias Yog.Model
   alias Yog.Pathfinding.Dijkstra
 
   def input, do: InputReader.read_from_file(2023, 10)
@@ -96,11 +97,11 @@ defmodule AdventOfCode.Y2023.Day10 do
       |> Enum.filter(&MapSet.member?(loop_nodes, &1))
 
     # Get coordinates of S and its neighbors to determine the pipe type
-    {sr, sc} = Yog.Builder.GridGraph.id_to_coord(grid_graph, start_id)
+    {sr, sc} = GridGraph.id_to_coord(grid_graph, start_id)
 
     s_offsets =
       Enum.map(s_neighbors, fn nid ->
-        {nr, nc} = Yog.Builder.GridGraph.id_to_coord(grid_graph, nid)
+        {nr, nc} = GridGraph.id_to_coord(grid_graph, nid)
         {nr - sr, nc - sc}
       end)
       |> MapSet.new()
@@ -123,11 +124,11 @@ defmodule AdventOfCode.Y2023.Day10 do
         {row_enclosed, _inside} =
           for c <- 0..(cols - 1), reduce: {0, false} do
             {count, inside} ->
-              id = Yog.Builder.GridGraph.coord_to_id(grid_graph, r, c)
+              id = GridGraph.coord_to_id(grid_graph, r, c)
 
               if MapSet.member?(loop_nodes, id) do
                 # Part of the loop - check if it's a boundary crossing
-                cell = Yog.Model.node(graph, id)
+                cell = Model.node(graph, id)
                 char = if cell.char == "S", do: s_char, else: cell.char
 
                 # Standard scan-line crossing logic: | L J flip whereas F 7 - do not
@@ -156,7 +157,7 @@ defmodule AdventOfCode.Y2023.Day10 do
     to_remove =
       Enum.filter(node_set, fn id ->
         degree =
-          Yog.Model.successors(graph, id)
+          Model.successors(graph, id)
           |> Enum.count(fn {neighbor, _} -> MapSet.member?(node_set, neighbor) end)
 
         degree < 2

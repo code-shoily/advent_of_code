@@ -6,7 +6,7 @@ defmodule AdventOfCode.Y2022.Day12 do
   Tags: graph graph-traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias Yog.Builder.Grid
+  alias Yog.Builder.{Grid, GridGraph}
   alias Yog.Pathfinding.Dijkstra
   alias Yog.Transform
 
@@ -22,8 +22,8 @@ defmodule AdventOfCode.Y2022.Day12 do
 
     {sr, sc} = start_pos
     {er, ec} = end_pos
-    start_id = Yog.Builder.GridGraph.coord_to_id(builder, sr, sc)
-    end_id = Yog.Builder.GridGraph.coord_to_id(builder, er, ec)
+    start_id = GridGraph.coord_to_id(builder, sr, sc)
+    end_id = GridGraph.coord_to_id(builder, er, ec)
 
     # Part 1 and Part 2 are computed in parallel
     task_1 =

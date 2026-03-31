@@ -42,15 +42,15 @@ defmodule AdventOfCode.Helpers.Generator do
   end
 
   defp create_file(path, content) do
-    if !File.exists?(path) do
+    if File.exists?(path) do
+      {:exists, path}
+    else
       path |> Path.dirname() |> File.mkdir_p!()
 
       case File.write(path, content) do
         :ok -> {:ok, path}
         {:error, reason} -> {:error, path, reason}
       end
-    else
-      {:exists, path}
     end
   end
 
@@ -76,7 +76,9 @@ defmodule AdventOfCode.Helpers.Generator do
   end
 
   defp create_input_file(path, year, day) do
-    if !File.exists?(path) do
+    if File.exists?(path) do
+      {:exists, path}
+    else
       path |> Path.dirname() |> File.mkdir_p!()
 
       case fetch_cookie(year, day) do
@@ -89,8 +91,6 @@ defmodule AdventOfCode.Helpers.Generator do
         {:error, reason} ->
           {:error, path, reason}
       end
-    else
-      {:exists, path}
     end
   end
 
