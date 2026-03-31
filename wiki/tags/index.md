@@ -23,7 +23,6 @@
 | [count](count.md) | 5 |
 | [data-modelling](data-modelling.md) | 1 |
 | [date-time](date-time.md) | 1 |
-| [deterministic](deterministic.md) | 1 |
 | [digraph](digraph.md) | 1 |
 | [disjoint-set](disjoint-set.md) | 2 |
 | [double-parse](double-parse.md) | 1 |
@@ -82,7 +81,7 @@
 | [range](range.md) | 4 |
 | [recursion](recursion.md) | 7 |
 | [reduction](reduction.md) | 8 |
-| [refactor](refactor.md) | 2 |
+| [refactor](refactor.md) | 1 |
 | [regex](regex.md) | 5 |
 | [revisit](revisit.md) | 3 |
 | [rotation](rotation.md) | 3 |

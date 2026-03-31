@@ -161,6 +161,7 @@
 | 2023 | [16](https://adventofcode.com/2023/day/16) | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | [grid](tags/grid.md), [memoization](tags/memoization.md) | [day_16.ex](../lib/2023/day_16.ex) |
 | 2023 | [18](https://adventofcode.com/2023/day/18) | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) | [geometry](tags/geometry.md) | [day_18.ex](../lib/2023/day_18.ex) |
 | 2023 | [19](https://adventofcode.com/2023/day/19) | [Aplenty](https://adventofcode.com/2023/day/19) | [op-code](tags/op-code.md), [parse-heavy](tags/parse-heavy.md) | [day_19.ex](../lib/2023/day_19.ex) |
+| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | [graph](tags/graph.md), [min-cut](tags/min-cut.md) | [day_25.ex](../lib/2023/day_25.ex) |
 
 ## 💀 XL
 
@@ -177,5 +178,4 @@
 | 2023 | [12](https://adventofcode.com/2023/day/12) | [Hot Springs](https://adventofcode.com/2023/day/12) | [memoization](tags/memoization.md), [vector](tags/vector.md) | [day_12.ex](../lib/2023/day_12.ex) |
 | 2023 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | [stack](tags/stack.md), [range](tags/range.md), [not-fast-enough](tags/not-fast-enough.md) | [day_22.ex](../lib/2023/day_22.ex) |
 | 2023 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | [graph](tags/graph.md), [longest-path](tags/longest-path.md) | [day_23.ex](../lib/2023/day_23.ex) |
-| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | [graph](tags/graph.md), [min-cut](tags/min-cut.md), [deterministic](tags/deterministic.md), [refactor](tags/refactor.md) | [day_25.ex](../lib/2023/day_25.ex) |
 

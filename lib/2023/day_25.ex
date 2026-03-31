@@ -2,8 +2,8 @@ defmodule AdventOfCode.Y2023.Day25 do
   @moduledoc """
   --- Day 25: Snowverload ---
   Problem Link: https://adventofcode.com/2023/day/25
-  Difficulty: xl
-  Tags: graph min-cut deterministic refactor
+  Difficulty: l
+  Tags: graph min-cut
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.Labeled
@@ -52,4 +52,3 @@ defmodule AdventOfCode.Y2023.Day25 do
     end)
   end
 end
-

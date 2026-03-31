@@ -11,4 +11,4 @@
 | 2022 | [12](https://adventofcode.com/2022/day/12) | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | 🟠 | [graph-traversal](graph-traversal.md) | [day_12.ex](../../lib/2022/day_12.ex) |
 | 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | 💀 | [bfs](bfs.md), [grid](grid.md) | [day_10.ex](../../lib/2023/day_10.ex) |
 | 2023 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | 💀 | [longest-path](longest-path.md) | [day_23.ex](../../lib/2023/day_23.ex) |
-| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 💀 | [min-cut](min-cut.md), [deterministic](deterministic.md), [refactor](refactor.md) | [day_25.ex](../../lib/2023/day_25.ex) |
+| 2023 | [25](https://adventofcode.com/2023/day/25) | [Snowverload](https://adventofcode.com/2023/day/25) | 🔴 | [min-cut](min-cut.md) | [day_25.ex](../../lib/2023/day_25.ex) |
