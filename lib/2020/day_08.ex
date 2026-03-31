@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day08 do
   @moduledoc """
   --- Day 8: Handheld Halting ---
   Problem Link: https://adventofcode.com/2020/day/8
+  Difficulty: s
+  Tags: emulation recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

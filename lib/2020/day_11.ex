@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day11 do
   @moduledoc """
   --- Day 11: Seating System ---
   Problem Link: https://adventofcode.com/2020/day/11
+  Difficulty: m
+  Tags: grid flood-fill concurrency
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

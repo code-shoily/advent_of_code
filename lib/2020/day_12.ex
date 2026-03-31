@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day12 do
   @moduledoc """
   --- Day 12: Rain Risk ---
   Problem Link: https://adventofcode.com/2020/day/12
+  Difficulty: s
+  Tags: geometry2d rotation walk
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day05 do
   @moduledoc """
   --- Day 5: Binary Boarding ---
   Problem Link: https://adventofcode.com/2020/day/5
+  Difficulty: xs
+  Tags: binary-space partitioning walk
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

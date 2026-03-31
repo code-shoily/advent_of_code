@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day25 do
   @moduledoc """
   --- Day 25: Combo Breaker ---
   Problem Link: https://adventofcode.com/2020/day/25
+  Difficulty: s
+  Tags: modular-arithmetic number-theory
   Tweet: https://twitter.com/mafinar/status/1343609407201042436
   """
   def input, do: [14_222_596, 4_057_428]

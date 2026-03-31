@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day23 do
   @moduledoc """
   --- Day 23: Crab Cups ---
   Problem Link: https://adventofcode.com/2020/day/23
+  Difficulty: l
+  Tags: linked-list circular-linked-list half-done
   """
   def input, do: "467528193"
   @part_1_limit 100

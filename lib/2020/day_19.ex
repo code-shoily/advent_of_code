@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day19 do
   @moduledoc """
   --- Day 19: Monster Messages ---
   Problem Link: https://adventofcode.com/2020/day/19
+  Difficulty: l
+  Tags: regex recursion pattern-matching
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day18 do
   @moduledoc """
   --- Day 18: Operation Order ---
   Problem Link: https://adventofcode.com/2020/day/18
+  Difficulty: m
+  Tags: parser recursion operator-precedence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

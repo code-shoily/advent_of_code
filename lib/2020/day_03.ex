@@ -2,6 +2,8 @@ defmodule AdventOfCode.Y2020.Day03 do
   @moduledoc """
   --- Day 3: Toboggan Trajectory ---
   Problem Link: https://adventofcode.com/2020/day/3
+  Difficulty: xs
+  Tags: grid walk
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}
