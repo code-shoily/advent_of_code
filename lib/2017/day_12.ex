@@ -3,71 +3,45 @@ defmodule AdventOfCode.Y2017.Day12 do
   --- Day 12: Digital Plumber ---
   Problem Link: https://adventofcode.com/2017/day/12
   Difficulty: s
-  Tags: disjoint-set
+  Tags: graph connectivity
   """
-  alias AdventOfCode.Algorithms.DisjointSet
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Connectivity
+  alias Yog.Traversal
 
   def input, do: InputReader.read_from_file(2017, 12)
 
   def run(input \\ input()) do
-    disjoint_set = input |> parse() |> create_disjoint_set()
-    nodes = Map.keys(disjoint_set.parents)
+    graph = parse(input)
 
-    {run_1(disjoint_set, nodes), run_2(disjoint_set, nodes)}
+    {run_1(graph), run_2(graph)}
   end
 
-  defp run_1(disjoint_set, nodes) do
-    disjoint_set
-    |> find_connections_for(nodes, 0)
-    |> length()
-  end
-
-  defp run_2(disjoint_set, nodes) do
-    disjoint_set
-    |> find_groups(nodes)
+  defp run_1(graph) do
+    # Size of the connected component containing node 0
+    graph
+    |> Traversal.walk(0, :breadth_first)
     |> Enum.count()
   end
 
-  defp find_connections_for(disjoint_set, nodes, node) do
-    {target_parent, disjoint_set} = DisjointSet.find(disjoint_set, node)
-
-    nodes
-    |> Enum.reduce({[], disjoint_set}, fn x, {lst, set} ->
-      case DisjointSet.find(set, x) do
-        {^target_parent, new_set} -> {[x | lst], new_set}
-        {_, new_set} -> {lst, new_set}
-      end
-    end)
-    |> elem(0)
-  end
-
-  defp create_disjoint_set(input) do
-    disjoint_set = DisjointSet.new(Enum.count(input))
-
-    input
-    |> Enum.reduce(disjoint_set, fn {node, conns}, acc ->
-      Enum.reduce(conns, acc, fn y, s ->
-        DisjointSet.union(s, node, y)
-      end)
-    end)
-  end
-
-  defp find_groups(disj_set, nodes) do
-    nodes
-    |> Enum.reduce({MapSet.new(), disj_set}, fn x, {nodes, set} ->
-      {parent, new_set} = DisjointSet.find(set, x)
-      {MapSet.put(nodes, parent), new_set}
-    end)
-    |> elem(0)
+  defp run_2(graph) do
+    # Number of connected components in the graph
+    graph
+    |> Connectivity.connected_components()
+    |> Enum.count()
   end
 
   def parse(data \\ input()) do
     data
     |> Transformers.lines()
-    |> Map.new(fn line ->
+    |> Enum.reduce(Yog.undirected(), fn line, graph ->
       [node, connections] = line |> String.split(" <-> ")
-      {String.to_integer(node), Transformers.int_words(connections, ", ")}
+      u = String.to_integer(node)
+      dests = Transformers.int_words(connections, ", ")
+
+      Enum.reduce(dests, graph, fn v, acc ->
+        Yog.add_edge_ensure(acc, u, v, 1, nil)
+      end)
     end)
   end
 end
