@@ -3,100 +3,81 @@ defmodule AdventOfCode.Y2022.Day12 do
   --- Day 12: Hill Climbing Algorithm ---
   Problem Link: https://adventofcode.com/2022/day/12
   Difficulty: m
-  Tags: graph graph-traversal slow needs-improvement
+  Tags: graph graph-traversal
   """
-  alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Builder.Grid
+  alias Yog.Pathfinding.Dijkstra
+  alias Yog.Transform
 
   def input, do: InputReader.read_from_file(2022, 12)
 
   def run(input \\ input()) do
-    {map, source, destination} = parse(input)
-    lowest_points = Enum.map(Enum.filter(map, fn {_, v} -> v == ?a end), &elem(&1, 0))
+    {grid, start_pos, end_pos} = parse(input)
 
-    graph = to_digraph(map)
-    solve_1 = Task.async(fn -> run_1(graph, source, destination) end)
-    solve_2 = Task.async(fn -> run_2(graph, lowest_points, destination) end)
+    # Hill-climbing rule: can only step to a cell at most 1 unit higher,
+    # but can drop any distance.
+    builder = Grid.from_2d_list(grid, :directed, fn from, to -> to - from <= 1 end)
+    graph = Grid.to_graph(builder)
 
-    {Task.await(solve_1, :infinity), Task.await(solve_2, :infinity)}
-  end
+    {sr, sc} = start_pos
+    {er, ec} = end_pos
+    start_id = Yog.Builder.GridGraph.coord_to_id(builder, sr, sc)
+    end_id = Yog.Builder.GridGraph.coord_to_id(builder, er, ec)
 
-  def parse(data \\ input()) do
-    map =
-      data
-      |> Transformers.lines()
-      |> Enum.map(&String.graphemes/1)
-      |> Grid.grid2d(fn char -> :binary.first(char) end)
-
-    source = elem(Enum.find(map, fn {_, v} -> v == ?S end), 0)
-    destination = elem(Enum.find(map, fn {_, v} -> v == ?E end), 0)
-    map = %{map | source => ?a, destination => ?z}
-
-    {map, source, destination}
-  end
-
-  defp run_1(graph, source, destination),
-    do: length(:digraph.get_short_path(graph, source, destination)) - 1
-
-  defp run_2(graph, sources, destination) do
-    source_map = sources |> Enum.with_index() |> Map.new(fn {k, _} -> {k, :empty} end)
-
-    sources
-    |> Enum.reduce(source_map, fn {_, _} = point, acc ->
-      case source_map[point] do
-        :empty ->
-          get_and_update_shortest_path(graph, point, destination, acc)
-
-        _ ->
-          acc
-      end
-    end)
-    |> Enum.min_by(fn {_, v} -> v end)
-    |> elem(1)
-  end
-
-  defp to_digraph(grid) do
-    graph = :digraph.new()
-
-    Enum.reduce(grid, graph, fn {{x, y}, _}, _ ->
-      [{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}]
-      |> Enum.filter(&Map.has_key?(grid, &1))
-      |> Enum.map(&add_edge(&1, grid, x, y))
-      |> Enum.reject(&is_nil/1)
-      |> Enum.each(fn {v1, v2} ->
-        :digraph.add_vertex(graph, v1)
-        :digraph.add_vertex(graph, v2)
-        :digraph.add_edge(graph, v1, v2)
+    # Part 1 and Part 2 are computed in parallel
+    task_1 =
+      Task.async(fn ->
+        case Dijkstra.shortest_path(graph, start_id, end_id) do
+          {:ok, path} -> path.weight
+          _ -> :no_path
+        end
       end)
 
-      graph
-    end)
+    task_2 =
+      Task.async(fn ->
+        # Find the shortest path from any node with elevation 0 ('a') to 'E'.
+        # Efficient approach: transpose the graph and find distances FROM E to ALL nodes.
+        transposed = Transform.transpose(graph)
+        distances = Dijkstra.single_source_distances(transposed, end_id)
+
+        # Elevation is stored as node data in the grid-builder graph
+        graph.nodes
+        |> Enum.filter(fn {id, elevation} -> elevation == 0 and Map.has_key?(distances, id) end)
+        |> Enum.map(fn {id, _} -> Map.get(distances, id) end)
+        |> Enum.min()
+      end)
+
+    {Task.await(task_1), Task.await(task_2)}
   end
 
-  defp get_and_update_shortest_path(graph, point, destination, paths) do
-    case :digraph.get_short_path(graph, point, destination) do
-      false ->
-        paths
+  defp parse(data) do
+    lines = Transformers.lines(data)
+    grid = Enum.map(lines, &String.graphemes/1)
 
-      path ->
-        update_path(path, paths)
-    end
+    {start_pos, end_pos} = find_points(grid)
+
+    elevations =
+      Enum.map(grid, fn row ->
+        Enum.map(row, fn
+          "S" -> 0
+          "E" -> 25
+          char -> :binary.first(char) - ?a
+        end)
+      end)
+
+    {elevations, start_pos, end_pos}
   end
 
-  defp update_path(path, state) do
-    path
-    |> Enum.with_index(1)
-    |> Enum.reduce(state, fn {{_, _} = x, p}, acc ->
-      case Map.get(acc, x) do
-        :empty -> Map.put(acc, x, length(path) - p)
-        _ -> acc
+  defp find_points(grid) do
+    points =
+      for {row_list, r} <- Enum.with_index(grid),
+          {char, c} <- Enum.with_index(row_list),
+          char in ["S", "E"],
+          into: %{} do
+        {char, {r, c}}
       end
-    end)
-  end
 
-  defp add_edge(point, grid, x, y) do
-    if not (grid[point] - grid[{x, y}] > 1) do
-      {{x, y}, point}
-    end
+    {points["S"], points["E"]}
   end
 end

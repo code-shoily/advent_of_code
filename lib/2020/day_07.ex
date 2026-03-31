@@ -6,37 +6,87 @@ defmodule AdventOfCode.Y2020.Day07 do
   Tags: graph-traversal digraph recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Builder.Labeled
+  alias Yog.Transform
+  alias Yog.Traversal.Implicit
 
   def input, do: InputReader.read_from_file(2020, 7)
 
   def run(input \\ input()) do
-    input = Map.new(Transformers.lines(input), &parse_rule/1)
-    {ancestor(graph(input)), descendant(input) - 1}
+    builder = parse(input)
+    {solve_part_1(builder), solve_part_2(builder)}
   end
 
-  def parse_rule(rule) do
-    line = Regex.named_captures(~r/(?<src>.+) bags contain (?<bags>.+)\./, rule)
+  defp solve_part_1(builder) do
+    {:ok, shiny_gold_id} = Labeled.get_id(builder, "shiny gold")
+    graph = Labeled.to_graph(builder)
+    # Transpose to find containers (walking from gold bag outwards)
+    transposed = Transform.transpose(graph)
 
-    {line["src"],
-     Regex.split(~r/bags?,?/, line["bags"], trim: true)
-     |> Enum.map(fn s ->
-       match = Regex.named_captures(~r/(?<n>no|\d+) (?<bag>.+)/, String.trim(s))
-       {(match["n"] == "no" && 0) || String.to_integer(match["n"]), match["bag"]}
-     end)}
+    Implicit.implicit_fold(
+      from: shiny_gold_id,
+      using: :breadth_first,
+      initial: MapSet.new(),
+      successors_of: fn id ->
+        # Use transposed graph to find which bags can contain this one
+        transposed
+        |> Yog.successors(id)
+        |> Enum.map(fn {nid, _} -> nid end)
+      end,
+      with: fn acc, node_id, _meta ->
+        {:continue, MapSet.put(acc, node_id)}
+      end
+    )
+    |> MapSet.size()
+    |> Kernel.-(1)
   end
 
-  defp graph(v), do: Enum.reduce(v, :digraph.new(), &connect(&2, &1))
+  defp solve_part_2(builder) do
+    {:ok, shiny_gold_id} = Labeled.get_id(builder, "shiny gold")
+    graph = Labeled.to_graph(builder)
 
-  defp connect(g, {vi, connections}) do
-    Enum.each(connections, fn {n, vf} ->
-      :digraph.add_edge(g, :digraph.add_vertex(g, vi), :digraph.add_vertex(g, vf), n)
+    count_bags_inside(graph, shiny_gold_id)
+  end
+
+  defp count_bags_inside(graph, node_id) do
+    # Successors are the bags contained within this one
+    successors = Yog.successors(graph, node_id)
+
+    Enum.reduce(successors, 0, fn {child_id, count}, acc ->
+      # Each child bag plus all the bags inside it
+      acc + count + count * count_bags_inside(graph, child_id)
     end)
-
-    g
   end
 
-  defp ancestor(g, v \\ "shiny gold"), do: length(:digraph_utils.reaching([v], g)) - 1
+  defp parse(data) do
+    lines = Transformers.lines(data)
 
-  defp descendant(g, v \\ "shiny gold"),
-    do: Enum.reduce(g[v] || [], 1, fn {n, v}, num -> num + n * descendant(g, v) end)
+    Enum.reduce(lines, Labeled.directed(), fn line, builder ->
+      # Example: "vibrant plum bags contain 5 faded blue bags, 6 dotted black bags."
+      [parent, contents] = String.split(line, " bags contain ")
+
+      contents
+      |> String.replace(".", "")
+      |> String.split(", ")
+      |> Enum.reduce(builder, fn part, acc ->
+        case parse_content_part(part) do
+          {count, child} when count > 0 -> Labeled.add_edge(acc, parent, child, count)
+          _ -> acc
+        end
+      end)
+    end)
+  end
+
+  defp parse_content_part(part) do
+    case String.split(part, " ") do
+      [count_str, adj, color | _rest] ->
+        case Integer.parse(count_str) do
+          {count, _} -> {count, "#{adj} #{color}"}
+          :error -> {0, ""}
+        end
+
+      _ ->
+        {0, ""}
+    end
+  end
 end
