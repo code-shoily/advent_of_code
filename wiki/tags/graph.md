@@ -10,6 +10,7 @@
 | 2016 | [24](https://adventofcode.com/2016/day/24) | [Air Duct Spelunking](https://adventofcode.com/2016/day/24) | 🟠 | [shortest-path](shortest-path.md), [tsp](tsp.md), [grid](grid.md), [matrix](matrix.md) | [day_24.ex](../../lib/2016/day_24.ex) |
 | 2017 | [7](https://adventofcode.com/2017/day/7) | [Recursive Circus](https://adventofcode.com/2017/day/7) | 🟠 | [tree](tree.md) | [day_07.ex](../../lib/2017/day_07.ex) |
 | 2017 | [12](https://adventofcode.com/2017/day/12) | [Digital Plumber](https://adventofcode.com/2017/day/12) | 🟡 | [connectivity](connectivity.md) | [day_12.ex](../../lib/2017/day_12.ex) |
+| 2017 | [14](https://adventofcode.com/2017/day/14) | [Disk Defragmentation](https://adventofcode.com/2017/day/14) | 🟠 | [hash](hash.md) | [day_14.ex](../../lib/2017/day_14.ex) |
 | 2018 | [7](https://adventofcode.com/2018/day/7) | [The Sum of Its Parts](https://adventofcode.com/2018/day/7) | 🟠 | [topological-sort](topological-sort.md), [simulation](simulation.md) | [day_07.ex](../../lib/2018/day_07.ex) |
 | 2018 | [25](https://adventofcode.com/2018/day/25) | [Four-Dimensional Adventure](https://adventofcode.com/2018/day/25) | 🟠 | [connectivity](connectivity.md), [constellation](constellation.md) | [day_25.ex](../../lib/2018/day_25.ex) |
 | 2019 | [6](https://adventofcode.com/2019/day/6) | [Universal Orbit Map](https://adventofcode.com/2019/day/6) | 🟢 | [routing](routing.md) | [day_06.ex](../../lib/2019/day_06.ex) |
