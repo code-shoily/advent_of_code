@@ -20,5 +20,5 @@
   "topo": {:hex, :topo, "1.0.3", "8073215c392ad0aced6505a5a281da4af613f5608f6db826635b96fe7a2f4240", [:mix], [{:geo, "~> 3.1 or ~> 4.0", [hex: :geo, repo: "hexpm", optional: false]}, {:seg_seg, "~> 1.0", [hex: :seg_seg, repo: "hexpm", optional: false]}, {:vector, "~> 1.0", [hex: :vector, repo: "hexpm", optional: false]}], "hexpm", "d37720895ec08848d33960deb94f00254834e0a2398618461b800f142c84577c"},
   "unicode_util_compat": {:hex, :unicode_util_compat, "0.7.1", "a48703a25c170eedadca83b11e88985af08d35f37c6f664d6dcfb106a97782fc", [:rebar3], [], "hexpm", "b3a917854ce3ae233619744ad1e0102e05673136776fb2fa76234f3e03b23642"},
   "vector": {:hex, :vector, "1.1.0", "0789b5e00e9c551d8d5880acab9a8f44ed46690d083af397018bf0c7f30c1092", [:mix], [], "hexpm", "48b0a800ec88e55b12c689b09100e4c9ba41ea1befb459221c085a4e70040696"},
-  "yog_ex": {:git, "https://github.com/code-shoily/yog_ex.git", "74dd8f69469cb4cb2fe2c197181b2c3d2188b2f3", [branch: "main"]},
+  "yog_ex": {:git, "https://github.com/code-shoily/yog_ex.git", "d07708e295baeeb1485f6eb43f16b934bd90eb57", [branch: "main"]},
 }
