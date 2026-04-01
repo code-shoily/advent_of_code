@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day21 do
   --- Day 21: Monkey Math ---
   Problem Link: https://adventofcode.com/2022/day/21
   Difficulty: s
-  Tags: erlang op-code large-number arithmetic
+  Tags: op-code large-number arithmetic
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -15,17 +15,11 @@ defmodule AdventOfCode.Y2022.Day24 do
 
     inner_w = w - 2
     inner_h = h - 2
-    # LCM of dimensions for blizzard cycle
-    # For AoC 120x25 or similar, LCM is small enough
     cycle = lcm(inner_w, inner_h)
 
     start_pos = {1, 0}
     goal_pos = {inner_w, h - 1}
-
-    # Part 1: Start to Goal
     {:ok, t1} = solve_path(start_pos, goal_pos, 0, up, down, left, right, w, h, cycle)
-
-    # Part 2: Back to Start, then back to Goal
     {:ok, t2} = solve_path(goal_pos, start_pos, t1, up, down, left, right, w, h, cycle)
     {:ok, t3} = solve_path(start_pos, goal_pos, t2, up, down, left, right, w, h, cycle)
 
