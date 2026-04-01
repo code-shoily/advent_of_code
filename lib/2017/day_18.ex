@@ -52,7 +52,7 @@ defmodule AdventOfCode.Y2017.Day18 do
     s0 = %{s0 | queue: s0.queue ++ out1}
     new_sent_count = sent_count + length(out1)
 
-    if (out0 == [] and out1 == [] and is_deadlock(s0, s1, stat0, stat1)) or
+    if (out0 == [] and out1 == [] and deadlock?(s0, s1, stat0, stat1)) or
          (stat0 == :halted and stat1 == :halted) do
       new_sent_count
     else
@@ -60,7 +60,7 @@ defmodule AdventOfCode.Y2017.Day18 do
     end
   end
 
-  defp is_deadlock(s0, s1, stat0, stat1) do
+  defp deadlock?(s0, s1, stat0, stat1) do
     (stat0 == :blocked and s0.queue == [] and (stat1 == :blocked and s1.queue == [])) or
       (stat0 == :halted and stat1 == :blocked and s1.queue == []) or
       (stat1 == :halted and stat0 == :blocked and s0.queue == [])
