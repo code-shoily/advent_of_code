@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day15 do
   --- Day 15: Science for Hungry People ---
   Problem Link: https://adventofcode.com/2015/day/15
   Difficulty: m
-  Tags: quadratic-time not-fast-enough sequence needs-improvement
+  Tags: quadratic-time sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,139 +3,139 @@ defmodule AdventOfCode.Y2023.Day22 do
   --- Day 22: Sand Slabs ---
   Problem Link: https://adventofcode.com/2023/day/22
   Difficulty: xl
-  Tags: stack range not-fast-enough
+  Tags: stack range
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2023, 22)
 
   def run(input \\ input()) do
-    input
-    |> parse()
-    |> supports()
-    |> then(&{length(free(&1)), disintegrate(&1)})
-  end
+    bricks = parse(input) |> Enum.sort_by(fn {_, _, _, z1.._//_} -> z1 end)
 
-  def parse(data \\ input()) do
-    for {line, i} <- Enum.with_index(Transformers.lines(data)) do
-      line
-      |> String.split([",", "~"], trim: true)
-      |> Enum.map(&String.to_integer/1)
-      |> Enum.chunk_every(3)
-      |> Enum.zip_with(fn [a, b] -> Range.new(min(a, b), max(a, b)) end)
-      |> List.to_tuple()
-      |> then(fn {x, y, z} -> {to_alpha(i), x, y, z} end)
-    end
-  end
+    # Settlement process using a heightmap
+    # supports: map of brick_id -> list of ids it supports (is_below)
+    # supported_by: map of brick_id -> list of ids that support it (is_above)
+    {supports, supported_by, brick_ids} = settle(bricks)
 
-  defp supports(data), do: data |> drop() |> support()
-  defp to_alpha(i), do: to_alpha(i, [])
-  defp to_alpha(i, acc) when i < 26, do: to_string([rem(i, 26) + 65 | acc])
-  defp to_alpha(i, acc), do: to_alpha(div(i, 26) - 1, [rem(i, 26) + 65 | acc])
+    # Part 1: Count bricks that can be disintegrated safely
+    # A brick is safe if every brick it supports has at least one other supporter.
+    part1_count =
+      brick_ids
+      |> Enum.count(fn id ->
+        up_bricks = Map.get(supports, id, [])
 
-  defp drop(bricks),
-    do:
-      bricks
-      |> Enum.sort_by(fn {_, _, _, z1.._//_} -> z1 end)
-      |> drop([])
-
-  defp drop([], settled), do: settled
-
-  defp drop([{_, _, _, 1.._//_} = brick | bricks], settled),
-    do: drop(bricks, [brick | settled])
-
-  defp drop([{id, ax, ay, az} | bricks], settled) do
-    {_, _, _, _..bz2//_} =
-      Enum.filter(settled, fn {_, bx, by, _} ->
-        not (Range.disjoint?(ax, bx) or
-               Range.disjoint?(ay, by))
-      end)
-      |> Enum.max_by(
-        fn {_, _, _, _..bz2//_} -> bz2 end,
-        fn -> {nil, nil, nil, 0..0} end
-      )
-
-    az1 = bz2 + 1
-    az2 = bz2 + Range.size(az)
-    brick = {id, ax, ay, az1..az2}
-
-    drop(bricks, [brick | settled])
-  end
-
-  defp support(bricks), do: support(bricks, bricks, %{})
-  defp support([], _, supports), do: supports
-
-  defp support([{_, ax, ay, az1.._//_} = current | rest], bricks, supports) do
-    others =
-      Enum.filter(bricks, fn {_, bx, by, _..bz2//_} ->
-        bz2 == az1 - 1 and
-          not (Range.disjoint?(ax, bx) or
-                 Range.disjoint?(ay, by))
+        Enum.all?(up_bricks, fn up_id ->
+          length(Map.get(supported_by, up_id, [])) > 1
+        end)
       end)
 
-    supports
-    |> Map.update(
-      current,
-      %{is_above: others, is_below: []},
-      fn %{is_above: above} = existing ->
-        %{existing | is_above: others ++ above}
-      end
-    )
-    |> then(fn supports ->
-      Enum.reduce(others, supports, fn other, supports ->
-        Map.update(
-          supports,
-          other,
-          %{is_above: [], is_below: [current]},
-          fn %{is_below: below} = existing ->
-            %{existing | is_below: [current | below]}
-          end
-        )
+    # Part 2: Sum of all bricks that would fall for each disintegrated brick
+    part2_sum =
+      Enum.map(brick_ids, fn id ->
+        count_falling_bricks(id, supports, supported_by)
       end)
-    end)
-    |> then(fn supports -> support(rest, bricks, supports) end)
+      |> Enum.sum()
+
+    {part1_count, part2_sum}
   end
 
-  defp free(supports) do
-    supports
-    |> Enum.filter(fn {_, %{is_above: is_above}} -> length(is_above) == 1 end)
-    |> Enum.flat_map(fn {_, %{is_above: is_above}} -> is_above end)
-    |> MapSet.new()
-    |> then(fn required ->
-      supports
-      |> Map.keys()
-      |> MapSet.new()
-      |> MapSet.difference(required)
-      |> Enum.to_list()
+  def parse(data) do
+    data
+    |> Transformers.lines()
+    |> Enum.with_index()
+    |> Enum.map(fn {line, i} ->
+      [x1, y1, z1, x2, y2, z2] =
+        line
+        |> String.split([",", "~"], trim: true)
+        |> Enum.map(&String.to_integer/1)
+
+      {i, x1..x2, y1..y2, z1..z2}
     end)
   end
 
-  defp chain(brick, supports), do: chain([brick], supports, MapSet.new())
-  defp chain([], _, acc), do: acc
+  defp settle(bricks) do
+    # height_map: 100-element tuple representing 10x10 grid
+    # Each entry is {z_height, brick_id}
+    # Index is x * 10 + y
+    initial_hm = Tuple.duplicate({0, -1}, 100)
 
-  defp chain([brick | rest], supports, acc) do
-    destroyed =
-      supports[brick].is_below
-      |> Enum.filter(fn above_brick ->
-        below_bricks = supports[above_brick].is_above
+    {_, supports, supported_by, ids} =
+      Enum.reduce(bricks, {initial_hm, %{}, %{}, []}, fn {id, x1..x2//_, y1..y2//_, z1..z2//_},
+                                                         {hm, supports, supported_by, ids} ->
+        # Find maximum height in the footprint
+        max_z =
+          Enum.reduce(x1..x2, 0, fn x, acc_x ->
+            base = x * 10
 
-        length(below_bricks) == 1 or
-          Enum.all?(below_bricks, fn below -> MapSet.member?(acc, below) end)
+            Enum.reduce(y1..y2, acc_x, fn y, acc_y ->
+              max(acc_y, elem(hm, base + y) |> elem(0))
+            end)
+          end)
+
+        # Find unique supporters at exactly max_z
+        supporters =
+          Enum.reduce(x1..x2, [], fn x, acc_x ->
+            base = x * 10
+
+            Enum.reduce(y1..y2, acc_x, fn y, acc_y ->
+              case elem(hm, base + y) do
+                {^max_z, sid} when sid != -1 -> [sid | acc_y]
+                _ -> acc_y
+              end
+            end)
+          end)
+          |> Enum.uniq()
+
+        # Update heightmap with new height and brick id
+        new_z = max_z + Range.size(z1..z2)
+        entry = {new_z, id}
+
+        new_hm =
+          Enum.reduce(x1..x2, hm, fn x, acc_x ->
+            base = x * 10
+
+            Enum.reduce(y1..y2, acc_x, fn y, acc_y ->
+              put_elem(acc_y, base + y, entry)
+            end)
+          end)
+
+        # Update relationships
+        new_supported_by = Map.put(supported_by, id, supporters)
+
+        new_supports =
+          Enum.reduce(supporters, supports, fn sid, acc ->
+            Map.update(acc, sid, [id], &[id | &1])
+          end)
+
+        {new_hm, new_supports, new_supported_by, [id | ids]}
       end)
 
-    destroyed
-    |> MapSet.new()
-    |> MapSet.union(acc)
-    |> then(fn acc -> chain(rest ++ destroyed, supports, acc) end)
+    {supports, supported_by, ids}
   end
 
-  defp disintegrate(supports) do
-    for brick <- Map.keys(supports), reduce: 0 do
-      acc ->
-        brick
-        |> chain(supports)
-        |> MapSet.size()
-        |> Kernel.+(acc)
-    end
+  defp count_falling_bricks(start_id, supports, supported_by) do
+    in_degrees =
+      Enum.reduce(supported_by, %{}, fn {id, supporters}, acc ->
+        Map.put(acc, id, length(supporters))
+      end)
+
+    do_count_falling([start_id], supports, in_degrees, -1)
+  end
+
+  defp do_count_falling([], _supports, _in_degrees, count), do: count
+
+  defp do_count_falling([id | rest], supports, in_degrees, count) do
+    {next_ids, new_in_degrees} =
+      Enum.reduce(Map.get(supports, id, []), {[], in_degrees}, fn next_id, {acc_ids, acc_deg} ->
+        deg = acc_deg[next_id] - 1
+
+        if deg == 0 do
+          {[next_id | acc_ids], Map.put(acc_deg, next_id, 0)}
+        else
+          {acc_ids, Map.put(acc_deg, next_id, deg)}
+        end
+      end)
+
+    do_count_falling(rest ++ next_ids, supports, new_in_degrees, count + 1)
   end
 end

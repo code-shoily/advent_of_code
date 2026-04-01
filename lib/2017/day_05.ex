@@ -3,33 +3,51 @@ defmodule AdventOfCode.Y2017.Day05 do
   --- Day 5: A Maze of Twisty Trampolines, All Alike ---
   Problem Link: https://adventofcode.com/2017/day/5
   Difficulty: s
-  Tags: not-fast-enough random-access
+  Tags: atomics random-access
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   def input, do: InputReader.read_from_file(2017, 5)
 
   def run(input \\ input()) do
-    {run_1(input), run_2(input)}
+    parsed = input |> Transformers.lines() |> Enum.map(&String.to_integer/1)
+
+    t1 =
+      Task.async(fn ->
+        # Clean start for the process dictionary
+        Enum.with_index(parsed) |> Enum.each(fn {v, i} -> :erlang.put(i, v) end)
+        jump_1(0, 0)
+      end)
+
+    t2 =
+      Task.async(fn ->
+        Enum.with_index(parsed) |> Enum.each(fn {v, i} -> :erlang.put(i, v) end)
+        jump_2(0, 0)
+      end)
+
+    {Task.await(t1, :infinity), Task.await(t2, :infinity)}
   end
 
-  def run_1(input), do: input |> parse() |> then(fn _ -> jump_1(0, 0) end)
-  def run_2(input), do: input |> parse() |> then(fn _ -> jump_2(0, 0) end)
+  defp jump_1(pc, steps) do
+    case :erlang.get(pc) do
+      :undefined ->
+        steps
 
-  def parse(input) do
-    input
-    |> Transformers.lines()
-    |> Enum.with_index()
-    |> Enum.each(fn {v, k} -> Process.put(k, String.to_integer(v)) end)
+      offset ->
+        :erlang.put(pc, offset + 1)
+        jump_1(pc + offset, steps + 1)
+    end
   end
 
-  def jump_1(x, steps), do: jump_1(Process.get(x), x, steps)
-  def jump_1(i, _, steps) when is_nil(i), do: steps
-  def jump_1(i, x, steps), do: Process.put(x, i + 1) |> then(fn _ -> jump_1(x + i, steps + 1) end)
+  defp jump_2(pc, steps) do
+    case :erlang.get(pc) do
+      :undefined ->
+        steps
 
-  def jump_2(x, steps), do: jump_2(Process.get(x), x, steps)
-  def jump_2(i, _, steps) when is_nil(i), do: steps
-
-  def jump_2(i, x, steps),
-    do: Process.put(x, (i > 2 && i - 1) || i + 1) |> then(fn _ -> jump_2(x + i, steps + 1) end)
+      offset ->
+        new_val = if offset >= 3, do: offset - 1, else: offset + 1
+        :erlang.put(pc, new_val)
+        jump_2(pc + offset, steps + 1)
+    end
+  end
 end

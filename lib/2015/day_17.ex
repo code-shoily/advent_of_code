@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day17 do
   --- Day 17: No Such Thing as Too Much ---
   Problem Link: https://adventofcode.com/2015/day/17
   Difficulty: s
-  Tags: slow revisit combinatorics
+  Tags: combinatorics
   """
   alias AdventOfCode.Algorithms.Combinatorics
   alias AdventOfCode.Helpers.{InputReader, Transformers}

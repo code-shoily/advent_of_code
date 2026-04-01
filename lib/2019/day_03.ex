@@ -3,13 +3,16 @@ defmodule AdventOfCode.Y2019.Day03 do
   --- Day 3: Crossed Wires ---
   Problem Link: https://adventofcode.com/2019/day/3
   Difficulty: xs
-  Tags: grid set not-fast-enough
+  Tags: grid set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
+  alias Yog.Builder.Grid
   import AdventOfCode.Algorithms.Geometry, only: [manhattan_distance: 2]
 
-  @origin {0, 0}
+  @cols 30_000
+  @offset 15_000
+  @origin_id Grid.coord_to_id(@offset, @offset, @cols)
 
   def input, do: InputReader.read_from_file(2019, 3)
 
@@ -19,29 +22,32 @@ defmodule AdventOfCode.Y2019.Day03 do
   end
 
   def run_1(input) do
-    input
-    |> Enum.map(&move(&1, @origin, []))
-    |> nearest_intersection()
+    [wire1, wire2] = Enum.map(input, &trace_path/1)
+
+    wire1
+    |> Map.keys()
+    |> MapSet.new()
+    |> MapSet.intersection(MapSet.new(Map.keys(wire2)))
+    |> MapSet.delete(@origin_id)
+    |> Enum.map(fn id ->
+      {x, y} = Grid.id_to_coord(id, @cols)
+      manhattan_distance({@offset, @offset}, {x, y})
+    end)
+    |> Enum.min()
   end
 
   def run_2(input) do
-    input
-    |> Enum.map(fn wire ->
-      wire
-      |> move(@origin, [])
-      |> Enum.dedup()
-      |> calculate_steps(0, %{})
+    [wire1, wire2] = Enum.map(input, &trace_path/1)
+
+    wire1
+    |> Map.keys()
+    |> Enum.reduce(:infinity, fn id, min_steps ->
+      if id != @origin_id and Map.has_key?(wire2, id) do
+        min(min_steps, wire1[id] + wire2[id])
+      else
+        min_steps
+      end
     end)
-    |> then(fn [a, b] ->
-      Map.merge(a, b, fn
-        _, 0, 0 -> :discard
-        _, a, b -> [a, b]
-      end)
-    end)
-    |> Map.filter(fn {_, v} -> is_list(v) end)
-    |> Enum.map(fn {_, steps} -> steps end)
-    |> Enum.min_by(fn [first, second] -> first + second end)
-    |> Enum.sum()
   end
 
   def parse(data) do
@@ -60,48 +66,26 @@ defmodule AdventOfCode.Y2019.Day03 do
     |> then(fn {dir, val} -> {dir, String.to_integer(val)} end)
   end
 
-  defp move([instruction | []], current, results) do
-    Enum.concat(
-      results,
-      points_between(current, compute_next(current, instruction))
-    )
+  defp trace_path(instructions) do
+    {_, _, _, path} =
+      Enum.reduce(instructions, {@offset, @offset, 0, %{@origin_id => 0}}, fn {dir, dist},
+                                                                              {r, c, steps, acc} ->
+        {dr, dc} = delta(dir)
+
+        Enum.reduce(1..dist, {r, c, steps, acc}, fn _, {curr_r, curr_c, curr_steps, inner_acc} ->
+          nr = curr_r + dr
+          nc = curr_c + dc
+          ns = curr_steps + 1
+          id = Grid.coord_to_id(nr, nc, @cols)
+          {nr, nc, ns, Map.put_new(inner_acc, id, ns)}
+        end)
+      end)
+
+    path
   end
 
-  defp move([instruction | rest], current, results) do
-    next = compute_next(current, instruction)
-
-    move(
-      rest,
-      next,
-      Enum.concat(results, points_between(current, next))
-    )
-  end
-
-  defp compute_next({x, y}, {"L", value}), do: {x - value, y}
-  defp compute_next({x, y}, {"R", value}), do: {x + value, y}
-  defp compute_next({x, y}, {"U", value}), do: {x, y + value}
-  defp compute_next({x, y}, {"D", value}), do: {x, y - value}
-
-  defp points_between({x1, y1}, {x2, y2}) do
-    for x <- x1..x2, y <- y1..y2, do: {x, y}
-  end
-
-  defp nearest_intersection([first, second]) do
-    first
-    |> MapSet.new()
-    |> MapSet.intersection(MapSet.new(second))
-    |> MapSet.delete(@origin)
-    |> Enum.min_by(&manhattan_distance({0, 0}, &1))
-    |> manhattan_distance({0, 0})
-  end
-
-  defp calculate_steps([p], step, results), do: Map.put_new(results, p, step)
-
-  defp calculate_steps([first | rest], 0, %{}) do
-    calculate_steps(rest, 1, %{first => 0})
-  end
-
-  defp calculate_steps([first | rest], step, results) do
-    calculate_steps(rest, step + 1, Map.put_new(results, first, step))
-  end
+  defp delta("U"), do: {-1, 0}
+  defp delta("D"), do: {1, 0}
+  defp delta("L"), do: {0, -1}
+  defp delta("R"), do: {0, 1}
 end

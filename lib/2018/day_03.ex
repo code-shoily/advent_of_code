@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day03 do
   --- Day 3: No Matter How You Slice It ---
   Problem Link: https://adventofcode.com/2018/day/3
   Difficulty: m
-  Tags: grid set not-fast-enough
+  Tags: grid set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -17,10 +17,10 @@ defmodule AdventOfCode.Y2018.Day03 do
 
   def run_1(input) do
     input
-    |> Enum.filter(fn {_, v} -> length(v) > 1 end)
-    |> length()
+    |> Enum.count(fn {_, v} -> length(v) > 1 end)
   end
 
+  @spec run_2(any()) :: any()
   def run_2(input) do
     input
     |> claim_world_view()
@@ -29,12 +29,12 @@ defmodule AdventOfCode.Y2018.Day03 do
     |> elem(0)
   end
 
+  @spec parse(binary()) :: any()
   def parse(input \\ input()) do
     input
     |> Transformers.lines()
     |> Stream.map(&parse_line/1)
     |> Stream.map(&sanitize/1)
-    |> Enum.to_list()
     |> Enum.reduce(%{}, &claim/2)
   end
 

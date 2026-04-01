@@ -3,84 +3,75 @@ defmodule AdventOfCode.Y2015.Day18 do
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
   Difficulty: m
-  Tags: grid map not-fast-enough
+  Tags: grid map cellular-automata
   """
-  alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
+  @rows 100
+  @cols 100
+  @corners [{0, 0}, {0, 99}, {99, 0}, {99, 99}]
+
   def input, do: InputReader.read_from_file(2015, 18)
-  @repetitions 1..100
-  @last_index 99
-  @corners [{0, 0}, {0, @last_index}, {@last_index, 0}, {@last_index, @last_index}]
 
   def run(input \\ input()) do
-    grid = parse(input)
+    on_set = parse(input)
 
-    solution_1 = Task.async(fn -> steps(grid, &state/3) end)
+    task_1 = Task.async(fn -> solve(on_set, false) end)
+    task_2 = Task.async(fn -> solve(on_set, true) end)
 
-    solution_2 =
-      Task.async(fn -> grid |> update_corners() |> steps(&state_with_faulty_corners/3) end)
-
-    {
-      Task.await(solution_1, 10_000),
-      Task.await(solution_2, 10_000)
-    }
+    {Task.await(task_1), Task.await(task_2)}
   end
 
-  def parse(data \\ input()) do
+  def parse(data) do
     data
     |> Transformers.lines()
-    |> Enum.map(&String.graphemes/1)
-    |> Grid.grid2d()
-  end
-
-  defp steps(grid, tx) do
-    @repetitions
-    |> Enum.reduce(grid, fn _, acc -> iterate(acc, tx) end)
-    |> Enum.count(fn {_, light} -> light == "#" end)
-  end
-
-  defp iterate(grid, tx) do
-    Map.new(grid, fn {{x, y}, state} ->
-      tx.(grid, {x, y}, state)
+    |> Enum.with_index()
+    |> Enum.reduce(MapSet.new(), fn {line, r}, acc ->
+      line
+      |> String.graphemes()
+      |> Enum.with_index()
+      |> Enum.reduce(acc, fn {char, c}, inner_acc ->
+        if char == "#", do: MapSet.put(inner_acc, {r, c}), else: inner_acc
+      end)
     end)
   end
 
-  defp state(grid, {x, y}, state) do
-    ons = grid |> get_neighbors({x, y}) |> Enum.count(&(&1 == "#"))
+  defp solve(on_set, corners_sticky?) do
+    on_set = if corners_sticky?, do: MapSet.union(on_set, MapSet.new(@corners)), else: on_set
 
-    state =
-      case state do
-        "#" -> (ons in [2, 3] && "#") || "."
-        "." -> (ons == 3 && "#") || "."
-      end
+    1..100
+    |> Enum.reduce(on_set, fn _, current_on ->
+      # Step 1: Count neighbors for all "interesting" cells
+      neighbor_counts =
+        Enum.reduce(current_on, %{}, fn {r, c}, counts ->
+          Enum.reduce(neighbors(r, c), counts, fn pos, acc ->
+            Map.update(acc, pos, 1, &(&1 + 1))
+          end)
+        end)
 
-    {{x, y}, state}
+      # Step 2: Apply GOL rules
+      new_on =
+        Enum.reduce(neighbor_counts, MapSet.new(), fn {pos, count}, acc ->
+          cond do
+            count == 3 -> MapSet.put(acc, pos)
+            count == 2 and MapSet.member?(current_on, pos) -> MapSet.put(acc, pos)
+            true -> acc
+          end
+        end)
+
+      if corners_sticky?, do: MapSet.union(new_on, MapSet.new(@corners)), else: new_on
+    end)
+    |> MapSet.size()
   end
 
-  defp get_neighbors(grid, {x, y}) do
-    [
-      {x + 1, y},
-      {x - 1, y},
-      {x, y + 1},
-      {x, y - 1},
-      {x + 1, y + 1},
-      {x + 1, y - 1},
-      {x - 1, y - 1},
-      {x - 1, y + 1}
-    ]
-    |> Enum.map(fn coords -> grid[coords] end)
-    |> Enum.reject(&is_nil/1)
-  end
-
-  defp update_corners(grid) do
-    Map.merge(grid, Map.new(@corners, &{&1, "#"}))
-  end
-
-  defp state_with_faulty_corners(grid, {x, y}, state) do
-    case state(grid, {x, y}, state) do
-      {corner, _} when corner in @corners -> {corner, "#"}
-      state -> state
+  defp neighbors(r, c) do
+    for dr <- -1..1,
+        dc <- -1..1,
+        not (dr == 0 and dc == 0),
+        nr = r + dr,
+        nc = c + dc,
+        nr >= 0 and nr < @rows and nc >= 0 and nc < @cols do
+      {nr, nc}
     end
   end
 end
