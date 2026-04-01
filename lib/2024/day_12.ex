@@ -3,14 +3,15 @@ defmodule AdventOfCode.Y2024.Day12 do
   --- Day 12: Garden Groups ---
   Problem Link: https://adventofcode.com/2024/day/12
   Difficulty: m
-  Tags: geometry disjoint-set
+  Tags: geometry2d disjoint-set
   """
-  alias AdventOfCode.Algorithms.DisjointSet
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.DisjointSet
 
   def input, do: InputReader.read_from_file(2024, 12)
 
+  @spec run(binary()) :: {number(), nil}
   def run(input \\ input()) do
     input = parse(input)
 
@@ -37,15 +38,19 @@ defmodule AdventOfCode.Y2024.Day12 do
   end
 
   defp regions(plants) do
-    Enum.reduce(plants, DisjointSet.new(plants), fn plant, region ->
+    plant_set = MapSet.new(plants)
+
+    plants
+    |> Enum.reduce(DisjointSet.new(), fn plant, dsu ->
+      dsu = DisjointSet.add(dsu, plant)
+
       plant
       |> Grid.surrounding4()
-      |> Enum.reduce(region, fn neighbour, region_acc ->
-        region_acc
-        |> DisjointSet.union(plant, neighbour)
-      end)
+      |> Enum.filter(&MapSet.member?(plant_set, &1))
+      |> Enum.reduce(dsu, &DisjointSet.union(&2, plant, &1))
     end)
-    |> DisjointSet.components()
+    |> DisjointSet.to_lists()
+    |> Enum.map(&MapSet.new/1)
   end
 
   defp calculate_price(plant_set, multiply_by) do
