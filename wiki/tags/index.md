@@ -58,7 +58,6 @@
 | [graph-traversal](graph-traversal.md) | 2 |
 | [grid](grid.md) | 29 |
 | [grid-traversal](grid-traversal.md) | 1 |
-| [half-done](half-done.md) | 4 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
 | [hexagon](hexagon.md) | 2 |

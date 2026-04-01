@@ -3,64 +3,105 @@ defmodule AdventOfCode.Y2020.Day16 do
   --- Day 16: Ticket Translation ---
   Problem Link: https://adventofcode.com/2020/day/16
   Difficulty: m
-  Tags: range validation half-done
+  Tags: range validation
   """
   alias AdventOfCode.Helpers.InputReader
 
   def input, do: InputReader.read_from_file(2020, 16)
 
   def run(input \\ input()) do
-    {run_1(input), run_2(input)}
+    data = parse(input)
+    {run_1(data), run_2(data)}
   end
 
-  def run_1(input) do
-    {ranges, tickets} = parse(input)
+  defp run_1({rules, _, nearby}) do
+    all_ranges = Enum.flat_map(rules, fn {_, rs} -> rs end)
 
-    Enum.sum(
-      Enum.filter(tickets, fn ticket ->
-        ranges |> Enum.map(&(ticket not in &1)) |> Enum.all?()
-      end)
-    )
-  end
-
-  def run_2(_input), do: {:todo, 2}
-  def parse(input), do: {get_ranges(input), nearby_tickets(input)}
-
-  def get_ranges(input) do
-    Regex.scan(~r/\d+\-\d+/, input)
-    |> Enum.flat_map(& &1)
-    |> Enum.map(&as_range/1)
-    |> Enum.sort()
-    |> Enum.reduce([], fn
-      x, [] ->
-        [x]
-
-      x, [h | rst] ->
-        case merge_ranges(x, h) do
-          [a, b] -> [a, b | rst]
-          [a] -> [a | rst]
-        end
+    nearby
+    |> List.flatten()
+    |> Enum.filter(fn val ->
+      Enum.all?(all_ranges, fn range -> val not in range end)
     end)
+    |> Enum.sum()
   end
 
-  def nearby_tickets(input) do
-    ~r/.+nearby\stickets:\s(?<tickets>.+)/
-    |> Regex.named_captures(
-      input
-      |> String.replace("\r", "")
-      |> String.replace("\n", " ")
-    )
-    |> Map.get("tickets")
-    |> String.replace(" ", ",")
-    |> String.split(",")
+  defp run_2({rules, my_ticket, nearby}) do
+    all_ranges = Enum.flat_map(rules, fn {_, rs} -> rs end)
+
+    valid_tickets =
+      Enum.filter(nearby, fn ticket ->
+        Enum.all?(ticket, fn val ->
+          Enum.any?(all_ranges, fn range -> val in range end)
+        end)
+      end)
+
+    # Columns: lists of values for each field position
+    columns =
+      [my_ticket | valid_tickets]
+      |> Enum.zip()
+      |> Enum.map(&Tuple.to_list/1)
+
+    # For each column, find rules that match all its values
+    column_potentials =
+      for {col_vals, col_idx} <- Enum.with_index(columns) do
+        matches =
+          for {field, rs} <- rules,
+              Enum.all?(col_vals, fn v -> Enum.any?(rs, &(v in &1)) end) do
+            field
+          end
+
+        {col_idx, matches}
+      end
+
+    mapping = deduce(column_potentials, %{})
+
+    mapping
+    |> Enum.filter(fn {_, field} -> String.starts_with?(field, "departure") end)
+    |> Enum.map(fn {idx, _} -> Enum.at(my_ticket, idx) end)
+    |> Enum.product()
+  end
+
+  defp deduce([], acc), do: acc
+
+  defp deduce(potentials, acc) do
+    # Find column with only one potential field
+    {idx, [field]} = Enum.find(potentials, fn {_, ms} -> length(ms) == 1 end)
+
+    # Remove this field from other columns' possibilities
+    new_potentials =
+      potentials
+      |> Enum.reject(fn {i, _} -> i == idx end)
+      |> Enum.map(fn {i, ms} -> {i, List.delete(ms, field)} end)
+
+    deduce(new_potentials, Map.put(acc, idx, field))
+  end
+
+  def parse(input) do
+    [rules_raw, my_raw, nearby_raw] = String.split(input, ["\n\n", "\r\n\r\n"], trim: true)
+
+    rules =
+      for line <- String.split(rules_raw, "\n", trim: true) do
+        [field, ranges_raw] = String.split(line, ": ", trim: true)
+
+        ranges =
+          Regex.scan(~r/\d+\-\d+/, ranges_raw)
+          |> List.flatten()
+          |> Enum.map(fn r ->
+            [s, e] = String.split(r, "-", trim: true)
+            String.to_integer(s)..String.to_integer(e)
+          end)
+
+        {field, ranges}
+      end
+
+    {rules, parse_ticket(my_raw),
+     nearby_raw |> String.split("\n", trim: true) |> Enum.drop(1) |> Enum.map(&parse_ticket/1)}
+  end
+
+  defp parse_ticket(line) do
+    line
+    |> String.split([",", "\n"], trim: true)
+    |> Enum.filter(&Regex.match?(~r/^\d+$/, &1))
     |> Enum.map(&String.to_integer/1)
   end
-
-  def merge_ranges(a..b//_ = r1, x..y//_ = r2),
-    do:
-      (Range.disjoint?(r1, r2) &&
-         [r1, r2]) || [((a < x && a) || x)..((b > y && b) || y)]
-
-  defp as_range(range), do: rangify(Enum.map(String.split(range, "-"), &String.to_integer/1))
-  defp rangify([a, b]), do: a..b
 end
