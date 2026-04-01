@@ -42,8 +42,7 @@
 | [fsm](fsm.md) | 2 |
 | [game](game.md) | 1 |
 | [gb-tree](gb-tree.md) | 1 |
-| [geometry](geometry.md) | 3 |
-| [geometry2d](geometry2d.md) | 5 |
+| [geometry2d](geometry2d.md) | 8 |
 | [geometry3d](geometry3d.md) | 2 |
 | [graph](graph.md) | 26 |
 | [graph-route](graph-route.md) | 1 |
