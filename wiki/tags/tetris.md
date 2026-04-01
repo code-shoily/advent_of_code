@@ -1,0 +1,7 @@
+# Tag: `tetris`
+
+[← Tags Index](index.md)  |  [← Home](../../README.md)
+
+| Year | Day | Title | Difficulty | Other Tags | Source |
+|------|:---:|-------|:----------:|------------|--------|
+| 2022 | [17](https://adventofcode.com/2022/day/17) | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) | 🟠 | [simulation](simulation.md), [cycle-detection](cycle-detection.md) | [day_17.ex](../../lib/2022/day_17.ex) |

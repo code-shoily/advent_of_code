@@ -33,6 +33,7 @@
 | [connectivity](connectivity.md) | 3 |
 | [constellation](constellation.md) | 1 |
 | [count](count.md) | 5 |
+| [cycle-detection](cycle-detection.md) | 1 |
 | [data-modelling](data-modelling.md) | 4 |
 | [date-time](date-time.md) | 1 |
 | [dfs](dfs.md) | 1 |
@@ -47,6 +48,7 @@
 | [floyd-warshall](floyd-warshall.md) | 1 |
 | [fsm](fsm.md) | 2 |
 | [game](game.md) | 1 |
+| [game-of-life](game-of-life.md) | 1 |
 | [game-sim](game-sim.md) | 1 |
 | [gb-tree](gb-tree.md) | 1 |
 | [genserver](genserver.md) | 2 |
@@ -62,6 +64,7 @@
 | [hash](hash.md) | 3 |
 | [hexagon](hexagon.md) | 2 |
 | [implicit-graph](implicit-graph.md) | 4 |
+| [infinite-grid](infinite-grid.md) | 1 |
 | [infinite-sequence](infinite-sequence.md) | 1 |
 | [inline-input](inline-input.md) | 1 |
 | [int-code](int-code.md) | 2 |
@@ -96,6 +99,7 @@
 | [path-finding](path-finding.md) | 1 |
 | [pattern-matching](pattern-matching.md) | 2 |
 | [performance](performance.md) | 1 |
+| [physics](physics.md) | 1 |
 | [power-set](power-set.md) | 1 |
 | [quadratic-time](quadratic-time.md) | 1 |
 | [random-access](random-access.md) | 3 |
@@ -112,7 +116,7 @@
 | [set](set.md) | 17 |
 | [shortest-path](shortest-path.md) | 6 |
 | [sieve](sieve.md) | 1 |
-| [simulation](simulation.md) | 4 |
+| [simulation](simulation.md) | 7 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 3 |
 | [sort](sort.md) | 3 |
@@ -126,6 +130,7 @@
 | [string-result](string-result.md) | 1 |
 | [surface](surface.md) | 1 |
 | [table-lookup](table-lookup.md) | 2 |
+| [tetris](tetris.md) | 1 |
 | [topological-sort](topological-sort.md) | 2 |
 | [traversal](traversal.md) | 3 |
 | [tree](tree.md) | 1 |
