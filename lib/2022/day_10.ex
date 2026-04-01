@@ -57,8 +57,6 @@ defmodule AdventOfCode.Y2022.Day10 do
           IO.write("▒")
         end
       end
-
-      IO.puts("")
     end
 
     :ok

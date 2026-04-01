@@ -74,9 +74,7 @@ defmodule AdventOfCode.Y2022.Day08 do
   end
 
   defp viewing_distance(grid, r, c, dr, dc, h) do
-    if not in_bounds?(grid, r, c) do
-      0
-    else
+    if in_bounds?(grid, r, c) do
       Implicit.implicit_fold(
         from: {r, c},
         using: :breadth_first,
@@ -91,6 +89,8 @@ defmodule AdventOfCode.Y2022.Day08 do
           {:continue, acc + 1}
         end
       )
+    else
+      0
     end
   end
 
