@@ -3,78 +3,100 @@ defmodule AdventOfCode.Y2023.Day12 do
   --- Day 12: Hot Springs ---
   Problem Link: https://adventofcode.com/2023/day/12
   Difficulty: xl
-  Tags: memoization vector
+  Tags: memoization
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias Aja.Vector
 
   def input, do: InputReader.read_from_file(2023, 12)
 
   def run(input \\ input()) do
-    input = parse(input)
+    parsed = parse(input)
 
-    {total_arrangements(input, fn {spring, groups} ->
-       arrangements({as_vector(spring), groups})
-     end),
-     total_arrangements(input, fn {spring, groups} ->
-       arrangements(
-         {[spring] |> List.duplicate(5) |> Enum.join("?") |> as_vector(),
-          groups |> Vector.duplicate(5) |> Vector.flat_map(& &1)}
-       )
-     end)}
+    res1 = compute(parsed, 1)
+    res2 = compute(parsed, 5)
+
+    {res1, res2}
   end
 
-  defp total_arrangements(input, fun) do
-    for {:ok, count} <- Task.async_stream(input, fun), reduce: 0 do
-      acc -> acc + count
-    end
-  end
+  defp compute(parsed, multiplier) do
+    parsed
+    |> Task.async_stream(
+      fn {springs, groups} ->
+        unfolded_springs = List.duplicate(springs, multiplier) |> Enum.join("?")
+        unfolded_groups = List.duplicate(groups, multiplier) |> List.flatten() |> List.to_tuple()
 
-  def parse(data \\ input()) do
-    for line <- Transformers.lines(data) do
-      [springs, data] = String.split(line, " ")
-      {springs, Vector.new(Transformers.int_words(data, ","))}
-    end
-  end
-
-  defp memoize(input, counts), do: Process.put(input, counts)
-  defp memoized({_, _, _, _, _} = input), do: memoized(input, Process.get(input))
-  defp memoized(input, nil), do: tap(arrangements(input), &memoize(input, &1))
-  defp memoized(_, counts), do: counts
-  defp as_vector(springs), do: Vector.new(String.graphemes(springs <> "."))
-  defp arrangements({springs, groups}), do: arrangements({springs, groups, 0, 0, 0})
-
-  defp arrangements({springs, groups, current, current_count, processed} = input) do
-    case {Vector.at(springs, current), Vector.size(springs), Vector.size(groups)} do
-      {_, ^current, ^processed} -> tap(1, &memoize(input, &1))
-      {_, ^current, _} -> tap(0, &memoize(input, &1))
-      {"#", _, _} -> memoized({springs, groups, current + 1, current_count + 1, processed})
-      {".", _, _} -> arrangements(input, :operational)
-      {_, _, ^processed} -> arrangements(input, :operational)
-      _ -> arrangements(input, :unknown)
-    end
-  end
-
-  defp arrangements({springs, groups, current, current_count, processed} = input, :operational) do
-    groups_processed = Vector.at(groups, processed)
-
-    case {processed < Vector.size(groups), current_count} do
-      {true, ^groups_processed} -> memoized({springs, groups, current + 1, 0, processed + 1})
-      {_, 0} -> memoized({springs, groups, current + 1, 0, processed})
-      _ -> tap(0, fn zero -> memoize(input, zero) end)
-    end
-  end
-
-  defp arrangements({springs, groups, current, current_count, processed} = input, :unknown) do
-    groups_processed = Vector.at(groups, processed)
-
-    tap(
-      case current_count do
-        ^groups_processed -> memoized({springs, groups, current + 1, 0, processed + 1})
-        0 -> memoized({springs, groups, current + 1, 0, processed})
-        _ -> 0
-      end + memoized({springs, groups, current + 1, current_count + 1, processed}),
-      fn counts -> memoize(input, counts) end
+        Process.get_keys() |> Enum.each(&Process.delete/1)
+        do_count(unfolded_springs, unfolded_groups, 0, 0, 0)
+      end,
+      timeout: :infinity
     )
+    |> Enum.reduce(0, fn {:ok, count}, acc -> acc + count end)
+  end
+
+  def parse(data) do
+    for line <- Transformers.lines(data) do
+      [springs, groups] = String.split(line, " ")
+      {springs, Transformers.int_words(groups, ",")}
+    end
+  end
+
+  defp do_count(springs, groups, s_idx, g_idx, current_count) do
+    key = {s_idx, g_idx, current_count}
+
+    case Process.get(key) do
+      nil ->
+        res = calc(springs, groups, s_idx, g_idx, current_count)
+        Process.put(key, res)
+        res
+
+      val ->
+        val
+    end
+  end
+
+  defp calc(springs, groups, s_idx, g_idx, current_count) do
+    if s_idx == byte_size(springs) do
+      cond do
+        g_idx == tuple_size(groups) and current_count == 0 -> 1
+        g_idx == tuple_size(groups) - 1 and current_count == elem(groups, g_idx) -> 1
+        true -> 0
+      end
+    else
+      char = :binary.at(springs, s_idx)
+
+      case char do
+        ?# ->
+          handle_hash(springs, groups, s_idx, g_idx, current_count)
+
+        ?. ->
+          handle_dot(springs, groups, s_idx, g_idx, current_count)
+
+        ?? ->
+          handle_dot(springs, groups, s_idx, g_idx, current_count) +
+            handle_hash(springs, groups, s_idx, g_idx, current_count)
+      end
+    end
+  end
+
+  defp handle_hash(springs, groups, s_idx, g_idx, current_count) do
+    if g_idx < tuple_size(groups) and current_count < elem(groups, g_idx) do
+      do_count(springs, groups, s_idx + 1, g_idx, current_count + 1)
+    else
+      0
+    end
+  end
+
+  defp handle_dot(springs, groups, s_idx, g_idx, current_count) do
+    case current_count do
+      0 ->
+        do_count(springs, groups, s_idx + 1, g_idx, 0)
+
+      n ->
+        if g_idx < tuple_size(groups) and n == elem(groups, g_idx) do
+          do_count(springs, groups, s_idx + 1, g_idx + 1, 0)
+        else
+          0
+        end
+    end
   end
 end

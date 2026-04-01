@@ -3,10 +3,9 @@ defmodule AdventOfCode.Y2023.Day15 do
   --- Day 15: Lens Library ---
   Problem Link: https://adventofcode.com/2023/day/15
   Difficulty: s
-  Tags: hash ordered-map
+  Tags: hash ordered-list
   """
   alias AdventOfCode.Helpers.InputReader
-  alias Aja.OrdMap
 
   def input, do: InputReader.read_from_file(2023, 15)
 
@@ -21,36 +20,40 @@ defmodule AdventOfCode.Y2023.Day15 do
     input
     |> parse_2()
     |> Enum.reduce(%{}, fn
-      {op, b, len}, acc ->
-        hash = hash(b)
+      {:add, label, len}, boxes ->
+        h = hash(label)
 
-        case op do
-          :add -> Map.update(acc, hash, OrdMap.new(%{b => len}), &OrdMap.put(&1, b, len))
-          :remove -> Map.update(acc, hash, OrdMap.new(%{}), &OrdMap.drop(&1, [b]))
-        end
+        Map.update(boxes, h, [{label, len}], fn lenses ->
+          if List.keymember?(lenses, label, 0) do
+            List.keyreplace(lenses, label, 0, {label, len})
+          else
+            lenses ++ [{label, len}]
+          end
+        end)
+
+      {:remove, label}, boxes ->
+        h = hash(label)
+        Map.update(boxes, h, [], &List.keydelete(&1, label, 0))
     end)
     |> total_focus()
   end
 
-  defp total_focus(map) do
-    Enum.reduce(map, 0, fn {box, boxes}, acc ->
+  defp total_focus(boxes) do
+    Enum.reduce(boxes, 0, fn {box_idx, lenses}, acc ->
       acc +
-        (boxes
-         |> OrdMap.to_list()
-         |> Enum.with_index(1)
-         |> Enum.reduce(0, &(&2 + row_focus(&1, box))))
+        Enum.reduce(Enum.with_index(lenses, 1), 0, fn {{_, len}, slot}, inner_acc ->
+          inner_acc + (box_idx + 1) * slot * len
+        end)
     end)
   end
 
-  defp row_focus({{_, len}, slot}, box), do: (box + 1) * slot * len
+  defp parse_1(input), do: String.split(input, ",", trim: true) |> Enum.map(&String.trim/1)
 
-  def parse_1(input \\ input()), do: String.split(input, ",", trim: true)
-
-  def parse_2(commands) do
+  defp parse_2(commands) do
     Enum.map(commands, fn cmd ->
       case Regex.run(~r{([a-zA-Z]+)(=|-)([0-9]*)}, cmd) do
         [_, label, "=", len] -> {:add, label, String.to_integer(len)}
-        [_, label, "-", ""] -> {:remove, label, 0}
+        [_, label, "-", ""] -> {:remove, label}
       end
     end)
   end
