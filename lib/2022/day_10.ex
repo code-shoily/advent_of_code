@@ -46,6 +46,9 @@ defmodule AdventOfCode.Y2022.Day10 do
   end
 
   defp draw(cycles) do
+    # credo:disable-for-next-line
+    IO.puts("")
+
     for r <- 0..5 do
       for c <- 0..39 do
         cycle = r * 40 + c + 1
@@ -57,6 +60,9 @@ defmodule AdventOfCode.Y2022.Day10 do
           IO.write("▒")
         end
       end
+
+      # credo:disable-for-next-line
+      IO.puts("")
     end
 
     :ok

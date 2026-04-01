@@ -8,81 +8,66 @@ defmodule AdventOfCode.Y2016.Day08 do
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
   @on "█"
-  @off "."
+  @off " "
   @width 50
   @height 6
 
   def input, do: InputReader.read_from_file(2016, 8)
 
   def run(input \\ input()) do
-    input = parse(input)
+    final_grid =
+      input
+      |> parse()
+      |> Enum.reduce(%{}, &operation/2)
 
-    process = Enum.reduce(input, empty_grid(), &operation/2)
-
-    {Enum.count(process, fn {_, v} -> v == @on end), display(process)}
+    {map_size(final_grid), display(final_grid)}
   end
 
-  def to_dims(d) do
-    String.split(d, "x")
-    |> Enum.map(&to_i/1)
-    |> List.to_tuple()
-  end
-
-  def parse(data \\ input()) do
-    data
+  defp parse(input) do
+    input
     |> Transformers.lines()
     |> Enum.map(fn line ->
-      case Transformers.words(line) do
-        ["rect", d] -> {:rect, to_dims(d)}
-        [_, _, "y=" <> y, _, by] -> {:row, to_i(y), to_i(by)}
-        [_, _, "x=" <> x, _, by] -> {:column, to_i(x), to_i(by)}
+      case String.split(line, [" ", "=", "x"], trim: true) do
+        ["rect", w, h] -> {:rect, to_i(w), to_i(h)}
+        ["rotate", "row", "y", y, "by", by] -> {:row, to_i(y), to_i(by)}
+        ["rotate", "column", x, "by", by] -> {:col, to_i(x), to_i(by)}
       end
     end)
   end
 
-  defp empty_grid do
-    for w <- 0..(@width - 1), h <- 0..(@height - 1), into: %{} do
-      {{w, h}, @off}
+  defp operation({:rect, w, h}, grid) do
+    for x <- 0..(w - 1), y <- 0..(h - 1), into: grid, do: {{x, y}, @on}
+  end
+
+  defp operation({:row, y, by}, grid) do
+    keys = for x <- 0..(@width - 1), do: {x, y}
+
+    for x <- 0..(@width - 1), grid[{x, y}] == @on, into: Map.drop(grid, keys) do
+      {{rem(x + by, @width), y}, @on}
     end
   end
 
-  defp operation({:rect, {w, h}}, grid) do
-    for x <- 0..(w - 1), y <- 0..(h - 1), reduce: grid do
-      acc -> %{acc | {x, y} => @on}
+  defp operation({:col, x, by}, grid) do
+    keys = for y <- 0..(@height - 1), do: {x, y}
+
+    for y <- 0..(@height - 1), grid[{x, y}] == @on, into: Map.drop(grid, keys) do
+      {{x, rem(y + by, @height)}, @on}
     end
-  end
-
-  defp operation({:row, at, by}, grid) do
-    grid
-    |> line_by_row(at)
-    |> Map.new(fn {{x, y}, _} ->
-      {{rem(x + by, @width), y}, grid[{x, y}]}
-    end)
-    |> then(&Map.merge(grid, &1))
-  end
-
-  defp operation({:column, at, by}, grid) do
-    grid
-    |> line_by_column(at)
-    |> Map.new(fn {{x, y}, _} ->
-      {{x, rem(y + by, @height)}, grid[{x, y}]}
-    end)
-    |> then(&Map.merge(grid, &1))
   end
 
   defp display(grid) do
-    for h <- 0..(@height - 1) do
-      for w <- 0..(@width - 1) do
-        IO.write(grid[{w, h}])
-      end
+    # credo:disable-for-next-line
+    IO.puts("")
+
+    for y <- 0..(@height - 1) do
+      for(x <- 0..(@width - 1), do: Map.get(grid, {x, y}, @off))
+      |> Enum.join()
+      # credo:disable-for-next-line
+      |> IO.puts()
     end
 
     :ok
   end
-
-  defp line_by(grid, n, xy), do: Map.filter(grid, fn {k, _} -> elem(k, xy) == n end)
-  defp line_by_column(grid, at), do: line_by(grid, at, 0)
-  defp line_by_row(grid, at), do: line_by(grid, at, 1)
 
   defp to_i(v), do: String.to_integer(v)
 end

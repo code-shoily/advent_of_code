@@ -52,6 +52,9 @@ defmodule AdventOfCode.Y2019.Day08 do
   end
 
   defp print_image(data) do
+    # credo:disable-for-next-line
+    IO.puts("")
+
     data
     |> String.replace("1", @printchar)
     |> String.replace("0", " ")
@@ -59,6 +62,8 @@ defmodule AdventOfCode.Y2019.Day08 do
     |> chunkify()
     |> List.first()
     |> Enum.map_join("\n", &Enum.join/1)
+    # credo:disable-for-next-line
+    |> IO.puts()
   end
 
   defp chunkify(data) do
