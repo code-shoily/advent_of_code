@@ -17,7 +17,7 @@ defmodule Mix.Tasks.Solve do
   def run(args) do
     case InputParser.parse(args) do
       {year, day} ->
-        case AdventOfCode.solve(year, day, false) do
+        case AdventOfCode.solve(year, day) do
           {:ok, {time, {part_1, part_2}}} ->
             Mix.shell().info("Part 1: #{part_1}\tPart 2: #{part_2}\tTime: #{time} µs")
 

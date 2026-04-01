@@ -16,17 +16,10 @@ defmodule AdventOfCode do
   Solves for `year` and `day`.
   """
   @spec solve(year(), day()) :: {any(), any()}
-  def solve(year, day, rust? \\ false) do
+  def solve(year, day) do
     solution =
       :timer.tc(fn ->
-        case rust? do
-          true ->
-            {_, result} = AdventOfCode.RustNif.solve(year, day)
-            result
-
-          false ->
-            Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()
-        end
+        Module.concat([AdventOfCode, get_year_module(year), get_day_module(day)]).run()
       end)
 
     {:ok, solution}

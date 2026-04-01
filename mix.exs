@@ -27,9 +27,7 @@ defmodule AdventOfCode.MixProject do
       {:floki, "~> 0.36"},
       {:httpoison, "~> 2.2"},
       {:yog_ex, github: "code-shoily/yog_ex", branch: "main"},
-      {:aja, "~> 0.7"},
-      {:topo, "~> 1.0"},
-      {:rustler, "~> 0.35"}
+      {:aja, "~> 0.7"}
     ]
   end
 
