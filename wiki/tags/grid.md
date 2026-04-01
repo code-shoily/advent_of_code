@@ -20,9 +20,10 @@
 | 2021 | [4](https://adventofcode.com/2021/day/4) | [Giant Squid](https://adventofcode.com/2021/day/4) | 🟡 | [random-access](random-access.md), [optimization](optimization.md) | [day_04.ex](../../lib/2021/day_04.ex) |
 | 2021 | [9](https://adventofcode.com/2021/day/9) | [Smoke Basin](https://adventofcode.com/2021/day/9) | 🟠 | [graph](graph.md), [connectivity](connectivity.md) | [day_09.ex](../../lib/2021/day_09.ex) |
 | 2021 | [25](https://adventofcode.com/2021/day/25) | [Sea Cucumber](https://adventofcode.com/2021/day/25) | 🟠 | [set](set.md) | [day_25.ex](../../lib/2021/day_25.ex) |
-| 2022 | [8](https://adventofcode.com/2022/day/8) | [Treetop Tree House](https://adventofcode.com/2022/day/8) | 🟠 | [erlang](erlang.md) | [day_08.ex](../../lib/2022/day_08.ex) |
-| 2022 | [9](https://adventofcode.com/2022/day/9) | [Rope Bridge](https://adventofcode.com/2022/day/9) | 🟠 | [erlang](erlang.md), [walk](walk.md) | [day_09.ex](../../lib/2022/day_09.ex) |
+| 2022 | [8](https://adventofcode.com/2022/day/8) | [Treetop Tree House](https://adventofcode.com/2022/day/8) | 🟠 | [graph](graph.md), [traversal](traversal.md) | [day_08.ex](../../lib/2022/day_08.ex) |
+| 2022 | [9](https://adventofcode.com/2022/day/9) | [Rope Bridge](https://adventofcode.com/2022/day/9) | 🟠 | [walk](walk.md) | [day_09.ex](../../lib/2022/day_09.ex) |
 | 2022 | [14](https://adventofcode.com/2022/day/14) | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | 🔴 | [flood-fill](flood-fill.md), [implicit-graph](implicit-graph.md), [yog](yog.md) | [day_14.ex](../../lib/2022/day_14.ex) |
+| 2022 | [18](https://adventofcode.com/2022/day/18) | [Boiling Boulders](https://adventofcode.com/2022/day/18) | 💀 | [geometry3d](geometry3d.md), [surface](surface.md), [set](set.md), [traversal](traversal.md) | [day_18.ex](../../lib/2022/day_18.ex) |
 | 2022 | [23](https://adventofcode.com/2022/day/23) | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | 🟠 | [walk](walk.md) | [day_23.ex](../../lib/2022/day_23.ex) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | 🟠 |  | [day_03.ex](../../lib/2023/day_03.ex) |
 | 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | 💀 | [graph](graph.md), [bfs](bfs.md) | [day_10.ex](../../lib/2023/day_10.ex) |

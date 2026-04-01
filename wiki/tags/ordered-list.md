@@ -1,4 +1,4 @@
-# Tag: `ordered-map`
+# Tag: `ordered-list`
 
 [← Tags Index](index.md)  |  [← Home](../../README.md)
 

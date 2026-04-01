@@ -12,6 +12,6 @@
 | 2019 | [2](https://adventofcode.com/2019/day/2) | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | 🟢 | [int-code](int-code.md) | [day_02.ex](../../lib/2019/day_02.ex) |
 | 2019 | [5](https://adventofcode.com/2019/day/5) | [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5) | 🟢 | [int-code](int-code.md) | [day_05.ex](../../lib/2019/day_05.ex) |
 | 2022 | [7](https://adventofcode.com/2022/day/7) | [No Space Left On Device](https://adventofcode.com/2022/day/7) | 🟢 | [linked-list](linked-list.md) | [day_07.ex](../../lib/2022/day_07.ex) |
-| 2022 | [10](https://adventofcode.com/2022/day/10) | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | 🟠 | [erlang](erlang.md), [visual-result](visual-result.md) | [day_10.ex](../../lib/2022/day_10.ex) |
-| 2022 | [21](https://adventofcode.com/2022/day/21) | [Monkey Math](https://adventofcode.com/2022/day/21) | 🟡 | [erlang](erlang.md), [large-number](large-number.md), [arithmetic](arithmetic.md) | [day_21.ex](../../lib/2022/day_21.ex) |
+| 2022 | [10](https://adventofcode.com/2022/day/10) | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | 🟠 | [visual-result](visual-result.md) | [day_10.ex](../../lib/2022/day_10.ex) |
+| 2022 | [21](https://adventofcode.com/2022/day/21) | [Monkey Math](https://adventofcode.com/2022/day/21) | 🟡 | [large-number](large-number.md), [arithmetic](arithmetic.md) | [day_21.ex](../../lib/2022/day_21.ex) |
 | 2023 | [19](https://adventofcode.com/2023/day/19) | [Aplenty](https://adventofcode.com/2023/day/19) | 🔴 | [parse-heavy](parse-heavy.md) | [day_19.ex](../../lib/2023/day_19.ex) |

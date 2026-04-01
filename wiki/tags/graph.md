@@ -18,6 +18,7 @@
 | 2021 | [9](https://adventofcode.com/2021/day/9) | [Smoke Basin](https://adventofcode.com/2021/day/9) | 🟠 | [connectivity](connectivity.md), [grid](grid.md) | [day_09.ex](../../lib/2021/day_09.ex) |
 | 2021 | [12](https://adventofcode.com/2021/day/12) | [Passage Pathing](https://adventofcode.com/2021/day/12) | 🟠 | [traversal](traversal.md), [recursion](recursion.md), [path-finding](path-finding.md) | [day_12.ex](../../lib/2021/day_12.ex) |
 | 2021 | [15](https://adventofcode.com/2021/day/15) | [Chiton](https://adventofcode.com/2021/day/15) | 🔴 | [graph-route](graph-route.md) | [day_15.ex](../../lib/2021/day_15.ex) |
+| 2022 | [8](https://adventofcode.com/2022/day/8) | [Treetop Tree House](https://adventofcode.com/2022/day/8) | 🟠 | [grid](grid.md), [traversal](traversal.md) | [day_08.ex](../../lib/2022/day_08.ex) |
 | 2022 | [12](https://adventofcode.com/2022/day/12) | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | 🟠 | [graph-traversal](graph-traversal.md) | [day_12.ex](../../lib/2022/day_12.ex) |
 | 2022 | [16](https://adventofcode.com/2022/day/16) | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | 🟠 | [floyd-warshall](floyd-warshall.md), [johnsons-algorithm](johnsons-algorithm.md), [dfs](dfs.md), [optimization](optimization.md) | [day_16.ex](../../lib/2022/day_16.ex) |
 | 2022 | [24](https://adventofcode.com/2022/day/24) | [Blizzard Basin](https://adventofcode.com/2022/day/24) | 🟠 | [implicit-graph](implicit-graph.md), [shortest-path](shortest-path.md), [a-star](a-star.md) | [day_24.ex](../../lib/2022/day_24.ex) |
