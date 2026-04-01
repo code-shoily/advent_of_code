@@ -3,70 +3,88 @@ defmodule AdventOfCode.Y2022.Day14 do
   --- Day 14: Regolith Reservoir ---
   Problem Link: https://adventofcode.com/2022/day/14
   Difficulty: l
-  Tags: live-book visualized slow flood-fill unfold
+  Tags: grid flood-fill implicit-graph yog
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
+  alias Yog.Traversal.Implicit
 
   @source {500, 0}
 
   def input, do: InputReader.read_from_file(2022, 14)
 
   def run(input \\ input()) do
-    input = parse(input)
+    rocks = parse(input)
+    max_y = rocks |> Enum.map(&elem(&1, 1)) |> Enum.max()
 
-    run_1 = Task.async(fn -> Enum.count(endless_sands(input)) end)
-    run_2 = Task.async(fn -> Enum.count(floored_sands(input)) end)
-
-    {Task.await(run_1, :infinity), Task.await(run_2, :infinity)}
+    {solve_1(rocks, max_y), solve_2(rocks, max_y + 2)}
   end
 
-  def parse(path) do
-    path
+  def parse(data) do
+    data
     |> Transformers.lines()
-    |> Enum.flat_map(fn line ->
+    |> Enum.reduce(MapSet.new(), fn line, acc ->
       line
       |> String.split(" -> ")
-      |> Enum.map(fn coords ->
-        coords
-        |> Transformers.words(",")
-        |> Enum.map(&String.to_integer/1)
+      |> Enum.map(fn pair ->
+        pair |> String.split(",") |> Enum.map(&String.to_integer/1) |> List.to_tuple()
       end)
-      |> then(fn [_ | tail] = coords -> Enum.zip([coords, tail]) end)
-      |> Enum.flat_map(fn
-        {[a, x], [a, y]} -> Enum.map(x..y, &{a, &1})
-        {[x, b], [y, b]} -> Enum.map(x..y, &{&1, b})
+      |> Enum.chunk_every(2, 1, :discard)
+      |> Enum.reduce(acc, fn [{x1, y1}, {x2, y2}], acc_inner ->
+        {min_x, max_x} = Enum.min_max([x1, x2])
+        {min_y, max_y} = Enum.min_max([y1, y2])
+
+        for x <- min_x..max_x, y <- min_y..max_y, into: acc_inner do
+          {x, y}
+        end
       end)
     end)
-    |> MapSet.new()
   end
 
-  defp endless_sands(input) do
-    floor = Enum.max_by(input, &elem(&1, 1)) |> elem(1)
-    Stream.unfold(input, &fall(&1, floor, @source))
+  def solve_1(rocks, max_y) do
+    simulate_1(rocks, max_y)
   end
 
-  defp floored_sands(input) do
-    floor = Enum.max_by(input, &elem(&1, 1)) |> elem(1) |> Kernel.+(2)
-    state = (-floor - 1)..(floor + 1) |> Stream.map(&{500 + &1, floor}) |> Enum.into(input)
-
-    Stream.unfold(state, &fall(&1, floor, @source))
-  end
-
-  defp fall(state, floor, {x, y} = sand) do
-    case MapSet.member?(state, @source) do
-      false ->
-        down = {x, y + 1}
-        left = {x - 1, y + 1}
-        right = {x + 1, y + 1}
-
-        case Enum.find([down, left, right], &(!MapSet.member?(state, &1))) do
-          nil -> {state, MapSet.put(state, sand)}
-          {_, y} when y > floor -> nil
-          air -> fall(state, floor, air)
+  def solve_2(rocks, floor) do
+    # Part 2: Reachable air nodes above the floor.
+    # Every reachable spot will eventually be filled with sand.
+    Implicit.implicit_fold(
+      from: @source,
+      using: :breadth_first,
+      initial: 0,
+      successors_of: fn {x, y} ->
+        if y + 1 < floor do
+          [{x, y + 1}, {x - 1, y + 1}, {x + 1, y + 1}]
+          |> Enum.filter(&(!MapSet.member?(rocks, &1)))
+        else
+          []
         end
+      end,
+      with: fn acc, _node, _meta -> {:continue, acc + 1} end
+    )
+  end
 
-      true ->
-        nil
+  defp simulate_1(rocks, max_y) do
+    Stream.unfold(rocks, fn state ->
+      case pour_one(state, max_y, @source) do
+        {:rest, new_state} -> {1, new_state}
+        :abyss -> nil
+      end
+    end)
+    |> Enum.sum()
+  end
+
+  defp pour_one(state, max_y, {x, y}) do
+    if y >= max_y do
+      :abyss
+    else
+      down = {x, y + 1}
+      left = {x - 1, y + 1}
+      right = {x + 1, y + 1}
+
+      case Enum.find([down, left, right], &(!MapSet.member?(state, &1))) do
+        nil -> {:rest, MapSet.put(state, {x, y})}
+        next -> pour_one(state, max_y, next)
+      end
     end
   end
 end

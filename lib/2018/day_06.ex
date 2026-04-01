@@ -3,97 +3,98 @@ defmodule AdventOfCode.Y2018.Day06 do
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   Difficulty: s
-  Tags: slow revisit grid measurement
+  Tags: grid geometry optimization parallel
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-
-  import AdventOfCode.Algorithms.Geometry, only: [manhattan_distance: 2]
-
-  @type point :: {integer(), integer()}
-  @type points :: list(point())
-  @type corners :: {point(), point()}
-  @type world :: list({point(), list({point(), integer()})})
 
   def input, do: InputReader.read_from_file(2018, 6)
 
   def run(input \\ input()) do
-    input = parse(input)
-
-    task_1 = Task.async(fn -> covers_most_points(input) end)
-    task_2 = Task.async(fn -> covers_distances_within(input, 10_000) end)
-    {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
+    points = parse(input)
+    # Combine both parts in one scan
+    solve(points, 10_000)
   end
 
-  @spec parse(binary()) :: points()
-  def parse(data \\ input()) do
+  def parse(data) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->
-      line
-      |> Transformers.words(",")
-      |> Enum.map(&String.to_integer(String.trim(&1)))
+      Regex.scan(~r/\d+/, line)
+      |> List.flatten()
+      |> Enum.map(&String.to_integer/1)
       |> List.to_tuple()
     end)
   end
 
-  @spec get_corners([point]) :: corners
-  def get_corners(points) do
-    points
-    |> Enum.unzip()
-    |> Tuple.to_list()
-    |> Enum.map(&Enum.min_max/1)
-    |> List.to_tuple()
-  end
-
-  @spec create_world(points()) :: world()
-  defp create_world(points) do
-    {{xl, xr}, {yt, yb}} = get_corners(points)
-
-    for x <- xr..xl//-1, y <- yt..yb do
-      {{x, y},
-       Enum.map(points, fn {xi, yi} ->
-         {{xi, yi}, manhattan_distance({xi, yi}, {x, y})}
-       end)}
-    end
-  end
-
-  @spec nearest_point(list({point(), integer()})) :: nil | point()
-  defp nearest_point(distances) do
-    distances
-    |> Enum.sort_by(&elem(&1, 1))
-    |> then(fn
-      [{_, d}, {_, d} | _] -> nil
-      [{p, _} | _] -> p
-    end)
-  end
-
-  defp edges(world, {{xl, xr}, {yt, yb}}) do
-    for {{x, y}, p} <- world,
-        x == xl or y == yt or x == xr or y == yb or is_nil(p),
-        into: %MapSet{},
-        do: p
-  end
-
-  @spec covers_most_points(points()) :: integer()
   def covers_most_points(points) do
-    world = Enum.map(create_world(points), fn {p, ds} -> {p, nearest_point(ds)} end)
-    rejects = edges(world, get_corners(points))
-
-    world
-    |> Enum.group_by(&elem(&1, 1))
-    |> Enum.reduce(-1, fn {p, ds}, largest ->
-      (p not in rejects && max(length(ds), largest)) || largest
-    end)
+    solve(points, -1) |> elem(0)
   end
 
-  @spec covers_distances_within(points(), integer()) :: integer()
   def covers_distances_within(points, threshold) do
-    Enum.reduce(create_world(points), 0, fn {_, d}, acc ->
-      within_distance_threshold(d, threshold) + acc
-    end)
+    solve(points, threshold) |> elem(1)
   end
 
-  defp within_distance_threshold(distances, threshold) do
-    (Enum.sum_by(distances, &elem(&1, 1)) < threshold && 1) || 0
+  def solve(points, threshold) do
+    {{x1, x2}, {y1, y2}} = get_corners(points)
+
+    aggregated =
+      y1..y2
+      |> Task.async_stream(
+        fn y ->
+          Enum.reduce(x1..x2, {%{}, MapSet.new(), 0}, fn x, {counts, infinites, p2_cnt} ->
+            {nearest, d1, d2, total_d} = find_nearest_and_sum(x, y, points)
+
+            p2_inc = if total_d < threshold, do: 1, else: 0
+
+            if d1 < d2 do
+              new_counts = Map.update(counts, nearest, 1, &(&1 + 1))
+
+              new_infinites =
+                if x == x1 or x == x2 or y == y1 or y == y2,
+                  do: MapSet.put(infinites, nearest),
+                  else: infinites
+
+              {new_counts, new_infinites, p2_cnt + p2_inc}
+            else
+              {counts, infinites, p2_cnt + p2_inc}
+            end
+          end)
+        end,
+        timeout: :infinity
+      )
+      |> Enum.reduce({%{}, MapSet.new(), 0}, fn {:ok, {c, i, p2}}, {acc_c, acc_i, acc_p2} ->
+        {Map.merge(acc_c, c, fn _, v1, v2 -> v1 + v2 end), MapSet.union(acc_i, i), acc_p2 + p2}
+      end)
+
+    {counts, infinite_points, p2_count} = aggregated
+
+    p1_max =
+      counts
+      |> Enum.reject(fn {p, _} -> MapSet.member?(infinite_points, p) end)
+      |> Enum.map(&elem(&1, 1))
+      |> Enum.max(fn -> 0 end)
+
+    {p1_max, p2_count}
+  end
+
+  def get_corners(points) do
+    {{min_x, max_x}, {min_y, max_y}} =
+      points
+      |> Enum.unzip()
+      |> then(fn {xs, ys} -> {Enum.min_max(xs), Enum.min_max(ys)} end)
+
+    {{min_x, max_x}, {min_y, max_y}}
+  end
+
+  defp find_nearest_and_sum(x, y, points) do
+    Enum.reduce(points, {nil, :infinity, :infinity, 0}, fn {px, py} = p, {b_p, b_d, s_d, sum} ->
+      d = abs(x - px) + abs(y - py)
+
+      cond do
+        d < b_d -> {p, d, b_d, sum + d}
+        d < s_d -> {b_p, b_d, d, sum + d}
+        true -> {b_p, b_d, s_d, sum + d}
+      end
+    end)
   end
 end

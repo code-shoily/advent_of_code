@@ -3,31 +3,25 @@ defmodule AdventOfCode.Y2022.Day20 do
   --- Day 20: Grove Positioning System ---
   Problem Link: https://adventofcode.com/2022/day/20
   Difficulty: m
-  Tags: slow vector sequence large-number random-access
+  Tags: sequence large-number circular-list
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
-  alias Aja.Vector
 
   def input, do: InputReader.read_from_file(2022, 20)
 
   def run(input \\ input()) do
     input = parse(input)
 
-    run_1 = Task.async(fn -> run_1(input) end)
-    run_2 = Task.async(fn -> run_2(input) end)
+    run_1_task = Task.async(fn -> compute_grove_sum(input, 1) end)
 
-    {Task.await(run_1, :infinity), Task.await(run_2, :infinity)}
-  end
+    run_2_task =
+      Task.async(fn ->
+        input
+        |> Enum.map(fn {v, i} -> {v * 811_589_153, i} end)
+        |> compute_grove_sum(10)
+      end)
 
-  defp run_1(input) do
-    compute_grove_sum(input, 1)
-  end
-
-  @decryption_key 811_589_153
-  def run_2(input) do
-    input
-    |> Vector.map(fn {v, i} -> {v * @decryption_key, i} end)
-    |> compute_grove_sum(10)
+    {Task.await(run_1_task, :infinity), Task.await(run_2_task, :infinity)}
   end
 
   def parse(data \\ input()) do
@@ -35,57 +29,74 @@ defmodule AdventOfCode.Y2022.Day20 do
     |> Transformers.lines()
     |> Enum.map(&String.to_integer/1)
     |> Enum.with_index()
-    |> Vector.new()
   end
 
   defp compute_grove_sum(input, repeat) do
-    n = Vector.size(input) - 1
-    sequence = mix(input, n, repeat)
-    zero_idx = index_of(sequence, n, 0)
-    grove_sum(sequence, n, zero_idx)
-  end
+    n = length(input)
+    # Map original index to value
+    values = Map.new(input, fn {v, i} -> {i, v} end)
 
-  defp grove_sum(sequence, n, zero_idx) do
-    Enum.reduce(1..3, 0, fn x, acc ->
-      {val, _} = sequence[rem(zero_idx + x * 1000, n)]
-      acc + val
-    end)
-  end
+    # Linked list using maps of original indices
+    {prevs, nexts} = init_list(n)
 
-  defp mix(input, n, repeat) do
-    1..repeat
-    |> Enum.reduce(input, fn _, repeated_acc ->
-      0..n
-      |> Enum.reduce(repeated_acc, fn i, acc ->
-        j = value_of(acc, n, i)
-        {val, _} = Vector.at(acc, j)
-        {_, popped} = Vector.pop_at(acc, j)
-        ins = (j + val) |> Integer.mod(n)
-        insert_at(popped, ins, {val, i})
+    # Mixing
+    {_prevs, nexts} =
+      Enum.reduce(1..repeat, {prevs, nexts}, fn _, acc ->
+        Enum.reduce(0..(n - 1), acc, fn i, {p_acc, n_acc} ->
+          mix_one(i, values[i], n, p_acc, n_acc)
+        end)
       end)
-    end)
+
+    # Zero node (the original index that has value 0)
+    {zero_idx, _} = Enum.find(values, fn {_, v} -> v == 0 end)
+
+    extract_grove_sum(zero_idx, values, nexts, n)
   end
 
-  defp insert_at(vector, idx, value) do
-    {left, right} = Vector.split(vector, idx)
-    left |> Vector.append(value) |> Vector.concat(right)
+  defp init_list(n) do
+    prevs = Map.new(0..(n - 1), fn i -> {i, Integer.mod(i - 1, n)} end)
+    nexts = Map.new(0..(n - 1), fn i -> {i, Integer.mod(i + 1, n)} end)
+    {prevs, nexts}
   end
 
-  defp value_of(sequence, n, idx) do
-    Enum.reduce_while(0..n, nil, fn val, _ ->
-      case sequence[val] do
-        {_, ^idx} -> {:halt, val}
-        _ -> {:cont, nil}
-      end
-    end)
+  defp mix_one(i, val, n, prevs, nexts) do
+    steps = Integer.mod(val, n - 1)
+
+    if steps == 0 do
+      {prevs, nexts}
+    else
+      p = Map.fetch!(prevs, i)
+      nex = Map.fetch!(nexts, i)
+
+      # Remove i
+      prevs = Map.put(prevs, nex, p)
+      nexts = Map.put(nexts, p, nex)
+
+      # Find insertion point
+      target =
+        if steps <= div(n, 2) do
+          Enum.reduce(1..steps, p, fn _, curr -> Map.fetch!(nexts, curr) end)
+        else
+          Enum.reduce(1..(n - 1 - steps), p, fn _, curr -> Map.fetch!(prevs, curr) end)
+        end
+
+      # Insert i after target
+      after_target = Map.fetch!(nexts, target)
+
+      prevs = prevs |> Map.put(i, target) |> Map.put(after_target, i)
+      nexts = nexts |> Map.put(target, i) |> Map.put(i, after_target)
+
+      {prevs, nexts}
+    end
   end
 
-  defp index_of(sequence, n, idx) do
-    Enum.reduce_while(0..(n - 1), nil, fn x, _ ->
-      case sequence[x] do
-        {^idx, _} -> {:halt, x}
-        _ -> {:cont, nil}
-      end
+  defp extract_grove_sum(zero_idx, values, nexts, n) do
+    [1000, 2000, 3000]
+    |> Enum.map(fn steps ->
+      steps = rem(steps, n)
+      node = Enum.reduce(1..steps, zero_idx, fn _, curr -> Map.fetch!(nexts, curr) end)
+      Map.fetch!(values, node)
     end)
+    |> Enum.sum()
   end
 end

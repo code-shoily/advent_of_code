@@ -3,37 +3,45 @@ defmodule AdventOfCode.Y2018.Day09 do
   --- Day 9: Marble Mania ---
   Problem Link: https://adventofcode.com/2018/day/9
   Difficulty: s
-  Tags: slow revisit circular-linked-list
+  Tags: circular-linked-list zipper performance
   """
   alias AdventOfCode.Algorithms.BiCircularList
+  alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  @players 473
-  @last_marble 70_904
+  def input, do: InputReader.read_from_file(2018, 9)
 
-  def run do
-    task_1 = Task.async(fn -> run_1() end)
-    task_2 = Task.async(fn -> run_2() end)
+  def run(input \\ input()) do
+    {players, last_marble} = parse(input)
+
+    task_1 = Task.async(fn -> solve(players, last_marble) end)
+    task_2 = Task.async(fn -> solve(players, last_marble * 100) end)
 
     {Task.await(task_1, :infinity), Task.await(task_2, :infinity)}
   end
 
-  def run_1 do
-    %BiCircularList{current: 0}
-    |> play(1, 1, @last_marble, %{})
-    |> Enum.max_by(fn {_, v} -> v end)
-    |> elem(1)
+  def parse(data) do
+    data
+    |> Transformers.words()
+    |> Enum.flat_map(fn word ->
+      case Integer.parse(word) do
+        {n, ""} -> [n]
+        _ -> []
+      end
+    end)
+    |> then(fn [players, last_marble] -> {players, last_marble} end)
   end
 
-  defp run_2 do
+  def solve(players, last_marble) do
     %BiCircularList{current: 0}
-    |> play(1, 1, @last_marble * 100, %{})
-    |> Enum.max_by(fn {_, v} -> v end)
-    |> elem(1)
+    |> play(1, 1, players, last_marble, %{})
   end
 
-  def play(_, _, marble, marble, scores), do: scores
+  # Base case: marble > last_marble
+  defp play(_, _, marble, _, last_marble, scores) when marble > last_marble do
+    scores |> Map.values() |> Enum.max(fn -> 0 end)
+  end
 
-  def play(state, player, marble, last_marble, scores) when rem(marble, 23) == 0 do
+  defp play(state, player, marble, players, last_marble, scores) when rem(marble, 23) == 0 do
     state
     |> counter_clockwise(7)
     |> BiCircularList.pop()
@@ -42,17 +50,18 @@ defmodule AdventOfCode.Y2018.Day09 do
         state,
         player + 1,
         marble + 1,
+        players,
         last_marble,
-        Map.update(scores, rem(player, @players), score + marble, &(&1 + score + marble))
+        Map.update(scores, rem(player, players), score + marble, &(&1 + score + marble))
       )
     end)
   end
 
-  def play(state, player, marble, last_marble, scores) do
+  defp play(state, player, marble, players, last_marble, scores) do
     state
     |> BiCircularList.next()
     |> BiCircularList.insert(marble)
-    |> play(player + 1, marble + 1, last_marble, scores)
+    |> play(player + 1, marble + 1, players, last_marble, scores)
   end
 
   defp counter_clockwise(%BiCircularList{} = bcl, n) do

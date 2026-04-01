@@ -3,18 +3,17 @@ defmodule AdventOfCode.Y2021.Day21 do
   --- Day 21: Dirac Dice ---
   Problem Link: https://adventofcode.com/2021/day/21
   Difficulty: xl
-  Tags: slow needs-improvement
+  Tags: memoization dynamic-programming
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
-  require Integer
-
   def input, do: InputReader.read_from_file(2021, 21)
 
+  @spec run(binary()) :: {any(), any()}
   def run(input \\ input()) do
     input = parse(input)
-    task_1 = Task.async(fn -> run_1(input) end)
-    task_2 = Task.async(fn -> run_2(input) end)
+    task_1 = Task.async(fn -> solve_1(input) end)
+    task_2 = Task.async(fn -> solve_2(input) end)
 
     {
       Task.await(task_1, :infinity),
@@ -22,104 +21,72 @@ defmodule AdventOfCode.Y2021.Day21 do
     }
   end
 
-  def run_1(input), do: input |> roll(1, 0) |> Tuple.product()
+  def solve_1({{p1, _}, {p2, _}}) do
+    roll({{p1, 0}, {p2, 0}}, 1, 0, 0)
+  end
 
-  def run_2(input) do
-    {:ok, pid} = Agent.start_link(fn -> %{} end)
-    initial_state = input
-
-    play_multiversal(pid).(initial_state)
-    |> then(fn {player_1, player_2} ->
-      (player_1 > player_2 && player_1) || player_2
-    end)
+  def solve_2(input) do
+    # input: {{p1_pos, 0}, {p2_pos, 0}}
+    {wins1, wins2} = play_multiversal(input, %{}) |> elem(0)
+    max(wins1, wins2)
   end
 
   def parse(data) do
     data
     |> Transformers.lines()
     |> Enum.map(fn line ->
-      line
-      |> String.split(":")
-      |> List.last()
-      |> String.trim()
-      |> String.to_integer()
+      Regex.run(~r/\d+$/, line) |> List.first() |> String.to_integer()
     end)
-    |> List.to_tuple()
-    |> then(fn {player_1, player_2} ->
-      {{player_1, 0}, {player_2, 0}}
+    |> then(fn [p1, p2] ->
+      {{p1, 0}, {p2, 0}}
     end)
   end
 
-  defp roll({{_, point_1}, {_, point_2}}, _, iter) when point_1 >= 1000, do: {iter, point_2}
-  defp roll({{_, point_1}, {_, point_2}}, _, iter) when point_2 >= 1000, do: {iter, point_1}
+  # Part 1: Deterministic Dice
+  defp roll({{_, s1}, {_, s2}}, _dice, rolls, _turn) when s1 >= 1000, do: s2 * rolls
+  defp roll({{_, s1}, {_, s2}}, _dice, rolls, _turn) when s2 >= 1000, do: s1 * rolls
 
-  defp roll({{player_1, point_1}, {player_2, point_2}}, first, iter) do
-    total = first + first + 1 + first + 2
-    next = first + 3
+  defp roll({{p1, s1}, {p2, s2}}, dice, rolls, turn) do
+    move = rem(dice - 1, 100) + 1 + rem(dice, 100) + 1 + rem(dice + 1, 100) + 1
 
-    if Integer.is_odd(first) do
-      {next_position, next_point} = next_move(total, {player_1, point_1})
-
-      roll(
-        {{next_position, next_point}, {player_2, point_2}},
-        next,
-        iter + 3
-      )
+    if rem(turn, 2) == 0 do
+      {pos, score} = next_move(move, {p1, s1})
+      roll({{pos, score}, {p2, s2}}, rem(dice + 2, 100) + 1, rolls + 3, turn + 1)
     else
-      {next_position, next_point} = next_move(total, {player_2, point_2})
-
-      roll(
-        {{player_1, point_1}, {next_position, next_point}},
-        next,
-        iter + 3
-      )
+      {pos, score} = next_move(move, {p2, s2})
+      roll({{p1, s1}, {pos, score}}, rem(dice + 2, 100) + 1, rolls + 3, turn + 1)
     end
   end
 
+  # Part 2: Dirac Dice (1, 2, 3) -> Possible totals (3, 1), (4, 3), (5, 6), (6, 7), (7, 6), (8, 3), (9, 1)
   @dice_rolls [{3, 1}, {4, 3}, {5, 6}, {6, 7}, {7, 6}, {8, 3}, {9, 1}]
-  defp play_multiversal({{_, _}, {_, point_2}}) when point_2 >= 21, do: {0, 1}
 
-  defp play_multiversal({{player_1, point_1}, {player_2, point_2}}) do
-    @dice_rolls
-    |> Enum.reduce({0, 0}, fn {total, universes}, {wins_1, wins_2} ->
-      {win_2, win_1} =
-        play_multiversal({
-          {player_2, point_2},
-          next_move(total, {player_1, point_1})
-        })
-
-      {wins_1 + universes * win_1, wins_2 + universes * win_2}
-    end)
+  defp play_multiversal({{_, _}, {_, p2}}, cache) when p2 >= 21 do
+    # Player 2 (passive) won
+    {{0, 1}, cache}
   end
 
-  defp play_multiversal(agent) when is_pid(agent) do
-    fn players ->
-      case Agent.get(agent, &Map.get(&1, players)) do
-        nil ->
-          players
-          |> play_multiversal()
-          |> update_agent(agent, players)
+  defp play_multiversal(state, cache) do
+    case Map.get(cache, state) do
+      nil ->
+        {p1, p2} = state
 
-        value ->
-          value
-      end
+        {wins, new_cache} =
+          Enum.reduce(@dice_rolls, {{0, 0}, cache}, fn {total, universes}, {{w1, w2}, c} ->
+            {swapped_wins, updated_cache} = play_multiversal({p2, next_move(total, p1)}, c)
+            {swapped_w2, swapped_w1} = swapped_wins
+            {{w1 + swapped_w1 * universes, w2 + swapped_w2 * universes}, updated_cache}
+          end)
+
+        {wins, Map.put(new_cache, state, wins)}
+
+      value ->
+        {value, cache}
     end
   end
 
-  defp update_agent(value, agent, players) do
-    Agent.get_and_update(
-      agent,
-      fn state -> {value, Map.put(state, players, value)} end
-    )
-  end
-
-  def next_move(total, {player, point}) do
-    new_position =
-      case rem(player + total, 10) do
-        0 -> 10
-        value -> value
-      end
-
+  defp next_move(total, {player, point}) do
+    new_position = rem(player + total - 1, 10) + 1
     {new_position, point + new_position}
   end
 end

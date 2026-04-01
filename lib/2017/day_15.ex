@@ -3,9 +3,7 @@ defmodule AdventOfCode.Y2017.Day15 do
   --- Day 15: Dueling Generators ---
   Problem Link: https://adventofcode.com/2017/day/15
   Difficulty: l
-  Tags: number-theory bitwise slow
-
-  FIXME: Number being Marsenne Prime, can't help but think there's a faster way to this.
+  Tags: number-theory bitwise optimization
   """
   import Bitwise
 
@@ -13,62 +11,64 @@ defmodule AdventOfCode.Y2017.Day15 do
 
   def input, do: InputReader.read_from_file(2017, 15)
 
-  @multipliers %{"A" => 16_807, "B" => 48_271}
+  @mod 2_147_483_647
 
   def run(input \\ input()) do
-    input = parse(input)
+    [a, b] = parse(input)
 
-    part_1 = Task.async(fn -> final_count_1(input) end)
-    part_2 = Task.async(fn -> final_count_2(input) end)
+    # Use Task.async for parallelism
+    part_1 = Task.async(fn -> solve_1(a, b, 0, 0) end)
+    part_2 = Task.async(fn -> solve_2(a, b, 0, 0) end)
 
-    {
-      Task.await(part_1, :infinity),
-      Task.await(part_2, :infinity)
-    }
+    {Task.await(part_1, :infinity), Task.await(part_2, :infinity)}
   end
 
-  @regex ~r"Generator (A|B) starts with (\d+)"
   def parse(input) do
     input
     |> Transformers.lines()
     |> Enum.map(fn line ->
-      [name, start] = Regex.run(@regex, line, capture: :all_but_first)
-
-      {String.to_integer(start), @multipliers[name]}
+      [_, val] = Regex.run(~r/starts with (\d+)/, line)
+      String.to_integer(val)
     end)
   end
 
-  defp final_count_1([{a, multiplier_a}, {b, multiplier_b}]) do
-    get_final_count(
-      40_000_000,
-      [generator(a, multiplier_a), generator(b, multiplier_b)]
-    )
+  defp solve_1(_, _, 40_000_000, result), do: result
+
+  defp solve_1(a, b, count, result) do
+    na = next(a, 16_807)
+    nb = next(b, 48_271)
+
+    if (na &&& 0xFFFF) == (nb &&& 0xFFFF) do
+      solve_1(na, nb, count + 1, result + 1)
+    else
+      solve_1(na, nb, count + 1, result)
+    end
   end
 
-  defp final_count_2([{a, multiplier_a}, {b, multiplier_b}]) do
-    get_final_count(5_000_000, [
-      generator(a, multiplier_a, multiple_of(4)),
-      generator(b, multiplier_b, multiple_of(8))
-    ])
+  defp solve_2(_, _, 5_000_000, result), do: result
+
+  defp solve_2(a, b, count, result) do
+    na = next_filtered(a, 16_807, 3)
+    nb = next_filtered(b, 48_271, 7)
+
+    if (na &&& 0xFFFF) == (nb &&& 0xFFFF) do
+      solve_2(na, nb, count + 1, result + 1)
+    else
+      solve_2(na, nb, count + 1, result)
+    end
   end
 
-  defp generator(initial, multiplier, filter \\ & &1) do
-    initial
-    |> next(multiplier)
-    |> Stream.iterate(&next(&1, multiplier))
-    |> filter.()
+  @compile {:inline, next: 2}
+  defp next(val, mult) do
+    prod = val * mult
+    # Mersenne Prime (2^31 - 1) optimization
+    res = (prod >>> 31) + (prod &&& @mod)
+    if res >= @mod, do: res - @mod, else: res
   end
 
-  defp get_final_count(limit, [a, b]) do
-    [a, b]
-    |> Stream.zip()
-    |> Enum.take(limit)
-    |> Enum.count(&same_lowest_bits?/1)
+  defp next_filtered(val, mult, mask) do
+    n = next(val, mult)
+    # Using bitwise & mask for multiple_of(4) -> &&& 3 == 0, multiple_of(8) -> &&& 7 == 0
+    if (n &&& mask) == 0, do: n, else: next_filtered(n, mult, mask)
   end
-
-  @mask (1 <<< 16) - 1
-  defp same_lowest_bits?({a, b}), do: bxor(a &&& @mask, b &&& @mask) == 0
-
-  defp multiple_of(amount), do: &Stream.filter(&1, fn val -> rem(val, amount) == 0 end)
-  defp next(prev, multiplier), do: rem(prev * multiplier, 2_147_483_647)
 end
