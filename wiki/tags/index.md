@@ -33,7 +33,7 @@
 | [connectivity](connectivity.md) | 3 |
 | [constellation](constellation.md) | 1 |
 | [count](count.md) | 5 |
-| [data-modelling](data-modelling.md) | 1 |
+| [data-modelling](data-modelling.md) | 2 |
 | [date-time](date-time.md) | 1 |
 | [dfs](dfs.md) | 1 |
 | [digraph](digraph.md) | 1 |
@@ -49,6 +49,7 @@
 | [game](game.md) | 1 |
 | [game-sim](game-sim.md) | 1 |
 | [gb-tree](gb-tree.md) | 1 |
+| [genserver](genserver.md) | 1 |
 | [geometry](geometry.md) | 2 |
 | [geometry2d](geometry2d.md) | 8 |
 | [geometry3d](geometry3d.md) | 2 |
@@ -84,7 +85,7 @@
 | [modular-arithmetic](modular-arithmetic.md) | 4 |
 | [number-system](number-system.md) | 1 |
 | [number-theory](number-theory.md) | 3 |
-| [op-code](op-code.md) | 11 |
+| [op-code](op-code.md) | 12 |
 | [operator-precedence](operator-precedence.md) | 1 |
 | [optimization](optimization.md) | 9 |
 | [ordered-list](ordered-list.md) | 1 |

@@ -98,6 +98,7 @@
 | Year | Day | Title | Tags | Source |
 |------|:---:|-------|------|--------|
 | 2015 | [6](https://adventofcode.com/2015/day/6) | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | [grid](tags/grid.md), [vector](tags/vector.md), [reduction](tags/reduction.md) | [day_06.ex](../lib/2015/day_06.ex) |
+| 2015 | [7](https://adventofcode.com/2015/day/7) | [Some Assembly Required](https://adventofcode.com/2015/day/7) | [genserver](tags/genserver.md), [data-modelling](tags/data-modelling.md), [op-code](tags/op-code.md) | [day_07.ex](../lib/2015/day_07.ex) |
 | 2015 | [8](https://adventofcode.com/2015/day/8) | [Matchsticks](https://adventofcode.com/2015/day/8) | [string-encoding](tags/string-encoding.md), [annoying](tags/annoying.md) | [day_08.ex](../lib/2015/day_08.ex) |
 | 2015 | [15](https://adventofcode.com/2015/day/15) | [Science for Hungry People](https://adventofcode.com/2015/day/15) | [quadratic-time](tags/quadratic-time.md), [sequence](tags/sequence.md) | [day_15.ex](../lib/2015/day_15.ex) |
 | 2015 | [16](https://adventofcode.com/2015/day/16) | [Aunt Sue](https://adventofcode.com/2015/day/16) | [hard-description](tags/hard-description.md), [count](tags/count.md) | [day_16.ex](../lib/2015/day_16.ex) |

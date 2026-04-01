@@ -4,6 +4,7 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
+| 2015 | [7](https://adventofcode.com/2015/day/7) | [Some Assembly Required](https://adventofcode.com/2015/day/7) | 🟠 | [genserver](genserver.md), [data-modelling](data-modelling.md) | [day_07.ex](../../lib/2015/day_07.ex) |
 | 2015 | [23](https://adventofcode.com/2015/day/23) | [Opening the Turing Lock](https://adventofcode.com/2015/day/23) | 🟠 | [emulation](emulation.md) | [day_23.ex](../../lib/2015/day_23.ex) |
 | 2016 | [8](https://adventofcode.com/2016/day/8) | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | 🟠 | [visual-result](visual-result.md), [matrix](matrix.md) | [day_08.ex](../../lib/2016/day_08.ex) |
 | 2017 | [8](https://adventofcode.com/2017/day/8) | [I Heard You Like Registers](https://adventofcode.com/2017/day/8) | 🟡 |  | [day_08.ex](../../lib/2017/day_08.ex) |
