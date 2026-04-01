@@ -24,10 +24,9 @@ defmodule AdventOfCode.MixProject do
   defp deps do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:floki, "~> 0.36"},
-      {:httpoison, "~> 2.2"},
-      {:yog_ex, github: "code-shoily/yog_ex", branch: "main"},
-      {:aja, "~> 0.7"}
+      {:floki, "~> 0.36", only: [:dev]},
+      {:httpoison, "~> 2.2", only: [:dev]},
+      {:yog_ex, github: "code-shoily/yog_ex", branch: "main"}
     ]
   end
 
