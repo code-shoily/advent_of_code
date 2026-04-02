@@ -50,8 +50,7 @@
 | [game](game.md) | 1 |
 | [gb-tree](gb-tree.md) | 1 |
 | [generation](generation.md) | 1 |
-| [geometry](geometry.md) | 1 |
-| [geometry2d](geometry2d.md) | 10 |
+| [geometry2d](geometry2d.md) | 11 |
 | [geometry3d](geometry3d.md) | 2 |
 | [graph](graph.md) | 34 |
 | [graph-route](graph-route.md) | 1 |
@@ -115,7 +114,6 @@
 | [regex](regex.md) | 5 |
 | [rotation](rotation.md) | 3 |
 | [routing](routing.md) | 2 |
-| [rust](rust.md) | 9 |
 | [safe-dial](safe-dial.md) | 1 |
 | [search](search.md) | 1 |
 | [sequence](sequence.md) | 25 |

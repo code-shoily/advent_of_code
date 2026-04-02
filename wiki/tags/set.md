@@ -4,9 +4,9 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
-| 2015 | [3](https://adventofcode.com/2015/day/3) | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | 🟢 | [grid](grid.md), [rust](rust.md) | [day_03.ex](../../lib/2015/day_03.ex) |
+| 2015 | [3](https://adventofcode.com/2015/day/3) | [Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | 🟢 | [grid](grid.md) | [day_03.ex](../../lib/2015/day_03.ex) |
 | 2016 | [1](https://adventofcode.com/2016/day/1) | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | 🟡 | [grid2d](grid2d.md), [measurement](measurement.md) | [day_01.ex](../../lib/2016/day_01.ex) |
-| 2018 | [1](https://adventofcode.com/2018/day/1) | [Chronal Calibration](https://adventofcode.com/2018/day/1) | 🟡 | [sequence](sequence.md), [rust](rust.md) | [day_01.ex](../../lib/2018/day_01.ex) |
+| 2018 | [1](https://adventofcode.com/2018/day/1) | [Chronal Calibration](https://adventofcode.com/2018/day/1) | 🟡 | [sequence](sequence.md) | [day_01.ex](../../lib/2018/day_01.ex) |
 | 2018 | [2](https://adventofcode.com/2018/day/2) | [Inventory Management System](https://adventofcode.com/2018/day/2) | 🟡 | [checksum](checksum.md), [string-result](string-result.md) | [day_02.ex](../../lib/2018/day_02.ex) |
 | 2018 | [3](https://adventofcode.com/2018/day/3) | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | 🟠 | [grid](grid.md) | [day_03.ex](../../lib/2018/day_03.ex) |
 | 2019 | [3](https://adventofcode.com/2019/day/3) | [Crossed Wires](https://adventofcode.com/2019/day/3) | 🟢 | [grid](grid.md) | [day_03.ex](../../lib/2019/day_03.ex) |

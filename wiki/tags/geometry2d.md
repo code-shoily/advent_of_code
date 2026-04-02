@@ -4,8 +4,9 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
-| 2015 | [2](https://adventofcode.com/2015/day/2) | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | 🟢 | [rust](rust.md) | [day_02.ex](../../lib/2015/day_02.ex) |
+| 2015 | [2](https://adventofcode.com/2015/day/2) | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | 🟢 |  | [day_02.ex](../../lib/2015/day_02.ex) |
 | 2016 | [3](https://adventofcode.com/2016/day/3) | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | 🟢 | [matrix](matrix.md), [count](count.md) | [day_03.ex](../../lib/2016/day_03.ex) |
+| 2018 | [6](https://adventofcode.com/2018/day/6) | [Chronal Coordinates](https://adventofcode.com/2018/day/6) | 🟡 | [grid](grid.md), [optimization](optimization.md), [parallel](parallel.md) | [day_06.ex](../../lib/2018/day_06.ex) |
 | 2020 | [12](https://adventofcode.com/2020/day/12) | [Rain Risk](https://adventofcode.com/2020/day/12) | 🟡 | [rotation](rotation.md), [walk](walk.md) | [day_12.ex](../../lib/2020/day_12.ex) |
 | 2020 | [20](https://adventofcode.com/2020/day/20) | [Jurassic Jigsaw](https://adventofcode.com/2020/day/20) | 💀 | [rotation](rotation.md) | [day_20.ex](../../lib/2020/day_20.ex) |
 | 2022 | [15](https://adventofcode.com/2022/day/15) | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | 💀 | [optimization](optimization.md), [interval-merging](interval-merging.md) | [day_15.ex](../../lib/2022/day_15.ex) |

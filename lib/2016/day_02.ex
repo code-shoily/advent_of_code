@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day02 do
   --- Day 2: Bathroom Security ---
   Problem Link: https://adventofcode.com/2016/day/2
   Difficulty: xs
-  Tags: grid rust
+  Tags: grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

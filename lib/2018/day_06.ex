@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day06 do
   --- Day 6: Chronal Coordinates ---
   Problem Link: https://adventofcode.com/2018/day/6
   Difficulty: s
-  Tags: grid geometry optimization parallel
+  Tags: grid geometry2d optimization parallel
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
