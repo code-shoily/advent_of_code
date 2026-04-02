@@ -13,7 +13,7 @@
 | [assembled-optimization](assembled-optimization.md) | 1 |
 | [assembunny](assembunny.md) | 2 |
 | [atomics](atomics.md) | 2 |
-| [bfs](bfs.md) | 3 |
+| [bfs](bfs.md) | 4 |
 | [binary-search](binary-search.md) | 1 |
 | [binary-space](binary-space.md) | 1 |
 | [bitmask](bitmask.md) | 1 |
@@ -36,6 +36,7 @@
 | [coordinate-compression](coordinate-compression.md) | 1 |
 | [count](count.md) | 5 |
 | [cycle-detection](cycle-detection.md) | 1 |
+| [cycles](cycles.md) | 2 |
 | [dag](dag.md) | 1 |
 | [data-modelling](data-modelling.md) | 2 |
 | [dataflow](dataflow.md) | 1 |
@@ -59,7 +60,7 @@
 | [geometry](geometry.md) | 4 |
 | [geometry2d](geometry2d.md) | 8 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 31 |
+| [graph](graph.md) | 33 |
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
 | [greedy](greedy.md) | 1 |
@@ -69,7 +70,7 @@
 | [hash](hash.md) | 3 |
 | [hexagon](hexagon.md) | 2 |
 | [implicit-graph](implicit-graph.md) | 4 |
-| [infinite-grid](infinite-grid.md) | 1 |
+| [infinite-grid](infinite-grid.md) | 2 |
 | [infinite-sequence](infinite-sequence.md) | 1 |
 | [inline-input](inline-input.md) | 1 |
 | [int-code](int-code.md) | 2 |
@@ -78,8 +79,10 @@
 | [json](json.md) | 2 |
 | [lan-party](lan-party.md) | 1 |
 | [large-number](large-number.md) | 2 |
+| [lcm](lcm.md) | 1 |
 | [linked-list](linked-list.md) | 2 |
 | [list](list.md) | 1 |
+| [logic-circuit](logic-circuit.md) | 1 |
 | [logic-gates](logic-gates.md) | 1 |
 | [longest-path](longest-path.md) | 1 |
 | [map](map.md) | 4 |
@@ -111,6 +114,7 @@
 | [physics](physics.md) | 1 |
 | [polygon](polygon.md) | 1 |
 | [power-set](power-set.md) | 1 |
+| [quadratic-interpolation](quadratic-interpolation.md) | 1 |
 | [quadratic-time](quadratic-time.md) | 1 |
 | [random-access](random-access.md) | 3 |
 | [range](range.md) | 4 |
@@ -129,7 +133,7 @@
 | [set](set.md) | 17 |
 | [shortest-path](shortest-path.md) | 6 |
 | [sieve](sieve.md) | 1 |
-| [simulation](simulation.md) | 12 |
+| [simulation](simulation.md) | 13 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 3 |
 | [sort](sort.md) | 3 |
