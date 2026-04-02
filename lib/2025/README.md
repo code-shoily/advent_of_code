@@ -8,11 +8,11 @@
 
 | Day | Title | Difficulty | Tags | Source |
 |:---:|-------|:----------:|------|--------|
-| [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | 🟠 | [simulation](../../wiki/tags/simulation.md), [safe-dial](../../wiki/tags/safe-dial.md) | [day_01.ex](day_01.ex) |
+| [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | 🟡 | [simulation](../../wiki/tags/simulation.md), [safe-dial](../../wiki/tags/safe-dial.md) | [day_01.ex](day_01.ex) |
 | [2](https://adventofcode.com/2025/day/2) | [Gift Shop](https://adventofcode.com/2025/day/2) | 🟠 | [simulation](../../wiki/tags/simulation.md), [generation](../../wiki/tags/generation.md), [string-manipulation](../../wiki/tags/string-manipulation.md), [math](../../wiki/tags/math.md) | [day_02.ex](day_02.ex) |
 | [3](https://adventofcode.com/2025/day/3) | [Lobby](https://adventofcode.com/2025/day/3) | 🟠 | [greedy](../../wiki/tags/greedy.md), [stack](../../wiki/tags/stack.md), [subsequence-optimization](../../wiki/tags/subsequence-optimization.md) | [day_03.ex](day_03.ex) |
 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | 🟠 | [simulation](../../wiki/tags/simulation.md), [grid](../../wiki/tags/grid.md), [graph](../../wiki/tags/graph.md) | [day_04.ex](day_04.ex) |
-| [5](https://adventofcode.com/2025/day/5) | [Cafeteria](https://adventofcode.com/2025/day/5) | 🟠 | [simulation](../../wiki/tags/simulation.md), [ranges](../../wiki/tags/ranges.md), [interval-merging](../../wiki/tags/interval-merging.md) | [day_05.ex](day_05.ex) |
+| [5](https://adventofcode.com/2025/day/5) | [Cafeteria](https://adventofcode.com/2025/day/5) | 🟡 | [simulation](../../wiki/tags/simulation.md), [ranges](../../wiki/tags/ranges.md), [interval-merging](../../wiki/tags/interval-merging.md) | [day_05.ex](day_05.ex) |
 | [6](https://adventofcode.com/2025/day/6) | [Trash Compactor](https://adventofcode.com/2025/day/6) | 🟠 | [grid](../../wiki/tags/grid.md), [parsing](../../wiki/tags/parsing.md), [math](../../wiki/tags/math.md) | [day_06.ex](day_06.ex) |
 | [7](https://adventofcode.com/2025/day/7) | [Laboratories](https://adventofcode.com/2025/day/7) | 🔴 | [grid](../../wiki/tags/grid.md), [dynamic-programming](../../wiki/tags/dynamic-programming.md) | [day_07.ex](day_07.ex) |
 | [8](https://adventofcode.com/2025/day/8) | [Playground](https://adventofcode.com/2025/day/8) | 🟡 | [union-find](../../wiki/tags/union-find.md) | [day_08.ex](day_08.ex) |

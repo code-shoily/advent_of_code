@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2022.Day17 do
   @moduledoc """
   --- Day 17: Pyroclastic Flow ---
   Problem Link: https://adventofcode.com/2022/day/17
-  Difficulty: h
+  Difficulty: l
   Tags: simulation tetris cycle-detection
   """
   alias AdventOfCode.Helpers.InputReader

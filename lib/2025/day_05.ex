@@ -2,7 +2,7 @@ defmodule AdventOfCode.Y2025.Day05 do
   @moduledoc """
   --- Day 5: Cafeteria ---
   Problem Link: https://adventofcode.com/2025/day/5
-  Difficulty: e
+  Difficulty: s
   Tags: simulation ranges interval-merging
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}

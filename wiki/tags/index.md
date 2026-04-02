@@ -52,7 +52,7 @@
 | [generation](generation.md) | 1 |
 | [geometry2d](geometry2d.md) | 11 |
 | [geometry3d](geometry3d.md) | 2 |
-| [graph](graph.md) | 34 |
+| [graph](graph.md) | 35 |
 | [graph-route](graph-route.md) | 1 |
 | [greedy](greedy.md) | 1 |
 | [grid](grid.md) | 32 |
@@ -75,6 +75,7 @@
 | [logic-circuit](logic-circuit.md) | 1 |
 | [logic-gates](logic-gates.md) | 1 |
 | [longest-path](longest-path.md) | 1 |
+| [manual-parse](manual-parse.md) | 1 |
 | [map](map.md) | 4 |
 | [mask](mask.md) | 1 |
 | [math](math.md) | 2 |
@@ -120,13 +121,13 @@
 | [set](set.md) | 17 |
 | [shortest-path](shortest-path.md) | 4 |
 | [sieve](sieve.md) | 1 |
-| [simulation](simulation.md) | 14 |
+| [simulation](simulation.md) | 15 |
 | [sliding-window](sliding-window.md) | 4 |
 | [slow](slow.md) | 3 |
 | [sort](sort.md) | 3 |
 | [spiral](spiral.md) | 1 |
 | [stack](stack.md) | 3 |
-| [state-space](state-space.md) | 1 |
+| [state-space](state-space.md) | 2 |
 | [state-space-search](state-space-search.md) | 2 |
 | [strategy](strategy.md) | 1 |
 | [string](string.md) | 2 |

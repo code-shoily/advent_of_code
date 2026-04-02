@@ -4,4 +4,4 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
-| 2025 | [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | 🟠 | [simulation](simulation.md) | [day_01.ex](../../lib/2025/day_01.ex) |
+| 2025 | [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | 🟡 | [simulation](simulation.md) | [day_01.ex](../../lib/2025/day_01.ex) |
