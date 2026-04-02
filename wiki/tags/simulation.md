@@ -12,4 +12,7 @@
 | 2020 | [22](https://adventofcode.com/2020/day/22) | [Crab Combat](https://adventofcode.com/2020/day/22) | 🟠 | [recursion](recursion.md), [game](game.md) | [day_22.ex](../../lib/2020/day_22.ex) |
 | 2021 | [17](https://adventofcode.com/2021/day/17) | [Trick Shot](https://adventofcode.com/2021/day/17) | 🟠 | [physics](physics.md) | [day_17.ex](../../lib/2021/day_17.ex) |
 | 2022 | [17](https://adventofcode.com/2022/day/17) | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) | 🟠 | [tetris](tetris.md), [cycle-detection](cycle-detection.md) | [day_17.ex](../../lib/2022/day_17.ex) |
+| 2025 | [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | 🟠 | [safe-dial](safe-dial.md) | [day_01.ex](../../lib/2025/day_01.ex) |
+| 2025 | [2](https://adventofcode.com/2025/day/2) | [Gift Shop](https://adventofcode.com/2025/day/2) | 🟠 | [generation](generation.md), [string-manipulation](string-manipulation.md), [math](math.md) | [day_02.ex](../../lib/2025/day_02.ex) |
 | 2025 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | 🟠 | [grid](grid.md), [graph](graph.md) | [day_04.ex](../../lib/2025/day_04.ex) |
+| 2025 | [5](https://adventofcode.com/2025/day/5) | [Cafeteria](https://adventofcode.com/2025/day/5) | 🟠 | [ranges](ranges.md), [interval-merging](interval-merging.md) | [day_05.ex](../../lib/2025/day_05.ex) |

@@ -157,8 +157,15 @@
 | 2024 | [12](https://adventofcode.com/2024/day/12) | [Garden Groups](https://adventofcode.com/2024/day/12) | [geometry2d](tags/geometry2d.md), [disjoint-set](tags/disjoint-set.md) | [day_12.ex](../lib/2024/day_12.ex) |
 | 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | [graph](tags/graph.md), [shortest-path](tags/shortest-path.md), [binary-search](tags/binary-search.md), [dijkstra](tags/dijkstra.md), [grid-traversal](tags/grid-traversal.md) | [day_18.ex](../lib/2024/day_18.ex) |
 | 2024 | [23](https://adventofcode.com/2024/day/23) | [LAN Party](https://adventofcode.com/2024/day/23) | [graph](tags/graph.md), [clique](tags/clique.md), [bron-kerbosch](tags/bron-kerbosch.md), [maximum-clique](tags/maximum-clique.md), [lan-party](tags/lan-party.md) | [day_23.ex](../lib/2024/day_23.ex) |
+| 2025 | [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | [simulation](tags/simulation.md), [safe-dial](tags/safe-dial.md) | [day_01.ex](../lib/2025/day_01.ex) |
+| 2025 | [2](https://adventofcode.com/2025/day/2) | [Gift Shop](https://adventofcode.com/2025/day/2) | [simulation](tags/simulation.md), [generation](tags/generation.md), [string-manipulation](tags/string-manipulation.md), [math](tags/math.md) | [day_02.ex](../lib/2025/day_02.ex) |
+| 2025 | [3](https://adventofcode.com/2025/day/3) | [Lobby](https://adventofcode.com/2025/day/3) | [greedy](tags/greedy.md), [stack](tags/stack.md), [subsequence-optimization](tags/subsequence-optimization.md) | [day_03.ex](../lib/2025/day_03.ex) |
 | 2025 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | [simulation](tags/simulation.md), [grid](tags/grid.md), [graph](tags/graph.md) | [day_04.ex](../lib/2025/day_04.ex) |
+| 2025 | [5](https://adventofcode.com/2025/day/5) | [Cafeteria](https://adventofcode.com/2025/day/5) | [simulation](tags/simulation.md), [ranges](tags/ranges.md), [interval-merging](tags/interval-merging.md) | [day_05.ex](../lib/2025/day_05.ex) |
+| 2025 | [6](https://adventofcode.com/2025/day/6) | [Trash Compactor](https://adventofcode.com/2025/day/6) | [grid](tags/grid.md), [parsing](tags/parsing.md), [math](tags/math.md) | [day_06.ex](../lib/2025/day_06.ex) |
+| 2025 | [9](https://adventofcode.com/2025/day/9) | [Movie Theater](https://adventofcode.com/2025/day/9) | [geometry](tags/geometry.md), [rectangles](tags/rectangles.md), [polygon](tags/polygon.md), [coordinate-compression](tags/coordinate-compression.md) | [day_09.ex](../lib/2025/day_09.ex) |
 | 2025 | [11](https://adventofcode.com/2025/day/11) | [Reactor](https://adventofcode.com/2025/day/11) | [graph](tags/graph.md), [dynamic-programming](tags/dynamic-programming.md) | [day_11.ex](../lib/2025/day_11.ex) |
+| 2025 | [12](https://adventofcode.com/2025/day/12) | [Christmas Tree Farm](https://adventofcode.com/2025/day/12) | [geometry](tags/geometry.md), [packing](tags/packing.md), [area](tags/area.md) | [day_12.ex](../lib/2025/day_12.ex) |
 
 ## 🔴 L
 
