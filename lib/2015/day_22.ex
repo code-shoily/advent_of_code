@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day22 do
   --- Day 22: Wizard Simulator 20XX ---
   Problem Link: https://adventofcode.com/2015/day/22
   Difficulty: m
-  Tags: dijkstra game-sim
+  Tags: dijkstra simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Traversal.Implicit

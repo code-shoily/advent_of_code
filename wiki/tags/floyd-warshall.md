@@ -4,4 +4,4 @@
 
 | Year | Day | Title | Difficulty | Other Tags | Source |
 |------|:---:|-------|:----------:|------------|--------|
-| 2022 | [16](https://adventofcode.com/2022/day/16) | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | 🟠 | [graph](graph.md), [johnsons-algorithm](johnsons-algorithm.md), [dfs](dfs.md), [optimization](optimization.md) | [day_16.ex](../../lib/2022/day_16.ex) |
+| 2022 | [16](https://adventofcode.com/2022/day/16) | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | 🟠 | [graph](graph.md), [optimization](optimization.md) | [day_16.ex](../../lib/2022/day_16.ex) |

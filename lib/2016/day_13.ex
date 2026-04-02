@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day13 do
   --- Day 13: A Maze of Twisty Little Cubicles ---
   Problem Link: https://adventofcode.com/2016/day/13
   Difficulty: m
-  Tags: graph implicit-graph shortest-path a-star bfs
+  Tags: graph implicit-graph a-star
   """
   import Bitwise
   alias AdventOfCode.Helpers.InputReader
@@ -19,8 +19,6 @@ defmodule AdventOfCode.Y2016.Day13 do
   end
 
   defp run_1(fav) do
-    # Target coordinate: (31, 39)
-    # Finding shortest path using A* search from (1, 1).
     target = {31, 39}
 
     successors = fn pos ->
@@ -43,7 +41,6 @@ defmodule AdventOfCode.Y2016.Day13 do
   end
 
   defp run_2(fav) do
-    # BFS to find all unique nodes reachable within 50 steps.
     Traversal.implicit_fold(
       from: {1, 1},
       using: :breadth_first,
@@ -52,7 +49,6 @@ defmodule AdventOfCode.Y2016.Day13 do
       with: fn acc, pos, meta ->
         new_acc = MapSet.put(acc, pos)
 
-        # Stop exploring depth > 50.
         action = if meta.depth >= 50, do: :stop, else: :continue
         {action, new_acc}
       end

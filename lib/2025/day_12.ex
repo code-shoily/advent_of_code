@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day12 do
   --- Day 12: Christmas Tree Farm ---
   Problem Link: https://adventofcode.com/2025/day/12
   Difficulty: m
-  Tags: geometry packing area
+  Tags: geometry2d
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day14 do
   --- Day 14: Regolith Reservoir ---
   Problem Link: https://adventofcode.com/2022/day/14
   Difficulty: l
-  Tags: grid flood-fill implicit-graph yog
+  Tags: grid flood-fill implicit-graph
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Traversal.Implicit

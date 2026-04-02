@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day18 do
   --- Day 18: RAM Run ---
   Problem Link: https://adventofcode.com/2024/day/18
   Difficulty: m
-  Tags: graph shortest-path binary-search dijkstra grid-traversal
+  Tags: graph grid binary-search dijkstra
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Pathfinding.Dijkstra

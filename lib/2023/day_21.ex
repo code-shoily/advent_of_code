@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day21 do
   --- Day 21: Step Counter ---
   Problem Link: https://adventofcode.com/2023/day/21
   Difficulty: h
-  Tags: graph infinite-grid bfs cycles quadratic-interpolation
+  Tags: graph infinite-grid cycles quadratic-interpolation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Traversal

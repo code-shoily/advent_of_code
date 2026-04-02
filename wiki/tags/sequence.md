@@ -22,7 +22,7 @@
 | 2019 | [4](https://adventofcode.com/2019/day/4) | [Secure Container](https://adventofcode.com/2019/day/4) | 🟢 | [inline-input](inline-input.md) | [day_04.ex](../../lib/2019/day_04.ex) |
 | 2019 | [8](https://adventofcode.com/2019/day/8) | [Space Image Format](https://adventofcode.com/2019/day/8) | 🟢 | [visual-result](visual-result.md) | [day_08.ex](../../lib/2019/day_08.ex) |
 | 2019 | [10](https://adventofcode.com/2019/day/10) | [Monitoring Station](https://adventofcode.com/2019/day/10) | 🟠 | [grid](grid.md), [trigonometry](trigonometry.md) | [day_10.ex](../../lib/2019/day_10.ex) |
-| 2020 | [15](https://adventofcode.com/2020/day/15) | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | 🟠 | [erlang](erlang.md), [memoization](memoization.md) | [day_15.ex](../../lib/2020/day_15.ex) |
+| 2020 | [15](https://adventofcode.com/2020/day/15) | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | 🟠 | [memoization](memoization.md) | [day_15.ex](../../lib/2020/day_15.ex) |
 | 2021 | [1](https://adventofcode.com/2021/day/1) | [Sonar Sweep](https://adventofcode.com/2021/day/1) | 🟢 | [sliding-window](sliding-window.md), [rust](rust.md) | [day_01.ex](../../lib/2021/day_01.ex) |
 | 2022 | [1](https://adventofcode.com/2022/day/1) | [Calorie Counting](https://adventofcode.com/2022/day/1) | 🟢 |  | [day_01.ex](../../lib/2022/day_01.ex) |
 | 2022 | [13](https://adventofcode.com/2022/day/13) | [Distress Signal](https://adventofcode.com/2022/day/13) | 🟡 | [json](json.md) | [day_13.ex](../../lib/2022/day_13.ex) |

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day12 do
   --- Day 12: Hill Climbing Algorithm ---
   Problem Link: https://adventofcode.com/2022/day/12
   Difficulty: m
-  Tags: graph graph-traversal
+  Tags: graph grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.{Grid, GridGraph}
