@@ -33,7 +33,7 @@
 | [connectivity](connectivity.md) | 3 |
 | [constellation](constellation.md) | 1 |
 | [count](count.md) | 5 |
-| [cycle-detection](cycle-detection.md) | 1 |
+| [cycle-detection](cycle-detection.md) | 2 |
 | [cycles](cycles.md) | 2 |
 | [dag](dag.md) | 1 |
 | [data-modelling](data-modelling.md) | 2 |
@@ -55,7 +55,7 @@
 | [graph](graph.md) | 35 |
 | [graph-route](graph-route.md) | 1 |
 | [greedy](greedy.md) | 1 |
-| [grid](grid.md) | 33 |
+| [grid](grid.md) | 34 |
 | [grid2d](grid2d.md) | 1 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
@@ -121,9 +121,9 @@
 | [set](set.md) | 17 |
 | [shortest-path](shortest-path.md) | 4 |
 | [sieve](sieve.md) | 1 |
-| [simulation](simulation.md) | 15 |
+| [simulation](simulation.md) | 16 |
 | [sliding-window](sliding-window.md) | 4 |
-| [slow](slow.md) | 3 |
+| [slow](slow.md) | 4 |
 | [sort](sort.md) | 3 |
 | [spiral](spiral.md) | 1 |
 | [stack](stack.md) | 3 |

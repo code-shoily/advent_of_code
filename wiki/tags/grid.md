@@ -33,6 +33,7 @@
 | 2023 | [16](https://adventofcode.com/2023/day/16) | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) | 🔴 | [memoization](memoization.md) | [day_16.ex](../../lib/2023/day_16.ex) |
 | 2023 | [17](https://adventofcode.com/2023/day/17) | [Clumsy Crucible](https://adventofcode.com/2023/day/17) | 🔴 | [graph](graph.md), [dijkstra](dijkstra.md), [shortest-path](shortest-path.md), [state-space](state-space.md) | [day_17.ex](../../lib/2023/day_17.ex) |
 | 2024 | [4](https://adventofcode.com/2024/day/4) | [Ceres Search](https://adventofcode.com/2024/day/4) | 🟡 | [word-search](word-search.md) | [day_04.ex](../../lib/2024/day_04.ex) |
+| 2024 | [6](https://adventofcode.com/2024/day/6) | [Guard Gallivant](https://adventofcode.com/2024/day/6) | 🟠 | [simulation](simulation.md), [cycle-detection](cycle-detection.md), [slow](slow.md) | [day_06.ex](../../lib/2024/day_06.ex) |
 | 2024 | [18](https://adventofcode.com/2024/day/18) | [RAM Run](https://adventofcode.com/2024/day/18) | 🟠 | [graph](graph.md), [binary-search](binary-search.md), [dijkstra](dijkstra.md) | [day_18.ex](../../lib/2024/day_18.ex) |
 | 2025 | [4](https://adventofcode.com/2025/day/4) | [Printing Department](https://adventofcode.com/2025/day/4) | 🟠 | [simulation](simulation.md), [graph](graph.md) | [day_04.ex](../../lib/2025/day_04.ex) |
 | 2025 | [6](https://adventofcode.com/2025/day/6) | [Trash Compactor](https://adventofcode.com/2025/day/6) | 🟠 | [parsing](parsing.md), [math](math.md) | [day_06.ex](../../lib/2025/day_06.ex) |
