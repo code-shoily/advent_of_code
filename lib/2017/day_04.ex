@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day04 do
   --- Day 4: High-Entropy Passphrases ---
   Problem Link: https://adventofcode.com/2017/day/4
   Difficulty: xs
-  Tags: validation rust
+  Tags: validation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

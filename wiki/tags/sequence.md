@@ -24,7 +24,7 @@
 | 2019 | [10](https://adventofcode.com/2019/day/10) | [Monitoring Station](https://adventofcode.com/2019/day/10) | 🟠 | [grid](grid.md), [trigonometry](trigonometry.md) | [day_10.ex](../../lib/2019/day_10.ex) |
 | 2020 | [15](https://adventofcode.com/2020/day/15) | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | 🟠 | [erlang](erlang.md), [memoization](memoization.md) | [day_15.ex](../../lib/2020/day_15.ex) |
 | 2021 | [1](https://adventofcode.com/2021/day/1) | [Sonar Sweep](https://adventofcode.com/2021/day/1) | 🟢 | [sliding-window](sliding-window.md), [rust](rust.md) | [day_01.ex](../../lib/2021/day_01.ex) |
-| 2022 | [1](https://adventofcode.com/2022/day/1) | [Calorie Counting](https://adventofcode.com/2022/day/1) | 🟢 | [rust](rust.md) | [day_01.ex](../../lib/2022/day_01.ex) |
+| 2022 | [1](https://adventofcode.com/2022/day/1) | [Calorie Counting](https://adventofcode.com/2022/day/1) | 🟢 |  | [day_01.ex](../../lib/2022/day_01.ex) |
 | 2022 | [13](https://adventofcode.com/2022/day/13) | [Distress Signal](https://adventofcode.com/2022/day/13) | 🟡 | [json](json.md) | [day_13.ex](../../lib/2022/day_13.ex) |
 | 2022 | [20](https://adventofcode.com/2022/day/20) | [Grove Positioning System](https://adventofcode.com/2022/day/20) | 🟠 | [large-number](large-number.md), [circular-list](circular-list.md) | [day_20.ex](../../lib/2022/day_20.ex) |
 | 2023 | [8](https://adventofcode.com/2023/day/8) | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | 🟡 | [arithmetic](arithmetic.md) | [day_08.ex](../../lib/2023/day_08.ex) |

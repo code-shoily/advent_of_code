@@ -9,7 +9,7 @@
 | [ambiguous-solution](ambiguous-solution.md) | 1 |
 | [annoying](annoying.md) | 3 |
 | [area](area.md) | 1 |
-| [arithmetic](arithmetic.md) | 5 |
+| [arithmetic](arithmetic.md) | 6 |
 | [assembled-optimization](assembled-optimization.md) | 1 |
 | [assembunny](assembunny.md) | 2 |
 | [atomics](atomics.md) | 2 |
@@ -19,7 +19,7 @@
 | [bitmask](bitmask.md) | 1 |
 | [bitwise](bitwise.md) | 6 |
 | [bron-kerbosch](bron-kerbosch.md) | 1 |
-| [calculation](calculation.md) | 3 |
+| [calculation](calculation.md) | 2 |
 | [cellular-automata](cellular-automata.md) | 1 |
 | [char-sequence](char-sequence.md) | 1 |
 | [checksum](checksum.md) | 2 |
@@ -64,8 +64,9 @@
 | [graph-route](graph-route.md) | 1 |
 | [graph-traversal](graph-traversal.md) | 2 |
 | [greedy](greedy.md) | 1 |
-| [grid](grid.md) | 30 |
+| [grid](grid.md) | 29 |
 | [grid-traversal](grid-traversal.md) | 1 |
+| [grid2d](grid2d.md) | 1 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
 | [hexagon](hexagon.md) | 2 |
@@ -126,7 +127,7 @@
 | [regex](regex.md) | 5 |
 | [rotation](rotation.md) | 3 |
 | [routing](routing.md) | 2 |
-| [rust](rust.md) | 15 |
+| [rust](rust.md) | 9 |
 | [safe-dial](safe-dial.md) | 1 |
 | [search](search.md) | 1 |
 | [sequence](sequence.md) | 25 |

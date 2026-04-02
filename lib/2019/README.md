@@ -4,11 +4,11 @@
 
 ## ⭐ 18/50
 
-[sequence](../../wiki/tags/sequence.md)&nbsp;`3`  [graph](../../wiki/tags/graph.md)&nbsp;`2`  [grid](../../wiki/tags/grid.md)&nbsp;`2`  [int-code](../../wiki/tags/int-code.md)&nbsp;`2`  [op-code](../../wiki/tags/op-code.md)&nbsp;`2`  [bitmask](../../wiki/tags/bitmask.md)&nbsp;`1`  [calculation](../../wiki/tags/calculation.md)&nbsp;`1`  [dijkstra](../../wiki/tags/dijkstra.md)&nbsp;`1`  [implicit-graph](../../wiki/tags/implicit-graph.md)&nbsp;`1`  [inline-input](../../wiki/tags/inline-input.md)&nbsp;`1`  [routing](../../wiki/tags/routing.md)&nbsp;`1`  [rust](../../wiki/tags/rust.md)&nbsp;`1`  [set](../../wiki/tags/set.md)&nbsp;`1`  [state-space-search](../../wiki/tags/state-space-search.md)&nbsp;`1`  [trigonometry](../../wiki/tags/trigonometry.md)&nbsp;`1`  [visual-result](../../wiki/tags/visual-result.md)&nbsp;`1`
+[sequence](../../wiki/tags/sequence.md)&nbsp;`3`  [graph](../../wiki/tags/graph.md)&nbsp;`2`  [grid](../../wiki/tags/grid.md)&nbsp;`2`  [int-code](../../wiki/tags/int-code.md)&nbsp;`2`  [op-code](../../wiki/tags/op-code.md)&nbsp;`2`  [arithmetic](../../wiki/tags/arithmetic.md)&nbsp;`1`  [bitmask](../../wiki/tags/bitmask.md)&nbsp;`1`  [dijkstra](../../wiki/tags/dijkstra.md)&nbsp;`1`  [implicit-graph](../../wiki/tags/implicit-graph.md)&nbsp;`1`  [inline-input](../../wiki/tags/inline-input.md)&nbsp;`1`  [routing](../../wiki/tags/routing.md)&nbsp;`1`  [set](../../wiki/tags/set.md)&nbsp;`1`  [state-space-search](../../wiki/tags/state-space-search.md)&nbsp;`1`  [trigonometry](../../wiki/tags/trigonometry.md)&nbsp;`1`  [visual-result](../../wiki/tags/visual-result.md)&nbsp;`1`
 
 | Day | Title | Difficulty | Tags | Source |
 |:---:|-------|:----------:|------|--------|
-| [1](https://adventofcode.com/2019/day/1) | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | 🟢 | [calculation](../../wiki/tags/calculation.md), [rust](../../wiki/tags/rust.md) | [day_01.ex](day_01.ex) |
+| [1](https://adventofcode.com/2019/day/1) | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | 🟢 | [arithmetic](../../wiki/tags/arithmetic.md) | [day_01.ex](day_01.ex) |
 | [2](https://adventofcode.com/2019/day/2) | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | 🟢 | [op-code](../../wiki/tags/op-code.md), [int-code](../../wiki/tags/int-code.md) | [day_02.ex](day_02.ex) |
 | [3](https://adventofcode.com/2019/day/3) | [Crossed Wires](https://adventofcode.com/2019/day/3) | 🟢 | [grid](../../wiki/tags/grid.md), [set](../../wiki/tags/set.md) | [day_03.ex](day_03.ex) |
 | [4](https://adventofcode.com/2019/day/4) | [Secure Container](https://adventofcode.com/2019/day/4) | 🟢 | [sequence](../../wiki/tags/sequence.md), [inline-input](../../wiki/tags/inline-input.md) | [day_04.ex](day_04.ex) |
