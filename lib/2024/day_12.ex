@@ -11,7 +11,7 @@ defmodule AdventOfCode.Y2024.Day12 do
 
   def input, do: InputReader.read_from_file(2024, 12)
 
-  @spec run(binary()) :: {number(), nil}
+  @spec run(binary()) :: {number(), number()}
   def run(input \\ input()) do
     input = parse(input)
 
@@ -24,8 +24,35 @@ defmodule AdventOfCode.Y2024.Day12 do
     end)
   end
 
-  defp run_2(_input) do
-    nil
+  defp run_2(input) do
+    Enum.sum_by(input, fn {_, plants} ->
+      plants |> Enum.sum_by(fn plant -> calculate_price(plant, &sides/1) end)
+    end)
+  end
+
+  defp sides(plant_set) do
+    plant_set
+    |> Enum.map(fn plant -> count_corners(plant, plant_set) end)
+  end
+
+  defp count_corners({x, y}, region) do
+    [
+      {{0, -1}, {1, 0}, {1, -1}},
+      {{1, 0}, {0, 1}, {1, 1}},
+      {{0, 1}, {-1, 0}, {-1, 1}},
+      {{-1, 0}, {0, -1}, {-1, -1}}
+    ]
+    |> Enum.count(fn {d1, d2, diag} ->
+      n1 = {x + elem(d1, 0), y + elem(d1, 1)}
+      n2 = {x + elem(d2, 0), y + elem(d2, 1)}
+      nd = {x + elem(diag, 0), y + elem(diag, 1)}
+
+      is_n1 = MapSet.member?(region, n1)
+      is_n2 = MapSet.member?(region, n2)
+      is_nd = MapSet.member?(region, nd)
+
+      (not is_n1 and not is_n2) or (is_n1 and is_n2 and not is_nd)
+    end)
   end
 
   def parse(data \\ input()),
