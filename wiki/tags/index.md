@@ -55,7 +55,7 @@
 | [graph](graph.md) | 35 |
 | [graph-route](graph-route.md) | 1 |
 | [greedy](greedy.md) | 1 |
-| [grid](grid.md) | 32 |
+| [grid](grid.md) | 33 |
 | [grid2d](grid2d.md) | 1 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |
@@ -117,7 +117,7 @@
 | [routing](routing.md) | 2 |
 | [safe-dial](safe-dial.md) | 1 |
 | [search](search.md) | 1 |
-| [sequence](sequence.md) | 25 |
+| [sequence](sequence.md) | 26 |
 | [set](set.md) | 17 |
 | [shortest-path](shortest-path.md) | 4 |
 | [sieve](sieve.md) | 1 |
@@ -145,9 +145,10 @@
 | [tsp](tsp.md) | 1 |
 | [unfold](unfold.md) | 1 |
 | [union-find](union-find.md) | 1 |
-| [validation](validation.md) | 5 |
+| [validation](validation.md) | 6 |
 | [vector](vector.md) | 2 |
 | [visual-result](visual-result.md) | 3 |
 | [walk](walk.md) | 7 |
 | [walk3d](walk3d.md) | 1 |
+| [word-search](word-search.md) | 1 |
 | [zipper](zipper.md) | 1 |

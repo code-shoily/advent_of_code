@@ -29,3 +29,4 @@
 | 2022 | [20](https://adventofcode.com/2022/day/20) | [Grove Positioning System](https://adventofcode.com/2022/day/20) | 🟠 | [large-number](large-number.md), [circular-list](circular-list.md) | [day_20.ex](../../lib/2022/day_20.ex) |
 | 2023 | [8](https://adventofcode.com/2023/day/8) | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | 🟡 | [arithmetic](arithmetic.md) | [day_08.ex](../../lib/2023/day_08.ex) |
 | 2023 | [9](https://adventofcode.com/2023/day/9) | [Mirage Maintenance](https://adventofcode.com/2023/day/9) | 🟢 | [reduction](reduction.md) | [day_09.ex](../../lib/2023/day_09.ex) |
+| 2024 | [2](https://adventofcode.com/2024/day/2) | [Red-Nosed Reports](https://adventofcode.com/2024/day/2) | 🟡 | [validation](validation.md) | [day_02.ex](../../lib/2024/day_02.ex) |

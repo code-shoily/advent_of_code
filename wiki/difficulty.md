@@ -91,6 +91,8 @@
 | 2023 | [8](https://adventofcode.com/2023/day/8) | [Haunted Wasteland](https://adventofcode.com/2023/day/8) | [arithmetic](tags/arithmetic.md), [sequence](tags/sequence.md) | [day_08.ex](../lib/2023/day_08.ex) |
 | 2023 | [11](https://adventofcode.com/2023/day/11) | [Cosmic Expansion](https://adventofcode.com/2023/day/11) | [grid](tags/grid.md), [measurement](tags/measurement.md) | [day_11.ex](../lib/2023/day_11.ex) |
 | 2023 | [15](https://adventofcode.com/2023/day/15) | [Lens Library](https://adventofcode.com/2023/day/15) | [hash](tags/hash.md), [ordered-list](tags/ordered-list.md) | [day_15.ex](../lib/2023/day_15.ex) |
+| 2024 | [2](https://adventofcode.com/2024/day/2) | [Red-Nosed Reports](https://adventofcode.com/2024/day/2) | [sequence](tags/sequence.md), [validation](tags/validation.md) | [day_02.ex](../lib/2024/day_02.ex) |
+| 2024 | [4](https://adventofcode.com/2024/day/4) | [Ceres Search](https://adventofcode.com/2024/day/4) | [grid](tags/grid.md), [word-search](tags/word-search.md) | [day_04.ex](../lib/2024/day_04.ex) |
 | 2025 | [1](https://adventofcode.com/2025/day/1) | [Secret Entrance](https://adventofcode.com/2025/day/1) | [simulation](tags/simulation.md), [safe-dial](tags/safe-dial.md) | [day_01.ex](../lib/2025/day_01.ex) |
 | 2025 | [5](https://adventofcode.com/2025/day/5) | [Cafeteria](https://adventofcode.com/2025/day/5) | [simulation](tags/simulation.md), [ranges](tags/ranges.md), [interval-merging](tags/interval-merging.md) | [day_05.ex](../lib/2025/day_05.ex) |
 | 2025 | [8](https://adventofcode.com/2025/day/8) | [Playground](https://adventofcode.com/2025/day/8) | [union-find](tags/union-find.md) | [day_08.ex](../lib/2025/day_08.ex) |
