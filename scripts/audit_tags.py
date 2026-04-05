@@ -58,6 +58,7 @@ MAPPING = {
     'char-sequence': 'sequence',
     'assembled-optimization': 'optimization',
     'hard-description': 'annoying',
+    'range': 'ranges',
 }
 
 GARBAGE = [

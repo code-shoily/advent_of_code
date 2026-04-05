@@ -71,8 +71,7 @@
 | [physics](physics.md) | 1 |
 | [quadratic-time](quadratic-time.md) | 1 |
 | [random-access](random-access.md) | 3 |
-| [range](range.md) | 4 |
-| [ranges](ranges.md) | 1 |
+| [ranges](ranges.md) | 5 |
 | [recursion](recursion.md) | 9 |
 | [reduction](reduction.md) | 8 |
 | [refactor](refactor.md) | 1 |

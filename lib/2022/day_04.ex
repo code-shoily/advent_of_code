@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day04 do
   --- Day 4: Camp Cleanup ---
   Problem Link: https://adventofcode.com/2022/day/4
   Difficulty: xs
-  Tags: range set
+  Tags: ranges set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day16 do
   --- Day 16: Ticket Translation ---
   Problem Link: https://adventofcode.com/2020/day/16
   Difficulty: m
-  Tags: range validation
+  Tags: ranges validation
   """
   alias AdventOfCode.Helpers.InputReader
 

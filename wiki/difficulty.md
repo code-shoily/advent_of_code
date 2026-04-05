@@ -40,7 +40,7 @@
 | 2022 | [1](https://adventofcode.com/2022/day/1) | [Calorie Counting](https://adventofcode.com/2022/day/1) | [sequence](tags/sequence.md) | [day_01.ex](../lib/2022/day_01.ex) |
 | 2022 | [2](https://adventofcode.com/2022/day/2) | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | [table-lookup](tags/table-lookup.md) | [day_02.ex](../lib/2022/day_02.ex) |
 | 2022 | [3](https://adventofcode.com/2022/day/3) | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [set](tags/set.md) | [day_03.ex](../lib/2022/day_03.ex) |
-| 2022 | [4](https://adventofcode.com/2022/day/4) | [Camp Cleanup](https://adventofcode.com/2022/day/4) | [range](tags/range.md), [set](tags/set.md) | [day_04.ex](../lib/2022/day_04.ex) |
+| 2022 | [4](https://adventofcode.com/2022/day/4) | [Camp Cleanup](https://adventofcode.com/2022/day/4) | [ranges](tags/ranges.md), [set](tags/set.md) | [day_04.ex](../lib/2022/day_04.ex) |
 | 2022 | [6](https://adventofcode.com/2022/day/6) | [Tuning Trouble](https://adventofcode.com/2022/day/6) | [bitwise](tags/bitwise.md), [set](tags/set.md) | [day_06.ex](../lib/2022/day_06.ex) |
 | 2022 | [7](https://adventofcode.com/2022/day/7) | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [op-code](tags/op-code.md), [sequence](tags/sequence.md) | [day_07.ex](../lib/2022/day_07.ex) |
 | 2023 | [1](https://adventofcode.com/2023/day/1) | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [parsing](tags/parsing.md) | [day_01.ex](../lib/2023/day_01.ex) |
@@ -136,7 +136,7 @@
 | 2020 | [13](https://adventofcode.com/2020/day/13) | [Shuttle Search](https://adventofcode.com/2020/day/13) | [math](tags/math.md) | [day_13.ex](../lib/2020/day_13.ex) |
 | 2020 | [14](https://adventofcode.com/2020/day/14) | [Docking Data](https://adventofcode.com/2020/day/14) | [bitwise](tags/bitwise.md), [recursion](tags/recursion.md) | [day_14.ex](../lib/2020/day_14.ex) |
 | 2020 | [15](https://adventofcode.com/2020/day/15) | [Rambunctious Recitation](https://adventofcode.com/2020/day/15) | [dynamic-programming](tags/dynamic-programming.md), [sequence](tags/sequence.md) | [day_15.ex](../lib/2020/day_15.ex) |
-| 2020 | [16](https://adventofcode.com/2020/day/16) | [Ticket Translation](https://adventofcode.com/2020/day/16) | [range](tags/range.md), [validation](tags/validation.md) | [day_16.ex](../lib/2020/day_16.ex) |
+| 2020 | [16](https://adventofcode.com/2020/day/16) | [Ticket Translation](https://adventofcode.com/2020/day/16) | [ranges](tags/ranges.md), [validation](tags/validation.md) | [day_16.ex](../lib/2020/day_16.ex) |
 | 2020 | [17](https://adventofcode.com/2020/day/17) | [Conway Cubes](https://adventofcode.com/2020/day/17) | [grid](tags/grid.md), [simulation](tags/simulation.md) | [day_17.ex](../lib/2020/day_17.ex) |
 | 2020 | [18](https://adventofcode.com/2020/day/18) | [Operation Order](https://adventofcode.com/2020/day/18) | [parsing](tags/parsing.md), [recursion](tags/recursion.md) | [day_18.ex](../lib/2020/day_18.ex) |
 | 2020 | [21](https://adventofcode.com/2020/day/21) | [Allergen Assessment](https://adventofcode.com/2020/day/21) | [reduction](tags/reduction.md), [set](tags/set.md) | [day_21.ex](../lib/2020/day_21.ex) |
@@ -211,10 +211,10 @@
 | 2022 | [18](https://adventofcode.com/2022/day/18) | [Boiling Boulders](https://adventofcode.com/2022/day/18) | [geometry](tags/geometry.md), [grid](tags/grid.md), [set](tags/set.md), [traversal](tags/traversal.md) | [day_18.ex](../lib/2022/day_18.ex) |
 | 2022 | [19](https://adventofcode.com/2022/day/19) | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | [optimization](tags/optimization.md), [parallel](tags/parallel.md), [search](tags/search.md), [slow](tags/slow.md) | [day_19.ex](../lib/2022/day_19.ex) |
 | 2022 | [22](https://adventofcode.com/2022/day/22) | [Monkey Map](https://adventofcode.com/2022/day/22) | [geometry](tags/geometry.md), [walk](tags/walk.md) | [day_22.ex](../lib/2022/day_22.ex) |
-| 2023 | [5](https://adventofcode.com/2023/day/5) | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | [gb-tree](tags/gb-tree.md), [range](tags/range.md) | [day_05.ex](../lib/2023/day_05.ex) |
+| 2023 | [5](https://adventofcode.com/2023/day/5) | [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) | [gb-tree](tags/gb-tree.md), [ranges](tags/ranges.md) | [day_05.ex](../lib/2023/day_05.ex) |
 | 2023 | [10](https://adventofcode.com/2023/day/10) | [Pipe Maze](https://adventofcode.com/2023/day/10) | [bfs](tags/bfs.md), [graph](tags/graph.md), [grid](tags/grid.md) | [day_10.ex](../lib/2023/day_10.ex) |
 | 2023 | [12](https://adventofcode.com/2023/day/12) | [Hot Springs](https://adventofcode.com/2023/day/12) | [dynamic-programming](tags/dynamic-programming.md) | [day_12.ex](../lib/2023/day_12.ex) |
-| 2023 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | [range](tags/range.md), [stack](tags/stack.md) | [day_22.ex](../lib/2023/day_22.ex) |
+| 2023 | [22](https://adventofcode.com/2023/day/22) | [Sand Slabs](https://adventofcode.com/2023/day/22) | [ranges](tags/ranges.md), [stack](tags/stack.md) | [day_22.ex](../lib/2023/day_22.ex) |
 | 2023 | [23](https://adventofcode.com/2023/day/23) | [A Long Walk](https://adventofcode.com/2023/day/23) | [graph](tags/graph.md), [longest-path](tags/longest-path.md) | [day_23.ex](../lib/2023/day_23.ex) |
 | 2023 | [24](https://adventofcode.com/2023/day/24) | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) | [geometry](tags/geometry.md), [refactor](tags/refactor.md) | [day_24.ex](../lib/2023/day_24.ex) |
 
