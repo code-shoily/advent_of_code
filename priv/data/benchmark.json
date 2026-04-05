@@ -1,0 +1,1528 @@
+{
+  "2015": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/1",
+      "time_ms": 2.003,
+      "title": "Not Quite Lisp",
+      "year": 2015
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/10",
+      "time_ms": 1232.297,
+      "title": "Elves Look, Elves Say",
+      "year": 2015
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/11",
+      "time_ms": 1117.943,
+      "title": "Corporate Policy",
+      "year": 2015
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/12",
+      "time_ms": 21.327,
+      "title": "JSAbacusFramework.io",
+      "year": 2015
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2015/day/13",
+      "time_ms": 36.544,
+      "title": "Knights of the Dinner Table",
+      "year": 2015
+    },
+    "14": {
+      "day": 14,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2015/day/14",
+      "time_ms": 3.623,
+      "title": "Reindeer Olympics",
+      "year": 2015
+    },
+    "15": {
+      "day": 15,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/15",
+      "time_ms": 423.896,
+      "title": "Science for Hungry People",
+      "year": 2015
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/16",
+      "time_ms": 3.947,
+      "title": "Aunt Sue",
+      "year": 2015
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2015/day/17",
+      "time_ms": 666.175,
+      "title": "No Such Thing as Too Much",
+      "year": 2015
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/18",
+      "time_ms": 304.088,
+      "title": "Like a GIF For Your Yard",
+      "year": 2015
+    },
+    "19": {
+      "day": 19,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/19",
+      "time_ms": 4.206,
+      "title": "Medicine for Rudolph",
+      "year": 2015
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/2",
+      "time_ms": 2.84,
+      "title": "I Was Told There Would Be No Math",
+      "year": 2015
+    },
+    "20": {
+      "day": 20,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2015/day/20",
+      "time_ms": 3046.925,
+      "title": "Infinite Elves and Infinite Houses",
+      "year": 2015
+    },
+    "21": {
+      "day": 21,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2015/day/21",
+      "time_ms": 2.065,
+      "title": "RPG Simulator 20XX",
+      "year": 2015
+    },
+    "22": {
+      "day": 22,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/22",
+      "time_ms": 20.739,
+      "title": "Wizard Simulator 20XX",
+      "year": 2015
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/23",
+      "time_ms": 1.579,
+      "title": "Opening the Turing Lock",
+      "year": 2015
+    },
+    "24": {
+      "day": 24,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2015/day/24",
+      "time_ms": 554.827,
+      "title": "It Hangs in the Balance",
+      "year": 2015
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/25",
+      "time_ms": 172.789,
+      "title": "Let It Snow",
+      "year": 2015
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/3",
+      "time_ms": 3.332,
+      "title": "Perfectly Spherical Houses in a Vacuum",
+      "year": 2015
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2015/day/4",
+      "time_ms": 627.04,
+      "title": "The Ideal Stocking Stuffer",
+      "year": 2015
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2015/day/5",
+      "time_ms": 11.218,
+      "title": "Doesn't He Have Intern-Elves For This?",
+      "year": 2015
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/6",
+      "time_ms": 857.88,
+      "title": "Probably a Fire Hazard",
+      "year": 2015
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/7",
+      "time_ms": 8.767,
+      "title": "Some Assembly Required",
+      "year": 2015
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2015/day/8",
+      "time_ms": 3.672,
+      "title": "Matchsticks",
+      "year": 2015
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2015/day/9",
+      "time_ms": 28.309,
+      "title": "All in a Single Night",
+      "year": 2015
+    }
+  },
+  "2016": {
+    "1": {
+      "day": 1,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2016/day/1",
+      "time_ms": 1.861,
+      "title": "No Time for a Taxicab",
+      "year": 2016
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/10",
+      "time_ms": 1.767,
+      "title": "Balance Bots",
+      "year": 2016
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2016/day/11",
+      "time_ms": 201.044,
+      "title": "Radioisotope Thermoelectric Generators",
+      "year": 2016
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2016/day/12",
+      "time_ms": 1.678,
+      "title": "Leonardo's Monorail",
+      "year": 2016
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/13",
+      "time_ms": 3.126,
+      "title": "A Maze of Twisty Little Cubicles",
+      "year": 2016
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/17",
+      "time_ms": 147.658,
+      "title": "Two Steps Forward",
+      "year": 2016
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2016/day/2",
+      "time_ms": 1.114,
+      "title": "Bathroom Security",
+      "year": 2016
+    },
+    "24": {
+      "day": 24,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/24",
+      "time_ms": 39.082,
+      "title": "Air Duct Spelunking",
+      "year": 2016
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/25",
+      "time_ms": 206.977,
+      "title": "Clock Signal",
+      "year": 2016
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2016/day/3",
+      "time_ms": 16.843,
+      "title": "Squares With Three Sides",
+      "year": 2016
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2016/day/4",
+      "time_ms": 962.072,
+      "title": "Security Through Obscurity",
+      "year": 2016
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2016/day/5",
+      "time_ms": 26962.059,
+      "title": "How About a Nice Game of Chess?",
+      "year": 2016
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2016/day/6",
+      "time_ms": 4.508,
+      "title": "Signals and Noise",
+      "year": 2016
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2016/day/7",
+      "time_ms": 33.668,
+      "title": "Internet Protocol Version 7",
+      "year": 2016
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/8",
+      "time_ms": 2.083,
+      "title": "Two-Factor Authentication",
+      "year": 2016
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2016/day/9",
+      "time_ms": 6.078,
+      "title": "Explosives in Cyberspace",
+      "year": 2016
+    }
+  },
+  "2017": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2017/day/1",
+      "time_ms": 1.381,
+      "title": "Inverse Captcha",
+      "year": 2017
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/10",
+      "time_ms": 51.484,
+      "title": "Knot Hash",
+      "year": 2017
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2017/day/11",
+      "time_ms": 3.487,
+      "title": "Hex Ed",
+      "year": 2017
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/12",
+      "time_ms": 13.558,
+      "title": "Digital Plumber",
+      "year": 2017
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/13",
+      "time_ms": 176.712,
+      "title": "Packet Scanners",
+      "year": 2017
+    },
+    "14": {
+      "day": 14,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/14",
+      "time_ms": 283.113,
+      "title": "Disk Defragmentation",
+      "year": 2017
+    },
+    "15": {
+      "day": 15,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2017/day/15",
+      "time_ms": 246.264,
+      "title": "Dueling Generators",
+      "year": 2017
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/16",
+      "time_ms": 626.989,
+      "title": "Permutation Promenade",
+      "year": 2017
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/17",
+      "time_ms": 392.75,
+      "title": "Spinlock",
+      "year": 2017
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/18",
+      "time_ms": 12.662,
+      "title": "Duet",
+      "year": 2017
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2017/day/2",
+      "time_ms": 1.047,
+      "title": "Corruption Checksum",
+      "year": 2017
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/23",
+      "time_ms": 8.104,
+      "title": "Coprocessor Conflagration",
+      "year": 2017
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/3",
+      "time_ms": 0.816,
+      "title": "Spiral Memory",
+      "year": 2017
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2017/day/4",
+      "time_ms": 3.847,
+      "title": "High-Entropy Passphrases",
+      "year": 2017
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/5",
+      "time_ms": 456.594,
+      "title": "A Maze of Twisty Trampolines, All Alike",
+      "year": 2017
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/6",
+      "time_ms": 26.314,
+      "title": "Memory Reallocation",
+      "year": 2017
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2017/day/7",
+      "time_ms": 6.225,
+      "title": "Recursive Circus",
+      "year": 2017
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/8",
+      "time_ms": 2.76,
+      "title": "I Heard You Like Registers",
+      "year": 2017
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2017/day/9",
+      "time_ms": 3.28,
+      "title": "Stream Processing",
+      "year": 2017
+    }
+  },
+  "2018": {
+    "1": {
+      "day": 1,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2018/day/1",
+      "time_ms": 66.238,
+      "title": "Chronal Calibration",
+      "year": 2018
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2018/day/2",
+      "time_ms": 14.494,
+      "title": "Inventory Management System",
+      "year": 2018
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2018/day/25",
+      "time_ms": 22.123,
+      "title": "Four-Dimensional Adventure",
+      "year": 2018
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2018/day/3",
+      "time_ms": 433.469,
+      "title": "No Matter How You Slice It",
+      "year": 2018
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2018/day/4",
+      "time_ms": 13.866,
+      "title": "Repose Record",
+      "year": 2018
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2018/day/5",
+      "time_ms": 58.938,
+      "title": "Alchemical Reduction",
+      "year": 2018
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2018/day/6",
+      "time_ms": 13.983,
+      "title": "Chronal Coordinates",
+      "year": 2018
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2018/day/7",
+      "time_ms": 1.629,
+      "title": "The Sum of Its Parts",
+      "year": 2018
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2018/day/8",
+      "time_ms": 4.834,
+      "title": "Memory Maneuver",
+      "year": 2018
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2018/day/9",
+      "time_ms": 836.967,
+      "title": "Marble Mania",
+      "year": 2018
+    }
+  },
+  "2019": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/1",
+      "time_ms": 1.06,
+      "title": "The Tyranny of the Rocket Equation",
+      "year": 2019
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2019/day/10",
+      "time_ms": 59.824,
+      "title": "Monitoring Station",
+      "year": 2019
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2019/day/18",
+      "time_ms": 127.563,
+      "title": "Many-Worlds Interpretation",
+      "year": 2019
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/2",
+      "time_ms": 268.685,
+      "title": "1202 Program Alarm",
+      "year": 2019
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/3",
+      "time_ms": 279.015,
+      "title": "Crossed Wires",
+      "year": 2019
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/4",
+      "time_ms": 384.709,
+      "title": "Secure Container",
+      "year": 2019
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/5",
+      "time_ms": 1.752,
+      "title": "Sunny with a Chance of Asteroids",
+      "year": 2019
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/6",
+      "time_ms": 8.177,
+      "title": "Universal Orbit Map",
+      "year": 2019
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2019/day/8",
+      "time_ms": 6.613,
+      "title": "Space Image Format",
+      "year": 2019
+    }
+  },
+  "2020": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2020/day/1",
+      "time_ms": 1.58,
+      "title": "Report Repair",
+      "year": 2020
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/10",
+      "time_ms": 1.359,
+      "title": "Adapter Array",
+      "year": 2020
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/11",
+      "time_ms": 937.224,
+      "title": "Seating System",
+      "year": 2020
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/12",
+      "time_ms": 1.786,
+      "title": "Rain Risk",
+      "year": 2020
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/13",
+      "time_ms": 1.477,
+      "title": "Shuttle Search",
+      "year": 2020
+    },
+    "14": {
+      "day": 14,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/14",
+      "time_ms": 37.866,
+      "title": "Docking Data",
+      "year": 2020
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/16",
+      "time_ms": 11.766,
+      "title": "Ticket Translation",
+      "year": 2020
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/17",
+      "time_ms": 156.055,
+      "title": "Conway Cubes",
+      "year": 2020
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/18",
+      "time_ms": 6.51,
+      "title": "Operation Order",
+      "year": 2020
+    },
+    "19": {
+      "day": 19,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2020/day/19",
+      "time_ms": 68.156,
+      "title": "Monster Messages",
+      "year": 2020
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2020/day/2",
+      "time_ms": 4.551,
+      "title": "Password Philosophy",
+      "year": 2020
+    },
+    "20": {
+      "day": 20,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2020/day/20",
+      "time_ms": 25.877,
+      "title": "Jurassic Jigsaw",
+      "year": 2020
+    },
+    "21": {
+      "day": 21,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/21",
+      "time_ms": 2.163,
+      "title": "Allergen Assessment",
+      "year": 2020
+    },
+    "22": {
+      "day": 22,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/22",
+      "time_ms": 77.466,
+      "title": "Crab Combat",
+      "year": 2020
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2020/day/23",
+      "time_ms": 1301.754,
+      "title": "Crab Cups",
+      "year": 2020
+    },
+    "24": {
+      "day": 24,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2020/day/24",
+      "time_ms": 428.392,
+      "title": "Lobby Layout",
+      "year": 2020
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/25",
+      "time_ms": 37.271,
+      "title": "Combo Breaker",
+      "year": 2020
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2020/day/3",
+      "time_ms": 5.182,
+      "title": "Toboggan Trajectory",
+      "year": 2020
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/4",
+      "time_ms": 3.895,
+      "title": "Passport Processing",
+      "year": 2020
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2020/day/5",
+      "time_ms": 2.16,
+      "title": "Binary Boarding",
+      "year": 2020
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2020/day/6",
+      "time_ms": 7.089,
+      "title": "Custom Customs",
+      "year": 2020
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/7",
+      "time_ms": 6.988,
+      "title": "Handy Haversacks",
+      "year": 2020
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/8",
+      "time_ms": 55.063,
+      "title": "Handheld Halting",
+      "year": 2020
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2020/day/9",
+      "time_ms": 15.895,
+      "title": "Encoding Error",
+      "year": 2020
+    }
+  },
+  "2021": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2021/day/1",
+      "time_ms": 2.553,
+      "title": "Sonar Sweep",
+      "year": 2021
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2021/day/12",
+      "time_ms": 150.258,
+      "title": "Passage Pathing",
+      "year": 2021
+    },
+    "15": {
+      "day": 15,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2021/day/15",
+      "time_ms": 2029.53,
+      "title": "Chiton",
+      "year": 2021
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2021/day/16",
+      "time_ms": 2.38,
+      "title": "Packet Decoder",
+      "year": 2021
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2021/day/17",
+      "time_ms": 23.534,
+      "title": "Trick Shot",
+      "year": 2021
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2021/day/2",
+      "time_ms": 2.004,
+      "title": "Dive!",
+      "year": 2021
+    },
+    "21": {
+      "day": 21,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2021/day/21",
+      "time_ms": 17.754,
+      "title": "Dirac Dice",
+      "year": 2021
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2021/day/25",
+      "time_ms": 1026.152,
+      "title": "Sea Cucumber",
+      "year": 2021
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2021/day/3",
+      "time_ms": 2.697,
+      "title": "Binary Diagnostic",
+      "year": 2021
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2021/day/4",
+      "time_ms": 3.514,
+      "title": "Giant Squid",
+      "year": 2021
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2021/day/5",
+      "time_ms": 161.722,
+      "title": "Hydrothermal Venture",
+      "year": 2021
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2021/day/6",
+      "time_ms": 2.403,
+      "title": "Lanternfish",
+      "year": 2021
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2021/day/7",
+      "time_ms": 31.494,
+      "title": "The Treachery of Whales",
+      "year": 2021
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2021/day/9",
+      "time_ms": 43.189,
+      "title": "Smoke Basin",
+      "year": 2021
+    }
+  },
+  "2022": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/1",
+      "time_ms": 2.651,
+      "title": "Calorie Counting",
+      "year": 2022
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/10",
+      "time_ms": 3.415,
+      "title": "Cathode-Ray Tube",
+      "year": 2022
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2022/day/11",
+      "time_ms": 82.916,
+      "title": "Monkey in the Middle",
+      "year": 2022
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/12",
+      "time_ms": 35.357,
+      "title": "Hill Climbing Algorithm",
+      "year": 2022
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2022/day/13",
+      "time_ms": 5.334,
+      "title": "Distress Signal",
+      "year": 2022
+    },
+    "14": {
+      "day": 14,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2022/day/14",
+      "time_ms": 33.508,
+      "title": "Regolith Reservoir",
+      "year": 2022
+    },
+    "15": {
+      "day": 15,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2022/day/15",
+      "time_ms": 1.78,
+      "title": "Beacon Exclusion Zone",
+      "year": 2022
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2022/day/16",
+      "time_ms": 763.481,
+      "title": "Proboscidea Volcanium",
+      "year": 2022
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2022/day/17",
+      "time_ms": 159.906,
+      "title": "Pyroclastic Flow",
+      "year": 2022
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2022/day/18",
+      "time_ms": 20.994,
+      "title": "Boiling Boulders",
+      "year": 2022
+    },
+    "19": {
+      "day": 19,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2022/day/19",
+      "time_ms": 3832.159,
+      "title": "Not Enough Minerals",
+      "year": 2022
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/2",
+      "time_ms": 3.503,
+      "title": "Rock Paper Scissors",
+      "year": 2022
+    },
+    "20": {
+      "day": 20,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/20",
+      "time_ms": 1639.602,
+      "title": "Grove Positioning System",
+      "year": 2022
+    },
+    "21": {
+      "day": 21,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2022/day/21",
+      "time_ms": 4.646,
+      "title": "Monkey Math",
+      "year": 2022
+    },
+    "22": {
+      "day": 22,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2022/day/22",
+      "time_ms": 29.423,
+      "title": "Monkey Map",
+      "year": 2022
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/23",
+      "time_ms": 1370.171,
+      "title": "Unstable Diffusion",
+      "year": 2022
+    },
+    "24": {
+      "day": 24,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/24",
+      "time_ms": 341.592,
+      "title": "Blizzard Basin",
+      "year": 2022
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/25",
+      "time_ms": 1.55,
+      "title": "Full of Hot Air",
+      "year": 2022
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/3",
+      "time_ms": 4.753,
+      "title": "Rucksack Reorganization",
+      "year": 2022
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/4",
+      "time_ms": 12.322,
+      "title": "Camp Cleanup",
+      "year": 2022
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2022/day/5",
+      "time_ms": 2.638,
+      "title": "Supply Stacks",
+      "year": 2022
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/6",
+      "time_ms": 2.366,
+      "title": "Tuning Trouble",
+      "year": 2022
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2022/day/7",
+      "time_ms": 2.252,
+      "title": "No Space Left On Device",
+      "year": 2022
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/8",
+      "time_ms": 541.404,
+      "title": "Treetop Tree House",
+      "year": 2022
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2022/day/9",
+      "time_ms": 9.017,
+      "title": "Rope Bridge",
+      "year": 2022
+    }
+  },
+  "2023": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2023/day/1",
+      "time_ms": 9.586,
+      "title": "Trebuchet?!",
+      "year": 2023
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/10",
+      "time_ms": 57.032,
+      "title": "Pipe Maze",
+      "year": 2023
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2023/day/11",
+      "time_ms": 11.663,
+      "title": "Cosmic Expansion",
+      "year": 2023
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/12",
+      "time_ms": 66.698,
+      "title": "Hot Springs",
+      "year": 2023
+    },
+    "13": {
+      "day": 13,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2023/day/13",
+      "time_ms": 5.852,
+      "title": "Point of Incidence",
+      "year": 2023
+    },
+    "14": {
+      "day": 14,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/14",
+      "time_ms": 729.007,
+      "title": "Parabolic Reflector Dish",
+      "year": 2023
+    },
+    "15": {
+      "day": 15,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2023/day/15",
+      "time_ms": 7.706,
+      "title": "Lens Library",
+      "year": 2023
+    },
+    "16": {
+      "day": 16,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/16",
+      "time_ms": 235.35,
+      "title": "The Floor Will Be Lava",
+      "year": 2023
+    },
+    "17": {
+      "day": 17,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/17",
+      "time_ms": 2205.397,
+      "title": "Clumsy Crucible",
+      "year": 2023
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/18",
+      "time_ms": 4.869,
+      "title": "Lavaduct Lagoon",
+      "year": 2023
+    },
+    "19": {
+      "day": 19,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/19",
+      "time_ms": 7.857,
+      "title": "Aplenty",
+      "year": 2023
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2023/day/2",
+      "time_ms": 1.911,
+      "title": "Cube Conundrum",
+      "year": 2023
+    },
+    "20": {
+      "day": 20,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/20",
+      "time_ms": 49.827,
+      "title": "Pulse Propagation",
+      "year": 2023
+    },
+    "21": {
+      "day": 21,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/21",
+      "time_ms": 553.086,
+      "title": "Step Counter",
+      "year": 2023
+    },
+    "22": {
+      "day": 22,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/22",
+      "time_ms": 228.879,
+      "title": "Sand Slabs",
+      "year": 2023
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/23",
+      "time_ms": 1037.199,
+      "title": "A Long Walk",
+      "year": 2023
+    },
+    "24": {
+      "day": 24,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/24",
+      "time_ms": 14.14,
+      "title": "Never Tell Me The Odds",
+      "year": 2023
+    },
+    "25": {
+      "day": 25,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2023/day/25",
+      "time_ms": 1407.843,
+      "title": "Snowverload",
+      "year": 2023
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2023/day/3",
+      "time_ms": 14.957,
+      "title": "Gear Ratios",
+      "year": 2023
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2023/day/4",
+      "time_ms": 5.992,
+      "title": "Scratchcards",
+      "year": 2023
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xl",
+      "link": "https://adventofcode.com/2023/day/5",
+      "time_ms": 1.662,
+      "title": "If You Give A Seed A Fertilizer",
+      "year": 2023
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2023/day/6",
+      "time_ms": 0.881,
+      "title": "Wait For It",
+      "year": 2023
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2023/day/7",
+      "time_ms": 9.615,
+      "title": "Camel Cards",
+      "year": 2023
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2023/day/8",
+      "time_ms": 12.733,
+      "title": "Haunted Wasteland",
+      "year": 2023
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2023/day/9",
+      "time_ms": 5.068,
+      "title": "Mirage Maintenance",
+      "year": 2023
+    }
+  },
+  "2024": {
+    "1": {
+      "day": 1,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2024/day/1",
+      "time_ms": 5.671,
+      "title": "Historian Hysteria",
+      "year": 2024
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2024/day/12",
+      "time_ms": 68.943,
+      "title": "Garden Groups",
+      "year": 2024
+    },
+    "18": {
+      "day": 18,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2024/day/18",
+      "time_ms": 15.746,
+      "title": "RAM Run",
+      "year": 2024
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2024/day/2",
+      "time_ms": 6.435,
+      "title": "Red-Nosed Reports",
+      "year": 2024
+    },
+    "23": {
+      "day": 23,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2024/day/23",
+      "time_ms": 45.038,
+      "title": "LAN Party",
+      "year": 2024
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2024/day/3",
+      "time_ms": 3.763,
+      "title": "Mull It Over",
+      "year": 2024
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2024/day/4",
+      "time_ms": 15.775,
+      "title": "Ceres Search",
+      "year": 2024
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "xs",
+      "link": "https://adventofcode.com/2024/day/5",
+      "time_ms": 14.379,
+      "title": "Print Queue",
+      "year": 2024
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2024/day/6",
+      "time_ms": 1234.505,
+      "title": "Guard Gallivant",
+      "year": 2024
+    }
+  },
+  "2025": {
+    "1": {
+      "day": 1,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2025/day/1",
+      "time_ms": 4.928,
+      "title": "Secret Entrance",
+      "year": 2025
+    },
+    "10": {
+      "day": 10,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2025/day/10",
+      "time_ms": 442.339,
+      "title": "Factory",
+      "year": 2025
+    },
+    "11": {
+      "day": 11,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/11",
+      "time_ms": 8.375,
+      "title": "Reactor",
+      "year": 2025
+    },
+    "12": {
+      "day": 12,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/12",
+      "time_ms": 6.111,
+      "title": "Christmas Tree Farm",
+      "year": 2025
+    },
+    "2": {
+      "day": 2,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/2",
+      "time_ms": 101.519,
+      "title": "Gift Shop",
+      "year": 2025
+    },
+    "3": {
+      "day": 3,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/3",
+      "time_ms": 3.686,
+      "title": "Lobby",
+      "year": 2025
+    },
+    "4": {
+      "day": 4,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/4",
+      "time_ms": 161.192,
+      "title": "Printing Department",
+      "year": 2025
+    },
+    "5": {
+      "day": 5,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2025/day/5",
+      "time_ms": 3.065,
+      "title": "Cafeteria",
+      "year": 2025
+    },
+    "6": {
+      "day": 6,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/6",
+      "time_ms": 576.377,
+      "title": "Trash Compactor",
+      "year": 2025
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "l",
+      "link": "https://adventofcode.com/2025/day/7",
+      "time_ms": 86.329,
+      "title": "Laboratories",
+      "year": 2025
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2025/day/8",
+      "time_ms": 284.581,
+      "title": "Playground",
+      "year": 2025
+    },
+    "9": {
+      "day": 9,
+      "difficulty": "m",
+      "link": "https://adventofcode.com/2025/day/9",
+      "time_ms": 519.134,
+      "title": "Movie Theater",
+      "year": 2025
+    }
+  }
+}
