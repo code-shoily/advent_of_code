@@ -12,3 +12,4 @@
 | 2020 | [19](https://adventofcode.com/2020/day/19) | [Monster Messages](https://adventofcode.com/2020/day/19) | 🔴 | [regex](regex.md), [pattern-matching](pattern-matching.md) | [day_19.ex](../../lib/2020/day_19.ex) |
 | 2020 | [22](https://adventofcode.com/2020/day/22) | [Crab Combat](https://adventofcode.com/2020/day/22) | 🟠 | [game](game.md), [simulation](simulation.md) | [day_22.ex](../../lib/2020/day_22.ex) |
 | 2021 | [12](https://adventofcode.com/2021/day/12) | [Passage Pathing](https://adventofcode.com/2021/day/12) | 🟠 | [graph](graph.md), [traversal](traversal.md), [path-finding](path-finding.md) | [day_12.ex](../../lib/2021/day_12.ex) |
+| 2024 | [7](https://adventofcode.com/2024/day/7) | [Bridge Repair](https://adventofcode.com/2024/day/7) | 🟡 | [enumeration](enumeration.md) | [day_07.ex](../../lib/2024/day_07.ex) |

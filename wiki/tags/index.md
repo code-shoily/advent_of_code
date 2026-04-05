@@ -45,6 +45,7 @@
 | [double-parse](double-parse.md) | 1 |
 | [dynamic-programming](dynamic-programming.md) | 6 |
 | [emulation](emulation.md) | 2 |
+| [enumeration](enumeration.md) | 1 |
 | [flood-fill](flood-fill.md) | 2 |
 | [floyd-warshall](floyd-warshall.md) | 1 |
 | [fsm](fsm.md) | 2 |
@@ -110,7 +111,7 @@
 | [random-access](random-access.md) | 3 |
 | [range](range.md) | 4 |
 | [ranges](ranges.md) | 1 |
-| [recursion](recursion.md) | 8 |
+| [recursion](recursion.md) | 9 |
 | [reduction](reduction.md) | 8 |
 | [refactor](refactor.md) | 1 |
 | [regex](regex.md) | 5 |

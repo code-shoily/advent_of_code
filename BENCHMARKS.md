@@ -4,7 +4,7 @@ Performance results for all solved Advent of Code challenges.
 
 ## System Information
 
-- **Run Date:** 2026-04-05 18:38:06
+- **Run Date:** 2026-04-05 18:51:29
 - **OS:** Linux 6.8.0-106-generic
 - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700H
 
@@ -38,10 +38,11 @@ Performance results for all solved Advent of Code challenges.
 | 4 | [Ceres Search](https://adventofcode.com/2024/day/4) | 🟡 | 15.78 |
 | 5 | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | 14.38 |
 | 6 | [Guard Gallivant](https://adventofcode.com/2024/day/6) | 🟠 | 1234.51 |
+| 7 | [Bridge Repair](https://adventofcode.com/2024/day/7) | 🟡 | 627.55 |
 | 12 | [Garden Groups](https://adventofcode.com/2024/day/12) | 🟠 | 68.94 |
 | 18 | [RAM Run](https://adventofcode.com/2024/day/18) | 🟠 | 15.75 |
 | 23 | [LAN Party](https://adventofcode.com/2024/day/23) | 🟠 | 45.04 |
-| **Total** | | | **1410.26** |
+| **Total** | | | **2037.81** |
 
 ### 2023
 
@@ -264,4 +265,4 @@ Performance results for all solved Advent of Code challenges.
 | 25 | [Let It Snow](https://adventofcode.com/2015/day/25) | 🟠 | 172.79 |
 | **Total** | | | **9158.03** |
 
-**Total performance across all years: 44.78s**
+**Total performance across all years: 45.41s**

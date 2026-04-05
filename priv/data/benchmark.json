@@ -1425,6 +1425,14 @@
       "time_ms": 1234.505,
       "title": "Guard Gallivant",
       "year": 2024
+    },
+    "7": {
+      "day": 7,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2024/day/7",
+      "time_ms": 627.552,
+      "title": "Bridge Repair",
+      "year": 2024
     }
   },
   "2025": {
