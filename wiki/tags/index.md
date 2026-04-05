@@ -33,6 +33,7 @@
 | [concurrent](concurrent.md) | 1 |
 | [connectivity](connectivity.md) | 3 |
 | [constellation](constellation.md) | 1 |
+| [coordinate-geometry](coordinate-geometry.md) | 1 |
 | [count](count.md) | 5 |
 | [cycle-detection](cycle-detection.md) | 2 |
 | [cycles](cycles.md) | 2 |
@@ -45,7 +46,7 @@
 | [double-parse](double-parse.md) | 1 |
 | [dynamic-programming](dynamic-programming.md) | 6 |
 | [emulation](emulation.md) | 2 |
-| [enumeration](enumeration.md) | 1 |
+| [enumeration](enumeration.md) | 2 |
 | [flood-fill](flood-fill.md) | 2 |
 | [floyd-warshall](floyd-warshall.md) | 1 |
 | [fsm](fsm.md) | 2 |
@@ -57,7 +58,7 @@
 | [graph](graph.md) | 35 |
 | [graph-route](graph-route.md) | 1 |
 | [greedy](greedy.md) | 1 |
-| [grid](grid.md) | 34 |
+| [grid](grid.md) | 35 |
 | [grid2d](grid2d.md) | 1 |
 | [hard-description](hard-description.md) | 1 |
 | [hash](hash.md) | 3 |

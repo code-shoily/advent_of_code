@@ -4,7 +4,7 @@ Performance results for all solved Advent of Code challenges.
 
 ## System Information
 
-- **Run Date:** 2026-04-05 18:51:29
+- **Run Date:** 2026-04-05 18:55:17
 - **OS:** Linux 6.8.0-106-generic
 - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700H
 
@@ -39,10 +39,11 @@ Performance results for all solved Advent of Code challenges.
 | 5 | [Print Queue](https://adventofcode.com/2024/day/5) | 🟢 | 14.38 |
 | 6 | [Guard Gallivant](https://adventofcode.com/2024/day/6) | 🟠 | 1234.51 |
 | 7 | [Bridge Repair](https://adventofcode.com/2024/day/7) | 🟡 | 627.55 |
+| 8 | [Resonant Collinearity](https://adventofcode.com/2024/day/8) | 🟡 | 4.18 |
 | 12 | [Garden Groups](https://adventofcode.com/2024/day/12) | 🟠 | 68.94 |
 | 18 | [RAM Run](https://adventofcode.com/2024/day/18) | 🟠 | 15.75 |
 | 23 | [LAN Party](https://adventofcode.com/2024/day/23) | 🟠 | 45.04 |
-| **Total** | | | **2037.81** |
+| **Total** | | | **2041.99** |
 
 ### 2023
 

@@ -1433,6 +1433,14 @@
       "time_ms": 627.552,
       "title": "Bridge Repair",
       "year": 2024
+    },
+    "8": {
+      "day": 8,
+      "difficulty": "s",
+      "link": "https://adventofcode.com/2024/day/8",
+      "time_ms": 4.182,
+      "title": "Resonant Collinearity",
+      "year": 2024
     }
   },
   "2025": {
