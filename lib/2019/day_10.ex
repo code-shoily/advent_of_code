@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day10 do
   --- Day 10: Monitoring Station ---
   Problem Link: https://adventofcode.com/2019/day/10
   Difficulty: m
-  Tags: sequence grid trigonometry
+  Tags: geometry grid sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

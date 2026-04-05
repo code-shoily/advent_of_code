@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day23 do
   --- Day 23: Crab Cups ---
   Problem Link: https://adventofcode.com/2020/day/23
   Difficulty: l
-  Tags: circular-linked-list atomics
+  Tags: atomics sequence
   """
   def input, do: "467528193"
 

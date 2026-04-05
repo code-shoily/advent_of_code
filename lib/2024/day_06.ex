@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day06 do
   --- Day 6: Guard Gallivant ---
   Problem Link: https://adventofcode.com/2024/day/6
   Difficulty: m
-  Tags: grid simulation cycle-detection slow
+  Tags: cycle-detection grid simulation slow
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

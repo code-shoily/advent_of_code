@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day03 do
   --- Day 3: Lobby ---
   Problem Link: https://adventofcode.com/2025/day/3
   Difficulty: m
-  Tags: greedy stack subsequence-optimization
+  Tags: greedy optimization stack
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

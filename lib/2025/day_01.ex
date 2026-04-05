@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day01 do
   --- Day 1: Secret Entrance ---
   Problem Link: https://adventofcode.com/2025/day/1
   Difficulty: s
-  Tags: simulation safe-dial
+  Tags: safe-dial simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

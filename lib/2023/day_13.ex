@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day13 do
   --- Day 13: Point of Incidence ---
   Problem Link: https://adventofcode.com/2023/day/13
   Difficulty: m
-  Tags: sliding-window palindrome
+  Tags: palindrome sliding-window
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

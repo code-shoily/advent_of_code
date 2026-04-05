@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day10 do
   --- Day 10: Elves Look, Elves Say ---
   Problem Link: https://adventofcode.com/2015/day/10
   Difficulty: xs
-  Tags: string-encoding sequence reduction
+  Tags: reduction sequence string-encoding
   """
   alias AdventOfCode.Helpers.InputReader
 

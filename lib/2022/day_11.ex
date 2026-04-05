@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day11 do
   --- Day 11: Monkey in the Middle ---
   Problem Link: https://adventofcode.com/2022/day/11
   Difficulty: l
-  Tags: parse-heavy arithmetic
+  Tags: math parsing
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

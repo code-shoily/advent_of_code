@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day04 do
   --- Day 4: Repose Record ---
   Problem Link: https://adventofcode.com/2018/day/4
   Difficulty: s
-  Tags: date-time sequence sort map
+  Tags: date-time map sequence sort
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

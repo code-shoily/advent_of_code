@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day19 do
   --- Day 19: Medicine for Rudolph ---
   Problem Link: https://adventofcode.com/2015/day/19
   Difficulty: m
-  Tags: vector random-access
+  Tags: random-access vector
 
   Helpful Tips for Part II: (,) analogy
   https://www.reddit.com/r/adventofcode/comments/3xflz8/day_19_solutions/cy4etju

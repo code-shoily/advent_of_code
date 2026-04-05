@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day09 do
   --- Day 9: Movie Theater ---
   Problem Link: https://adventofcode.com/2025/day/9
   Difficulty: m
-  Tags: geometry2d polygon
+  Tags: geometry
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day10 do
   --- Day 10: Balance Bots ---
   Problem Link: https://adventofcode.com/2016/day/10
   Difficulty: m
-  Tags: graph simulation dataflow
+  Tags: dataflow graph simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day03 do
   --- Day 3: Squares With Three Sides ---
   Problem Link: https://adventofcode.com/2016/day/3
   Difficulty: xs
-  Tags: geometry2d matrix count
+  Tags: count geometry matrix
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

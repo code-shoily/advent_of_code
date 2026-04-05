@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day06 do
   --- Day 6: Probably a Fire Hazard ---
   Problem Link: https://adventofcode.com/2015/day/6
   Difficulty: m
-  Tags: grid vector reduction
+  Tags: grid reduction vector
   """
   import Bitwise
   alias AdventOfCode.Helpers.InputReader

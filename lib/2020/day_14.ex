@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day14 do
   --- Day 14: Docking Data ---
   Problem Link: https://adventofcode.com/2020/day/14
   Difficulty: m
-  Tags: bitwise mask recursion
+  Tags: bitwise recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

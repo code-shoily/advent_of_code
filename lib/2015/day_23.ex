@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day23 do
   --- Day 23: Opening the Turing Lock ---
   Problem Link: https://adventofcode.com/2015/day/23
   Difficulty: m
-  Tags: op-code emulation
+  Tags: emulation op-code
   """
   require Integer
 

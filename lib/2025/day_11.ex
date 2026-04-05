@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day11 do
   --- Day 11: Reactor ---
   Problem Link: https://adventofcode.com/2025/day/11
   Difficulty: m
-  Tags: graph dynamic-programming
+  Tags: dynamic-programming graph
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

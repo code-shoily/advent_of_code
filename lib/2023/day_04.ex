@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day04 do
   --- Day 4: Scratchcards ---
   Problem Link: https://adventofcode.com/2023/day/4
   Difficulty: xs
-  Tags: set reduction
+  Tags: reduction set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day04 do
   --- Day 4: Printing Department ---
   Problem Link: https://adventofcode.com/2025/day/4
   Difficulty: m
-  Tags: simulation grid graph
+  Tags: graph grid simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.{Builder.Grid, Model, Transform}

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day16 do
   --- Day 16: Permutation Promenade ---
   Problem Link: https://adventofcode.com/2017/day/16
   Difficulty: m
-  Tags: op-code count
+  Tags: count op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day19 do
   --- Day 19: Monster Messages ---
   Problem Link: https://adventofcode.com/2020/day/19
   Difficulty: l
-  Tags: regex recursion pattern-matching
+  Tags: parsing pattern-matching recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

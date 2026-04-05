@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day06 do
   --- Day 6: Trash Compactor ---
   Problem Link: https://adventofcode.com/2025/day/6
   Difficulty: m
-  Tags: grid parsing math
+  Tags: grid math parsing
   """
 
   def input, do: File.read!("priv/input_files/2025_6.txt")

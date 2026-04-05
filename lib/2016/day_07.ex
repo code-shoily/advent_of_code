@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day07 do
   --- Day 7: Internet Protocol Version 7 ---
   Problem Link: https://adventofcode.com/2016/day/7
   Difficulty: xs
-  Tags: validation count
+  Tags: count validation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

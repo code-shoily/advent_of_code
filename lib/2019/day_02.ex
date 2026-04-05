@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day02 do
   --- Day 2: 1202 Program Alarm ---
   Problem Link: https://adventofcode.com/2019/day/2
   Difficulty: xs
-  Tags: op-code int-code
+  Tags: int-code op-code
   """
   alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2019.IntCode

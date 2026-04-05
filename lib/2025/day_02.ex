@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day02 do
   --- Day 2: Gift Shop ---
   Problem Link: https://adventofcode.com/2025/day/2
   Difficulty: m
-  Tags: simulation generation string-manipulation math
+  Tags: generation math simulation string-manipulation
   """
   alias AdventOfCode.Helpers.InputReader
 

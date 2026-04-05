@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day15 do
   --- Day 15: Lens Library ---
   Problem Link: https://adventofcode.com/2023/day/15
   Difficulty: s
-  Tags: hash ordered-list
+  Tags: hash sequence
   """
   alias AdventOfCode.Helpers.InputReader
 

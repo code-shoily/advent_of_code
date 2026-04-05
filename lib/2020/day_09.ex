@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day09 do
   --- Day 9: Encoding Error ---
   Problem Link: https://adventofcode.com/2020/day/9
   Difficulty: s
-  Tags: sliding-window set
+  Tags: set sliding-window
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

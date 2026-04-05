@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day25 do
   --- Day 25: Let It Snow ---
   Problem Link: https://adventofcode.com/2015/day/25
   Difficulty: m
-  Tags: table-lookup modular-arithmetic
+  Tags: math table-lookup
   """
   alias AdventOfCode.Helpers.InputReader
 

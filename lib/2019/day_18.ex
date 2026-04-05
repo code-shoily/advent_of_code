@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day18 do
   --- Day 18: Many-Worlds Interpretation ---
   Problem Link: https://adventofcode.com/2019/day/18
   Difficulty: xl
-  Tags: graph dijkstra implicit-graph bitmask state-space-search
+  Tags: bitwise dijkstra graph implicit-graph state-space-search
   """
   import Bitwise
   alias AdventOfCode.Helpers.{InputReader, Transformers}

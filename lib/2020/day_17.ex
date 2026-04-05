@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day17 do
   --- Day 17: Conway Cubes ---
   Problem Link: https://adventofcode.com/2020/day/17
   Difficulty: m
-  Tags: simulation grid
+  Tags: grid simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

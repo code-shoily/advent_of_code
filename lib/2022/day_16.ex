@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day16 do
   --- Day 16: Proboscidea Volcanium ---
   Problem Link: https://adventofcode.com/2022/day/16
   Difficulty: l
-  Tags: graph floyd-warshall optimization
+  Tags: floyd-warshall graph optimization
   """
   import Bitwise
   alias AdventOfCode.Helpers.{InputReader, Transformers}

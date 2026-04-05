@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day04 do
   --- Day 4: Passport Processing ---
   Problem Link: https://adventofcode.com/2020/day/4
   Difficulty: s
-  Tags: regex validation parse-heavy
+  Tags: parsing validation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

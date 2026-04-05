@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day21 do
   --- Day 21: Monkey Math ---
   Problem Link: https://adventofcode.com/2022/day/21
   Difficulty: s
-  Tags: op-code large-number arithmetic
+  Tags: large-number math op-code
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

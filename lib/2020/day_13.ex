@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day13 do
   --- Day 13: Shuttle Search ---
   Problem Link: https://adventofcode.com/2020/day/13
   Difficulty: m
-  Tags: number-theory chinese-remainder modular-arithmetic
+  Tags: math
   """
   alias AdventOfCode.Algorithms.ChineseRemainder
   alias AdventOfCode.Helpers.{InputReader, Transformers}

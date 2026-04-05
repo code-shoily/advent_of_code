@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day20 do
   --- Day 20: Grove Positioning System ---
   Problem Link: https://adventofcode.com/2022/day/20
   Difficulty: m
-  Tags: sequence large-number circular-list
+  Tags: large-number sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

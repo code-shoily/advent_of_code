@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day01 do
   --- Day 1: Report Repair ---
   Problem Link: https://adventofcode.com/2020/day/1
   Difficulty: xs
-  Tags: set arithmetic
+  Tags: math set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

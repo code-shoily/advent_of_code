@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day11 do
   --- Day 11: Radioisotope Thermoelectric Generators ---
   Problem Link: https://adventofcode.com/2016/day/11
   Difficulty: l
-  Tags: simulation graph state-space manual-parse
+  Tags: graph parsing simulation state-space
   """
   alias Yog.Traversal.Implicit
 

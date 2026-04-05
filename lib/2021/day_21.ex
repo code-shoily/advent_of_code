@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day21 do
   --- Day 21: Dirac Dice ---
   Problem Link: https://adventofcode.com/2021/day/21
   Difficulty: xl
-  Tags: memoization dynamic-programming
+  Tags: dynamic-programming
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

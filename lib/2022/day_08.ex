@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day08 do
   --- Day 8: Treetop Tree House ---
   Problem Link: https://adventofcode.com/2022/day/8
   Difficulty: m
-  Tags: grid graph traversal
+  Tags: graph grid traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.Grid

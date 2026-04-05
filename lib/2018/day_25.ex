@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day25 do
   --- Day 25: Four-Dimensional Adventure ---
   Problem Link: https://adventofcode.com/2018/day/25
   Difficulty: m
-  Tags: graph connectivity constellation
+  Tags: connectivity constellation graph
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Connectivity

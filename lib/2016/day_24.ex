@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day24 do
   --- Day 24: Air Duct Spelunking ---
   Problem Link: https://adventofcode.com/2016/day/24
   Difficulty: m
-  Tags: graph shortest-path tsp grid matrix
+  Tags: graph grid matrix pathfinding tsp
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.Grid

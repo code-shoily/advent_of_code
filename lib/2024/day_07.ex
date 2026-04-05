@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day07 do
   --- Day 7: Bridge Repair ---
   Problem Link: https://adventofcode.com/2024/day/7
   Difficulty: s
-  Tags: recursion enumeration
+  Tags: enumeration recursion
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

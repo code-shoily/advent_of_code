@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day23 do
   --- Day 23: LAN Party ---
   Problem Link: https://adventofcode.com/2024/day/23
   Difficulty: m
-  Tags: graph clique bron-kerbosch maximum-clique LAN-party
+  Tags: bron-kerbosch clique graph lan-party maximum-clique
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Property.Clique

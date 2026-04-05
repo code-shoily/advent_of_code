@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day05 do
   --- Day 5: Supply Stacks ---
   Problem Link: https://adventofcode.com/2022/day/5
   Difficulty: s
-  Tags: parse-heavy stack linked-list
+  Tags: parsing sequence stack
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

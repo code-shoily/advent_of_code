@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day22 do
   --- Day 22: Sand Slabs ---
   Problem Link: https://adventofcode.com/2023/day/22
   Difficulty: xl
-  Tags: stack range
+  Tags: range stack
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

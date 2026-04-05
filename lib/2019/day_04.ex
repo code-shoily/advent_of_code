@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day04 do
   --- Day 4: Secure Container ---
   Problem Link: https://adventofcode.com/2019/day/4
   Difficulty: xs
-  Tags: sequence inline-input
+  Tags: inline-input sequence
   """
   def input, do: 245_182..790_572
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day15 do
   --- Day 15: Beacon Exclusion Zone ---
   Problem Link: https://adventofcode.com/2022/day/15
   Difficulty: xl
-  Tags: geometry2d optimization interval-merging
+  Tags: geometry interval-merging optimization
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

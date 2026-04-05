@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day24 do
   --- Day 24: Blizzard Basin ---
   Problem Link: https://adventofcode.com/2022/day/24
   Difficulty: m
-  Tags: graph implicit-graph shortest-path a-star
+  Tags: a-star graph implicit-graph pathfinding
   """
   alias AdventOfCode.Helpers.InputReader
   alias Yog.Pathfinding.AStar

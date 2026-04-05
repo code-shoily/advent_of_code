@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day04 do
   --- Day 4: The Ideal Stocking Stuffer ---
   Problem Link: https://adventofcode.com/2015/day/4
   Difficulty: s
-  Tags: md5 annoying
+  Tags: annoying md5
   """
   def run, do: {run_1(), run_2()}
   def run_1, do: lowest_number("bgvyzdsv", 1)

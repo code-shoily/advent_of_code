@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day17 do
   --- Day 17: Two Steps Forward ---
   Problem Link: https://adventofcode.com/2016/day/17
   Difficulty: m
-  Tags: graph bfs state-space-search md5
+  Tags: bfs graph md5 state-space-search
   """
   alias AdventOfCode.Helpers.InputReader
 

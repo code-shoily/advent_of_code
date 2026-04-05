@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day12 do
   --- Day 12: Passage Pathing ---
   Problem Link: https://adventofcode.com/2021/day/12
   Difficulty: m
-  Tags: graph traversal recursion path-finding
+  Tags: graph pathfinding recursion traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

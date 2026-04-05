@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day06 do
   --- Day 6: Wait For It ---
   Problem Link: https://adventofcode.com/2023/day/6
   Difficulty: xs
-  Tags: algebra
+  Tags: math
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

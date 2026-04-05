@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day17 do
   --- Day 17: Spinlock ---
   Problem Link: https://adventofcode.com/2017/day/17
   Difficulty: m
-  Tags: circular-buffer simulation
+  Tags: sequence simulation
   """
   def input, do: 394
 

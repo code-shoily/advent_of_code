@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day22 do
   --- Day 22: Monkey Map ---
   Problem Link: https://adventofcode.com/2022/day/22
   Difficulty: xl
-  Tags: geometry3d walk3d
+  Tags: geometry walk
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}

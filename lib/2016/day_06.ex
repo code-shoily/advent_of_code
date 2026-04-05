@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day06 do
   --- Day 6: Signals and Noise ---
   Problem Link: https://adventofcode.com/2016/day/6
   Difficulty: xs
-  Tags: sequence optimization
+  Tags: optimization sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

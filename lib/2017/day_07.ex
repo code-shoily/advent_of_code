@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day07 do
   --- Day 7: Recursive Circus ---
   Problem Link: https://adventofcode.com/2017/day/7
   Difficulty: m
-  Tags: tree graph
+  Tags: graph tree
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Model

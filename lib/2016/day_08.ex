@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day08 do
   --- Day 8: Two-Factor Authentication ---
   Problem Link: https://adventofcode.com/2016/day/8
   Difficulty: m
-  Tags: visual-result matrix op-code
+  Tags: matrix op-code visual-result
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

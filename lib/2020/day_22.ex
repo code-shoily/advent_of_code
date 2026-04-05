@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day22 do
   --- Day 22: Crab Combat ---
   Problem Link: https://adventofcode.com/2020/day/22
   Difficulty: m
-  Tags: recursion game simulation
+  Tags: game recursion simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

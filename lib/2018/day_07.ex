@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day07 do
   --- Day 7: The Sum of Its Parts ---
   Problem Link: https://adventofcode.com/2018/day/7
   Difficulty: m
-  Tags: graph topological-sort simulation
+  Tags: graph simulation topological-sort
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.Labeled

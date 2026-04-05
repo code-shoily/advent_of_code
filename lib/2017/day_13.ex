@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day13 do
   --- Day 13: Packet Scanners ---
   Problem Link: https://adventofcode.com/2017/day/13
   Difficulty: s
-  Tags: sequence optimization
+  Tags: optimization sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

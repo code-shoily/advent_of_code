@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day13 do
   --- Day 13: A Maze of Twisty Little Cubicles ---
   Problem Link: https://adventofcode.com/2016/day/13
   Difficulty: m
-  Tags: graph implicit-graph a-star
+  Tags: a-star graph implicit-graph
   """
   import Bitwise
   alias AdventOfCode.Helpers.InputReader

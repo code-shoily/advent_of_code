@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day14 do
   --- Day 14: Parabolic Reflector Dish ---
   Problem Link: https://adventofcode.com/2023/day/14
   Difficulty: l
-  Tags: grid rotation modular-arithmetic memoization
+  Tags: dynamic-programming grid math rotation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

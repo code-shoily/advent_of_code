@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day18 do
   --- Day 18: Lavaduct Lagoon ---
   Problem Link: https://adventofcode.com/2023/day/18
   Difficulty: l
-  Tags: geometry2d
+  Tags: geometry
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

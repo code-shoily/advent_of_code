@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day06 do
   --- Day 6: Custom Customs ---
   Problem Link: https://adventofcode.com/2020/day/6
   Difficulty: xs
-  Tags: set count
+  Tags: count set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

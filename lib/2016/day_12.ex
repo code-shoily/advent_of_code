@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day12 do
   --- Day 12: Leonardo's Monorail ---
   Problem Link: https://adventofcode.com/2016/day/12
   Difficulty: s
-  Tags: assembled-optimization assembunny
+  Tags: assembunny optimization
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

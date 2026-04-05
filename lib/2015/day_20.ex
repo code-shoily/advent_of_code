@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day20 do
   --- Day 20: Infinite Elves and Infinite Houses ---
   Problem Link: https://adventofcode.com/2015/day/20
   Difficulty: l
-  Tags: slow infinite-sequence sequence sieve optimization
+  Tags: optimization sequence sieve slow
   """
 
   alias AdventOfCode.Helpers.InputReader

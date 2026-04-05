@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day10 do
   --- Day 10: Factory ---
   Problem Link: https://adventofcode.com/2025/day/10
   Difficulty: l
-  Tags: graph shortest-path bitwise dynamic-programming
+  Tags: bitwise dynamic-programming graph pathfinding
   """
   import Bitwise
   alias AdventOfCode.Helpers.{InputReader, Transformers}

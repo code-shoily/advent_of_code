@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2022.Day18 do
   --- Day 18: Boiling Boulders ---
   Problem Link: https://adventofcode.com/2022/day/18
   Difficulty: xl
-  Tags: geometry3d surface set grid traversal
+  Tags: geometry grid set traversal
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Traversal.Implicit

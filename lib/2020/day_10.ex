@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day10 do
   --- Day 10: Adapter Array ---
   Problem Link: https://adventofcode.com/2020/day/10
   Difficulty: s
-  Tags: memoization dynamic-programming sort
+  Tags: dynamic-programming sort
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

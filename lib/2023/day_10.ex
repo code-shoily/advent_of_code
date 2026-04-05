@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day10 do
   --- Day 10: Pipe Maze ---
   Problem Link: https://adventofcode.com/2023/day/10
   Difficulty: xl
-  Tags: graph bfs grid
+  Tags: bfs graph grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.{Grid, GridGraph}

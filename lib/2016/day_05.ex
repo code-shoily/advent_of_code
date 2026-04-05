@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day05 do
   --- Day 5: How About a Nice Game of Chess? ---
   Problem Link: https://adventofcode.com/2016/day/5
   Difficulty: s
-  Tags: slow md5 binary
+  Tags: binary md5 slow
   """
   def input, do: "cxdnnyjw"
 

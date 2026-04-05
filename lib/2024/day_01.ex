@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day01 do
   --- Day 1: Historian Hysteria ---
   Problem Link: https://adventofcode.com/2024/day/1
   Difficulty: xs
-  Tags: list
+  Tags: sequence
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

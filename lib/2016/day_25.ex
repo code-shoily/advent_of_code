@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2016.Day25 do
   --- Day 25: Clock Signal ---
   Problem Link: https://adventofcode.com/2016/day/25
   Difficulty: m
-  Tags: assembunny simulation optimization
+  Tags: assembunny optimization simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

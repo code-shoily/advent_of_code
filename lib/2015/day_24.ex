@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day24 do
   --- Day 24: It Hangs in the Balance ---
   Problem Link: https://adventofcode.com/2015/day/24
   Difficulty: xl
-  Tags: power-set ambiguous-solution
+  Tags: ambiguous-solution combinatorics
   """
   alias AdventOfCode.Algorithms.SubsetSum
   alias AdventOfCode.Helpers.{InputReader, Transformers}

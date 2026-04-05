@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day05 do
   --- Day 5: Print Queue ---
   Problem Link: https://adventofcode.com/2024/day/5
   Difficulty: xs
-  Tags: graph topological-sort sort
+  Tags: graph sort topological-sort
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Traversal

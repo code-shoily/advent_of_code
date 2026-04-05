@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day12 do
   --- Day 12: Garden Groups ---
   Problem Link: https://adventofcode.com/2024/day/12
   Difficulty: m
-  Tags: geometry2d disjoint-set
+  Tags: geometry union-find
   """
   alias AdventOfCode.Algorithms.Grid
   alias AdventOfCode.Helpers.{InputReader, Transformers}

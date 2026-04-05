@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day15 do
   --- Day 15: Dueling Generators ---
   Problem Link: https://adventofcode.com/2017/day/15
   Difficulty: l
-  Tags: number-theory bitwise optimization
+  Tags: bitwise math optimization
   """
   import Bitwise
 

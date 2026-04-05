@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day17 do
   --- Day 17: Trick Shot ---
   Problem Link: https://adventofcode.com/2021/day/17
   Difficulty: m
-  Tags: simulation physics
+  Tags: physics simulation
   """
 
   alias AdventOfCode.Helpers.InputReader

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day18 do
   --- Day 18: Like a GIF For Your Yard ---
   Problem Link: https://adventofcode.com/2015/day/18
   Difficulty: m
-  Tags: grid map cellular-automata
+  Tags: grid map simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

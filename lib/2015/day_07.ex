@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2015.Day07 do
   --- Day 7: Some Assembly Required ---
   Problem Link: https://adventofcode.com/2015/day/7
   Difficulty: m
-  Tags: graph dag logic-gates bitwise
+  Tags: bitwise graph logic-gates
   """
   import Bitwise
   alias AdventOfCode.Helpers.{InputReader, Transformers}

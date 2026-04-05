@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2017.Day12 do
   --- Day 12: Digital Plumber ---
   Problem Link: https://adventofcode.com/2017/day/12
   Difficulty: s
-  Tags: graph connectivity
+  Tags: connectivity graph
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Connectivity

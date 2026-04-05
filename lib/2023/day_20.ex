@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2023.Day20 do
   --- Day 20: Pulse Propagation ---
   Problem Link: https://adventofcode.com/2023/day/20
   Difficulty: l
-  Tags: simulation logic-circuit graph cycles lcm
+  Tags: cycles graph logic-circuit math simulation
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

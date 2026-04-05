@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2021.Day15 do
   --- Day 15: Chiton ---
   Problem Link: https://adventofcode.com/2021/day/15
   Difficulty: l
-  Tags: graph graph-route
+  Tags: graph
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog.Builder.Grid

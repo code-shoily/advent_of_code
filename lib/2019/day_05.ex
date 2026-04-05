@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2019.Day05 do
   --- Day 5: Sunny with a Chance of Asteroids ---
   Problem Link: https://adventofcode.com/2019/day/5
   Difficulty: xs
-  Tags: op-code int-code
+  Tags: int-code op-code
   """
   alias AdventOfCode.Helpers.InputReader
   alias AdventOfCode.Y2019.IntCode

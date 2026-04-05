@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day04 do
   --- Day 4: Ceres Search ---
   Problem Link: https://adventofcode.com/2024/day/4
   Difficulty: s
-  Tags: grid word-search
+  Tags: grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

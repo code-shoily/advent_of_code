@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2025.Day07 do
   --- Day 7: Laboratories ---
   Problem Link: https://adventofcode.com/2025/day/7
   Difficulty: l
-  Tags: grid dynamic-programming
+  Tags: dynamic-programming grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
   alias Yog

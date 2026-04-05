@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day21 do
   --- Day 21: Allergen Assessment ---
   Problem Link: https://adventofcode.com/2020/day/21
   Difficulty: m
-  Tags: set reduction
+  Tags: reduction set
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

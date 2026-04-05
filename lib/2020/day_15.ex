@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2020.Day15 do
   --- Day 15: Rambunctious Recitation ---
   Problem Link: https://adventofcode.com/2020/day/15
   Difficulty: m
-  Tags: memoization sequence
+  Tags: dynamic-programming sequence
   """
   def run_1, do: [6, 19, 0, 5, 7, 13, 1] |> play(2020)
   def run_2, do: [6, 19, 0, 5, 7, 13, 1] |> play(30_000_000)

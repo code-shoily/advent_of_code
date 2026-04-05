@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2024.Day08 do
   --- Day 8: Resonant Collinearity ---
   Problem Link: https://adventofcode.com/2024/day/8
   Difficulty: s
-  Tags: grid enumeration coordinate-geometry
+  Tags: enumeration geometry grid
   """
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 

@@ -3,7 +3,7 @@ defmodule AdventOfCode.Y2018.Day09 do
   --- Day 9: Marble Mania ---
   Problem Link: https://adventofcode.com/2018/day/9
   Difficulty: s
-  Tags: circular-linked-list zipper performance
+  Tags: sequence slow zipper
   """
   alias AdventOfCode.Algorithms.BiCircularList
   alias AdventOfCode.Helpers.{InputReader, Transformers}
