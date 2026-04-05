@@ -9,10 +9,9 @@
   "idna": {:hex, :idna, "6.1.1", "8a63070e9f7d0c62eb9d9fcb360a7de382448200fbbd1b106cc96d3d8099df8d", [:rebar3], [{:unicode_util_compat, "~> 0.7.0", [hex: :unicode_util_compat, repo: "hexpm", optional: false]}], "hexpm", "92376eb7894412ed19ac475e4a86f7b413c1b9fbb5bd16dccd57934157944cea"},
   "jason": {:hex, :jason, "1.4.4", "b9226785a9aa77b6857ca22832cffa5d5011a667207eb2a0ad56adb5db443b8a", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "c5eb0cab91f094599f94d55bc63409236a8ec69a21a67814529e8d5f6cc90b3b"},
   "metrics": {:hex, :metrics, "1.0.1", "25f094dea2cda98213cecc3aeff09e940299d950904393b2a29d191c346a8486", [:rebar3], [], "hexpm", "69b09adddc4f74a40716ae54d140f93beb0fb8978d8636eaded0c31b6f099f16"},
-  "mimerl": {:hex, :mimerl, "1.4.0", "3882a5ca67fbbe7117ba8947f27643557adec38fa2307490c4c4207624cb213b", [:rebar3], [], "hexpm", "13af15f9f68c65884ecca3a3891d50a7b57d82152792f3e19d88650aa126b144"},
+  "mimerl": {:hex, :mimerl, "1.5.0", "f35aca6f23242339b3666e0ac0702379e362b469d0aea167f6cc713547e777ed", [:rebar3], [], "hexpm", "db648ce065bae14ea84ca8b5dd123f42f49417cef693541110bf6f9e9be9ecc4"},
   "parse_trans": {:hex, :parse_trans, "3.4.1", "6e6aa8167cb44cc8f39441d05193be6e6f4e7c2946cb2759f015f8c56b76e5ff", [:rebar3], [], "hexpm", "620a406ce75dada827b82e453c19cf06776be266f5a67cff34e1ef2cbb60e49a"},
-  "saxy": {:hex, :saxy, "1.6.0", "02cb4e9bd045f25ac0c70fae8164754878327ee393c338a090288210b02317ee", [:mix], [], "hexpm", "ef42eb4ac983ca77d650fbdb68368b26570f6cc5895f0faa04d34a6f384abad3"},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.7", "354c321cf377240c7b8716899e182ce4890c5938111a1296add3ec74cf1715df", [:make, :mix, :rebar3], [], "hexpm", "fe4c190e8f37401d30167c8c405eda19469f34577987c76dde613e838bbc67f8"},
   "unicode_util_compat": {:hex, :unicode_util_compat, "0.7.1", "a48703a25c170eedadca83b11e88985af08d35f37c6f664d6dcfb106a97782fc", [:rebar3], [], "hexpm", "b3a917854ce3ae233619744ad1e0102e05673136776fb2fa76234f3e03b23642"},
-  "yog_ex": {:git, "https://github.com/code-shoily/yog_ex.git", "089cec32757940d2721d45bc4afbca9a4544409f", [branch: "main"]},
+  "yog_ex": {:hex, :yog_ex, "0.95.0", "82c672eb50c61a105f1d1577b18e1abb4ff54bfb1f5d9df27f22b271e97d3847", [:mix], [{:jason, "~> 1.4", [hex: :jason, repo: "hexpm", optional: true]}, {:libgraph, "~> 0.16", [hex: :libgraph, repo: "hexpm", optional: true]}, {:saxy, "~> 1.5", [hex: :saxy, repo: "hexpm", optional: true]}], "hexpm", "8dd5aa8afe06f1cfa782b65f52892776f7811f18e1749dd97145578ea64bdef6"},
 }
