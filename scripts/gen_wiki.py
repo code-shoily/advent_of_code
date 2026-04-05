@@ -132,7 +132,7 @@ def gen_stats_block(solutions, tag_map):
 
     lines = [
         f"> **{total} problems solved** across **{len(all_years)} years**"
-        f" — [Tags](wiki/tags/index.md) · [Difficulty](wiki/difficulty.md)\n\n",
+        f" — [Tags](wiki/tags/index.md) · [Difficulty](wiki/difficulty.md) · [Benchmarks](BENCHMARKS.md)\n\n",
         f"**Years:** {year_links}\n\n",
     ]
 

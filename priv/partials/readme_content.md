@@ -26,6 +26,16 @@ All commands should work from then on.
 
 run `mix test` to ensure all solutions are working okay. To run test for a particular year and day, type `mix test --only y<last-two-digits-of-year><zero-padded-day>`. For example: `mix test --only y1501` tests for `2015` as year and `1` as day.
 
+## Benchmarking
+
+To benchmark solutions and update the [Benchmarks](BENCHMARKS.md) report, use the provided script:
+
+- `scripts/gen_benchmark.py`: Runs all solved problems across all years.
+- `scripts/gen_benchmark.py <year>`: Benchmarks all days for a specific year.
+- `scripts/gen_benchmark.py <year> <day>`: Benchmarks a single problem (useful after a new solve).
+
+The script saves results to a persistent JSON file at `priv/data/benchmark.json`, allowing you to update specific results without re-running everything.
+
 ## Updating README and Stats
 
 If you want to update the `README.md` (i.e. this file) please do not update `README.me` directly, instead update the static content (not stats related) on `priv/partials/readme_content.md` and then run `mix readme` to regenerate this file.
