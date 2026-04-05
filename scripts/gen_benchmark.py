@@ -78,13 +78,13 @@ def generate_markdown():
         for day in days:
             res = year_data[day]
             icon = DIFF_ICON.get(res["difficulty"], "⚪")
-            lines.append(f"| {res['day']} | [{res['title']}]({res['link']}) | {icon} | {res['time_ms']:.3f} |\n")
+            lines.append(f"| {res['day']} | [{res['title']}]({res['link']}) | {icon} | {res['time_ms']:.2f} |\n")
             year_total += res["time_ms"]
         
-        lines.append(f"| **Total** | | | **{year_total:.3f}** |\n\n")
+        lines.append(f"| **Total** | | | **{year_total:.2f}** |\n\n")
         total_all_ms += year_total
 
-    lines.append(f"**Total performance across all years: {total_all_ms/1000:.3f}s**\n")
+    lines.append(f"**Total performance across all years: {total_all_ms/1000:.2f}s**\n")
 
     BENCHMARK_FILE.write_text("".join(lines))
     print(f"✨ Updated report: {BENCHMARK_FILE}")
