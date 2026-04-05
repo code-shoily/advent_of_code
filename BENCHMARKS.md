@@ -4,7 +4,7 @@ Performance results for all solved Advent of Code challenges.
 
 ## System Information
 
-- **Run Date:** 2026-04-05 17:42:35
+- **Run Date:** 2026-04-05 17:49:16
 - **OS:** Linux 6.8.0-106-generic
 - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700H
 
@@ -219,7 +219,7 @@ Performance results for all solved Advent of Code challenges.
 | 2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | 🟢 | 1.114 |
 | 3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | 🟢 | 16.843 |
 | 4 | [Security Through Obscurity](https://adventofcode.com/2016/day/4) | 🟢 | 962.072 |
-| 5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | 🟡 | 26962.059 |
+| 5 | [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5) | 🟡 | 3313.633 |
 | 6 | [Signals and Noise](https://adventofcode.com/2016/day/6) | 🟢 | 4.508 |
 | 7 | [Internet Protocol Version 7](https://adventofcode.com/2016/day/7) | 🟢 | 33.668 |
 | 8 | [Two-Factor Authentication](https://adventofcode.com/2016/day/8) | 🟠 | 2.083 |
@@ -231,7 +231,7 @@ Performance results for all solved Advent of Code challenges.
 | 17 | [Two Steps Forward](https://adventofcode.com/2016/day/17) | 🟠 | 147.658 |
 | 24 | [Air Duct Spelunking](https://adventofcode.com/2016/day/24) | 🟠 | 39.082 |
 | 25 | [Clock Signal](https://adventofcode.com/2016/day/25) | 🟠 | 206.977 |
-| **Total** | | | **28591.618** |
+| **Total** | | | **4943.192** |
 
 ### 2015
 
@@ -264,4 +264,4 @@ Performance results for all solved Advent of Code challenges.
 | 25 | [Let It Snow](https://adventofcode.com/2015/day/25) | 🟠 | 172.789 |
 | **Total** | | | **9158.031** |
 
-**Total performance across all years: 68.567s**
+**Total performance across all years: 44.919s**

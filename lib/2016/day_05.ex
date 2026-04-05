@@ -3,67 +3,58 @@ defmodule AdventOfCode.Y2016.Day05 do
   --- Day 5: How About a Nice Game of Chess? ---
   Problem Link: https://adventofcode.com/2016/day/5
   Difficulty: s
-  Tags: slow md5 annoying
+  Tags: slow md5 binary
   """
   def input, do: "cxdnnyjw"
 
   def run(input \\ input()) do
-    solution_1 = Task.async(fn -> run_1(input) end)
-    solution_2 = Task.async(fn -> run_2(input) end)
+    matches =
+      Stream.iterate(0, &(&1 + 50000))
+      |> Task.async_stream(
+        fn start ->
+          find_matches_in_range(input, start, start + 49999)
+        end,
+        max_concurrency: System.schedulers_online(),
+        timeout: :infinity
+      )
+      |> Stream.flat_map(fn {:ok, res} -> res end)
 
-    {
-      Task.await(solution_1, :infinity),
-      Task.await(solution_2, :infinity)
-    }
+    part_1 =
+      matches
+      |> Stream.map(fn {_idx, hash} ->
+        <<_::binary-size(2), _::4, char::4, _::bitstring>> = hash
+        Integer.to_string(char, 16) |> String.downcase()
+      end)
+      |> Stream.take(8)
+      |> Enum.join("")
+
+    part_2 =
+      matches
+      |> Stream.transform(MapSet.new(), fn {_, hash}, done ->
+        <<_::binary-size(2), _::4, pos::4, val::4, _::bitstring>> = hash
+
+        if pos < 8 and not MapSet.member?(done, pos) do
+          {[{pos, Integer.to_string(val, 16) |> String.downcase()}], MapSet.put(done, pos)}
+        else
+          {[], done}
+        end
+      end)
+      |> Stream.take(8)
+      |> Enum.sort_by(&elem(&1, 0))
+      |> Enum.map_join(&elem(&1, 1))
+
+    {part_1, part_2}
   end
 
-  def run_1(input) do
-    Stream.iterate(1, &(&1 + 1))
-    |> Enum.reduce_while({"", 0}, fn x, {hash, iter} ->
-      new_hash = md5(input <> to_string(x))
+  defp find_matches_in_range(input, start, stop) do
+    Enum.reduce(start..stop, [], fn i, acc ->
+      hash = :crypto.hash(:md5, input <> Integer.to_string(i))
 
-      case {five_zeroes?(new_hash), iter + 1} do
-        {true, 8} -> {:halt, hash <> String.at(new_hash, 5)}
-        {true, val} -> {:cont, {hash <> String.at(new_hash, 5), val}}
-        _ -> {:cont, {hash, iter}}
+      case hash do
+        <<0, 0, 0::4, _::4, _::binary>> -> [{i, hash} | acc]
+        _ -> acc
       end
     end)
-  end
-
-  @valid "01234567"
-  def run_2(input) do
-    Stream.iterate(1, &(&1 + 1))
-    |> Enum.reduce_while(
-      %{coords: [], done: MapSet.new()},
-      fn x, %{coords: coords, done: done} = acc ->
-        hash = md5(input <> to_string(x))
-        {position, value} = {String.at(hash, 5), String.at(hash, 6)}
-        valid? = String.contains?(@valid, position) and position not in done
-
-        case {five_zeroes?(hash), valid?} do
-          {true, true} ->
-            done = MapSet.put(done, position)
-            coords = [{position, value} | coords]
-            instruction = (length(coords) == 8 && :halt) || :cont
-            {instruction, %{coords: coords, done: done}}
-
-          _ ->
-            {:cont, acc}
-        end
-      end
-    )
-    |> construct_pasword()
-  end
-
-  defp md5(door_id) do
-    :crypto.hash(:md5, door_id) |> Base.encode16(case: :lower)
-  end
-
-  defp five_zeroes?(door_id), do: String.starts_with?(door_id, "00000")
-
-  defp construct_pasword(%{coords: coords}) do
-    coords
-    |> Enum.sort_by(&elem(&1, 0))
-    |> Enum.map_join(fn {_, v} -> v end)
+    |> Enum.reverse()
   end
 end

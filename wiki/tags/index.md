@@ -7,12 +7,13 @@
 | [a-star](a-star.md) | 2 |
 | [algebra](algebra.md) | 1 |
 | [ambiguous-solution](ambiguous-solution.md) | 1 |
-| [annoying](annoying.md) | 3 |
+| [annoying](annoying.md) | 2 |
 | [arithmetic](arithmetic.md) | 6 |
 | [assembled-optimization](assembled-optimization.md) | 1 |
 | [assembunny](assembunny.md) | 2 |
 | [atomics](atomics.md) | 2 |
 | [bfs](bfs.md) | 2 |
+| [binary](binary.md) | 1 |
 | [binary-search](binary-search.md) | 1 |
 | [binary-space](binary-space.md) | 1 |
 | [bitmask](bitmask.md) | 1 |
