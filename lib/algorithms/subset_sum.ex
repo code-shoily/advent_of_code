@@ -112,6 +112,7 @@ defmodule AdventOfCode.Algorithms.SubsetSum do
   """
   @spec has_subset_sum(nums(), non_neg_integer()) :: boolean()
   def has_subset_sum([], _), do: false
+  def has_subset_sum(_nums, target) when target < 0, do: false
 
   def has_subset_sum(nums, target) do
     has_subset_sum(nums, target, build_cache(nums, target))
