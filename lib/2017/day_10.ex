@@ -5,7 +5,6 @@ defmodule AdventOfCode.Y2017.Day10 do
   Difficulty: s
   Tags: hash
   """
-  require Bitwise
 
   alias AdventOfCode.Helpers.{InputReader, Transformers}
 
@@ -86,6 +85,8 @@ defmodule AdventOfCode.Y2017.Day10 do
       skip + 1
     )
   end
+
+  defp reverse_slice(list_map, _pos, 0), do: list_map
 
   defp reverse_slice(list_map, pos, len) do
     pos..(pos + len - 1)

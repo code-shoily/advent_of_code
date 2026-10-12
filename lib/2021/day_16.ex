@@ -20,7 +20,7 @@ defmodule AdventOfCode.Y2021.Day16 do
   end
 
   defp parse_packet(<<ver::3, type::3, 0::1, length::15, rest::bitstring>>) do
-    <<subpackets::bitstring-size(length), rest::bitstring>> = rest
+    <<subpackets::bitstring-size(^length), rest::bitstring>> = rest
     {{type, ver, parse_packets(subpackets)}, rest}
   end
 

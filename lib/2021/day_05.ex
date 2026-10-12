@@ -32,12 +32,15 @@ defmodule AdventOfCode.Y2021.Day05 do
 
   defp points_between({from, to}, diagonal?) do
     case {{from, to}, diagonal?} do
-      {{[same, a], [same, b]}, _} -> Enum.map(a..b, &{same, &1})
-      {{[a, same], [b, same]}, _} -> Enum.map(a..b, &{&1, same})
+      {{[same, a], [same, b]}, _} -> Enum.map(range(a, b), &{same, &1})
+      {{[a, same], [b, same]}, _} -> Enum.map(range(a, b), &{&1, same})
       {range, true} -> diagonals(range)
       _ -> []
     end
   end
+
+  defp range(a, b) when a <= b, do: a..b
+  defp range(a, b), do: a..b//-1
 
   defp diagonals({[a, b], [c, d]}) do
     Enum.map(
